@@ -1,0 +1,683 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Gaseous Mixtures &#8212; Introduction to Thermodynamics</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Liquid Mixtures" href="4.Liquid-Mixtures.html" />
+    <link rel="prev" title="&lt;no title&gt;" href="1.Accuracy-EOS.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Introduction to Thermodynamics</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Multiphysics Problems
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Definitions and Balance Expressions
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ch1/1.Thermodynamic-Definitions.html">
+   Thermodynamic Definitions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ch1/2.Real-Gas-Properties.html">
+   Real Gas Properties
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ch1/3.Equations-of-State.html">
+   Equations of State
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ch1/4.Balance-Expressions.html">
+   Macroscopic Balance Expressions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ch1/5.Conservation-of-Mass.html">
+   Conservation of Mass
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Foundations of Thermodynamics
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ch2/1.Conservation-of-Energy.html">
+   Conservation of Energy and the 1st Law of Thermodynamics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ch2/2.Entropy-Balance-Expression.html">
+   Balance Expression for Entropy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ch2/3.Entropy-at-0K.html">
+   Entropy at 0K
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ch2/4.Free-Energies.html">
+   Free Energy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ch2/5.Changes-of-State.html">
+   Changes of State
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Applications of Thermodynamics in Chemical Engineering
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ch3/1.Unit-Operations.html">
+   Unit Operations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ch3/2.Property-Diagram-Single-Components.html">
+   Property Database for Common Substances
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ch3/3.Heat-Engines.html">
+   Heat Engines
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ch3/4.Refrigeration.html">
+   Refrigeration
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ch3/5.Liquefaction.html">
+   Liquefaction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ch3/6.Optimizing-with-Python.html">
+   Unit Operations
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Vapor-Liquid Equilibrium for Non-Ideal Gases
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ch4/1.Deriving-Useful-Thermodynamic-Relationships.html">
+   Deriving Useful Thermodynamic Properties
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ch4/2.Virial-Equations-of-State.html">
+   Volumetric Equations of State
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ch4/3.Law-of-Corresponding-States.html">
+   Law of Corresponding States and Critical Properties
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ch4/4.Thermal-Variables-from-EOS.html">
+   Computing Thermal Variables from an Equation of State
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ch4/5.Calculating-Fugacity.html">
+   Calculating Fugacity
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ch4/6.Vapor-Liquid-Equilibrium.html">
+   Vapor Liquid Equilibrium
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Thermodynamics of Mixtures
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Gaseous Mixtures
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="4.Liquid-Mixtures.html">
+   Liquid Mixtures
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ch6/5.Chemical-Equilibrium.html">
+   Chemical Equilibrium
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ch6/6.Species-Balance-Expression.html">
+   Species Balance Expression and Reaction Kinetics
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/Ch5/3.Gaseous-Mixtures.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/Ch5/3.Gaseous-Mixtures.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ideal-gas-mixtures">
+   Ideal Gas Mixtures
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#non-ideal-gas-mixtures">
+   Non-ideal Gas Mixtures
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#virial-equation-of-state-for-mixtures">
+     Virial Equation of State for Mixtures
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cubic-equations-of-state-for-mixtures">
+     Cubic Equations of State for Mixtures
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#thermodynamic-properties-of-gaseous-mixtures">
+   Thermodynamic Properties of Gaseous Mixtures
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Gaseous Mixtures</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ideal-gas-mixtures">
+   Ideal Gas Mixtures
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#non-ideal-gas-mixtures">
+   Non-ideal Gas Mixtures
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#virial-equation-of-state-for-mixtures">
+     Virial Equation of State for Mixtures
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cubic-equations-of-state-for-mixtures">
+     Cubic Equations of State for Mixtures
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#thermodynamic-properties-of-gaseous-mixtures">
+   Thermodynamic Properties of Gaseous Mixtures
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="gaseous-mixtures">
+<h1>Gaseous Mixtures<a class="headerlink" href="#gaseous-mixtures" title="Permalink to this headline">#</a></h1>
+<p>Gaseous mixtures are generally considered to be easier to quantitatively predict the state behavior as compared with liquid mixtures. This is because gases are generally more expanded than liquids. Therefore, their interactions are generally less frequent than in liquids and of less consequence to their material properties.</p>
+<p>While there are many quantitative theories that seek to describe the state of a mixture at a fixed temperature and pressure as a function of composition, we will focus on two methods:</p>
+<ol class="simple">
+<li><p>Ideal Gas Mixtures</p></li>
+<li><p>Cubic Mixture Equations of State</p></li>
+</ol>
+<p>Before we begin, please watch this <a class="reference external" href="https://www.youtube.com/watch?v=kfffy12uQ7g&amp;t=239s">video</a> from PBS Spacetime:</p>
+<section id="ideal-gas-mixtures">
+<h2>Ideal Gas Mixtures<a class="headerlink" href="#ideal-gas-mixtures" title="Permalink to this headline">#</a></h2>
+<p><strong>Ideal gas mixtures</strong> are mixtures which obey the <em>ideal gas law</em> which for the purposes of this discussion, we write as:</p>
+<div class="math notranslate nohighlight">
+\[PV=NRT\]</div>
+<p>An ideal gas mixture is a mixture where the gas molecules are so expanded that they neither interact with other species in the mixture nor themselves. We can compute the properties of an ideal gas mixture by assuming that each species in the mixture contributes to to the total pressure proportionally to the number of moles of that speices or:</p>
+<div class="math notranslate nohighlight">
+\[PV=RT\sum_i^C N_i\]</div>
+<p>In addition to obeying the ideal gas law, ideal gas mixtures have a number of important properties.</p>
+<ol class="simple">
+<li><p><span class="math notranslate nohighlight">\(\bar{V}_i=\underline{V}_i\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\bar{U}_i=\underline{U}_i\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\bar{H}_i=\underline{H}_i\)</span></p></li>
+</ol>
+<p>Another important property of ideal gas mixtures is their <strong>Partial Pressure</strong>, <span class="math notranslate nohighlight">\(P_i\)</span> is given as the product of the total pressure and the mole fraction (this can be derived from eq (ref needed) above). Mathematically, we say that</p>
+<div class="math notranslate nohighlight">
+\[P_i=y_iP=\dfrac{N_iRT}{V}\]</div>
+<div class="alert alert-block alert-info">
+<b>Note:</b> To denote mole fraction of a gaseous species, it is tradition to use y instead of x.
+</div>
+<p>Because there is no difference in internal energy or density of an ideal gas containing <span class="math notranslate nohighlight">\(N\)</span> moles of an ideal gas versus <span class="math notranslate nohighlight">\(N=\sum_i N_i\)</span> moles of mixture species, it is tempting to think that the formation of an ideal gas mixture has no energetic conequence. However, where ideal gas mixtures become distinguishable from ideal gases is their <em>Entropy</em>.</p>
+<p>The entropy change upon forming an ideal gas mixture is given as:</p>
+<div class="math notranslate nohighlight">
+\[\Delta_{mix}\underline{S}=-R\sum_i^{C}y_i\ln{y_i}\]</div>
+<p>This equation, sometimes called the Stirling Approximation resembles the [multiplicity equation](<a class="reference external" href="https://en.wikipedia.org/wiki/Multiplicity_(statistical_mechanics)">https://en.wikipedia.org/wiki/Multiplicity_(statistical_mechanics)</a> given by Boltzmann. This is not an accident. What this equation states is that ideal gas mixtures are mixtures where the species are thoroughly mixed such that all atoms in the mixture have an equal likelihood to be present within the volume.</p>
+<p>For based on the above, the thermal properties of Ideal Gas Mixtures can be summarized:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\underline{U}^{IGM}(T,\underline{x})=\sum_i y_i\underline{U}_i^{IG}(T)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\underline{V}^{IGM}(T,P,\underline{x})=\sum_i y_i\underline{V}_i^{IG}(T,P)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\underline{H}^{IGM}(T,P,\underline{x})=\sum_i y_i\underline{H}_i^{IG}(T,P)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(P(T,\underline{V})=\sum_i P_i(T,V)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\underline{S}^{IGM}(T,P,\underline{x})=\sum_i y_i\underline{S}_i^{IG}(T,P)-R\sum_i y_i \ln{y_i}\)</span></p></li>
+</ul>
+<p>Compute the property change upon mixing using an ideal gas mixture.</p>
+</section>
+<section id="non-ideal-gas-mixtures">
+<h2>Non-ideal Gas Mixtures<a class="headerlink" href="#non-ideal-gas-mixtures" title="Permalink to this headline">#</a></h2>
+<p>At higher pressures and densities, significant deviation from Ideal Gas Mixture behavior is frequently encountered. Just like with single component fluids, these scenarios are treated using virial expansions of the equation of state, but modified for mixtures.</p>
+<section id="virial-equation-of-state-for-mixtures">
+<h3>Virial Equation of State for Mixtures<a class="headerlink" href="#virial-equation-of-state-for-mixtures" title="Permalink to this headline">#</a></h3>
+<p>At low pressures, the 2nd-order virial expansion proves to be a good approximation:</p>
+<div class="math notranslate nohighlight">
+\[\dfrac{P\underline{V}}{RT}=1+\dfrac{B_{mix}(T,\underline{y})}{\underline{V}}\]</div>
+<p>This equation is identical in form to the single component expression except now <span class="math notranslate nohighlight">\(B_{mix}\)</span> depends on the composition of the mixture. Various <strong>mixing rules</strong> are used to describe the composition dependence of <span class="math notranslate nohighlight">\(B_{mix}\)</span> but from statistical mechanics, we have:</p>
+<div class="math notranslate nohighlight">
+\[B_{mix}(T,\underline{y})=\sum_i\sum_j y_i y_j B_{ij}(T)\]</div>
+<p>where <span class="math notranslate nohighlight">\(B_{ij}=B_{ji}\)</span></p>
+<p>For a <strong>Binary Mixture</strong> this simplifies to:</p>
+<div class="math notranslate nohighlight">
+\[B_{mix}(T,\underline{y})=y_1^2B_1(T)+2y_1 y_2 B_{12}(T)+y_2^2B_2(T)\]</div>
+<p>We can see that by using this simple mixing rule, a new parameter has appeared, <span class="math notranslate nohighlight">\(B_{12}(T)\)</span>, which is a property unique to a given mixture.</p>
+<div class="alert alert-block alert-info">
+<b>Note:</b> Virial coefficients for many mixtures can be found in the book The Virial Coefficients of Pure Gases and Mixtures: A Critical Compilation by J. H. Dymond
+</div>
+</section>
+<section id="cubic-equations-of-state-for-mixtures">
+<h3>Cubic Equations of State for Mixtures<a class="headerlink" href="#cubic-equations-of-state-for-mixtures" title="Permalink to this headline">#</a></h3>
+<p>At higher pressures, the cubic equations of state must be used. Similar to the Virial Expansion, the cubic equations of state retain their same functional form with new mixing rules that describe the attractive and repulsive interaction parameters <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span>. As an example, we can write the mixture <em>Peng-Robinson</em> Equation of state as:</p>
+<div class="math notranslate nohighlight">
+\[P=\dfrac{RT}{\underline{V}-b_{mix}}-\dfrac{a_{mix}(T)}{\underline{V}(\underline{V}-b_{mix})+b_{mix}(\underline{V}-b_{mix})}\]</div>
+<p>using the following mixing rules:</p>
+<ol class="simple">
+<li><p><span class="math notranslate nohighlight">\(a_{mix}=\sum_i\sum_j y_i y_j a_{ij}\)</span></p></li>
+</ol>
+<p>where <span class="math notranslate nohighlight">\(a_{ij}=\sqrt{a_ii a_jj}(1-k_{ij})=a_{ji}\)</span> and <span class="math notranslate nohighlight">\(k_{ij}\)</span> is a dimensionless quantity defined as the <em>binary interaction parameter</em> that is unique for each pair in the mixture.</p>
+<ol class="simple">
+<li><p><span class="math notranslate nohighlight">\(b_{mix}=\sum_i y_i b_i\)</span></p></li>
+</ol>
+</section>
+</section>
+<section id="thermodynamic-properties-of-gaseous-mixtures">
+<h2>Thermodynamic Properties of Gaseous Mixtures<a class="headerlink" href="#thermodynamic-properties-of-gaseous-mixtures" title="Permalink to this headline">#</a></h2>
+<p>With the mixing rules defined above, it is possible to estimate thermodynamic properties of Gaseous mixtures with good accuracy using the same approach defined in Ch 4. We simply need to:</p>
+<ol class="simple">
+<li><p>Define the composition</p></li>
+<li><p>Define the state</p></li>
+<li><p>Calculate the density</p></li>
+</ol>
+<p>Using that density, we can then carry through the integrals in Ch 4. and evaluate property changes upon mixing for gas mixtures of various types.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./Ch5"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="1.Accuracy-EOS.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">&lt;no title&gt;</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="4.Liquid-Mixtures.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Liquid Mixtures</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By J. J. Richards<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

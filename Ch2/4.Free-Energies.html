@@ -1,0 +1,709 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Free Energy &#8212; Introduction to Thermodynamics</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Changes of State" href="5.Changes-of-State.html" />
+    <link rel="prev" title="Entropy at 0K" href="3.Entropy-at-0K.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Introduction to Thermodynamics</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Multiphysics Problems
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Definitions and Balance Expressions
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ch1/1.Thermodynamic-Definitions.html">
+   Thermodynamic Definitions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ch1/2.Real-Gas-Properties.html">
+   Real Gas Properties
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ch1/3.Equations-of-State.html">
+   Equations of State
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ch1/4.Balance-Expressions.html">
+   Macroscopic Balance Expressions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ch1/5.Conservation-of-Mass.html">
+   Conservation of Mass
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Foundations of Thermodynamics
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="1.Conservation-of-Energy.html">
+   Conservation of Energy and the 1st Law of Thermodynamics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="2.Entropy-Balance-Expression.html">
+   Balance Expression for Entropy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="3.Entropy-at-0K.html">
+   Entropy at 0K
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Free Energy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="5.Changes-of-State.html">
+   Changes of State
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Applications of Thermodynamics in Chemical Engineering
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ch3/1.Unit-Operations.html">
+   Unit Operations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ch3/2.Property-Diagram-Single-Components.html">
+   Property Database for Common Substances
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ch3/3.Heat-Engines.html">
+   Heat Engines
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ch3/4.Refrigeration.html">
+   Refrigeration
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ch3/5.Liquefaction.html">
+   Liquefaction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ch3/6.Optimizing-with-Python.html">
+   Unit Operations
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Vapor-Liquid Equilibrium for Non-Ideal Gases
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ch4/1.Deriving-Useful-Thermodynamic-Relationships.html">
+   Deriving Useful Thermodynamic Properties
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ch4/2.Virial-Equations-of-State.html">
+   Volumetric Equations of State
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ch4/3.Law-of-Corresponding-States.html">
+   Law of Corresponding States and Critical Properties
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ch4/4.Thermal-Variables-from-EOS.html">
+   Computing Thermal Variables from an Equation of State
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ch4/5.Calculating-Fugacity.html">
+   Calculating Fugacity
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ch4/6.Vapor-Liquid-Equilibrium.html">
+   Vapor Liquid Equilibrium
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Thermodynamics of Mixtures
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ch5/3.Gaseous-Mixtures.html">
+   Gaseous Mixtures
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ch5/4.Liquid-Mixtures.html">
+   Liquid Mixtures
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ch6/5.Chemical-Equilibrium.html">
+   Chemical Equilibrium
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ch6/6.Species-Balance-Expression.html">
+   Species Balance Expression and Reaction Kinetics
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/Ch2/4.Free-Energies.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/Ch2/4.Free-Energies.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#free-energy-definition-the-combination-of-1st-and-2nd-laws">
+   Free Energy Definition - The Combination of 1st and 2nd Laws:
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#gibbs-free-energy">
+   Gibb’s Free Energy
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#open-systems-at-steady-state">
+     Open Systems at Steady State
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#conceptual-meaning-of-gibbs-free-energy">
+       Conceptual Meaning of Gibb’s Free Energy
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#helmholtz-free-energy">
+   Helmholtz Free Energy
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#closed-systems-with-moving-boundaries">
+     Closed Systems with Moving Boundaries
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#conceptual-meaning-of-the-helmholtz-free-energy">
+       Conceptual Meaning of the “Helmholtz Free Energy”
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Free Energy</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#free-energy-definition-the-combination-of-1st-and-2nd-laws">
+   Free Energy Definition - The Combination of 1st and 2nd Laws:
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#gibbs-free-energy">
+   Gibb’s Free Energy
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#open-systems-at-steady-state">
+     Open Systems at Steady State
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#conceptual-meaning-of-gibbs-free-energy">
+       Conceptual Meaning of Gibb’s Free Energy
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#helmholtz-free-energy">
+   Helmholtz Free Energy
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#closed-systems-with-moving-boundaries">
+     Closed Systems with Moving Boundaries
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#conceptual-meaning-of-the-helmholtz-free-energy">
+       Conceptual Meaning of the “Helmholtz Free Energy”
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="free-energy">
+<h1>Free Energy<a class="headerlink" href="#free-energy" title="Permalink to this headline">#</a></h1>
+<p>The <strong>free energy is the energy available to do useful work</strong>. You probably learned about free energy in General Chemistry in the context of chemical reactions. In that context, exothermic reactions are reactions where the free energy change from the initial to final state is negative and endothermic processes are those where the free energy change is positive.</p>
+<p>In thermodynamics, we consider how the free energy is affected not by <em>chemical</em> processes but instead by <em>physical</em> ones.</p>
+<section id="free-energy-definition-the-combination-of-1st-and-2nd-laws">
+<h2>Free Energy Definition - The Combination of 1st and 2nd Laws:<a class="headerlink" href="#free-energy-definition-the-combination-of-1st-and-2nd-laws" title="Permalink to this headline">#</a></h2>
+<p>It is convenient to define the free energies by beginning with the 1st and 2nd laws of thermodynamics. We have shown in previous lectures that the mass, energy, and entropy balance expressions can be written on a molar basis in the differential form as:</p>
+<ol class="simple">
+<li><p><span class="math notranslate nohighlight">\(\dfrac{dN}{dt}=\sum_k\dot{N}_k\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\dfrac{dU}{dt}=\sum_k\big(\dot{N}\underline{H}\big)_k+\dot{Q}-P_{ext}\dfrac{dV}{dt}+\dot{W}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\dfrac{dS}{dt}=\sum_k\big(\dot{N}\underline{S}\big)_k+\dfrac{\dot{Q}}{T}+\dot{S}_{gen}\)</span></p></li>
+</ol>
+<p>If we combine (2) and (3), we can show that we get:</p>
+<p>rearranging, we get</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\dfrac{dU}{dt}=\sum_k\big(\dot{N}(\underline{H}-T\underline{S}\big)_k+T\dfrac{dS}{dt}-P_{ext}\dfrac{dV}{dt}-T\dot{S}_{gen}+\dot{W}\)</span></p></li>
+</ul>
+<p>Two useful cases emerge from this mess:</p>
+<ol class="simple">
+<li><p>Open System Problems at Steady State</p></li>
+<li><p>Closed Systems with Moving Boundaries</p></li>
+</ol>
+</section>
+<section id="gibbs-free-energy">
+<h2>Gibb’s Free Energy<a class="headerlink" href="#gibbs-free-energy" title="Permalink to this headline">#</a></h2>
+<section id="open-systems-at-steady-state">
+<h3>Open Systems at Steady State<a class="headerlink" href="#open-systems-at-steady-state" title="Permalink to this headline">#</a></h3>
+<p>For an <em>open system</em> operating at <em>steady state</em> with <em>fixed boundaries</em>, we can write.</p>
+<p><span class="math notranslate nohighlight">\(\quad 0=\sum_k\big(\dot{N}(\underline{H}-T\underline{S}\big)_k-T\dot{S}_{gen}+\dot{W}\)</span></p>
+<p>If we define the <strong>Gibb’s Free Energy</strong> as <span class="math notranslate nohighlight">\(G=H-TS\)</span>, then the above can be simplified as:</p>
+<p><span class="math notranslate nohighlight">\(\quad 0=\sum_k\big(\dot{N}\underline{G}\big)_k-T\dot{S}_{gen}+\dot{W}\)</span></p>
+<section id="conceptual-meaning-of-gibbs-free-energy">
+<h4>Conceptual Meaning of Gibb’s Free Energy<a class="headerlink" href="#conceptual-meaning-of-gibbs-free-energy" title="Permalink to this headline">#</a></h4>
+<p>The form of the equation above explicitly links <em>work</em> and <em>entropy generation</em> to the change in <em>molar free energy</em> of a vapor/liquid as it undergoes some physical process. We can simplify things further for a single mass flow, <span class="math notranslate nohighlight">\(\dot{N}\)</span>. From (1), we know that <span class="math notranslate nohighlight">\(\dot{N}_2=-\dot{N}\)</span> and therefore, we can write</p>
+<p><span class="math notranslate nohighlight">\(\quad 0=\dot{N}\big(\underline{G}_2-\underline{G}_1)-T\dot{S}_{gen}+\dot{W}\)</span></p>
+<p>This form of the equation is the most intuitive. If you remember anything from this class, remember these three maxims</p>
+<ul class="simple">
+<li><p>Work done <strong>by</strong> the system <span class="math notranslate nohighlight">\(\dot{W}&lt;0\)</span> on the surroundings causes the a <strong>decrease</strong> in the <strong>Gibb’s Free Energy</strong>, <span class="math notranslate nohighlight">\(\underline{G}_2&lt;\underline{G}_1\)</span>, of the fluid.</p></li>
+<li><p>Work done <strong>on</strong> the system <span class="math notranslate nohighlight">\(\dot{W}&gt;0\)</span> by the surroundings causes the an <strong>increase</strong> in the <strong>Gibb’s Free Energy</strong>, <span class="math notranslate nohighlight">\(\underline{G}_2&gt;\underline{G}_1\)</span>, of the fluid.</p></li>
+<li><p>Entropy generation is always positive, <span class="math notranslate nohighlight">\(\dot{S}_{gen}&gt;0\)</span>, therefore the interconversion of <em>work</em> to <em>free energy</em> and visa versa is always incomplete.</p>
+<ul>
+<li><p>When work is done <strong>on</strong> on the system by the surroundings, this will result in a smaller increase in <strong>Gibb’s Free Energy</strong> than for the <em>reversible</em> process.</p></li>
+<li><p>When work is done <strong>by</strong> on the system by the surroundings, this will result in less work output for an equivalent change in <strong>Gibb’s Free Energy</strong> than for the <em>reversible</em> process.</p></li>
+</ul>
+</li>
+</ul>
+<p>We can imagine cyclically running a fluid through a compressor and turbine. The implication of the statements above is that through each cycle of compression and expansion, additional work must be supplied to make up for the accumulating losses associated with entropy generation. Therefore, perpetual motion machines that operate at steady state are impossible to construct and violate the <strong>2nd Law of thermodynamics</strong>.</p>
+</section>
+</section>
+</section>
+<section id="helmholtz-free-energy">
+<h2>Helmholtz Free Energy<a class="headerlink" href="#helmholtz-free-energy" title="Permalink to this headline">#</a></h2>
+<section id="closed-systems-with-moving-boundaries">
+<h3>Closed Systems with Moving Boundaries<a class="headerlink" href="#closed-systems-with-moving-boundaries" title="Permalink to this headline">#</a></h3>
+<p>For a closed system that has moving boundaries, we can group the time derivative terms on the L.H.S</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\dfrac{d}{dt}\bigg(U-TS\bigg)=-P_{ext}\dfrac{dV}{dt}-T\dot{S}_{gen}\)</span></p></li>
+</ul>
+<p>If we define the <strong>Helmholtz Free Energy</strong> as <span class="math notranslate nohighlight">\(A=U-TS\)</span>, then the above can be simplified as:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\dfrac{dA}{dt}=-P_{ext}\dfrac{dV}{dt}-T\dot{S}_{gen}\)</span>’</p></li>
+</ul>
+<section id="conceptual-meaning-of-the-helmholtz-free-energy">
+<h4>Conceptual Meaning of the “Helmholtz Free Energy”<a class="headerlink" href="#conceptual-meaning-of-the-helmholtz-free-energy" title="Permalink to this headline">#</a></h4>
+<p>The form of the equation above explicitly links <em>work</em> and <em>entropy generation</em> to the change in extrinsic <em>free energy</em> of a vapor/liquid as it undergoes compression/expansion in a closed volume. Integrating both sides of this expression, we find that:</p>
+<p><span class="math notranslate nohighlight">\(\quad A_2-A_1=-P_{ext}\big(\Delta V) - \int_{1}^{2}T\dot{S}_{gen}dt\)</span></p>
+<p>where</p>
+<p><span class="math notranslate nohighlight">\(\quad \Delta V = V_{2}-V_{1}\)</span></p>
+<p>This form of the equation is the most intuitive. If you remember anything from this class, remember these three maxims</p>
+<ul class="simple">
+<li><p>Work of expansion done <strong>on</strong> the surroundings <span class="math notranslate nohighlight">\(\Delta V&gt;0\)</span> by the system causes the a <strong>decrease</strong> in the <strong>Helmholtz Free Energy</strong>, <span class="math notranslate nohighlight">\(A_2&lt;A_1\)</span>, of the fluid.</p></li>
+<li><p>Work of compression done <strong>by</strong> the surroundings <span class="math notranslate nohighlight">\(\Delta V&lt; 0\)</span> on the system causes the an <strong>increase</strong> in the <strong>Helmholtz Free Energy</strong>, <span class="math notranslate nohighlight">\(A_2&gt;A_1\)</span>, of the fluid.</p></li>
+<li><p>Entropy generation is always positive, <span class="math notranslate nohighlight">\(\dot{S}_{gen}\ge 0\)</span>, therefore the interconversion of <em>boundary work</em> to <em>free energy</em> and visa versa is always incomplete.</p>
+<ul>
+<li><p>When work is done <strong>on</strong> on the system by the surroundings, this will result in a smaller increase in <strong>Helmholtz Free Energy</strong> than for the <strong>reversible</strong> process.</p></li>
+<li><p>When work is done <strong>by</strong> on the system by the surroundings, this will result in less work output for an equivalent change in <strong>Helmholtz Free Energy</strong> than for the <strong>reversible</strong> process.</p></li>
+</ul>
+</li>
+</ul>
+<p>We can imagine a sealed piston cyclically compressing and expanding a fluid. The implication of the statements above is that through each cycle of compression and expansion, additional work must be supplied to make up for the accumulating losses associated with entropy generation. Therefore, perpetual motion machines that operate at steady state are impossible to construct and violate the <strong>2nd Law of thermodynamics</strong>.</p>
+</section>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./Ch2"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="3.Entropy-at-0K.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Entropy at 0K</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="5.Changes-of-State.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Changes of State</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By J. J. Richards<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

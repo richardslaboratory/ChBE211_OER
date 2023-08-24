@@ -1,0 +1,707 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Definitions of Mixtures &#8212; Introduction to Thermodynamics</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Introduction to Thermodynamics</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Multiphysics Problems
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Definitions and Balance Expressions
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ch1/1.Thermodynamic-Definitions.html">
+   Thermodynamic Definitions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ch1/2.Real-Gas-Properties.html">
+   Real Gas Properties
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ch1/3.Equations-of-State.html">
+   Equations of State
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ch1/4.Balance-Expressions.html">
+   Macroscopic Balance Expressions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ch1/5.Conservation-of-Mass.html">
+   Conservation of Mass
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Foundations of Thermodynamics
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ch2/1.Conservation-of-Energy.html">
+   Conservation of Energy and the 1st Law of Thermodynamics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ch2/2.Entropy-Balance-Expression.html">
+   Balance Expression for Entropy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ch2/3.Entropy-at-0K.html">
+   Entropy at 0K
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ch2/4.Free-Energies.html">
+   Free Energy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ch2/5.Changes-of-State.html">
+   Changes of State
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Applications of Thermodynamics in Chemical Engineering
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ch3/1.Unit-Operations.html">
+   Unit Operations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ch3/2.Property-Diagram-Single-Components.html">
+   Property Database for Common Substances
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ch3/3.Heat-Engines.html">
+   Heat Engines
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ch3/4.Refrigeration.html">
+   Refrigeration
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ch3/5.Liquefaction.html">
+   Liquefaction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ch3/6.Optimizing-with-Python.html">
+   Unit Operations
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Vapor-Liquid Equilibrium for Non-Ideal Gases
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ch4/1.Deriving-Useful-Thermodynamic-Relationships.html">
+   Deriving Useful Thermodynamic Properties
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ch4/2.Virial-Equations-of-State.html">
+   Volumetric Equations of State
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ch4/3.Law-of-Corresponding-States.html">
+   Law of Corresponding States and Critical Properties
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ch4/4.Thermal-Variables-from-EOS.html">
+   Computing Thermal Variables from an Equation of State
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ch4/5.Calculating-Fugacity.html">
+   Calculating Fugacity
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ch4/6.Vapor-Liquid-Equilibrium.html">
+   Vapor Liquid Equilibrium
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Thermodynamics of Mixtures
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="3.Gaseous-Mixtures.html">
+   Gaseous Mixtures
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="4.Liquid-Mixtures.html">
+   Liquid Mixtures
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ch6/5.Chemical-Equilibrium.html">
+   Chemical Equilibrium
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ch6/6.Species-Balance-Expression.html">
+   Species Balance Expression and Reaction Kinetics
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/Ch5/2.Definitions-of-Mixtures.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/Ch5/2.Definitions-of-Mixtures.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#defining-composition">
+   Defining composition:
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#property-changes-upon-mixing">
+   Property Changes Upon Mixing
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#gibbs-phase-rule">
+   Gibb’s Phase Rule:
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ideal-mixing-vs-non-ideal-mixing">
+   Ideal Mixing vs. Non-Ideal Mixing
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#notation-for-mixture-composition">
+   Notation for Mixture Composition
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#example">
+   Example
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Definitions of Mixtures</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#defining-composition">
+   Defining composition:
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#property-changes-upon-mixing">
+   Property Changes Upon Mixing
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#gibbs-phase-rule">
+   Gibb’s Phase Rule:
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ideal-mixing-vs-non-ideal-mixing">
+   Ideal Mixing vs. Non-Ideal Mixing
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#notation-for-mixture-composition">
+   Notation for Mixture Composition
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#example">
+   Example
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="definitions-of-mixtures">
+<h1>Definitions of Mixtures<a class="headerlink" href="#definitions-of-mixtures" title="Permalink to this headline">#</a></h1>
+<p>Gibb’s Phase Rule states that the degrees of freedom, <span class="math notranslate nohighlight">\(DOF\)</span>, is given as:</p>
+<div class="math notranslate nohighlight">
+\[DOF=2-P+C\]</div>
+<p>where</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(P\)</span> is the number of phases present in the system</p></li>
+<li><p><span class="math notranslate nohighlight">\(C\)</span> is the number of components</p></li>
+</ul>
+<p>Up until this point, we have considered only two cases:</p>
+<ol class="simple">
+<li><p><span class="math notranslate nohighlight">\(P=1\)</span>, <span class="math notranslate nohighlight">\(C=1\)</span>, where the <span class="math notranslate nohighlight">\(DOF=2\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(P=2\)</span>, <span class="math notranslate nohighlight">\(C=1\)</span>, where the <span class="math notranslate nohighlight">\(DOF=1\)</span></p></li>
+</ol>
+<p><strong>Mixtures</strong> are defined as phases that contain more than one component, <span class="math notranslate nohighlight">\(C&gt;1\)</span>. We can see from Gibb’s Phase rule that the number of degrees of freedom increase with the number of components such that for <span class="math notranslate nohighlight">\(N\)</span> components in a <strong>1-phase mixture</strong>, we have:</p>
+<div class="math notranslate nohighlight">
+\[DOF=1+C\]</div>
+<p>Up to this point in Thermodyanmcis, we have relied on solving problems using <em>molar properties</em> that can be described based on the state of the substance. For mixtures, we will need to develop a framework to describe <em>molar properties</em> both as a function of <em>state variables</em> but also as a function of composition.</p>
+<section id="defining-composition">
+<h2>Defining composition:<a class="headerlink" href="#defining-composition" title="Permalink to this headline">#</a></h2>
+<p>We will use the concept of the <strong>mole fraction</strong> as a starting point to discuss the composition of a mixture. The molar fraction of a species <span class="math notranslate nohighlight">\(i\)</span> in a mixture is typically denoted as <span class="math notranslate nohighlight">\(x_i\)</span> and is defined as:</p>
+<div class="math notranslate nohighlight">
+\[x_i=\dfrac{\text{moles of species i}}{\text{total number of moles}}\]</div>
+<p>which is also written as:</p>
+<div class="math notranslate nohighlight">
+\[x_i=\dfrac{N_i}{N}\]</div>
+<p>where <span class="math notranslate nohighlight">\(N=\sum_i^C N_i\)</span> is the total number of moles.</p>
+<p>To define the properties of mixtures, we must introduce a new property, the <strong>partial molar property</strong>. The partial molar property is defined for a given <span class="math notranslate nohighlight">\(T\)</span>, <span class="math notranslate nohighlight">\(P\)</span>, and composition (denoted as <span class="math notranslate nohighlight">\(\underline{x}\)</span>):</p>
+<div class="math notranslate nohighlight">
+\[\underline{\theta}\big(T,P,\underline{x}\big)=\sum_{i}^{C}x_i\bar{\theta}_i\big(T,P,\underline{x}\big)\]</div>
+<p>This deceptively simple definition, has important implications for mixtures properties that will be defined later, but an important part of the <em>partial molar property</em> is that is that it can be calculated from measurements of the <em>molar property</em> by taking the following derivative:</p>
+<div class="math notranslate nohighlight">
+\[\bar{\theta}_i=\dfrac{\partial \big( N\underline{\theta}\big)}{\partial N_i}\bigg|_{T,P,N_{j\ne i}}\]</div>
+<p>This notation is challenging, let’s do an example that addresses the physical meaning of these differentials</p>
+</section>
+<section id="property-changes-upon-mixing">
+<h2>Property Changes Upon Mixing<a class="headerlink" href="#property-changes-upon-mixing" title="Permalink to this headline">#</a></h2>
+<p>What makes the <strong>partial molar property</strong> so important is that it is defined for each species to be a function of composition and that function is unique for each species in the mixture. This is an important observation. When we form mixtures of different substances the properties of the mixtures are changes from the properties of the individual species and from what we might have expected from the linear combination of the properties of the individual components combined. A simple example of this is that the miscibility of alcohols in water decreases with increasing molecular weight. Ethanol and water are miscible, but octanol and water are almost immiscible. Mixtures of alcohols and waters therefore do not obey our intuition derived from the pure component properties.</p>
+<p>Mathematically, we say that there is a property change that occurs upon forming the mixture. We define that property change as:</p>
+<div class="math notranslate nohighlight">
+\[\underline{\theta}\big(T,P,\underline{x})=\sum_i x_i\underline{\theta_i}\big(T,P\big)+\Delta_{mix} \theta \big(T,P,\underline{x}\big)\]</div>
+<p>where</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\sum_i x_i\underline{\theta_i}\big(T,P\big)\)</span> is the linear combination of the molar properties of of the individual species in the mixture at the specified Temperature and Pressure.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\Delta_{mix} \theta \big(T,P,\underline{x}\big)\)</span> is a function that depends on the mixtures state and its composition.</p></li>
+</ul>
+<p>By taking the difference between Eq (ref 1) to Eq (ref 2), we can see the relationship between the property change upon mixing and the partial molar property is given as:</p>
+<div class="math notranslate nohighlight">
+\[0=\sum_{i}^{C}x_i\bar{\theta}_i\big(T,P,\underline{x}\big)-\sum_i x_i\underline{\theta}_i\big(T,P\big)-\Delta_{mix} \theta \big(T,P,\underline{x}\big)\]</div>
+<p>which can be rearranged to be:</p>
+<div class="math notranslate nohighlight">
+\[\Delta_{mix} \theta \big(T,P,\underline{x}\big)=\sum_{i}^{C}\big[x_i\big(\bar{\theta}_i-\underline{\theta}_i)\big]\]</div>
+</section>
+<section id="gibbs-phase-rule">
+<h2>Gibb’s Phase Rule:<a class="headerlink" href="#gibbs-phase-rule" title="Permalink to this headline">#</a></h2>
+<p>A useful property of mixtures is that because the <span class="math notranslate nohighlight">\(DOF=C+1\)</span> for one phase mixtures, we can specify up to two volumetric variables and <span class="math notranslate nohighlight">\(C-1\)</span> compositions before the number of <span class="math notranslate nohighlight">\(DOF\)</span> are specified. The implication of this statement is that the partial molar properties defined above are not fully independent of one another. As for mixtures, we generally care only about effects of <span class="math notranslate nohighlight">\(T\)</span>, <span class="math notranslate nohighlight">\(P\)</span>, and <span class="math notranslate nohighlight">\(\underline{x}\)</span> on the partial molar property.</p>
+<p>To assess generalized changes to the partial molar properties in response to changes in <span class="math notranslate nohighlight">\(T\)</span>, <span class="math notranslate nohighlight">\(P\)</span>, and <span class="math notranslate nohighlight">\(\underline{x}\)</span>, we can write:</p>
+<div class="math notranslate nohighlight">
+\[d\bar{\theta}_i=
+\bigg(\dfrac{\partial \bar{\theta}_i}{\partial T}\bigg)_{P,\underline{x}}dT + 
+\bigg(\dfrac{\partial \bar{\theta}_i}{\partial P}\bigg)_{T,\underline{x}}dP + 
+\sum_j^{C-1} \bigg(\dfrac{\partial \bar{\theta}_i}{\partial x_j}\bigg)_{P,T} dx_j \]</div>
+<p>where the summation is carried forward over <span class="math notranslate nohighlight">\(C-1\)</span> components of the mixture until the <span class="math notranslate nohighlight">\(DOF\)</span> are fully specified.</p>
+<p>We can also write for any molar property, <span class="math notranslate nohighlight">\(\underline{\theta}\)</span>, at a fixed <span class="math notranslate nohighlight">\(T\)</span> <span class="math notranslate nohighlight">\(P\)</span> that:</p>
+<div class="math notranslate nohighlight">
+\[\sum_{i}^{C}x_id\bar{\theta}_i=0\]</div>
+<p>The above can be shown to be true if we cansider that <span class="math notranslate nohighlight">\(\theta=\sum_i N_i \bar{\theta}_i\)</span>, then if we differentiate that expression, w find that:</p>
+<p><span class="math notranslate nohighlight">\(\quad d\theta=\sum_iN_i d\bar{\theta}_i + \sum_i \bar{\theta}_i dN_i\)</span></p>
+<p>We can also write that at constant <span class="math notranslate nohighlight">\(T\)</span> and <span class="math notranslate nohighlight">\(P\)</span> that:</p>
+<p><span class="math notranslate nohighlight">\(\quad d\theta=\sum_i^{C}\bigg(\dfrac{\partial \theta}{\partial N_i}\bigg)_{T,P,N_{j\ne i}}=\sum_i \bar{\theta}_i dN_i\)</span></p>
+<p>If we take the difference of the above, we arriave at the simple form of the <em>Gibbs-Duhem Equation</em> which says that at constant <span class="math notranslate nohighlight">\(T\)</span> and <span class="math notranslate nohighlight">\(P\)</span> there is a relationship that links partial molar properties together.</p>
+<div class="math notranslate nohighlight">
+\[\sum_iN_i d\bar{\theta}_i\big|_{T,P}=0\]</div>
+<p>If substitute our general expressure for the partial molar property we can further show that:</p>
+<div class="math notranslate nohighlight">
+\[\sum_{i=1}^{C}x_i \sum_{j=1}^{C-1} \bigg(\dfrac{\partial \bar{\theta}_i}{\partial x_j}\bigg)_{P,T} dx_j=0\]</div>
+<p>which for a binary mixture can be written as:</p>
+<div class="math notranslate nohighlight">
+\[x_1\bigg(\dfrac{\partial \bar{\theta}_1}{\partial x_1}\bigg)+x_2\bigg(\dfrac{\partial \bar{\theta}_2}{\partial x_1}\bigg)=0\]</div>
+<p>Using the <strong>Gibbs-Duhem Equation</strong> it can be shown that for a binary mixture, the partial molar property is given as:</p>
+<div class="math notranslate nohighlight">
+\[\bar{\theta}_1-\underline{\theta}_1=\Delta_{mix} \underline{\theta}-x_{2}\dfrac{\partial(\Delta_{mix}\underline{\theta})}{\partial x_2}\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[\bar{\theta}_2-\underline{\theta}_2=\Delta_{mix} \underline{\theta}-x_{1}\dfrac{\partial(\Delta_{mix}\underline{\theta})}{\partial x_1}\]</div>
+<p>which can be more convenient for computation in some cases.</p>
+</section>
+<section id="ideal-mixing-vs-non-ideal-mixing">
+<h2>Ideal Mixing vs. Non-Ideal Mixing<a class="headerlink" href="#ideal-mixing-vs-non-ideal-mixing" title="Permalink to this headline">#</a></h2>
+<p>An <strong>ideal mixture</strong> is one where the <span class="math notranslate nohighlight">\(\bar{\theta}_i=\underline{\theta}_i\)</span> and <span class="math notranslate nohighlight">\(\Delta\theta=0\)</span>. Ideal mixtures occur when the species being mixed have similar properties. We will see that this is most often the case when the mixture is a low pressure vapor or when the mixture is formed from two species that have similar molecular volumes and interactions (ex., mixtures of hexane and octane approximate an ideal mixture).</p>
+<p>Conversely a <strong>non-ideal mixture</strong> is one where significant heat is evolved as a consequence of the mixing process or the density of mixture is significantly modified from what would be expected of an ideal mixture. Examples of highly non-ideal mixtures are solutions of aqueous sulfuric acid. At one atmosphere, the boiling point of sulfuric acid and water mixture can change from <span class="math notranslate nohighlight">\(100^{o}C\)</span> for pure water to <span class="math notranslate nohighlight">\(w=50 wt\%\)</span> the boiling point is <span class="math notranslate nohighlight">\(130^{o}C\)</span>. At atmospheric pressures, sulfuric acid alone is a superheated vapor!</p>
+</section>
+<section id="notation-for-mixture-composition">
+<h2>Notation for Mixture Composition<a class="headerlink" href="#notation-for-mixture-composition" title="Permalink to this headline">#</a></h2>
+<p>Mixture composition is often tabulated in a variety of different ways. They are quickly summarized below:</p>
+<ol class="simple">
+<li><p>mole fraction, denoted <span class="math notranslate nohighlight">\(x_i=\dfrac{N_i}{\sum_i N_i}\)</span></p></li>
+<li><p>weight fraction, denoted <span class="math notranslate nohighlight">\(w_i=\dfrac{\text{mass of species i}}{\text{total mass of mixture}}\)</span></p></li>
+<li><p>volume fraction, denoted <span class="math notranslate nohighlight">\(\phi_i=\dfrac{\text{volume of species i}}{\text{total volume of mixture}}\)</span></p></li>
+<li><p>concentration, denoted <span class="math notranslate nohighlight">\(C_i=\dfrac{\text{mass/moles of species i}}{\text{total volume of mixture}}\)</span></p></li>
+</ol>
+<p>Each definition has its own purpose for scientific communication and taking care to understand units is critical to understanding how data is presented and for calculations in this course.</p>
+</section>
+<section id="example">
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">#</a></h2>
+<p>Lets do an example to deal with this notation. You are told that the internal energy of a binary mixture is given as:</p>
+<p><span class="math notranslate nohighlight">\(\quad \underline{U}(T,P,x_1,x_2)=x_1\underline{U}_1(T,P)+x_2\underline{U}_2(T,P)+a_0x_1x_2\)</span></p>
+<p>Compute <span class="math notranslate nohighlight">\(\bar{U}_1\)</span> and <span class="math notranslate nohighlight">\(\bar{U}_2\)</span>:</p>
+<p>First, we need to rewrite the above equation as:</p>
+<p><span class="math notranslate nohighlight">\(\quad \underline{U}(T,P,x_1,x_2)=\dfrac{N_1}{N_1+N_2}\underline{U}_1(T,P)+\dfrac{N_2}{N_1+N_2}\underline{U}_2(T,P)+a_0\dfrac{N_1N_2}{(N_1+N_2)^2}\)</span></p>
+<p>which can now be differentiated as for species 1 as:</p>
+<p><span class="math notranslate nohighlight">\(\quad \dfrac{\partial}{\partial N_1}\bigg|_{T,P,N_2}\bigg((N_1+N_2)\underline{U}(T,P,x_1,x_2)\bigg)=
+\dfrac{\partial}{\partial N_1}\bigg|_{T,P,N_2}\bigg(N_1\underline{U}_1(T,P)+N_2\underline{U}_2(T,P)+a_0\dfrac{ N_1 N_2}{N_1+N_2}\bigg)\)</span></p>
+<p>differentiating we get:</p>
+<p><span class="math notranslate nohighlight">\(\quad \bar{U}_1=\underline{U}_1(T,P)+a_0\dfrac{N_2}{N_1+N_2}-a_0\dfrac{N_1N_2}{(N_1+N_2)^2}\)</span></p>
+<p>which can be rewritten as:</p>
+<p><span class="math notranslate nohighlight">\(\quad \bar{U}_1(T,P,x_1)=\underline{U}_1(T,P)+a_0(x_2-x_1x_2)=\underline{U}_1(T,P)+a_0x_2^2\)</span></p>
+<p>or</p>
+<p><span class="math notranslate nohighlight">\(\quad \bar{U}_1(T,P,x_1)-\underline{U}_1(T,P)=a_0x_2^2\)</span></p>
+<p>It follows then that:</p>
+<p><span class="math notranslate nohighlight">\(\quad \bar{U}_2(T,P,x_2)-\underline{U}_2(T,P)=a_0x_1^2\)</span></p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./Ch5"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By J. J. Richards<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
