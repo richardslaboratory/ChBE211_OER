@@ -1,3 +1,5 @@
 phasepy
 numpy
 matplotlib
+pandas
+os
