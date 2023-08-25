@@ -111,7 +111,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../intro.html">
-                    Multiphysics Problems
+                    Forward
                 </a>
             </li>
         </ul>
@@ -287,6 +287,28 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="../Ch6/6.Species-Balance-Expression.html">
    Species Balance Expression and Reaction Kinetics
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Exercises
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Exercises/Ch1.html">
+   Exercises for Chapter 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Exercises/Ch2.html">
+   Exercises for Chapter 2
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Exercises/Ch3.html">
+   Exercises for Chapter 3
   </a>
  </li>
 </ul>
@@ -563,12 +585,12 @@ title="Print to PDF"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id10">
+    <a class="reference internal nav-link" href="#id9">
      Common Assumptions:
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id11">
+    <a class="reference internal nav-link" href="#id10">
      Simplified Mass, Energy, and Entropy Balance Expressions for Assumptions Above:
     </a>
    </li>
@@ -580,12 +602,12 @@ title="Print to PDF"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id13">
+    <a class="reference internal nav-link" href="#id12">
      Common Assumptions:
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id14">
+    <a class="reference internal nav-link" href="#id13">
      Simplified Mass, Energy, and Entropy Balance Expressions for Assumptions Above:
     </a>
    </li>
@@ -723,12 +745,12 @@ title="Print to PDF"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id10">
+    <a class="reference internal nav-link" href="#id9">
      Common Assumptions:
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id11">
+    <a class="reference internal nav-link" href="#id10">
      Simplified Mass, Energy, and Entropy Balance Expressions for Assumptions Above:
     </a>
    </li>
@@ -740,12 +762,12 @@ title="Print to PDF"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id13">
+    <a class="reference internal nav-link" href="#id12">
      Common Assumptions:
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id14">
+    <a class="reference internal nav-link" href="#id13">
      Simplified Mass, Energy, and Entropy Balance Expressions for Assumptions Above:
     </a>
    </li>
@@ -799,7 +821,7 @@ title="Print to PDF"
 <p>where (1) is the inlet pressure and (2) is the outlet pressure. You will see in unit operations that this compression ratio defines the efficiency of the compression process, but also the design of the compressor. While outside the scope of this class, common compressors will include</p>
 <ol class="simple">
 <li><p><em>adiabatic compression</em> - reversible compression where the gas is assumed to be compressed <em>adiabatically</em></p></li>
-<li><p><em>isothermal compression</em> - reversible compression where cooling is cooling is performed during compression so that the compression is <em>isothermal</em></p></li>
+<li><p><em>isothermal compression</em> - reversible compression where cooling is performed during compression so that the compression is <em>isothermal</em></p></li>
 <li><p><em>polytropic compression</em> - reversible compression where the fluid is neither <em>isothermal</em> nor <em>adiabatic</em></p></li>
 </ol>
 <section id="common-assumptions-for-an-adiabatic-compressor">
@@ -832,7 +854,7 @@ title="Print to PDF"
 </section>
 </section>
 <section id="turbines">
-<span id="unitop-turbine"></span><h2>Turbines<a class="headerlink" href="#turbines" title="Permalink to this headline">#</a></h2>
+<h2>Turbines<a class="headerlink" href="#turbines" title="Permalink to this headline">#</a></h2>
 <p>The schematic of an <em>adiabatic turbine</em> is shown below. A <em>well-designed</em> adiabatic turbine extracts work <strong>isoentropically</strong> from the decrease in pressure of a high pressure gaseous fluid.</p>
 <p>Turbines work by using a high pressure gas to turn high speed rotors that convert mechanical energy to electricity and result in the reduction of pressure and temperature of the gas at the turbine outlet. In a turbine care must be taken to ensure that the working fluid and conditions of the expansion are such that the temperature of the gas does not drop below the critical temperature, risking condensation and damage of the high speed turbines.</p>
 <a class="reference internal image-reference" href="Ch3/images/UnitOperation-Turbine.png"><img alt="Ch3/images/UnitOperation-Turbine.png" src="Ch3/images/UnitOperation-Turbine.png" style="width: 300px;" /></a>
@@ -876,10 +898,10 @@ title="Print to PDF"
 </section>
 </section>
 <section id="pumps">
-<span id="unitop-pump"></span><h2>Pumps<a class="headerlink" href="#pumps" title="Permalink to this headline">#</a></h2>
+<h2>Pumps<a class="headerlink" href="#pumps" title="Permalink to this headline">#</a></h2>
 <p>Pumps handle liquids and can be used for a variety of purposes including increasing the velocity, elevation, or the pressure of a liquid. In pumps, the density of the fluid remains unchanged due to the compression because fluids are incompressible. Therefore, the enthalpy change as a result of a pump is dominated by the pressure change of that fluid.</p>
 <a class="reference internal image-reference" href="Ch3/images/UnitOperation-Pump.png"><img alt="Ch3/images/UnitOperation-Pump.png" src="Ch3/images/UnitOperation-Pump.png" style="width: 300px;" /></a>
-<p>The efficiency of a pump is determined by how much pressure can be achieved out the outlet for a given amount of input work. While their design is complex and they are sensitive to inlet conditions, pumps routinely achieve pseudo-reversible pressure increases. A major challenge for pumps is avoiding <em>caviation</em>, which is the formation of vacuum cavities in a continuous fluid. These vacuum <em>bubbles</em> can cause damage to the pump and efficiency losses.</p>
+<p>The efficiency of a pump is determined by how much pressure can be achieved at the outlet for a given amount of input work. While their design is complex and they are sensitive to inlet conditions, pumps routinely achieve pseudo-reversible pressure increases. A major challenge for pumps is avoiding <em>cavitation</em>, which is the formation of vacuum cavities in a continuous fluid. These vacuum <em>bubbles</em> can cause damage to the pump and efficiency losses.</p>
 <section id="common-assumptions">
 <h3>Common Assumptions:<a class="headerlink" href="#common-assumptions" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
@@ -910,7 +932,6 @@ title="Print to PDF"
 <div class="alert alert-block alert-warning">
 <b>Note:</b> The design equation for pumps is almost identical to that of turbines and compressors but with the enthalpy change for the liquid depending mainly on the difference in pressure from the outlet to the inlet due to the fluids incompressible nature. 
 </div>
-<p>(unitop_throttle valve)=</p>
 </section>
 </section>
 <section id="throttle-valves">
@@ -953,7 +974,7 @@ title="Print to PDF"
 <span id="unitop-heatexchanger"></span><h2>Heat Exchangers<a class="headerlink" href="#heat-exchangers" title="Permalink to this headline">#</a></h2>
 <p>Heat exhangers use the thermal contact between two fluids/gases to change their temperature. This can be for both heating and cooling applications, but the general process is schematically represented below.</p>
 <a class="reference internal image-reference" href="Ch3/images/UnitOperation-HeatExchanger.png"><img alt="Ch3/images/UnitOperation-HeatExchanger.png" src="Ch3/images/UnitOperation-HeatExchanger.png" style="width: 400px;" /></a>
-<p>The design of heat exchangers is a paricularly important area of chemical engineering and we will only mention their role here in the context of liquefaction. You will learn much more in <em>Heat Transfer</em></p>
+<p>The design of heat exchangers is a particularly important area of chemical engineering and we will only mention their role here in the context of liquefaction. You will learn much more in <em>Heat Transfer</em></p>
 <section id="id5">
 <h3>Common Assumptions:<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
@@ -983,7 +1004,7 @@ title="Print to PDF"
 </section>
 </section>
 <section id="boilers">
-<span id="unitop-boilers"></span><h2>Boilers<a class="headerlink" href="#boilers" title="Permalink to this headline">#</a></h2>
+<h2>Boilers<a class="headerlink" href="#boilers" title="Permalink to this headline">#</a></h2>
 <p>Boilers use heat exchangers to boil a liquid fed into a flash drum. Boilers operate <em>isobarically</em> with the phase change occuring within the system and the output is typically a supersaturated vapor.</p>
 <a class="reference internal image-reference" href="Ch3/images/UnitOperation-Boiler.png"><img alt="Ch3/images/UnitOperation-Boiler.png" src="Ch3/images/UnitOperation-Boiler.png" style="width: 400px;" /></a>
 <p>The goal of boilers is to fully utilize all the input thermal energy from the heat exchanger to transform a liquid to a vapor with a desired outlet temperature and pressure.</p>
@@ -1016,20 +1037,20 @@ title="Print to PDF"
 </section>
 </section>
 <section id="condenser">
-<span id="id9"></span><h2>Condenser<a class="headerlink" href="#condenser" title="Permalink to this headline">#</a></h2>
+<span id="unitop-boilers"></span><h2>Condenser<a class="headerlink" href="#condenser" title="Permalink to this headline">#</a></h2>
 <p>Condensers use coolant to condense low pressure vapor fed into the inlet. Condensers operate <em>isobarically</em> with the phase change occuring within the system and the output is typically a saturated liquid.</p>
 <a class="reference internal image-reference" href="Ch3/images/UnitOperation-Condenser.png"><img alt="Ch3/images/UnitOperation-Condenser.png" src="Ch3/images/UnitOperation-Condenser.png" style="width: 400px;" /></a>
 <p>The goal of condensers is to efficiently extract heat from the vapor so that it can be recycled back into a closed process. Condensers typically operate using cooling water from natural streams/rivers and in larger scale power plants the heat the water gains must be exhausted to the atmosphere prior to the water being returned to the environment. To accomplish this, often the cooling water is fed into a cooling tower which sprays hot water droplets, causing them to fall. During their fall, a small fraction of the water evaporates cooling the remainder of the water in the tower to permissible temperatures.</p>
-<section id="id10">
-<h3>Common Assumptions:<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h3>
+<section id="id9">
+<h3>Common Assumptions:<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>operates at a steady state</p></li>
 <li><p>Kinetic and potential energy changes are negligible - this will only be true in this class.</p></li>
 <li><p><em>isobaric operation</em> within phase change occuring from a vapor to a liquid phase.</p></li>
 </ul>
 </section>
-<section id="id11">
-<h3>Simplified Mass, Energy, and Entropy Balance Expressions for Assumptions Above:<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h3>
+<section id="id10">
+<h3>Simplified Mass, Energy, and Entropy Balance Expressions for Assumptions Above:<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h3>
 <ol class="simple">
 <li><p>Mass Balance Simplifies to:</p></li>
 </ol>
@@ -1052,20 +1073,20 @@ title="Print to PDF"
 </section>
 </section>
 <section id="evaporators">
-<span id="id12"></span><h2>Evaporators<a class="headerlink" href="#evaporators" title="Permalink to this headline">#</a></h2>
+<span id="id11"></span><h2>Evaporators<a class="headerlink" href="#evaporators" title="Permalink to this headline">#</a></h2>
 <p>Boilers use heat to boil a liquid fed into the inlet. Boilers operate <em>isobarically</em> with the phase change occuring within the system and the output is typically a supersaturated vapor.</p>
 <a class="reference internal image-reference" href="Ch3/images/UnitOperation-Boiler.png"><img alt="Ch3/images/UnitOperation-Boiler.png" src="Ch3/images/UnitOperation-Boiler.png" style="width: 400px;" /></a>
 <p>The goal of boilers is to fully utilize all the input thermal energy to transform a liquid to a vapor with a desired outlet temperature and pressure.</p>
-<section id="id13">
-<h3>Common Assumptions:<a class="headerlink" href="#id13" title="Permalink to this headline">#</a></h3>
+<section id="id12">
+<h3>Common Assumptions:<a class="headerlink" href="#id12" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>operates at a steady state</p></li>
 <li><p>Kinetic and potential energy changes are negligible - this will only be true in this class.</p></li>
 <li><p><em>isobaric operatin</em> within phase change within the system</p></li>
 </ul>
 </section>
-<section id="id14">
-<h3>Simplified Mass, Energy, and Entropy Balance Expressions for Assumptions Above:<a class="headerlink" href="#id14" title="Permalink to this headline">#</a></h3>
+<section id="id13">
+<h3>Simplified Mass, Energy, and Entropy Balance Expressions for Assumptions Above:<a class="headerlink" href="#id13" title="Permalink to this headline">#</a></h3>
 <ol class="simple">
 <li><p>Mass Balance Simplifies to:</p></li>
 </ol>

@@ -111,7 +111,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../intro.html">
-                    Multiphysics Problems
+                    Forward
                 </a>
             </li>
         </ul>
@@ -252,6 +252,11 @@ const thebe_selector_output = ".output, .cell_output"
    Vapor Liquid Equilibrium
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ch4/7.Constructing-Property-Diagrams.html">
+   Constructing Property Diagrams
+  </a>
+ </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
@@ -259,6 +264,11 @@ const thebe_selector_output = ".output, .cell_output"
  </span>
 </p>
 <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ch5/1.Accuracy-EOS.html">
+   Calculating the Accuracy of Equations of State
+  </a>
+ </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../Ch5/3.Gaseous-Mixtures.html">
    Gaseous Mixtures
@@ -277,6 +287,28 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="../Ch6/6.Species-Balance-Expression.html">
    Species Balance Expression and Reaction Kinetics
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Exercises
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Exercises/Ch1.html">
+   Exercises for Chapter 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Exercises/Ch2.html">
+   Exercises for Chapter 2
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Exercises/Ch3.html">
+   Exercises for Chapter 3
   </a>
  </li>
 </ul>
@@ -638,18 +670,11 @@ title="Print to PDF"
 <p>In Chapter 2, we will define this more clearly, but for now it is sufficient to say that the enthalpy, <span class="math notranslate nohighlight">\(\underline{H}\)</span>, and internal energy, <span class="math notranslate nohighlight">\(\underline{U}\)</span>, are thermal variables that track the amount of heat containg within a substance.</p>
 <section id="temperature-dependence-of-the-ideal-gas-heat-capacities">
 <h3>Temperature dependence of the Ideal Gas Heat Capacities<a class="headerlink" href="#temperature-dependence-of-the-ideal-gas-heat-capacities" title="Permalink to this headline">#</a></h3>
-<p>As the equation above implies, the heat capacities of ideal gases are either constants or only functions of temperature. Emperical equations exists that allow for the estimation of an ideal gas at any temperature. One such equation is given as:</p>
+<p>As the equation above implies, the heat capacities of ideal gases are either constants or only functions of temperature. Empirical equations exist that allow for the estimation of an ideal gas at any temperature. One such equation is given as:</p>
 <p><span class="math notranslate nohighlight">\(C_{P}^{IG}=a+b T+c T^2+d T^3\)</span></p>
 <p>and by definition</p>
 <p><span class="math notranslate nohighlight">\(C_{V}^{IG}=C_P^{IG}-R\)</span></p>
-<p>Heat capacities have units of <span class="math notranslate nohighlight">\(J/(mol\cdot K\)</span>). These values are tabulated in</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">chemicals</span><span class="o">.</span><span class="n">readthedocs</span><span class="o">.</span><span class="n">io</span><span class="o">/</span>
-</pre></div>
-</div>
-</div>
-</div>
+<p>Heat capacities have units of <span class="math notranslate nohighlight">\(J/(mol\cdot K\)</span>). These values are tabulated in <a class="reference external" href="https://chemicals.readthedocs.io/">https://chemicals.readthedocs.io/</a></p>
 </section>
 </section>
 </section>
