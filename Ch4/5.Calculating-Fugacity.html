@@ -372,7 +372,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/richardslaboratory/ChBE211_OER/gh-pages?urlpath=tree/html/_sources/Ch4/5.Calculating-Fugacity.ipynb"
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/Ch4/5.Calculating-Fugacity.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -390,20 +390,20 @@ title="Launch on Binder"
       </li>
       
       <li>
-        <a href="https://colab.research.google.com/github/richardslaboratory/ChBE211_OER/blob/gh-pages/html/_sources/Ch4/5.Calculating-Fugacity.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
+        
+<button onclick="initThebeSBT()"
+  class="headerbtn headerbtn-launch-thebe"
+  data-toggle="tooltip"
 data-placement="left"
-title="Launch on Colab"
+title="Launch Thebe"
 >
   
 
 <span class="headerbtn__icon-container">
-  
-    <img src="../_static/images/logo_colab.png">
+  <i class="fas fa-play"></i>
   </span>
-<span class="headerbtn__text-container">Colab</span>
-</a>
+<span class="headerbtn__text-container">Live Code</span>
+</button>
 
       </li>
       
@@ -769,7 +769,7 @@ RT(Z-1) - RTln(Z) + \int_{0}^{P}\big(\dfrac{RT}{\underline{V}}-P\big)d\underline
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x275107da0a0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x262e025b880&gt;
 </pre></div>
 </div>
 <img alt="../_images/5.Calculating-Fugacity_7_1.png" src="../_images/5.Calculating-Fugacity_7_1.png" />
@@ -1060,39 +1060,44 @@ RT(Z-1) - RTln(Z) + \int_{0}^{P}\big(\dfrac{RT}{\underline{V}}-P\big)d\underline
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span>\<span class="n">ipykernel_14384</span>\<span class="mf">4063806749.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span>\<span class="n">ipykernel_31600</span>\<span class="mf">4063806749.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">     </span><span class="mi">48</span> 
 <span class="g g-Whitespace">     </span><span class="mi">49</span>     <span class="n">ps</span><span class="p">,</span><span class="n">vv</span><span class="p">,</span><span class="n">vl</span><span class="o">=</span><span class="n">psat</span><span class="p">(</span><span class="n">Tr</span><span class="p">)</span>
 <span class="ne">---&gt; </span><span class="mi">50</span>     <span class="n">ps</span><span class="p">,</span><span class="n">vv</span><span class="p">,</span><span class="n">vl</span><span class="o">=</span><span class="n">psat</span><span class="p">(</span><span class="n">Tr</span><span class="p">,</span>
 <span class="g g-Whitespace">     </span><span class="mi">51</span>                   <span class="n">prmin</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">ps</span><span class="o">/</span><span class="n">Pc</span><span class="o">*</span><span class="mf">0.5</span><span class="p">),</span>
 <span class="g g-Whitespace">     </span><span class="mi">52</span>                   <span class="n">prmax</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">ps</span><span class="o">/</span><span class="n">Pc</span><span class="o">*</span><span class="mf">1.5</span><span class="p">),</span>
 
-<span class="nn">~\AppData\Local\Temp\ipykernel_14384\4063806749.py</span> in <span class="ni">psat</span><span class="nt">(Tr, prmin, prmax, npts)</span>
-<span class="g g-Whitespace">     </span><span class="mi">11</span>         <span class="n">T</span><span class="o">=</span><span class="n">Tc</span><span class="o">*</span><span class="n">Tr</span>
-<span class="g g-Whitespace">     </span><span class="mi">12</span>         <span class="c1">###Find roots of cubic equation of state</span>
-<span class="ne">---&gt; </span><span class="mi">13</span>         <span class="n">roots</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">roots</span><span class="p">(</span><span class="n">Zcoeff</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="n">P</span><span class="p">))</span>
-<span class="g g-Whitespace">     </span><span class="mi">14</span> 
-<span class="g g-Whitespace">     </span><span class="mi">15</span>         <span class="c1">#roots array contains three roots</span>
+<span class="nn">~\AppData\Local\Temp\ipykernel_31600\4063806749.py</span> in <span class="ni">psat</span><span class="nt">(Tr, prmin, prmax, npts)</span>
+<span class="g g-Whitespace">     </span><span class="mi">38</span>             <span class="n">phil_</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">phil</span><span class="p">)</span><span class="c1">#calculate the fugacity coefficient for a liquid</span>
+<span class="g g-Whitespace">     </span><span class="mi">39</span>             <span class="n">P_</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">P</span><span class="o">/</span><span class="mi">10</span><span class="o">**</span><span class="mi">5</span><span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">40</span>     <span class="n">idx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argwhere</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sign</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">phiv_</span><span class="p">)</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">phil_</span><span class="p">))))</span><span class="o">.</span><span class="n">flatten</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
+<span class="g g-Whitespace">     </span><span class="mi">41</span> 
+<span class="g g-Whitespace">     </span><span class="mi">42</span>     <span class="k">return</span> <span class="n">P_</span><span class="p">[</span><span class="n">idx</span><span class="p">],</span><span class="n">vv_</span><span class="p">[</span><span class="n">idx</span><span class="p">],</span><span class="n">vl_</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
 
-<span class="nn">&lt;__array_function__ internals&gt;</span> in <span class="ni">roots</span><span class="nt">(*args, **kwargs)</span>
+<span class="nn">&lt;__array_function__ internals&gt;</span> in <span class="ni">argwhere</span><span class="nt">(*args, **kwargs)</span>
 
-<span class="nn">~\anaconda3\lib\site-packages\numpy\lib\polynomial.py</span> in <span class="ni">roots</span><span class="nt">(p)</span>
-<span class="g g-Whitespace">    </span><span class="mi">258</span> 
-<span class="g g-Whitespace">    </span><span class="mi">259</span>     <span class="c1"># tack any zeros onto the back of the array</span>
-<span class="ne">--&gt; </span><span class="mi">260</span>     <span class="n">roots</span> <span class="o">=</span> <span class="n">hstack</span><span class="p">((</span><span class="n">roots</span><span class="p">,</span> <span class="n">NX</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">trailing_zeros</span><span class="p">,</span> <span class="n">roots</span><span class="o">.</span><span class="n">dtype</span><span class="p">)))</span>
-<span class="g g-Whitespace">    </span><span class="mi">261</span>     <span class="k">return</span> <span class="n">roots</span>
-<span class="g g-Whitespace">    </span><span class="mi">262</span> 
+<span class="nn">~\anaconda3\lib\site-packages\numpy\core\numeric.py</span> in <span class="ni">argwhere</span><span class="nt">(a)</span>
+<span class="g g-Whitespace">    </span><span class="mi">616</span>         <span class="c1"># then remove the added dimension</span>
+<span class="g g-Whitespace">    </span><span class="mi">617</span>         <span class="k">return</span> <span class="n">argwhere</span><span class="p">(</span><span class="n">a</span><span class="p">)[:,:</span><span class="mi">0</span><span class="p">]</span>
+<span class="ne">--&gt; </span><span class="mi">618</span>     <span class="k">return</span> <span class="n">transpose</span><span class="p">(</span><span class="n">nonzero</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+<span class="g g-Whitespace">    </span><span class="mi">619</span> 
+<span class="g g-Whitespace">    </span><span class="mi">620</span> 
 
-<span class="nn">&lt;__array_function__ internals&gt;</span> in <span class="ni">hstack</span><span class="nt">(*args, **kwargs)</span>
+<span class="nn">&lt;__array_function__ internals&gt;</span> in <span class="ni">nonzero</span><span class="nt">(*args, **kwargs)</span>
 
-<span class="nn">~\anaconda3\lib\site-packages\numpy\core\shape_base.py</span> in <span class="ni">hstack</span><span class="nt">(tup)</span>
-<span class="g g-Whitespace">    </span><span class="mi">341</span>     <span class="c1"># As a special case, dimension 0 of 1-dimensional arrays is &quot;horizontal&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">342</span>     <span class="k">if</span> <span class="n">arrs</span> <span class="ow">and</span> <span class="n">arrs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">ndim</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">343</span>         <span class="k">return</span> <span class="n">_nx</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span><span class="n">arrs</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">344</span>     <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">345</span>         <span class="k">return</span> <span class="n">_nx</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span><span class="n">arrs</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="nn">~\anaconda3\lib\site-packages\numpy\core\fromnumeric.py</span> in <span class="ni">nonzero</span><span class="nt">(a)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1919</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1920</span>     <span class="s2">&quot;&quot;&quot;</span>
+<span class="ne">-&gt; </span><span class="mi">1921</span><span class="s2">     return _wrapfunc(a, &#39;nonzero&#39;)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1922</span><span class="s2"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">1923</span><span class="s2"> </span>
 
-<span class="nn">&lt;__array_function__ internals&gt;</span> in <span class="ni">concatenate</span><span class="nt">(*args, **kwargs)</span>
+<span class="nn">~\anaconda3\lib\site-packages\numpy\core\fromnumeric.py</span> in <span class="ni">_wrapfunc</span><span class="nt">(obj, method, *args, **kwds)</span>
+<span class="g g-Whitespace">     </span><span class="mi">55</span><span class="s2"> </span>
+<span class="g g-Whitespace">     </span><span class="mi">56</span><span class="s2">     try:</span>
+<span class="ne">---&gt; </span><span class="mi">57</span><span class="s2">         return bound(*args, **kwds)</span>
+<span class="g g-Whitespace">     </span><span class="mi">58</span><span class="s2">     except TypeError:</span>
+<span class="g g-Whitespace">     </span><span class="mi">59</span><span class="s2">         # A TypeError occurs if the object does have such a method in its</span>
 
 <span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
@@ -1119,7 +1124,7 @@ RT(Z-1) - RTln(Z) + \int_{0}^{P}\big(\dfrac{RT}{\underline{V}}-P\big)d\underline
     {
         requestKernel: true,
         binderOptions: {
-            repo: "binder-examples/jupyter-stacks-datascience",
+            repo: "executablebooks/jupyter-book",
             ref: "master",
         },
         codeMirrorConfig: {
