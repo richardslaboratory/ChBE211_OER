@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Macroscopic Balance Expressions &#8212; Introduction to Thermodynamics</title>
+    <title>Chemical Equilibrium &#8212; Introduction to Thermodynamics</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -50,12 +50,10 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Conservation of Mass" href="5.Conservation-of-Mass.html" />
-    <link rel="prev" title="Equations of State" href="3.Equations-of-State.html" />
+    <link rel="next" title="Exercises for Chapter 1" href="../Exercises/Ch1.html" />
+    <link rel="prev" title="Activity Coefficients" href="7.Activity-Coefficient-Models.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -120,29 +118,29 @@ const thebe_selector_output = ".output, .cell_output"
   Definitions and Balance Expressions
  </span>
 </p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="1.Thermodynamic-Definitions.html">
+  <a class="reference internal" href="../Ch1/1.Thermodynamic-Definitions.html">
    Thermodynamic Definitions
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="2.Real-Gas-Properties.html">
+  <a class="reference internal" href="../Ch1/2.Real-Gas-Properties.html">
    Real Gas Properties
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="3.Equations-of-State.html">
+  <a class="reference internal" href="../Ch1/3.Equations-of-State.html">
    Equations of State
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ch1/4.Balance-Expressions.html">
    Macroscopic Balance Expressions
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="5.Conservation-of-Mass.html">
+  <a class="reference internal" href="../Ch1/5.Conservation-of-Mass.html">
    Conservation of Mass
   </a>
  </li>
@@ -263,7 +261,7 @@ const thebe_selector_output = ".output, .cell_output"
   Thermodynamics of Mixtures
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../Ch5/3.Gaseous-Mixtures.html">
    Gaseous Mixtures
@@ -275,12 +273,12 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../Ch7/7.Activity-Coefficient-Models.html">
+  <a class="reference internal" href="7.Activity-Coefficient-Models.html">
    Activity Coefficients
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Ch7/8.Calculating-Mixture-Fugacity.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Chemical Equilibrium
   </a>
  </li>
@@ -365,7 +363,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/Ch1/4.Balance-Expressions.ipynb"
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/Ch7/8.Calculating-Mixture-Fugacity.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -426,7 +424,7 @@ title="Fullscreen mode"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/Ch1/4.Balance-Expressions.ipynb"
+        <a href="../_sources/Ch7/8.Calculating-Mixture-Fugacity.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -463,138 +461,23 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
-</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#topics-covered">
-   Topics Covered
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#supplemental-reading">
-   Supplemental Reading
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#system-definition">
-   System Definition
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#system">
-     System
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#pathways">
-     Pathways
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id1">
-   Macroscopic Balance Expressions
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#differential-vs-the-difference-form">
-     Differential vs. the Difference Form:
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#derivation-of-a-macroscopic-balance-expression">
-     Derivation of a Macroscopic Balance Expression:
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
-
-    </nav>
 </div>
     </div>
     <div class="article row">
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Macroscopic Balance Expressions</h1>
+                <h1>Chemical Equilibrium</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#topics-covered">
-   Topics Covered
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#supplemental-reading">
-   Supplemental Reading
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#system-definition">
-   System Definition
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#system">
-     System
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#pathways">
-     Pathways
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id1">
-   Macroscopic Balance Expressions
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#differential-vs-the-difference-form">
-     Differential vs. the Difference Form:
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#derivation-of-a-macroscopic-balance-expression">
-     Derivation of a Macroscopic Balance Expression:
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
-
-                        </nav>
                     </div>
                 </div>
             </div>
@@ -602,105 +485,8 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="macroscopic-balance-expressions">
-<h1>Macroscopic Balance Expressions<a class="headerlink" href="#macroscopic-balance-expressions" title="Permalink to this headline">#</a></h1>
-<section id="topics-covered">
-<h2>Topics Covered<a class="headerlink" href="#topics-covered" title="Permalink to this headline">#</a></h2>
-<ul class="simple">
-<li><p><a class="reference external" href="#2.1">System Definition</a></p></li>
-<li><p><a class="reference external" href="#2.2">Balance Expressions</a></p></li>
-</ul>
-</section>
-<section id="supplemental-reading">
-<h2>Supplemental Reading<a class="headerlink" href="#supplemental-reading" title="Permalink to this headline">#</a></h2>
-<ul class="simple">
-<li><p>links to OER relevant to this topic.</p></li>
-</ul>
-<p><a id="2.1"></a></p>
-</section>
-<section id="system-definition">
-<h2>System Definition<a class="headerlink" href="#system-definition" title="Permalink to this headline">#</a></h2>
-<p>In prior classes, you have learned to think about material and energy flows into and out of physical plants. You perhaps even learned how to define a system by drawing a boundary around an area that you want to analyze and track the rate at which mass and energy flow into and out of the system. The utilization of material balance expressions is increadibly important to the topic of thermodynamics and we revisit it now. Before we do, we need two more definitions.</p>
-<ol class="simple">
-<li><p>Systems:</p></li>
-<li><p>Pathways:</p></li>
-</ol>
-<section id="system">
-<h3>System<a class="headerlink" href="#system" title="Permalink to this headline">#</a></h3>
-<p>A system is a region of interest that is distinguished from its surroundings by a boundary (red dashed line) that divides a region of space from its surroundings as depicted in Figure 1.</p>
-<img alt="drawing" src="../_images/System-Definition.png" />
-<a class="bg-primary mb-1 reference internal image-reference" href="images/System-Definition.png"><img alt="System-Definition" class="bg-primary mb-1 align-center" src="images/System-Definition.png" style="width: 300px;" /></a>
-<p>Fig.1 - General definition of a system where a red, dashed boundary line divides the system from its surroundings.</p>
-<ul class="simple">
-<li><p>System: The region of space that we are interested in quantifying.</p></li>
-<li><p>Surroundings: All space outside of our system.</p></li>
-<li><p>Boundary: The dividing line between the system and its surroundings.</p></li>
-</ul>
-<p>Mass and energy flow into and out of the system by crossing the boundary from/to the surroundings.</p>
-</section>
-<section id="pathways">
-<h3>Pathways<a class="headerlink" href="#pathways" title="Permalink to this headline">#</a></h3>
-<p>A consequence of the flow of mass and energy into and out of a system is that the state of the system can change over time. How the state of the system changes in time is called the pathway and the path defines the physical, chemical, and thermal processes that the system is subjected to elicit a change of state. There are many different pathways that we will define in thermodynamics, but some important ones that we will use frequently are:</p>
-<ol class="simple">
-<li><p>isothermal pathways - constant temperature</p></li>
-<li><p>isobaric pathways - constant pressure</p></li>
-<li><p>isometric pathways - constant volume</p></li>
-<li><p>isentropic pathways - constant entropy</p></li>
-<li><p>isenthalpic pathways - constant enthalpy</p></li>
-</ol>
-<p>An important characteristics that we will see is that these pathways emerge as a natural consequences of the design of physical process that change the state of a material.</p>
-<p><a id="2.2"></a></p>
-</section>
-</section>
-<section id="id1">
-<h2>Macroscopic Balance Expressions<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
-<p>We seek an expression for the change of <span class="math notranslate nohighlight">\(\theta\)</span> as we take a path from state point (1) to state point (2):</p>
-<section id="differential-vs-the-difference-form">
-<h3>Differential vs. the Difference Form:<a class="headerlink" href="#differential-vs-the-difference-form" title="Permalink to this headline">#</a></h3>
-<p>Before we begin, a reminder of some math definitions:</p>
-<p>The rate of change of a property <span class="math notranslate nohighlight">\(\theta\)</span> with respect to time is given by the time-derivative, which in its differential form is given as:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\frac{d\theta}{dt}
-=\lim_{\Delta t\rightarrow 0} \frac{\theta(t+\Delta t)-\theta (t)}{\Delta t}
-=\begin{Bmatrix}
-\textrm{time rate of }\\
-\textrm{change of }\theta \\
-\textrm{within system}
-\end{Bmatrix} \end{split}\]</div>
-<p>If we integrate <span class="math notranslate nohighlight">\(\dfrac{d\theta(t)}{dt}\)</span>, from (1) to (2) over a time interval <span class="math notranslate nohighlight">\(t_1\)</span> to <span class="math notranslate nohighlight">\(t_2\)</span>, the total change in <span class="math notranslate nohighlight">\(\theta\)</span> within the system over that time interval is given as</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\theta(t_2)-\theta(t_1)
-=\int_{t_1}^{t_2}{\frac{d\theta(t)}{dt} dt}
-=\begin{Bmatrix}
-\textrm{net change of}\\
-\theta \textrm{ within system }\\
-\textrm{from }t_1 \textrm{ to } t_2
-\end{Bmatrix}\end{split}\]</div>
-</section>
-<section id="derivation-of-a-macroscopic-balance-expression">
-<h3>Derivation of a Macroscopic Balance Expression:<a class="headerlink" href="#derivation-of-a-macroscopic-balance-expression" title="Permalink to this headline">#</a></h3>
-<p>Now we return to the system definition to develop the appropriate balance equations as depicted in Figure 1. We envision some amount of <span class="math notranslate nohighlight">\(\theta\)</span> crossing the boundary as depicted below:</p>
-<img alt="drawing" src="../_images/Macroscopic-Balance-Expression.png" />
-<p>General definition of a system where a red, dashed boundary line divides the system from its surroundings. Within this system, we are tracking some extrinsic property, <span class="math notranslate nohighlight">\(\theta\)</span>, as a function of time.</p>
-<p>Note <span class="math notranslate nohighlight">\(\theta\)</span> can be consumed or generated within the system and pass across the system boundaries at a finite rate.</p>
-<p>We now write with the <em>differential</em> form of the balance expression:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\frac{d\theta}{dt}=\begin{Bmatrix}
-\textrm{rate of }\theta \textrm{ to}\\
-\textrm{enter/exit} \\
-\textrm{system across boundary}
-\end{Bmatrix} 
-+ \begin{Bmatrix}
-\textrm{rate of }\theta \textrm{ }\\
-\textrm{generated/consumed} \\
-\textrm{within system}
-\end{Bmatrix}
-=\sum_k \dot{\theta}_k+\dot{\theta}_{gen}\end{split}\]</div>
-<p>We now write with the <em>difference</em> form of the balance expression:</p>
-<div class="math notranslate nohighlight">
-\[\theta(t_2)-\theta(t_1)=\sum_k \int_{t_1}^{t_2}\dot{\theta}(t)_k dt+\int_{t_1}^{t_2}\dot{\theta}_{gen}dt\]</div>
-</section>
-</section>
+  <section class="tex2jax_ignore mathjax_ignore" id="chemical-equilibrium">
+<h1>Chemical Equilibrium<a class="headerlink" href="#chemical-equilibrium" title="Permalink to this headline">#</a></h1>
 </section>
 
     <script type="text/x-thebe-config">
@@ -716,7 +502,7 @@ title="Print to PDF"
         },
         kernelOptions: {
             name: "python3",
-            path: "./Ch1"
+            path: "./Ch7"
         },
         predefinedOutput: true
     }
@@ -730,17 +516,17 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="3.Equations-of-State.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="7.Activity-Coefficient-Models.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Equations of State</p>
+            <p class="prev-next-title">Activity Coefficients</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="5.Conservation-of-Mass.html" title="next page">
+    <a class='right-next' id="next-link" href="../Exercises/Ch1.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Conservation of Mass</p>
+        <p class="prev-next-title">Exercises for Chapter 1</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

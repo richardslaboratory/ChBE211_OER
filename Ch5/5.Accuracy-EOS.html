@@ -1,0 +1,685 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Calculating the Accuracy of Equations of State &#8212; Introduction to Thermodynamics</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Introduction to Thermodynamics</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Forward
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Definitions and Balance Expressions
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ch1/1.Thermodynamic-Definitions.html">
+   Thermodynamic Definitions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ch1/2.Real-Gas-Properties.html">
+   Real Gas Properties
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ch1/3.Equations-of-State.html">
+   Equations of State
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ch1/4.Balance-Expressions.html">
+   Macroscopic Balance Expressions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ch1/5.Conservation-of-Mass.html">
+   Conservation of Mass
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Foundations of Thermodynamics
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ch2/1.Conservation-of-Energy.html">
+   Conservation of Energy and the 1st Law of Thermodynamics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ch2/2.Entropy-Balance-Expression.html">
+   Balance Expression for Entropy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ch2/3.Entropy-at-0K.html">
+   Entropy at 0K
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ch2/4.Free-Energies.html">
+   Free Energy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ch2/5.Changes-of-State.html">
+   Changes of State
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Applications of Thermodynamics in Chemical Engineering
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ch3/1.Unit-Operations.html">
+   Unit Operations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ch3/2.Property-Diagram-Single-Components.html">
+   Property Database for Common Substances
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ch3/3.Heat-Engines.html">
+   Heat Engines
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ch3/4.Refrigeration.html">
+   Refrigeration
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ch3/5.Liquefaction.html">
+   Liquefaction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ch3/6.Optimizing-with-Python.html">
+   Unit Operations
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Vapor-Liquid Equilibrium for Non-Ideal Gases
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ch4/1.Deriving-Useful-Thermodynamic-Relationships.html">
+   Deriving Useful Thermodynamic Properties
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ch4/2.Virial-Equations-of-State.html">
+   Volumetric Equations of State
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ch4/3.Law-of-Corresponding-States.html">
+   Law of Corresponding States and Critical Properties
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ch4/4.Thermal-Variables-from-EOS.html">
+   Computing Thermal Variables from an Equation of State
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ch4/5.Calculating-Fugacity.html">
+   Calculating Fugacity
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ch4/6.Vapor-Liquid-Equilibrium.html">
+   Vapor Liquid Equilibrium
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ch4/7.Constructing-Property-Diagrams.html">
+   Constructing Property Diagrams
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Thermodynamics of Mixtures
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="3.Gaseous-Mixtures.html">
+   Gaseous Mixtures
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="4.Liquid-Mixtures.html">
+   Liquid Mixtures
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ch7/7.Activity-Coefficient-Models.html">
+   Activity Coefficients
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ch7/8.Calculating-Mixture-Fugacity.html">
+   Chemical Equilibrium
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Exercises
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Exercises/Ch1.html">
+   Exercises for Chapter 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Exercises/Ch2.html">
+   Exercises for Chapter 2
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Exercises/Ch3.html">
+   Exercises for Chapter 3
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/Ch5/5.Accuracy-EOS.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="initThebeSBT()"
+  class="headerbtn headerbtn-launch-thebe"
+  data-toggle="tooltip"
+data-placement="left"
+title="Launch Thebe"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="headerbtn__text-container">Live Code</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/Ch5/5.Accuracy-EOS.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Calculating the Accuracy of Equations of State</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="calculating-the-accuracy-of-equations-of-state">
+<h1>Calculating the Accuracy of Equations of State<a class="headerlink" href="#calculating-the-accuracy-of-equations-of-state" title="Permalink to this headline">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="n">T</span><span class="o">=</span><span class="mi">298</span> <span class="c1">#K</span>
+<span class="n">P</span><span class="o">=</span><span class="mi">101325</span> <span class="c1">#Pa</span>
+
+
+<span class="c1">##water properties</span>
+<span class="n">Tc1</span><span class="o">=</span><span class="mf">647.13</span> <span class="c1">#K</span>
+<span class="n">Pc1</span><span class="o">=</span><span class="mf">220.55</span> <span class="c1">#bar</span>
+<span class="n">w1</span><span class="o">=</span><span class="mf">0.344861</span>
+
+<span class="c1">##ethanol properties</span>
+<span class="n">Tc2</span><span class="o">=</span><span class="mi">514</span> <span class="c1">#Tc</span>
+<span class="n">Pc2</span><span class="o">=</span><span class="mf">63.90</span> <span class="c1">#bar</span>
+<span class="n">w2</span><span class="o">=</span><span class="mf">0.643558</span>
+
+<span class="n">R</span><span class="o">=</span><span class="mf">8.314</span><span class="c1">##j/mol*k</span>
+<span class="n">kij</span><span class="o">=-</span><span class="mf">0.11</span>
+
+<span class="k">def</span> <span class="nf">kappa</span><span class="p">(</span><span class="n">w</span><span class="p">):</span>
+        <span class="k">return</span> <span class="mf">0.37464</span><span class="o">+</span><span class="mf">1.54266</span><span class="o">*</span><span class="n">w</span><span class="o">-</span><span class="mf">0.26992</span><span class="o">*</span><span class="n">w</span><span class="o">**</span><span class="mi">2</span>
+<span class="k">def</span> <span class="nf">alpha</span><span class="p">(</span><span class="n">Tr</span><span class="p">,</span><span class="n">w</span><span class="p">):</span>    
+    <span class="k">return</span> <span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">kappa</span><span class="p">(</span><span class="n">w</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">Tr</span><span class="p">)))</span><span class="o">**</span><span class="mi">2</span>
+
+<span class="k">def</span> <span class="nf">a</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="n">Tc</span><span class="p">,</span><span class="n">Pc</span><span class="p">,</span><span class="n">w</span><span class="p">):</span>
+    <span class="n">Tr</span><span class="o">=</span><span class="n">T</span><span class="o">/</span><span class="n">Tc</span>
+    <span class="k">return</span> <span class="mf">0.45724</span><span class="o">*</span><span class="p">(</span><span class="n">R</span><span class="o">*</span><span class="n">Tc</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="n">Pc</span><span class="o">*</span><span class="n">alpha</span><span class="p">(</span><span class="n">Tr</span><span class="p">,</span><span class="n">w</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">b</span><span class="p">(</span><span class="n">Tc</span><span class="p">,</span><span class="n">Pc</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mf">0.07780</span><span class="o">*</span><span class="n">R</span><span class="o">*</span><span class="n">Tc</span><span class="o">/</span><span class="p">(</span><span class="n">Pc</span><span class="p">)</span>
+    
+
+<span class="n">a1</span><span class="o">=</span><span class="n">a</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="n">Tc1</span><span class="p">,</span><span class="n">Pc1</span><span class="o">*</span><span class="mi">10</span><span class="o">**</span><span class="mi">5</span><span class="p">,</span><span class="n">w1</span><span class="p">)</span>
+<span class="n">a2</span><span class="o">=</span><span class="n">a</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="n">Tc2</span><span class="p">,</span><span class="n">Pc2</span><span class="o">*</span><span class="mi">10</span><span class="o">**</span><span class="mi">5</span><span class="p">,</span><span class="n">w2</span><span class="p">)</span>
+<span class="n">b1</span><span class="o">=</span><span class="n">b</span><span class="p">(</span><span class="n">Tc1</span><span class="p">,</span><span class="n">Pc1</span><span class="o">*</span><span class="mi">10</span><span class="o">**</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">b2</span><span class="o">=</span><span class="n">b</span><span class="p">(</span><span class="n">Tc2</span><span class="p">,</span><span class="n">Pc2</span><span class="o">*</span><span class="mi">10</span><span class="o">**</span><span class="mi">5</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">a1</span><span class="p">,</span><span class="n">a2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">b1</span><span class="o">*</span><span class="mi">10</span><span class="o">**</span><span class="mi">5</span><span class="p">,</span><span class="n">b2</span><span class="o">*</span><span class="mi">10</span><span class="o">**</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.9849011292292787 2.206916461704518
+1.897903333466334 5.202976663536776
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">amix</span><span class="p">(</span><span class="n">x1</span><span class="p">):</span>
+    <span class="n">x2</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">x1</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">a1</span><span class="o">*</span><span class="n">x1</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="n">a2</span><span class="o">*</span><span class="n">x2</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="n">x1</span><span class="o">*</span><span class="n">x2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">a1</span><span class="o">*</span><span class="n">a2</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">kij</span><span class="p">)</span>
+    
+<span class="k">def</span> <span class="nf">bmix</span><span class="p">(</span><span class="n">x1</span><span class="p">):</span>
+    <span class="n">x2</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">x1</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">b1</span><span class="o">*</span><span class="n">x1</span><span class="o">+</span><span class="n">b2</span><span class="o">*</span><span class="n">x2</span>
+
+<span class="n">x1</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">amix_</span><span class="o">=</span><span class="n">amix</span><span class="p">(</span><span class="n">x1</span><span class="p">)</span>
+<span class="n">bmix_</span><span class="o">=</span><span class="n">bmix</span><span class="p">(</span><span class="n">x1</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">amix_</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">bmix_</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x22d950335b0&gt;]
+</pre></div>
+</div>
+<img alt="../_images/5.Accuracy-EOS_2_1.png" src="../_images/5.Accuracy-EOS_2_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">Zcoeff</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="n">P</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">):</span>
+    <span class="n">A</span><span class="o">=</span><span class="n">a</span><span class="o">*</span><span class="n">P</span><span class="o">/</span><span class="p">(</span><span class="n">R</span><span class="o">*</span><span class="n">T</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
+    <span class="n">B</span><span class="o">=</span><span class="n">b</span><span class="o">*</span><span class="n">P</span><span class="o">/</span><span class="p">(</span><span class="n">R</span><span class="o">*</span><span class="n">T</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span>
+            <span class="o">-</span><span class="mi">1</span><span class="o">+</span><span class="n">B</span><span class="p">,</span>
+            <span class="n">A</span><span class="o">-</span><span class="mi">3</span><span class="o">*</span><span class="n">B</span><span class="o">**</span><span class="mi">2</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">B</span><span class="p">,</span>
+            <span class="o">-</span><span class="n">A</span><span class="o">*</span><span class="n">B</span><span class="o">+</span><span class="n">B</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="n">B</span><span class="o">**</span><span class="mi">3</span><span class="p">]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<span class="n">x1_</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mf">0.1</span><span class="p">,</span><span class="mf">0.2</span><span class="p">,</span><span class="mf">0.3</span><span class="p">,</span><span class="mf">0.4</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.6</span><span class="p">,</span><span class="mf">0.70</span><span class="p">,</span><span class="mf">0.80</span><span class="p">,</span><span class="mf">0.90</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">V_</span><span class="o">=</span><span class="p">[]</span>
+<span class="k">for</span> <span class="n">x1</span> <span class="ow">in</span> <span class="n">x1_</span><span class="p">:</span>
+    
+    <span class="n">roots</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">roots</span><span class="p">(</span><span class="n">Zcoeff</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="n">P</span><span class="p">,</span><span class="n">amix</span><span class="p">(</span><span class="n">x1</span><span class="p">),</span><span class="n">bmix</span><span class="p">(</span><span class="n">x1</span><span class="p">)))</span>
+    
+    <span class="n">V_</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">roots</span><span class="p">[</span><span class="n">roots</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">])</span><span class="o">*</span><span class="n">R</span><span class="o">*</span><span class="mi">298</span><span class="o">/</span><span class="p">(</span><span class="mf">1e5</span><span class="p">))</span>
+    
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x1_</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">V_</span><span class="p">)</span><span class="o">*</span><span class="mi">10</span><span class="o">**</span><span class="mi">6</span><span class="p">,</span><span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$x_1$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\underbar</span><span class="si">{V}</span><span class="s1">$ $(cm^3/mol)$&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;$\\underbar{V}$ $(cm^3/mol)$&#39;)
+</pre></div>
+</div>
+<img alt="../_images/5.Accuracy-EOS_3_1.png" src="../_images/5.Accuracy-EOS_3_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">MW1</span><span class="o">=</span><span class="mi">18</span> <span class="c1">#g/mol</span>
+<span class="n">MW2</span><span class="o">=</span><span class="mf">46.07</span> <span class="c1">#g/mol</span>
+
+<span class="n">x1_exp</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mf">0.1162</span><span class="p">,</span><span class="mf">0.2221</span><span class="p">,</span><span class="mf">0.2841</span><span class="p">,</span><span class="mf">0.3729</span><span class="p">,</span><span class="mf">0.4186</span><span class="p">,</span><span class="mf">0.5266</span><span class="p">,</span><span class="mf">0.6119</span><span class="p">,</span><span class="mf">0.7220</span><span class="p">,</span><span class="mf">0.8509</span><span class="p">,</span><span class="mf">0.9489</span><span class="p">,</span><span class="mf">1.0</span><span class="p">])</span>
+<span class="n">rho_exp</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">([</span><span class="mf">786.846</span><span class="p">,</span><span class="mf">806.655</span><span class="p">,</span><span class="mf">825.959</span><span class="p">,</span><span class="mf">837.504</span><span class="p">,</span><span class="mf">855.031</span><span class="p">,</span><span class="mf">864.245</span><span class="p">,</span><span class="mf">887.222</span><span class="p">,</span><span class="mf">905.376</span><span class="p">,</span><span class="mf">929.537</span><span class="p">,</span><span class="mf">957.522</span><span class="p">,</span><span class="mf">981.906</span><span class="p">,</span><span class="mf">997.047</span><span class="p">])</span> <span class="c1">#kg/m^3</span>
+<span class="n">rho_mod</span><span class="o">=</span><span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">x1</span> <span class="ow">in</span> <span class="n">x1_exp</span><span class="p">:</span>
+    
+    <span class="n">x2</span><span class="o">=</span><span class="mi">1</span><span class="o">-</span><span class="n">x1</span>
+    <span class="n">MW</span><span class="o">=</span><span class="n">x1</span><span class="o">*</span><span class="n">MW1</span><span class="o">+</span><span class="n">x2</span><span class="o">*</span><span class="n">MW2</span>
+    <span class="n">roots</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">roots</span><span class="p">(</span><span class="n">Zcoeff</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="n">P</span><span class="p">,</span><span class="n">amix</span><span class="p">(</span><span class="n">x1</span><span class="p">),</span><span class="n">bmix</span><span class="p">(</span><span class="n">x1</span><span class="p">)))</span>
+    <span class="n">V</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">roots</span><span class="p">[</span><span class="n">roots</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">])</span><span class="o">*</span><span class="n">R</span><span class="o">*</span><span class="n">T</span><span class="o">/</span><span class="p">(</span><span class="n">P</span><span class="p">)</span>
+    <span class="n">rho_mod</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">MW</span><span class="o">/</span><span class="n">V</span><span class="o">/</span><span class="mi">10</span><span class="o">**</span><span class="mi">6</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x1_exp</span><span class="p">,</span><span class="n">rho_exp</span><span class="p">,</span><span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x1_exp</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">rho_mod</span><span class="p">)</span><span class="o">*</span><span class="mi">1000</span><span class="p">,</span><span class="s1">&#39;-k&#39;</span><span class="p">)</span>
+
+    
+
+    
+    
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x22d9556c430&gt;]
+</pre></div>
+</div>
+<img alt="../_images/5.Accuracy-EOS_5_1.png" src="../_images/5.Accuracy-EOS_5_1.png" />
+</div>
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "executablebooks/jupyter-book",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./Ch5"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By J. J. Richards<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
