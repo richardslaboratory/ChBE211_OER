@@ -1,0 +1,647 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Changes of State &#8212; Introduction to Thermodynamics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=bd9e20870c6007c4c509"></script>
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Ch2/6.Changes-of-State';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Unit Operations" href="../Ch3/1.Unit-Operations.html" />
+    <link rel="prev" title="Free Energy" href="5.Free-Energies.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <header>
+  
+    <div class="bd-header navbar navbar-expand-lg bd-navbar">
+    </div>
+  
+  </header>
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Introduction to Thermodynamics - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Introduction to Thermodynamics - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Foreword
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Definitions and Balance Expressions</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Ch1/1.Thermodynamic-Definitions.html">Thermodynamic Definitions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch1/2.Real-Gas-Properties.html">Real Gas Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch1/3.Equations-of-State.html">Equations of State</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch1/4.Balance-Expressions.html">Macroscopic Balance Expressions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch1/5.Conservation-of-Mass.html">Conservation of Mass</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Foundations of Thermodynamics</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="1.Conservation-of-Energy.html">Conservation of Energy and the 1st Law of Thermodynamics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2.Expansion-of-a-Gas.html">Expansion of a Gas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3.Entropy-Balance-Expression.html">Balance Expression for Entropy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4.Entropy-at-0K.html">Entropy at 0K</a></li>
+<li class="toctree-l1"><a class="reference internal" href="5.Free-Energies.html">Free Energy</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Changes of State</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Applications of Thermodynamics in Chemical Engineering</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Ch3/1.Unit-Operations.html">Unit Operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch3/2.Property-Diagram-Single-Components.html">Property Database for Common Substances</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Ch3/3.Heat-Engines.html">Heat Engines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch3/4.Refrigeration.html">Refrigeration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch3/5.Liquefaction.html">Liquefaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch3/6.Optimizing-with-Python.html">Unit Operations</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Vapor-Liquid Equilibrium for Non-Ideal Gases</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Ch4/1.Deriving-Useful-Thermodynamic-Relationships.html">Deriving Useful Thermodynamic Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch4/2.Virial-Equations-of-State.html">Volumetric Equations of State</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch4/3.Law-of-Corresponding-States.html">Law of Corresponding States and Critical Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch4/4.Thermal-Variables-from-EOS.html">Computing Thermal Variables from an Equation of State</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch4/5.Calculating-Fugacity.html">Calculating Fugacity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch4/6.Vapor-Liquid-Equilibrium.html">Vapor Liquid Equilibrium</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch4/7.Constructing-Property-Diagrams.html">Constructing Property Diagrams</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Thermodynamics of Mixtures</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Ch6/1.Species-Balance-Expression.html">Species Balance Expression and Reaction Kinetics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch5/3.Gaseous-Mixtures.html">Gaseous Mixtures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch5/4.Liquid-Mixtures.html">Liquid Mixtures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch5/5.Accuracy-EOS.html">Calculating the Accuracy of Equations of State</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch6/6.Chemical-Equilibrium.html">Chemical Equilibrium</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch7/7.Activity-Coefficient-Models.html">Activity Coefficients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch7/8.Calculating-Mixture-Fugacity.html">Calculating Fugacity of Mixtures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch7/9.Mixture-Equilibrium.html">Equilibrium of Mixtures</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Exercises</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Exercises/Ch1.html">Exercises for Chapter 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Exercises/Ch2.html">Exercises for Chapter 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Exercises/Ch3.html">Exercises for Chapter 3</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/Ch2/6.Changes-of-State.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Changes of State</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#differential-entropy-change-of-state">Differential entropy change of state</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#illustration">Illustration</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simplify-the-mass-energy-and-entropy-balance-expression">Simplify the mass, energy, and entropy balance expression</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#identify-the-state-information-necessary-to-solve-the-problem">Identify the state information necessary to solve the problem</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solve-for-uknown-temperature-at-outlet">Solve for uknown temperature at outlet.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-the-work">Finding the work</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-insight-from-this-illustration">Key Insight from this Illustration</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="changes-of-state">
+<h1>Changes of State<a class="headerlink" href="#changes-of-state" title="Permalink to this heading">#</a></h1>
+<p>The <strong>state</strong> of a system is described by its <strong>state properties</strong>. In thermodynamics, we generally consider a system to be defined by a region of space that is separated from its surroundings by a boundary. We have learned that mass and energy can flow across that boundary to change the state of the system and internal gradients within the system can result in state changes via the accumulation of entropy.</p>
+<p>The generation is of central importance to the study of thermodynamics, though in this class we focus mainly on reversible processes (i.e. processes where <span class="math notranslate nohighlight">\(\dot{S}_{gen}=0\)</span>). In practice all state changes effected by exchange of mass and energy lead to <span class="math notranslate nohighlight">\(\dot{S}_{gen}&gt;0\)</span> as a direct consequence of the formation of concentration, thermal, and velocity gradients internal to the system the lead to dissipation. The direct effect is that irreversible processes produce less heat and require more energy than their equivelant <em>reversible</em> counterpart.</p>
+<p>A <strong>central assumption</strong> of state changes is that the change of state is <em>path independent</em>. Meaning for any physical process, if we desire to describe the change of state from point <span class="math notranslate nohighlight">\(A\)</span> to point <span class="math notranslate nohighlight">\(B\)</span>, we can choose the path that is most convenient for computation and not be constrained to the path or device being analyzed. This <strong>central fact</strong> allows us to simplify calculations in two important ways.</p>
+<ol class="arabic simple">
+<li><p>To evaluate changes in state, we can choose a path such that:</p>
+<ul class="simple">
+<li><p>There is no shaft work</p></li>
+<li><p>There is only one mass flow</p></li>
+<li><p>The mass and heat flows at a common temperature</p></li>
+<li><p>The state change occurs reversibly</p></li>
+</ul>
+</li>
+<li><p>Using (1), we can use the change of state from <span class="math notranslate nohighlight">\(A\)</span> to <span class="math notranslate nohighlight">\(B\)</span> to compute the heat and mass flows for the real process. While state variables are path independent, the heat and mass flows are not and must be described for the path or device being analyzed</p></li>
+</ol>
+<p>What follows is the derivation of the equation that describes the change in state of a <strong>closed</strong> and <strong>open</strong> system that adheres to the criteria in (1). We will see below the power of this approach at simplifying computations.</p>
+<section id="differential-entropy-change-of-state">
+<h2>Differential entropy change of state<a class="headerlink" href="#differential-entropy-change-of-state" title="Permalink to this heading">#</a></h2>
+<p>Subject to the constraints of (1), we can write the mass energy and entropy balance expressions as follows:</p>
+<p>(1) <span class="math notranslate nohighlight">\(\dfrac{dM}{dt}=\dot{M}\)</span></p>
+<p>(2) <span class="math notranslate nohighlight">\(\dfrac{dU}{dt}=\dot{M}\hat{H}+\dot{Q}-P\dfrac{dV}{dt}\)</span></p>
+<p>(3) <span class="math notranslate nohighlight">\(\dfrac{dS}{dt}=\dot{M}\hat{S}+\dfrac{\dot{Q}}{T}\)</span></p>
+<p>If we acknowledge that the change in state from point <span class="math notranslate nohighlight">\(A\)</span> to <span class="math notranslate nohighlight">\(B\)</span> occurs over a finite interval of time <span class="math notranslate nohighlight">\(dt\)</span>, then the equations above can be rewritten as:</p>
+<p>(1) <span class="math notranslate nohighlight">\(dM=\dot{M}dt\)</span></p>
+<p>(2) <span class="math notranslate nohighlight">\(dU=\dot{M}dt\hat{H}+\dot{Q}dt-PdV\)</span></p>
+<p>(3) <span class="math notranslate nohighlight">\(dS=\dot{M}dt\hat{S}+\dfrac{\dot{Q}dt}{T}\)</span></p>
+<p>Combining the three equations is accomplished by substituting (1) for <span class="math notranslate nohighlight">\(\dot{M}dt=dM\)</span> in (2) and (3), and <span class="math notranslate nohighlight">\(\dot{Q}dt=TdS-\dot{M}dtT\hat{S}\)</span>. The result is:</p>
+<p>(2) <span class="math notranslate nohighlight">\(dU=dM\hat{H}+TdS-dM T\hat{S}-PdV\)</span></p>
+<p>Recognizing the common <span class="math notranslate nohighlight">\(dM\)</span> term above, we can employ the definition of the Gibb’s Free Energy of a System <span class="math notranslate nohighlight">\(G=H-TS\)</span> to regroup terms and simplify the expression further</p>
+<p>(2) <span class="math notranslate nohighlight">\(dU=TdS-PdV + \hat{G}dM\)</span></p>
+<p>What has this accomplished? Well if we examine the form of this equation, we can describe changes in internal energy and volume of a system in terms of changes in entropy and mass in a way that depends only on the path chosen.</p>
+<p>This equation simplifies further for a <em>closed system</em> as:</p>
+<p><span class="math notranslate nohighlight">\(dU=TdS-PdV\)</span></p>
+<p>which on a molar basis is written as:</p>
+<p><span class="math notranslate nohighlight">\(d\underline{U}=Td\underline{S}-Pd\underline{V}\)</span></p>
+<p>This final form is powerful. We can use it to calculate changes in state even for systems where the flow is open.</p>
+</section>
+<section id="illustration">
+<h2>Illustration<a class="headerlink" href="#illustration" title="Permalink to this heading">#</a></h2>
+<p>An ideal gas with a constant heat capacity <span class="math notranslate nohighlight">\(C_p=29.3\)</span> <span class="math notranslate nohighlight">\(J/(mol\cdot K)\)</span> is compressed in a well-designed compressor. The flow rate is <span class="math notranslate nohighlight">\(2.5\)</span> <span class="math notranslate nohighlight">\(mol/s\)</span> and the input temperature and pressure are <span class="math notranslate nohighlight">\(1\)</span> <span class="math notranslate nohighlight">\(bar\)</span> and <span class="math notranslate nohighlight">\(290\)</span> <span class="math notranslate nohighlight">\(K\)</span> respectively. The output pressure is <span class="math notranslate nohighlight">\(10\)</span> <span class="math notranslate nohighlight">\(bar\)</span>. Solve for the work and the temperature of the output stream.</p>
+<section id="simplify-the-mass-energy-and-entropy-balance-expression">
+<h3>Simplify the mass, energy, and entropy balance expression<a class="headerlink" href="#simplify-the-mass-energy-and-entropy-balance-expression" title="Permalink to this heading">#</a></h3>
+<p>As we have seen before, simplification of the mass, energy, and entropy balance expressions for this scenario yields:</p>
+<ul class="simple">
+<li><p>From the mass + energy balance, we get: <span class="math notranslate nohighlight">\(\dot{W}=\dot{N}\big(\underline{H}_2-\underline{H}_1\big)\)</span> - note we have assumed steady state, reversibility, and adiabatic.</p></li>
+<li><p>From the mass + entropy balance, we get: <span class="math notranslate nohighlight">\(\underline{S_2}=\underline{S_1}\)</span></p></li>
+</ul>
+</section>
+<section id="identify-the-state-information-necessary-to-solve-the-problem">
+<h3>Identify the state information necessary to solve the problem<a class="headerlink" href="#identify-the-state-information-necessary-to-solve-the-problem" title="Permalink to this heading">#</a></h3>
+<p>For an ideal gas, we know that we can use the relationship <span class="math notranslate nohighlight">\(\underline{H}(T)-\underline{H}(T_r)=C_P\big(T-T_R\big)\)</span> to show that <span class="math notranslate nohighlight">\(\dot{W}=\dot{N}C_P \big(T-T_R\big)\)</span>. Therefore, we need to find <span class="math notranslate nohighlight">\(T_2\)</span> to solve this equation.</p>
+</section>
+<section id="solve-for-uknown-temperature-at-outlet">
+<h3>Solve for uknown temperature at outlet.<a class="headerlink" href="#solve-for-uknown-temperature-at-outlet" title="Permalink to this heading">#</a></h3>
+<p>In order to find <span class="math notranslate nohighlight">\(T_2\)</span>, we will use the expression,</p>
+<p><span class="math notranslate nohighlight">\(d\underline{U}=Td\underline{S}-Pd\underline{V}\)</span>.</p>
+<p>Then we substutite using our known gas properties <span class="math notranslate nohighlight">\(d\underline{U}=C_V dT\)</span> to arrive at</p>
+<p><span class="math notranslate nohighlight">\(C_V dT=Td\underline{S}-Pd\underline{V}\)</span>.</p>
+<p>Since both the pressue and temperature of the gas are changing due to the compression but the entropy is not, it is convenient to isolate the <span class="math notranslate nohighlight">\(d\underline{S}\)</span> term on the R.H.S, which should be 0. We do this by dividing both sides of the equation by <span class="math notranslate nohighlight">\(T\)</span> and rearraging to yiled</p>
+<p><span class="math notranslate nohighlight">\(\dfrac{C_V}{T}dT+\dfrac{P}{T}d\underline{V}=0\)</span>.</p>
+<p>Finally, we can use our known ideal gas properties to write that <span class="math notranslate nohighlight">\(P=\dfrac{RT}{\underline{V}}\)</span> to further simplify as</p>
+<p><span class="math notranslate nohighlight">\(\dfrac{C_V}{T}dT+\dfrac{R}{\underline{V}}d\underline{V}=0\)</span>.</p>
+<p>The above expression can be directly integrated to obtain the following expression:</p>
+<p><span class="math notranslate nohighlight">\(C_V ln\bigg(\dfrac{T_2}{T_1}\bigg)+R ln\bigg(\dfrac{\underline{V}_2}{\underline{V}_1}\bigg)=0\)</span></p>
+<p>or using the properties of logs, we find:</p>
+<p><span class="math notranslate nohighlight">\(\bigg(\dfrac{T_2}{T_1}\bigg)^{C_V/R}=\dfrac{\underline{V}_1}{\underline{V}_2}\)</span></p>
+<p>At this point, we can use the gas law to substitute for <span class="math notranslate nohighlight">\(\underline{V}=\dfrac{RT}{P}\)</span> and write</p>
+<p><span class="math notranslate nohighlight">\(\bigg(\dfrac{T_2}{T_1}\bigg)^{C_V/R}=\dfrac{T_1 P_2}{T_2 P_1}\)</span></p>
+<p>or</p>
+<p><span class="math notranslate nohighlight">\(\bigg(\dfrac{T_2}{T_1}\bigg)^{C_V/R+1}=\dfrac{P_2}{P_1}\)</span></p>
+<p>Finally, we have an expression we can use to find the temperature <span class="math notranslate nohighlight">\(T_2=554 K\)</span>.</p>
+</section>
+<section id="finding-the-work">
+<h3>Finding the work<a class="headerlink" href="#finding-the-work" title="Permalink to this heading">#</a></h3>
+<p>The work can be easily computed now that the temperature is known and <span class="math notranslate nohighlight">\(\dot{W}=19.6 kW\)</span></p>
+</section>
+<section id="key-insight-from-this-illustration">
+<h3>Key Insight from this Illustration<a class="headerlink" href="#key-insight-from-this-illustration" title="Permalink to this heading">#</a></h3>
+<p>The elegant approach to solving this problem recognized that a change in state is <strong>path independent</strong>, and therefore, we can select the path that is most convenient to compute the property change. In this case, we used the change in internal energy of an ideal gas at constant entropy to compute the ratio between the pressures and the temperatures. We then utilized the properties that we determined to plug back into our mass, energy, and entropy balance to solve. The path independence of thermodynamic state variables is one of most powerful concepts in this class.</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "executablebooks/jupyter-book",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./Ch2"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="5.Free-Energies.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Free Energy</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../Ch3/1.Unit-Operations.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Unit Operations</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#differential-entropy-change-of-state">Differential entropy change of state</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#illustration">Illustration</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simplify-the-mass-energy-and-entropy-balance-expression">Simplify the mass, energy, and entropy balance expression</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#identify-the-state-information-necessary-to-solve-the-problem">Identify the state information necessary to solve the problem</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solve-for-uknown-temperature-at-outlet">Solve for uknown temperature at outlet.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-the-work">Finding the work</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-insight-from-this-illustration">Key Insight from this Illustration</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By J. J. Richards
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

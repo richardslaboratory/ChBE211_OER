@@ -1,48 +1,60 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" data-content_root="" >
+
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
     <title>Calculating Fugacity &#8212; Introduction to Thermodynamics</title>
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../_static/styles/theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=bd9e20870c6007c4c509"></script>
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -50,605 +62,387 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Ch4/5.Calculating-Fugacity';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Vapor Liquid Equilibrium" href="6.Vapor-Liquid-Equilibrium.html" />
     <link rel="prev" title="Computing Thermal Variables from an Equation of State" href="4.Thermal-Variables-from-EOS.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
 
-    
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
 
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../index.html">
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <header>
+  
+    <div class="bd-header navbar navbar-expand-lg bd-navbar">
+    </div>
+  
+  </header>
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      
+      
         
       
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
       
-      <img src="../_static/logo.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">Introduction to Thermodynamics</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Introduction to Thermodynamics - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Introduction to Thermodynamics - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../intro.html">
-                    Forward
+                    Foreword
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Definitions and Balance Expressions
- </span>
-</p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Definitions and Balance Expressions</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../Ch1/1.Thermodynamic-Definitions.html">
-   Thermodynamic Definitions
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Ch1/2.Real-Gas-Properties.html">
-   Real Gas Properties
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Ch1/3.Equations-of-State.html">
-   Equations of State
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Ch1/4.Balance-Expressions.html">
-   Macroscopic Balance Expressions
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Ch1/5.Conservation-of-Mass.html">
-   Conservation of Mass
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch1/1.Thermodynamic-Definitions.html">Thermodynamic Definitions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch1/2.Real-Gas-Properties.html">Real Gas Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch1/3.Equations-of-State.html">Equations of State</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch1/4.Balance-Expressions.html">Macroscopic Balance Expressions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch1/5.Conservation-of-Mass.html">Conservation of Mass</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Foundations of Thermodynamics
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Foundations of Thermodynamics</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../Ch2/1.Conservation-of-Energy.html">
-   Conservation of Energy and the 1st Law of Thermodynamics
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Ch2/2.Entropy-Balance-Expression.html">
-   Balance Expression for Entropy
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Ch2/3.Entropy-at-0K.html">
-   Entropy at 0K
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Ch2/4.Free-Energies.html">
-   Free Energy
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Ch2/5.Changes-of-State.html">
-   Changes of State
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch2/1.Conservation-of-Energy.html">Conservation of Energy and the 1st Law of Thermodynamics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch2/2.Expansion-of-a-Gas.html">Expansion of a Gas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch2/3.Entropy-Balance-Expression.html">Balance Expression for Entropy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch2/4.Entropy-at-0K.html">Entropy at 0K</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch2/5.Free-Energies.html">Free Energy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch2/6.Changes-of-State.html">Changes of State</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Applications of Thermodynamics in Chemical Engineering
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Applications of Thermodynamics in Chemical Engineering</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../Ch3/1.Unit-Operations.html">
-   Unit Operations
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Ch3/2.Property-Diagram-Single-Components.html">
-   Property Database for Common Substances
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Ch3/3.Heat-Engines.html">
-   Heat Engines
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Ch3/4.Refrigeration.html">
-   Refrigeration
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Ch3/5.Liquefaction.html">
-   Liquefaction
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Ch3/6.Optimizing-with-Python.html">
-   Unit Operations
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch3/1.Unit-Operations.html">Unit Operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch3/2.Property-Diagram-Single-Components.html">Property Database for Common Substances</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Ch3/3.Heat-Engines.html">Heat Engines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch3/4.Refrigeration.html">Refrigeration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch3/5.Liquefaction.html">Liquefaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch3/6.Optimizing-with-Python.html">Unit Operations</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Vapor-Liquid Equilibrium for Non-Ideal Gases
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Vapor-Liquid Equilibrium for Non-Ideal Gases</span></p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="1.Deriving-Useful-Thermodynamic-Relationships.html">
-   Deriving Useful Thermodynamic Properties
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="2.Virial-Equations-of-State.html">
-   Volumetric Equations of State
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="3.Law-of-Corresponding-States.html">
-   Law of Corresponding States and Critical Properties
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="4.Thermal-Variables-from-EOS.html">
-   Computing Thermal Variables from an Equation of State
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Calculating Fugacity
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="6.Vapor-Liquid-Equilibrium.html">
-   Vapor Liquid Equilibrium
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="7.Constructing-Property-Diagrams.html">
-   Constructing Property Diagrams
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="1.Deriving-Useful-Thermodynamic-Relationships.html">Deriving Useful Thermodynamic Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2.Virial-Equations-of-State.html">Volumetric Equations of State</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3.Law-of-Corresponding-States.html">Law of Corresponding States and Critical Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4.Thermal-Variables-from-EOS.html">Computing Thermal Variables from an Equation of State</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Calculating Fugacity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="6.Vapor-Liquid-Equilibrium.html">Vapor Liquid Equilibrium</a></li>
+<li class="toctree-l1"><a class="reference internal" href="7.Constructing-Property-Diagrams.html">Constructing Property Diagrams</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Thermodynamics of Mixtures
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Thermodynamics of Mixtures</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../Ch5/1.Accuracy-EOS.html">
-   Calculating the Accuracy of Equations of State
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Ch5/3.Gaseous-Mixtures.html">
-   Gaseous Mixtures
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Ch5/4.Liquid-Mixtures.html">
-   Liquid Mixtures
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Ch6/5.Chemical-Equilibrium.html">
-   Chemical Equilibrium
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Ch6/6.Species-Balance-Expression.html">
-   Species Balance Expression and Reaction Kinetics
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch6/1.Species-Balance-Expression.html">Species Balance Expression and Reaction Kinetics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch5/3.Gaseous-Mixtures.html">Gaseous Mixtures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch5/4.Liquid-Mixtures.html">Liquid Mixtures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch5/5.Accuracy-EOS.html">Calculating the Accuracy of Equations of State</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch6/6.Chemical-Equilibrium.html">Chemical Equilibrium</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch7/7.Activity-Coefficient-Models.html">Activity Coefficients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch7/8.Calculating-Mixture-Fugacity.html">Calculating Fugacity of Mixtures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch7/9.Mixture-Equilibrium.html">Equilibrium of Mixtures</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Exercises
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Exercises</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../Exercises/Ch1.html">
-   Exercises for Chapter 1
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Exercises/Ch2.html">
-   Exercises for Chapter 2
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Exercises/Ch3.html">
-   Exercises for Chapter 3
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../Exercises/Ch1.html">Exercises for Chapter 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Exercises/Ch2.html">Exercises for Chapter 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Exercises/Ch3.html">Exercises for Chapter 3</a></li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
-</div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
-          
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
 
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
 <div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
 
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
   
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
     </div>
-    <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/Ch4/5.Calculating-Fugacity.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
->
-  
-
-<span class="headerbtn__icon-container">
-  
-    <img src="../_static/images/logo_binder.svg">
-  </span>
-<span class="headerbtn__text-container">Binder</span>
-</a>
-
-      </li>
+  <ul class="dropdown-menu">
+      
+      
       
       <li>
-        
 <button onclick="initThebeSBT()"
-  class="headerbtn headerbtn-launch-thebe"
-  data-toggle="tooltip"
-data-placement="left"
-title="Launch Thebe"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   <i class="fas fa-play"></i>
   </span>
-<span class="headerbtn__text-container">Live Code</span>
+<span class="btn__text-container">Live Code</span>
 </button>
-
-      </li>
+</li>
       
-    </ul>
-  </div>
+  </ul>
 </div>
 
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/Ch4/5.Calculating-Fugacity.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="../_sources/Ch4/5.Calculating-Fugacity.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
+`);
+</script>
 
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
 
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
 </label>
-
+</div></div>
+      
     </div>
+  
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#definition-of-fugacity">
-   Definition of Fugacity
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#vapor-liquid-equilibrium-with-fugacity">
-   Vapor Liquid Equilibrium with fugacity
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#virial-equation-of-state">
-     Virial Equation of State
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#van-der-waals-equation-of-state">
-     Van Der Waal’s Equation of State
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#constructing-vle-envelope-with-equation-of-state">
-   Constructing VLE Envelope with Equation of State
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#first-lets-specify-some-real-gas-properties">
-     First lets specify some real gas properties
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#next-lets-calculate-an-isotherm-below-t-c">
-     Next lets calculate an isotherm below
-     <span class="math notranslate nohighlight">
-      \(T_c\)
-     </span>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#now-we-need-some-candidate-vapor-pressures">
-     Now we need some candidate vapor pressures
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#identifying-the-stable-phase-points">
-     Identifying the Stable Phase Points
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#calculating-the-fugacity-of-the-liquid-and-vapor-phases">
-     Calculating the fugacity of the liquid and vapor phases.
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#lets-compute-the-vle-envelope">
-     Let’s compute the VLE envelope
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Calculating Fugacity</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#definition-of-fugacity">
-   Definition of Fugacity
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#vapor-liquid-equilibrium-with-fugacity">
-   Vapor Liquid Equilibrium with fugacity
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#virial-equation-of-state">
-     Virial Equation of State
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#van-der-waals-equation-of-state">
-     Van Der Waal’s Equation of State
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#constructing-vle-envelope-with-equation-of-state">
-   Constructing VLE Envelope with Equation of State
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#first-lets-specify-some-real-gas-properties">
-     First lets specify some real gas properties
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#next-lets-calculate-an-isotherm-below-t-c">
-     Next lets calculate an isotherm below
-     <span class="math notranslate nohighlight">
-      \(T_c\)
-     </span>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#now-we-need-some-candidate-vapor-pressures">
-     Now we need some candidate vapor pressures
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#identifying-the-stable-phase-points">
-     Identifying the Stable Phase Points
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#calculating-the-fugacity-of-the-liquid-and-vapor-phases">
-     Calculating the fugacity of the liquid and vapor phases.
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#lets-compute-the-vle-envelope">
-     Let’s compute the VLE envelope
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Calculating Fugacity</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-of-fugacity">Definition of Fugacity</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vapor-liquid-equilibrium-with-fugacity">Vapor Liquid Equilibrium with fugacity</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#virial-equation-of-state">Virial Equation of State</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#van-der-waals-equation-of-state">Van Der Waal’s Equation of State</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#constructing-vle-envelope-with-equation-of-state">Constructing VLE Envelope with Equation of State</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#first-lets-specify-some-real-gas-properties">First lets specify some real gas properties</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#next-lets-calculate-an-isotherm-below-t-c">Next lets calculate an isotherm below <span class="math notranslate nohighlight">\(T_c\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#now-we-need-some-candidate-vapor-pressures">Now we need some candidate vapor pressures</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#identifying-the-stable-phase-points">Identifying the Stable Phase Points</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#calculating-the-fugacity-of-the-liquid-and-vapor-phases">Calculating the fugacity of the liquid and vapor phases.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lets-compute-the-vle-envelope">Let’s compute the VLE envelope</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
   <section class="tex2jax_ignore mathjax_ignore" id="calculating-fugacity">
-<h1>Calculating Fugacity<a class="headerlink" href="#calculating-fugacity" title="Permalink to this headline">#</a></h1>
+<h1>Calculating Fugacity<a class="headerlink" href="#calculating-fugacity" title="Permalink to this heading">#</a></h1>
 <p>As defined in the previous lecture, the criteria for equilibrium are:</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p><span class="math notranslate nohighlight">\(T^{v}=T^{l}\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(P^{v}=P^{l}\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\underline{G}^v=\underline{G}^l\)</span></p></li>
@@ -656,7 +450,7 @@ title="Print to PDF"
 <p>While this definition is useful, it is not immediate obvious how equilibrium conditions are determined from a volumetric equation of state.</p>
 <p>For this purpose, the concept of fugacity was invented which is a mathematical relationship representing how fugitive a fluid is (meaning how volatile). We will show below that the fugacity is a measure of the deviation from ideal gas behavior and we will leverage residual properties in order to calculate it.</p>
 <section id="definition-of-fugacity">
-<h2>Definition of Fugacity<a class="headerlink" href="#definition-of-fugacity" title="Permalink to this headline">#</a></h2>
+<h2>Definition of Fugacity<a class="headerlink" href="#definition-of-fugacity" title="Permalink to this heading">#</a></h2>
 <p>By the definition above, vapor-liquid equilibrium is defined as the condition where <span class="math notranslate nohighlight">\(\underline{G}^v=\underline{G}^l\)</span> at the same temperature and pressure.</p>
 <p>Mathematically we showed in our previous lecture that :</p>
 <div class="math notranslate nohighlight">
@@ -702,11 +496,11 @@ RT(Z-1) - RTln(Z) + \int_{0}^{P}\big(\dfrac{RT}{\underline{V}}-P\big)d\underline
 <p>it has units of Pressure</p>
 </section>
 <section id="vapor-liquid-equilibrium-with-fugacity">
-<h2>Vapor Liquid Equilibrium with fugacity<a class="headerlink" href="#vapor-liquid-equilibrium-with-fugacity" title="Permalink to this headline">#</a></h2>
+<h2>Vapor Liquid Equilibrium with fugacity<a class="headerlink" href="#vapor-liquid-equilibrium-with-fugacity" title="Permalink to this heading">#</a></h2>
 <p>it can be shown that <span class="math notranslate nohighlight">\(\underline{G}^v=\underline{G}^l\)</span> is equivalent to saying <span class="math notranslate nohighlight">\(\mathit{f}^v=\mathit{f}^l\)</span> and <span class="math notranslate nohighlight">\(\phi^v=\phi^l\)</span> such that if the fugacity coefficient at a given temperature and pressure is the same, then the vapor and liquid phase are said to be in equilibrium.</p>
 <p>In general fugacity coefficients can be derived analytically for many volumetric equations of state</p>
 <section id="virial-equation-of-state">
-<h3>Virial Equation of State<a class="headerlink" href="#virial-equation-of-state" title="Permalink to this headline">#</a></h3>
+<h3>Virial Equation of State<a class="headerlink" href="#virial-equation-of-state" title="Permalink to this heading">#</a></h3>
 <p>Equation of state:</p>
 <p><span class="math notranslate nohighlight">\(\quad P=\dfrac{RT}{\underline{V}}+\dfrac{B(T)}{\underline{V}}\)</span></p>
 <p>Fugacity Coefficient:</p>
@@ -714,7 +508,7 @@ RT(Z-1) - RTln(Z) + \int_{0}^{P}\big(\dfrac{RT}{\underline{V}}-P\big)d\underline
 <p>where <span class="math notranslate nohighlight">\(Z\)</span> must be determined by finding the real and positive roots of the equation at a given temperature and pressure and applying the stability criteria to determine the stable phase.</p>
 </section>
 <section id="van-der-waals-equation-of-state">
-<h3>Van Der Waal’s Equation of State<a class="headerlink" href="#van-der-waals-equation-of-state" title="Permalink to this headline">#</a></h3>
+<h3>Van Der Waal’s Equation of State<a class="headerlink" href="#van-der-waals-equation-of-state" title="Permalink to this heading">#</a></h3>
 <p>Equation of state:</p>
 <p><span class="math notranslate nohighlight">\(\quad P=\dfrac{RT}{\underline{V}-b}-\dfrac{a}{\underline{V}^2}\)</span></p>
 <p>Fugacity Coefficient:</p>
@@ -723,10 +517,10 @@ RT(Z-1) - RTln(Z) + \int_{0}^{P}\big(\dfrac{RT}{\underline{V}}-P\big)d\underline
 </section>
 </section>
 <section id="constructing-vle-envelope-with-equation-of-state">
-<h2>Constructing VLE Envelope with Equation of State<a class="headerlink" href="#constructing-vle-envelope-with-equation-of-state" title="Permalink to this headline">#</a></h2>
+<h2>Constructing VLE Envelope with Equation of State<a class="headerlink" href="#constructing-vle-envelope-with-equation-of-state" title="Permalink to this heading">#</a></h2>
 <p>Lets use phasepy and find the VLE envelope. We will do this step by step:</p>
 <section id="first-lets-specify-some-real-gas-properties">
-<h3>First lets specify some real gas properties<a class="headerlink" href="#first-lets-specify-some-real-gas-properties" title="Permalink to this headline">#</a></h3>
+<h3>First lets specify some real gas properties<a class="headerlink" href="#first-lets-specify-some-real-gas-properties" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> notebook
@@ -750,7 +544,7 @@ RT(Z-1) - RTln(Z) + \int_{0}^{P}\big(\dfrac{RT}{\underline{V}}-P\big)d\underline
 </div>
 </section>
 <section id="next-lets-calculate-an-isotherm-below-t-c">
-<h3>Next lets calculate an isotherm below <span class="math notranslate nohighlight">\(T_c\)</span><a class="headerlink" href="#next-lets-calculate-an-isotherm-below-t-c" title="Permalink to this headline">#</a></h3>
+<h3>Next lets calculate an isotherm below <span class="math notranslate nohighlight">\(T_c\)</span><a class="headerlink" href="#next-lets-calculate-an-isotherm-below-t-c" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Tr</span><span class="o">=</span><span class="mf">0.94</span>
@@ -769,18 +563,18 @@ RT(Z-1) - RTln(Z) + \int_{0}^{P}\big(\dfrac{RT}{\underline{V}}-P\big)d\underline
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x262e025b880&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x14c4f983070&gt;
 </pre></div>
 </div>
-<img alt="../_images/5.Calculating-Fugacity_7_1.png" src="../_images/5.Calculating-Fugacity_7_1.png" />
+<img alt="../_images/8c946ce1345ea4213c39c28b9f58c709d35217087554903d15ffdb8b0093e1f4.png" src="../_images/8c946ce1345ea4213c39c28b9f58c709d35217087554903d15ffdb8b0093e1f4.png" />
 </div>
 </div>
 </section>
 <section id="now-we-need-some-candidate-vapor-pressures">
-<h3>Now we need some candidate vapor pressures<a class="headerlink" href="#now-we-need-some-candidate-vapor-pressures" title="Permalink to this headline">#</a></h3>
+<h3>Now we need some candidate vapor pressures<a class="headerlink" href="#now-we-need-some-candidate-vapor-pressures" title="Permalink to this heading">#</a></h3>
 <p>If we examine the shape of the isotherm, we can see that there is only a narrow region of the curve where more than one real root will satisfy the equation of state.</p>
 <p>We can domnstrate this by picking three pressures:</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>high pressure <span class="math notranslate nohighlight">\(1000\)</span> <span class="math notranslate nohighlight">\(bar\)</span></p></li>
 <li><p>middle pressure <span class="math notranslate nohighlight">\(100\)</span> <span class="math notranslate nohighlight">\(bar\)</span></p></li>
 <li><p>low pressure <span class="math notranslate nohighlight">\(10\)</span> <span class="math notranslate nohighlight">\(bar\)</span></p></li>
@@ -856,12 +650,12 @@ RT(Z-1) - RTln(Z) + \int_{0}^{P}\big(\dfrac{RT}{\underline{V}}-P\big)d\underline
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;$V$ $(cm^3/mol)$&#39;)
 </pre></div>
 </div>
-<img alt="../_images/5.Calculating-Fugacity_9_2.png" src="../_images/5.Calculating-Fugacity_9_2.png" />
+<img alt="../_images/dce9c282f393c0f32c734c0693472bec476adc291c162fa3a18ea77162225d86.png" src="../_images/dce9c282f393c0f32c734c0693472bec476adc291c162fa3a18ea77162225d86.png" />
 </div>
 </div>
 </section>
 <section id="identifying-the-stable-phase-points">
-<h3>Identifying the Stable Phase Points<a class="headerlink" href="#identifying-the-stable-phase-points" title="Permalink to this headline">#</a></h3>
+<h3>Identifying the Stable Phase Points<a class="headerlink" href="#identifying-the-stable-phase-points" title="Permalink to this heading">#</a></h3>
 <p>In the plot above, we see that there are many potential candidates that define the saturation pressure. How do we know which one to choose?</p>
 <p>First, we apply the stability criteria</p>
 <div class="math notranslate nohighlight">
@@ -893,12 +687,12 @@ RT(Z-1) - RTln(Z) + \int_{0}^{P}\big(\dfrac{RT}{\underline{V}}-P\big)d\underline
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;$V$ $(cm^3/mol)$&#39;)
 </pre></div>
 </div>
-<img alt="../_images/5.Calculating-Fugacity_11_1.png" src="../_images/5.Calculating-Fugacity_11_1.png" />
+<img alt="../_images/d52025f34f9a6cb94527a4692a2fe471a3f500be5de3a21c82853c62c4eb2ef1.png" src="../_images/d52025f34f9a6cb94527a4692a2fe471a3f500be5de3a21c82853c62c4eb2ef1.png" />
 </div>
 </div>
 </section>
 <section id="calculating-the-fugacity-of-the-liquid-and-vapor-phases">
-<h3>Calculating the fugacity of the liquid and vapor phases.<a class="headerlink" href="#calculating-the-fugacity-of-the-liquid-and-vapor-phases" title="Permalink to this headline">#</a></h3>
+<h3>Calculating the fugacity of the liquid and vapor phases.<a class="headerlink" href="#calculating-the-fugacity-of-the-liquid-and-vapor-phases" title="Permalink to this heading">#</a></h3>
 <p>Now we calculate the fugacity as a function of the guess pressure. We can do this conveniently with phasepy, but we will demonstrate the calculation below:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -977,13 +771,13 @@ RT(Z-1) - RTln(Z) + \int_{0}^{P}\big(\dfrac{RT}{\underline{V}}-P\big)d\underline
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;$\\ln{\\phi}$&#39;)
 </pre></div>
 </div>
-<img alt="../_images/5.Calculating-Fugacity_13_1.png" src="../_images/5.Calculating-Fugacity_13_1.png" />
+<img alt="../_images/0ed78a965a22686469cb0303e945e9425ef88d32fe826081ffdc909b2b7972de.png" src="../_images/0ed78a965a22686469cb0303e945e9425ef88d32fe826081ffdc909b2b7972de.png" />
 </div>
 </div>
 <p>The starred point is the point where the fugacity of the liquid and vapor phases are equal</p>
 </section>
 <section id="lets-compute-the-vle-envelope">
-<h3>Let’s compute the VLE envelope<a class="headerlink" href="#lets-compute-the-vle-envelope" title="Permalink to this headline">#</a></h3>
+<h3>Let’s compute the VLE envelope<a class="headerlink" href="#lets-compute-the-vle-envelope" title="Permalink to this heading">#</a></h3>
 <p>We will copy the above into a function</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1060,44 +854,39 @@ RT(Z-1) - RTln(Z) + \int_{0}^{P}\big(\dfrac{RT}{\underline{V}}-P\big)d\underline
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span>\<span class="n">ipykernel_31600</span>\<span class="mf">4063806749.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span>\<span class="n">ipykernel_5184</span>\<span class="mf">4063806749.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">     </span><span class="mi">48</span> 
 <span class="g g-Whitespace">     </span><span class="mi">49</span>     <span class="n">ps</span><span class="p">,</span><span class="n">vv</span><span class="p">,</span><span class="n">vl</span><span class="o">=</span><span class="n">psat</span><span class="p">(</span><span class="n">Tr</span><span class="p">)</span>
 <span class="ne">---&gt; </span><span class="mi">50</span>     <span class="n">ps</span><span class="p">,</span><span class="n">vv</span><span class="p">,</span><span class="n">vl</span><span class="o">=</span><span class="n">psat</span><span class="p">(</span><span class="n">Tr</span><span class="p">,</span>
 <span class="g g-Whitespace">     </span><span class="mi">51</span>                   <span class="n">prmin</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">ps</span><span class="o">/</span><span class="n">Pc</span><span class="o">*</span><span class="mf">0.5</span><span class="p">),</span>
 <span class="g g-Whitespace">     </span><span class="mi">52</span>                   <span class="n">prmax</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">ps</span><span class="o">/</span><span class="n">Pc</span><span class="o">*</span><span class="mf">1.5</span><span class="p">),</span>
 
-<span class="nn">~\AppData\Local\Temp\ipykernel_31600\4063806749.py</span> in <span class="ni">psat</span><span class="nt">(Tr, prmin, prmax, npts)</span>
-<span class="g g-Whitespace">     </span><span class="mi">38</span>             <span class="n">phil_</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">phil</span><span class="p">)</span><span class="c1">#calculate the fugacity coefficient for a liquid</span>
-<span class="g g-Whitespace">     </span><span class="mi">39</span>             <span class="n">P_</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">P</span><span class="o">/</span><span class="mi">10</span><span class="o">**</span><span class="mi">5</span><span class="p">)</span>
-<span class="ne">---&gt; </span><span class="mi">40</span>     <span class="n">idx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argwhere</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sign</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">phiv_</span><span class="p">)</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">phil_</span><span class="p">))))</span><span class="o">.</span><span class="n">flatten</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
-<span class="g g-Whitespace">     </span><span class="mi">41</span> 
-<span class="g g-Whitespace">     </span><span class="mi">42</span>     <span class="k">return</span> <span class="n">P_</span><span class="p">[</span><span class="n">idx</span><span class="p">],</span><span class="n">vv_</span><span class="p">[</span><span class="n">idx</span><span class="p">],</span><span class="n">vl_</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
+<span class="nn">~\AppData\Local\Temp\ipykernel_5184\4063806749.py</span> in <span class="ni">psat</span><span class="nt">(Tr, prmin, prmax, npts)</span>
+<span class="g g-Whitespace">     </span><span class="mi">11</span>         <span class="n">T</span><span class="o">=</span><span class="n">Tc</span><span class="o">*</span><span class="n">Tr</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span>         <span class="c1">###Find roots of cubic equation of state</span>
+<span class="ne">---&gt; </span><span class="mi">13</span>         <span class="n">roots</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">roots</span><span class="p">(</span><span class="n">Zcoeff</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="n">P</span><span class="p">))</span>
+<span class="g g-Whitespace">     </span><span class="mi">14</span> 
+<span class="g g-Whitespace">     </span><span class="mi">15</span>         <span class="c1">#roots array contains three roots</span>
 
-<span class="nn">&lt;__array_function__ internals&gt;</span> in <span class="ni">argwhere</span><span class="nt">(*args, **kwargs)</span>
+<span class="nn">~\anaconda3\lib\site-packages\numpy\core\overrides.py</span> in <span class="ni">roots</span><span class="nt">(*args, **kwargs)</span>
 
-<span class="nn">~\anaconda3\lib\site-packages\numpy\core\numeric.py</span> in <span class="ni">argwhere</span><span class="nt">(a)</span>
-<span class="g g-Whitespace">    </span><span class="mi">616</span>         <span class="c1"># then remove the added dimension</span>
-<span class="g g-Whitespace">    </span><span class="mi">617</span>         <span class="k">return</span> <span class="n">argwhere</span><span class="p">(</span><span class="n">a</span><span class="p">)[:,:</span><span class="mi">0</span><span class="p">]</span>
-<span class="ne">--&gt; </span><span class="mi">618</span>     <span class="k">return</span> <span class="n">transpose</span><span class="p">(</span><span class="n">nonzero</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
-<span class="g g-Whitespace">    </span><span class="mi">619</span> 
-<span class="g g-Whitespace">    </span><span class="mi">620</span> 
+<span class="nn">~\anaconda3\lib\site-packages\numpy\lib\polynomial.py</span> in <span class="ni">roots</span><span class="nt">(p)</span>
+<span class="g g-Whitespace">    </span><span class="mi">257</span> 
+<span class="g g-Whitespace">    </span><span class="mi">258</span>     <span class="c1"># tack any zeros onto the back of the array</span>
+<span class="ne">--&gt; </span><span class="mi">259</span>     <span class="n">roots</span> <span class="o">=</span> <span class="n">hstack</span><span class="p">((</span><span class="n">roots</span><span class="p">,</span> <span class="n">NX</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">trailing_zeros</span><span class="p">,</span> <span class="n">roots</span><span class="o">.</span><span class="n">dtype</span><span class="p">)))</span>
+<span class="g g-Whitespace">    </span><span class="mi">260</span>     <span class="k">return</span> <span class="n">roots</span>
+<span class="g g-Whitespace">    </span><span class="mi">261</span> 
 
-<span class="nn">&lt;__array_function__ internals&gt;</span> in <span class="ni">nonzero</span><span class="nt">(*args, **kwargs)</span>
+<span class="nn">~\anaconda3\lib\site-packages\numpy\core\overrides.py</span> in <span class="ni">hstack</span><span class="nt">(*args, **kwargs)</span>
 
-<span class="nn">~\anaconda3\lib\site-packages\numpy\core\fromnumeric.py</span> in <span class="ni">nonzero</span><span class="nt">(a)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1919</span> 
-<span class="g g-Whitespace">   </span><span class="mi">1920</span>     <span class="s2">&quot;&quot;&quot;</span>
-<span class="ne">-&gt; </span><span class="mi">1921</span><span class="s2">     return _wrapfunc(a, &#39;nonzero&#39;)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1922</span><span class="s2"> </span>
-<span class="g g-Whitespace">   </span><span class="mi">1923</span><span class="s2"> </span>
+<span class="nn">~\anaconda3\lib\site-packages\numpy\core\shape_base.py</span> in <span class="ni">hstack</span><span class="nt">(tup, dtype, casting)</span>
+<span class="g g-Whitespace">    </span><span class="mi">366</span>     <span class="c1"># As a special case, dimension 0 of 1-dimensional arrays is &quot;horizontal&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">367</span>     <span class="k">if</span> <span class="n">arrs</span> <span class="ow">and</span> <span class="n">arrs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">ndim</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">368</span>         <span class="k">return</span> <span class="n">_nx</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span><span class="n">arrs</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">,</span> <span class="n">casting</span><span class="o">=</span><span class="n">casting</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">369</span>     <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">370</span>         <span class="k">return</span> <span class="n">_nx</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span><span class="n">arrs</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">,</span> <span class="n">casting</span><span class="o">=</span><span class="n">casting</span><span class="p">)</span>
 
-<span class="nn">~\anaconda3\lib\site-packages\numpy\core\fromnumeric.py</span> in <span class="ni">_wrapfunc</span><span class="nt">(obj, method, *args, **kwds)</span>
-<span class="g g-Whitespace">     </span><span class="mi">55</span><span class="s2"> </span>
-<span class="g g-Whitespace">     </span><span class="mi">56</span><span class="s2">     try:</span>
-<span class="ne">---&gt; </span><span class="mi">57</span><span class="s2">         return bound(*args, **kwds)</span>
-<span class="g g-Whitespace">     </span><span class="mi">58</span><span class="s2">     except TypeError:</span>
-<span class="g g-Whitespace">     </span><span class="mi">59</span><span class="s2">         # A TypeError occurs if the object does have such a method in its</span>
+<span class="nn">~\anaconda3\lib\site-packages\numpy\core\overrides.py</span> in <span class="ni">concatenate</span><span class="nt">(*args, **kwargs)</span>
 
 <span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
@@ -1140,50 +929,117 @@ RT(Z-1) - RTln(Z) + \int_{0}^{P}\big(\dfrac{RT}{\underline{V}}-P\big)d\underline
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="4.Thermal-Variables-from-EOS.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Computing Thermal Variables from an Equation of State</p>
-        </div>
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="4.Thermal-Variables-from-EOS.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Computing Thermal Variables from an Equation of State</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="6.Vapor-Liquid-Equilibrium.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="6.Vapor-Liquid-Equilibrium.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">Vapor Liquid Equilibrium</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-of-fugacity">Definition of Fugacity</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vapor-liquid-equilibrium-with-fugacity">Vapor Liquid Equilibrium with fugacity</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#virial-equation-of-state">Virial Equation of State</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#van-der-waals-equation-of-state">Van Der Waal’s Equation of State</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#constructing-vle-envelope-with-equation-of-state">Constructing VLE Envelope with Equation of State</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#first-lets-specify-some-real-gas-properties">First lets specify some real gas properties</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#next-lets-calculate-an-isotherm-below-t-c">Next lets calculate an isotherm below <span class="math notranslate nohighlight">\(T_c\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#now-we-need-some-candidate-vapor-pressures">Now we need some candidate vapor pressures</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#identifying-the-stable-phase-points">Identifying the Stable Phase Points</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#calculating-the-fugacity-of-the-liquid-and-vapor-phases">Calculating the fugacity of the liquid and vapor phases.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lets-compute-the-vle-envelope">Let’s compute the VLE envelope</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
   
-    By J. J. Richards<br/>
-  
-      &copy; Copyright 2022.<br/>
-</p>
-        </footer>
-    </div>
+  <div class="footer-item">
     
+<p class="component-author">
+By J. J. Richards
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
 </div>
+          </footer>
+        
 
-
-      </div>
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>

@@ -1,48 +1,60 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" data-content_root="" >
+
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
     <title>Vapor Liquid Equilibrium &#8212; Introduction to Thermodynamics</title>
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../_static/styles/theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=bd9e20870c6007c4c509"></script>
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -50,555 +62,378 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Ch4/6.Vapor-Liquid-Equilibrium';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Constructing Property Diagrams" href="7.Constructing-Property-Diagrams.html" />
     <link rel="prev" title="Calculating Fugacity" href="5.Calculating-Fugacity.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
 
-    
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
 
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../index.html">
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <header>
+  
+    <div class="bd-header navbar navbar-expand-lg bd-navbar">
+    </div>
+  
+  </header>
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      
+      
         
       
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
       
-      <img src="../_static/logo.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">Introduction to Thermodynamics</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Introduction to Thermodynamics - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Introduction to Thermodynamics - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../intro.html">
-                    Forward
+                    Foreword
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Definitions and Balance Expressions
- </span>
-</p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Definitions and Balance Expressions</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../Ch1/1.Thermodynamic-Definitions.html">
-   Thermodynamic Definitions
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Ch1/2.Real-Gas-Properties.html">
-   Real Gas Properties
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Ch1/3.Equations-of-State.html">
-   Equations of State
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Ch1/4.Balance-Expressions.html">
-   Macroscopic Balance Expressions
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Ch1/5.Conservation-of-Mass.html">
-   Conservation of Mass
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch1/1.Thermodynamic-Definitions.html">Thermodynamic Definitions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch1/2.Real-Gas-Properties.html">Real Gas Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch1/3.Equations-of-State.html">Equations of State</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch1/4.Balance-Expressions.html">Macroscopic Balance Expressions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch1/5.Conservation-of-Mass.html">Conservation of Mass</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Foundations of Thermodynamics
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Foundations of Thermodynamics</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../Ch2/1.Conservation-of-Energy.html">
-   Conservation of Energy and the 1st Law of Thermodynamics
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Ch2/2.Entropy-Balance-Expression.html">
-   Balance Expression for Entropy
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Ch2/3.Entropy-at-0K.html">
-   Entropy at 0K
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Ch2/4.Free-Energies.html">
-   Free Energy
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Ch2/5.Changes-of-State.html">
-   Changes of State
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch2/1.Conservation-of-Energy.html">Conservation of Energy and the 1st Law of Thermodynamics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch2/2.Expansion-of-a-Gas.html">Expansion of a Gas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch2/3.Entropy-Balance-Expression.html">Balance Expression for Entropy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch2/4.Entropy-at-0K.html">Entropy at 0K</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch2/5.Free-Energies.html">Free Energy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch2/6.Changes-of-State.html">Changes of State</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Applications of Thermodynamics in Chemical Engineering
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Applications of Thermodynamics in Chemical Engineering</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../Ch3/1.Unit-Operations.html">
-   Unit Operations
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Ch3/2.Property-Diagram-Single-Components.html">
-   Property Database for Common Substances
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Ch3/3.Heat-Engines.html">
-   Heat Engines
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Ch3/4.Refrigeration.html">
-   Refrigeration
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Ch3/5.Liquefaction.html">
-   Liquefaction
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Ch3/6.Optimizing-with-Python.html">
-   Unit Operations
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch3/1.Unit-Operations.html">Unit Operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch3/2.Property-Diagram-Single-Components.html">Property Database for Common Substances</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Ch3/3.Heat-Engines.html">Heat Engines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch3/4.Refrigeration.html">Refrigeration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch3/5.Liquefaction.html">Liquefaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch3/6.Optimizing-with-Python.html">Unit Operations</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Vapor-Liquid Equilibrium for Non-Ideal Gases
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Vapor-Liquid Equilibrium for Non-Ideal Gases</span></p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="1.Deriving-Useful-Thermodynamic-Relationships.html">
-   Deriving Useful Thermodynamic Properties
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="2.Virial-Equations-of-State.html">
-   Volumetric Equations of State
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="3.Law-of-Corresponding-States.html">
-   Law of Corresponding States and Critical Properties
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="4.Thermal-Variables-from-EOS.html">
-   Computing Thermal Variables from an Equation of State
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="5.Calculating-Fugacity.html">
-   Calculating Fugacity
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Vapor Liquid Equilibrium
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="7.Constructing-Property-Diagrams.html">
-   Constructing Property Diagrams
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="1.Deriving-Useful-Thermodynamic-Relationships.html">Deriving Useful Thermodynamic Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2.Virial-Equations-of-State.html">Volumetric Equations of State</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3.Law-of-Corresponding-States.html">Law of Corresponding States and Critical Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4.Thermal-Variables-from-EOS.html">Computing Thermal Variables from an Equation of State</a></li>
+<li class="toctree-l1"><a class="reference internal" href="5.Calculating-Fugacity.html">Calculating Fugacity</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Vapor Liquid Equilibrium</a></li>
+<li class="toctree-l1"><a class="reference internal" href="7.Constructing-Property-Diagrams.html">Constructing Property Diagrams</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Thermodynamics of Mixtures
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Thermodynamics of Mixtures</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../Ch5/1.Accuracy-EOS.html">
-   Calculating the Accuracy of Equations of State
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Ch5/3.Gaseous-Mixtures.html">
-   Gaseous Mixtures
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Ch5/4.Liquid-Mixtures.html">
-   Liquid Mixtures
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Ch6/5.Chemical-Equilibrium.html">
-   Chemical Equilibrium
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Ch6/6.Species-Balance-Expression.html">
-   Species Balance Expression and Reaction Kinetics
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch6/1.Species-Balance-Expression.html">Species Balance Expression and Reaction Kinetics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch5/3.Gaseous-Mixtures.html">Gaseous Mixtures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch5/4.Liquid-Mixtures.html">Liquid Mixtures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch5/5.Accuracy-EOS.html">Calculating the Accuracy of Equations of State</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch6/6.Chemical-Equilibrium.html">Chemical Equilibrium</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch7/7.Activity-Coefficient-Models.html">Activity Coefficients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch7/8.Calculating-Mixture-Fugacity.html">Calculating Fugacity of Mixtures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch7/9.Mixture-Equilibrium.html">Equilibrium of Mixtures</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Exercises
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Exercises</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../Exercises/Ch1.html">
-   Exercises for Chapter 1
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Exercises/Ch2.html">
-   Exercises for Chapter 2
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Exercises/Ch3.html">
-   Exercises for Chapter 3
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../Exercises/Ch1.html">Exercises for Chapter 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Exercises/Ch2.html">Exercises for Chapter 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Exercises/Ch3.html">Exercises for Chapter 3</a></li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
-</div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
-          
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
 
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
 <div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
 
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
   
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
     </div>
-    <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/Ch4/6.Vapor-Liquid-Equilibrium.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
->
-  
-
-<span class="headerbtn__icon-container">
-  
-    <img src="../_static/images/logo_binder.svg">
-  </span>
-<span class="headerbtn__text-container">Binder</span>
-</a>
-
-      </li>
+  <ul class="dropdown-menu">
+      
+      
       
       <li>
-        
 <button onclick="initThebeSBT()"
-  class="headerbtn headerbtn-launch-thebe"
-  data-toggle="tooltip"
-data-placement="left"
-title="Launch Thebe"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   <i class="fas fa-play"></i>
   </span>
-<span class="headerbtn__text-container">Live Code</span>
+<span class="btn__text-container">Live Code</span>
 </button>
-
-      </li>
+</li>
       
-    </ul>
-  </div>
+  </ul>
 </div>
 
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/Ch4/6.Vapor-Liquid-Equilibrium.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="../_sources/Ch4/6.Vapor-Liquid-Equilibrium.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
+`);
+</script>
 
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
 
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
 </label>
-
+</div></div>
+      
     </div>
+  
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#we-define-equilibrium-with-two-criteria">
-   We define Equilibrium with Two Criteria:
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#ds-0-equivalence-of-temperature-pressure-and-free-energy-of-the-vapor-and-liquid-phase">
-     <span class="math notranslate nohighlight">
-      \(dS=0\)
-     </span>
-     : Equivalence of Temperature, Pressure, and Free Energy of the vapor and liquid phase
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#stability-d-2s-0">
-   Stability -
-   <span class="math notranslate nohighlight">
-    \(d^2S&lt;0\)
-   </span>
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#actual-equilibrium">
-   Actual Equilibrium
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#example">
-   Example
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#interactive-example">
-   Interactive Example
-  </a>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Vapor Liquid Equilibrium</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#we-define-equilibrium-with-two-criteria">
-   We define Equilibrium with Two Criteria:
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#ds-0-equivalence-of-temperature-pressure-and-free-energy-of-the-vapor-and-liquid-phase">
-     <span class="math notranslate nohighlight">
-      \(dS=0\)
-     </span>
-     : Equivalence of Temperature, Pressure, and Free Energy of the vapor and liquid phase
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#stability-d-2s-0">
-   Stability -
-   <span class="math notranslate nohighlight">
-    \(d^2S&lt;0\)
-   </span>
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#actual-equilibrium">
-   Actual Equilibrium
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#example">
-   Example
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#interactive-example">
-   Interactive Example
-  </a>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Vapor Liquid Equilibrium</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#we-define-equilibrium-with-two-criteria">We define Equilibrium with Two Criteria:</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ds-0-equivalence-of-temperature-pressure-and-free-energy-of-the-vapor-and-liquid-phase"><span class="math notranslate nohighlight">\(dS=0\)</span>: Equivalence of Temperature, Pressure, and Free Energy of the vapor and liquid phase</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stability-d-2s-0">Stability - <span class="math notranslate nohighlight">\(d^2S&lt;0\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#actual-equilibrium">Actual Equilibrium</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example">Example</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interactive-example">Interactive Example</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
   <section class="tex2jax_ignore mathjax_ignore" id="vapor-liquid-equilibrium">
-<h1>Vapor Liquid Equilibrium<a class="headerlink" href="#vapor-liquid-equilibrium" title="Permalink to this headline">#</a></h1>
+<h1>Vapor Liquid Equilibrium<a class="headerlink" href="#vapor-liquid-equilibrium" title="Permalink to this heading">#</a></h1>
 <p><strong>Equilibrium</strong> is generally defined for an isolated system. We learned previously that for isolated systems (systems without the flow of mass and energy across the system boundary) that the mass, energy, and entropy balance expressions simplify to:</p>
 <p><span class="math notranslate nohighlight">\(\quad\dfrac{dM}{dt}=0\)</span></p>
 <p><span class="math notranslate nohighlight">\(\quad\dfrac{dU}{dt}=0\)</span></p>
@@ -606,13 +441,13 @@ title="Print to PDF"
 <p>Under these circumstances, the only changes that take place occur due to internal temperature, mass, and velocity gradients present within the system that will dissipate over time. This dissipation will generate entropy and cause the total system energy to increase with time. Ultimately, if we wait long enough then the gradients will be eliminated and all time evolution of the system will stop. We call this state <em>equilibrium</em>.</p>
 <p>At equilibrium <span class="math notranslate nohighlight">\(S\)</span> is both at a maximum (due to the entropy generation term always being positive) and no longer time dependent. Mathematically,</p>
 <section id="we-define-equilibrium-with-two-criteria">
-<h2>We define Equilibrium with Two Criteria:<a class="headerlink" href="#we-define-equilibrium-with-two-criteria" title="Permalink to this headline">#</a></h2>
-<ol class="simple">
+<h2>We define Equilibrium with Two Criteria:<a class="headerlink" href="#we-define-equilibrium-with-two-criteria" title="Permalink to this heading">#</a></h2>
+<ol class="arabic simple">
 <li><p><span class="math notranslate nohighlight">\(dS=0\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(d^2S&lt;0\)</span></p></li>
 </ol>
 <section id="ds-0-equivalence-of-temperature-pressure-and-free-energy-of-the-vapor-and-liquid-phase">
-<h3><span class="math notranslate nohighlight">\(dS=0\)</span>: Equivalence of Temperature, Pressure, and Free Energy of the vapor and liquid phase<a class="headerlink" href="#ds-0-equivalence-of-temperature-pressure-and-free-energy-of-the-vapor-and-liquid-phase" title="Permalink to this headline">#</a></h3>
+<h3><span class="math notranslate nohighlight">\(dS=0\)</span>: Equivalence of Temperature, Pressure, and Free Energy of the vapor and liquid phase<a class="headerlink" href="#ds-0-equivalence-of-temperature-pressure-and-free-energy-of-the-vapor-and-liquid-phase" title="Permalink to this heading">#</a></h3>
 <p>For an isolated system with volume <span class="math notranslate nohighlight">\(V\)</span>, containing <span class="math notranslate nohighlight">\(N\)</span> moles of gas, we can envision there being an equilibrium between a vapor and liquid and we want to know what are the constraints on those two phases.</p>
 <p>To identify those constraints, we assume that the entropy is a function of <span class="math notranslate nohighlight">\(V\)</span>, <span class="math notranslate nohighlight">\(N\)</span>, and <span class="math notranslate nohighlight">\(U\)</span> and begin by expressing the entropy in its <em>differential form</em> as:</p>
 <div class="math notranslate nohighlight">
@@ -647,7 +482,7 @@ title="Print to PDF"
 \bigg(\dfrac{\underline{G}^v}{T^v}-\dfrac{\underline{G}^l}{T^l}\bigg)dN^v=0
 \]</div>
 <p>Inspecting the equation above, <span class="math notranslate nohighlight">\(dS=0\)</span>, if three criteria are satisfied.</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>Thermal Equilibrium - <span class="math notranslate nohighlight">\(T^{v}=T^{l}\)</span></p></li>
 <li><p>Mechanical Equilibrium - <span class="math notranslate nohighlight">\(P^{v}=P^{l}\)</span></p></li>
 <li><p>Free Energy - <span class="math notranslate nohighlight">\(\underline{G}^v=\underline{G}^l\)</span></p></li>
@@ -655,7 +490,7 @@ title="Print to PDF"
 </section>
 </section>
 <section id="stability-d-2s-0">
-<h2>Stability - <span class="math notranslate nohighlight">\(d^2S&lt;0\)</span><a class="headerlink" href="#stability-d-2s-0" title="Permalink to this headline">#</a></h2>
+<h2>Stability - <span class="math notranslate nohighlight">\(d^2S&lt;0\)</span><a class="headerlink" href="#stability-d-2s-0" title="Permalink to this heading">#</a></h2>
 <p>A similar, though tedious argument can be made to derive an expression for <span class="math notranslate nohighlight">\(d^2 S\)</span>. Without derivation, I provide the result as:</p>
 <div class="math notranslate nohighlight">
 \[C_v=\bigg(\dfrac{\partial \underline{U}}{\partial T}\bigg)_V&gt;0\]</div>
@@ -664,9 +499,9 @@ title="Print to PDF"
 <p>While the mathematical significance of these relationships is clear, they also provide some important intuition. An unstable thermodynamic state is one where an increase in temperature leads to a decrease in internal energy and the rate of molecular fluctuations. Clearly this is counterintuitive and no substance exists that obeys such behavior. The second criteria is more useful as it is something that can be evaluated using the equation of state alone. We will see this shortly.</p>
 </section>
 <section id="actual-equilibrium">
-<h2>Actual Equilibrium<a class="headerlink" href="#actual-equilibrium" title="Permalink to this headline">#</a></h2>
+<h2>Actual Equilibrium<a class="headerlink" href="#actual-equilibrium" title="Permalink to this heading">#</a></h2>
 <p>Let’s return to the criteria for equilibrium for a second which are:</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p><span class="math notranslate nohighlight">\(T^{v}=T^{l}\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(P^{v}=P^{l}\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\underline{G}^v=\underline{G}^l\)</span></p></li>
@@ -674,13 +509,13 @@ title="Print to PDF"
 <p>It is relatively easy to recognize how an equation of state might be used to evalue Criteria (1) and (2), but (3) is a little bit more difficult to see. As a starting point, we will return to using phasepy to compute the real isotherm of water vapor and liquid water in equilibrium.</p>
 </section>
 <section id="example">
-<h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">#</a></h2>
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this heading">#</a></h2>
 <p>Use the information in the steam tables to show that the above criteria are satisfied for steam at <span class="math notranslate nohighlight">\(100^{o}C\)</span> and <span class="math notranslate nohighlight">\(P=0.10135\)</span> <span class="math notranslate nohighlight">\(MPa\)</span></p>
 </section>
 <section id="interactive-example">
-<h2>Interactive Example<a class="headerlink" href="#interactive-example" title="Permalink to this headline">#</a></h2>
+<h2>Interactive Example<a class="headerlink" href="#interactive-example" title="Permalink to this heading">#</a></h2>
 <p>Using the Peng Robinson Equation of state and the critical properties for steam,</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>Identify the saturation pressure for any isotherm <span class="math notranslate nohighlight">\(T&lt;T_c\)</span></p></li>
 <li><p>Identify the unstable phase points for any isotherm <span class="math notranslate nohighlight">\(T&lt;T_c\)</span></p></li>
 </ol>
@@ -871,6 +706,7 @@ mpl.figure.prototype._init_canvas = function () {
     var fig = this;
 
     var canvas_div = (this.canvas_div = document.createElement('div'));
+    canvas_div.setAttribute('tabindex', '0');
     canvas_div.setAttribute(
         'style',
         'border: 1px solid #ddd;' +
@@ -881,7 +717,8 @@ mpl.figure.prototype._init_canvas = function () {
             'outline: 0;' +
             'overflow: hidden;' +
             'position: relative;' +
-            'resize: both;'
+            'resize: both;' +
+            'z-index: 2;'
     );
 
     function on_keyboard_event_closure(name) {
@@ -904,7 +741,13 @@ mpl.figure.prototype._init_canvas = function () {
 
     var canvas = (this.canvas = document.createElement('canvas'));
     canvas.classList.add('mpl-canvas');
-    canvas.setAttribute('style', 'box-sizing: content-box;');
+    canvas.setAttribute(
+        'style',
+        'box-sizing: content-box;' +
+            'pointer-events: none;' +
+            'position: relative;' +
+            'z-index: 0;'
+    );
 
     this.context = canvas.getContext('2d');
 
@@ -924,7 +767,12 @@ mpl.figure.prototype._init_canvas = function () {
     ));
     rubberband_canvas.setAttribute(
         'style',
-        'box-sizing: content-box; position: absolute; left: 0; top: 0; z-index: 1;'
+        'box-sizing: content-box;' +
+            'left: 0;' +
+            'pointer-events: none;' +
+            'position: absolute;' +
+            'top: 0;' +
+            'z-index: 1;'
     );
 
     // Apply a ponyfill if ResizeObserver is not implemented by browser.
@@ -974,10 +822,10 @@ mpl.figure.prototype._init_canvas = function () {
                 canvas.setAttribute('width', width * fig.ratio);
                 canvas.setAttribute('height', height * fig.ratio);
             }
-            canvas.setAttribute(
-                'style',
-                'width: ' + width + 'px; height: ' + height + 'px;'
-            );
+            /* This rescales the canvas back to display pixels, so that it
+             * appears correct on HiDPI screens. */
+            canvas.style.width = width + 'px';
+            canvas.style.height = height + 'px';
 
             rubberband_canvas.setAttribute('width', width);
             rubberband_canvas.setAttribute('height', height);
@@ -993,34 +841,53 @@ mpl.figure.prototype._init_canvas = function () {
     this.resizeObserverInstance.observe(canvas_div);
 
     function on_mouse_event_closure(name) {
-        return function (event) {
-            return fig.mouse_event(event, name);
-        };
+        /* User Agent sniffing is bad, but WebKit is busted:
+         * https://bugs.webkit.org/show_bug.cgi?id=144526
+         * https://bugs.webkit.org/show_bug.cgi?id=181818
+         * The worst that happens here is that they get an extra browser
+         * selection when dragging, if this check fails to catch them.
+         */
+        var UA = navigator.userAgent;
+        var isWebKit = /AppleWebKit/.test(UA) && !/Chrome/.test(UA);
+        if(isWebKit) {
+            return function (event) {
+                /* This prevents the web browser from automatically changing to
+                 * the text insertion cursor when the button is pressed. We
+                 * want to control all of the cursor setting manually through
+                 * the 'cursor' event from matplotlib */
+                event.preventDefault()
+                return fig.mouse_event(event, name);
+            };
+        } else {
+            return function (event) {
+                return fig.mouse_event(event, name);
+            };
+        }
     }
 
-    rubberband_canvas.addEventListener(
+    canvas_div.addEventListener(
         'mousedown',
         on_mouse_event_closure('button_press')
     );
-    rubberband_canvas.addEventListener(
+    canvas_div.addEventListener(
         'mouseup',
         on_mouse_event_closure('button_release')
     );
-    rubberband_canvas.addEventListener(
+    canvas_div.addEventListener(
         'dblclick',
         on_mouse_event_closure('dblclick')
     );
     // Throttle sequential mouse events to 1 every 20ms.
-    rubberband_canvas.addEventListener(
+    canvas_div.addEventListener(
         'mousemove',
         on_mouse_event_closure('motion_notify')
     );
 
-    rubberband_canvas.addEventListener(
+    canvas_div.addEventListener(
         'mouseenter',
         on_mouse_event_closure('figure_enter')
     );
-    rubberband_canvas.addEventListener(
+    canvas_div.addEventListener(
         'mouseleave',
         on_mouse_event_closure('figure_leave')
     );
@@ -1048,7 +915,7 @@ mpl.figure.prototype._init_canvas = function () {
     };
 
     // Disable right mouse context menu.
-    this.rubberband_canvas.addEventListener('contextmenu', function (_e) {
+    canvas_div.addEventListener('contextmenu', function (_e) {
         event.preventDefault();
         return false;
     });
@@ -1203,7 +1070,7 @@ mpl.figure.prototype.handle_figure_label = function (fig, msg) {
 };
 
 mpl.figure.prototype.handle_cursor = function (fig, msg) {
-    fig.rubberband_canvas.style.cursor = msg['cursor'];
+    fig.canvas_div.style.cursor = msg['cursor'];
 };
 
 mpl.figure.prototype.handle_message = function (fig, msg) {
@@ -1315,30 +1182,22 @@ mpl.figure.prototype._make_on_message_function = function (fig) {
     };
 };
 
-// from https://stackoverflow.com/questions/1114465/getting-mouse-location-in-canvas
-mpl.findpos = function (e) {
-    //this section is from http://www.quirksmode.org/js/events_properties.html
-    var targ;
-    if (!e) {
-        e = window.event;
+function getModifiers(event) {
+    var mods = [];
+    if (event.ctrlKey) {
+        mods.push('ctrl');
     }
-    if (e.target) {
-        targ = e.target;
-    } else if (e.srcElement) {
-        targ = e.srcElement;
+    if (event.altKey) {
+        mods.push('alt');
     }
-    if (targ.nodeType === 3) {
-        // defeat Safari bug
-        targ = targ.parentNode;
+    if (event.shiftKey) {
+        mods.push('shift');
     }
-
-    // pageX,Y are the mouse positions relative to the document
-    var boundingRect = targ.getBoundingClientRect();
-    var x = e.pageX - (boundingRect.left + document.body.scrollLeft);
-    var y = e.pageY - (boundingRect.top + document.body.scrollTop);
-
-    return { x: x, y: y };
-};
+    if (event.metaKey) {
+        mods.push('meta');
+    }
+    return mods;
+}
 
 /*
  * return a copy of an object with only non-object keys
@@ -1355,29 +1214,25 @@ function simpleKeys(original) {
 }
 
 mpl.figure.prototype.mouse_event = function (event, name) {
-    var canvas_pos = mpl.findpos(event);
-
     if (name === 'button_press') {
         this.canvas.focus();
         this.canvas_div.focus();
     }
 
-    var x = canvas_pos.x * this.ratio;
-    var y = canvas_pos.y * this.ratio;
+    // from https://stackoverflow.com/q/1114465
+    var boundingRect = this.canvas.getBoundingClientRect();
+    var x = (event.clientX - boundingRect.left) * this.ratio;
+    var y = (event.clientY - boundingRect.top) * this.ratio;
 
     this.send_message(name, {
         x: x,
         y: y,
         button: event.button,
         step: event.step,
+        modifiers: getModifiers(event),
         guiEvent: simpleKeys(event),
     });
 
-    /* This prevents the web browser from automatically changing to
-     * the text insertion cursor when the button is pressed.  We want
-     * to control all of the cursor setting manually through the
-     * 'cursor' event from matplotlib */
-    event.preventDefault();
     return false;
 };
 
@@ -1432,9 +1287,9 @@ mpl.figure.prototype.toolbar_button_onmouseover = function (tooltip) {
 ///////////////// REMAINING CONTENT GENERATED BY embed_js.py /////////////////
 // prettier-ignore
 var _JSXTOOLS_RESIZE_OBSERVER=function(A){var t,i=new WeakMap,n=new WeakMap,a=new WeakMap,r=new WeakMap,o=new Set;function s(e){if(!(this instanceof s))throw new TypeError("Constructor requires 'new' operator");i.set(this,e)}function h(){throw new TypeError("Function is not a constructor")}function c(e,t,i,n){e=0 in arguments?Number(arguments[0]):0,t=1 in arguments?Number(arguments[1]):0,i=2 in arguments?Number(arguments[2]):0,n=3 in arguments?Number(arguments[3]):0,this.right=(this.x=this.left=e)+(this.width=i),this.bottom=(this.y=this.top=t)+(this.height=n),Object.freeze(this)}function d(){t=requestAnimationFrame(d);var s=new WeakMap,p=new Set;o.forEach((function(t){r.get(t).forEach((function(i){var r=t instanceof window.SVGElement,o=a.get(t),d=r?0:parseFloat(o.paddingTop),f=r?0:parseFloat(o.paddingRight),l=r?0:parseFloat(o.paddingBottom),u=r?0:parseFloat(o.paddingLeft),g=r?0:parseFloat(o.borderTopWidth),m=r?0:parseFloat(o.borderRightWidth),w=r?0:parseFloat(o.borderBottomWidth),b=u+f,F=d+l,v=(r?0:parseFloat(o.borderLeftWidth))+m,W=g+w,y=r?0:t.offsetHeight-W-t.clientHeight,E=r?0:t.offsetWidth-v-t.clientWidth,R=b+v,z=F+W,M=r?t.width:parseFloat(o.width)-R-E,O=r?t.height:parseFloat(o.height)-z-y;if(n.has(t)){var k=n.get(t);if(k[0]===M&&k[1]===O)return}n.set(t,[M,O]);var S=Object.create(h.prototype);S.target=t,S.contentRect=new c(u,d,M,O),s.has(i)||(s.set(i,[]),p.add(i)),s.get(i).push(S)}))})),p.forEach((function(e){i.get(e).call(e,s.get(e),e)}))}return s.prototype.observe=function(i){if(i instanceof window.Element){r.has(i)||(r.set(i,new Set),o.add(i),a.set(i,window.getComputedStyle(i)));var n=r.get(i);n.has(this)||n.add(this),cancelAnimationFrame(t),t=requestAnimationFrame(d)}},s.prototype.unobserve=function(i){if(i instanceof window.Element&&r.has(i)){var n=r.get(i);n.has(this)&&(n.delete(this),n.size||(r.delete(i),o.delete(i))),n.size||r.delete(i),o.size||cancelAnimationFrame(t)}},A.DOMRectReadOnly=c,A.ResizeObserver=s,A.ResizeObserverEntry=h,A}; // eslint-disable-line
-mpl.toolbar_items = [["Home", "Reset original view", "fa fa-home icon-home", "home"], ["Back", "Back to previous view", "fa fa-arrow-left icon-arrow-left", "back"], ["Forward", "Forward to next view", "fa fa-arrow-right icon-arrow-right", "forward"], ["", "", "", ""], ["Pan", "Left button pans, Right button zooms\nx/y fixes axis, CTRL fixes aspect", "fa fa-arrows icon-move", "pan"], ["Zoom", "Zoom to rectangle\nx/y fixes axis", "fa fa-square-o icon-check-empty", "zoom"], ["", "", "", ""], ["Download", "Download plot", "fa fa-floppy-o icon-save", "download"]];
+mpl.toolbar_items = [["Home", "Reset original view", "fa fa-home", "home"], ["Back", "Back to previous view", "fa fa-arrow-left", "back"], ["Forward", "Forward to next view", "fa fa-arrow-right", "forward"], ["", "", "", ""], ["Pan", "Left button pans, Right button zooms\nx/y fixes axis, CTRL fixes aspect", "fa fa-arrows", "pan"], ["Zoom", "Zoom to rectangle\nx/y fixes axis", "fa fa-square-o", "zoom"], ["", "", "", ""], ["Download", "Download plot", "fa fa-floppy-o", "download"]];
 
-mpl.extensions = ["eps", "jpeg", "pgf", "pdf", "png", "ps", "raw", "svg", "tif"];
+mpl.extensions = ["eps", "jpeg", "pgf", "pdf", "png", "ps", "raw", "svg", "tif", "webp"];
 
 mpl.default_extension = "png";/* global mpl */
 
@@ -1711,22 +1566,54 @@ if (IPython.notebook.kernel !== null) {
         mpl.mpl_figure_comm
     );
 }
-</script><div class="output text_html"><div id='8ea35ba3-a54a-4cef-ba4b-e62463c01c0d'></div></div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\richa\anaconda3\lib\site-packages\numpy\core\shape_base.py:65: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify &#39;dtype=object&#39; when creating the ndarray.
-  ary = asanyarray(ary)
+</script><div class="output text_html"><div id='f91e9853-9f9c-407c-9ad5-0417fc3f0f4c'></div></div><div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span>\<span class="n">ipykernel_15052</span>\<span class="mf">1872046981.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">     </span><span class="mi">23</span> <span class="n">v</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">eos</span><span class="o">.</span><span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="mf">1.1</span><span class="p">),</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="mi">100</span><span class="o">*</span><span class="n">eos</span><span class="o">.</span><span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span><span class="mi">201</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">24</span> <span class="k">if</span><span class="p">(</span><span class="n">Tr</span><span class="o">&lt;</span><span class="mi">1</span><span class="p">):</span>
+<span class="ne">---&gt; </span><span class="mi">25</span>     <span class="n">psat</span><span class="p">,</span><span class="n">vl</span><span class="p">,</span><span class="n">vv</span><span class="o">=</span><span class="n">eos</span><span class="o">.</span><span class="n">psat</span><span class="p">(</span><span class="n">Tr</span><span class="o">*</span><span class="n">Tc</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">26</span> 
+<span class="g g-Whitespace">     </span><span class="mi">27</span> 
+
+<span class="nn">~\anaconda3\lib\site-packages\phasepy\cubic\cubicpure.py</span> in <span class="ni">psat</span><span class="nt">(self, T, P0)</span>
+<span class="g g-Whitespace">    </span><span class="mi">152</span>             <span class="n">saturation</span> <span class="n">vapor</span> <span class="n">volume</span> <span class="p">[</span><span class="n">cm3</span><span class="o">/</span><span class="n">mol</span><span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">153</span><span class="w">         </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">154</span><span class="sd">         p0, vl, vv = psat(T, self, P0)</span>
+<span class="g g-Whitespace">    </span><span class="mi">155</span><span class="sd">         return p0, vl, vv</span>
+<span class="g g-Whitespace">    </span><span class="mi">156</span><span class="sd"> </span>
+
+<span class="nn">~\anaconda3\lib\site-packages\phasepy\cubic\psatpure.py</span> in <span class="ni">psat</span><span class="nt">(T, cubic, P0)</span>
+<span class="g g-Whitespace">     </span><span class="mi">44</span><span class="sd">             a4 = -R*T*2*b**3*c1*c2*(c1+c2)+2*a*b**2*(1-c1-c2)</span>
+<span class="g g-Whitespace">     </span><span class="mi">45</span><span class="sd">             a5 = -R*T*b**4*c1*c2+a*b**3*(c1+c2)</span>
+<span class="ne">---&gt; </span><span class="mi">46</span><span class="sd">             V = np.roots([a1, a2, a3, a4, a5])</span>
+<span class="g g-Whitespace">     </span><span class="mi">47</span><span class="sd">             V = V[np.isreal(V)]</span>
+<span class="g g-Whitespace">     </span><span class="mi">48</span><span class="sd">             V = V[V &gt; b]</span>
+
+<span class="nn">~\anaconda3\lib\site-packages\numpy\core\overrides.py</span> in <span class="ni">roots</span><span class="nt">(*args, **kwargs)</span>
+
+<span class="nn">~\anaconda3\lib\site-packages\numpy\lib\polynomial.py</span> in <span class="ni">roots</span><span class="nt">(p)</span>
+<span class="g g-Whitespace">    </span><span class="mi">226</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">227</span>     <span class="c1"># If input is scalar, this makes it an array</span>
+<span class="ne">--&gt; </span><span class="mi">228</span>     <span class="n">p</span> <span class="o">=</span> <span class="n">atleast_1d</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">229</span>     <span class="k">if</span> <span class="n">p</span><span class="o">.</span><span class="n">ndim</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">230</span>         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Input must be a rank-1 array.&quot;</span><span class="p">)</span>
+
+<span class="nn">~\anaconda3\lib\site-packages\numpy\core\overrides.py</span> in <span class="ni">atleast_1d</span><span class="nt">(*args, **kwargs)</span>
+
+<span class="nn">~\anaconda3\lib\site-packages\numpy\core\shape_base.py</span> in <span class="ni">atleast_1d</span><span class="nt">(*arys)</span>
+<span class="g g-Whitespace">     </span><span class="mi">63</span>     <span class="n">res</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="g g-Whitespace">     </span><span class="mi">64</span>     <span class="k">for</span> <span class="n">ary</span> <span class="ow">in</span> <span class="n">arys</span><span class="p">:</span>
+<span class="ne">---&gt; </span><span class="mi">65</span>         <span class="n">ary</span> <span class="o">=</span> <span class="n">asanyarray</span><span class="p">(</span><span class="n">ary</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">66</span>         <span class="k">if</span> <span class="n">ary</span><span class="o">.</span><span class="n">ndim</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">67</span>             <span class="n">result</span> <span class="o">=</span> <span class="n">ary</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="ne">ValueError</span>: setting an array element with a sequence. The requested array has an inhomogeneous shape after 1 dimensions. The detected shape was (5,) + inhomogeneous part.
 </pre></div>
 </div>
-<script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "2c2f5d5c85f7490caad7cd2bf89bccd2"}
-</script></div>
+</div>
 </div>
 </section>
 </section>
-
-
-<script type="application/vnd.jupyter.widget-state+json">
-{"state": {"f3f3597158dd4121bb030605b625c8dd": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "2c2f5d5c85f7490caad7cd2bf89bccd2": {"model_name": "VBoxModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": ["widget-interact"], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "VBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "VBoxView", "box_style": "", "children": ["IPY_MODEL_70aa1a237a5e4eddad11d7bad83349c4", "IPY_MODEL_bf6b6ac9994d48188055bc7dc303873e"], "layout": "IPY_MODEL_f3f3597158dd4121bb030605b625c8dd"}}, "e36b428d31d04b86851b571956723ec5": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "074ca2f5ba634a8f9bea9bbb83e638ab": {"model_name": "SliderStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "SliderStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": "", "handle_color": null}}, "70aa1a237a5e4eddad11d7bad83349c4": {"model_name": "FloatSliderModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "FloatSliderModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "FloatSliderView", "continuous_update": true, "description": "Tr", "description_tooltip": null, "disabled": false, "layout": "IPY_MODEL_e36b428d31d04b86851b571956723ec5", "max": 0.99, "min": 0.92, "orientation": "horizontal", "readout": true, "readout_format": ".2f", "step": 0.001, "style": "IPY_MODEL_074ca2f5ba634a8f9bea9bbb83e638ab", "value": 0.93}}, "a2d243260ddc44ca8eea9ebbbcfe0ff1": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "bf6b6ac9994d48188055bc7dc303873e": {"model_name": "OutputModel", "model_module": "@jupyter-widgets/output", "model_module_version": "1.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/output", "_model_module_version": "1.0.0", "_model_name": "OutputModel", "_view_count": null, "_view_module": "@jupyter-widgets/output", "_view_module_version": "1.0.0", "_view_name": "OutputView", "layout": "IPY_MODEL_a2d243260ddc44ca8eea9ebbbcfe0ff1", "msg_id": "", "outputs": []}}}, "version_major": 2, "version_minor": 0}
-</script>
-
 
     <script type="text/x-thebe-config">
     {
@@ -1748,50 +1635,110 @@ if (IPython.notebook.kernel !== null) {
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="5.Calculating-Fugacity.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Calculating Fugacity</p>
-        </div>
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="5.Calculating-Fugacity.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Calculating Fugacity</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="7.Constructing-Property-Diagrams.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="7.Constructing-Property-Diagrams.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">Constructing Property Diagrams</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#we-define-equilibrium-with-two-criteria">We define Equilibrium with Two Criteria:</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ds-0-equivalence-of-temperature-pressure-and-free-energy-of-the-vapor-and-liquid-phase"><span class="math notranslate nohighlight">\(dS=0\)</span>: Equivalence of Temperature, Pressure, and Free Energy of the vapor and liquid phase</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stability-d-2s-0">Stability - <span class="math notranslate nohighlight">\(d^2S&lt;0\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#actual-equilibrium">Actual Equilibrium</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example">Example</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interactive-example">Interactive Example</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
   
-    By J. J. Richards<br/>
-  
-      &copy; Copyright 2022.<br/>
-</p>
-        </footer>
-    </div>
+  <div class="footer-item">
     
+<p class="component-author">
+By J. J. Richards
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
 </div>
+          </footer>
+        
 
-
-      </div>
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>

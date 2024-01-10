@@ -1,0 +1,133 @@
+Traceback (most recent call last):
+  File "C:\Users\richa\anaconda3\lib\site-packages\jupyter_cache\executors\utils.py", line 58, in single_nb_execution
+    executenb(
+  File "C:\Users\richa\anaconda3\lib\site-packages\nbclient\client.py", line 1204, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "C:\Users\richa\anaconda3\lib\site-packages\nbclient\util.py", line 84, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "C:\Users\richa\anaconda3\lib\site-packages\nbclient\util.py", line 62, in just_run
+    return loop.run_until_complete(coro)
+  File "C:\Users\richa\anaconda3\lib\asyncio\base_events.py", line 647, in run_until_complete
+    return future.result()
+  File "C:\Users\richa\anaconda3\lib\site-packages\nbclient\client.py", line 663, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\richa\anaconda3\lib\site-packages\nbclient\client.py", line 965, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\richa\anaconda3\lib\site-packages\nbclient\client.py", line 862, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+%matplotlib notebook
+from ipywidgets import *
+import numpy as np
+import matplotlib.pyplot as plt
+
+from phasepy import component, mixture, preos
+Tc=647.13
+Pc=220.55
+w=0.344861
+Tr=0.95
+
+water = component(name='water', Tc=Tc, Pc=Pc, w=w)
+eos=preos(water,'mhv_unifac')
+R=8.314 
+##create the plot
+fig = plt.figure()
+ax = fig.add_subplot(1, 1, 1)
+plt.yscale('log')
+plt.xscale('log')
+plt.ylabel('P (bar)')
+plt.xlabel(r'$V$ $(cm^3/mol)$')
+
+v=np.logspace(np.log10(eos.b[0]*1.1),np.log10(100*eos.b[0]),201)
+if(Tr<1):
+    psat,vl,vv=eos.psat(Tr*Tc)
+    
+    
+    mask=(v<=vl) | (v>=vv)
+    line1, = ax.plot(v,eos(Tr*Tc,v),'r')
+    P=eos(Tr*Tc,v)
+    
+    dPdV=np.gradient(P,v)
+    
+    P_=np.concatenate((np.insert(P[v<=vl],-1,psat),np.insert(P[v>=vv],0,psat)))
+    V_=np.concatenate((np.insert(v[v<=vl],-1,vl),np.insert(v[v>=vv],0,vl)))
+                      
+    line2, = ax.plot(V_,P_,'g')
+    line3, = ax.plot(v[dPdV<=0],P[dPdV<=0],'*b')
+else:
+    line1, = ax.plot(v,eos(Tr*Tc,v),'r')
+
+plt.xlim(min(v),max(v))
+
+
+
+##update the plot
+def update(Tr = 0.93):
+    psat,vl,vv=eos.psat(Tr*Tc)
+
+    mask=(v<vl) | (v>vv)
+    line1.set_data(v,eos(Tr*Tc,v))
+    line1.set_label(r'$P_{EOS}$')
+    P=eos(Tr*Tc,v)
+
+    P_=np.concatenate((np.insert(P[v<=vl],-1,psat),np.insert(P[v>=vv],0,psat)))
+    V_=np.concatenate((np.insert(v[v<=vl],-1,vl),np.insert(v[v>=vv],0,vl)))
+    
+    dPdV=np.gradient(P,v)
+    line3.set_data(v[dPdV<=0],P[dPdV<=0])
+    line2.set_data(V_,P_)
+    line2.set_label(r'$P_{real}$')
+    
+    #plt.annotate()
+    plt.legend()
+    fig.canvas.draw_idle()
+
+interact(update,Tr=(0.92,0.99,0.001));
+
+------------------
+
+[1;31m---------------------------------------------------------------------------[0m
+[1;31mValueError[0m                                Traceback (most recent call last)
+[1;32m~\AppData\Local\Temp\ipykernel_15052\1872046981.py[0m in [0;36m<module>[1;34m[0m
+[0;32m     23[0m [0mv[0m[1;33m=[0m[0mnp[0m[1;33m.[0m[0mlogspace[0m[1;33m([0m[0mnp[0m[1;33m.[0m[0mlog10[0m[1;33m([0m[0meos[0m[1;33m.[0m[0mb[0m[1;33m[[0m[1;36m0[0m[1;33m][0m[1;33m*[0m[1;36m1.1[0m[1;33m)[0m[1;33m,[0m[0mnp[0m[1;33m.[0m[0mlog10[0m[1;33m([0m[1;36m100[0m[1;33m*[0m[0meos[0m[1;33m.[0m[0mb[0m[1;33m[[0m[1;36m0[0m[1;33m][0m[1;33m)[0m[1;33m,[0m[1;36m201[0m[1;33m)[0m[1;33m[0m[1;33m[0m[0m
+[0;32m     24[0m [1;32mif[0m[1;33m([0m[0mTr[0m[1;33m<[0m[1;36m1[0m[1;33m)[0m[1;33m:[0m[1;33m[0m[1;33m[0m[0m
+[1;32m---> 25[1;33m     [0mpsat[0m[1;33m,[0m[0mvl[0m[1;33m,[0m[0mvv[0m[1;33m=[0m[0meos[0m[1;33m.[0m[0mpsat[0m[1;33m([0m[0mTr[0m[1;33m*[0m[0mTc[0m[1;33m)[0m[1;33m[0m[1;33m[0m[0m
+[0m[0;32m     26[0m [1;33m[0m[0m
+[0;32m     27[0m [1;33m[0m[0m
+
+[1;32m~\anaconda3\lib\site-packages\phasepy\cubic\cubicpure.py[0m in [0;36mpsat[1;34m(self, T, P0)[0m
+[0;32m    152[0m             [0msaturation[0m [0mvapor[0m [0mvolume[0m [1;33m[[0m[0mcm3[0m[1;33m/[0m[0mmol[0m[1;33m][0m[1;33m[0m[1;33m[0m[0m
+[0;32m    153[0m         """
+[1;32m--> 154[1;33m         [0mp0[0m[1;33m,[0m [0mvl[0m[1;33m,[0m [0mvv[0m [1;33m=[0m [0mpsat[0m[1;33m([0m[0mT[0m[1;33m,[0m [0mself[0m[1;33m,[0m [0mP0[0m[1;33m)[0m[1;33m[0m[1;33m[0m[0m
+[0m[0;32m    155[0m         [1;32mreturn[0m [0mp0[0m[1;33m,[0m [0mvl[0m[1;33m,[0m [0mvv[0m[1;33m[0m[1;33m[0m[0m
+[0;32m    156[0m [1;33m[0m[0m
+
+[1;32m~\anaconda3\lib\site-packages\phasepy\cubic\psatpure.py[0m in [0;36mpsat[1;34m(T, cubic, P0)[0m
+[0;32m     44[0m             [0ma4[0m [1;33m=[0m [1;33m-[0m[0mR[0m[1;33m*[0m[0mT[0m[1;33m*[0m[1;36m2[0m[1;33m*[0m[0mb[0m[1;33m**[0m[1;36m3[0m[1;33m*[0m[0mc1[0m[1;33m*[0m[0mc2[0m[1;33m*[0m[1;33m([0m[0mc1[0m[1;33m+[0m[0mc2[0m[1;33m)[0m[1;33m+[0m[1;36m2[0m[1;33m*[0m[0ma[0m[1;33m*[0m[0mb[0m[1;33m**[0m[1;36m2[0m[1;33m*[0m[1;33m([0m[1;36m1[0m[1;33m-[0m[0mc1[0m[1;33m-[0m[0mc2[0m[1;33m)[0m[1;33m[0m[1;33m[0m[0m
+[0;32m     45[0m             [0ma5[0m [1;33m=[0m [1;33m-[0m[0mR[0m[1;33m*[0m[0mT[0m[1;33m*[0m[0mb[0m[1;33m**[0m[1;36m4[0m[1;33m*[0m[0mc1[0m[1;33m*[0m[0mc2[0m[1;33m+[0m[0ma[0m[1;33m*[0m[0mb[0m[1;33m**[0m[1;36m3[0m[1;33m*[0m[1;33m([0m[0mc1[0m[1;33m+[0m[0mc2[0m[1;33m)[0m[1;33m[0m[1;33m[0m[0m
+[1;32m---> 46[1;33m             [0mV[0m [1;33m=[0m [0mnp[0m[1;33m.[0m[0mroots[0m[1;33m([0m[1;33m[[0m[0ma1[0m[1;33m,[0m [0ma2[0m[1;33m,[0m [0ma3[0m[1;33m,[0m [0ma4[0m[1;33m,[0m [0ma5[0m[1;33m][0m[1;33m)[0m[1;33m[0m[1;33m[0m[0m
+[0m[0;32m     47[0m             [0mV[0m [1;33m=[0m [0mV[0m[1;33m[[0m[0mnp[0m[1;33m.[0m[0misreal[0m[1;33m([0m[0mV[0m[1;33m)[0m[1;33m][0m[1;33m[0m[1;33m[0m[0m
+[0;32m     48[0m             [0mV[0m [1;33m=[0m [0mV[0m[1;33m[[0m[0mV[0m [1;33m>[0m [0mb[0m[1;33m][0m[1;33m[0m[1;33m[0m[0m
+
+[1;32m~\anaconda3\lib\site-packages\numpy\core\overrides.py[0m in [0;36mroots[1;34m(*args, **kwargs)[0m
+
+[1;32m~\anaconda3\lib\site-packages\numpy\lib\polynomial.py[0m in [0;36mroots[1;34m(p)[0m
+[0;32m    226[0m     """
+[0;32m    227[0m     [1;31m# If input is scalar, this makes it an array[0m[1;33m[0m[1;33m[0m[0m
+[1;32m--> 228[1;33m     [0mp[0m [1;33m=[0m [0matleast_1d[0m[1;33m([0m[0mp[0m[1;33m)[0m[1;33m[0m[1;33m[0m[0m
+[0m[0;32m    229[0m     [1;32mif[0m [0mp[0m[1;33m.[0m[0mndim[0m [1;33m!=[0m [1;36m1[0m[1;33m:[0m[1;33m[0m[1;33m[0m[0m
+[0;32m    230[0m         [1;32mraise[0m [0mValueError[0m[1;33m([0m[1;34m"Input must be a rank-1 array."[0m[1;33m)[0m[1;33m[0m[1;33m[0m[0m
+
+[1;32m~\anaconda3\lib\site-packages\numpy\core\overrides.py[0m in [0;36matleast_1d[1;34m(*args, **kwargs)[0m
+
+[1;32m~\anaconda3\lib\site-packages\numpy\core\shape_base.py[0m in [0;36matleast_1d[1;34m(*arys)[0m
+[0;32m     63[0m     [0mres[0m [1;33m=[0m [1;33m[[0m[1;33m][0m[1;33m[0m[1;33m[0m[0m
+[0;32m     64[0m     [1;32mfor[0m [0mary[0m [1;32min[0m [0marys[0m[1;33m:[0m[1;33m[0m[1;33m[0m[0m
+[1;32m---> 65[1;33m         [0mary[0m [1;33m=[0m [0masanyarray[0m[1;33m([0m[0mary[0m[1;33m)[0m[1;33m[0m[1;33m[0m[0m
+[0m[0;32m     66[0m         [1;32mif[0m [0mary[0m[1;33m.[0m[0mndim[0m [1;33m==[0m [1;36m0[0m[1;33m:[0m[1;33m[0m[1;33m[0m[0m
+[0;32m     67[0m             [0mresult[0m [1;33m=[0m [0mary[0m[1;33m.[0m[0mreshape[0m[1;33m([0m[1;36m1[0m[1;33m)[0m[1;33m[0m[1;33m[0m[0m
+
+[1;31mValueError[0m: setting an array element with a sequence. The requested array has an inhomogeneous shape after 1 dimensions. The detected shape was (5,) + inhomogeneous part.
+ValueError: setting an array element with a sequence. The requested array has an inhomogeneous shape after 1 dimensions. The detected shape was (5,) + inhomogeneous part.
+

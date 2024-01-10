@@ -1,0 +1,677 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Balance Expression for Entropy &#8212; Introduction to Thermodynamics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=bd9e20870c6007c4c509"></script>
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Ch2/3.Entropy-Balance-Expression';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Entropy at 0K" href="4.Entropy-at-0K.html" />
+    <link rel="prev" title="Expansion of a Gas" href="2.Expansion-of-a-Gas.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <header>
+  
+    <div class="bd-header navbar navbar-expand-lg bd-navbar">
+    </div>
+  
+  </header>
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Introduction to Thermodynamics - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Introduction to Thermodynamics - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Foreword
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Definitions and Balance Expressions</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Ch1/1.Thermodynamic-Definitions.html">Thermodynamic Definitions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch1/2.Real-Gas-Properties.html">Real Gas Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch1/3.Equations-of-State.html">Equations of State</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch1/4.Balance-Expressions.html">Macroscopic Balance Expressions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch1/5.Conservation-of-Mass.html">Conservation of Mass</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Foundations of Thermodynamics</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="1.Conservation-of-Energy.html">Conservation of Energy and the 1st Law of Thermodynamics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2.Expansion-of-a-Gas.html">Expansion of a Gas</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Balance Expression for Entropy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4.Entropy-at-0K.html">Entropy at 0K</a></li>
+<li class="toctree-l1"><a class="reference internal" href="5.Free-Energies.html">Free Energy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="6.Changes-of-State.html">Changes of State</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Applications of Thermodynamics in Chemical Engineering</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Ch3/1.Unit-Operations.html">Unit Operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch3/2.Property-Diagram-Single-Components.html">Property Database for Common Substances</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Ch3/3.Heat-Engines.html">Heat Engines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch3/4.Refrigeration.html">Refrigeration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch3/5.Liquefaction.html">Liquefaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch3/6.Optimizing-with-Python.html">Unit Operations</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Vapor-Liquid Equilibrium for Non-Ideal Gases</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Ch4/1.Deriving-Useful-Thermodynamic-Relationships.html">Deriving Useful Thermodynamic Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch4/2.Virial-Equations-of-State.html">Volumetric Equations of State</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch4/3.Law-of-Corresponding-States.html">Law of Corresponding States and Critical Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch4/4.Thermal-Variables-from-EOS.html">Computing Thermal Variables from an Equation of State</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch4/5.Calculating-Fugacity.html">Calculating Fugacity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch4/6.Vapor-Liquid-Equilibrium.html">Vapor Liquid Equilibrium</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch4/7.Constructing-Property-Diagrams.html">Constructing Property Diagrams</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Thermodynamics of Mixtures</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Ch6/1.Species-Balance-Expression.html">Species Balance Expression and Reaction Kinetics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch5/3.Gaseous-Mixtures.html">Gaseous Mixtures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch5/4.Liquid-Mixtures.html">Liquid Mixtures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch5/5.Accuracy-EOS.html">Calculating the Accuracy of Equations of State</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch6/6.Chemical-Equilibrium.html">Chemical Equilibrium</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch7/7.Activity-Coefficient-Models.html">Activity Coefficients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch7/8.Calculating-Mixture-Fugacity.html">Calculating Fugacity of Mixtures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch7/9.Mixture-Equilibrium.html">Equilibrium of Mixtures</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Exercises</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Exercises/Ch1.html">Exercises for Chapter 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Exercises/Ch2.html">Exercises for Chapter 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Exercises/Ch3.html">Exercises for Chapter 3</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/Ch2/3.Entropy-Balance-Expression.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Balance Expression for Entropy</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-of-entropy">Definition of Entropy</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#clausius-definition">Clausius Definition</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#more-practical-definition">More Practical Definition</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mathematical-definition">Mathematical Definition</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reversibility">Reversibility:</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gradients-and-entropy-generation">Gradients and Entropy Generation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-arrow-of-time">The Arrow of Time</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Balance Expression for Entropy</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conservation-of-entropy">Conservation of Entropy</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-microscopic-entropy-balance">The Microscopic Entropy Balance</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="balance-expression-for-entropy">
+<h1>Balance Expression for Entropy<a class="headerlink" href="#balance-expression-for-entropy" title="Permalink to this heading">#</a></h1>
+<p>The 2nd Law of Thermodynamics, the balance expression for entropy, and the 1st law of thermodynamics, the <em>conservation of energy</em>, are the foundation of thermodynamics. When combine with <em>conservation of mass</em>, we become fully equipped to solve thermodynamic problems.</p>
+<section id="definition-of-entropy">
+<h2>Definition of Entropy<a class="headerlink" href="#definition-of-entropy" title="Permalink to this heading">#</a></h2>
+<section id="clausius-definition">
+<h3>Clausius Definition<a class="headerlink" href="#clausius-definition" title="Permalink to this heading">#</a></h3>
+<p>Entropy, whose name arises from the Greek word for <em>transformation</em>, is deeply connected to the microscopic description of a state of matter and its order/disorder.</p>
+<p>Clausis put it this way:</p>
+<blockquote>
+<div><p>when bodies are expanded by heat, their molecules being thus separated from each other: in this case the mutual attractions of the molecules on the one hand, and external opposing forces on the other, insofar as any such are in operation, have to be overcome. Again, the state of aggregation of bodies is altered by heat, solid bodies rendered liquid, and both solid and liquid bodies being rendered aeriform: here likewise internal forces, and in general external forces also, have to be overcome.</p>
+</div></blockquote>
+<p>In other words, there is an energy penalty that must be paid in order to overcome the localized structure that arises from the constituents of a material and how its buildings blocks behave in the ensemble.</p>
+</section>
+<section id="more-practical-definition">
+<h3>More Practical Definition<a class="headerlink" href="#more-practical-definition" title="Permalink to this heading">#</a></h3>
+<p>To gain some intuition about the nature of entropy, I find <a class="reference external" href="https://www.pbs.org/video/the-misunderstood-nature-of-entropy-nyv9bu/">this video</a> to be particularly helpful -</p>
+<p>Entropy is the state property that increases with time as an isolated system evolves toward equilibrium.</p>
+</section>
+<section id="mathematical-definition">
+<h3>Mathematical Definition<a class="headerlink" href="#mathematical-definition" title="Permalink to this heading">#</a></h3>
+<p>When a system is at equilibrium, we define entropy such that it is at a maximum. Mathematically, we say that in an isolated system, the system will evolve to equilibrium such that:</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(dS = 0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(d^2 S &lt; 0\)</span></p></li>
+</ol>
+<p>These two criteria establish that entropy is the property that defines equilibrium, but there are many scenarios where the system is driven either by mass, heat, or work flows such that the above criteria are not satisfied. In these scenarios, we often find that entropy is <em>generated</em>.</p>
+</section>
+</section>
+<section id="reversibility">
+<h2>Reversibility:<a class="headerlink" href="#reversibility" title="Permalink to this heading">#</a></h2>
+<p>Watch - <a class="reference external" href="https://www.youtube.com/watch?v=ROrovyJXSnM">https://www.youtube.com/watch?v=ROrovyJXSnM</a></p>
+<section id="gradients-and-entropy-generation">
+<h3>Gradients and Entropy Generation<a class="headerlink" href="#gradients-and-entropy-generation" title="Permalink to this heading">#</a></h3>
+<p>Entropy generation is a direct consequence of systems which possess internal gradients that drive material flows. Generally, the larger the gradients, the more irreversible the process. As chemical engineers, the design and maintenance of chemical, thermal, and momentum gradients are critical to the function of many unit operations. In turn, larger gradients lead to energy losses through entropy generation. Reversible processes are those which are performed in a way that internal gradients within a system are eliminated.</p>
+</section>
+<section id="the-arrow-of-time">
+<h3>The Arrow of Time<a class="headerlink" href="#the-arrow-of-time" title="Permalink to this heading">#</a></h3>
+<p>Time is an arrow that points in only one direction. Time has an intimate relationship with entropy due to its connection to the evolution of systems toward equilibrium. Take for example, a dye localized in a liquid depicted in the left panel image below. We all have intuition that that over time, the dye would diffuse away from that central position, resulting in a diffuse halo of dye that ultimately becomes uniformly mixed with the dispersing fluid. The equilibrium condition is the one where the dye has been uniformly mixed with the continuous liquid phase.</p>
+<p><strong>Reversible processes</strong> are ones that are indistinguishable when played in the forward vs. reverse direction. Reversibility necessitates the elimination of all gradients within the samples.</p>
+<p><strong>Irreversible processess</strong> are all real processes. Irreversible processes cause the generation of entropy.</p>
+</section>
+</section>
+<section id="id1">
+<h2>Balance Expression for Entropy<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<p>The construction of the balance expression requires that we set <span class="math notranslate nohighlight">\(\theta=S\)</span>, but unlike for mass and energy, we will retain the possibility that irreversibilities will generate entropy, <span class="math notranslate nohighlight">\(\dot{S}_{gen}\ge 0\)</span>.</p>
+<p>We must also recognize based on the definitions above that the flow of entropy is effected by the exchange of heat at a fixed temperature. This observation, first formalized by Clausius, completes the formulation of the entropy balance expression.</p>
+<div class="math notranslate nohighlight">
+\[ \dfrac{dS}{dt}=\sum_k \big(\dot{N}\underline{S}\big)+\sum_j\dfrac{\dot{Q}_j}{T_j}+\dot{S}_{gen}\]</div>
+<p>This expression in its <em>differential form</em> is the most general statement of the entropy balance expression.</p>
+<ul class="simple">
+<li><p>On the l.h.s.</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(\dfrac{dS}{dt}\)</span> tracks the change of entropy within a system as a function of time</p></li>
+</ul>
+</li>
+<li><p>On the r.h.s.,</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(\sum_k \big(\dot{N}\underline{S}\big)\)</span> is the entropy carried into the system across the boundary due to the flow of mass</p></li>
+<li><p><span class="math notranslate nohighlight">\(\sum_j\dfrac{\dot{Q}_j}{T_j}\)</span> is the entropy carried across the system boundary due to the flow of heat</p></li>
+<li><p><span class="math notranslate nohighlight">\(\dot{S}_{gen}\)</span> is the rate of entropy generated within the system due to internal gradients in mass, concentration, temperature, or velocity.</p></li>
+</ul>
+</li>
+</ul>
+<section id="conservation-of-entropy">
+<h3>Conservation of Entropy<a class="headerlink" href="#conservation-of-entropy" title="Permalink to this heading">#</a></h3>
+<p>For reversible processes, the entropy balance expression becomes a <em>conservation law</em> and the conservation of entropy can be written as:</p>
+<div class="math notranslate nohighlight">
+\[ \dfrac{dS}{dt}=\sum_k \big(\dot{N}\underline{S}\big)+\sum_j\dfrac{\dot{Q}_j}{T_j}\]</div>
+<p>While there is no more fundamental fact of thermodynamics that <strong>entropy is not conserved</strong>, in this class we frequently use this form of the entropy balance expression. This form is useful because if we can use the reversible process to compute state property changes that occur due to physical processes, then we can compare those hypothetical processes to our real processes to identify irreversibilities and potentially eliminate them.</p>
+</section>
+</section>
+<section id="the-microscopic-entropy-balance">
+<h2>The Microscopic Entropy Balance<a class="headerlink" href="#the-microscopic-entropy-balance" title="Permalink to this heading">#</a></h2>
+<p>Boltzmann defined the entropy at a microscopic level as:</p>
+<p><span class="math notranslate nohighlight">\(S=k_B \ln{W}\)</span></p>
+<p>where</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(k_B\)</span> is the Boltzmann’s constant</p></li>
+<li><p><span class="math notranslate nohighlight">\(W\)</span> is the multiplicity</p></li>
+</ul>
+<p>The <strong>multiplicity</strong> defines the number of permutations of possible configurations or <strong>microstates</strong> (degrees of freedom) which define a system that are consistent with the system state.  It can be written for an <em>ideal gas</em> as:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(W=\dfrac{N!}{\Pi_i N_i!}\)</span> where the <span class="math notranslate nohighlight">\(!\)</span> is the factorial and the <span class="math notranslate nohighlight">\(i\)</span> represents the set of microstates.</p></li>
+<li><p>Each unique configuration is called <strong>microstate</strong> which in the context of vapors and liquids is a description of the positions and velocities of all the atoms within a volume.</p></li>
+<li><p>As the density of substance increases, the number of accessible microstates decreases resulting in a decrease in entropy. This is the origin of the statement that entropy describes the <em>disorder</em> of a system. This is a simplified view as individual microstates can adopt ordered configurations. For a system in equilibrium, even a highly ordered state that is described by the macroscopic state of the system is equally likely as a highly disordered one.</p></li>
+<li><p>Using this microscopic viewpoint, <strong>Equilibrium</strong> is the condition defined as when the multiplicity reaches a maximum or put in words the system will evolve to the state where the multiplicity is maximized.</p></li>
+</ul>
+<p>We can see that the condition for equilibrium defined above is satisfied by Boltzmann’s definition provided that <span class="math notranslate nohighlight">\(W\ge1\)</span>.</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\dfrac{dS}{dt} =  \dfrac{k_B}{W}\dfrac{dW}{dt}\)</span></p>
+<ul>
+<li><p>which by the definition of equilibrium <span class="math notranslate nohighlight">\(\dfrac{dW}{dt}&gt;0\)</span> so that <span class="math notranslate nohighlight">\(\dfrac{dS}{dt}&gt;0\)</span></p></li>
+</ul>
+</li>
+<li><p><span class="math notranslate nohighlight">\(\dfrac{d^2 S}{dt^2} = k_B -\dfrac{1}{W^2}\)</span></p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "executablebooks/jupyter-book",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./Ch2"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="2.Expansion-of-a-Gas.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Expansion of a Gas</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="4.Entropy-at-0K.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Entropy at 0K</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-of-entropy">Definition of Entropy</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#clausius-definition">Clausius Definition</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#more-practical-definition">More Practical Definition</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mathematical-definition">Mathematical Definition</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reversibility">Reversibility:</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gradients-and-entropy-generation">Gradients and Entropy Generation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-arrow-of-time">The Arrow of Time</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Balance Expression for Entropy</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conservation-of-entropy">Conservation of Entropy</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-microscopic-entropy-balance">The Microscopic Entropy Balance</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By J. J. Richards
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
