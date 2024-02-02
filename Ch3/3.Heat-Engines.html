@@ -413,7 +413,13 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#power-generation-using-heat">Power Generation using Heat</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#power-generation-using-heat">Power Generation using Heat</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rankine-power-cycles">Rankine Power Cycles:</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#figure-of-merit">Figure of Merit</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#piston-based-heat-engines">Piston Based Heat Engines</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#carnot-cycle">Carnot Cycle</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-pathways-defined-by-the-carnot-cycle-are-listed-below">The Pathways defined by the Carnot Cycle are listed below.</a></li>
@@ -426,10 +432,6 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ericsson-cycle">Ericsson Cycle</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stirling-cycle">Stirling Cycle</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#otto-cycle">Otto Cycle</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rankine-power-cycles">Rankine Power Cycles:</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#figure-of-merit">Figure of Merit</a></li>
-</ul>
-</li>
 </ul>
 </li>
 </ul>
@@ -456,6 +458,141 @@ document.write(`
 <li><p>Coal Fired  and Nuclear Power Plants - The Rankine Cycle</p></li>
 <li><p>Nature Gas Power Turbines - The Brayton Cycle</p></li>
 </ol>
+<section id="rankine-power-cycles">
+<h3>Rankine Power Cycles:<a class="headerlink" href="#rankine-power-cycles" title="Permalink to this heading">#</a></h3>
+<p>A Rankine cycle is the most common way to produce electrical energy in the United States. Generally, coal, biofuels, concentrated photothermal energy, and nuclear power is used to produce a high pressure fluid (often steam) which is then passed through a turbine, condensed, and recycled back into the process. A nice video explaining the different elements of a modern coal fired power plant can be found here</p>
+<p>Drawing:</p>
+<p>The steps and unit operations are listed below in the table.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-center head"><p>Step</p></th>
+<th class="text-center head"><p>State</p></th>
+<th class="text-center head"><p>Unit Op.</p></th>
+<th class="text-center head"><p>Path</p></th>
+<th class="text-center head"><p>Heat</p></th>
+<th class="text-center head"><p>Work</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>(1)</p></td>
+<td class="text-center"><p>low pressure liquid</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>(1-2)</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>pump</p></td>
+<td class="text-center"><p>isoentropic</p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(\dot{Q}=0\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(\dot{W}=\dot{N}\underline{V}\big(P_2-P_1\big)\)</span></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>(2)</p></td>
+<td class="text-center"><p>high pressure liquid</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>(2-3)</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>boiler</p></td>
+<td class="text-center"><p>isobaric</p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(\dot{Q}=\dot{N}\big(\underline{H}_2-\underline{H}_1\big)\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(\dot{W}=0\)</span></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>(3)</p></td>
+<td class="text-center"><p>superheated vapor</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>(3-4)</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>turbine</p></td>
+<td class="text-center"><p>isoentropic</p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(\dot{Q}=0\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(\dot{W}=\dot{N}\big(\underline{H}_2-\underline{H}_1\big)\)</span></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>(4)</p></td>
+<td class="text-center"><p>low quality vapor</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>(4-1)</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>condenser</p></td>
+<td class="text-center"><p>isobaric</p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(\dot{Q}=\dot{N}\big(\underline{H}_2-\underline{H}_1\big)\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(\dot{W}=0\)</span></p></td>
+</tr>
+</tbody>
+</table>
+<section id="figure-of-merit">
+<h4>Figure of Merit<a class="headerlink" href="#figure-of-merit" title="Permalink to this heading">#</a></h4>
+<p>The efficiency of a Rankine Power Cycle is given by the efficiency of any heat engine:</p>
+<div class="math notranslate nohighlight">
+\[\eta=-\dfrac{\dot{W}}{\dot{Q}_H}
+=\dfrac{\dot{W}_{1-2}+\dot{W}_{3-4}}{\dot{Q}_{2-3}}
+=\dfrac{(\underline{H}_4-\underline{H}_{3})-\underline{V_1}(P_2-P_1)}{(\underline{H}_3-\underline{H}_{2})}\]</div>
+<div class="alert alert-block alert-info">
+<b>Note:</b> the above equations assume the pump and turbine operate reversibly.
+</div>
+<p>Modern boilers can handle up to 30 MPa and maximum operating temperatures of 650 C. Given the condensation takes place below 100 C, the Carnot Efficiency can be calculated as follows:</p>
+<div class="math notranslate nohighlight">
+\[\eta_{C}=1-\dfrac{T_C}{T_H}=1-\dfrac{373.15}{923.15}=59.6\%\]</div>
+<p>The real efficiency is much lower than this Carnot Efficiency. Lets see why below using some basic assumptions:</p>
+<ol class="arabic simple">
+<li><p>Assume the water entering the boiler is at 100 C and 30 MPa.</p></li>
+<li><p>Assume that it exits the boiler at 650 C</p></li>
+<li><p>Assume that steam exits the turbine at 0.1 MPa</p></li>
+</ol>
+<p>Then the state points can be summarized in tabular form as:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-center head"><p>state</p></th>
+<th class="text-center head"><p><span class="math notranslate nohighlight">\(T\:(^o C)\)</span></p></th>
+<th class="text-center head"><p><span class="math notranslate nohighlight">\(P\:(MPa)\)</span></p></th>
+<th class="text-center head"><p><span class="math notranslate nohighlight">\(\underline{H}\:(kJ/mol)\)</span></p></th>
+<th class="text-center head"><p><span class="math notranslate nohighlight">\(\underline{S}\:(J/mol\cdot K)\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>1</p></td>
+<td class="text-center"><p>100</p></td>
+<td class="text-center"><p>0.1</p></td>
+<td class="text-center"><p>48.19</p></td>
+<td class="text-center"><p>24.5</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>1</p></td>
+<td class="text-center"><p>100</p></td>
+<td class="text-center"><p>30</p></td>
+<td class="text-center"><p>7.95</p></td>
+<td class="text-center"><p>24.5</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>3</p></td>
+<td class="text-center"><p>650</p></td>
+<td class="text-center"><p>30</p></td>
+<td class="text-center"><p>64.84</p></td>
+<td class="text-center"><p>115.43</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>4</p></td>
+<td class="text-center"><p>100</p></td>
+<td class="text-center"><p>0.1</p></td>
+<td class="text-center"><p>42.08</p></td>
+<td class="text-center"><p>115.43</p></td>
+</tr>
+</tbody>
+</table>
+<p>if we also identify the molar volume of steam, <span class="math notranslate nohighlight">\(\underline{V}_1\approx\underline{V}_2=0.0180\:L/mol\)</span>, then we can calculate the efficiency as:</p>
+<div class="math notranslate nohighlight">
+\[\eta=\frac{(42.08-64.84)0.018(30-0.1)}{7.95-64.84}=21.5\%\]</div>
+</section>
+</section>
 </section>
 <section id="piston-based-heat-engines">
 <h2>Piston Based Heat Engines<a class="headerlink" href="#piston-based-heat-engines" title="Permalink to this heading">#</a></h2>
@@ -853,141 +990,6 @@ document.write(`
 <section id="otto-cycle">
 <h3>Otto Cycle<a class="headerlink" href="#otto-cycle" title="Permalink to this heading">#</a></h3>
 </section>
-<section id="rankine-power-cycles">
-<h3>Rankine Power Cycles:<a class="headerlink" href="#rankine-power-cycles" title="Permalink to this heading">#</a></h3>
-<p>A Rankine cycle is the most common way to produce electrical energy in the United States. Generally, coal, biofuels, concentrated photothermal energy, and nuclear power is used to produce a high pressure fluid (often steam) which is then passed through a turbine, condensed, and recycled back into the process. A nice video explaining the different elements of a modern coal fired power plant can be found here</p>
-<p>Drawing:</p>
-<p>The steps and unit operations are listed below in the table.</p>
-<table class="colwidths-auto table">
-<thead>
-<tr class="row-odd"><th class="text-center head"><p>Step</p></th>
-<th class="text-center head"><p>State</p></th>
-<th class="text-center head"><p>Unit Op.</p></th>
-<th class="text-center head"><p>Path</p></th>
-<th class="text-center head"><p>Heat</p></th>
-<th class="text-center head"><p>Work</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td class="text-center"><p>(1)</p></td>
-<td class="text-center"><p>low pressure liquid</p></td>
-<td class="text-center"><p></p></td>
-<td class="text-center"><p></p></td>
-<td class="text-center"><p></p></td>
-<td class="text-center"><p></p></td>
-</tr>
-<tr class="row-odd"><td class="text-center"><p>(1-2)</p></td>
-<td class="text-center"><p></p></td>
-<td class="text-center"><p>pump</p></td>
-<td class="text-center"><p>isoentropic</p></td>
-<td class="text-center"><p><span class="math notranslate nohighlight">\(\dot{Q}=0\)</span></p></td>
-<td class="text-center"><p><span class="math notranslate nohighlight">\(\dot{W}=\dot{N}\underline{V}\big(P_2-P_1\big)\)</span></p></td>
-</tr>
-<tr class="row-even"><td class="text-center"><p>(2)</p></td>
-<td class="text-center"><p>high pressure liquid</p></td>
-<td class="text-center"><p></p></td>
-<td class="text-center"><p></p></td>
-<td class="text-center"><p></p></td>
-<td class="text-center"><p></p></td>
-</tr>
-<tr class="row-odd"><td class="text-center"><p>(2-3)</p></td>
-<td class="text-center"><p></p></td>
-<td class="text-center"><p>boiler</p></td>
-<td class="text-center"><p>isobaric</p></td>
-<td class="text-center"><p><span class="math notranslate nohighlight">\(\dot{Q}=\dot{N}\big(\underline{H}_2-\underline{H}_1\big)\)</span></p></td>
-<td class="text-center"><p><span class="math notranslate nohighlight">\(\dot{W}=0\)</span></p></td>
-</tr>
-<tr class="row-even"><td class="text-center"><p>(3)</p></td>
-<td class="text-center"><p>superheated vapor</p></td>
-<td class="text-center"><p></p></td>
-<td class="text-center"><p></p></td>
-<td class="text-center"><p></p></td>
-<td class="text-center"><p></p></td>
-</tr>
-<tr class="row-odd"><td class="text-center"><p>(3-4)</p></td>
-<td class="text-center"><p></p></td>
-<td class="text-center"><p>turbine</p></td>
-<td class="text-center"><p>isoentropic</p></td>
-<td class="text-center"><p><span class="math notranslate nohighlight">\(\dot{Q}=0\)</span></p></td>
-<td class="text-center"><p><span class="math notranslate nohighlight">\(\dot{W}=\dot{N}\big(\underline{H}_2-\underline{H}_1\big)\)</span></p></td>
-</tr>
-<tr class="row-even"><td class="text-center"><p>(4)</p></td>
-<td class="text-center"><p>low quality vapor</p></td>
-<td class="text-center"><p></p></td>
-<td class="text-center"><p></p></td>
-<td class="text-center"><p></p></td>
-<td class="text-center"><p></p></td>
-</tr>
-<tr class="row-odd"><td class="text-center"><p>(4-1)</p></td>
-<td class="text-center"><p></p></td>
-<td class="text-center"><p>condenser</p></td>
-<td class="text-center"><p>isobaric</p></td>
-<td class="text-center"><p><span class="math notranslate nohighlight">\(\dot{Q}=\dot{N}\big(\underline{H}_2-\underline{H}_1\big)\)</span></p></td>
-<td class="text-center"><p><span class="math notranslate nohighlight">\(\dot{W}=0\)</span></p></td>
-</tr>
-</tbody>
-</table>
-<section id="figure-of-merit">
-<h4>Figure of Merit<a class="headerlink" href="#figure-of-merit" title="Permalink to this heading">#</a></h4>
-<p>The efficiency of a Rankine Power Cycle is given by the efficiency of any heat engine:</p>
-<div class="math notranslate nohighlight">
-\[\eta=-\dfrac{\dot{W}}{\dot{Q}_H}
-=\dfrac{\dot{W}_{1-2}+\dot{W}_{3-4}}{\dot{Q}_{2-3}}
-=\dfrac{(\underline{H}_4-\underline{H}_{3})-\underline{V_1}(P_2-P_1)}{(\underline{H}_3-\underline{H}_{2})}\]</div>
-<div class="alert alert-block alert-info">
-<b>Note:</b> the above equations assume the pump and turbine operate reversibly.
-</div>
-<p>Modern boilers can handle up to 30 MPa and maximum operating temperatures of 650 C. Given the condensation takes place below 100 C, the Carnot Efficiency can be calculated as follows:</p>
-<div class="math notranslate nohighlight">
-\[\eta_{C}=1-\dfrac{T_C}{T_H}=1-\dfrac{373.15}{923.15}=59.6\%\]</div>
-<p>The real efficiency is much lower than this Carnot Efficiency. Lets see why below using some basic assumptions:</p>
-<ol class="arabic simple">
-<li><p>Assume the water entering the boiler is at 100 C and 30 MPa.</p></li>
-<li><p>Assume that it exits the boiler at 650 C</p></li>
-<li><p>Assume that steam exits the turbine at 0.1 MPa</p></li>
-</ol>
-<p>Then the state points can be summarized in tabular form as:</p>
-<table class="colwidths-auto table">
-<thead>
-<tr class="row-odd"><th class="text-center head"><p>state</p></th>
-<th class="text-center head"><p><span class="math notranslate nohighlight">\(T\:(^o C)\)</span></p></th>
-<th class="text-center head"><p><span class="math notranslate nohighlight">\(P\:(MPa)\)</span></p></th>
-<th class="text-center head"><p><span class="math notranslate nohighlight">\(\underline{H}\:(kJ/mol)\)</span></p></th>
-<th class="text-center head"><p><span class="math notranslate nohighlight">\(\underline{S}\:(J/mol\cdot K)\)</span></p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td class="text-center"><p>1</p></td>
-<td class="text-center"><p>100</p></td>
-<td class="text-center"><p>0.1</p></td>
-<td class="text-center"><p>48.19</p></td>
-<td class="text-center"><p>24.5</p></td>
-</tr>
-<tr class="row-odd"><td class="text-center"><p>1</p></td>
-<td class="text-center"><p>100</p></td>
-<td class="text-center"><p>30</p></td>
-<td class="text-center"><p>7.95</p></td>
-<td class="text-center"><p>24.5</p></td>
-</tr>
-<tr class="row-even"><td class="text-center"><p>3</p></td>
-<td class="text-center"><p>650</p></td>
-<td class="text-center"><p>30</p></td>
-<td class="text-center"><p>64.84</p></td>
-<td class="text-center"><p>115.43</p></td>
-</tr>
-<tr class="row-odd"><td class="text-center"><p>4</p></td>
-<td class="text-center"><p>100</p></td>
-<td class="text-center"><p>0.1</p></td>
-<td class="text-center"><p>42.08</p></td>
-<td class="text-center"><p>115.43</p></td>
-</tr>
-</tbody>
-</table>
-<p>if we also identify the molar volume of steam, <span class="math notranslate nohighlight">\(\underline{V}_1\approx\underline{V}_2=0.0180\:L/mol\)</span>, then we can calculate the efficiency as:</p>
-<div class="math notranslate nohighlight">
-\[\eta=\frac{(42.08-64.84)0.018(30-0.1)}{7.95-64.84}=21.5\%\]</div>
-</section>
-</section>
 </section>
 </section>
 
@@ -1055,7 +1057,13 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#power-generation-using-heat">Power Generation using Heat</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#power-generation-using-heat">Power Generation using Heat</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rankine-power-cycles">Rankine Power Cycles:</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#figure-of-merit">Figure of Merit</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#piston-based-heat-engines">Piston Based Heat Engines</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#carnot-cycle">Carnot Cycle</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-pathways-defined-by-the-carnot-cycle-are-listed-below">The Pathways defined by the Carnot Cycle are listed below.</a></li>
@@ -1068,10 +1076,6 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ericsson-cycle">Ericsson Cycle</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stirling-cycle">Stirling Cycle</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#otto-cycle">Otto Cycle</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rankine-power-cycles">Rankine Power Cycles:</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#figure-of-merit">Figure of Merit</a></li>
-</ul>
-</li>
 </ul>
 </li>
 </ul>
