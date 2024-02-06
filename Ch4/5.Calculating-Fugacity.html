@@ -563,7 +563,7 @@ RT(Z-1) - RTln(Z) + \int_{0}^{P}\big(\dfrac{RT}{\underline{V}}-P\big)d\underline
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x14c4f983070&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x2030f503760&gt;
 </pre></div>
 </div>
 <img alt="../_images/8c946ce1345ea4213c39c28b9f58c709d35217087554903d15ffdb8b0093e1f4.png" src="../_images/8c946ce1345ea4213c39c28b9f58c709d35217087554903d15ffdb8b0093e1f4.png" />
@@ -852,45 +852,10 @@ RT(Z-1) - RTln(Z) + \int_{0}^{P}\big(\dfrac{RT}{\underline{V}}-P\big)d\underline
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span>\<span class="n">ipykernel_5184</span>\<span class="mf">4063806749.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">     </span><span class="mi">48</span> 
-<span class="g g-Whitespace">     </span><span class="mi">49</span>     <span class="n">ps</span><span class="p">,</span><span class="n">vv</span><span class="p">,</span><span class="n">vl</span><span class="o">=</span><span class="n">psat</span><span class="p">(</span><span class="n">Tr</span><span class="p">)</span>
-<span class="ne">---&gt; </span><span class="mi">50</span>     <span class="n">ps</span><span class="p">,</span><span class="n">vv</span><span class="p">,</span><span class="n">vl</span><span class="o">=</span><span class="n">psat</span><span class="p">(</span><span class="n">Tr</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">51</span>                   <span class="n">prmin</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">ps</span><span class="o">/</span><span class="n">Pc</span><span class="o">*</span><span class="mf">0.5</span><span class="p">),</span>
-<span class="g g-Whitespace">     </span><span class="mi">52</span>                   <span class="n">prmax</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">ps</span><span class="o">/</span><span class="n">Pc</span><span class="o">*</span><span class="mf">1.5</span><span class="p">),</span>
-
-<span class="nn">~\AppData\Local\Temp\ipykernel_5184\4063806749.py</span> in <span class="ni">psat</span><span class="nt">(Tr, prmin, prmax, npts)</span>
-<span class="g g-Whitespace">     </span><span class="mi">11</span>         <span class="n">T</span><span class="o">=</span><span class="n">Tc</span><span class="o">*</span><span class="n">Tr</span>
-<span class="g g-Whitespace">     </span><span class="mi">12</span>         <span class="c1">###Find roots of cubic equation of state</span>
-<span class="ne">---&gt; </span><span class="mi">13</span>         <span class="n">roots</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">roots</span><span class="p">(</span><span class="n">Zcoeff</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="n">P</span><span class="p">))</span>
-<span class="g g-Whitespace">     </span><span class="mi">14</span> 
-<span class="g g-Whitespace">     </span><span class="mi">15</span>         <span class="c1">#roots array contains three roots</span>
-
-<span class="nn">~\anaconda3\lib\site-packages\numpy\core\overrides.py</span> in <span class="ni">roots</span><span class="nt">(*args, **kwargs)</span>
-
-<span class="nn">~\anaconda3\lib\site-packages\numpy\lib\polynomial.py</span> in <span class="ni">roots</span><span class="nt">(p)</span>
-<span class="g g-Whitespace">    </span><span class="mi">257</span> 
-<span class="g g-Whitespace">    </span><span class="mi">258</span>     <span class="c1"># tack any zeros onto the back of the array</span>
-<span class="ne">--&gt; </span><span class="mi">259</span>     <span class="n">roots</span> <span class="o">=</span> <span class="n">hstack</span><span class="p">((</span><span class="n">roots</span><span class="p">,</span> <span class="n">NX</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">trailing_zeros</span><span class="p">,</span> <span class="n">roots</span><span class="o">.</span><span class="n">dtype</span><span class="p">)))</span>
-<span class="g g-Whitespace">    </span><span class="mi">260</span>     <span class="k">return</span> <span class="n">roots</span>
-<span class="g g-Whitespace">    </span><span class="mi">261</span> 
-
-<span class="nn">~\anaconda3\lib\site-packages\numpy\core\overrides.py</span> in <span class="ni">hstack</span><span class="nt">(*args, **kwargs)</span>
-
-<span class="nn">~\anaconda3\lib\site-packages\numpy\core\shape_base.py</span> in <span class="ni">hstack</span><span class="nt">(tup, dtype, casting)</span>
-<span class="g g-Whitespace">    </span><span class="mi">366</span>     <span class="c1"># As a special case, dimension 0 of 1-dimensional arrays is &quot;horizontal&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">367</span>     <span class="k">if</span> <span class="n">arrs</span> <span class="ow">and</span> <span class="n">arrs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">ndim</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">368</span>         <span class="k">return</span> <span class="n">_nx</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span><span class="n">arrs</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">,</span> <span class="n">casting</span><span class="o">=</span><span class="n">casting</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">369</span>     <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">370</span>         <span class="k">return</span> <span class="n">_nx</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span><span class="n">arrs</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">,</span> <span class="n">casting</span><span class="o">=</span><span class="n">casting</span><span class="p">)</span>
-
-<span class="nn">~\anaconda3\lib\site-packages\numpy\core\overrides.py</span> in <span class="ni">concatenate</span><span class="nt">(*args, **kwargs)</span>
-
-<span class="ne">KeyboardInterrupt</span>: 
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;$V$ $(cm^3/mol)$&#39;)
 </pre></div>
 </div>
+<img alt="../_images/2a94d243a9139ce15993a62f33a6f0ba11bc3d861c49a34d1ddb7d14e671e7a5.png" src="../_images/2a94d243a9139ce15993a62f33a6f0ba11bc3d861c49a34d1ddb7d14e671e7a5.png" />
 </div>
 </div>
 <div class="cell docutils container">
