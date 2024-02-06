@@ -199,10 +199,6 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="1.Unit-Operations.html">Unit Operations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="2.Property-Diagram-Single-Components.html">Property Database for Common Substances</a></li>
-
-
-
-
 <li class="toctree-l1"><a class="reference internal" href="3.Heat-Engines.html">Heat Engines</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Refrigeration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="5.Liquefaction.html">Liquefaction</a></li>
@@ -413,8 +409,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#coefficient-of-performance">Coefficient of Performance</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rankine-refrigeration-cycle">Rankine Refrigeration Cycle</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-using-ammonia-refrigeration">Example using Ammonia Refrigeration</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#understanding-modern-refrigeration">Understanding modern refrigeration</a></li>
 </ul>
 </li>
@@ -432,12 +428,10 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="refrigeration">
 <h1>Refrigeration<a class="headerlink" href="#refrigeration" title="Permalink to this heading">#</a></h1>
-<section id="coefficient-of-performance">
-<h2>Coefficient of Performance<a class="headerlink" href="#coefficient-of-performance" title="Permalink to this heading">#</a></h2>
-</section>
+<p>Refrigeration is the opposite of a heat engine. In a refrigerator, we run the heat engine in reverse and use work to drive heat to flow from a cold reservoir to a hot one.</p>
 <section id="rankine-refrigeration-cycle">
 <h2>Rankine Refrigeration Cycle<a class="headerlink" href="#rankine-refrigeration-cycle" title="Permalink to this heading">#</a></h2>
-<p>The Rankine Refrigeration cycle is depicted below, it consists of the following pathways.</p>
+<p>The Rankine Refrigeration cycle is depicted below, it consists of the following pathways. The Rankine Refrigeration cycle utilizes the expansion of a high pressure liquid across a value to form a vapor/liquid mixture, which then boils when contacted with a cold reservoir. This pulls heat out of the cold place as a result of the vaporization of the low pressure vapor/liquid mixture. This low pressure vapor is then compressed in a turbine (3-4) (where work is added to raise the pressure of the working fluid).</p>
 <a class="reference internal image-reference" href="Ch3/images/RankineRefrigerationCycle.png"><img alt="Ch3/images/RankineRefrigerationCycle.png" src="Ch3/images/RankineRefrigerationCycle.png" style="width: 500px;" /></a>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(1\rightarrow 2\)</span>: <em>Isoenthalpic</em> expansion of a high pressure liquid across a valve</p></li>
@@ -454,17 +448,17 @@ document.write(`
 <th class="text-center head"><p><span class="math notranslate nohighlight">\(P\)</span></p></th>
 <th class="text-center head"><p><span class="math notranslate nohighlight">\(\underline{V}\)</span></p></th>
 <th class="text-center head"><p><span class="math notranslate nohighlight">\(\underline{S}\)</span></p></th>
-<th class="text-center head"><p><span class="math notranslate nohighlight">\(\underline{U}\)</span></p></th>
+<th class="text-center head"><p><span class="math notranslate nohighlight">\(\underline{H}\)</span></p></th>
 </tr>
 </thead>
 <tbody>
 <tr class="row-even"><td class="text-center"><p>1</p></td>
 <td class="text-center"><p></p></td>
-<td class="text-center"><p><span class="math notranslate nohighlight">\(T_C\)</span></p></td>
-<td class="text-center"><p><span class="math notranslate nohighlight">\(P_{1}\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(T_1\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(P_{1}=P_4\)</span></p></td>
 <td class="text-center"><p><span class="math notranslate nohighlight">\(\underline{V}_1\)</span></p></td>
-<td class="text-center"><p><span class="math notranslate nohighlight">\(0\)</span></p></td>
-<td class="text-center"><p><span class="math notranslate nohighlight">\(0\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(\underline{S}_1\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(\underline{H}_1\)</span></p></td>
 </tr>
 <tr class="row-odd"><td class="text-center"><p>1-2</p></td>
 <td class="text-center"><p>Isoenthalpic</p></td>
@@ -476,11 +470,11 @@ document.write(`
 </tr>
 <tr class="row-even"><td class="text-center"><p>2</p></td>
 <td class="text-center"><p></p></td>
-<td class="text-center"><p><span class="math notranslate nohighlight">\(T_C\)</span></p></td>
-<td class="text-center"><p><span class="math notranslate nohighlight">\(P_2=K P_{1}\)</span></p></td>
-<td class="text-center"><p><span class="math notranslate nohighlight">\(\dfrac{RT_C}{P_2}\)</span></p></td>
-<td class="text-center"><p><span class="math notranslate nohighlight">\(-R\ln{K}\)</span></p></td>
-<td class="text-center"><p><span class="math notranslate nohighlight">\(0\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(T_2\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(P_2\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(\underline{V}_2\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(\underline{S}_2\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(\underline{H}_2=\underline{H}_1\)</span></p></td>
 </tr>
 <tr class="row-odd"><td class="text-center"><p>2-3</p></td>
 <td class="text-center"><p>Isobaric</p></td>
@@ -492,11 +486,11 @@ document.write(`
 </tr>
 <tr class="row-even"><td class="text-center"><p>3</p></td>
 <td class="text-center"><p></p></td>
-<td class="text-center"><p><span class="math notranslate nohighlight">\(T_H\)</span></p></td>
-<td class="text-center"><p><span class="math notranslate nohighlight">\(P_3=P_2\bigg(\dfrac{T_H}{T_C}\bigg)^{C_{p}^{IG}/R}\)</span></p></td>
-<td class="text-center"><p><span class="math notranslate nohighlight">\(\dfrac{RT_H}{P_3}\)</span></p></td>
-<td class="text-center"><p><span class="math notranslate nohighlight">\(-R\ln{K}\)</span></p></td>
-<td class="text-center"><p><span class="math notranslate nohighlight">\(C_v^{IG}(T_H-T_C)\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(T_3\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(P_3=P_2\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(\underline{V}_3\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(\underline{S}_3\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(\underline{H}_3\)</span></p></td>
 </tr>
 <tr class="row-odd"><td class="text-center"><p>3-4</p></td>
 <td class="text-center"><p>Isoentropic</p></td>
@@ -508,11 +502,11 @@ document.write(`
 </tr>
 <tr class="row-even"><td class="text-center"><p>4</p></td>
 <td class="text-center"><p></p></td>
-<td class="text-center"><p><span class="math notranslate nohighlight">\(T_H\)</span></p></td>
-<td class="text-center"><p><span class="math notranslate nohighlight">\(P_4=P_1\bigg(\dfrac{T_H}{T_C}\bigg)^{C_{p}^{IG}/R}\)</span></p></td>
-<td class="text-center"><p><span class="math notranslate nohighlight">\(\dfrac{RT_H}{P_4}\)</span></p></td>
-<td class="text-center"><p><span class="math notranslate nohighlight">\(0\)</span></p></td>
-<td class="text-center"><p><span class="math notranslate nohighlight">\(C_v^{IG}(T_H-T_C)\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(T_4\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(P_4\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(\underline{V}_4\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(\underline{S}_4=\underline{S}_3\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(\underline{H}_4\)</span></p></td>
 </tr>
 <tr class="row-odd"><td class="text-center"><p>4-1</p></td>
 <td class="text-center"><p>Isobaric</p></td>
@@ -527,11 +521,32 @@ document.write(`
 <p>The figure of merit for a refrigeration cycle is given by the <strong>coefficient of performance (C.O.P.)</strong>:</p>
 <p>(note in the book this is</p>
 <div class="math notranslate nohighlight">
-\[C.O.P. = \frac{\dot{Q}}{\dot{W}_s} = \frac{\underline{H}_3-\underline{H}_2}{\underline{H}_4-\underline{H}_3}\]</div>
+\[C.O.P. = \frac{\dot{Q}_C}{\dot{W}_s} = \frac{\underline{H}_3-\underline{H}_2}{\underline{H}_4-\underline{H}_3}\]</div>
 <p>The T-S and P-H diagrams are instructive to understand what is happening:</p>
 <a class="reference internal image-reference" href="Ch3/images/TS-RankineRefrigerationCycle.png"><img alt="Ch3/images/TS-RankineRefrigerationCycle.png" src="Ch3/images/TS-RankineRefrigerationCycle.png" style="width: 800px;" /></a>
+<section id="example-using-ammonia-refrigeration">
+<h3>Example using Ammonia Refrigeration<a class="headerlink" href="#example-using-ammonia-refrigeration" title="Permalink to this heading">#</a></h3>
+<p>1.) Blast chillers need to refrigerate critical goods below <span class="math notranslate nohighlight">\(-40^{o}C\)</span>, what pressure does the boiler operate at?</p>
+<p>2.) If the condenser operates with using heat exchange with the outside air available at <span class="math notranslate nohighlight">\(20^{o} C\)</span> what pressure must the condenser operate at?</p>
+<p>3.) Can a Rankine refrigeration cycle be constructed for these circumstances using ammonia?</p>
+<p>4.) How many conpressors + coolers are needed if the maximum operating temperature within the compressor is <span class="math notranslate nohighlight">\(350^{o}C\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">path</span> <span class="o">=</span> <span class="s1">&#39;C:</span><span class="se">\\</span><span class="s1">Users</span><span class="se">\\</span><span class="s1">richa</span><span class="se">\\</span><span class="s1">OneDrive - Northwestern University</span><span class="se">\\</span><span class="s1">Northwestern</span><span class="se">\\</span><span class="s1">Teaching</span><span class="se">\\</span><span class="s1">Thermodynamics Notes</span><span class="se">\\</span><span class="s1">Thermodynamics-Notes</span><span class="se">\\</span><span class="s1">images&#39;</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Image</span>
+<span class="n">Image</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s2">&quot;Ammonia_P-Hdiagram.png&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/f22719dac8df6ad279c16e6c65544dab23d329e225dc9961fd4b1c7d84ef2e9f.png" src="../_images/f22719dac8df6ad279c16e6c65544dab23d329e225dc9961fd4b1c7d84ef2e9f.png" />
+</div>
+</div>
+</section>
 <section id="understanding-modern-refrigeration">
 <h3>Understanding modern refrigeration<a class="headerlink" href="#understanding-modern-refrigeration" title="Permalink to this heading">#</a></h3>
+<p><a class="reference external" href="https://www.youtube.com/watch?v=peVAaLIJJ6c">This video</a> has a nice explanation of the practical refrigeration with ammonia.</p>
 </section>
 </section>
 <section id="heat-pumps-cooling">
@@ -618,8 +633,8 @@ Must be non-toxic and environmentally friendly watch this video. Ozone Depletion
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#coefficient-of-performance">Coefficient of Performance</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rankine-refrigeration-cycle">Rankine Refrigeration Cycle</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-using-ammonia-refrigeration">Example using Ammonia Refrigeration</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#understanding-modern-refrigeration">Understanding modern refrigeration</a></li>
 </ul>
 </li>

@@ -199,10 +199,6 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="1.Unit-Operations.html">Unit Operations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="2.Property-Diagram-Single-Components.html">Property Database for Common Substances</a></li>
-
-
-
-
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Heat Engines</a></li>
 <li class="toctree-l1"><a class="reference internal" href="4.Refrigeration.html">Refrigeration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="5.Liquefaction.html">Liquefaction</a></li>
@@ -413,11 +409,9 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#power-generation-using-heat">Power Generation using Heat</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rankine-power-cycles">Rankine Power Cycles:</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#figure-of-merit">Figure of Merit</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#power-generation-using-heat">Power Generation using Heat</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rankine-cycle">Rankine Cycle</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#figure-of-merit">Figure of Merit</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#piston-based-heat-engines">Piston Based Heat Engines</a></li>
@@ -429,9 +423,6 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lets-plot-this">Lets plot this:</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ericsson-cycle">Ericsson Cycle</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stirling-cycle">Stirling Cycle</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#otto-cycle">Otto Cycle</a></li>
 </ul>
 </li>
 </ul>
@@ -449,19 +440,40 @@ document.write(`
 <h1>Heat Engines<a class="headerlink" href="#heat-engines" title="Permalink to this heading">#</a></h1>
 <p>Heat engines produce useful work using the flow of heat from gradient in temperature. A simple schematic of a heat engine is shown below, where heat flows <span class="math notranslate nohighlight">\(Q_H\)</span> from a reservoir maintained at a constant temperature <span class="math notranslate nohighlight">\(T_H\)</span> to a cold reservoir maintained at a constant temperature <span class="math notranslate nohighlight">\(T_C\)</span> and a black box converts some fraction of the energy content of that heat to useful work.</p>
 <p>While there are many examples of heat engines, in thermodynamics for chemical engineers, we are principally concerned with heat engines that utilize fluids to convert heat to mechanical work.</p>
-<p><img alt="Heat Engine" src="https://en.wikipedia.org/wiki/Carnot_heat_engine#/media/File:Carnot_heat_engine_2.svg" /></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">path</span> <span class="o">=</span> <span class="s1">&#39;C:</span><span class="se">\\</span><span class="s1">Users</span><span class="se">\\</span><span class="s1">richa</span><span class="se">\\</span><span class="s1">OneDrive - Northwestern University</span><span class="se">\\</span><span class="s1">Northwestern</span><span class="se">\\</span><span class="s1">Teaching</span><span class="se">\\</span><span class="s1">Thermodynamics Notes</span><span class="se">\\</span><span class="s1">Thermodynamics-Notes</span><span class="se">\\</span><span class="s1">images&#39;</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Image</span>
+<span class="n">Image</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s2">&quot;Heat Engine Reservoir.png&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/f658bde9fdf2eb099380dc08b02c97cf3c109f76fcdfc13ea0ecffc883e444a2.png" src="../_images/f658bde9fdf2eb099380dc08b02c97cf3c109f76fcdfc13ea0ecffc883e444a2.png" />
+</div>
+</div>
 <section id="power-generation-using-heat">
 <h2>Power Generation using Heat<a class="headerlink" href="#power-generation-using-heat" title="Permalink to this heading">#</a></h2>
 <p>We will cover three examples of modern heat engines:</p>
 <ol class="arabic simple">
-<li><p>Piston Based Heat Engines</p></li>
-<li><p>Coal Fired  and Nuclear Power Plants - The Rankine Cycle</p></li>
-<li><p>Nature Gas Power Turbines - The Brayton Cycle</p></li>
+<li><p>Rankine Cycles</p></li>
+<li><p>Carnot Cycles</p></li>
 </ol>
-<section id="rankine-power-cycles">
-<h3>Rankine Power Cycles:<a class="headerlink" href="#rankine-power-cycles" title="Permalink to this heading">#</a></h3>
+</section>
+<section id="rankine-cycle">
+<h2>Rankine Cycle<a class="headerlink" href="#rankine-cycle" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Image</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s2">&quot;Rankine Cycle.png&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/23cdc325cd7af017047986c132383fcde2678dc50285fce9ec5c0fffbecf2408.png" src="../_images/23cdc325cd7af017047986c132383fcde2678dc50285fce9ec5c0fffbecf2408.png" />
+</div>
+</div>
 <p>A Rankine cycle is the most common way to produce electrical energy in the United States. Generally, coal, biofuels, concentrated photothermal energy, and nuclear power is used to produce a high pressure fluid (often steam) which is then passed through a turbine, condensed, and recycled back into the process. A nice video explaining the different elements of a modern coal fired power plant can be found here</p>
-<p>Drawing:</p>
 <p>The steps and unit operations are listed below in the table.</p>
 <table class="colwidths-auto table">
 <thead>
@@ -533,7 +545,7 @@ document.write(`
 </tbody>
 </table>
 <section id="figure-of-merit">
-<h4>Figure of Merit<a class="headerlink" href="#figure-of-merit" title="Permalink to this heading">#</a></h4>
+<h3>Figure of Merit<a class="headerlink" href="#figure-of-merit" title="Permalink to this heading">#</a></h3>
 <p>The efficiency of a Rankine Power Cycle is given by the efficiency of any heat engine:</p>
 <div class="math notranslate nohighlight">
 \[\eta=-\dfrac{\dot{W}}{\dot{Q}_H}
@@ -593,7 +605,6 @@ document.write(`
 \[\eta=\frac{(42.08-64.84)0.018(30-0.1)}{7.95-64.84}=21.5\%\]</div>
 </section>
 </section>
-</section>
 <section id="piston-based-heat-engines">
 <h2>Piston Based Heat Engines<a class="headerlink" href="#piston-based-heat-engines" title="Permalink to this heading">#</a></h2>
 <p>In heat engines that derive useful work from the action of a moving boundary (i.e., pistons), we should appreciate that at a thermodynamic cycle must be completed that turns the action of compression and expansion of the cylinder volume to changes in internal energy of the gas within that volume. Based on this understanding at each point throughout the cycle state of the gas will be determined determined by the relative amounts of heat added and removed from the cylinder, the pathway taken between each state point, and the volume change undertaken by the cylinder during expansion.</p>
@@ -616,6 +627,16 @@ document.write(`
 <li><p><strong>isothermal</strong> expansion/compression of an ideal gas is always at constant internal energy (i.e., <span class="math notranslate nohighlight">\(dU=0\)</span>)</p></li>
 <li><p><strong>isobaric</strong> expansion/compression are those a the volume change is affected through the exchange of heat where the piston undergoes expansion/compression without exerting a net force on the surroundings.</p></li>
 </ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Image</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s2">&quot;Carnot Heat Engine.png&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/65c2cffddcce94007dc00c47cb3c1974e9330124746f1ad2cc7ec163599a692b.png" src="../_images/65c2cffddcce94007dc00c47cb3c1974e9330124746f1ad2cc7ec163599a692b.png" />
+</div>
+</div>
 </section>
 <section id="carnot-cycle">
 <h2>Carnot Cycle<a class="headerlink" href="#carnot-cycle" title="Permalink to this heading">#</a></h2>
@@ -911,121 +932,6 @@ document.write(`
 </div>
 </div>
 </section>
-<section id="ericsson-cycle">
-<h3>Ericsson Cycle<a class="headerlink" href="#ericsson-cycle" title="Permalink to this heading">#</a></h3>
-<table class="colwidths-auto table">
-<thead>
-<tr class="row-odd"><th class="text-center head"><p>Step</p></th>
-<th class="text-center head"><p>Description</p></th>
-<th class="text-center head"><p>Pathway</p></th>
-<th class="text-center head"><p>Heat</p></th>
-<th class="text-center head"><p>Work</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td class="text-center"><p>1-2</p></td>
-<td class="text-center"><p>Cold Reservoir</p></td>
-<td class="text-center"><p>isobaric expansion</p></td>
-<td class="text-center"><p><span class="math notranslate nohighlight">\(\dot{Q}_{C}\)</span></p></td>
-<td class="text-center"><p><span class="math notranslate nohighlight">\(-PdV\)</span>, <span class="math notranslate nohighlight">\(\dot{Q}_H\)</span></p></td>
-</tr>
-<tr class="row-odd"><td class="text-center"><p>2-3</p></td>
-<td class="text-center"><p>Recovery Stroke</p></td>
-<td class="text-center"><p>isothermal  expansion</p></td>
-<td class="text-center"><p><span class="math notranslate nohighlight">\(0\)</span></p></td>
-<td class="text-center"><p><span class="math notranslate nohighlight">\(-PdV\)</span>, <span class="math notranslate nohighlight">\(\dot{Q}_H\)</span></p></td>
-</tr>
-<tr class="row-even"><td class="text-center"><p>3-4</p></td>
-<td class="text-center"><p>Hot Reservoir</p></td>
-<td class="text-center"><p>isobaric compression</p></td>
-<td class="text-center"><p><span class="math notranslate nohighlight">\(\dot{Q}_{H}\)</span></p></td>
-<td class="text-center"><p><span class="math notranslate nohighlight">\(-PdV\)</span>, <span class="math notranslate nohighlight">\(\dot{Q}_{C\)</span></p></td>
-</tr>
-<tr class="row-odd"><td class="text-center"><p>4-1</p></td>
-<td class="text-center"><p>Power Stroke</p></td>
-<td class="text-center"><p>isothermal compression</p></td>
-<td class="text-center"><p><span class="math notranslate nohighlight">\(0\)</span></p></td>
-<td class="text-center"><p><span class="math notranslate nohighlight">\(-PdV\)</span>, <span class="math notranslate nohighlight">\(\dot{Q}_C\)</span></p></td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="stirling-cycle">
-<h3>Stirling Cycle<a class="headerlink" href="#stirling-cycle" title="Permalink to this heading">#</a></h3>
-<p>The steps and unit operations are listed below in the table.</p>
-<table class="colwidths-auto table">
-<thead>
-<tr class="row-odd"><th class="text-center head"><p>Step</p></th>
-<th class="text-center head"><p>State</p></th>
-<th class="text-center head"><p>Unit Op.</p></th>
-<th class="text-center head"><p>Path</p></th>
-<th class="text-center head"><p>Heat</p></th>
-<th class="text-center head"><p>Work</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td class="text-center"><p>(1)</p></td>
-<td class="text-center"><p><span class="math notranslate nohighlight">\(T_1\)</span>, <span class="math notranslate nohighlight">\(P_1\)</span></p></td>
-<td class="text-center"><p></p></td>
-<td class="text-center"><p></p></td>
-<td class="text-center"><p></p></td>
-<td class="text-center"><p></p></td>
-</tr>
-<tr class="row-odd"><td class="text-center"><p>(1-2)</p></td>
-<td class="text-center"><p>constant <span class="math notranslate nohighlight">\(\underline{V}\)</span></p></td>
-<td class="text-center"><p>cylilnder</p></td>
-<td class="text-center"><p>isobaric</p></td>
-<td class="text-center"><p><span class="math notranslate nohighlight">\(\dot{Q}_12\)</span></p></td>
-<td class="text-center"><p><span class="math notranslate nohighlight">\(0\)</span></p></td>
-</tr>
-<tr class="row-even"><td class="text-center"><p>(2)</p></td>
-<td class="text-center"><p>high pressure liquid</p></td>
-<td class="text-center"><p></p></td>
-<td class="text-center"><p></p></td>
-<td class="text-center"><p></p></td>
-<td class="text-center"><p></p></td>
-</tr>
-<tr class="row-odd"><td class="text-center"><p>(2-3)</p></td>
-<td class="text-center"><p></p></td>
-<td class="text-center"><p>boiler</p></td>
-<td class="text-center"><p>isobaric</p></td>
-<td class="text-center"><p><span class="math notranslate nohighlight">\(\dot{Q}=\dot{N}\big(\underline{H}_2-\underline{H}_1\big)\)</span></p></td>
-<td class="text-center"><p><span class="math notranslate nohighlight">\(\dot{W}=0\)</span></p></td>
-</tr>
-<tr class="row-even"><td class="text-center"><p>(3)</p></td>
-<td class="text-center"><p>superheated vapor</p></td>
-<td class="text-center"><p></p></td>
-<td class="text-center"><p></p></td>
-<td class="text-center"><p></p></td>
-<td class="text-center"><p></p></td>
-</tr>
-<tr class="row-odd"><td class="text-center"><p>(3-4)</p></td>
-<td class="text-center"><p></p></td>
-<td class="text-center"><p>turbine</p></td>
-<td class="text-center"><p>isoentropic</p></td>
-<td class="text-center"><p><span class="math notranslate nohighlight">\(\dot{Q}=0\)</span></p></td>
-<td class="text-center"><p><span class="math notranslate nohighlight">\(\dot{W}=\dot{N}\big(\underline{H}_2-\underline{H}_1\big)\)</span></p></td>
-</tr>
-<tr class="row-even"><td class="text-center"><p>(4)</p></td>
-<td class="text-center"><p>low quality vapor</p></td>
-<td class="text-center"><p></p></td>
-<td class="text-center"><p></p></td>
-<td class="text-center"><p></p></td>
-<td class="text-center"><p></p></td>
-</tr>
-<tr class="row-odd"><td class="text-center"><p>(4-1)</p></td>
-<td class="text-center"><p></p></td>
-<td class="text-center"><p>condenser</p></td>
-<td class="text-center"><p>isobaric</p></td>
-<td class="text-center"><p><span class="math notranslate nohighlight">\(\dot{Q}=\dot{N}\big(\underline{H}_2-\underline{H}_1\big)\)</span></p></td>
-<td class="text-center"><p><span class="math notranslate nohighlight">\(\dot{W}=0\)</span></p></td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="otto-cycle">
-<h3>Otto Cycle<a class="headerlink" href="#otto-cycle" title="Permalink to this heading">#</a></h3>
-</section>
 </section>
 </section>
 
@@ -1093,11 +999,9 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#power-generation-using-heat">Power Generation using Heat</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rankine-power-cycles">Rankine Power Cycles:</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#figure-of-merit">Figure of Merit</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#power-generation-using-heat">Power Generation using Heat</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rankine-cycle">Rankine Cycle</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#figure-of-merit">Figure of Merit</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#piston-based-heat-engines">Piston Based Heat Engines</a></li>
@@ -1109,9 +1013,6 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lets-plot-this">Lets plot this:</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ericsson-cycle">Ericsson Cycle</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stirling-cycle">Stirling Cycle</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#otto-cycle">Otto Cycle</a></li>
 </ul>
 </li>
 </ul>
