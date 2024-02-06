@@ -429,10 +429,28 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="refrigeration">
 <h1>Refrigeration<a class="headerlink" href="#refrigeration" title="Permalink to this heading">#</a></h1>
 <p>Refrigeration is the opposite of a heat engine. In a refrigerator, we run the heat engine in reverse and use work to drive heat to flow from a cold reservoir to a hot one.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Image</span>
+<span class="n">path</span> <span class="o">=</span> <span class="s1">&#39;C:</span><span class="se">\\</span><span class="s1">Users</span><span class="se">\\</span><span class="s1">richa</span><span class="se">\\</span><span class="s1">OneDrive - Northwestern University</span><span class="se">\\</span><span class="s1">Northwestern</span><span class="se">\\</span><span class="s1">Teaching</span><span class="se">\\</span><span class="s1">Thermodynamics Notes</span><span class="se">\\</span><span class="s1">Thermodynamics-Notes</span><span class="se">\\</span><span class="s1">images&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
 <section id="rankine-refrigeration-cycle">
 <h2>Rankine Refrigeration Cycle<a class="headerlink" href="#rankine-refrigeration-cycle" title="Permalink to this heading">#</a></h2>
 <p>The Rankine Refrigeration cycle is depicted below, it consists of the following pathways. The Rankine Refrigeration cycle utilizes the expansion of a high pressure liquid across a value to form a vapor/liquid mixture, which then boils when contacted with a cold reservoir. This pulls heat out of the cold place as a result of the vaporization of the low pressure vapor/liquid mixture. This low pressure vapor is then compressed in a turbine (3-4) (where work is added to raise the pressure of the working fluid).</p>
-<a class="reference internal image-reference" href="Ch3/images/RankineRefrigerationCycle.png"><img alt="Ch3/images/RankineRefrigerationCycle.png" src="Ch3/images/RankineRefrigerationCycle.png" style="width: 500px;" /></a>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Image</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s2">&quot;Rankine Refrigeration Cycle.png&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/887655a4efe894f6570d98352a2516794a0765f9c019920fd0fbca6540c0d48e.png" src="../_images/887655a4efe894f6570d98352a2516794a0765f9c019920fd0fbca6540c0d48e.png" />
+</div>
+</div>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(1\rightarrow 2\)</span>: <em>Isoenthalpic</em> expansion of a high pressure liquid across a valve</p></li>
 <li><p><span class="math notranslate nohighlight">\(2\rightarrow 3\)</span>: <em>Isobaric</em> boiling of a liquid/vapor mixture to form a low pressure vapor</p></li>
@@ -523,7 +541,16 @@ document.write(`
 <div class="math notranslate nohighlight">
 \[C.O.P. = \frac{\dot{Q}_C}{\dot{W}_s} = \frac{\underline{H}_3-\underline{H}_2}{\underline{H}_4-\underline{H}_3}\]</div>
 <p>The T-S and P-H diagrams are instructive to understand what is happening:</p>
-<a class="reference internal image-reference" href="Ch3/images/TS-RankineRefrigerationCycle.png"><img alt="Ch3/images/TS-RankineRefrigerationCycle.png" src="Ch3/images/TS-RankineRefrigerationCycle.png" style="width: 800px;" /></a>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Image</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s2">&quot;TS - Rankine Refrigeration Cycle.png&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/1707d0f0caff4ad82acdd9816d91945fdb2836f5b6259c1c911d1164b474ac7f.png" src="../_images/1707d0f0caff4ad82acdd9816d91945fdb2836f5b6259c1c911d1164b474ac7f.png" />
+</div>
+</div>
 <section id="example-using-ammonia-refrigeration">
 <h3>Example using Ammonia Refrigeration<a class="headerlink" href="#example-using-ammonia-refrigeration" title="Permalink to this heading">#</a></h3>
 <p>1.) Blast chillers need to refrigerate critical goods below <span class="math notranslate nohighlight">\(-40^{o}C\)</span>, what pressure does the boiler operate at?</p>
@@ -532,10 +559,7 @@ document.write(`
 <p>4.) How many conpressors + coolers are needed if the maximum operating temperature within the compressor is <span class="math notranslate nohighlight">\(350^{o}C\)</span></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">path</span> <span class="o">=</span> <span class="s1">&#39;C:</span><span class="se">\\</span><span class="s1">Users</span><span class="se">\\</span><span class="s1">richa</span><span class="se">\\</span><span class="s1">OneDrive - Northwestern University</span><span class="se">\\</span><span class="s1">Northwestern</span><span class="se">\\</span><span class="s1">Teaching</span><span class="se">\\</span><span class="s1">Thermodynamics Notes</span><span class="se">\\</span><span class="s1">Thermodynamics-Notes</span><span class="se">\\</span><span class="s1">images&#39;</span>
-<span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Image</span>
-<span class="n">Image</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s2">&quot;Ammonia_P-Hdiagram.png&quot;</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Image</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s2">&quot;Ammonia_P-Hdiagram.png&quot;</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
