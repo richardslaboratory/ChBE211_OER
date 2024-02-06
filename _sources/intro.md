@@ -8,9 +8,3 @@ This book is designed to facilitate a 10 week long lecture series that provides 
 Jennifer Dunn, Professor of Chemical & Biological Engineering, Northwestern University
 Jeffrey J Richards, Assistant Professor of Chemical & Biological Engineering, Northwestern University
 Jenna Trost, Graduate Student in Chemical & Biological Engineering, Northwestern University
-
-
-
-
-```{tableofcontents}
-```
