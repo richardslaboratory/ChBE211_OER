@@ -414,7 +414,15 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#understanding-modern-refrigeration">Understanding modern refrigeration</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#heat-pumps-cooling">Heat Pumps (cooling)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#heat-pumps">Heat Pumps</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#heat-pumps-cooling">Heat Pumps (cooling)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#heat-pumps-heating">Heat Pumps (heating)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#refrigeratants-heat-and-cooling-applications">Refrigeratants (Heat and Cooling Applications):</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#constraints-on-refrigerants-fluids-used-in-refrigerators">Constraints on Refrigerants (fluids used in refrigerators):</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -573,23 +581,56 @@ document.write(`
 <p><a class="reference external" href="https://www.youtube.com/watch?v=peVAaLIJJ6c">This video</a> has a nice explanation of the practical refrigeration with ammonia.</p>
 </section>
 </section>
+<section id="heat-pumps">
+<h2>Heat Pumps<a class="headerlink" href="#heat-pumps" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Image</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s2">&quot;Heat Pump (colling).png&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/c5485d2481ab60d23ca062869c5a7a0b6d51efc21321ca3868404e3b001d4b37.png" src="../_images/c5485d2481ab60d23ca062869c5a7a0b6d51efc21321ca3868404e3b001d4b37.png" />
+</div>
+</div>
+<p>In analogy to heat engines which extract work from the motion of heat from a hot reservoir to a cold reservoir, heat pumps
+perform the reverse operation. They use work to drive heat from a cold reservoir to a hot reservoir. This is depicted below where the heat flows “uphill” upon addition of work. The Rankine refrigeration cycle is a good example of how this process works internally, where the combination of expansion and compression of a working fluid along with a phase change can be utilized to drive this “uphill” flow of heat. For a heat pump working reversibly, the energy and entropy balance expressions can be simplified as:</p>
+<p><span class="math notranslate nohighlight">\(\dot{Q}_H + \dot{Q}_C + \dot{W} = 0\)</span></p>
+<p><span class="math notranslate nohighlight">\(\dfrac{\dot{Q}_H}{T_H} + \dfrac{\dot{Q}_C}{T_C} = 0\)</span></p>
+<p>The figure of merit for any heat pump is called the Coefficient of Performance (COP) is defined by the ratio of the desired output to the necessary input.</p>
 <section id="heat-pumps-cooling">
-<h2>Heat Pumps (cooling)<a class="headerlink" href="#heat-pumps-cooling" title="Permalink to this heading">#</a></h2>
-<p>Heat Pumps:</p>
-<p>In analogy to heat engines which extract work from the motion of heat from a hot reservoir to a cold reservoir, the Coefficient of Performance (COP) is defined by the ratio of the desired output to the necessary input.</p>
-<p>Refrigerators (Heat Pumps for Cooling):
-A class of heat pump that uses fluids to perform cooling
-How they work?
-Boiling a volatile liquid extracts heat from a desired system
-The resulting low pressure, superheated vapor is compressed to high pressures and then expanded through a valve
-The high pressure, superheated vapor is then cooled (usually by a fan) to reduce its temperature
-The cool, high pressure gas is expanded through the valve to generate a liquid/vapor mixture that can be cycled back into the boiler.</p>
-<p>Constraints on Refrigerants (fluids used in refrigerators):</p>
-<p>Refrigerant vapor pressure
-In the boiler, the vapor pressure needs to be ~ 1 atm so air doesn’t leak into the system.
-The hot temperature is the temperature of the environment so ideally the critical temperature is below TH
-The fluid must be very volatile
-Must be non-toxic and environmentally friendly watch this video. Ozone Depletion</p>
+<h3>Heat Pumps (cooling)<a class="headerlink" href="#heat-pumps-cooling" title="Permalink to this heading">#</a></h3>
+<p>Refrigeration and air conditioning are examples of heat pumps used for <em>cooling</em>. In this case the desired output is the flow of heat from a place that we want to maintain at a cold temperature to a place where the heat is exhausted (typically air or water). Therefore, the coefficient of performance is given as:</p>
+<div class="math notranslate nohighlight">
+\[C.O.P. = \dfrac{\dot{Q}_C}{\dot{W}_s}\]</div>
+</section>
+<section id="heat-pumps-heating">
+<h3>Heat Pumps (heating)<a class="headerlink" href="#heat-pumps-heating" title="Permalink to this heading">#</a></h3>
+<p>Heat Pumps can also provide heat and are currently being deployed as purely electrical <em>heaters</em> in homes. In this case the desired output is heat flow to the place that we want to warm and we are taking that heat from a place that is cold already. Therefore, the coefficient of performance is given as:</p>
+<div class="math notranslate nohighlight">
+\[C.O.P. = -\dfrac{\dot{Q}_H}{\dot{W}_s}\]</div>
+<p>Note that the negative sign implies that the heat is leaving the system.</p>
+</section>
+<section id="refrigeratants-heat-and-cooling-applications">
+<h3>Refrigeratants (Heat and Cooling Applications):<a class="headerlink" href="#refrigeratants-heat-and-cooling-applications" title="Permalink to this heading">#</a></h3>
+<p>Heat pumps that cool and those that heat must be designed to  operate at the temperature sof the available hot and cold reservoirs. These fluids are diverse and their thermodynamic and chemical preoperties are key to achieving high performance.</p>
+<p>How they work?</p>
+<ol class="arabic simple">
+<li><p>Boiling a volatile liquid extracts heat from a desired system</p></li>
+<li><p>The resulting low pressure, superheated vapor is compressed to high pressures and then expanded through a valve</p></li>
+<li><p>The high pressure, superheated vapor is then cooled (usually by a fan) to reduce its temperature</p></li>
+<li><p>The cool, high pressure gas is expanded through the valve to generate a liquid/vapor mixture that can be cycled back into the boiler.</p></li>
+</ol>
+<section id="constraints-on-refrigerants-fluids-used-in-refrigerators">
+<h4>Constraints on Refrigerants (fluids used in refrigerators):<a class="headerlink" href="#constraints-on-refrigerants-fluids-used-in-refrigerators" title="Permalink to this heading">#</a></h4>
+<ol class="arabic simple">
+<li><p>In the boiler, the vapor pressure needs to be ~ 1 atm so air doesn’t leak into the system.</p></li>
+<li><p>The hot temperature is the temperature of the environment so ideally the critical temperature is below <span class="math notranslate nohighlight">\(T_H\)</span></p></li>
+<li><p>The fluid must be very volatile</p></li>
+<li><p>Must be non-toxic and environmentally friendly watch this video. <a class="reference external" href="https://www.youtube.com/watch?v=aU6pxSNDPhs&amp;t=1s">Ozone Depletion</a></p></li>
+</ol>
+</section>
+</section>
 </section>
 </section>
 
@@ -662,7 +703,15 @@ Must be non-toxic and environmentally friendly watch this video. Ozone Depletion
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#understanding-modern-refrigeration">Understanding modern refrigeration</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#heat-pumps-cooling">Heat Pumps (cooling)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#heat-pumps">Heat Pumps</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#heat-pumps-cooling">Heat Pumps (cooling)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#heat-pumps-heating">Heat Pumps (heating)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#refrigeratants-heat-and-cooling-applications">Refrigeratants (Heat and Cooling Applications):</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#constraints-on-refrigerants-fluids-used-in-refrigerators">Constraints on Refrigerants (fluids used in refrigerators):</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
   </nav></div>
 

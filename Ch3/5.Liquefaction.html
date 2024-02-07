@@ -62,6 +62,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'Ch3/5.Liquefaction';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -384,7 +386,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -400,6 +404,22 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mass-energy-and-entropy-balance-for-a-flash-drum">Mass, Energy, and Entropy balance for a flash drum.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pressure-enthalpy-diagram">Pressure-Enthalpy Diagram:</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-liquefaction">Simple Liquefaction:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#illustration-5-1-1-in-sandler-illustrates-this-nicely-for-the-liquefaction-of-methane-reproducing-that-example-here">Illustration 5.1-1 in Sandler illustrates this nicely for the liquefaction of Methane. Reproducing that example here</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-first-lets-identify-the-properties-that-we-know">a.) First lets identify the properties that we know</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-calculate-the-vapor-and-liquid-fractions-leaving-the-flash-drum-and-the-amount-of-compressor-work-for-each-kg-of-lng-produced">b.) Calculate the vapor and liquid fractions leaving the flash drum and the amount of compressor work for each kg of LNG produced.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-assuming-the-recycled-methane-leaving-the-heat-exchange-in-the-linde-process-shown-below-is-at-1-bar-and-200-k-calculate-the-amount-of-compressor-work-required-for-each-kilogram-of-lng-produced">c.) Assuming the recycled methane leaving the heat exchange in the Linde Process (shown below) is at <span class="math notranslate nohighlight">\(1\)</span> <span class="math notranslate nohighlight">\(bar\)</span> and <span class="math notranslate nohighlight">\(200\)</span> <span class="math notranslate nohighlight">\(K\)</span>, calculate the amount of compressor work required for each kilogram of LNG produced</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -411,6 +431,185 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="liquefaction">
 <h1>Liquefaction<a class="headerlink" href="#liquefaction" title="Permalink to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Image</span>
+<span class="n">path</span> <span class="o">=</span> <span class="s1">&#39;C:</span><span class="se">\\</span><span class="s1">Users</span><span class="se">\\</span><span class="s1">richa</span><span class="se">\\</span><span class="s1">OneDrive - Northwestern University</span><span class="se">\\</span><span class="s1">Northwestern</span><span class="se">\\</span><span class="s1">Teaching</span><span class="se">\\</span><span class="s1">Thermodynamics Notes</span><span class="se">\\</span><span class="s1">Thermodynamics-Notes</span><span class="se">\\</span><span class="s1">images&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Liquefaction</strong> is the process of making liquids from gases that do not condense under normal circumstances. It is desirable to make liquids in many cases because liquids are more dense their vapor counterparts, making them less-expensive to transport. Liquid Natural Gas, butane, and other commodity liquids are manufactured and stored as liquids.</p>
+<p>The easiest way to form a liquid from a volatile substance is to compress its vapor into a high pressure vapor and expand it across a valve into a flash drum. A flash drum is a unit operation that operates adiabatically and allows a vapor and liquid in equilibrium to be separated as depicted below:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Image</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s2">&quot;Liquefaction.png&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/f19b74ae513f49d3551b3577ae6365c075a4dc47b7f9abb6a857be56cf310866.png" src="../_images/f19b74ae513f49d3551b3577ae6365c075a4dc47b7f9abb6a857be56cf310866.png" />
+</div>
+</div>
+<section id="mass-energy-and-entropy-balance-for-a-flash-drum">
+<h2>Mass, Energy, and Entropy balance for a flash drum.<a class="headerlink" href="#mass-energy-and-entropy-balance-for-a-flash-drum" title="Permalink to this heading">#</a></h2>
+<p><span class="math notranslate nohighlight">\((1)\quad \dot{N}_2  + \dot{N}_3 + \dot{N}_4 = 0\)</span></p>
+<p><span class="math notranslate nohighlight">\((2)\quad (\dot{N}\underline{H})_2  + (\dot{N}\underline{H})_3 + (\dot{N}\underline{H}))_4 = 0\)</span></p>
+<p><span class="math notranslate nohighlight">\((3)\quad (\dot{N}\underline{S})_2  + (\dot{N}\underline{S})_3 + (\dot{N}\underline{S}))_4 + \dot{S}_{gen}= 0\)</span></p>
+<p>With the constraint that the fluid and vapor streams exiting (3) and (4) respectively are saturated at a constant pressure.</p>
+<p>Recall that we can derive the molar liquid fraction, <span class="math notranslate nohighlight">\(x_l\)</span> and molar vapor fraction, <span class="math notranslate nohighlight">\(x_v\)</span> using the tie line or the lever rule.</p>
+<div class="math notranslate nohighlight">
+\[x_v = \dfrac{\dot{N}_4}{\dot{N_2}} = \dfrac{\underline{H}_2 - \underline{H}_3}{\underline{H}_4 - \underline{H}_3}\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[x_v = 1 - x_l\]</div>
+<p>where <span class="math notranslate nohighlight">\(\underline{H}_3\)</span> is the enthalpy of the saturated liquid and <span class="math notranslate nohighlight">\(\underline{H}_4\)</span> is the enthalpy of the saturated vapor exiting the flash drum.</p>
+</section>
+<section id="pressure-enthalpy-diagram">
+<h2>Pressure-Enthalpy Diagram:<a class="headerlink" href="#pressure-enthalpy-diagram" title="Permalink to this heading">#</a></h2>
+<p>As shown in the figure above, in order to expand across a valve and generate a liquid, the gas must be pressurized and cooled to a position above the 2-phase boundary (depicted in the P-H diagram). This superheated and cooled vapor is then passed through a valve where it expands and generates a 2-phase mixture. The phases are collected in a flash drum at a constant pressure and it is often the case that the vapor phase is recycled back into the process and the liquid phase collected and stored.</p>
+<section id="simple-liquefaction">
+<h3>Simple Liquefaction:<a class="headerlink" href="#simple-liquefaction" title="Permalink to this heading">#</a></h3>
+<p>In a <strong>simple liquefaction</strong> scheme, a series of staged compression/cooling cycles are performed to raise the pressure of the gas above its critical pressure. It is then finally cooled isobarically to reach the desired temperature prior to expansion as defined by the <span class="math notranslate nohighlight">\(P-\underline{H}\)</span> diagram. The key idea for the cooling process is that expansion across a valve will be isoenthalpic resulting in a vertical cut on the <span class="math notranslate nohighlight">\(P-\underline{H}\)</span> diagram depicted in the cartoon from state points 3-4. The result will be the formation of a mixture of a saturated liquid (5) and saturated vapor (6). In liquefaction the saturated liquid is your product and the low pressure vapor can be recycled back into the process or exhausted to atmosphere in the case of liquifying air.</p>
+<p>The compression and cooling requirements may require multiple stages to reach the necessary pressure to liquify across the value. These multiple stages will result in a series of shark-fin shaped curves that raise the pressure without exceeding a maximum temperature within the compressor as shown below from state points (1)-(2).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Image</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s2">&quot;Simple Liquefaction.png&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/e2aa246ab4fb178a902289ba9441eed025293b6e663b614f9239d73f7f8afa0b.png" src="../_images/e2aa246ab4fb178a902289ba9441eed025293b6e663b614f9239d73f7f8afa0b.png" />
+</div>
+</div>
+</section>
+<section id="illustration-5-1-1-in-sandler-illustrates-this-nicely-for-the-liquefaction-of-methane-reproducing-that-example-here">
+<h3>Illustration 5.1-1 in Sandler illustrates this nicely for the liquefaction of Methane. Reproducing that example here<a class="headerlink" href="#illustration-5-1-1-in-sandler-illustrates-this-nicely-for-the-liquefaction-of-methane-reproducing-that-example-here" title="Permalink to this heading">#</a></h3>
+<p>It is desired to produce liquified natural gas (LNG), where pure methane is available at <span class="math notranslate nohighlight">\(1\)</span> <span class="math notranslate nohighlight">\(bar\)</span> and <span class="math notranslate nohighlight">\(280\)</span> <span class="math notranslate nohighlight">\(K\)</span>. Leaving the cooler, methane is at <span class="math notranslate nohighlight">\(100\)</span> <span class="math notranslate nohighlight">\(bar\)</span> and <span class="math notranslate nohighlight">\(210\)</span> <span class="math notranslate nohighlight">\(K\)</span>. The flash drum is adiabatic and operates at 1 bar, and the compressor can be assumed to operate reversibly and adiabatically. However, because of the large pressure change, a three-stage compression with intercooling is used. The first stage compresses the gas from <span class="math notranslate nohighlight">\(1\)</span> to <span class="math notranslate nohighlight">\(5\)</span> <span class="math notranslate nohighlight">\(bar\)</span>, the second stage from <span class="math notranslate nohighlight">\(5\)</span> to <span class="math notranslate nohighlight">\(25\)</span> <span class="math notranslate nohighlight">\(bar\)</span> and the third stage from <span class="math notranslate nohighlight">\(25\)</span> <span class="math notranslate nohighlight">\(bar\)</span> to <span class="math notranslate nohighlight">\(100\)</span> <span class="math notranslate nohighlight">\(bar\)</span>. Between the stages the gas is isobarically cooled to <span class="math notranslate nohighlight">\(280\)</span> <span class="math notranslate nohighlight">\(K\)</span>.</p>
+<p>a.) Calculate the amount of work required for each kilogram of methane that passes through the compressor in the simple liquefaction process.</p>
+</section>
+<section id="a-first-lets-identify-the-properties-that-we-know">
+<h3>a.) First lets identify the properties that we know<a class="headerlink" href="#a-first-lets-identify-the-properties-that-we-know" title="Permalink to this heading">#</a></h3>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-center head"><p>Step</p></th>
+<th class="text-center head"><p><span class="math notranslate nohighlight">\(T\)</span> <span class="math notranslate nohighlight">\((K)\)</span></p></th>
+<th class="text-center head"><p><span class="math notranslate nohighlight">\(P\)</span> <span class="math notranslate nohighlight">\((bar)\)</span></p></th>
+<th class="text-center head"><p><span class="math notranslate nohighlight">\(\hat{S}\)</span> <span class="math notranslate nohighlight">\((J/(g*K)\)</span></p></th>
+<th class="text-center head"><p><span class="math notranslate nohighlight">\(\hat{H}\)</span> <span class="math notranslate nohighlight">\((kJ/kg)\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>1</p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(280^*\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(1^*\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(6.6\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(870\)</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>2</p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(400\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(5^*\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(6.6\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(1150\)</span></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>1’</p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(280^*\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(5\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(5.6\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(865\)</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>2’</p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(395\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(25^*\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(5.6\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(1150\)</span></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>1’’</p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(280^*\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(25\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(4.8\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(855\)</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>2’’</p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(400\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(100\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(4.8\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(1100\)</span></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>3</p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(210^*\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(100^*\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(\hat{S}_3\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(420\)</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>4</p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(110\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(1\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(\hat{S}_4\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(420\)</span></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>5</p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(\sim 110\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(1\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(\hat{S}_4\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(0\)</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>6</p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(\sim 110\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(1\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(\hat{S}_4\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(\sim 510\)</span></p></td>
+</tr>
+</tbody>
+</table>
+<p>The astericks in the table above denote the state points given in the problem statement. The apostrophes denote the different stage compressors and coolers. By identifying the values in the table associate with the problem statement, the remaining values can be determined graphically.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Image</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s2">&quot;methane_P-Hdiagram.png&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/7d5ebd2ad46fbcb711ba2f22e463700df72d8d5007aa854b482a17b770344815.png" src="../_images/7d5ebd2ad46fbcb711ba2f22e463700df72d8d5007aa854b482a17b770344815.png" />
+</div>
+</div>
+<p>Once we have the values filled out in the table, then we can add up the work of compression as follows:</p>
+<p><span class="math notranslate nohighlight">\(\dfrac{\dot{W}_{1-2}}{\dot{M}} = \hat{H}_2 - \hat{H}_1 = 1150 - 870 = 280 kJ/kg\)</span></p>
+<p><span class="math notranslate nohighlight">\(\dfrac{\dot{W}_{1'-2'}}{\dot{M}} = \hat{H}_2' - \hat{H}_1' = 1150 - 865 = 285 kJ/kg\)</span></p>
+<p><span class="math notranslate nohighlight">\(\dfrac{\dot{W}_{1''-2''}}{\dot{M}} = \hat{H}_2'' - \hat{H}_1'' = 1100 - 855 = 240 kJ/kg\)</span></p>
+<p>The sum is then</p>
+<p><span class="math notranslate nohighlight">\(\dfrac{\dot{W}_{1-2''}}{\dot{M}} = 280 + 285 + 240 = 805\)</span> <span class="math notranslate nohighlight">\(kJ/kg\)</span></p>
+</section>
+<section id="b-calculate-the-vapor-and-liquid-fractions-leaving-the-flash-drum-and-the-amount-of-compressor-work-for-each-kg-of-lng-produced">
+<h3>b.) Calculate the vapor and liquid fractions leaving the flash drum and the amount of compressor work for each kg of LNG produced.<a class="headerlink" href="#b-calculate-the-vapor-and-liquid-fractions-leaving-the-flash-drum-and-the-amount-of-compressor-work-for-each-kg-of-lng-produced" title="Permalink to this heading">#</a></h3>
+<p>For this, we use the lever rule:</p>
+<div class="math notranslate nohighlight">
+\[w_v = \dfrac{\underline{H}_4 - \underline{H}_5}{\underline{H}_6 - \underline{H}_5} = \dfrac{420}{510} = 0.82 \]</div>
+<p>$<span class="math notranslate nohighlight">\(w_l = 1 - w_v = 0.18\)</span></p>
+<p>To get the work per unit LNG produced:</p>
+<p><span class="math notranslate nohighlight">\(\dfrac{\dot{W}_{1-2''}}{w_l \dot{M}} = 805 / 0.12 = 4,472\)</span> <span class="math notranslate nohighlight">\(kJ/kg\)</span></p>
+</section>
+<section id="c-assuming-the-recycled-methane-leaving-the-heat-exchange-in-the-linde-process-shown-below-is-at-1-bar-and-200-k-calculate-the-amount-of-compressor-work-required-for-each-kilogram-of-lng-produced">
+<h3>c.) Assuming the recycled methane leaving the heat exchange in the Linde Process (shown below) is at <span class="math notranslate nohighlight">\(1\)</span> <span class="math notranslate nohighlight">\(bar\)</span> and <span class="math notranslate nohighlight">\(200\)</span> <span class="math notranslate nohighlight">\(K\)</span>, calculate the amount of compressor work required for each kilogram of LNG produced<a class="headerlink" href="#c-assuming-the-recycled-methane-leaving-the-heat-exchange-in-the-linde-process-shown-below-is-at-1-bar-and-200-k-calculate-the-amount-of-compressor-work-required-for-each-kilogram-of-lng-produced" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Image</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s2">&quot;Linde Liquefaction.png&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/3540be0122860500e76f2e6b0b6b00aff14b6d9444f278ffa8733e3071e6c7f7.png" src="../_images/3540be0122860500e76f2e6b0b6b00aff14b6d9444f278ffa8733e3071e6c7f7.png" />
+</div>
+</div>
+<p>Examining the Linde process, there are a few notable advantages compred to simple liquefaction.</p>
+<ol class="arabic simple">
+<li><p>The low pressure and cold methane can be recycled back into the process allowing for the displacement of significant cooling needs after the last stage of the compressor reaches its final pressure.</p></li>
+<li><p>Methane is a potent greenhouse gas so recycling it back into the process allows for the elimination of most emissions associated with its liquefaction</p></li>
+<li><p>Analyzing the work requirements in the compressor, we find that 1’ has a significantly colder temperature than the methane was available (<span class="math notranslate nohighlight">\(280\)</span> <span class="math notranslate nohighlight">\(K\)</span>) of <span class="math notranslate nohighlight">\(233\)</span> <span class="math notranslate nohighlight">\(K\)</span>. This significantly reduces the amount of work required per unit kg of LNG produced. <span class="math notranslate nohighlight">\(1641\)</span> vs <span class="math notranslate nohighlight">\(4149\)</span> <span class="math notranslate nohighlight">\(kJ/kg\)</span> for the simple liquefaction process.</p></li>
+</ol>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -468,7 +667,28 @@ document.write(`
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"></div>
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mass-energy-and-entropy-balance-for-a-flash-drum">Mass, Energy, and Entropy balance for a flash drum.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pressure-enthalpy-diagram">Pressure-Enthalpy Diagram:</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-liquefaction">Simple Liquefaction:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#illustration-5-1-1-in-sandler-illustrates-this-nicely-for-the-liquefaction-of-methane-reproducing-that-example-here">Illustration 5.1-1 in Sandler illustrates this nicely for the liquefaction of Methane. Reproducing that example here</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-first-lets-identify-the-properties-that-we-know">a.) First lets identify the properties that we know</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-calculate-the-vapor-and-liquid-fractions-leaving-the-flash-drum-and-the-amount-of-compressor-work-for-each-kg-of-lng-produced">b.) Calculate the vapor and liquid fractions leaving the flash drum and the amount of compressor work for each kg of LNG produced.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-assuming-the-recycled-methane-leaving-the-heat-exchange-in-the-linde-process-shown-below-is-at-1-bar-and-200-k-calculate-the-amount-of-compressor-work-required-for-each-kilogram-of-lng-produced">c.) Assuming the recycled methane leaving the heat exchange in the Linde Process (shown below) is at <span class="math notranslate nohighlight">\(1\)</span> <span class="math notranslate nohighlight">\(bar\)</span> and <span class="math notranslate nohighlight">\(200\)</span> <span class="math notranslate nohighlight">\(K\)</span>, calculate the amount of compressor work required for each kilogram of LNG produced</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
