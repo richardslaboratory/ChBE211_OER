@@ -417,8 +417,15 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#maxwells-equations">Maxwell’s Equations</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#expressions-for-enthalpy-and-internal-energy">Expressions for Enthalpy and Internal Energy</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#applying-chain-rule">Applying Chain Rule:</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#appling-triple-product-rule">Appling Triple Product Rule:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#applying-chain-rule">Applying Chain Rule:</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#from-the-definitions-of-the-heat-capacities">From the definitions of the heat capacities</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#applying-commutative-property-for-partial-derivatives">Applying commutative property for partial derivatives.</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#from-the-differential-balance-on-the-helmholtz-free-energy">From the differential balance on the Helmholtz Free Energy:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#from-the-differential-balance-on-the-gibbs-free-energy">From the differential balance on the Gibb’s Free Energy:</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#useful-expressions-for-calculations">Useful Expressions for Calculations</a><ul class="nav section-nav flex-column">
@@ -532,38 +539,42 @@ document.write(`
 <p>Ok. We are making some progress. If we could just replace the partial derivatives of <span class="math notranslate nohighlight">\(\underline{S}\)</span> in the above, then we could complete the expression. For this, we are going to borrow two other tricks from calculus:</p>
 <ol class="arabic simple">
 <li><p>Chain Rule</p></li>
-<li><p>Triple Product Rule</p></li>
+<li><p>We use the commutative property</p></li>
 </ol>
 </section>
 <section id="applying-chain-rule">
 <h3>Applying Chain Rule:<a class="headerlink" href="#applying-chain-rule" title="Permalink to this heading">#</a></h3>
+<section id="from-the-definitions-of-the-heat-capacities">
+<h4>From the definitions of the heat capacities<a class="headerlink" href="#from-the-definitions-of-the-heat-capacities" title="Permalink to this heading">#</a></h4>
 <p><span class="math notranslate nohighlight">\(\quad \bigg(\dfrac{\partial\underline{S}}{\partial T}\bigg)_{\underline{V}}=
 \bigg(\dfrac{\partial\underline{S}}{\partial \underline{U}}\bigg)_{\underline{V}}\bigg(\dfrac{\partial\underline{U}}{\partial T}\bigg)_{\underline{V}}=\dfrac{1}{T}C_{V}\)</span></p>
 <p><span class="math notranslate nohighlight">\(\quad \bigg(\dfrac{\partial\underline{S}}{\partial T}\bigg)_{P}=\bigg(\dfrac{\partial\underline{S}}{\partial \underline{H}}\bigg)_{P}\bigg(\dfrac{\partial\underline{H}}{\partial T}\bigg)_{P}=\dfrac{1}{T}C_P\)</span></p>
 </section>
-<section id="appling-triple-product-rule">
-<h3>Appling Triple Product Rule:<a class="headerlink" href="#appling-triple-product-rule" title="Permalink to this heading">#</a></h3>
-<p>For differential expressions that obey:</p>
-<p><span class="math notranslate nohighlight">\(\quad d\underline{U}=\bigg(\dfrac{\partial\underline{U}}{\partial \underline{V}}\bigg)_{\underline{S}}d\underline{V}+
-\bigg(\dfrac{\partial\underline{U}}{\partial \underline{S}}\bigg)_{\underline{V}}d\underline{S}\)</span></p>
-<p>The triple product rule states that</p>
-<p><span class="math notranslate nohighlight">\(\quad \bigg(\dfrac{\partial\underline{U}}{\partial \underline{V}}\bigg)_{\underline{S}}=
--\bigg(\dfrac{\partial\underline{U}}{\partial \underline{S}}\bigg)_{\underline{V}}
-\bigg(\dfrac{\partial\underline{S}}{\partial \underline{V}}\bigg)_{T}\)</span></p>
+</section>
+<section id="applying-commutative-property-for-partial-derivatives">
+<h3>Applying commutative property for partial derivatives.<a class="headerlink" href="#applying-commutative-property-for-partial-derivatives" title="Permalink to this heading">#</a></h3>
+<section id="from-the-differential-balance-on-the-helmholtz-free-energy">
+<h4>From the differential balance on the Helmholtz Free Energy:<a class="headerlink" href="#from-the-differential-balance-on-the-helmholtz-free-energy" title="Permalink to this heading">#</a></h4>
+<p><span class="math notranslate nohighlight">\(\quad d\underline{A}=-Pd\underline{V} - \underline{S}dT\)</span></p>
+<p>The communtative property states that:</p>
+<p><span class="math notranslate nohighlight">\(\dfrac{\partial}{\partial T}\bigg|_\underline{V} \bigg(\dfrac{\partial \underline{A}}{\partial \underline{V}}\bigg)_T = 
+\dfrac{\partial}{\partial \underline{V}}\bigg|_T \bigg(\dfrac{\partial \underline{A}}{\partial T}\bigg)_\underline{V} \)</span></p>
 <p>or</p>
-<p><span class="math notranslate nohighlight">\(\quad \bigg(\dfrac{\partial\underline{S}}{\partial \underline{V}}\bigg)_{T}=
-\bigg(\dfrac{\partial P}{\partial T}\bigg)_{\underline{V}}\)</span></p>
-<p>and</p>
-<p><span class="math notranslate nohighlight">\(\quad d\underline{H}=\bigg(\dfrac{\partial\underline{H}}{\partial P}\bigg)_{\underline{S}}dP
-+\bigg(\dfrac{\partial\underline{H}}{\partial \underline{S}}\bigg)_{P}d\underline{S}\)</span></p>
-<p>The triple product rule states that</p>
-<p><span class="math notranslate nohighlight">\(\quad \bigg(\dfrac{\partial\underline{H}}{\partial P}\bigg)_{\underline{S}}=
--\bigg(\dfrac{\partial\underline{H}}{\partial \underline{S}}\bigg)_{P}
-\bigg(\dfrac{\partial\underline{S}}{\partial P}\bigg)_{T}\)</span></p>
+<p><span class="math notranslate nohighlight">\(\quad \bigg(\dfrac{\partial P}{\partial \underline{T}}\bigg)_\underline{V}= \bigg(\dfrac{\partial \underline{S}}{\partial \underline{V}}\bigg)_{T}\)</span></p>
+</section>
+<section id="from-the-differential-balance-on-the-gibbs-free-energy">
+<h4>From the differential balance on the Gibb’s Free Energy:<a class="headerlink" href="#from-the-differential-balance-on-the-gibbs-free-energy" title="Permalink to this heading">#</a></h4>
+<p><span class="math notranslate nohighlight">\(\quad d\underline{G}=\underline{V}dP - \underline{S}dT\)</span></p>
+<p>The communtative property states that:</p>
+<p><span class="math notranslate nohighlight">\(\dfrac{\partial}{\partial T}\bigg|_P \bigg(\dfrac{\partial \underline{G}}{\partial P}\bigg)_T = 
+\dfrac{\partial}{\partial P}\bigg|_T \bigg(\dfrac{\partial \underline{G}}{\partial T}\bigg)_P \)</span></p>
 <p>or</p>
-<p><span class="math notranslate nohighlight">\(\quad\bigg(\dfrac{\partial\underline{S}}{\partial P}\bigg)_{T}=
--\bigg(\dfrac{\partial \underline{V}}{\partial T}\bigg)_P\)</span></p>
+<p>$\quad \bigg(\dfrac{\partial\underline{V}}{\partial \underline{T}}\bigg)_{P}=</p>
+<ul class="simple">
+<li><p>\bigg(\dfrac{\partial \underline{S}}{\partial P}\bigg)_{T}$</p></li>
+</ul>
 <p>The outcomes of the triple product rule applied to thermodynamic definitions are two of the equations called the <strong>Maxwell Equations</strong></p>
+</section>
 </section>
 </section>
 <section id="useful-expressions-for-calculations">
@@ -721,8 +732,15 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#maxwells-equations">Maxwell’s Equations</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#expressions-for-enthalpy-and-internal-energy">Expressions for Enthalpy and Internal Energy</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#applying-chain-rule">Applying Chain Rule:</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#appling-triple-product-rule">Appling Triple Product Rule:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#applying-chain-rule">Applying Chain Rule:</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#from-the-definitions-of-the-heat-capacities">From the definitions of the heat capacities</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#applying-commutative-property-for-partial-derivatives">Applying commutative property for partial derivatives.</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#from-the-differential-balance-on-the-helmholtz-free-energy">From the differential balance on the Helmholtz Free Energy:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#from-the-differential-balance-on-the-gibbs-free-energy">From the differential balance on the Gibb’s Free Energy:</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#useful-expressions-for-calculations">Useful Expressions for Calculations</a><ul class="nav section-nav flex-column">
