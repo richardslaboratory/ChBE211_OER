@@ -68,7 +68,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Species Balance Expression and Reaction Kinetics" href="../Ch6/1.Species-Balance-Expression.html" />
-    <link rel="prev" title="Vapor Liquid Equilibrium" href="6.Vapor-Liquid-Equilibrium.html" />
+    <link rel="prev" title="Computing Thermal Variables from an Equation of State" href="4.Thermal-Variables-from-EOS.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -210,8 +210,6 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="2.Virial-Equations-of-State.html">Volumetric Equations of State</a></li>
 <li class="toctree-l1"><a class="reference internal" href="3.Law-of-Corresponding-States.html">Law of Corresponding States and Critical Properties</a></li>
 <li class="toctree-l1"><a class="reference internal" href="4.Thermal-Variables-from-EOS.html">Computing Thermal Variables from an Equation of State</a></li>
-<li class="toctree-l1"><a class="reference internal" href="5.Calculating-Fugacity.html">Calculating Fugacity</a></li>
-<li class="toctree-l1"><a class="reference internal" href="6.Vapor-Liquid-Equilibrium.html">Vapor Liquid Equilibrium</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Constructing Property Diagrams</a></li>
 
 </ul>
@@ -417,9 +415,11 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fugacity-expression-from-sandler-eq-7-4-13">Fugacity expression from Sandler (Eq 7.4-13):</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#critical-properties-of-ethane">Critical Properties of Ethane</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#calculating-the-fugacity-from-the-cubic-form-of-the-e-o-s">Calculating the Fugacity from the Cubic Form of the E.O.S</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-psat-from-the-fugacities">Finding Psat from the fugacities</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#computing-the-fugacities-as-a-function-of-the-guess-pressures">Computing the Fugacities as a Function of the Guess Pressures</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-the-intersection-of-the-two-fugacities-gives-the-vapor-pressure">Finding the intersection of the two fugacities gives the vapor pressure</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-the-real-isotherm">Plotting the Real Isotherm</a></li>
 </ul>
 </li>
 </ul>
@@ -523,8 +523,8 @@ document.write(`
     <span class="k">return</span> <span class="n">R</span><span class="o">*</span><span class="n">T</span><span class="o">/</span><span class="p">(</span><span class="n">V</span><span class="o">-</span><span class="n">b</span><span class="p">)</span><span class="o">-</span><span class="n">a</span><span class="o">/</span><span class="n">V</span><span class="o">**</span><span class="mi">2</span>
 
 <span class="n">V</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="mf">1.1</span><span class="o">*</span><span class="n">b</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="mi">1000</span><span class="o">*</span><span class="n">b</span><span class="p">),</span><span class="mi">201</span><span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">V</span><span class="p">,</span><span class="n">VDW</span><span class="p">(</span><span class="n">V</span><span class="p">,</span> <span class="mf">0.9</span><span class="o">*</span><span class="n">Tc</span><span class="p">))</span>
+<span class="n">T</span> <span class="o">=</span> <span class="mf">0.85</span><span class="o">*</span><span class="n">Tc</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">V</span><span class="p">,</span><span class="n">VDW</span><span class="p">(</span><span class="n">V</span><span class="p">,</span> <span class="n">T</span><span class="p">))</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">yscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$P (Pa)$&#39;</span><span class="p">)</span>
@@ -536,7 +536,7 @@ document.write(`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;$V (m^3/mol)$&#39;)
 </pre></div>
 </div>
-<img alt="../_images/b6b951a618926744ce07674fe418ae07547d07be823de333388fd0f02dfc43bf.png" src="../_images/b6b951a618926744ce07674fe418ae07547d07be823de333388fd0f02dfc43bf.png" />
+<img alt="../_images/53febb8938d05a82e61c7886be6f1d3c3bc604d332212ce15b79a2dd533bcdee.png" src="../_images/53febb8938d05a82e61c7886be6f1d3c3bc604d332212ce15b79a2dd533bcdee.png" />
 </div>
 </div>
 <section id="calculating-the-fugacity-from-the-cubic-form-of-the-e-o-s">
@@ -553,64 +553,46 @@ document.write(`
     <span class="k">def</span> <span class="nf">fugacity</span><span class="p">(</span><span class="n">Z</span><span class="p">):</span>
     
         <span class="k">return</span>  <span class="p">(</span><span class="n">Z</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">Z</span><span class="o">-</span><span class="n">B</span><span class="p">)</span> <span class="o">-</span> <span class="n">A</span><span class="o">/</span><span class="n">Z</span>
-
+    
     <span class="n">A</span> <span class="o">=</span> <span class="n">a</span><span class="o">*</span><span class="n">P</span><span class="o">/</span><span class="p">(</span><span class="n">R</span><span class="o">*</span><span class="n">T</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
     <span class="n">B</span> <span class="o">=</span> <span class="n">b</span><span class="o">*</span><span class="n">P</span><span class="o">/</span><span class="p">(</span><span class="n">R</span><span class="o">*</span><span class="n">T</span><span class="p">)</span>
+
+    <span class="n">roots_</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">roots</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span> <span class="o">-</span> <span class="n">B</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="o">-</span><span class="n">A</span><span class="o">*</span><span class="n">B</span><span class="p">])</span> <span class="c1">##calculate the compressibility roots</span>
+
+    <span class="n">Zv</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">roots_</span><span class="p">)</span>
+    <span class="n">Zl</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">roots_</span><span class="p">)</span>
+
+    <span class="n">fv_</span> <span class="o">=</span> <span class="n">fugacity</span><span class="p">(</span><span class="n">Zv</span><span class="p">)</span>
+    <span class="n">fl_</span> <span class="o">=</span> <span class="n">fugacity</span><span class="p">(</span><span class="n">Zl</span><span class="p">)</span>
     
-    <span class="n">roots</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">roots</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span> <span class="o">-</span> <span class="n">B</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="o">-</span><span class="n">A</span><span class="o">*</span><span class="n">B</span><span class="p">])</span> <span class="c1">##calculate the compressibility roots</span>
-    
-    <span class="n">Zv</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">roots</span><span class="p">)</span>
-    <span class="n">Zl</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">roots</span><span class="p">)</span>
-    
-    <span class="n">fv</span> <span class="o">=</span> <span class="n">fugacity</span><span class="p">(</span><span class="n">Zv</span><span class="p">)</span>
-    <span class="n">fl</span> <span class="o">=</span> <span class="n">fugacity</span><span class="p">(</span><span class="n">Zl</span><span class="p">)</span>
-    
-    <span class="k">return</span> <span class="n">roots</span><span class="p">,</span> <span class="p">[</span><span class="n">fv</span><span class="p">,</span><span class="n">fl</span><span class="p">]</span>
-    
-<span class="nb">print</span><span class="p">(</span><span class="n">VDW_cubic</span><span class="p">(</span><span class="mf">0.9</span><span class="o">*</span><span class="n">Tc</span><span class="p">,</span><span class="mf">0.8</span><span class="o">*</span><span class="n">Pc</span><span class="p">))</span> <span class="c1">## 4 imaginary roots meens we are far from Psat</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">VDW_cubic</span><span class="p">(</span><span class="mf">0.9</span><span class="o">*</span><span class="n">Tc</span><span class="p">,</span><span class="mf">0.7</span><span class="o">*</span><span class="n">Pc</span><span class="p">))</span> <span class="c1">## 3 real roots, means we are close to Psat</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([0.45866026+0.16890633j, 0.45866026-0.16890633j,
-       0.19379058+0.j        ]), [(-0.3904634865376896+0.01111937814126912j), (-0.46351276114107054+0j)])
-(array([0.55667172, 0.36709754, 0.17345296]), [-0.32053620423976903, -0.3544712653571547])
+    <span class="k">return</span> <span class="n">roots_</span><span class="p">,</span> <span class="p">[</span><span class="n">fv_</span><span class="p">,</span><span class="n">fl_</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 </div>
 </section>
-<section id="finding-psat-from-the-fugacities">
-<h3>Finding Psat from the fugacities<a class="headerlink" href="#finding-psat-from-the-fugacities" title="Permalink to this heading">#</a></h3>
+<section id="computing-the-fugacities-as-a-function-of-the-guess-pressures">
+<h3>Computing the Fugacities as a Function of the Guess Pressures<a class="headerlink" href="#computing-the-fugacities-as-a-function-of-the-guess-pressures" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">P_</span>  <span class="o">=</span> <span class="p">[]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">P_</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1001</span><span class="p">)</span><span class="o">*</span><span class="n">Pc</span>
+
+<span class="n">roots_</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="n">fv_</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="n">fl_</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="n">Zv_</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="n">Zl_</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">P</span> <span class="ow">in</span> <span class="n">P_</span><span class="p">:</span>
 
-<span class="c1">##loop over guess pressures</span>
-<span class="k">for</span> <span class="n">Pr</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1000</span><span class="p">):</span>
+    <span class="n">roots</span><span class="p">,</span><span class="n">f</span> <span class="o">=</span> <span class="n">VDW_cubic</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="n">P</span><span class="p">)</span>
+    <span class="n">roots_</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">roots</span><span class="p">)</span>
+    <span class="n">fv_</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">f</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">fl_</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">f</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
     
-    <span class="n">ans</span> <span class="o">=</span> <span class="n">VDW_cubic</span><span class="p">(</span><span class="mf">0.8</span><span class="o">*</span><span class="n">Tc</span><span class="p">,</span><span class="n">Pc</span><span class="o">*</span><span class="n">Pr</span><span class="p">)</span>
-    
-    <span class="n">P_</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Pr</span><span class="o">*</span><span class="n">Pc</span><span class="p">)</span>
-    <span class="n">fv_</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ans</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
-    <span class="n">fl_</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ans</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span>
-    <span class="n">Zv_</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">ans</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
-    <span class="n">Zl_</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">ans</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
-<span class="n">P_</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">P_</span><span class="p">)</span>
-<span class="n">fv_</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">fv_</span><span class="p">)</span>
-<span class="n">fl_</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">fl_</span><span class="p">)</span>
 
-<span class="n">diff</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">fv_</span><span class="o">-</span><span class="n">fl_</span><span class="p">)</span>
-<span class="n">i</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">diff</span><span class="p">)</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">diff</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">P_</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">Zv_</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">R</span><span class="o">*</span><span class="mf">0.8</span><span class="o">*</span><span class="n">Tc</span><span class="o">/</span><span class="n">P_</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">Zl_</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">R</span><span class="o">*</span><span class="mf">0.8</span><span class="o">*</span><span class="n">Tc</span><span class="o">/</span><span class="n">P_</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+<span class="n">fv_</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">fv_</span><span class="p">)</span>
+<span class="n">fl_</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">fl_</span><span class="p">)</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">P_</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">fv_</span><span class="o">-</span><span class="n">fl_</span><span class="p">),</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;vapor&#39;</span><span class="p">)</span>
-<span class="c1">#plt.plot(P_,fl_, label = &#39;liquid&#39;)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">P_</span><span class="p">,</span><span class="n">fv_</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;vapor&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">P_</span><span class="p">,</span><span class="n">fl_</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;liquid&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;P (Pa)&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$ln\phi_i$&#39;</span><span class="p">)</span>
@@ -619,16 +601,305 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1872230.167702808 0.0008135113310225633 0.00010087181932847482
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\richa\anaconda3\lib\site-packages\matplotlib\cbook\__init__.py:1340: ComplexWarning: Casting complex values to real discards the imaginary part
+  return np.asarray(x, float)
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x277cdf750d0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x2af0484cd60&gt;
 </pre></div>
 </div>
-<img alt="../_images/2c3bca1b15bea20408701bf8d2e5144553fdee22e8a345df2e0f2f7e7828ac1e.png" src="../_images/2c3bca1b15bea20408701bf8d2e5144553fdee22e8a345df2e0f2f7e7828ac1e.png" />
+<img alt="../_images/09b59ccb5de75439b883ec0bba1032567efdc91e8a32e2d79d2527707415f4eb.png" src="../_images/09b59ccb5de75439b883ec0bba1032567efdc91e8a32e2d79d2527707415f4eb.png" />
 </div>
 </div>
 </section>
+</section>
+<section id="finding-the-intersection-of-the-two-fugacities-gives-the-vapor-pressure">
+<h2>Finding the intersection of the two fugacities gives the vapor pressure<a class="headerlink" href="#finding-the-intersection-of-the-two-fugacities-gives-the-vapor-pressure" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">find_Psat</span><span class="p">(</span><span class="n">Pmin</span><span class="p">,</span><span class="n">Pmax</span><span class="p">,</span> <span class="n">thresh</span> <span class="o">=</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="c1">##first guess is broad search</span>
+    <span class="n">P_</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">Pmin</span><span class="p">),</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">Pmax</span><span class="p">),</span><span class="mi">1000</span><span class="p">)</span>
+    <span class="n">roots_</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">fv_</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">fl_</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">P</span> <span class="ow">in</span> <span class="n">P_</span><span class="p">:</span>
+
+        <span class="n">roots</span><span class="p">,</span><span class="n">f</span> <span class="o">=</span> <span class="n">VDW_cubic</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="n">P</span><span class="p">)</span>
+        <span class="n">roots_</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">roots</span><span class="p">)</span>
+        <span class="n">fv_</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">f</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+        <span class="n">fl_</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">f</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+
+
+    <span class="n">fv_</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">fv_</span><span class="p">)</span>
+    <span class="n">fl_</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">fl_</span><span class="p">)</span>
+
+    <span class="n">diff</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">fl_</span><span class="o">-</span><span class="n">fv_</span><span class="p">)</span>
+    <span class="n">mask</span> <span class="o">=</span> <span class="p">(</span><span class="n">diff</span> <span class="o">&lt;</span> <span class="n">thresh</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">P_</span><span class="p">[</span><span class="n">mask</span><span class="p">],</span> <span class="n">diff</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span>
+
+<span class="n">P1</span><span class="p">,</span><span class="n">diff1</span> <span class="o">=</span> <span class="n">find_Psat</span><span class="p">(</span><span class="mf">0.01</span><span class="p">,</span><span class="n">Pc</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">P1</span><span class="p">,</span><span class="n">diff1</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;vapor&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;P (Pa)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$ln\phi_i$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span><span class="n">frameon</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1">#second guess is a tighter search</span>
+<span class="n">P2</span><span class="p">,</span><span class="n">diff2</span> <span class="o">=</span> <span class="n">find_Psat</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">P1</span><span class="p">),</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">P1</span><span class="p">),</span><span class="n">thresh</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">P2</span><span class="p">,</span><span class="n">diff2</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;vapor&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;P (Pa)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$ln\phi_i$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span><span class="n">frameon</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1">#third guess is a tighter search</span>
+<span class="n">P3</span><span class="p">,</span><span class="n">diff3</span> <span class="o">=</span> <span class="n">find_Psat</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">P2</span><span class="p">),</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">P2</span><span class="p">),</span><span class="n">thresh</span><span class="o">=</span><span class="mf">0.001</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">P3</span><span class="p">,</span><span class="n">diff3</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;vapor&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;P (Pa)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$ln\phi_i$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span><span class="n">frameon</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+
+<span class="n">Psat</span> <span class="o">=</span> <span class="n">P3</span><span class="p">[</span><span class="nb">list</span><span class="p">(</span><span class="n">diff3</span><span class="p">)</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">diff3</span><span class="p">))]</span>
+<span class="n">roots</span><span class="p">,</span><span class="n">f</span> <span class="o">=</span> <span class="n">VDW_cubic</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="n">Psat</span><span class="p">)</span>
+<span class="n">Vv</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">roots</span><span class="p">)</span><span class="o">*</span><span class="n">R</span><span class="o">*</span><span class="n">T</span><span class="o">/</span><span class="p">(</span><span class="n">Psat</span><span class="p">)</span>
+<span class="n">Vl</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">roots</span><span class="p">)</span><span class="o">*</span><span class="n">R</span><span class="o">*</span><span class="n">T</span><span class="o">/</span><span class="p">(</span><span class="n">Psat</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="n">Psat</span><span class="p">,</span> <span class="n">Vv</span><span class="p">,</span> <span class="n">Vl</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/df17cd0ab2f844f688f34007e52f7a3b0c88302d62169ee0845363cea5488979.png" src="../_images/df17cd0ab2f844f688f34007e52f7a3b0c88302d62169ee0845363cea5488979.png" />
+<img alt="../_images/cd7abb217da53c40da5648ca9ff75fd516d5faf12e1c48badbdfb5b0048ae30b.png" src="../_images/cd7abb217da53c40da5648ca9ff75fd516d5faf12e1c48badbdfb5b0048ae30b.png" />
+<img alt="../_images/ea3bdd294e03a3804e8f4d3a7fab5e7f4a692858d9d061f13ebdeab49edc0f8c.png" src="../_images/ea3bdd294e03a3804e8f4d3a7fab5e7f4a692858d9d061f13ebdeab49edc0f8c.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>259.59 2463631.3069065055 0.0006098789812897459 0.00010788152979104126
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="plotting-the-real-isotherm">
+<h2>Plotting the Real Isotherm<a class="headerlink" href="#plotting-the-real-isotherm" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">isotherm</span> <span class="o">=</span> <span class="n">VDW</span><span class="p">(</span><span class="n">V</span><span class="p">,</span> <span class="n">T</span><span class="p">)</span>
+<span class="n">mask</span> <span class="o">=</span> <span class="n">V</span> <span class="o">&lt;</span> <span class="n">Vl</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">V</span><span class="p">[</span><span class="n">mask</span><span class="p">],</span> <span class="n">isotherm</span><span class="p">[</span><span class="n">mask</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="n">mask</span> <span class="o">=</span> <span class="n">V</span> <span class="o">&gt;</span> <span class="n">Vv</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">V</span><span class="p">[</span><span class="n">mask</span><span class="p">],</span> <span class="n">isotherm</span><span class="p">[</span><span class="n">mask</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">Vl</span><span class="p">,</span><span class="n">Vv</span><span class="p">],</span> <span class="p">[</span><span class="n">Psat</span><span class="p">,</span><span class="n">Psat</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="n">T</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">V</span><span class="p">,</span><span class="n">isotherm</span><span class="p">,</span><span class="s1">&#39;-k&#39;</span><span class="p">,</span><span class="n">zorder</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">Vl</span><span class="p">],</span><span class="n">Psat</span><span class="p">,</span><span class="s1">&#39;r*&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">Vv</span><span class="p">],</span><span class="n">Psat</span><span class="p">,</span><span class="s1">&#39;r*&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">yscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$P$ $(Pa)$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$V$ $(m^3/mol)$&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;$V$ $(m^3/mol)$&#39;)
+</pre></div>
+</div>
+<img alt="../_images/318d571b70c9baab490dd6f019d75e7496d712fb4b124e79a6cd4a46ebf0e142.png" src="../_images/318d571b70c9baab490dd6f019d75e7496d712fb4b124e79a6cd4a46ebf0e142.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">iterate2findPsat</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="n">Pmin</span><span class="o">=</span><span class="mf">0.01</span><span class="o">*</span><span class="n">Pc</span><span class="p">,</span><span class="n">Pmax</span><span class="o">=</span><span class="n">Pc</span><span class="p">,</span> <span class="n">thresh</span> <span class="o">=</span> <span class="mi">1</span><span class="p">):</span>
+    
+    <span class="n">P_</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">Pmin</span><span class="p">),</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">Pmax</span><span class="p">),</span><span class="mi">1000</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+        
+        <span class="n">roots_</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">fv_</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">fl_</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">P</span> <span class="ow">in</span> <span class="n">P_</span><span class="p">:</span>
+
+            <span class="n">roots</span><span class="p">,</span><span class="n">f</span> <span class="o">=</span> <span class="n">VDW_cubic</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="n">P</span><span class="p">)</span>
+            <span class="n">roots_</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">roots</span><span class="p">)</span>
+            <span class="n">fv_</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">f</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+            <span class="n">fl_</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">f</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+
+
+        <span class="n">fv_</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">fv_</span><span class="p">)</span>
+        <span class="n">fl_</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">fl_</span><span class="p">)</span>
+
+        <span class="n">diff</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">fl_</span><span class="o">-</span><span class="n">fv_</span><span class="p">)</span>
+        <span class="n">mask</span> <span class="o">=</span> <span class="p">(</span><span class="n">diff</span> <span class="o">&lt;</span> <span class="n">thresh</span><span class="o">/</span><span class="mi">2</span><span class="o">**</span><span class="n">i</span><span class="p">)</span>
+        <span class="n">P_</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">P_</span><span class="p">[</span><span class="n">mask</span><span class="p">])),</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">P_</span><span class="p">[</span><span class="n">mask</span><span class="p">])),</span><span class="mi">1000</span><span class="p">)</span>
+    
+    <span class="n">Psat</span> <span class="o">=</span> <span class="n">P_</span><span class="p">[</span><span class="n">mask</span><span class="p">][</span><span class="nb">list</span><span class="p">(</span><span class="n">diff</span><span class="p">[</span><span class="n">mask</span><span class="p">])</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">diff</span><span class="p">[</span><span class="n">mask</span><span class="p">]))]</span>
+    
+    <span class="k">return</span> <span class="n">Psat</span>
+
+<span class="k">for</span> <span class="n">Tr</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.99</span><span class="p">,</span><span class="mf">0.01</span><span class="p">):</span>
+    <span class="n">test</span> <span class="o">=</span> <span class="n">iterate2findPsat</span><span class="p">(</span><span class="n">Tr</span><span class="o">*</span><span class="n">Tc</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">test</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>135695.78472385704
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>154991.77464208688
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>176170.00734593684
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>199306.4858694622
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>224502.93700012527
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>251843.12434774838
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>281477.17838234577
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>313412.9636601845
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>347779.1506714817
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>384656.2389742191
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>424069.7195766826
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>466205.5450829386
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>511126.6023970411
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>558826.5870055164
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>609494.1402338201
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>663075.9384054104
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>719747.2805749156
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>779249.9096748888
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>842541.0935943672
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>908559.7427117148
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>977992.9967206203
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1050925.0308836836
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1127347.0899431615
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1207066.243238512
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1290272.5817792227
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1377175.865596366
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1467467.578922822
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1561828.2064113556
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1659235.0305047852
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1760351.9454615272
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1866115.9271268677
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1974106.493174444
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2086069.004158627
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2200525.731682629
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2315592.0873162835
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2434330.1075021923
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2558484.6778680277
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2687136.393723781
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2822833.0008527143
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2970348.7522905516
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3125263.232702889
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3287919.500211769
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3497943.2894588965
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3727176.3525457904
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3977696.6734803286
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4178127.473124395
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4329654.433987064
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4478727.935914555
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4622090.478330923
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 </section>
 
@@ -663,12 +934,12 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="6.Vapor-Liquid-Equilibrium.html"
+       href="4.Thermal-Variables-from-EOS.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Vapor Liquid Equilibrium</p>
+        <p class="prev-next-title">Computing Thermal Variables from an Equation of State</p>
       </div>
     </a>
     <a class="right-next"
@@ -703,9 +974,11 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fugacity-expression-from-sandler-eq-7-4-13">Fugacity expression from Sandler (Eq 7.4-13):</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#critical-properties-of-ethane">Critical Properties of Ethane</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#calculating-the-fugacity-from-the-cubic-form-of-the-e-o-s">Calculating the Fugacity from the Cubic Form of the E.O.S</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-psat-from-the-fugacities">Finding Psat from the fugacities</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#computing-the-fugacities-as-a-function-of-the-guess-pressures">Computing the Fugacities as a Function of the Guess Pressures</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-the-intersection-of-the-two-fugacities-gives-the-vapor-pressure">Finding the intersection of the two fugacities gives the vapor pressure</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-the-real-isotherm">Plotting the Real Isotherm</a></li>
 </ul>
 </li>
 </ul>
