@@ -210,17 +210,15 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../Ch4/2.Virial-Equations-of-State.html">Volumetric Equations of State</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Ch4/3.Law-of-Corresponding-States.html">Law of Corresponding States and Critical Properties</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Ch4/4.Thermal-Variables-from-EOS.html">Computing Thermal Variables from an Equation of State</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Ch4/5.Calculating-Fugacity.html">Calculating Fugacity</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Ch4/6.Vapor-Liquid-Equilibrium.html">Vapor Liquid Equilibrium</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Ch4/7.Constructing-Property-Diagrams.html">Constructing Property Diagrams</a></li>
+
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Thermodynamics of Mixtures</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../Ch6/1.Species-Balance-Expression.html">Species Balance Expression and Reaction Kinetics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1.Introduction-to-Mixtures.html">Introduction to Mixtures</a></li>
 <li class="toctree-l1"><a class="reference internal" href="3.Gaseous-Mixtures.html">Gaseous Mixtures</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Liquid Mixtures</a></li>
 <li class="toctree-l1"><a class="reference internal" href="5.Accuracy-EOS.html">Calculating the Accuracy of Equations of State</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Ch6/6.Chemical-Equilibrium.html">Chemical Equilibrium</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Ch7/7.Activity-Coefficient-Models.html">Activity Coefficients</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Ch7/8.Calculating-Mixture-Fugacity.html">Calculating Fugacity of Mixtures</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Ch7/9.Mixture-Equilibrium.html">Equilibrium of Mixtures</a></li>
@@ -417,8 +415,6 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#finally-compute-the-excess-molar-volume">Finally, compute the excess molar volume</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gibbs-dugem-equation">Gibbs-Dugem Equation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#molar-enthalpy-change-on-mixing">Molar Enthalpy Change on Mixing</a></li>
 </ul>
             </nav>
         </div>
@@ -527,7 +523,8 @@ document.write(`
 </section>
 <section id="next-we-compute-the-partial-molar-property">
 <h3>Next we compute the partial molar property<a class="headerlink" href="#next-we-compute-the-partial-molar-property" title="Permalink to this heading">#</a></h3>
-<p>To do so, we need to take the derivative of the points. This can be done numerically, but as you can see above our data is sparse (and expensive to measure) so instead of taking the numerical derivative, we will apply the Redlich-Kister equation which is valid for any mixture property. It is expressed as:</p>
+<p>To do so, we need to take the derivative of the points. This can be done numerically, but as you can see above our data is sparse (and expensive to measure) so instead of taking the numerical derivative, we will apply the <em>Redlich-Kister equation</em>
+which is valid for any mixture property. It is expressed as:</p>
 <div class="math notranslate nohighlight">
 \[\Delta_{mix} \theta=x_1 x_2 \sum_n a_n(x_1-x_2)^n\]</div>
 <p>This is a polynomial expansion that has the following properties.</p>
@@ -580,19 +577,6 @@ document.write(`
 <p><span class="math notranslate nohighlight">\(\quad \bar{V}_1-\underline{V}_1=x_2^2\sum_n a_n\big[(x_1-x_2)^n+2nx_1(x_1-x_2)^{n-1}\big]\)</span></p>
 <p>The above equation can be directly evaluated and then the <strong>Gibbs Duhem Equation</strong> used to directly evaluate the molar excess property for species (2).</p>
 </section>
-</section>
-<section id="gibbs-dugem-equation">
-<h2>Gibbs-Dugem Equation<a class="headerlink" href="#gibbs-dugem-equation" title="Permalink to this heading">#</a></h2>
-<p>The partial molar properties are not independent of one another. This can be shown rigorously through derivation or by simple degrees of freedom arguments. For any mixture at a constant <span class="math notranslate nohighlight">\(T\)</span> and <span class="math notranslate nohighlight">\(P\)</span> it can be shown that the relationship linking the partial molar properties together is given as:</p>
-<div class="math notranslate nohighlight">
-\[\sum_i^C x_i d \bar{\theta}_i\bigg|_{T,P}=0\]</div>
-<p>which for a binary mixture is given as:</p>
-<div class="math notranslate nohighlight">
-\[x_1\bigg(\dfrac{\partial \bar{\theta}_1}{\partial x_1}\bigg)_{T,P}+x_2\bigg(\dfrac{\partial \bar{\theta}_2}{\partial x_1}\bigg)_{T,P}=0\]</div>
-<p>we can see now how we can use a relatively limited data set to obtain partial molar properties for both species</p>
-</section>
-<section id="molar-enthalpy-change-on-mixing">
-<h2>Molar Enthalpy Change on Mixing<a class="headerlink" href="#molar-enthalpy-change-on-mixing" title="Permalink to this heading">#</a></h2>
 </section>
 </section>
 
@@ -668,8 +652,6 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#finally-compute-the-excess-molar-volume">Finally, compute the excess molar volume</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gibbs-dugem-equation">Gibbs-Dugem Equation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#molar-enthalpy-change-on-mixing">Molar Enthalpy Change on Mixing</a></li>
 </ul>
   </nav></div>
 
