@@ -67,7 +67,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'Ch4/4.Thermal-Variables-from-EOS';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Calculating Fugacity" href="5.Calculating-Fugacity.html" />
+    <link rel="next" title="Constructing Property Diagrams" href="7.Constructing-Property-Diagrams.html" />
     <link rel="prev" title="Law of Corresponding States and Critical Properties" href="3.Law-of-Corresponding-States.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -210,17 +210,16 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="2.Virial-Equations-of-State.html">Volumetric Equations of State</a></li>
 <li class="toctree-l1"><a class="reference internal" href="3.Law-of-Corresponding-States.html">Law of Corresponding States and Critical Properties</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Computing Thermal Variables from an Equation of State</a></li>
-<li class="toctree-l1"><a class="reference internal" href="5.Calculating-Fugacity.html">Calculating Fugacity</a></li>
-<li class="toctree-l1"><a class="reference internal" href="6.Vapor-Liquid-Equilibrium.html">Vapor Liquid Equilibrium</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="7.Constructing-Property-Diagrams.html">Constructing Property Diagrams</a></li>
+
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Thermodynamics of Mixtures</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../Ch6/1.Species-Balance-Expression.html">Species Balance Expression and Reaction Kinetics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch5/1.Introduction-to-Mixtures.html">Introduction to Mixtures</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Ch5/3.Gaseous-Mixtures.html">Gaseous Mixtures</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Ch5/4.Liquid-Mixtures.html">Liquid Mixtures</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Ch5/5.Accuracy-EOS.html">Calculating the Accuracy of Equations of State</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Ch6/6.Chemical-Equilibrium.html">Chemical Equilibrium</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Ch7/7.Activity-Coefficient-Models.html">Activity Coefficients</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Ch7/8.Calculating-Mixture-Fugacity.html">Calculating Fugacity of Mixtures</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Ch7/9.Mixture-Equilibrium.html">Equilibrium of Mixtures</a></li>
@@ -409,6 +408,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Computing Thermal Variables from an Equation of State</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculation-pathways">Calculation Pathways</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pathways-for-closed-system-problems">Pathways for Closed System Problems:</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pathways-for-open-system-problems">Pathways for Open System Problems:</a></li>
@@ -416,17 +416,24 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#departure-functions">Departure Functions</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#departure-functions-for-closed-system-paths">Departure Functions for Closed System Paths:</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#departure-functions-for-open-system-paths">Departure Functions for Open System Paths:</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#useful-form-of-departure-function">Useful form of Departure Function:</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#illustration-problem">Illustration Problem:</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#first-lets-plot-an-isotherm-at-this-temperature">First let’s plot an isotherm at this temperature:</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lets-solve-the-above-expression-for-the-vdw-equation-of-state">let’s solve the above expression for the VDW equation of state:</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lets-put-it-all-together-into-one-plot">let’s put it all together into one plot</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#quad-delta-underline-s-1-rightarrow2-r-delta-underline-s-1-rightarrow2-delta-underline-s-1-rightarrow2-ig">$\quad \Delta\underline{S}<em>{1\rightarrow2}^{R}
+=\Delta\underline{S}</em>{1\rightarrow2}
+-\Delta\underline{S}_{1\rightarrow2}^{IG}</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#departure-functions-for-open-system-paths">Departure Functions for Open System Paths:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#useful-form-of-departure-function">Useful form of Departure Function:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#illustration-problem">Illustration Problem:</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#first-lets-plot-an-isotherm-at-this-temperature">First let’s plot an isotherm at this temperature:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lets-solve-the-above-expression-for-the-vdw-equation-of-state">let’s solve the above expression for the VDW equation of state:</a></li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
+
             </nav>
         </div>
     </div>
@@ -504,44 +511,43 @@ document.write(`
 +Rln\bigg(\dfrac{\underline{V}_2}{\underline{V}_1}\bigg)\)</span></p>
 <p><span class="math notranslate nohighlight">\(\quad \Delta\underline{U}_{1\rightarrow2}^{IG}=\int_{T_1}^{T_2}C_V^{IG}dT\)</span></p>
 <p>This makes the <strong>departure functions</strong></p>
-<p><span class="math notranslate nohighlight">\(\quad \Delta\underline{S}_{1\rightarrow2}^{R}
-=\Delta\underline{S}_{1\rightarrow2}
--\Delta\underline{S}_{1\rightarrow2}^{IG}
-=\int_{\underline{V}_1}^{\underline{V}_2}\bigg(\dfrac{\partial P}{\partial T}\bigg)_{\underline{V}}d\underline{V}
--Rln\bigg(\dfrac{\underline{V}_2}{\underline{V}_1}\bigg)\)</span></p>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="quad-delta-underline-s-1-rightarrow2-r-delta-underline-s-1-rightarrow2-delta-underline-s-1-rightarrow2-ig">
+<h1>$\quad \Delta\underline{S}<em>{1\rightarrow2}^{R}
+=\Delta\underline{S}</em>{1\rightarrow2}
+-\Delta\underline{S}_{1\rightarrow2}^{IG}<a class="headerlink" href="#quad-delta-underline-s-1-rightarrow2-r-delta-underline-s-1-rightarrow2-delta-underline-s-1-rightarrow2-ig" title="Permalink to this heading">#</a></h1>
+<p>\int_{\underline{V}<em>1}^{\infty}\bigg[\bigg(\dfrac{\partial P}{\partial T}\bigg)</em>{\underline{V}}\bigg]<em>{T_1}d\underline{V}+
+\int</em>{\infty}^{\underline{V}<em>2}\bigg[\bigg(\dfrac{\partial P}{\partial T}\bigg)</em>{\underline{V}}\bigg]_{T_2}d\underline{V}
+$</p>
 <p><span class="math notranslate nohighlight">\(\quad \Delta\underline{U}_{1\rightarrow2}^{R}
 =\Delta\underline{U}_{1\rightarrow2}
 -\Delta\underline{U}_{1\rightarrow2}^{IG}
-=\int_{\underline{V}_1}^{\underline{V}_2}\bigg(T\bigg(\dfrac{\partial P}{\partial T}\bigg)_{\underline{V}}-P\bigg)d\underline{V}\)</span></p>
-</section>
+=\int_{\underline{V}_1}^{\infty}\bigg[T\bigg(\dfrac{\partial P}{\partial T}\bigg)_{\underline{V}}-P\bigg]_{T_1}d\underline{V}+
+\int_{\infty}^{\underline{V}_2}\bigg[T\bigg(\dfrac{\partial P}{\partial T}\bigg)_{\underline{V}}-P\bigg]_{T_2}d\underline{V}\)</span></p>
 <section id="departure-functions-for-open-system-paths">
-<h3>Departure Functions for Open System Paths:<a class="headerlink" href="#departure-functions-for-open-system-paths" title="Permalink to this heading">#</a></h3>
+<h2>Departure Functions for Open System Paths:<a class="headerlink" href="#departure-functions-for-open-system-paths" title="Permalink to this heading">#</a></h2>
 <p><span class="math notranslate nohighlight">\(\quad \Delta\underline{S}_{1\rightarrow2}^{IG}=\int_{T_1}^{T_2}\dfrac{C_P^{IG}}{T}dT-Rln\bigg(\dfrac{\underline{P}_2}{\underline{P}_1}\bigg)\)</span></p>
 <p><span class="math notranslate nohighlight">\(\quad \Delta\underline{H}_{1\rightarrow2}^{IG}=\int_{T_1}^{T_2}C_P^{IG}dT\)</span></p>
-<p>This makes the <strong>departure functions</strong></p>
-<p><span class="math notranslate nohighlight">\(\quad \Delta\underline{S}_{1\rightarrow2}^{R}
-=\Delta\underline{S}_{1\rightarrow2}
--\Delta\underline{S}_{1\rightarrow2}^{IG}
-=\int_{\underline{P}_1}^{\underline{P}_2}\bigg(\dfrac{\partial \underline{V}}{\partial T}\bigg)dP
-+Rln\bigg(\dfrac{\underline{P}_2}{\underline{P}_1}\bigg)\)</span></p>
-<p><span class="math notranslate nohighlight">\(\quad \Delta\underline{H}_{1\rightarrow2}^{R}
-=\Delta\underline{H}_{1\rightarrow2}
--\Delta\underline{H}_{1\rightarrow2}^{IG}
-=\int_{P_1}^{P_2}\bigg(\underline{V}-T\bigg(\dfrac{\partial \underline{V}}{\partial T}\bigg)_{P}\bigg)dP\)</span></p>
 </section>
 <section id="useful-form-of-departure-function">
-<h3>Useful form of Departure Function:<a class="headerlink" href="#useful-form-of-departure-function" title="Permalink to this heading">#</a></h3>
+<h2>Useful form of Departure Function:<a class="headerlink" href="#useful-form-of-departure-function" title="Permalink to this heading">#</a></h2>
 <p>The derivative with respect to <span class="math notranslate nohighlight">\(d\underline{V}\)</span> is not so convenient for the volumetric equations of state that we routinely have available. Therefore, it is often preferred to rearrange the expression above for the departure function of the enthalpy to a more <em>useful form</em>. We proceed by recognizing that:</p>
 <p><span class="math notranslate nohighlight">\(\quad dP=\dfrac{1}{\underline{V}}d(P\underline{V})-\dfrac{P}{\underline{V}}d\underline{V}\)</span></p>
 <p>using the above, it can be shown that</p>
 <p><span class="math notranslate nohighlight">\(\quad \Delta\underline{S}_{1\rightarrow2}^{R}
-=R\ln{\dfrac{Z_2}{Z_1}}+\int_{\underline{V}_1}^{\underline{V}_2}\bigg[\bigg(\dfrac{\partial P}{\partial T}\bigg)_{\underline{V}}-\dfrac{R}{\underline{V}}\bigg]dP\)</span></p>
+=R\ln{\dfrac{Z_2}{Z_1}}+ 
++\int_{\underline{V}_1}^{\infty}\bigg[\bigg(\dfrac{\partial P}{\partial T}\bigg)_{\underline{V}}-\dfrac{R}{\underline{V}}\bigg]_{T_1}d\underline{V}
++
+\int_{\infty}^{\underline{V}_2}\bigg[\bigg(\dfrac{\partial P}{\partial T}\bigg)_{\underline{V}}-\dfrac{R}{\underline{V}}\bigg]_{T_2}d\underline{V}\)</span></p>
 <p><span class="math notranslate nohighlight">\(\quad \Delta\underline{H}_{1\rightarrow2}^{R}
 =RT_2(Z_2-1)-RT_1(Z_1-1)+
-\int_{\underline{V}_1}^{\underline{V}_2}\bigg[T\bigg(\dfrac{\partial P}{\partial T}\bigg)_{\underline{V}}-P\bigg]dP\)</span></p>
+\int_{\underline{V}_1}^{\infty}\bigg[T\bigg(\dfrac{\partial P}{\partial T}\bigg)_{\underline{V}}-P\bigg]_{T_1}d\underline{V}+
+\int_{\infty}^{\underline{V}_2}\bigg[T\bigg(\dfrac{\partial P}{\partial T}\bigg)_{\underline{V}}-P\bigg]_{T_2}d\underline{V}\)</span></p>
 </section>
 <section id="illustration-problem">
-<h3>Illustration Problem:<a class="headerlink" href="#illustration-problem" title="Permalink to this heading">#</a></h3>
+<h2>Illustration Problem:<a class="headerlink" href="#illustration-problem" title="Permalink to this heading">#</a></h2>
 <p>Steam undergoes a Joule-Thomson Expansion from <span class="math notranslate nohighlight">\(P=25\)</span> <span class="math notranslate nohighlight">\(bar\)</span> and <span class="math notranslate nohighlight">\(T=300^{o}C\)</span> to <span class="math notranslate nohighlight">\(P=1\)</span> <span class="math notranslate nohighlight">\(bar\)</span> and <span class="math notranslate nohighlight">\(T=?\)</span>. Find the temperature at the outlet for:</p>
 <ol class="arabic simple">
 <li><p>An ideal gas</p></li>
@@ -556,7 +562,7 @@ document.write(`
 </ol>
 <p>Compare the results. Is steam well approximated by an ideal gas?</p>
 <section id="first-lets-plot-an-isotherm-at-this-temperature">
-<h4>First let’s plot an isotherm at this temperature:<a class="headerlink" href="#first-lets-plot-an-isotherm-at-this-temperature" title="Permalink to this heading">#</a></h4>
+<h3>First let’s plot an isotherm at this temperature:<a class="headerlink" href="#first-lets-plot-an-isotherm-at-this-temperature" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -584,12 +590,12 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/c375da62c0909a7de279ed3f8a3c31c7b8a59f355805b0ad4ca68d784885cfe4.png" src="../_images/c375da62c0909a7de279ed3f8a3c31c7b8a59f355805b0ad4ca68d784885cfe4.png" />
+<img alt="../_images/5e2b10a9a88793b0964b9abe09289a990452e8bbae7073a6cb6ad2115c1e9c02.png" src="../_images/5e2b10a9a88793b0964b9abe09289a990452e8bbae7073a6cb6ad2115c1e9c02.png" />
 </div>
 </div>
 </section>
 <section id="lets-solve-the-above-expression-for-the-vdw-equation-of-state">
-<h4>let’s solve the above expression for the VDW equation of state:<a class="headerlink" href="#lets-solve-the-above-expression-for-the-vdw-equation-of-state" title="Permalink to this heading">#</a></h4>
+<h3>let’s solve the above expression for the VDW equation of state:<a class="headerlink" href="#lets-solve-the-above-expression-for-the-vdw-equation-of-state" title="Permalink to this heading">#</a></h3>
 <p><span class="math notranslate nohighlight">\(\quad \Delta\underline{H}_{1\rightarrow2}^{R}=RT_2(Z_2-1)-RT_1(Z_1-1)+
 \int_{\underline{V}_1}^{\underline{V}_2}\bigg[T\bigg(\dfrac{\partial P}{\partial T}\bigg)_{\underline{V}}-P\bigg]dP\)</span></p>
 <p>first, we need to evaluate:</p>
@@ -600,95 +606,6 @@ document.write(`
 <p><span class="math notranslate nohighlight">\(\quad \Delta\underline{H}_{1\rightarrow2}=\Delta\underline{H}_{1\rightarrow2}^{R}+\Delta\underline{H}_{1\rightarrow2}^{IG}\)</span></p>
 <p>where</p>
 <p><span class="math notranslate nohighlight">\(\quad \Delta\underline{H}_{1\rightarrow2}^{IG}=\int_{T_1}^{T_2}a+bT dT=a(T_2-T_1)+\dfrac{b}{2}(T_2^2-T_1^2)\)</span></p>
-</section>
-<section id="lets-put-it-all-together-into-one-plot">
-<h4>let’s put it all together into one plot<a class="headerlink" href="#lets-put-it-all-together-into-one-plot" title="Permalink to this heading">#</a></h4>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">T1</span><span class="o">=</span><span class="mi">300</span><span class="o">+</span><span class="mf">273.15</span><span class="c1">##k</span>
-<span class="n">P1</span><span class="o">=</span><span class="mf">2.5</span><span class="o">*</span><span class="mi">10</span><span class="o">**</span><span class="mi">6</span><span class="c1">##Pa</span>
-<span class="n">P2</span><span class="o">=</span><span class="mf">0.1</span><span class="o">*</span><span class="mi">10</span><span class="o">**</span><span class="mi">6</span><span class="c1">##Pa</span>
-
-<span class="c1">##lets create an array for the possible solutions for T2</span>
-<span class="n">T2_</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.1</span><span class="o">*</span><span class="n">T1</span><span class="p">,</span><span class="mi">3</span><span class="o">*</span><span class="n">T1</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">roots</span><span class="p">(</span><span class="n">P</span><span class="p">,</span><span class="n">T</span><span class="p">):</span>
-    
-    <span class="n">A</span><span class="o">=</span><span class="n">a</span><span class="o">*</span><span class="n">P</span><span class="o">/</span><span class="p">(</span><span class="n">R</span><span class="o">*</span><span class="n">T</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
-    <span class="n">B</span><span class="o">=</span><span class="n">b</span><span class="o">*</span><span class="n">P</span><span class="o">/</span><span class="p">(</span><span class="n">R</span><span class="o">*</span><span class="n">T</span><span class="p">)</span>
-    
-    <span class="n">alpha</span><span class="o">=-</span><span class="mi">1</span><span class="o">-</span><span class="n">B</span>
-    <span class="n">beta</span><span class="o">=</span><span class="n">A</span>
-    <span class="n">gamma</span><span class="o">=-</span><span class="n">A</span><span class="o">*</span><span class="n">B</span>
-    
-    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">roots</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="n">alpha</span><span class="p">,</span><span class="n">beta</span><span class="p">,</span><span class="n">gamma</span><span class="p">])</span>
-
-
-<span class="c1">##lets carry through the calculation for dH</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">roots</span><span class="p">(</span><span class="n">P1</span><span class="p">,</span><span class="n">T1</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
-<span class="k">for</span> <span class="n">T2</span> <span class="ow">in</span> <span class="n">T2_</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">roots</span><span class="p">(</span><span class="n">P1</span><span class="p">,</span><span class="n">T2</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
-
-<span class="c1">#dH=</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.9530599735947783+0j)
-(0.4977928283826188+2.38539993536142j)
-(0.4977158199934704+1.4337417182652006j)
-(0.4976315983230296+0.9768799180511715j)
-(0.49753893700246943+0.6944355466316081j)
-(0.49743628559294656+0.488137590110274j)
-(0.49732164656985256+0.3104660822063984j)
-(0.497192388115225+0.08271282882817403j)
-0.7276370395766505
-0.805577291355119
-0.8516088905428436
-0.8824648939976798
-0.9045340934601003
-0.920995336476277
-0.9336521389712118
-0.943614373331415
-(0.9516048002958072+0j)
-(0.9581144380282511+0j)
-(0.9634881454672588+0j)
-(0.9679747695631529+0j)
-(0.9717579763246225+0j)
-(0.9749759550576615+0j)
-(0.977734421915962+0j)
-(0.9801154372839824+0j)
-(0.9821835256113535+0j)
-(0.983990010128557+0j)
-(0.9855761386115409+0j)
-(0.986975373563727+0j)
-(0.9882150943338424+0j)
-(0.9893178786057744+0j)
-(0.9903024785910466+0j)
-(0.9911845726699257+0j)
-(0.9919773498563731+0j)
-(0.9926919684097769+0j)
-(0.9933379187259804+0j)
-(0.9939233127321502+0j)
-(0.9944551163511314+0j)
-(0.9949393375043722+0j)
-(0.9953811791248117+0j)
-(0.9957851644355847+0j)
-(0.9961552400975149+0j)
-(0.9964948615844254+0j)
-(0.9968070642014671+0j)
-(0.9970945224399441+0j)
-(0.9973595998062414+0j)
-(0.9976043908313587+0j)
-(0.9978307566310642+0j)
-(0.9980403551224093+0j)
-(0.9982346667935121+0j)
-(0.9984150167577582+0j)
-(0.9985825936910413+0j)
-</pre></div>
-</div>
-</div>
-</div>
-</section>
 </section>
 </section>
 </section>
@@ -733,11 +650,11 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="5.Calculating-Fugacity.html"
+       href="7.Constructing-Property-Diagrams.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Calculating Fugacity</p>
+        <p class="prev-next-title">Constructing Property Diagrams</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -757,6 +674,7 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Computing Thermal Variables from an Equation of State</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculation-pathways">Calculation Pathways</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pathways-for-closed-system-problems">Pathways for Closed System Problems:</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pathways-for-open-system-problems">Pathways for Open System Problems:</a></li>
@@ -764,17 +682,24 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#departure-functions">Departure Functions</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#departure-functions-for-closed-system-paths">Departure Functions for Closed System Paths:</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#departure-functions-for-open-system-paths">Departure Functions for Open System Paths:</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#useful-form-of-departure-function">Useful form of Departure Function:</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#illustration-problem">Illustration Problem:</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#first-lets-plot-an-isotherm-at-this-temperature">First let’s plot an isotherm at this temperature:</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lets-solve-the-above-expression-for-the-vdw-equation-of-state">let’s solve the above expression for the VDW equation of state:</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lets-put-it-all-together-into-one-plot">let’s put it all together into one plot</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#quad-delta-underline-s-1-rightarrow2-r-delta-underline-s-1-rightarrow2-delta-underline-s-1-rightarrow2-ig">$\quad \Delta\underline{S}<em>{1\rightarrow2}^{R}
+=\Delta\underline{S}</em>{1\rightarrow2}
+-\Delta\underline{S}_{1\rightarrow2}^{IG}</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#departure-functions-for-open-system-paths">Departure Functions for Open System Paths:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#useful-form-of-departure-function">Useful form of Departure Function:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#illustration-problem">Illustration Problem:</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#first-lets-plot-an-isotherm-at-this-temperature">First let’s plot an isotherm at this temperature:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lets-solve-the-above-expression-for-the-vdw-equation-of-state">let’s solve the above expression for the VDW equation of state:</a></li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
+
   </nav></div>
 
 </div></div>
