@@ -1,0 +1,707 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Stage-by-Stage Balances &#8212; Introduction to Thermodynamics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Ch8/212 Content/DunnWorkstudy/6_Stage Balances_CH5';</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/logo.png" class="logo__image only-light" alt="Introduction to Thermodynamics - Home"/>
+    <script>document.write(`<img src="../../../_static/logo.png" class="logo__image only-dark" alt="Introduction to Thermodynamics - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../../intro.html">
+                    Foreword
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Definitions and Balance Expressions</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch1/1.Thermodynamic-Definitions.html">Thermodynamic Definitions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch1/2.Real-Gas-Properties.html">Real Gas Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch1/3.Equations-of-State.html">Equations of State</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch1/4.Balance-Expressions.html">Macroscopic Balance Expressions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch1/5.Conservation-of-Mass.html">Conservation of Mass</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Foundations of Thermodynamics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch2/1.Conservation-of-Energy.html">Conservation of Energy and the 1st Law of Thermodynamics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch2/2.Expansion-of-a-Gas.html">Expansion of a Gas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch2/3.Entropy-Balance-Expression.html">Balance Expression for Entropy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch2/4.Entropy-at-0K.html">Entropy at 0K</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch2/5.Free-Energies.html">Free Energy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch2/6.Changes-of-State.html">Changes of State</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Applications of Thermodynamics in Chemical Engineering</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch3/1.Unit-Operations.html">Unit Operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch3/2.Property-Diagram-Single-Components.html">Property Database for Common Substances</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch3/3.Heat-Engines.html">Heat Engines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch3/4.Refrigeration.html">Refrigeration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch3/5.Liquefaction.html">Liquefaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch3/6.Optimizing-with-Python.html">Optimizing with Python</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Vapor-Liquid Equilibrium for Non-Ideal Gases</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch4/1.Deriving-Useful-Thermodynamic-Relationships.html">Deriving Useful Thermodynamic Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch4/2.Virial-Equations-of-State.html">Volumetric Equations of State</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch4/3.Law-of-Corresponding-States.html">Law of Corresponding States and Critical Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch4/4.Thermal-Variables-from-EOS.html">Computing Thermal Variables from an Equation of State</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch4/7.Constructing-Property-Diagrams.html">Constructing Property Diagrams</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Thermodynamics of Mixtures</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch5/1.Introduction-to-Mixtures.html">Introduction to Mixtures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch5/3.Gaseous-Mixtures.html">Gaseous Mixtures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch5/4.Liquid-Mixtures.html">Liquid Mixtures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch5/5.Accuracy-EOS.html">Calculating the Accuracy of Equations of State</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch7/7.Activity-Coefficient-Models.html">Activity Coefficients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch7/8.Calculating-Mixture-Fugacity.html">Vapor-Liquid Equilibrium</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch7/9.Mixture-Equilibrium.html">Equilibrium of Mixtures</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Exercises</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../Exercises/Ch1.html">Exercises for Chapter 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Exercises/Ch2.html">Exercises for Chapter 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Exercises/Ch3.html">Exercises for Chapter 3</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../_sources/Ch8/212 Content/DunnWorkstudy/6_Stage Balances_CH5.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Stage-by-Stage Balances</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Stage-by-Stage Balances</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">2</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">3</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">4</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#six-equations-unknowns">Six equations Unknowns:</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">5</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Six equations Unknowns:</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">6</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Six equations Unknowns:</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">7</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#stripping-section">Stripping Section</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unknowns">Unknowns</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#equations">Equations</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">8</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">9</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">10</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">11</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="stage-by-stage-balances">
+<h1>Stage-by-Stage Balances<a class="headerlink" href="#stage-by-stage-balances" title="Link to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>2<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
+<p><img alt="Image" src="Ch8/212 Content/DunnWorkstudy/Dunn-Images/6_Stage%20Balances_CH5/Slide3.jpg" /></p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id2">
+<h1>3<a class="headerlink" href="#id2" title="Link to this heading">#</a></h1>
+<p><img alt="Image" src="Ch8/212 Content/DunnWorkstudy/Dunn-Images/6_Stage%20Balances_CH5/Slide5.jpg" /></p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id3">
+<h1>4<a class="headerlink" href="#id3" title="Link to this heading">#</a></h1>
+<p><img alt="Image" src="Ch8/212 Content/DunnWorkstudy/Dunn-Images/6_Stage%20Balances_CH5/Slide7.jpg" /></p>
+<p>Overall mass balance:
+$<span class="math notranslate nohighlight">\( V_2 = L_1 + D \)</span>$</p>
+<p>For the more volatile component:
+$<span class="math notranslate nohighlight">\( V_2 y_2 = L_1 x_1 + D x_D \)</span>$</p>
+<p>Energy balance:
+$<span class="math notranslate nohighlight">\( V_2 H_2 + Q_c = L_1 h_1 + D h_D \)</span>$</p>
+<p>Where:
+$<span class="math notranslate nohighlight">\( h_1 = h_1(x_1)\)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\(H_2 = H_2(y_2)\)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\( x_1 \text{and} y_1 \text{are related by equilibrium on stage 1.} \)</span>$</p>
+<section id="six-equations-unknowns">
+<h2>Six equations Unknowns:<a class="headerlink" href="#six-equations-unknowns" title="Link to this heading">#</a></h2>
+<div class="math notranslate nohighlight">
+\[ L_1, V_2, y_2, x_1, H_2, h_1\]</div>
+<p>Solve these and move to next stage.</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id4">
+<h1>5<a class="headerlink" href="#id4" title="Link to this heading">#</a></h1>
+<p><img alt="Image" src="Ch8/212 Content/DunnWorkstudy/Dunn-Images/6_Stage%20Balances_CH5/Slide9.jpg" /></p>
+<p>Overall mass balance:
+$<span class="math notranslate nohighlight">\( V_3 = L_2 + D \)</span>$</p>
+<p>For the more volatile component:
+$<span class="math notranslate nohighlight">\( V_3 y_3 = L_2 x_2 + D x_D \)</span>$</p>
+<p>Energy balance:
+$<span class="math notranslate nohighlight">\( V_3 H_3 + Q_c = L_2 h_2 + D h_D \)</span>$</p>
+<p>Where:
+$<span class="math notranslate nohighlight">\( h_2 = h_2(x_2)\)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\( H_3 = H_3(y_3)\)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\( x_2 \text{and} y_2 \text{are related by equilibrium on stage 2.} \)</span>$</p>
+<section id="id5">
+<h2>Six equations Unknowns:<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
+<div class="math notranslate nohighlight">
+\[ L_2, V_2, y_3, x_2, H_3, h_2\]</div>
+<p>Solve these and move to next stage.</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id6">
+<h1>6<a class="headerlink" href="#id6" title="Link to this heading">#</a></h1>
+<p><img alt="Image" src="Ch8/212 Content/DunnWorkstudy/Dunn-Images/6_Stage%20Balances_CH5/Slide11.jpg" /></p>
+<p>Overall mass balance:
+$<span class="math notranslate nohighlight">\( V_{j+1} = L_j + D \)</span>$</p>
+<p>For the more volatile component:
+$<span class="math notranslate nohighlight">\( V_{j+1} y_{j+1} = L_j x_j + D x_D \)</span>$</p>
+<p>Energy balance:
+$<span class="math notranslate nohighlight">\( V_{j+1} H_{j+1} + Q_c = L_j h_j + D h_D \)</span>$</p>
+<p>Where:
+$<span class="math notranslate nohighlight">\( h_j = h_j(x_j)\)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\( H_{j+1} = H_{j+1}(y_{j+1})\)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\( x_j \text{and} y_j \text{are related by equilibrium on stage j.} \)</span>$</p>
+<section id="id7">
+<h2>Six equations Unknowns:<a class="headerlink" href="#id7" title="Link to this heading">#</a></h2>
+<div class="math notranslate nohighlight">
+\[ L_j, V_{j+1}, y_{j+1}, x_j, H_{j+1}, h_j\]</div>
+<p>Solve these and move to next stage.</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id8">
+<h1>7<a class="headerlink" href="#id8" title="Link to this heading">#</a></h1>
+<p><img alt="Image" src="Ch8/212 Content/DunnWorkstudy/Dunn-Images/6_Stage%20Balances_CH5/Slide13.jpg" /></p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="stripping-section">
+<h1>Stripping Section<a class="headerlink" href="#stripping-section" title="Link to this heading">#</a></h1>
+<p>Overbars on V and L indicate flows in stripping section</p>
+<section id="unknowns">
+<h2>Unknowns<a class="headerlink" href="#unknowns" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\overline{L}_{f}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\overline{V}_{f+1}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(x_f\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(y_{f+1}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(H_{f+1}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(h_f\)</span></p></li>
+</ul>
+</section>
+<section id="equations">
+<h2>Equations<a class="headerlink" href="#equations" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\overline{V}_{f+1} = \overline{L}_f - B\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\overline{V}_{f+1}y_{f+1} = \overline{L}_fx_f - Bx_B\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\overline{V}_{f+1}H_{f+1} = \overline{L}_fh_f - Bh_B + Q_R\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(h_f = h_f(x_f)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(H_{f+1} = H_{f+1}(y_{f+1})\)</span></p></li>
+</ul>
+<p><span class="math notranslate nohighlight">\(x_f\)</span> and <span class="math notranslate nohighlight">\(y_f\)</span> are related by equilibrium on stage f.</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id9">
+<h1>8<a class="headerlink" href="#id9" title="Link to this heading">#</a></h1>
+<p><img alt="Image" src="Ch8/212 Content/DunnWorkstudy/Dunn-Images/6_Stage%20Balances_CH5/Slide15.jpg" /></p>
+<p>We have solved the top part of the column and know F.</p>
+<p>So we can calculate B and <span class="math notranslate nohighlight">\(Q_R\)</span> from column balances</p>
+<p><span class="math notranslate nohighlight">\(x_B\)</span> could be specified in problem statement</p>
+<p><span class="math notranslate nohighlight">\(y_f\)</span> solved from top down calculations</p>
+<p><span class="math notranslate nohighlight">\(\overline{V}_k = L_k - B\)</span></p>
+<p><span class="math notranslate nohighlight">\(\overline{V}_k y_k = \overline{L}_{k-1} x_{k-1} - B x_B\)</span></p>
+<p><span class="math notranslate nohighlight">\(\overline{V}_k H_k = \overline{L}_{k-1} x_{k-1} - B x_B + Q_R\)</span></p>
+<p><span class="math notranslate nohighlight">\(h_{k-1} = h_{k-1}(x_{k-1})\)</span></p>
+<p><span class="math notranslate nohighlight">\(H_k = H_k(y_k)\)</span></p>
+<p><span class="math notranslate nohighlight">\(x_{k-1}\)</span> and <span class="math notranslate nohighlight">\(y_{k-1}\)</span> are related by equilibrium on stage k-1.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id10">
+<h1>9<a class="headerlink" href="#id10" title="Link to this heading">#</a></h1>
+<p><img alt="Image" src="Ch8/212 Content/DunnWorkstudy/Dunn-Images/6_Stage%20Balances_CH5/Slide17.jpg" /></p>
+<p>Partial reboiler has both liquid and vapor phases.</p>
+<p>It acts as an equilibrium stage: N+1</p>
+<p><span class="math notranslate nohighlight">\(k=N+1\)</span></p>
+<p><span class="math notranslate nohighlight">\(k-1=N\)</span></p>
+<p><span class="math notranslate nohighlight">\(X_{N+1} = X_B\)</span></p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id11">
+<h1>10<a class="headerlink" href="#id11" title="Link to this heading">#</a></h1>
+<p>[<a class="reference external" href="https://learncheme.com/simulations/separations/feed-stages-in-a-distillation-column/">https://learncheme.com/simulations/separations/feed-stages-in-a-distillation-column/</a>]</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id12">
+<h1>11<a class="headerlink" href="#id12" title="Link to this heading">#</a></h1>
+<p><img alt="Image" src="Ch8/212 Content/DunnWorkstudy/Dunn-Images/6_Stage%20Balances_CH5/Slide19.jpg" /></p>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "executablebooks/jupyter-book",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./Ch8\212 Content\DunnWorkstudy"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Stage-by-Stage Balances</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">2</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">3</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">4</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#six-equations-unknowns">Six equations Unknowns:</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">5</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Six equations Unknowns:</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">6</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Six equations Unknowns:</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">7</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#stripping-section">Stripping Section</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unknowns">Unknowns</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#equations">Equations</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">8</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">9</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">10</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">11</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By J. J. Richards
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

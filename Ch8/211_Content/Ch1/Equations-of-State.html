@@ -1,0 +1,659 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Equations of State &#8212; Introduction to Thermodynamics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Ch8/211_Content/Ch1/Equations-of-State';</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/logo.png" class="logo__image only-light" alt="Introduction to Thermodynamics - Home"/>
+    <script>document.write(`<img src="../../../_static/logo.png" class="logo__image only-dark" alt="Introduction to Thermodynamics - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../../intro.html">
+                    Foreword
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Definitions and Balance Expressions</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch1/1.Thermodynamic-Definitions.html">Thermodynamic Definitions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch1/2.Real-Gas-Properties.html">Real Gas Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch1/3.Equations-of-State.html">Equations of State</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch1/4.Balance-Expressions.html">Macroscopic Balance Expressions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch1/5.Conservation-of-Mass.html">Conservation of Mass</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Foundations of Thermodynamics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch2/1.Conservation-of-Energy.html">Conservation of Energy and the 1st Law of Thermodynamics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch2/2.Expansion-of-a-Gas.html">Expansion of a Gas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch2/3.Entropy-Balance-Expression.html">Balance Expression for Entropy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch2/4.Entropy-at-0K.html">Entropy at 0K</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch2/5.Free-Energies.html">Free Energy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch2/6.Changes-of-State.html">Changes of State</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Applications of Thermodynamics in Chemical Engineering</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch3/1.Unit-Operations.html">Unit Operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch3/2.Property-Diagram-Single-Components.html">Property Database for Common Substances</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch3/3.Heat-Engines.html">Heat Engines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch3/4.Refrigeration.html">Refrigeration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch3/5.Liquefaction.html">Liquefaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch3/6.Optimizing-with-Python.html">Optimizing with Python</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Vapor-Liquid Equilibrium for Non-Ideal Gases</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch4/1.Deriving-Useful-Thermodynamic-Relationships.html">Deriving Useful Thermodynamic Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch4/2.Virial-Equations-of-State.html">Volumetric Equations of State</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch4/3.Law-of-Corresponding-States.html">Law of Corresponding States and Critical Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch4/4.Thermal-Variables-from-EOS.html">Computing Thermal Variables from an Equation of State</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch4/7.Constructing-Property-Diagrams.html">Constructing Property Diagrams</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Thermodynamics of Mixtures</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch5/1.Introduction-to-Mixtures.html">Introduction to Mixtures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch5/3.Gaseous-Mixtures.html">Gaseous Mixtures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch5/4.Liquid-Mixtures.html">Liquid Mixtures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch5/5.Accuracy-EOS.html">Calculating the Accuracy of Equations of State</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch7/7.Activity-Coefficient-Models.html">Activity Coefficients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch7/8.Calculating-Mixture-Fugacity.html">Vapor-Liquid Equilibrium</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch7/9.Mixture-Equilibrium.html">Equilibrium of Mixtures</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Exercises</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../Exercises/Ch1.html">Exercises for Chapter 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Exercises/Ch2.html">Exercises for Chapter 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Exercises/Ch3.html">Exercises for Chapter 3</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../_sources/Ch8/211_Content/Ch1/Equations-of-State.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Equations of State</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-of-equation-of-state-eos">Definition of Equation of State (EoS)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gibbs-phase-rule">Gibbs’ Phase Rule</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generalized-equations-of-state">Generalized Equations of State</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#discovery-of-gas-laws-the-ideal-gas-thermometer">Discovery of Gas Laws - The Ideal Gas Thermometer:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ideal-gas-law">Ideal Gas Law:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#heat-capacities">Heat Capacities</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#temperature-dependence-of-the-ideal-gas-heat-capacities">Temperature dependence of the Ideal Gas Heat Capacities</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="equations-of-state">
+<h1>Equations of State<a class="headerlink" href="#equations-of-state" title="Link to this heading">#</a></h1>
+<p>Topics covered in this section include</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#2.1"><span class="xref myst">Equations of State</span></a></p></li>
+<li><p><a class="reference internal" href="#2.2"><span class="xref myst">Ideal Gas Law</span></a></p></li>
+<li><p><a class="reference internal" href="#2.3"><span class="xref myst">Thermal Equations of State</span></a></p></li>
+<li><p><a class="reference internal" href="#2.4"><span class="xref myst">Heat Capacities and the Ideal Gas Heat Capacity</span></a></p></li>
+</ul>
+<p>For supplemental reading please visit the following links:</p>
+<ul class="simple">
+<li><p>links to OER relevant to this topic.</p></li>
+</ul>
+<p><a id="2.1"></a></p>
+<section id="definition-of-equation-of-state-eos">
+<h2>Definition of Equation of State (EoS)<a class="headerlink" href="#definition-of-equation-of-state-eos" title="Link to this heading">#</a></h2>
+<section id="gibbs-phase-rule">
+<h3>Gibbs’ Phase Rule<a class="headerlink" href="#gibbs-phase-rule" title="Link to this heading">#</a></h3>
+<p>Gibbs defined a phase rule the sets the number of degrees of freedom of a system as:</p>
+<div class="math notranslate nohighlight">
+\[F=2-P+C\]</div>
+<p>where</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(F\)</span> is the number of degrees of freedom</p></li>
+<li><p><span class="math notranslate nohighlight">\(P\)</span> is the number of phases</p></li>
+<li><p><span class="math notranslate nohighlight">\(C\)</span> is the number of components.</p></li>
+</ul>
+<p>This rule sets how many state variables can be modified at a time without the others being effect. For a 1-phase, 1-component system there are <span class="math notranslate nohighlight">\(F=2\)</span> so we can independently change any pair of state variable without affecting the others.</p>
+</section>
+<section id="generalized-equations-of-state">
+<h3>Generalized Equations of State<a class="headerlink" href="#generalized-equations-of-state" title="Link to this heading">#</a></h3>
+<p>An equation of state is a relation that links one state variable to two others for a system in equilibrium while obeying Gibbs’ phase rule. There are two types of equations of state:</p>
+<ul class="simple">
+<li><p>Volumetric Equations of State: Ex. <span class="math notranslate nohighlight">\(P=f(V,T,N,x_i)\)</span></p></li>
+<li><p>Thermal Equations of State: Ex. <span class="math notranslate nohighlight">\(U=f(V,T,N,x_i)\)</span></p></li>
+</ul>
+<p>In this way, equations of state involve the relationship between state variables. This will be a recurring theme throughout thermodynamics, seeking to develop expressions for one thermal variable (ex. <span class="math notranslate nohighlight">\(U\)</span>) in terms of other variables such as <span class="math notranslate nohighlight">\(P\)</span>, <span class="math notranslate nohighlight">\(V\)</span>, or <span class="math notranslate nohighlight">\(T\)</span>.</p>
+<p>We will see in Chapter 4 that volumetric equations of state can be quite complex. We will also see that thermal equations of state would be extremely useful for problem solving, but unfortunately they are generally not available to researchers, experimentalists, and engineers. Instead, we rely heavily on thermodynamics to link thermal variables to volumetric variables and describe state changes using volumetric equations of state. This is one of the core ideas that you will learn in this course.</p>
+</section>
+<section id="discovery-of-gas-laws-the-ideal-gas-thermometer">
+<h3>Discovery of Gas Laws - The Ideal Gas Thermometer:<a class="headerlink" href="#discovery-of-gas-laws-the-ideal-gas-thermometer" title="Link to this heading">#</a></h3>
+<p><a id="2.2"></a></p>
+<p>Volumetric Equations of state have the form <span class="math notranslate nohighlight">\(P=f(V,T,N, x_i)\)</span> and are the most accessible and common forms of the equations of state. This is because the volumetric variables are easily measured and manipulated in laboratory settings such that correlations between them can be developed using robust data sets.</p>
+<p>In the early days of thermodynamics, the gas laws had not yet been discovered. You can read about early gas laws <a class="reference external" href="https://en.wikipedia.org/wiki/Gas_laws">here</a>. The means of discovery was experimental apparatus like that depicted in the figure below where a low pressure gas was confined in a cylinder of known diameter. The cylinder was then heated/cooled causing the gas to expand/compress, resulting in the cylinder plunger moving a distance, <span class="math notranslate nohighlight">\(\Delta L\)</span>. At the same time, the force required, <span class="math notranslate nohighlight">\(\Delta F\)</span>, to hold the plunger in place could be measured using a scale and the temperature within the system monitored by the height of a liquid, <span class="math notranslate nohighlight">\(\Delta h\)</span>, in an evacuated column (a simple thermometer).</p>
+<img alt="drawing" src="../../../_images/0th-Law-of-Thermodynamics1.png" />
+<p>For a well-design apparatus, we might find the following relationships,</p>
+<ul class="simple">
+<li><p>When <span class="math notranslate nohighlight">\(\Delta L=0\)</span> (this is a so-called <strong>isochoric/isometric pathway</strong>), heat was added/removed to the system resulting in a change in the force acting on the piston and the liquid height.</p></li>
+<li><p>When <span class="math notranslate nohighlight">\(\Delta F=0\)</span> (this is a so-called isobaric pathway), heat was added/removed to the system causing the cylinder’s volume and the liquid height to change.</p></li>
+</ul>
+<p>Experimentalists observing this behavior would have noted that for any pair of measured properties any value of the other property could have been measured. By controlling only one degree of freedom, a single degree of freedom remained allowing pairs of properties to adopt any value.</p>
+<p>However, if instead control two of these properties simultaneously, Ex:</p>
+<ul class="simple">
+<li><p>When <span class="math notranslate nohighlight">\(\Delta L=0\)</span> and  <span class="math notranslate nohighlight">\(\Delta F=0\)</span>, adding/removing heat to the system caused the liquid height to change linearly with the amount of heat added or removed.</p></li>
+</ul>
+<p>From these measurements, data plotted as <span class="math notranslate nohighlight">\(\Delta F \Delta L\)</span> vs <span class="math notranslate nohighlight">\(\Delta h\)</span> would have yielded a straight line whose slope and intercept changed with the accuracy and units of the measurement device. However, when the <span class="math notranslate nohighlight">\(\Delta h\)</span> was calibrated to the melting point and boiling point of water and the intercept of that line was identically equal to <span class="math notranslate nohighlight">\(0\)</span> if the temperature units were in <span class="math notranslate nohighlight">\(K\)</span>.</p>
+<p>Defining the <span class="math notranslate nohighlight">\(P_g=\dfrac{\Delta F}{A}\)</span> and the molar volume <span class="math notranslate nohighlight">\(\underline{V}=\dfrac{\Delta L\times A}{N}\)</span>, it would have been possible to define the gas constant <span class="math notranslate nohighlight">\(R\)</span> and the ideal gas law.</p>
+</section>
+</section>
+<section id="ideal-gas-law">
+<h2>Ideal Gas Law:<a class="headerlink" href="#ideal-gas-law" title="Link to this heading">#</a></h2>
+<p><a id="2.2"></a></p>
+<p>The ideal gas law describes the relationship between volumetric variables <span class="math notranslate nohighlight">\(P\)</span>, <span class="math notranslate nohighlight">\(\underline{V}\)</span>, <span class="math notranslate nohighlight">\(T\)</span> and the gas constant <span class="math notranslate nohighlight">\(R\)</span>. The ideal gas law is used for single phase gases that are significantly expanded (or <span class="math notranslate nohighlight">\(P\rightarrow 0\)</span>, <span class="math notranslate nohighlight">\(\underline{V}\rightarrow \infty\)</span>). For any singe component, ideal gas, the number of degrees of freedom is <span class="math notranslate nohighlight">\(2\)</span>. The ideal gas law is written as:</p>
+<p><span class="math notranslate nohighlight">\(\quad \quad P\underline{V}=RT\)</span></p>
+<p>The number of DOF are reflected directly in the form of the equation. For example, if I specify the <span class="math notranslate nohighlight">\(P\)</span> and <span class="math notranslate nohighlight">\(T\)</span>, then the molar volume, <span class="math notranslate nohighlight">\(\underline{V}\)</span> is fixed. All equations of state that one can define will obey Gibbs’ Phase Rule.</p>
+<p><a id="2.4"></a></p>
+</section>
+<section id="heat-capacities">
+<h2>Heat Capacities<a class="headerlink" href="#heat-capacities" title="Link to this heading">#</a></h2>
+<p>A final critical observation derived from experiments described above was that:</p>
+<ul class="simple">
+<li><p>when <span class="math notranslate nohighlight">\(\Delta P\)</span> was constant, heat was added to an ideal gas would cause a linear increase in temperature such that</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(\Delta Q=C_{P}^{IG} \Delta T\)</span>.</p></li>
+</ul>
+</li>
+<li><p>when <span class="math notranslate nohighlight">\(\Delta \underline{V}=0\)</span> , heat was added to an ideal gas would case a linear increase in temperature such that</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(\Delta Q=C_{V}^{IG} \Delta T\)</span>.</p></li>
+</ul>
+</li>
+</ul>
+<p>It was further observed that the temperature rise was less for the constant <span class="math notranslate nohighlight">\(P\)</span> case than for the constant <span class="math notranslate nohighlight">\(V\)</span> case. For an ideal gas, this implied that <span class="math notranslate nohighlight">\(C_P&gt;C_V\)</span>.</p>
+<p>The constants in the equations above are defined as the <strong>heat capacities</strong> and have the definition:</p>
+<div class="math notranslate nohighlight">
+\[ C_{P}=\bigg(\dfrac{\partial \underline{H}}{\partial T}\bigg)_{P}\]</div>
+<div class="math notranslate nohighlight">
+\[ C_{V}=\bigg(\dfrac{\partial \underline{U}}{\partial T}\bigg)_{\underline{V}}\]</div>
+<p>In Chapter 2, we will define this more clearly, but for now it is sufficient to say that the enthalpy, <span class="math notranslate nohighlight">\(\underline{H}\)</span>, and internal energy, <span class="math notranslate nohighlight">\(\underline{U}\)</span>, are thermal variables that track the amount of heat containg within a substance.</p>
+<section id="temperature-dependence-of-the-ideal-gas-heat-capacities">
+<h3>Temperature dependence of the Ideal Gas Heat Capacities<a class="headerlink" href="#temperature-dependence-of-the-ideal-gas-heat-capacities" title="Link to this heading">#</a></h3>
+<p>As the equation above implies, the heat capacities of ideal gases are either constants or only functions of temperature. Emperical equations exists that allow for the estimation of an ideal gas at any temperature. One such equation is given as:</p>
+<p><span class="math notranslate nohighlight">\(C_{P}^{IG}=a+b T+c T^2+d T^3\)</span></p>
+<p>and by definition</p>
+<p><span class="math notranslate nohighlight">\(C_{V}^{IG}=C_P^{IG}-R\)</span></p>
+<p>Heat capacities have units of <span class="math notranslate nohighlight">\(J/(mol\cdot K\)</span>). These values are tabulated in</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">chemicals</span><span class="o">.</span><span class="n">readthedocs</span><span class="o">.</span><span class="n">io</span><span class="o">/</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+    <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">chemicals</span><span class="o">.</span><span class="n">readthedocs</span><span class="o">.</span><span class="n">io</span><span class="o">/</span>
+          <span class="o">^</span>
+<span class="ne">SyntaxError</span>: invalid syntax
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "executablebooks/jupyter-book",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./Ch8\211_Content\Ch1"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-of-equation-of-state-eos">Definition of Equation of State (EoS)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gibbs-phase-rule">Gibbs’ Phase Rule</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generalized-equations-of-state">Generalized Equations of State</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#discovery-of-gas-laws-the-ideal-gas-thermometer">Discovery of Gas Laws - The Ideal Gas Thermometer:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ideal-gas-law">Ideal Gas Law:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#heat-capacities">Heat Capacities</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#temperature-dependence-of-the-ideal-gas-heat-capacities">Temperature dependence of the Ideal Gas Heat Capacities</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By J. J. Richards
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

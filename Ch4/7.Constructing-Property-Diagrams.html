@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Constructing Property Diagrams &#8212; Introduction to Thermodynamics</title>
   
@@ -19,55 +18,51 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509" />
-  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=bd9e20870c6007c4c509"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'Ch4/7.Constructing-Property-Diagrams';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Species Balance Expression and Reaction Kinetics" href="../Ch6/1.Species-Balance-Expression.html" />
+    <link rel="next" title="Introduction to Mixtures" href="../Ch5/1.Introduction-to-Mixtures.html" />
     <link rel="prev" title="Computing Thermal Variables from an Equation of State" href="4.Thermal-Variables-from-EOS.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -81,7 +76,6 @@ const thebe_selector_output = ".output, .cell_output"
   <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
     <i class="fa-solid fa-arrow-up"></i>
@@ -121,20 +115,15 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
-
-  <header>
   
-    <div class="bd-header navbar navbar-expand-lg bd-navbar">
-    </div>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
   
-  </header>
 
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
       
       
-      
-        
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -168,7 +157,18 @@ const thebe_selector_output = ".output, .cell_output"
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -210,18 +210,18 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="2.Virial-Equations-of-State.html">Volumetric Equations of State</a></li>
 <li class="toctree-l1"><a class="reference internal" href="3.Law-of-Corresponding-States.html">Law of Corresponding States and Critical Properties</a></li>
 <li class="toctree-l1"><a class="reference internal" href="4.Thermal-Variables-from-EOS.html">Computing Thermal Variables from an Equation of State</a></li>
+
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Constructing Property Diagrams</a></li>
 
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Thermodynamics of Mixtures</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../Ch6/1.Species-Balance-Expression.html">Species Balance Expression and Reaction Kinetics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch5/1.Introduction-to-Mixtures.html">Introduction to Mixtures</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Ch5/3.Gaseous-Mixtures.html">Gaseous Mixtures</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Ch5/4.Liquid-Mixtures.html">Liquid Mixtures</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Ch5/5.Accuracy-EOS.html">Calculating the Accuracy of Equations of State</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Ch6/6.Chemical-Equilibrium.html">Chemical Equilibrium</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Ch7/7.Activity-Coefficient-Models.html">Activity Coefficients</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Ch7/8.Calculating-Mixture-Fugacity.html">Calculating Fugacity of Mixtures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch7/8.Calculating-Mixture-Fugacity.html">Vapor-Liquid Equilibrium</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Ch7/9.Mixture-Equilibrium.html">Equilibrium of Mixtures</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Exercises</span></p>
@@ -435,7 +435,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="constructing-property-diagrams">
-<h1>Constructing Property Diagrams<a class="headerlink" href="#constructing-property-diagrams" title="Permalink to this heading">#</a></h1>
+<h1>Constructing Property Diagrams<a class="headerlink" href="#constructing-property-diagrams" title="Link to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -448,9 +448,9 @@ document.write(`
 </div>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="vdw-equation-of-state">
-<h1>VDW Equation of State<a class="headerlink" href="#vdw-equation-of-state" title="Permalink to this heading">#</a></h1>
+<h1>VDW Equation of State<a class="headerlink" href="#vdw-equation-of-state" title="Link to this heading">#</a></h1>
 <section id="equation-of-state">
-<h2>Equation of state:<a class="headerlink" href="#equation-of-state" title="Permalink to this heading">#</a></h2>
+<h2>Equation of state:<a class="headerlink" href="#equation-of-state" title="Link to this heading">#</a></h2>
 <div class="math notranslate nohighlight">
 \[P = \dfrac{RT}{\underline{V} - b} - \dfrac{a}{\underline{V}^2}\]</div>
 <p>where</p>
@@ -458,7 +458,7 @@ document.write(`
 \[ a = 27\dfrac{(RT_c)^2}{64P_c} \text{and } b = 0.125\dfrac{RT_c}{P_c}\]</div>
 </section>
 <section id="expression-it-in-its-cubic-form">
-<h2>Expression it in its cubic form:<a class="headerlink" href="#expression-it-in-its-cubic-form" title="Permalink to this heading">#</a></h2>
+<h2>Expression it in its cubic form:<a class="headerlink" href="#expression-it-in-its-cubic-form" title="Link to this heading">#</a></h2>
 <div class="math notranslate nohighlight">
 \[ Z^3 + \alpha Z^2 + \beta Z + \gamma = 0 \]</div>
 <p>where</p>
@@ -470,13 +470,13 @@ document.write(`
 <span class="math notranslate nohighlight">\( B = \dfrac{bP}{RT}\)</span></p>
 </section>
 <section id="fugacity-expression-from-sandler-eq-7-4-13">
-<h2>Fugacity expression from Sandler (Eq 7.4-13):<a class="headerlink" href="#fugacity-expression-from-sandler-eq-7-4-13" title="Permalink to this heading">#</a></h2>
+<h2>Fugacity expression from Sandler (Eq 7.4-13):<a class="headerlink" href="#fugacity-expression-from-sandler-eq-7-4-13" title="Link to this heading">#</a></h2>
 <p>Sandler gives the fugacity coefficient, <span class="math notranslate nohighlight">\(\phi\)</span> for the VDW equation of state as:</p>
 <div class="math notranslate nohighlight">
 \[\ln{\phi} = (Z-1) - \ln{(Z-B)} - \dfrac{A}{Z}\]</div>
 </section>
 <section id="critical-properties-of-ethane">
-<h2>Critical Properties of Ethane<a class="headerlink" href="#critical-properties-of-ethane" title="Permalink to this heading">#</a></h2>
+<h2>Critical Properties of Ethane<a class="headerlink" href="#critical-properties-of-ethane" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">MW</span> <span class="o">=</span> <span class="mf">30.070</span> <span class="c1">#g/mol</span>
@@ -540,7 +540,7 @@ document.write(`
 </div>
 </div>
 <section id="calculating-the-fugacity-from-the-cubic-form-of-the-e-o-s">
-<h3>Calculating the Fugacity from the Cubic Form of the E.O.S<a class="headerlink" href="#calculating-the-fugacity-from-the-cubic-form-of-the-e-o-s" title="Permalink to this heading">#</a></h3>
+<h3>Calculating the Fugacity from the Cubic Form of the E.O.S<a class="headerlink" href="#calculating-the-fugacity-from-the-cubic-form-of-the-e-o-s" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">VDW_cubic</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="n">P</span><span class="p">):</span>
@@ -572,7 +572,7 @@ document.write(`
 </div>
 </section>
 <section id="computing-the-fugacities-as-a-function-of-the-guess-pressures">
-<h3>Computing the Fugacities as a Function of the Guess Pressures<a class="headerlink" href="#computing-the-fugacities-as-a-function-of-the-guess-pressures" title="Permalink to this heading">#</a></h3>
+<h3>Computing the Fugacities as a Function of the Guess Pressures<a class="headerlink" href="#computing-the-fugacities-as-a-function-of-the-guess-pressures" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">P_</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1001</span><span class="p">)</span><span class="o">*</span><span class="n">Pc</span>
@@ -601,11 +601,11 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\richa\anaconda3\lib\site-packages\matplotlib\cbook\__init__.py:1340: ComplexWarning: Casting complex values to real discards the imaginary part
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\ProgramData\anaconda3\Lib\site-packages\matplotlib\cbook\__init__.py:1340: ComplexWarning: Casting complex values to real discards the imaginary part
   return np.asarray(x, float)
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x2af0484cd60&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x1eb51abe950&gt;
 </pre></div>
 </div>
 <img alt="../_images/09b59ccb5de75439b883ec0bba1032567efdc91e8a32e2d79d2527707415f4eb.png" src="../_images/09b59ccb5de75439b883ec0bba1032567efdc91e8a32e2d79d2527707415f4eb.png" />
@@ -614,7 +614,7 @@ document.write(`
 </section>
 </section>
 <section id="finding-the-intersection-of-the-two-fugacities-gives-the-vapor-pressure">
-<h2>Finding the intersection of the two fugacities gives the vapor pressure<a class="headerlink" href="#finding-the-intersection-of-the-two-fugacities-gives-the-vapor-pressure" title="Permalink to this heading">#</a></h2>
+<h2>Finding the intersection of the two fugacities gives the vapor pressure<a class="headerlink" href="#finding-the-intersection-of-the-two-fugacities-gives-the-vapor-pressure" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">find_Psat</span><span class="p">(</span><span class="n">Pmin</span><span class="p">,</span><span class="n">Pmax</span><span class="p">,</span> <span class="n">thresh</span> <span class="o">=</span> <span class="mi">1</span><span class="p">):</span>
@@ -688,7 +688,7 @@ document.write(`
 </div>
 </section>
 <section id="plotting-the-real-isotherm">
-<h2>Plotting the Real Isotherm<a class="headerlink" href="#plotting-the-real-isotherm" title="Permalink to this heading">#</a></h2>
+<h2>Plotting the Real Isotherm<a class="headerlink" href="#plotting-the-real-isotherm" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">isotherm</span> <span class="o">=</span> <span class="n">VDW</span><span class="p">(</span><span class="n">V</span><span class="p">,</span> <span class="n">T</span><span class="p">)</span>
@@ -758,33 +758,25 @@ document.write(`
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>176170.00734593684
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>199306.4858694622
+199306.4858694622
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>224502.93700012527
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>251843.12434774838
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>281477.17838234577
+281477.17838234577
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>313412.9636601845
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>347779.1506714817
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>384656.2389742191
+384656.2389742191
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>424069.7195766826
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>466205.5450829386
+466205.5450829386
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>511126.6023970411
@@ -794,18 +786,14 @@ document.write(`
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>609494.1402338201
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>663075.9384054104
+663075.9384054104
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>719747.2805749156
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>779249.9096748888
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>842541.0935943672
+842541.0935943672
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>908559.7427117148
@@ -815,9 +803,7 @@ document.write(`
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1050925.0308836836
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1127347.0899431615
+1127347.0899431615
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1207066.243238512
@@ -827,9 +813,7 @@ document.write(`
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1377175.865596366
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1467467.578922822
+1467467.578922822
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1561828.2064113556
@@ -842,9 +826,7 @@ document.write(`
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1866115.9271268677
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1974106.493174444
+1974106.493174444
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2086069.004158627
@@ -943,11 +925,11 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="../Ch6/1.Species-Balance-Expression.html"
+       href="../Ch5/1.Introduction-to-Mixtures.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Species Balance Expression and Reaction Kinetics</p>
+        <p class="prev-next-title">Introduction to Mixtures</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1006,7 +988,7 @@ By J. J. Richards
 
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
@@ -1030,8 +1012,8 @@ By J. J. Richards
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
 
   <footer class="bd-footer">
   </footer>

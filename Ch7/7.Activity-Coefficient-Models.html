@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Activity Coefficients &#8212; Introduction to Thermodynamics</title>
   
@@ -19,56 +18,52 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509" />
-  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=bd9e20870c6007c4c509"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'Ch7/7.Activity-Coefficient-Models';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Calculating Fugacity of Mixtures" href="8.Calculating-Mixture-Fugacity.html" />
-    <link rel="prev" title="Chemical Equilibrium" href="../Ch6/6.Chemical-Equilibrium.html" />
+    <link rel="next" title="Vapor-Liquid Equilibrium" href="8.Calculating-Mixture-Fugacity.html" />
+    <link rel="prev" title="Calculating the Accuracy of Equations of State" href="../Ch5/5.Accuracy-EOS.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -81,7 +76,6 @@ const thebe_selector_output = ".output, .cell_output"
   <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
     <i class="fa-solid fa-arrow-up"></i>
@@ -121,20 +115,15 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
-
-  <header>
   
-    <div class="bd-header navbar navbar-expand-lg bd-navbar">
-    </div>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
   
-  </header>
 
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
       
       
-      
-        
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -168,7 +157,18 @@ const thebe_selector_output = ".output, .cell_output"
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -210,19 +210,18 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../Ch4/2.Virial-Equations-of-State.html">Volumetric Equations of State</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Ch4/3.Law-of-Corresponding-States.html">Law of Corresponding States and Critical Properties</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Ch4/4.Thermal-Variables-from-EOS.html">Computing Thermal Variables from an Equation of State</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Ch4/5.Calculating-Fugacity.html">Calculating Fugacity</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Ch4/6.Vapor-Liquid-Equilibrium.html">Vapor Liquid Equilibrium</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="../Ch4/7.Constructing-Property-Diagrams.html">Constructing Property Diagrams</a></li>
+
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Thermodynamics of Mixtures</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../Ch6/1.Species-Balance-Expression.html">Species Balance Expression and Reaction Kinetics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch5/1.Introduction-to-Mixtures.html">Introduction to Mixtures</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Ch5/3.Gaseous-Mixtures.html">Gaseous Mixtures</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Ch5/4.Liquid-Mixtures.html">Liquid Mixtures</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Ch5/5.Accuracy-EOS.html">Calculating the Accuracy of Equations of State</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Ch6/6.Chemical-Equilibrium.html">Chemical Equilibrium</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Activity Coefficients</a></li>
-<li class="toctree-l1"><a class="reference internal" href="8.Calculating-Mixture-Fugacity.html">Calculating Fugacity of Mixtures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="8.Calculating-Mixture-Fugacity.html">Vapor-Liquid Equilibrium</a></li>
 <li class="toctree-l1"><a class="reference internal" href="9.Mixture-Equilibrium.html">Equilibrium of Mixtures</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Exercises</span></p>
@@ -448,7 +447,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="activity-coefficients">
-<h1>Activity Coefficients<a class="headerlink" href="#activity-coefficients" title="Permalink to this heading">#</a></h1>
+<h1>Activity Coefficients<a class="headerlink" href="#activity-coefficients" title="Link to this heading">#</a></h1>
 <p>This lecture covers two illustrative examples of activity coefficient calculations</p>
 <ol class="arabic simple">
 <li><p>Derivation of Activity Coefficient</p></li>
@@ -456,9 +455,9 @@ document.write(`
 <li><p>Correlation Based Models - UNIFAQ and NRTL</p></li>
 </ol>
 <section id="derivation-of-the-activity-coefficient">
-<h2>Derivation of the Activity Coefficient:<a class="headerlink" href="#derivation-of-the-activity-coefficient" title="Permalink to this heading">#</a></h2>
+<h2>Derivation of the Activity Coefficient:<a class="headerlink" href="#derivation-of-the-activity-coefficient" title="Link to this heading">#</a></h2>
 <section id="the-ideal-mixture">
-<h3>The Ideal Mixture<a class="headerlink" href="#the-ideal-mixture" title="Permalink to this heading">#</a></h3>
+<h3>The Ideal Mixture<a class="headerlink" href="#the-ideal-mixture" title="Link to this heading">#</a></h3>
 <p>Going beyond fugacity of species i in a mixture from equation of state requires the definition of a new property, the activity coefficient. It is used in contemporary thermodynamic calculations due to its direct comparison to experimental data. The starting point for the derivation of the <em>activity coefficient</em> is the ideal mixture.</p>
 <p>An ideal mixture can be either a gaseous or liquid mixture. It is defined to be a mixture whose excess molar volumes and enthalpies are zero or:</p>
 <div class="math notranslate nohighlight">
@@ -475,13 +474,13 @@ document.write(`
 <p>and the second term <span class="math notranslate nohighlight">\(RT\sum_i x_i ln(x_i)\)</span> is the excess entropy of an ideal mixture that treats the mixture as homogeneous in space.</p>
 </section>
 <section id="excess-properties">
-<h3>Excess Properties<a class="headerlink" href="#excess-properties" title="Permalink to this heading">#</a></h3>
+<h3>Excess Properties<a class="headerlink" href="#excess-properties" title="Link to this heading">#</a></h3>
 <p>Molar excess properties are simply defined as the difference between the partial molar property and the molar property of the species in the equivalent ideal mixture or:</p>
 <div class="math notranslate nohighlight">
 \[\bar{\theta}_{i}^{ex}=\bar{\theta}_i-\bar{\theta}_i^{IM}\]</div>
 <p>The notation here is tricky as for the both the <span class="math notranslate nohighlight">\(\bar{\theta}_i^{IM}=\underline{\theta}_i\)</span> in some cases and not in others.</p>
 <p>A summary of the excess partial molar properties are given in the tabel below:</p>
-<table class="colwidths-auto table">
+<table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>property</p></th>
 <th class="head"><p>Equation</p></th>
@@ -506,7 +505,7 @@ document.write(`
 </tbody>
 </table>
 <p>This is in contrast to the excess molar property which is given in the table below.</p>
-<table class="colwidths-auto table">
+<table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>property</p></th>
 <th class="head"><p>Equation</p></th>
@@ -532,7 +531,7 @@ document.write(`
 </table>
 </section>
 <section id="activity-coefficient">
-<h3>Activity Coefficient<a class="headerlink" href="#activity-coefficient" title="Permalink to this heading">#</a></h3>
+<h3>Activity Coefficient<a class="headerlink" href="#activity-coefficient" title="Link to this heading">#</a></h3>
 <p>The activity coefficient is derived from the fugacity of species i in a mixture if we use the partial molar excess Gibbs Free Energy, then we have:</p>
 <p><span class="math notranslate nohighlight">\(\quad \bar{G}_i^{ex}=\bar{G}_i-\bar{G}_i^{IM}\)</span></p>
 <p>by adding and subtracting the partial molar property of the ideal gas mixture (<span class="math notranslate nohighlight">\(\bar{G}_i^{IG}\)</span>), the equation becomes:</p>
@@ -564,7 +563,7 @@ document.write(`
 <p><span class="math notranslate nohighlight">\(\quad \underline{G}^{ex}=T\int -\dfrac{\underline{H}^{ex}}{T^2} dT\)</span></p>
 </section>
 <section id="summary">
-<h3>Summary:<a class="headerlink" href="#summary" title="Permalink to this heading">#</a></h3>
+<h3>Summary:<a class="headerlink" href="#summary" title="Link to this heading">#</a></h3>
 <p>Activity Coefficient is defined such that:</p>
 <ul class="simple">
 <li><p>It represents the deviation from ideal mixing</p></li>
@@ -576,7 +575,7 @@ document.write(`
 </section>
 </section>
 <section id="physics-based-models-regular-solution-theory">
-<h2>Physics Based Models - Regular Solution Theory:<a class="headerlink" href="#physics-based-models-regular-solution-theory" title="Permalink to this heading">#</a></h2>
+<h2>Physics Based Models - Regular Solution Theory:<a class="headerlink" href="#physics-based-models-regular-solution-theory" title="Link to this heading">#</a></h2>
 <p>van Laar was the graduate student of Van der Waal who extended Van der Waal’s equation of state to describe the activity of binary mixtures. van Laar employed two assumptions.</p>
 <ol class="arabic simple">
 <li><p>The binary mixture is composed of fluids of similar sizes and energies</p></li>
@@ -631,7 +630,7 @@ x_1\dfrac{a_1}{\underline{V}_1}+x_2\dfrac{a_2}{\underline{V}_2}\)</span></p></li
 <p>setting <span class="math notranslate nohighlight">\(k_{ij}=0\)</span> yields a relatively compact expression:</p>
 <p><span class="math notranslate nohighlight">\(\quad \underline{G}^{ex}=\dfrac{x_1x_2b_1b_2}{x_1b_1+x_2b_2}\bigg(\dfrac{\sqrt{a_1}}{b_1}-\dfrac{\sqrt{a_2}}{b_2}\bigg)^2\)</span></p>
 <section id="van-laar-activity-coefficient-expressions">
-<h3>van Laar Activity Coefficient Expressions.<a class="headerlink" href="#van-laar-activity-coefficient-expressions" title="Permalink to this heading">#</a></h3>
+<h3>van Laar Activity Coefficient Expressions.<a class="headerlink" href="#van-laar-activity-coefficient-expressions" title="Link to this heading">#</a></h3>
 <p>For this binary mixture, it is now possible to compute the activity coefficients which are given as:</p>
 <div class="math notranslate nohighlight">
 \[RTln{\gamma_1}=\dfrac{\alpha}{\big[1+\frac{\alpha x_1}{\beta x_2}\big]^2}\]</div>
@@ -648,7 +647,7 @@ x_1\dfrac{a_1}{\underline{V}_1}+x_2\dfrac{a_2}{\underline{V}_2}\)</span></p></li
 </section>
 </section>
 <section id="regular-solutions">
-<h2>Regular Solutions<a class="headerlink" href="#regular-solutions" title="Permalink to this heading">#</a></h2>
+<h2>Regular Solutions<a class="headerlink" href="#regular-solutions" title="Link to this heading">#</a></h2>
 <p>Regular Solutions are those where <span class="math notranslate nohighlight">\(\underline{V}^{ex}\)</span> and <span class="math notranslate nohighlight">\(\underline{S}^{ex}\)</span> are zero. While the van Laar is innacurate, it can be vastly improved by fitting experimental data to the numerical values of <span class="math notranslate nohighlight">\(b_1\)</span>, <span class="math notranslate nohighlight">\(b_2\)</span>, <span class="math notranslate nohighlight">\(a_1\)</span>, and <span class="math notranslate nohighlight">\(a_2\)</span> as the function form of the activity coefficient expressions has physical meaning even when the precise numerical parameters are off.</p>
 <p>Scatchard extended the van Laar equations by assuming that the activity coefficients had a relatively simple form:</p>
 <div class="math notranslate nohighlight">
@@ -658,7 +657,7 @@ x_1\dfrac{a_1}{\underline{V}_1}+x_2\dfrac{a_2}{\underline{V}_2}\)</span></p></li
 <p>where <span class="math notranslate nohighlight">\(\phi_i\)</span> is the volume fraction of species <span class="math notranslate nohighlight">\(i\)</span>, <span class="math notranslate nohighlight">\(b_i\)</span> is the molar volume of species <span class="math notranslate nohighlight">\(i\)</span>, and <span class="math notranslate nohighlight">\(\delta\)</span> is the solubility parameter of species <span class="math notranslate nohighlight">\(i\)</span>.</p>
 </section>
 <section id="lets-begin-by-programming-the-equations">
-<h2>Let’s begin by programming the equations<a class="headerlink" href="#lets-begin-by-programming-the-equations" title="Permalink to this heading">#</a></h2>
+<h2>Let’s begin by programming the equations<a class="headerlink" href="#lets-begin-by-programming-the-equations" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -712,7 +711,7 @@ x_1\dfrac{a_1}{\underline{V}_1}+x_2\dfrac{a_2}{\underline{V}_2}\)</span></p></li
 </div>
 </section>
 <section id="lets-plot-the-activity-coefficients-using-the-van-laar-expressions">
-<h2>Lets plot the activity coefficients using the van Laar expressions:<a class="headerlink" href="#lets-plot-the-activity-coefficients-using-the-van-laar-expressions" title="Permalink to this heading">#</a></h2>
+<h2>Lets plot the activity coefficients using the van Laar expressions:<a class="headerlink" href="#lets-plot-the-activity-coefficients-using-the-van-laar-expressions" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x1</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">0.01</span><span class="p">,</span><span class="mf">.99</span><span class="p">,</span><span class="mf">0.01</span><span class="p">)</span>
@@ -728,7 +727,7 @@ x_1\dfrac{a_1}{\underline{V}_1}+x_2\dfrac{a_2}{\underline{V}_2}\)</span></p></li
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x25c6546cf70&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x2666028ec90&gt;
 </pre></div>
 </div>
 <img alt="../_images/2dd521e9cfd68adad678f292b94ac8f9b6bd3dce28ad6f1bc260b1ddd11a1a23.png" src="../_images/2dd521e9cfd68adad678f292b94ac8f9b6bd3dce28ad6f1bc260b1ddd11a1a23.png" />
@@ -736,21 +735,21 @@ x_1\dfrac{a_1}{\underline{V}_1}+x_2\dfrac{a_2}{\underline{V}_2}\)</span></p></li
 </div>
 </section>
 <section id="empirical-models">
-<h2>Empirical Models<a class="headerlink" href="#empirical-models" title="Permalink to this heading">#</a></h2>
+<h2>Empirical Models<a class="headerlink" href="#empirical-models" title="Link to this heading">#</a></h2>
 <section id="redlich-kiester-expension-of-excess-gibbs-energy">
-<h3>Redlich-Kiester Expension of excess Gibbs Energy<a class="headerlink" href="#redlich-kiester-expension-of-excess-gibbs-energy" title="Permalink to this heading">#</a></h3>
+<h3>Redlich-Kiester Expension of excess Gibbs Energy<a class="headerlink" href="#redlich-kiester-expension-of-excess-gibbs-energy" title="Link to this heading">#</a></h3>
 <div class="math notranslate nohighlight">
 \[\underline{G}^{ex}=x_1x_2(A+B(x_1-x_2)+C(x_1-x_2)^2+\ldots)\]</div>
 </section>
 <section id="one-constant-margules">
-<h3>One constant Margules:<a class="headerlink" href="#one-constant-margules" title="Permalink to this heading">#</a></h3>
+<h3>One constant Margules:<a class="headerlink" href="#one-constant-margules" title="Link to this heading">#</a></h3>
 <p><span class="math notranslate nohighlight">\(\underline{G}^{ex}=Ax_1x_2\)</span></p>
 <p><span class="math notranslate nohighlight">\(RT\ln{\gamma_1}=Ax_2^2\)</span></p>
 <p><span class="math notranslate nohighlight">\(RT\ln{\gamma_2}=Ax_1^2\)</span></p>
 <p>Note that when the van Laar constants <span class="math notranslate nohighlight">\(\alpha\approx\beta\)</span>, the one constant margules expression is equivalent to the van Laar equations.</p>
 </section>
 <section id="two-constant-margules">
-<h3>Two Constant Margules:<a class="headerlink" href="#two-constant-margules" title="Permalink to this heading">#</a></h3>
+<h3>Two Constant Margules:<a class="headerlink" href="#two-constant-margules" title="Link to this heading">#</a></h3>
 <p><span class="math notranslate nohighlight">\(\underline{G}^{ex}=x_1x_2(A+B(x_1-x_2))\)</span></p>
 <p><span class="math notranslate nohighlight">\(RT\ln{\gamma_1}=\alpha_1x_2^2+\beta_1x_2^3\)</span></p>
 <p><span class="math notranslate nohighlight">\(RT\ln{\gamma_2}=\alpha_2x_1^2+\beta_2x_1^3\)</span></p>
@@ -758,7 +757,7 @@ x_1\dfrac{a_1}{\underline{V}_1}+x_2\dfrac{a_2}{\underline{V}_2}\)</span></p></li
 </section>
 </section>
 <section id="lets-compare-the-two-constant-margules-expression-to-the-van-laar-equations">
-<h2>lets compare the two constant margules expression to the van Laar equations<a class="headerlink" href="#lets-compare-the-two-constant-margules-expression-to-the-van-laar-equations" title="Permalink to this heading">#</a></h2>
+<h2>lets compare the two constant margules expression to the van Laar equations<a class="headerlink" href="#lets-compare-the-two-constant-margules-expression-to-the-van-laar-equations" title="Link to this heading">#</a></h2>
 <p>We can do so by plotting <span class="math notranslate nohighlight">\(\dfrac{\underline{G}^{ex}}{x_1x_2} vs. (x_1-x_2)\)</span> for the van Laar equations and determining how many terms are necessary to fit the experimental data.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -798,7 +797,7 @@ x_1\dfrac{a_1}{\underline{V}_1}+x_2\dfrac{a_2}{\underline{V}_2}\)</span></p></li
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x25c659b0ac0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x266605aa610&gt;
 </pre></div>
 </div>
 <img alt="../_images/02603253c61d274b255efef1acbdb05c0e2400a8fece870418a0a5bbf88ecfad.png" src="../_images/02603253c61d274b255efef1acbdb05c0e2400a8fece870418a0a5bbf88ecfad.png" />
@@ -807,7 +806,7 @@ x_1\dfrac{a_1}{\underline{V}_1}+x_2\dfrac{a_2}{\underline{V}_2}\)</span></p></li
 <p>We can see that the Margules expression requires 4 constants to provide an accurate description of the compositional dependence of the excess molar Gibbs energy. This is compared with the 5 constants for the van Laar equation. While this seems to suggest that the Margules expression is superior, we can imagine needing to describe the temperature and pressure dependence of the constants in the Margules expressions would require vast quantities of emperical data. Where the 4 constants contained within the van der Waals equation of state remain unchanged. This is one of the core strengths of thermodynamic theory - the ability to predict quantitatively behavior from a minimal set of tabulated thermodynamic information.</p>
 </section>
 <section id="multi-parameter-correlative-equations">
-<h2>Multi-parameter Correlative Equations<a class="headerlink" href="#multi-parameter-correlative-equations" title="Permalink to this heading">#</a></h2>
+<h2>Multi-parameter Correlative Equations<a class="headerlink" href="#multi-parameter-correlative-equations" title="Link to this heading">#</a></h2>
 <p>We have seen up to this point a variety of approaches for predicting activity coefficients based on a minimal set of thermodynamic information that describes not only a single species but also its behavior in a mixture. You are probably now also appreciating that calculations of this type both require large amounts of experimental data for accuracy but also are computationally intensive as the number of parameters and components within the mixture increases.</p>
 <p>Using statistical thermodynamics, a microscopic approach permits the construction of physical models that can be used to more accurately predict activity coefficients of binary mixtures. These models can be extended to more complicated mixtures, but this is outside the scope of this class. The equations are given for the readers interest.</p>
 <ul class="simple">
@@ -822,7 +821,7 @@ x_1\dfrac{a_1}{\underline{V}_1}+x_2\dfrac{a_2}{\underline{V}_2}\)</span></p></li
 <p>The NRTL and Wilson Equations are extensions of the van Laar equations such that they allow for differences in the interaction energy and volumes of the species within the mixture. Generalized to greater than one component in the mixtures, these models generally do a poor job of quantitative prediction.</p>
 </section>
 <section id="group-contribution-models">
-<h2>Group Contribution Models<a class="headerlink" href="#group-contribution-models" title="Permalink to this heading">#</a></h2>
+<h2>Group Contribution Models<a class="headerlink" href="#group-contribution-models" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>UNIFAC (UNIquac Functional-group Activity Coefficients)</p></li>
 <li><p>UNIQAC (UNIversal Qasichemical Activity Coefficients)</p></li>
@@ -831,7 +830,7 @@ x_1\dfrac{a_1}{\underline{V}_1}+x_2\dfrac{a_2}{\underline{V}_2}\)</span></p></li
 <p>A convenient python based package implements UNIFAC for equilibrium calculations. An example of this is below:</p>
 </section>
 <section id="example-of-unifac-calculation-with-phasepy">
-<h2>Example of UNIFAC Calculation with PhasePy<a class="headerlink" href="#example-of-unifac-calculation-with-phasepy" title="Permalink to this heading">#</a></h2>
+<h2>Example of UNIFAC Calculation with PhasePy<a class="headerlink" href="#example-of-unifac-calculation-with-phasepy" title="Link to this heading">#</a></h2>
 <p>Example adapted from <a class="reference external" href="https://github.com/gustavochm/phasepy/blob/1466977c148974729bdd60cda28515bd844f5fb9/examples/1.%20Components%20and%20mixtures.ipynb">phasepy documentation</a></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -846,10 +845,24 @@ x_1\dfrac{a_1}{\underline{V}_1}+x_2\dfrac{a_2}{\underline{V}_2}\)</span></p></li
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">phasepy</span> <span class="kn">import</span> <span class="n">component</span><span class="p">,</span> <span class="n">mixture</span><span class="p">,</span> <span class="n">preos</span><span class="p">,</span> <span class="n">vdweos</span><span class="p">,</span> <span class="n">rkseos</span><span class="p">,</span><span class="n">virialgamma</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">water</span> <span class="o">=</span> <span class="n">component</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;water&#39;</span><span class="p">,</span><span class="n">Tc</span><span class="o">=</span><span class="mf">647.13</span><span class="p">,</span> <span class="n">Pc</span><span class="o">=</span><span class="mf">220.55</span><span class="p">,</span> <span class="n">Zc</span><span class="o">=</span><span class="mf">0.229</span><span class="p">,</span> <span class="n">Vc</span><span class="o">=</span><span class="mf">55.948</span><span class="p">,</span> <span class="n">w</span><span class="o">=</span><span class="mf">0.344861</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span>                   <span class="n">GC</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;H2O&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">},</span> <span class="n">ri</span><span class="o">=</span><span class="mf">0.92</span><span class="p">,</span> <span class="n">qi</span><span class="o">=</span><span class="mf">1.4</span><span class="p">,</span> <span class="n">Mw</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">ethanol</span> <span class="o">=</span> <span class="n">component</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;ethanol&#39;</span><span class="p">,</span><span class="n">Tc</span><span class="o">=</span><span class="mi">514</span><span class="p">,</span> <span class="n">Pc</span><span class="o">=</span><span class="mf">61.37</span><span class="p">,</span> <span class="n">Zc</span><span class="o">=</span><span class="mf">0.241</span><span class="p">,</span> <span class="n">Vc</span><span class="o">=</span><span class="mi">168</span><span class="p">,</span> <span class="n">w</span><span class="o">=</span><span class="mf">0.643558</span><span class="p">,</span> 
+<span class="g g-Whitespace">      </span><span class="mi">6</span>                     <span class="n">GC</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;CH3&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;CH2&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;OH(P)&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">},</span><span class="n">ri</span><span class="o">=</span><span class="mf">2.1055</span><span class="p">,</span> <span class="n">qi</span><span class="o">=</span><span class="mf">1.972</span><span class="p">,</span> <span class="n">Mw</span><span class="o">=</span><span class="mf">46.07</span><span class="p">)</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;phasepy&#39;
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="initializing-vdw-equation-of-state">
-<h2>Initializing: VDW Equation of State<a class="headerlink" href="#initializing-vdw-equation-of-state" title="Permalink to this heading">#</a></h2>
+<h2>Initializing: VDW Equation of State<a class="headerlink" href="#initializing-vdw-equation-of-state" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Kij</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.11</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mf">0.11</span><span class="p">,</span> <span class="mi">0</span><span class="p">]])</span>
@@ -863,7 +876,7 @@ x_1\dfrac{a_1}{\underline{V}_1}+x_2\dfrac{a_2}{\underline{V}_2}\)</span></p></li
 </div>
 </section>
 <section id="peng-robinson-equation-of-state-with-unifac-activity-model">
-<h2>Peng-Robinson Equation of State with UNIFAC Activity Model<a class="headerlink" href="#peng-robinson-equation-of-state-with-unifac-activity-model" title="Permalink to this heading">#</a></h2>
+<h2>Peng-Robinson Equation of State with UNIFAC Activity Model<a class="headerlink" href="#peng-robinson-equation-of-state-with-unifac-activity-model" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mix</span><span class="o">.</span><span class="n">unifac</span><span class="p">()</span>
@@ -876,7 +889,7 @@ x_1\dfrac{a_1}{\underline{V}_1}+x_2\dfrac{a_2}{\underline{V}_2}\)</span></p></li
 </div>
 </section>
 <section id="redlich-kwong-soave-eos">
-<h2>Redlich Kwong Soave EOS<a class="headerlink" href="#redlich-kwong-soave-eos" title="Permalink to this heading">#</a></h2>
+<h2>Redlich Kwong Soave EOS<a class="headerlink" href="#redlich-kwong-soave-eos" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># interactions energies in K</span>
@@ -957,7 +970,7 @@ x_1\dfrac{a_1}{\underline{V}_1}+x_2\dfrac{a_2}{\underline{V}_2}\)</span></p></li
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[]
 </pre></div>
 </div>
-<img alt="../_images/6661de1bfea9f26fde1617016232f30074cfe62cc3ed697d56620844eb0636cb.png" src="../_images/6661de1bfea9f26fde1617016232f30074cfe62cc3ed697d56620844eb0636cb.png" />
+<img alt="../_images/6d559b9f3a653896890918934e1cd892a1931cfbffb91311a199adac2c08b7a1.png" src="../_images/6d559b9f3a653896890918934e1cd892a1931cfbffb91311a199adac2c08b7a1.png" />
 </div>
 </div>
 <p>The pressure of the fluid mixture can be computed at given composition, molar volume and temperature using the eos.pressure method.</p>
@@ -978,7 +991,7 @@ x_1\dfrac{a_1}{\underline{V}_1}+x_2\dfrac{a_2}{\underline{V}_2}\)</span></p></li
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/7d2a2de61dfa4f66353a446ee1a4ae1bfef09a8da9a3a9a885efa85360c6a174.png" src="../_images/7d2a2de61dfa4f66353a446ee1a4ae1bfef09a8da9a3a9a885efa85360c6a174.png" />
+<img alt="../_images/07c4267cf3dd8064af5c72905e99fc7436581bed84d99ea68e9c6eeb386b3cd1.png" src="../_images/07c4267cf3dd8064af5c72905e99fc7436581bed84d99ea68e9c6eeb386b3cd1.png" />
 </div>
 </div>
 </section>
@@ -1015,12 +1028,12 @@ x_1\dfrac{a_1}{\underline{V}_1}+x_2\dfrac{a_2}{\underline{V}_2}\)</span></p></li
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../Ch6/6.Chemical-Equilibrium.html"
+       href="../Ch5/5.Accuracy-EOS.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Chemical Equilibrium</p>
+        <p class="prev-next-title">Calculating the Accuracy of Equations of State</p>
       </div>
     </a>
     <a class="right-next"
@@ -1028,7 +1041,7 @@ x_1\dfrac{a_1}{\underline{V}_1}+x_2\dfrac{a_2}{\underline{V}_2}\)</span></p></li
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Calculating Fugacity of Mixtures</p>
+        <p class="prev-next-title">Vapor-Liquid Equilibrium</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1099,7 +1112,7 @@ By J. J. Richards
 
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
@@ -1123,8 +1136,8 @@ By J. J. Richards
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
 
   <footer class="bd-footer">
   </footer>

@@ -1,0 +1,1184 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Absorption and Stripping &#8212; Introduction to Thermodynamics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Ch8/212 Content/DunnWorkstudy/12_Absorption and Stripping_CH7';</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/logo.png" class="logo__image only-light" alt="Introduction to Thermodynamics - Home"/>
+    <script>document.write(`<img src="../../../_static/logo.png" class="logo__image only-dark" alt="Introduction to Thermodynamics - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../../intro.html">
+                    Foreword
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Definitions and Balance Expressions</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch1/1.Thermodynamic-Definitions.html">Thermodynamic Definitions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch1/2.Real-Gas-Properties.html">Real Gas Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch1/3.Equations-of-State.html">Equations of State</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch1/4.Balance-Expressions.html">Macroscopic Balance Expressions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch1/5.Conservation-of-Mass.html">Conservation of Mass</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Foundations of Thermodynamics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch2/1.Conservation-of-Energy.html">Conservation of Energy and the 1st Law of Thermodynamics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch2/2.Expansion-of-a-Gas.html">Expansion of a Gas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch2/3.Entropy-Balance-Expression.html">Balance Expression for Entropy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch2/4.Entropy-at-0K.html">Entropy at 0K</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch2/5.Free-Energies.html">Free Energy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch2/6.Changes-of-State.html">Changes of State</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Applications of Thermodynamics in Chemical Engineering</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch3/1.Unit-Operations.html">Unit Operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch3/2.Property-Diagram-Single-Components.html">Property Database for Common Substances</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch3/3.Heat-Engines.html">Heat Engines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch3/4.Refrigeration.html">Refrigeration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch3/5.Liquefaction.html">Liquefaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch3/6.Optimizing-with-Python.html">Optimizing with Python</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Vapor-Liquid Equilibrium for Non-Ideal Gases</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch4/1.Deriving-Useful-Thermodynamic-Relationships.html">Deriving Useful Thermodynamic Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch4/2.Virial-Equations-of-State.html">Volumetric Equations of State</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch4/3.Law-of-Corresponding-States.html">Law of Corresponding States and Critical Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch4/4.Thermal-Variables-from-EOS.html">Computing Thermal Variables from an Equation of State</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch4/7.Constructing-Property-Diagrams.html">Constructing Property Diagrams</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Thermodynamics of Mixtures</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch5/1.Introduction-to-Mixtures.html">Introduction to Mixtures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch5/3.Gaseous-Mixtures.html">Gaseous Mixtures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch5/4.Liquid-Mixtures.html">Liquid Mixtures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch5/5.Accuracy-EOS.html">Calculating the Accuracy of Equations of State</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch7/7.Activity-Coefficient-Models.html">Activity Coefficients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch7/8.Calculating-Mixture-Fugacity.html">Vapor-Liquid Equilibrium</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch7/9.Mixture-Equilibrium.html">Equilibrium of Mixtures</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Exercises</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../Exercises/Ch1.html">Exercises for Chapter 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Exercises/Ch2.html">Exercises for Chapter 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Exercises/Ch3.html">Exercises for Chapter 3</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../_sources/Ch8/212 Content/DunnWorkstudy/12_Absorption and Stripping_CH7.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Absorption and Stripping</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Absorption and Stripping</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">1</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#revisiting-course-objectives">Revisiting course objectives</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">2</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#approximate-schedule-for-absorption-and-stripping">Approximate schedule for absorption and stripping</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">3</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#absorption">Absorption</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#stripping">Stripping</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">4</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-absorption">Types of absorption</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">5</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#things-are-going-to-look-familiar">Things are going to look familiar…</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">6</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">7</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">8</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#equilibrium-for-absorption-stripping">Equilibrium for Absorption &amp; Stripping</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">9</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#steps-for-solving-absorption-problems-for-dilute-solutions">Steps for solving absorption problems for dilute solutions</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">10</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#example">Example</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">11</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">12</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#example-simulation">Example simulation</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">13</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#stripping-analysis">Stripping analysis</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">14</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">Example simulation</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">15</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#which-of-the-following-is-an-appropriate-plot-for-a-physical-absorption-process-for-a-dilute-species-the-black-line-is-the-operating-line-and-the-blue-line-is-the-equilibrium-line">Which of the following is an appropriate plot for a physical absorption process for a dilute species? The black line is the operating line and the blue line is the equilibrium line</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#analytical-solutions-for-dilute-systems">Analytical Solutions for Dilute Systems</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">16</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">17</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">18</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id20">19</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id21">20</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#example-strip-ammonia-from-wastewater">Example: Strip ammonia from wastewater</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id22">21</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#which-is-desirable-in-designing-an-absorption-process">Which is desirable in designing an absorption process?</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id23">22</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#for-this-physical-absorption-process-which-point-s-lie-s-on-the-operating-line-for-the-mccabe-thiele-graphical-solution-note-x-and-y-represent-liquid-and-gas-mole-fractions-respectively">For this physical absorption process, which point(s) lie(s) on the operating line for the McCabe-Thiele graphical solution? (Note: x and y represent liquid and gas mole fractions, respectively)</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id24">23</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id25">24</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id26">25</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id27">26</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id28">27</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#we-are-going-to-need-our-equilibrium-and-operating-lines">We are going to need our equilibrium and operating lines</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id29">28</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id30">29</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id31">30</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-line-do-we-need-to-draw-to-calculate-minimum-s-g">What line do we need to draw to calculate minimum S/G?</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id32">31</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id33">32</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id34">33</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="absorption-and-stripping">
+<h1>Absorption and Stripping<a class="headerlink" href="#absorption-and-stripping" title="Link to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>1<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="revisiting-course-objectives">
+<h1>Revisiting course objectives<a class="headerlink" href="#revisiting-course-objectives" title="Link to this heading">#</a></h1>
+<ul class="simple">
+<li><p>Solve standard vapor-liquid equilibrium problems in chemical engineering. <code class="docutils literal notranslate"><span class="pre">done</span></code></p></li>
+<li><p>Use mass and energy balances along with phase equilibrium information to design separation processes. <code class="docutils literal notranslate"><span class="pre">In</span> <span class="pre">process</span></code></p>
+<ul>
+<li><p>Flash</p></li>
+<li><p>Binary Distillation</p></li>
+<li><p>Multicomponent distillation</p></li>
+<li><p>Absorption and Stripping</p></li>
+<li><p>Liquid Liquid Extraction</p></li>
+</ul>
+</li>
+<li><p>Learn about separations process technology. <code class="docutils literal notranslate"><span class="pre">In</span> <span class="pre">process</span></code></p></li>
+<li><p>Become proficient with software for chemical process simulation. <code class="docutils literal notranslate"><span class="pre">In</span> <span class="pre">process</span></code></p></li>
+<li><p>Obtain improved problem solving skills. <code class="docutils literal notranslate"><span class="pre">In</span> <span class="pre">process</span></code></p></li>
+</ul>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id2">
+<h1>2<a class="headerlink" href="#id2" title="Link to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="approximate-schedule-for-absorption-and-stripping">
+<h1>Approximate schedule for absorption and stripping<a class="headerlink" href="#approximate-schedule-for-absorption-and-stripping" title="Link to this heading">#</a></h1>
+<ul class="simple">
+<li><p>Intro and how to use McCabe Thiele for absorption</p></li>
+<li><p>Analytical solutions</p></li>
+<li><p>Column efficiency, working with concentrated streams</p></li>
+<li><p>Equipment sizing</p></li>
+<li><p>Multi component absorption</p></li>
+<li><p>Up to section 12.8 in Wankat</p></li>
+</ul>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id3">
+<h1>3<a class="headerlink" href="#id3" title="Link to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="absorption">
+<h1>Absorption<a class="headerlink" href="#absorption" title="Link to this heading">#</a></h1>
+<p>Components to be removed are in a gas.<br />
+They are absorbed into a non-volatile liquid.<br />
+This liquid is also called a separating agent or solvent.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="stripping">
+<h1>Stripping<a class="headerlink" href="#stripping" title="Link to this heading">#</a></h1>
+<p>Liquid components are removed into a gas.<br />
+The separating agent is the stripping agent (gas stream).</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id4">
+<h1>4<a class="headerlink" href="#id4" title="Link to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="types-of-absorption">
+<h1>Types of absorption<a class="headerlink" href="#types-of-absorption" title="Link to this heading">#</a></h1>
+<ul class="simple">
+<li><p>Physical: driven by solubility</p></li>
+<li><p>Chemical: component to be removed reacts with the separating agent. Reversible reaction desired so agent is recoverable.</p></li>
+</ul>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id5">
+<h1>5<a class="headerlink" href="#id5" title="Link to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="things-are-going-to-look-familiar">
+<h1>Things are going to look familiar…<a class="headerlink" href="#things-are-going-to-look-familiar" title="Link to this heading">#</a></h1>
+<ul class="simple">
+<li><p>The process is driven by equilibrium</p></li>
+<li><p>Equipment and operation are similar to distillation but no reboiler or condenser</p></li>
+<li><p>Can be a packed tower or tray tower (McCabe-Thiele still works for trays)</p></li>
+</ul>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id6">
+<h1>6<a class="headerlink" href="#id6" title="Link to this heading">#</a></h1>
+<p><img alt="Image" src="Ch8/212 Content/DunnWorkstudy/Dunn-Images/12_Absorption%20and%20Stripping_CH7/Slide8.jpg" /></p>
+<p>Some assumptions are valid and make McCabe-Thiele straightforward</p>
+<p>For dilute systems</p>
+<ol class="arabic simple">
+<li><p>L/V constant</p></li>
+<li><p>Isothermal</p></li>
+<li><p>Isobaric</p></li>
+<li><p>Heat of absorption is negligible</p></li>
+</ol>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id7">
+<h1>7<a class="headerlink" href="#id7" title="Link to this heading">#</a></h1>
+<p><img alt="Image" src="Ch8/212 Content/DunnWorkstudy/Dunn-Images/12_Absorption%20and%20Stripping_CH7/Slide10.jpg" /></p>
+<p><span class="math notranslate nohighlight">\(y_{j+1}V + x_0L = y_1V + x_jL\)</span></p>
+<p><span class="math notranslate nohighlight">\(y_{j+1} = (L/V)x_j + [y_1 - (L/V)x_0]\)</span></p>
+<p>Points that will be on the operating line:</p>
+<p><span class="math notranslate nohighlight">\((x_j, y_{j+1})\)</span></p>
+<p><span class="math notranslate nohighlight">\((x_0, y_1)\)</span></p>
+<p><span class="math notranslate nohighlight">\((x_N, y_{N+1})\)</span></p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id8">
+<h1>8<a class="headerlink" href="#id8" title="Link to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="equilibrium-for-absorption-stripping">
+<h1>Equilibrium for Absorption &amp; Stripping<a class="headerlink" href="#equilibrium-for-absorption-stripping" title="Link to this heading">#</a></h1>
+<p>Solute composition in the vapor versus in the liquid</p>
+<ol class="arabic simple">
+<li><p>Carrier gas is insoluble</p></li>
+<li><p>Solvent is non-volatile</p></li>
+<li><p>Isothermal and isobaric</p></li>
+</ol>
+<p><span class="math notranslate nohighlight">\(p_B \rightarrow \text{partial pressure of B in vapor}\)</span><br />
+<span class="math notranslate nohighlight">\(H_B \rightarrow \text{mole fraction of B in the liquid}\)</span><br />
+<span class="math notranslate nohighlight">\(x_B \rightarrow \text{Henry's constant: constant with units of atm/mole fraction Function of P, T, and composition}\)</span></p>
+<p>Only works with <strong>dilute</strong> systems</p>
+<p><span class="math notranslate nohighlight">\(p_B = H_B x_B\)</span></p>
+<p><span class="math notranslate nohighlight">\(y_B = \frac{p_B}{P_{\text{Total}}}\)</span></p>
+<p><span class="math notranslate nohighlight">\(p_B = y_B P_{\text{Tot}}\)</span></p>
+<p><span class="math notranslate nohighlight">\(y_B = \frac{H_B x_B}{P_{\text{Total}}}\)</span></p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id9">
+<h1>9<a class="headerlink" href="#id9" title="Link to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="steps-for-solving-absorption-problems-for-dilute-solutions">
+<h1>Steps for solving absorption problems for dilute solutions<a class="headerlink" href="#steps-for-solving-absorption-problems-for-dilute-solutions" title="Link to this heading">#</a></h1>
+<p><img alt="Image" src="Ch8/212 Content/DunnWorkstudy/Dunn-Images/12_Absorption%20and%20Stripping_CH7/Slide14.jpg" /></p>
+<ul class="simple">
+<li><p>Plot equilibrium data</p></li>
+<li><p>We often know these that tell us the operating line</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(x_0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(y_{N+1}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(y_1\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(L/V\)</span></p></li>
+</ul>
+</li>
+<li><p>Step off from stage 1 between equilibrium and operating lines</p></li>
+</ul>
+<p>The operating line is ABOVE the equilibrium line because gas is going into liquid.</p>
+<p>In distillation, liquid goes into gas.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id10">
+<h1>10<a class="headerlink" href="#id10" title="Link to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="example">
+<h1>Example<a class="headerlink" href="#example" title="Link to this heading">#</a></h1>
+<p><img alt="Image" src="Ch8/212 Content/DunnWorkstudy/Dunn-Images/12_Absorption%20and%20Stripping_CH7/Slide16.jpg" /></p>
+<p>Henry’s Law constants and solubility for chlorinated compounds 25 C and 2 atm</p>
+<p>Chloroform: 211.19 atm/(mole frac)</p>
+<p><span class="math notranslate nohighlight">\(y_B = \frac{H_B x_B}{P_{\text{Total}}} = \frac{211.19 \frac{\text{atm}}{\text{mole frac}} \cdot x_B}{2 \text{ atm}}\)</span></p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id11">
+<h1>11<a class="headerlink" href="#id11" title="Link to this heading">#</a></h1>
+<p><img alt="Image" src="Ch8/212 Content/DunnWorkstudy/Dunn-Images/12_Absorption%20and%20Stripping_CH7/Slide18.jpg" /></p>
+<p>Stages are counted where they touch the equilibrium line (blue dots)</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id12">
+<h1>12<a class="headerlink" href="#id12" title="Link to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="example-simulation">
+<h1>Example simulation<a class="headerlink" href="#example-simulation" title="Link to this heading">#</a></h1>
+<ul class="simple">
+<li><p><a class="reference external" href="https://learncheme.com/simulations/separations/operation-of-an-absorption-column/">https://learncheme.com/simulations/separations/operation-of-an-absorption-column/</a></p></li>
+<li><p>Need to download Wolfram Player:</p></li>
+<li><p><a class="reference external" href="https://www.wolfram.com/player/">https://www.wolfram.com/player/</a></p></li>
+<li><p>These simulations often have videos walking you through how to use the simulations</p></li>
+</ul>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id13">
+<h1>13<a class="headerlink" href="#id13" title="Link to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="stripping-analysis">
+<h1>Stripping analysis<a class="headerlink" href="#stripping-analysis" title="Link to this heading">#</a></h1>
+<p><img alt="Image" src="Ch8/212 Content/DunnWorkstudy/Dunn-Images/12_Absorption%20and%20Stripping_CH7/Slide21.jpg" /></p>
+<p>Mass balances same as for absorption</p>
+<p><span class="math notranslate nohighlight">\(y_{j+1} = \frac{L}{V}x_j + \left( y_1 - \frac{L}{V}x_0 \right)\)</span></p>
+<p>Operating line is below equilibrium curve because liquid is going to gas like in a distillation column</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id14">
+<h1>14<a class="headerlink" href="#id14" title="Link to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id15">
+<h1>Example simulation<a class="headerlink" href="#id15" title="Link to this heading">#</a></h1>
+<ul class="simple">
+<li><p><a class="reference external" href="https://learncheme.com/simulations/separations/stripping-column-operation/">https://learncheme.com/simulations/separations/stripping-column-operation/</a></p></li>
+</ul>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id16">
+<h1>15<a class="headerlink" href="#id16" title="Link to this heading">#</a></h1>
+<section id="which-of-the-following-is-an-appropriate-plot-for-a-physical-absorption-process-for-a-dilute-species-the-black-line-is-the-operating-line-and-the-blue-line-is-the-equilibrium-line">
+<h2>Which of the following is an appropriate plot for a physical absorption process for a dilute species? The black line is the operating line and the blue line is the equilibrium line<a class="headerlink" href="#which-of-the-following-is-an-appropriate-plot-for-a-physical-absorption-process-for-a-dilute-species-the-black-line-is-the-operating-line-and-the-blue-line-is-the-equilibrium-line" title="Link to this heading">#</a></h2>
+<p><img alt="Image" src="Ch8/212 Content/DunnWorkstudy/Dunn-Images/12_Absorption%20and%20Stripping_CH7/Slide24.jpg" /></p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="analytical-solutions-for-dilute-systems">
+<h1>Analytical Solutions for Dilute Systems<a class="headerlink" href="#analytical-solutions-for-dilute-systems" title="Link to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id17">
+<h1>16<a class="headerlink" href="#id17" title="Link to this heading">#</a></h1>
+<p><img alt="Image" src="Ch8/212 Content/DunnWorkstudy/Dunn-Images/12_Absorption%20and%20Stripping_CH7/Slide27.jpg" /></p>
+<p>Some assumptions are valid and make McCabe-Thiele straightforward</p>
+<p>For dilute systems</p>
+<ol class="arabic simple">
+<li><p>L/V constant</p></li>
+<li><p>Isothermal</p></li>
+<li><p>Isobaric</p></li>
+<li><p>Heat of absorption is negligible</p></li>
+<li><p><span style="color: rgb(250, 50,50);">Equilibrium line is straight</span></p></li>
+</ol>
+<p><span class="math notranslate nohighlight">\(y_j = mx_j + b\)</span></p>
+<p>For Henry’s law, <span class="math notranslate nohighlight">\(m = \frac{H_B}{P_{\text{total}}}\)</span> b=0</p>
+<p>For every N, we achieve a certain delta y</p>
+<p><span class="math notranslate nohighlight">\(N \Delta y = y_{N+1} - y_1\)</span></p>
+<p><span style="color: rgb(250, 50,50);">For this case, <span class="math notranslate nohighlight">\(L/V = m\)</span></span>: <span class="math notranslate nohighlight">\(\Delta y = (y_1 - \frac{L}{V} x_0 - b)\)</span></p>
+<p><span class="math notranslate nohighlight">\(y_{j+1} = (\frac{L}{V})x_j + [y_1 - (\frac{L}{V})x_0]\)</span></p>
+<p><span class="math notranslate nohighlight">\( -y_j = mx_j + b \)</span></p>
+<p><span class="math notranslate nohighlight">\((\Delta y)_j = y_{j+1} - y_j = (\frac{L}{V} - m)x_j + (y_1 - (\frac{L}{V}) x_0 - b)\)</span></p>
+<p>Don’t need stage by stage!</p>
+<p><span class="math notranslate nohighlight">\(N = \left[ \frac{y_{N+1} - y_1}{(y_1 - \frac{L}{V} x_0 - b)} \right]\)</span></p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id18">
+<h1>17<a class="headerlink" href="#id18" title="Link to this heading">#</a></h1>
+<p><img alt="Image" src="Ch8/212 Content/DunnWorkstudy/Dunn-Images/12_Absorption%20and%20Stripping_CH7/Slide29.jpg" /></p>
+<p>In general case, delta y is not the same in every stage.</p>
+<p><span class="math notranslate nohighlight">\(y_j = mx_j + b\)</span></p>
+<p><span class="math notranslate nohighlight">\(x_j = \frac{y_j - b}{m}\)</span></p>
+<p><span class="math notranslate nohighlight">\((\Delta y)_j = y_{j+1} - y_j = (\frac{L}{V} - m)x_j + \left( y_1 - \frac{L}{V} x_0 - b \right)\)</span></p>
+<p><span class="math notranslate nohighlight">\((\Delta y)_j = y_{j+1} - y_j = (\frac{L}{V} - m)\frac{y_j-b}{m} + \left( y_1 - \frac{L}{V} x_0 - b \right)\)</span></p>
+<p><span class="math notranslate nohighlight">\((\Delta y)_{j+1} = \left( \frac{L}{mV} - 1 \right)y_{j+1} + \left( y_1 - \frac{L}{V} x_0 - \frac{L}{mV} b \right)\)</span></p>
+<p><span class="math notranslate nohighlight">\((\Delta y)_{j+1} = \frac{L}{mV} (\Delta y)_j\)</span></p>
+<p><span class="math notranslate nohighlight">\(L/mV\)</span> is the absorption factor: moles in solute v moles in vapor. <span class="math notranslate nohighlight">\(m\)</span> reflects equilibrium relationship</p>
+<p>If op line is curved… these relationships won’t work</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id19">
+<h1>18<a class="headerlink" href="#id19" title="Link to this heading">#</a></h1>
+<p><img alt="Image" src="Ch8/212 Content/DunnWorkstudy/Dunn-Images/12_Absorption%20and%20Stripping_CH7/Slide31.jpg" /></p>
+<p><span class="math notranslate nohighlight">\(\Delta y_1 + \Delta y_2 + ... + \Delta y_N = y_{N+1} - y_1\)</span></p>
+<p><span class="math notranslate nohighlight">\(\Delta y_1 \left( 1 + \frac{L}{mV} + \left( \frac{L}{mV} \right)^2 + ... + \left( \frac{L}{mV} \right)^{N-1} \right) = y_{N+1} - y_1\)</span></p>
+<p><span class="math notranslate nohighlight">\(\sum_{i=0}^{k} \alpha A^i = \frac{a(1 - A^{k+1})}{(1 - A)}\)</span></p>
+<p><span class="math notranslate nohighlight">\(\frac{y_{N+1} - y_1}{\Delta y_1} = \left( \frac{1 - \left( \frac{L}{mV} \right)^N}{1 - \frac{L}{mV}} \right)\)</span></p>
+<p>From the relationship:</p>
+<p><span class="math notranslate nohighlight">\((\Delta y)_{j+1} = \frac{L}{mV} (\Delta y)_j\)</span></p>
+<p><span class="math notranslate nohighlight">\(\Delta y_1 = \Delta y_0 \frac{L}{mV}\)</span></p>
+<p><span class="math notranslate nohighlight">\(\Delta y_0 = y_1 - y^{*}_1\)</span></p>
+<p><span class="math notranslate nohighlight">\(y^{*}_1 = mx_0 + b\)</span></p>
+<p><span class="math notranslate nohighlight">\(\frac{y_{N+1} - y_1}{y_1 - y^{*}_1} = \frac{\frac{L}{mV} - \left( \frac{L}{mV} \right)^{N+1}}{1 - \frac{L}{mV}}\)</span></p>
+<p><span class="math notranslate nohighlight">\(\frac{y_{N+1} - y_1}{y_1 - y^{*}_1} =\left( \frac{1 - \left( \frac{L}{mV} \right)^N}{1 - \frac{L}{mV}} \right)\)</span></p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id20">
+<h1>19<a class="headerlink" href="#id20" title="Link to this heading">#</a></h1>
+<p><span class="math notranslate nohighlight">\(N = \frac{\ln \left[ \left( 1 - \frac{mV}{L} \right) \left(\frac{y_{N+1} - y_1^*}{y_1 - y^{*}_1}\right) + \frac{mV}{L} \right]}{\ln \left( \frac{L}{mV} \right)}\)</span></p>
+<p>Note there are many forms of the Kremser equation, this is just one.</p>
+<ul class="simple">
+<li><p>The Kremser equation is quicker than stage-by-stage, especially when there are many stages.</p></li>
+<li><p>If solutions are concentrated, have non-linear equilibrium relationships, or are not isothermal… This won’t work.</p></li>
+<li><p><span class="math notranslate nohighlight">\(mV/L\)</span> for absorption: optimal value is about 0.7</p></li>
+<li><p>For stripping, about 1.4</p></li>
+</ul>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id21">
+<h1>20<a class="headerlink" href="#id21" title="Link to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="example-strip-ammonia-from-wastewater">
+<h1>Example: Strip ammonia from wastewater<a class="headerlink" href="#example-strip-ammonia-from-wastewater" title="Link to this heading">#</a></h1>
+<p><img alt="Image" src="Ch8/212 Content/DunnWorkstudy/Dunn-Images/12_Absorption%20and%20Stripping_CH7/Slide34.jpg" /></p>
+<p>We will use a different form of the Kremser equation (Wankat gives several for different cases)</p>
+<p><span class="math notranslate nohighlight">\(\frac{x_N - x_N^*}{x_0 - x_N^*} = \frac{1 - \left( \frac{mV}{L} \right)}{1 - \left( \frac{mV}{L} \right)^{N+1}}\)</span></p>
+<p><span class="math notranslate nohighlight">\(\frac{V}{L} = \frac{30 \text{scf air}}{1 \text{lb water}} \cdot \frac{1 \text{lb mol air}}{379 \text{scf air}} \cdot \frac{18 \text{lb water}}{1 \text{lb mol water}}= 1.4\)</span></p>
+<p>An equilibrium relationship for the system at 80 F is found from lit:</p>
+<p><span class="math notranslate nohighlight">\(y_{NH3} = 1.414x_{NH3}\)</span></p>
+<p>Because <span class="math notranslate nohighlight">\(y7 = 0\)</span>, <span class="math notranslate nohighlight">\(xN^*\)</span> must also = 0</p>
+<p><span class="math notranslate nohighlight">\(x_N = 7.45 \times 10^{-6}\)</span></p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id22">
+<h1>21<a class="headerlink" href="#id22" title="Link to this heading">#</a></h1>
+<section id="which-is-desirable-in-designing-an-absorption-process">
+<h2>Which is desirable in designing an absorption process?<a class="headerlink" href="#which-is-desirable-in-designing-an-absorption-process" title="Link to this heading">#</a></h2>
+<p><img alt="Image" src="Ch8/212 Content/DunnWorkstudy/Dunn-Images/12_Absorption%20and%20Stripping_CH7/Slide36.jpg" /></p>
+<p>A. high pressure, high temperature<br />
+B. high pressure, low temperature<br />
+C. low pressure, high temperature<br />
+D. low pressure, low temperature</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id23">
+<h1>22<a class="headerlink" href="#id23" title="Link to this heading">#</a></h1>
+<section id="for-this-physical-absorption-process-which-point-s-lie-s-on-the-operating-line-for-the-mccabe-thiele-graphical-solution-note-x-and-y-represent-liquid-and-gas-mole-fractions-respectively">
+<h2>For this physical absorption process, which point(s) lie(s) on the operating line for the McCabe-Thiele graphical solution? (Note: x and y represent liquid and gas mole fractions, respectively)<a class="headerlink" href="#for-this-physical-absorption-process-which-point-s-lie-s-on-the-operating-line-for-the-mccabe-thiele-graphical-solution-note-x-and-y-represent-liquid-and-gas-mole-fractions-respectively" title="Link to this heading">#</a></h2>
+<p><img alt="Image" src="Ch8/212 Content/DunnWorkstudy/Dunn-Images/12_Absorption%20and%20Stripping_CH7/Slide38.jpg" /></p>
+<p>A. <span class="math notranslate nohighlight">\((x_N, y_1)\)</span><br />
+B. <span class="math notranslate nohighlight">\((x_0, y_1)\)</span><br />
+C. <span class="math notranslate nohighlight">\((x_0, y_{N+1})\)</span><br />
+D. <span class="math notranslate nohighlight">\((x_N, y_{N+1})\)</span><br />
+E. B and D</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id24">
+<h1>23<a class="headerlink" href="#id24" title="Link to this heading">#</a></h1>
+<p><img alt="Image" src="Ch8/212 Content/DunnWorkstudy/Dunn-Images/12_Absorption%20and%20Stripping_CH7/Slide40.jpg" /></p>
+<p>What conditions are required to take the McCabe-Thiele analysis to more concentrated systems?</p>
+<ul class="simple">
+<li><p>Isothermal</p></li>
+<li><p>Negligible heat of absorption</p></li>
+<li><p>Isobaric</p></li>
+</ul>
+<p>In these cases, L and V are not constant</p>
+<div class="math notranslate nohighlight">
+\[ \frac{S}{G} = \frac{\frac{\text{mol nonvolatile solvent}}{\text{h}}}  {\frac{\text{mol insoluble carrier gas}}{\text{h}} }\]</div>
+<p>Other assumptions:</p>
+<ul class="simple">
+<li><p>Solvent is non-volatile</p></li>
+<li><p>Carrier gas is insoluble</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[ S_N = S_j = S_0 = S = \text{constant} \]</div>
+<div class="math notranslate nohighlight">
+\[ G_{N+1} = G_j = G_1 = G = \text{constant} \]</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id25">
+<h1>24<a class="headerlink" href="#id25" title="Link to this heading">#</a></h1>
+<div class="math notranslate nohighlight">
+\[ \frac{S}{G} = \frac{\frac{\text{mol nonvolatile solvent}}{\text{h}}}{ \frac{\text{mol insoluble carrier gas}}{\text{h}} }\]</div>
+<p>Key distinction: this is not total moles of liquid and vapor…
+This is solvent (S) and carrier gas ©</p>
+<p>Because S is non-volatile and C is insoluble in the solvent – S and C are constant</p>
+<p>We need to use ratios to get us to a familiar form of the operating equation.</p>
+<div class="math notranslate nohighlight">
+\[ Y = \frac{\text{mol B in gas}}{\text{mole pure carrier gas C}} \]</div>
+<p>NOT total moles of gas – only of the carrier gas</p>
+<div class="math notranslate nohighlight">
+\[ X = \frac{\text{mol B in liquid}}{\text{mole pure solvent S}} \]</div>
+<p>NOT total moles of liquid – only of the solvent</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id26">
+<h1>25<a class="headerlink" href="#id26" title="Link to this heading">#</a></h1>
+<div class="math notranslate nohighlight">
+\[ X = \frac{\text{mol B in liquid}}{\text{mole pure solvent S}} = \frac{x}{1 - x} \]</div>
+<div class="math notranslate nohighlight">
+\[ Y = \frac{\text{mol B in gas}}{\text{mole pure carrier gas C}} = \frac{y}{1 - y} \]</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id27">
+<h1>26<a class="headerlink" href="#id27" title="Link to this heading">#</a></h1>
+<p><img alt="Image" src="Ch8/212 Content/DunnWorkstudy/Dunn-Images/12_Absorption%20and%20Stripping_CH7/Slide44.jpg" /></p>
+<p>Mass Balance around dashed system boundary</p>
+<div class="math notranslate nohighlight">
+\[ Y_jG = \left[ \frac{\text{mol B in gas stream}}{\text{mol carrier gas}} \right] \frac{\text{mol carrier gas}}{h} = \frac{\text{mol B in gas stream j}}{h} \]</div>
+<div class="math notranslate nohighlight">
+\[ X_jS = \left[ \frac{\text{mol B in gas liquid j}}{\text{mol solvent}} \right] \frac{\text{mol solvent}}{h} = \frac{\text{mol B in liquid stream j}}{h} \]</div>
+<div class="math notranslate nohighlight">
+\[ Y_{j+1}G + X_0S = X_jS + Y_1G \]</div>
+<p>Inlet gas + inlet liquid = outlet liquid + outlet gas</p>
+<div class="math notranslate nohighlight">
+\[ Y_{j+1} = \frac{S}{G}X_j + \left[ Y_1 - \frac{S}{G}X_0 \right] \]</div>
+<p>Operating line for concentrated absorption</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id28">
+<h1>27<a class="headerlink" href="#id28" title="Link to this heading">#</a></h1>
+<p><img alt="Image" src="Ch8/212 Content/DunnWorkstudy/Dunn-Images/12_Absorption%20and%20Stripping_CH7/Slide46.jpg" /></p>
+<p>Carrier gas is <span class="math notranslate nohighlight">\(N_2\)</span>. Gas stream is in 90 mol% <span class="math notranslate nohighlight">\(N_2\)</span> and 10 mol% <span class="math notranslate nohighlight">\(CO_2 \)</span>.</p>
+<p>Solvent is water (pure at inlet). Absorption!</p>
+<p><span class="math notranslate nohighlight">\(S = 1.5 S_{\text{min}}\)</span></p>
+<p>What is ( N )?</p>
+<section id="we-are-going-to-need-our-equilibrium-and-operating-lines">
+<h2>We are going to need our equilibrium and operating lines<a class="headerlink" href="#we-are-going-to-need-our-equilibrium-and-operating-lines" title="Link to this heading">#</a></h2>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id29">
+<h1>28<a class="headerlink" href="#id29" title="Link to this heading">#</a></h1>
+<p><img alt="Image" src="Ch8/212 Content/DunnWorkstudy/Dunn-Images/12_Absorption%20and%20Stripping_CH7/Slide48.jpg" /></p>
+<p>Info from table 12-1</p>
+<p>When we know T (5C), we can read the Henry’s law constant as 876 atm/mole fraction.</p>
+<p>The equilibrium relationship is therefore:</p>
+<p><span class="math notranslate nohighlight">\( y_{CO2} = \frac{H_{CO2}}{P} x_{CO2} = \frac{876}{10} x_{CO2}\)</span></p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>H</p></th>
+<th class="head"><p>876 atm/mole fraction</p></th>
+<th class="head"><p></p></th>
+<th class="head"><p>P</p></th>
+<th class="head"><p>10 atm</p></th>
+<th class="head"><p></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>x</p></td>
+<td><p>y</p></td>
+<td><p>X</p></td>
+<td><p>Y</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>—</p></td>
+<td><p>—</p></td>
+<td><p>—</p></td>
+<td><p>—</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>0.0002</p></td>
+<td><p>0</p></td>
+<td><p>0.0002</p></td>
+<td><p>0.02</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>0.0004</p></td>
+<td><p>0.01752</p></td>
+<td><p>0.0004</p></td>
+<td><p>0.04</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>0.0006</p></td>
+<td><p>0.03504</p></td>
+<td><p>0.0006</p></td>
+<td><p>0.06</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>0.0008</p></td>
+<td><p>0.05256</p></td>
+<td><p>0.0008</p></td>
+<td><p>0.08</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>0.001</p></td>
+<td><p>0.07008</p></td>
+<td><p>0.001</p></td>
+<td><p>0.10</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>0.0012</p></td>
+<td><p>0.0876</p></td>
+<td><p>0.0012</p></td>
+<td><p>0.12</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>0.0014</p></td>
+<td><p>0.10512</p></td>
+<td><p>0.0014</p></td>
+<td><p>0.14</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>0.0016</p></td>
+<td><p>0.12264</p></td>
+<td><p>0.0016</p></td>
+<td><p>0.16</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>0.0018</p></td>
+<td><p>0.14016</p></td>
+<td><p>0.0018</p></td>
+<td><p>0.19</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>0.002</p></td>
+<td><p>0.15768</p></td>
+<td><p>0.002</p></td>
+<td><p>0.21</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>0.0022</p></td>
+<td><p>0.1752</p></td>
+<td><p>0.0022</p></td>
+<td><p>0.24</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>0.0024</p></td>
+<td><p>0.19272</p></td>
+<td><p>0.0024</p></td>
+<td><p>0.27</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>0.0026</p></td>
+<td><p>0.21024</p></td>
+<td><p>0.0026</p></td>
+<td><p>0.29</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id30">
+<h1>29<a class="headerlink" href="#id30" title="Link to this heading">#</a></h1>
+<p><img alt="Image" src="Ch8/212 Content/DunnWorkstudy/Dunn-Images/12_Absorption%20and%20Stripping_CH7/Slide50.jpg" /></p>
+<p>Carrier gas is <span class="math notranslate nohighlight">\(N_2\)</span>: Gas stream in is 90% <span class="math notranslate nohighlight">\(N_2\)</span>.<br />
+Solvent is water (pure at inlet).</p>
+<p><span class="math notranslate nohighlight">\(S = 1.5 S_{\text{min}}\)</span></p>
+<p>What points are on the operating line?</p>
+<p><span class="math notranslate nohighlight">\(Y_{N+1} = \frac{y_N+1}{1 - y_{N+1}} = \frac{0.1}{0.9} = 0.1111 \frac{\text{mol } CO_2}{\text{mol } N_2}\)</span></p>
+<p><span class="math notranslate nohighlight">\(G = (1 \text{ mol total gas/h})(1 - y_{N+1}) = 0.9 \text{ mol } N_2/\text{hr}\)</span></p>
+<p><span class="math notranslate nohighlight">\(Y_1 = \frac{\text{mol } CO_2 \text{ out}}{\text{mol } N_2 \text{ out}} = \frac{0.1 * (1 - .92)}{0.9 \text{mol} \;  N_2} =  0.0088\)</span></p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id31">
+<h1>30<a class="headerlink" href="#id31" title="Link to this heading">#</a></h1>
+<section id="what-line-do-we-need-to-draw-to-calculate-minimum-s-g">
+<h2>What line do we need to draw to calculate minimum S/G?<a class="headerlink" href="#what-line-do-we-need-to-draw-to-calculate-minimum-s-g" title="Link to this heading">#</a></h2>
+<p><img alt="Image" src="Ch8/212 Content/DunnWorkstudy/Dunn-Images/12_Absorption%20and%20Stripping_CH7/Slide52.jpg" /></p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id32">
+<h1>31<a class="headerlink" href="#id32" title="Link to this heading">#</a></h1>
+<p><img alt="Image" src="Ch8/212 Content/DunnWorkstudy/Dunn-Images/12_Absorption%20and%20Stripping_CH7/Slide54.jpg" /></p>
+<div class="math notranslate nohighlight">
+\[
+\frac{S}{G} = 1.5x\left( \frac{S}{G_{\text{min}}} \right) = 134.9
+\]</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id33">
+<h1>32<a class="headerlink" href="#id33" title="Link to this heading">#</a></h1>
+<p><img alt="Image" src="Ch8/212 Content/DunnWorkstudy/Dunn-Images/12_Absorption%20and%20Stripping_CH7/Slide56.jpg" /></p>
+<div class="math notranslate nohighlight">
+\[
+\frac{S}{G} = 1.5 \times \left( \frac{S}{G_{\text{min}}} \right) = 134.9
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+Y_{j+1} = \frac{S}{G} X_j + \left[ Y_1 - \frac{S}{G} X_0 \right]
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+X_N = \frac{Y_{N+1} - Y_1}{S/G} = \frac{0.1111 - 0.0088}{134.9} = 0.000758
+\]</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id34">
+<h1>33<a class="headerlink" href="#id34" title="Link to this heading">#</a></h1>
+<p>Don’t includes etc.</p>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "executablebooks/jupyter-book",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./Ch8\212 Content\DunnWorkstudy"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Absorption and Stripping</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">1</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#revisiting-course-objectives">Revisiting course objectives</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">2</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#approximate-schedule-for-absorption-and-stripping">Approximate schedule for absorption and stripping</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">3</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#absorption">Absorption</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#stripping">Stripping</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">4</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-absorption">Types of absorption</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">5</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#things-are-going-to-look-familiar">Things are going to look familiar…</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">6</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">7</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">8</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#equilibrium-for-absorption-stripping">Equilibrium for Absorption &amp; Stripping</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">9</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#steps-for-solving-absorption-problems-for-dilute-solutions">Steps for solving absorption problems for dilute solutions</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">10</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#example">Example</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">11</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">12</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#example-simulation">Example simulation</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">13</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#stripping-analysis">Stripping analysis</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">14</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">Example simulation</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">15</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#which-of-the-following-is-an-appropriate-plot-for-a-physical-absorption-process-for-a-dilute-species-the-black-line-is-the-operating-line-and-the-blue-line-is-the-equilibrium-line">Which of the following is an appropriate plot for a physical absorption process for a dilute species? The black line is the operating line and the blue line is the equilibrium line</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#analytical-solutions-for-dilute-systems">Analytical Solutions for Dilute Systems</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">16</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">17</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">18</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id20">19</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id21">20</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#example-strip-ammonia-from-wastewater">Example: Strip ammonia from wastewater</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id22">21</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#which-is-desirable-in-designing-an-absorption-process">Which is desirable in designing an absorption process?</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id23">22</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#for-this-physical-absorption-process-which-point-s-lie-s-on-the-operating-line-for-the-mccabe-thiele-graphical-solution-note-x-and-y-represent-liquid-and-gas-mole-fractions-respectively">For this physical absorption process, which point(s) lie(s) on the operating line for the McCabe-Thiele graphical solution? (Note: x and y represent liquid and gas mole fractions, respectively)</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id24">23</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id25">24</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id26">25</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id27">26</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id28">27</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#we-are-going-to-need-our-equilibrium-and-operating-lines">We are going to need our equilibrium and operating lines</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id29">28</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id30">29</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id31">30</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-line-do-we-need-to-draw-to-calculate-minimum-s-g">What line do we need to draw to calculate minimum S/G?</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id32">31</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id33">32</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id34">33</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By J. J. Richards
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

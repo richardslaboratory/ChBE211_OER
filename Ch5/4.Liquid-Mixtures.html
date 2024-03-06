@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Liquid Mixtures &#8212; Introduction to Thermodynamics</title>
   
@@ -19,49 +18,45 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509" />
-  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=bd9e20870c6007c4c509"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'Ch5/4.Liquid-Mixtures';</script>
@@ -81,7 +76,6 @@ const thebe_selector_output = ".output, .cell_output"
   <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
     <i class="fa-solid fa-arrow-up"></i>
@@ -121,20 +115,15 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
-
-  <header>
   
-    <div class="bd-header navbar navbar-expand-lg bd-navbar">
-    </div>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
   
-  </header>
 
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
       
       
-      
-        
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -168,7 +157,18 @@ const thebe_selector_output = ".output, .cell_output"
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -210,6 +210,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../Ch4/2.Virial-Equations-of-State.html">Volumetric Equations of State</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Ch4/3.Law-of-Corresponding-States.html">Law of Corresponding States and Critical Properties</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Ch4/4.Thermal-Variables-from-EOS.html">Computing Thermal Variables from an Equation of State</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="../Ch4/7.Constructing-Property-Diagrams.html">Constructing Property Diagrams</a></li>
 
 </ul>
@@ -220,7 +221,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Liquid Mixtures</a></li>
 <li class="toctree-l1"><a class="reference internal" href="5.Accuracy-EOS.html">Calculating the Accuracy of Equations of State</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Ch7/7.Activity-Coefficient-Models.html">Activity Coefficients</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Ch7/8.Calculating-Mixture-Fugacity.html">Calculating Fugacity of Mixtures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch7/8.Calculating-Mixture-Fugacity.html">Vapor-Liquid Equilibrium</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Ch7/9.Mixture-Equilibrium.html">Equilibrium of Mixtures</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Exercises</span></p>
@@ -412,6 +413,9 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#now-lets-calculated-the-molar-volume-of-the-mixture">Now lets calculated the molar volume of the mixture:</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#now-we-compute-the-volume-change-on-mixing">Now we Compute the Volume Change on Mixing</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#next-we-compute-the-partial-molar-property">Next we compute the partial molar property</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculating-the-excess-property-from-the-fit">Calculating the excess property from the fit</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#finally-compute-the-excess-molar-volume">Finally, compute the excess molar volume</a></li>
 </ul>
 </li>
@@ -427,7 +431,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="liquid-mixtures">
-<h1>Liquid Mixtures<a class="headerlink" href="#liquid-mixtures" title="Permalink to this heading">#</a></h1>
+<h1>Liquid Mixtures<a class="headerlink" href="#liquid-mixtures" title="Link to this heading">#</a></h1>
 <p>Liquid mixtures are distinguished from their gaseous counterparts by their density, which can be much higher in general than typical gaseous mixtures. There are circumstances where the cubic form of the mixture equation of state has quantitative predictive power:</p>
 <ol class="arabic simple">
 <li><p>The mixture is formed from simple alkanes</p></li>
@@ -442,10 +446,10 @@ document.write(`
 <li><p>Calorimetric Measurements of the heat of mixing</p></li>
 </ol>
 <section id="excess-molar-volume">
-<h2>Excess Molar Volume<a class="headerlink" href="#excess-molar-volume" title="Permalink to this heading">#</a></h2>
+<h2>Excess Molar Volume<a class="headerlink" href="#excess-molar-volume" title="Link to this heading">#</a></h2>
 <p>A simple density measurement can be used to determine the excess molar volume. Take for example a mixture of water (1) and methanol (2) at <span class="math notranslate nohighlight">\(T=298.15\;K\)</span>.</p>
 <section id="first-lets-plot-the-density-data-as-a-function-of-composition">
-<h3>first lets plot the density data as a function of composition<a class="headerlink" href="#first-lets-plot-the-density-data-as-a-function-of-composition" title="Permalink to this heading">#</a></h3>
+<h3>first lets plot the density data as a function of composition<a class="headerlink" href="#first-lets-plot-the-density-data-as-a-function-of-composition" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -465,12 +469,12 @@ document.write(`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;$x_1$&#39;)
 </pre></div>
 </div>
-<img alt="../_images/d03f3a10198ef2234beac8007429d4c529021266cc186ab951a46a921d0628f0.png" src="../_images/d03f3a10198ef2234beac8007429d4c529021266cc186ab951a46a921d0628f0.png" />
+<img alt="../_images/e7623ac4374ae377825c97a6b47140ffdfa350924b9be638585ecf97a4b8a9d4.png" src="../_images/e7623ac4374ae377825c97a6b47140ffdfa350924b9be638585ecf97a4b8a9d4.png" />
 </div>
 </div>
 </section>
 <section id="now-lets-calculated-the-molar-volume-of-the-mixture">
-<h3>Now lets calculated the molar volume of the mixture:<a class="headerlink" href="#now-lets-calculated-the-molar-volume-of-the-mixture" title="Permalink to this heading">#</a></h3>
+<h3>Now lets calculated the molar volume of the mixture:<a class="headerlink" href="#now-lets-calculated-the-molar-volume-of-the-mixture" title="Link to this heading">#</a></h3>
 <div class="math notranslate nohighlight">
 \[\underline{V}=\dfrac{\bar{M}_W}{\rho}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\bar{M}_W=\sum_{i} x_i M_{W}^i\)</span></p>
@@ -493,15 +497,15 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x1d81b92dcd0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x2362e86cfd0&gt;
 </pre></div>
 </div>
-<img alt="../_images/a3ce674d3eb2ad7c2c601830ceacbc98d7caced6021f65fc982638483f3d8569.png" src="../_images/a3ce674d3eb2ad7c2c601830ceacbc98d7caced6021f65fc982638483f3d8569.png" />
+<img alt="../_images/55f5195a782e992e4eaae4d7dbd8fc3159671bbf8a2658a12c113bdd45e8773b.png" src="../_images/55f5195a782e992e4eaae4d7dbd8fc3159671bbf8a2658a12c113bdd45e8773b.png" />
 </div>
 </div>
 </section>
 <section id="now-we-compute-the-volume-change-on-mixing">
-<h3>Now we Compute the Volume Change on Mixing<a class="headerlink" href="#now-we-compute-the-volume-change-on-mixing" title="Permalink to this heading">#</a></h3>
+<h3>Now we Compute the Volume Change on Mixing<a class="headerlink" href="#now-we-compute-the-volume-change-on-mixing" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dV_</span><span class="o">=</span><span class="n">V_</span><span class="o">-</span><span class="n">VIM</span>
@@ -514,15 +518,15 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x1d81b99b460&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x2362eaa2190&gt;
 </pre></div>
 </div>
-<img alt="../_images/1250df7cdcc2979f63c18b020204305d63221582da88bbeff66773840870f709.png" src="../_images/1250df7cdcc2979f63c18b020204305d63221582da88bbeff66773840870f709.png" />
+<img alt="../_images/c9ce3dd4d57a47aeeef2524642d93a530f9428f139785094811397e886c70531.png" src="../_images/c9ce3dd4d57a47aeeef2524642d93a530f9428f139785094811397e886c70531.png" />
 </div>
 </div>
 </section>
 <section id="next-we-compute-the-partial-molar-property">
-<h3>Next we compute the partial molar property<a class="headerlink" href="#next-we-compute-the-partial-molar-property" title="Permalink to this heading">#</a></h3>
+<h3>Next we compute the partial molar property<a class="headerlink" href="#next-we-compute-the-partial-molar-property" title="Link to this heading">#</a></h3>
 <p>To do so, we need to take the derivative of the points. This can be done numerically, but as you can see above our data is sparse (and expensive to measure) so instead of taking the numerical derivative, we will apply the <em>Redlich-Kister equation</em>
 which is valid for any mixture property. It is expressed as:</p>
 <div class="math notranslate nohighlight">
@@ -552,8 +556,9 @@ which is valid for any mixture property. It is expressed as:</p>
     <span class="k">else</span><span class="p">:</span>
         <span class="n">ans</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x1</span><span class="p">))</span><span class="o">*</span><span class="n">p_</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x1</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span><span class="o">-</span><span class="n">x2</span><span class="p">[</span><span class="n">mask</span><span class="p">],</span><span class="n">ans</span><span class="p">[</span><span class="n">mask</span><span class="p">],</span><span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;$n=</span><span class="si">%g</span><span class="s1">$&#39;</span><span class="o">%</span><span class="k">n</span>)
-
-<span class="nb">print</span><span class="p">(</span><span class="n">p_</span><span class="p">)</span>    
+    
+    <span class="nb">print</span><span class="p">(</span><span class="n">p_</span><span class="p">)</span>
+   
 <span class="c1">#plt.plot(x1,VIM*10**6,&#39;bx&#39;,linestyle=&#39;-&#39;,label=&#39;molar volume (IM)&#39;)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\dfrac{\Delta V_</span><span class="si">{mix}</span><span class="s1">}{x_1 x_2} \times 10^6 \; (m^3/mol)$&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$x_1-x_2$&#39;</span><span class="p">)</span>
@@ -562,19 +567,39 @@ which is valid for any mixture property. It is expressed as:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 0.77451871  0.69242059 -0.19867978 -4.01706834]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-3.79706932]
+[ 0.30471265 -3.80159125]
+[ 0.82679138  0.18244337 -4.02502095]
+[ 0.77451871  0.69242059 -0.19867978 -4.01706834]
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x1d81b917580&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x2362fd178d0&gt;
 </pre></div>
 </div>
-<img alt="../_images/d4d59b1ce5025feee02414f184baf9208601780aa29fca610c25c78e63a45ed1.png" src="../_images/d4d59b1ce5025feee02414f184baf9208601780aa29fca610c25c78e63a45ed1.png" />
+<img alt="../_images/26d486c571d4da3f626d1141f0cd62891ef4e70a86a9d1233f1f40057541f0d3.png" src="../_images/26d486c571d4da3f626d1141f0cd62891ef4e70a86a9d1233f1f40057541f0d3.png" />
 </div>
 </div>
+<p>Fitting the data, we find that the coefficients</p>
+<p><span class="math notranslate nohighlight">\(a_0 = -4.017\)</span>
+<span class="math notranslate nohighlight">\(a_1 = -0.198\)</span>
+<span class="math notranslate nohighlight">\(a_2 = 0.692\)</span>
+<span class="math notranslate nohighlight">\(a_3 = 0.774\)</span></p>
+<p>gives a pretty good fit to the experimental data</p>
 </section>
+</section>
+<section id="calculating-the-excess-property-from-the-fit">
+<h2>Calculating the excess property from the fit<a class="headerlink" href="#calculating-the-excess-property-from-the-fit" title="Link to this heading">#</a></h2>
+<p>In Sandler, the partial molar volume for a binary mixture can be found by combining 8.6-1-3 the Gibb’s Duhem equation and the definition of the molar volume to find that:</p>
+<div class="math notranslate nohighlight">
+\[\Delta_{mix}\underline{V} - x_2 \dfrac{\partial(\Delta_{mix}\underline{V})}{\partial x_2}\bigg|_{T,P} = \bar{V}^{ex}_1\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[\Delta_{mix}\underline{V} - x_1 \dfrac{\partial(\Delta_{mix}\underline{V})}{\partial x_1}\bigg|_{T,P} = \bar{V}^{ex}_2\]</div>
 <section id="finally-compute-the-excess-molar-volume">
-<h3>Finally, compute the excess molar volume<a class="headerlink" href="#finally-compute-the-excess-molar-volume" title="Permalink to this heading">#</a></h3>
+<h3>Finally, compute the excess molar volume<a class="headerlink" href="#finally-compute-the-excess-molar-volume" title="Link to this heading">#</a></h3>
 <p><span class="math notranslate nohighlight">\(\quad \bar{V}_1-\underline{V}_1=x_2^2\sum_n a_n\big[(x_1-x_2)^n+2nx_1(x_1-x_2)^{n-1}\big]\)</span></p>
+<p>and</p>
+<p><span class="math notranslate nohighlight">\(\quad \bar{V}_2-\underline{V}_2=x_2^2\sum_n a_n\big[(x_1-x_2)^n+2nx_2(x_1-x_2)^{n-1}\big]\)</span></p>
 <p>The above equation can be directly evaluated and then the <strong>Gibbs Duhem Equation</strong> used to directly evaluate the molar excess property for species (2).</p>
 </section>
 </section>
@@ -649,6 +674,9 @@ which is valid for any mixture property. It is expressed as:</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#now-lets-calculated-the-molar-volume-of-the-mixture">Now lets calculated the molar volume of the mixture:</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#now-we-compute-the-volume-change-on-mixing">Now we Compute the Volume Change on Mixing</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#next-we-compute-the-partial-molar-property">Next we compute the partial molar property</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculating-the-excess-property-from-the-fit">Calculating the excess property from the fit</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#finally-compute-the-excess-molar-volume">Finally, compute the excess molar volume</a></li>
 </ul>
 </li>
@@ -676,7 +704,7 @@ By J. J. Richards
 
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
@@ -700,8 +728,8 @@ By J. J. Richards
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
 
   <footer class="bd-footer">
   </footer>

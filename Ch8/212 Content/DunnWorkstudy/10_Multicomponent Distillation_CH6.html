@@ -1,0 +1,1066 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Multi-component distillation &#8212; Introduction to Thermodynamics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Ch8/212 Content/DunnWorkstudy/10_Multicomponent Distillation_CH6';</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/logo.png" class="logo__image only-light" alt="Introduction to Thermodynamics - Home"/>
+    <script>document.write(`<img src="../../../_static/logo.png" class="logo__image only-dark" alt="Introduction to Thermodynamics - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../../intro.html">
+                    Foreword
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Definitions and Balance Expressions</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch1/1.Thermodynamic-Definitions.html">Thermodynamic Definitions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch1/2.Real-Gas-Properties.html">Real Gas Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch1/3.Equations-of-State.html">Equations of State</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch1/4.Balance-Expressions.html">Macroscopic Balance Expressions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch1/5.Conservation-of-Mass.html">Conservation of Mass</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Foundations of Thermodynamics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch2/1.Conservation-of-Energy.html">Conservation of Energy and the 1st Law of Thermodynamics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch2/2.Expansion-of-a-Gas.html">Expansion of a Gas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch2/3.Entropy-Balance-Expression.html">Balance Expression for Entropy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch2/4.Entropy-at-0K.html">Entropy at 0K</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch2/5.Free-Energies.html">Free Energy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch2/6.Changes-of-State.html">Changes of State</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Applications of Thermodynamics in Chemical Engineering</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch3/1.Unit-Operations.html">Unit Operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch3/2.Property-Diagram-Single-Components.html">Property Database for Common Substances</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch3/3.Heat-Engines.html">Heat Engines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch3/4.Refrigeration.html">Refrigeration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch3/5.Liquefaction.html">Liquefaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch3/6.Optimizing-with-Python.html">Optimizing with Python</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Vapor-Liquid Equilibrium for Non-Ideal Gases</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch4/1.Deriving-Useful-Thermodynamic-Relationships.html">Deriving Useful Thermodynamic Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch4/2.Virial-Equations-of-State.html">Volumetric Equations of State</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch4/3.Law-of-Corresponding-States.html">Law of Corresponding States and Critical Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch4/4.Thermal-Variables-from-EOS.html">Computing Thermal Variables from an Equation of State</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch4/7.Constructing-Property-Diagrams.html">Constructing Property Diagrams</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Thermodynamics of Mixtures</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch5/1.Introduction-to-Mixtures.html">Introduction to Mixtures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch5/3.Gaseous-Mixtures.html">Gaseous Mixtures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch5/4.Liquid-Mixtures.html">Liquid Mixtures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch5/5.Accuracy-EOS.html">Calculating the Accuracy of Equations of State</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch7/7.Activity-Coefficient-Models.html">Activity Coefficients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch7/8.Calculating-Mixture-Fugacity.html">Vapor-Liquid Equilibrium</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch7/9.Mixture-Equilibrium.html">Equilibrium of Mixtures</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Exercises</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../Exercises/Ch1.html">Exercises for Chapter 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Exercises/Ch2.html">Exercises for Chapter 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Exercises/Ch3.html">Exercises for Chapter 3</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../_sources/Ch8/212 Content/DunnWorkstudy/10_Multicomponent Distillation_CH6.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Multi-component distillation</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Multi-component distillation</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">2</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#keys-in-multi-component-distillation">Keys in multi-component distillation</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">3</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">4</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">5</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#external-column-balances">External column balances</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#fractional-recoveries">Fractional Recoveries</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">6</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">7</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">8</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">9</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">10</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">11</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">12</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">13</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#fenske-examples">Fenske Examples</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">14</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">15</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#underwood">Underwood</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">16</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">17</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">18</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#gilliland">Gilliland</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">19</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">20</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id20">21</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="multi-component-distillation">
+<h1>Multi-component distillation<a class="headerlink" href="#multi-component-distillation" title="Link to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>2<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
+<section id="keys-in-multi-component-distillation">
+<h2>Keys in multi-component distillation<a class="headerlink" href="#keys-in-multi-component-distillation" title="Link to this heading">#</a></h2>
+<p><img alt="Image" src="Ch8/212 Content/DunnWorkstudy/Dunn-Images/10_Multicomponent%20Distillation_CH6/Slide3.jpg" /></p>
+<p>Components that have compositions specified in D and B are called <strong>keys</strong>.</p>
+<p>They do not have to be the lightest and heaviest components.</p>
+<p>But, compared to each other, one will be <strong>lighter</strong> and one will be heavier.</p>
+<ul class="simple">
+<li><p>LK: light key: more volatile component</p></li>
+<li><p>HK: heavy key: less volatile component</p></li>
+</ul>
+<p>Components for which compositions are unknowns are non-keys. They can be lighter than the LK (LNK) or heavier than the heavy key (HNK)</p>
+<p>The N stands for non as in non-key</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id2">
+<h1>3<a class="headerlink" href="#id2" title="Link to this heading">#</a></h1>
+<p><img alt="Image" src="Ch8/212 Content/DunnWorkstudy/Dunn-Images/10_Multicomponent%20Distillation_CH6/Slide5.jpg" /></p>
+<p>Component 1 has a BP of 60 C</p>
+<p>Component 2 has a BP 80 C</p>
+<p>Component 3 has a BP of 100C</p>
+<p>What type of “keys” are each of these three components?</p>
+<p>Can we solve the compositions in the D and B streams with this amount of info and without going beyond our foundational equations we used for binary systems?</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id3">
+<h1>4<a class="headerlink" href="#id3" title="Link to this heading">#</a></h1>
+<p><img alt="Image" src="Ch8/212 Content/DunnWorkstudy/Dunn-Images/10_Multicomponent%20Distillation_CH6/Slide7.jpg" /></p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Component</p></th>
+<th class="head"><p>( z_i )</p></th>
+<th class="head"><p>( f_{D,i} )</p></th>
+<th class="head"><p>( f_{B,i} )</p></th>
+<th class="head"><p>Designation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Propane (C3)</p></td>
+<td><p>0.056</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>n-butane (C4)</p></td>
+<td><p>0.321</p></td>
+<td><p>.994</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>n-pentane (C5)</p></td>
+<td><p>0.482</p></td>
+<td><p></p></td>
+<td><p>0.997</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>n-hexane (C6)</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<p>What can we assume about the fate of propane and n-hexane?</p>
+<p><img alt="Image" src="Ch8/212 Content/DunnWorkstudy/Dunn-Images/10_Multicomponent%20Distillation_CH6/Slide9.jpg" /></p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id4">
+<h1>5<a class="headerlink" href="#id4" title="Link to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="external-column-balances">
+<h1>External column balances<a class="headerlink" href="#external-column-balances" title="Link to this heading">#</a></h1>
+<p><span class="math notranslate nohighlight">\(F = B + D\)</span></p>
+<p><span class="math notranslate nohighlight">\(Fz = Bx_B + Dx_D\)</span></p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="fractional-recoveries">
+<h1>Fractional Recoveries<a class="headerlink" href="#fractional-recoveries" title="Link to this heading">#</a></h1>
+<p><span class="math notranslate nohighlight">\(Dx_{{MVC},dist} = (FR_{MVC,dist})(Fz_{MVC})\)</span></p>
+<p><span class="math notranslate nohighlight">\(x_{MVC,dist} = \frac{(D_{x_{MVC},dist})}{D}\)</span></p>
+<p><span class="math notranslate nohighlight">\(Bx_{{LVC},bott} = (FR_{LVC,bott})(Fz_{LVC})\)</span></p>
+<p><span class="math notranslate nohighlight">\(x_{LVC,dist} = \frac{(B_{x_{LVC},bott})}{B}\)</span></p>
+<p><span class="math notranslate nohighlight">\(D = \sum D_{x_i,Dist}\)</span></p>
+<p><span class="math notranslate nohighlight">\(B = \sum B_{x_i,Bott}\)</span></p>
+<p>Do problem &amp; External mass bal quiz
+<a class="reference external" href="https://learncheme.com/simulations/mass-energy-balances/solving-mass-balances-on-a-distillation-column/">https://learncheme.com/simulations/mass-energy-balances/solving-mass-balances-on-a-distillation-column/</a></p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id5">
+<h1>6<a class="headerlink" href="#id5" title="Link to this heading">#</a></h1>
+<p><img alt="Image" src="Ch8/212 Content/DunnWorkstudy/Dunn-Images/10_Multicomponent%20Distillation_CH6/Slide13.jpg" /></p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Component</p></th>
+<th class="head"><p>( z_i )</p></th>
+<th class="head"><p>( f_{D,i} )</p></th>
+<th class="head"><p>( f_{B,i} )</p></th>
+<th class="head"><p>Designation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Propane (C3)</p></td>
+<td><p>0.056</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>LNK</p></td>
+</tr>
+<tr class="row-odd"><td><p>n-butane (C4)</p></td>
+<td><p>0.321</p></td>
+<td><p>.994</p></td>
+<td><p></p></td>
+<td><p>LK</p></td>
+</tr>
+<tr class="row-even"><td><p>n-pentane (C5)</p></td>
+<td><p>0.482</p></td>
+<td><p></p></td>
+<td><p>0.997</p></td>
+<td><p>HK</p></td>
+</tr>
+<tr class="row-odd"><td><p>n-hexane (C6)</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>HNK</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id6">
+<h1>7<a class="headerlink" href="#id6" title="Link to this heading">#</a></h1>
+<p><img alt="Image" src="Ch8/212 Content/DunnWorkstudy/Dunn-Images/10_Multicomponent%20Distillation_CH6/Slide13.jpg" /></p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Component</p></th>
+<th class="head"><p>( z_i )</p></th>
+<th class="head"><p>( f_{D,i} )</p></th>
+<th class="head"><p>( f_{B,i} )</p></th>
+<th class="head"><p>Designation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Propane (C3)</p></td>
+<td><p>0.056</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>LNK</p></td>
+</tr>
+<tr class="row-odd"><td><p>n-butane (C4)</p></td>
+<td><p>0.321</p></td>
+<td><p>.994</p></td>
+<td><p></p></td>
+<td><p>LK</p></td>
+</tr>
+<tr class="row-even"><td><p>n-pentane (C5)</p></td>
+<td><p>0.482</p></td>
+<td><p></p></td>
+<td><p>0.997</p></td>
+<td><p>HK</p></td>
+</tr>
+<tr class="row-odd"><td><p>n-hexane (C6)</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>HNK</p></td>
+</tr>
+</tbody>
+</table>
+<p><span class="math notranslate nohighlight">\(x_{D,i} = \frac{Dx_{D,i}}{D}\)</span></p>
+<p><span class="math notranslate nohighlight">\(x_{D,LNK} = \frac{112}{753.4} = 0.1481\)</span></p>
+<p><span class="math notranslate nohighlight">\(\sum X_{D,i} = 0.999\)</span></p>
+<p><span class="math notranslate nohighlight">\(D = \overline{Z}x_{D,i}D = 753.4 \text{kmol/m}\)</span></p>
+<p><span class="math notranslate nohighlight">\(f_{LNK,D} = 1\)</span></p>
+<p><span class="math notranslate nohighlight">\(f_{HNK,B} = 1\)</span></p>
+<p><span class="math notranslate nohighlight">\(Bx_{LNK,B} = 0\)</span></p>
+<p><span class="math notranslate nohighlight">\(Dx_{LNK,D} = Fz_{LNK} = 2000 \times 0.056 = 112\)</span></p>
+<p><span class="math notranslate nohighlight">\(Bx_{HNK,B} = Fz_{HNK}\)</span></p>
+<p><span class="math notranslate nohighlight">\(Dx_{HNK,D} = 0\)</span></p>
+<p><span class="math notranslate nohighlight">\(f_{LK,D} = \frac{Dx_{LK,D}}{Fz_{LK}}\)</span></p>
+<p><span class="math notranslate nohighlight">\(f_{HK,B} = \frac{Bx_{HK,B}}{Fz_{HK}}\)</span></p>
+<p><span class="math notranslate nohighlight">\(Dx_{LK,D} = 0.994 \times 2000 \times 0.321 = 638.5\)</span></p>
+<p><span class="math notranslate nohighlight">\(Dx_{HK,D} = (1 - 0.997) \times 2000 \times 0.482 = 2.89\)</span></p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id7">
+<h1>8<a class="headerlink" href="#id7" title="Link to this heading">#</a></h1>
+<p><img alt="Image" src="Ch8/212 Content/DunnWorkstudy/Dunn-Images/10_Multicomponent%20Distillation_CH6/Slide13.jpg" /></p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Component</p></th>
+<th class="head"><p>( z_i )</p></th>
+<th class="head"><p>( f_{D,i} )</p></th>
+<th class="head"><p>( f_{B,i} )</p></th>
+<th class="head"><p>Designation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Propane (C3)</p></td>
+<td><p>0.056</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>LNK</p></td>
+</tr>
+<tr class="row-odd"><td><p>n-butane (C4)</p></td>
+<td><p>0.321</p></td>
+<td><p>.994</p></td>
+<td><p></p></td>
+<td><p>LK</p></td>
+</tr>
+<tr class="row-even"><td><p>n-pentane (C5)</p></td>
+<td><p>0.482</p></td>
+<td><p></p></td>
+<td><p>0.997</p></td>
+<td><p>HK</p></td>
+</tr>
+<tr class="row-odd"><td><p>n-hexane (C6)</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>HNK</p></td>
+</tr>
+</tbody>
+</table>
+<p><span class="math notranslate nohighlight">\(f_{LK,B} = (1 - 0.994)\)</span></p>
+<p><span class="math notranslate nohighlight">\(f_{LK,B} = \frac{Bx_{B,LK}}{Fz_{LK}}\)</span></p>
+<p><span class="math notranslate nohighlight">\(Fz_i = Dx_{D,i}+ Bx_{B,i}\)</span></p>
+<p>all HNK
+<span class="math notranslate nohighlight">\(Bx_{B,HNK} = Fz_{HNK} = 2000 \times .141 = 282\)</span></p>
+<p><span class="math notranslate nohighlight">\(Bx_{B,HK} = 2000 \times 0.997 \times 0.482 = 961\)</span></p>
+<p><span class="math notranslate nohighlight">\(Bx_{B,LK} = (1-0.994) \times 2000 \times 0.321 = 3.85\)</span></p>
+<p><span class="math notranslate nohighlight">\(\sum B \times X_{B,i} = 1246.85\)</span></p>
+<p><span class="math notranslate nohighlight">\(F = 1246.85 + 753.4 = 2000 \checkmark\)</span></p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id8">
+<h1>9<a class="headerlink" href="#id8" title="Link to this heading">#</a></h1>
+<p><img alt="Image" src="Ch8/212 Content/DunnWorkstudy/Dunn-Images/10_Multicomponent%20Distillation_CH6/Slide13.jpg" /></p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Component</p></th>
+<th class="head"><p>( z_i )</p></th>
+<th class="head"><p>( f_{D,i} )</p></th>
+<th class="head"><p>( f_{B,i} )</p></th>
+<th class="head"><p>Designation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Propane (C3)</p></td>
+<td><p>0.056</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>LNK</p></td>
+</tr>
+<tr class="row-odd"><td><p>n-butane (C4)</p></td>
+<td><p>0.321</p></td>
+<td><p>.994</p></td>
+<td><p></p></td>
+<td><p>LK</p></td>
+</tr>
+<tr class="row-even"><td><p>n-pentane (C5)</p></td>
+<td><p>0.482</p></td>
+<td><p></p></td>
+<td><p>0.997</p></td>
+<td><p>HK</p></td>
+</tr>
+<tr class="row-odd"><td><p>n-hexane (C6)</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>HNK</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id9">
+<h1>10<a class="headerlink" href="#id9" title="Link to this heading">#</a></h1>
+<p><img alt="Image" src="Ch8/212 Content/DunnWorkstudy/Dunn-Images/10_Multicomponent%20Distillation_CH6/Slide23.jpg" /></p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Component</p></th>
+<th class="head"><p>BP</p></th>
+<th class="head"><p>( z_i )</p></th>
+<th class="head"><p>( f_{D,i} )</p></th>
+<th class="head"><p>( f_{B,i} )</p></th>
+<th class="head"><p>Designation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Benzene</p></td>
+<td><p>80.1 C</p></td>
+<td><p>23.3%</p></td>
+<td><p>.99</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>Toluene</p></td>
+<td><p>110.6 C</p></td>
+<td><p>33.3%</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>Cumene</p></td>
+<td><p>152.4 C</p></td>
+<td><p>43.4%</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Image" src="Ch8/212 Content/DunnWorkstudy/Dunn-Images/10_Multicomponent%20Distillation_CH6/Slide25.jpg" /></p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id10">
+<h1>11<a class="headerlink" href="#id10" title="Link to this heading">#</a></h1>
+<p><img alt="Image" src="Ch8/212 Content/DunnWorkstudy/Dunn-Images/10_Multicomponent%20Distillation_CH6/Slide27.jpg" /></p>
+<ul class="simple">
+<li><p>Benzene is low in the reboiler, mole fraction increases as move up column – maximum at condenser</p></li>
+<li><p>Generally assume all HNK leaves in B [mole fraction of cumene in C stage is ~0].</p></li>
+<li><p>Cumene mole fraction drops off after feed stage</p></li>
+<li><p>There has to be a finite cumene concentration at the feed stage</p></li>
+</ul>
+<p>At stages 11-12, distillation is again between cumene and toluene, so toluene increases</p>
+<p>After stage 12, cumene is out of the picture and the LK concentration increases against the HK’s.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id11">
+<h1>12<a class="headerlink" href="#id11" title="Link to this heading">#</a></h1>
+<p><img alt="Image" src="Ch8/212 Content/DunnWorkstudy/Dunn-Images/10_Multicomponent%20Distillation_CH6/Slide29.jpg" /></p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Component</p></th>
+<th class="head"><p>BP</p></th>
+<th class="head"><p>( z_i )</p></th>
+<th class="head"><p>( f_{D,i} )</p></th>
+<th class="head"><p>( f_{B,i} )</p></th>
+<th class="head"><p>Designation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Benzene</p></td>
+<td><p>80.1 C</p></td>
+<td><p>23.3%</p></td>
+<td><p>.99</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>Toluene</p></td>
+<td><p>110.6 C</p></td>
+<td><p>33.3%</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>Cumene</p></td>
+<td><p>152.4 C</p></td>
+<td><p>43.4%</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id12">
+<h1>13<a class="headerlink" href="#id12" title="Link to this heading">#</a></h1>
+<p><img alt="Image" src="Ch8/212 Content/DunnWorkstudy/Dunn-Images/10_Multicomponent%20Distillation_CH6/Slide30.jpg" /></p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="fenske-examples">
+<h1>Fenske Examples<a class="headerlink" href="#fenske-examples" title="Link to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id13">
+<h1>14<a class="headerlink" href="#id13" title="Link to this heading">#</a></h1>
+<p><img alt="Image" src="Ch8/212 Content/DunnWorkstudy/Dunn-Images/10_Multicomponent%20Distillation_CH6/Slide34.jpg" /></p>
+<p>1 Benzene 80.1 C LNK<br />
+2 Toluene 110.6 C LK<br />
+3 Cumene 152.4 C HK</p>
+<p><span class="math notranslate nohighlight">\(\alpha_{12} = 2.25\)</span> <span class="math notranslate nohighlight">\(\alpha_{32} = 0.21\)</span> <span class="math notranslate nohighlight">\(\alpha_{22} = 1\)</span></p>
+<p><span class="math notranslate nohighlight">\(N_{\text{min}} = \frac{\ln \left( \frac{f_{D,A}f_{B,B}}{(1 - f_{B,B})(1 - f_{D,A})} \right)}{\ln \alpha_{AB}}\)</span></p>
+<p><span class="math notranslate nohighlight">\(N_{\text{min}} = \frac{\ln \left( \frac{f_{D,2}f_{B,3}}{(1 - f_{B,3})(1 - f_{D,2})} \right)}{\ln \alpha_{23}}\)</span></p>
+<p><span class="math notranslate nohighlight">\(\alpha_{ij} = \frac{K_i}{K_j}\)</span></p>
+<p><span class="math notranslate nohighlight">\(\alpha_{23} = \frac{K_2}{K_3} = \frac{\frac{K_2}{K_2}}{\frac{K_3}{K_2} }= \frac{\alpha_{22}}{\alpha_{32}} = \frac{1}{0.21}\)</span></p>
+<p><span class="math notranslate nohighlight">\(N_{\text{min}} = \frac{\ln \left( \frac{0.95  \times  0.95}{(1 - 0.95)(1 - 0.95)} \right)}{\ln 4.76}\)</span></p>
+<p>Find</p>
+<p>N at total reflux
+<span class="math notranslate nohighlight">\(N_{\text{min}}\)</span></p>
+<p>Fractional recovery of benzene in distillate <span class="math notranslate nohighlight">\(f_{D,1}\)</span></p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id14">
+<h1>15<a class="headerlink" href="#id14" title="Link to this heading">#</a></h1>
+<p><img alt="Image" src="Ch8/212 Content/DunnWorkstudy/Dunn-Images/10_Multicomponent%20Distillation_CH6/Slide37.jpg" /></p>
+<p>1 Benzene 80.1 C LNK<br />
+2 Toluene 110.6 C LK<br />
+3 Cumene 152.4 C HK</p>
+<p><span class="math notranslate nohighlight">\(\alpha_{ij} = \frac{K_i}{K_j}\)</span></p>
+<p><span class="math notranslate nohighlight">\(\alpha_{12} = 2.25\)</span> <span class="math notranslate nohighlight">\(\alpha_{32} = 0.21\)</span> <span class="math notranslate nohighlight">\(\alpha_{22} = 1\)</span></p>
+<p><span class="math notranslate nohighlight">\(\alpha_{13} = \frac{K_1}{K_3} = \frac{\frac{K_1}{K_2}}{\frac{K_3}{K_2} } = \frac{\alpha_{12}}{\alpha_{32}} = \frac{2.25}{0.21} = 10.7\)</span></p>
+<p><span class="math notranslate nohighlight">\(f_{D,NK} = \frac{\alpha_{NK,HK}^{N_{\text{min}} }}{\frac{f_{B,HK} }{1 - f_{B,HK}} + \alpha_{NK,HK}^{N_{\text{min}} }}\)</span></p>
+<p><span class="math notranslate nohighlight">\(f_{D,1} = \frac{\alpha_{13}^{N_{\text{min}}}}{\frac{f_{B,3}} {1 - f_{B,3}} + \alpha_{13}^{N_{\text{min}}}}\)</span></p>
+<p><span class="math notranslate nohighlight">\(f_{D,1} = \frac{10.7^{3.77}}{\frac{.95}{0.05} + 10.7^{3.77}} = 0.998\)</span></p>
+<p>Find
+N at total reflux
+<span class="math notranslate nohighlight">\(N_{\text{min}}\)</span></p>
+<p>Fractional recovery of benzene in distillate <span class="math notranslate nohighlight">\(f_{D,1}\)</span></p>
+<p>Recorded walk-through in Panopto: 5 min
+<a class="reference external" href="https://northwestern.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=997fbf73-e00b-4683-b1ee-ae37012cb3e9">https://northwestern.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=997fbf73-e00b-4683-b1ee-ae37012cb3e9</a></p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="underwood">
+<h1>Underwood<a class="headerlink" href="#underwood" title="Link to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id15">
+<h1>16<a class="headerlink" href="#id15" title="Link to this heading">#</a></h1>
+<p><img alt="Image" src="Ch8/212 Content/DunnWorkstudy/Dunn-Images/10_Multicomponent%20Distillation_CH6/Slide40.jpg" /></p>
+<p>Underwood (1948)</p>
+<p><span class="math notranslate nohighlight">\(V_{T,min}y_{i,j+1} = L_{min}x_{i,j} + Dx_{D,i}\)</span></p>
+<p><span class="math notranslate nohighlight">\(x_{i,j-1} = x_{i,j} = x_{i,j+1}\)</span></p>
+<p><span class="math notranslate nohighlight">\(y_{i,j+1} = y_{i,j} = y_{i,j+1}\)</span></p>
+<p><span class="math notranslate nohighlight">\(y_{i,j+1} = Kx_{i,j+1}\)</span></p>
+<p><span class="math notranslate nohighlight">\(V_{min}y_{i,j+1} = \frac{L_{min}}{K_i}y_{i,j+1} + Dx_i\)</span></p>
+<p><span class="math notranslate nohighlight">\(\alpha_{i,ref} = \frac{K_i}{K_{ref}}\)</span></p>
+<p><span class="math notranslate nohighlight">\(V_{min}y_{i,j+1} = \frac{L_{min}}{\alpha_{i,ref}K_{ref}}y_{i,j+1} + Dx_i\)</span></p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id16">
+<h1>17<a class="headerlink" href="#id16" title="Link to this heading">#</a></h1>
+<p><span class="math notranslate nohighlight">\(V_{\text{min}}y_{i,j+1} \left( 1 - \frac{L_{\text{min}}}{V_{T,\text{min}} \alpha_{i,\text{ref}} K_{\text{ref}}} \right) = D x_i\)</span></p>
+<p><span class="math notranslate nohighlight">\(V_{\text{min}}y_{i,j+1} = \frac{\alpha_{i,\text{ref}} D x_{D,i} }{\alpha_{i,\text{ref}} - \frac{L_{\text{min}}}{V_{\text{min}}K_{\text{ref}}}}\)</span></p>
+<p>Sum for total <span class="math notranslate nohighlight">\(V_{\text{min}}\)</span></p>
+<p><span class="math notranslate nohighlight">\(V_{\text{min}} = \sum_{i=1}^{c} \left( V_{\text{min}}y_{i,j+1} \right) = \sum_{i=1}^{c} \frac{\alpha_{i,\text{ref}} D x_{D,i}}{\alpha_{i,ref} - \frac{L_{\text{min}} }{ V_{\text{min}}K_{\text{ref}}}}\)</span></p>
+<p><span class="math notranslate nohighlight">\(-\overline{V}_{\text{min}} = \sum_{i=1}^{c} \left( V_{\text{min}}y_{i,j+1}\right) = \sum_{i=1}^{c} \frac{\alpha_{i,\text{ref}} B x_{B,i}}{\alpha_{i,ref} - \frac{\overline{L}_{\text{min}} }{ \overline{V}_{\text{min}}K_{\text{ref}}}}\)</span></p>
+<p>Volatilities, K not necessarily the same in bottom and top of column</p>
+<p><span class="math notranslate nohighlight">\(\phi = \frac{L_{T,\text{min}}}{V_{T,\text{min}}K_{T,\text{ref}}}\)</span></p>
+<p><span class="math notranslate nohighlight">\(\overline{\phi}= \frac{L_{B,\text{min}}}{V_{B,\text{min}}K_{B,\text{ref}}}\)</span></p>
+<p>Assumption: phi is same in top and bottom of column
+(works best for CMO, constant relative volatility)</p>
+<p>Put it phi and add <span class="math notranslate nohighlight">\(V_{\text{min}}\)</span> equations</p>
+<p><span class="math notranslate nohighlight">\(V_{T,\text{min}} - V_{B,\text{min}} = \sum_{i=1}^{c} \left[ \frac{\alpha_{i,\text{ref}} D x_{D,i}}{\alpha_{i,\text{ref}} - \phi} + \frac{\alpha_{i,\text{ref}} B x_{B,i}}{\alpha_{i,\text{ref}} - \phi} \right]\)</span></p>
+<p>Use overall mass balance for i to simplify</p>
+<p><span class="math notranslate nohighlight">\(F z_i = D x_{D,i} + B x_{B,i}\)</span></p>
+<p><span class="math notranslate nohighlight">\(F(1 - q) = V_{T,\text{min}} - V_{B,\text{min}} = \sum_{i=1}^{c} \left[\frac{\alpha_{i,\text{ref}} F z_i}{\alpha_{i,\text{ref}} - \phi}\right]\)</span></p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id17">
+<h1>18<a class="headerlink" href="#id17" title="Link to this heading">#</a></h1>
+<p>Underwood equations</p>
+<p><span class="math notranslate nohighlight">\(F(1 - q) = V_{T,\text{min}} - V_{B,\text{min}} = \sum \left[ \frac{\alpha_{i,\text{ref}} F z_i}{\alpha_{i,\text{ref}} - \phi} \right]\)</span></p>
+<p>First Underwood Equation. —- Use to find phi</p>
+<p><span class="math notranslate nohighlight">\(V_{\text{min}} = \sum_{i=1}^{c} \left( V_{\text{min}}y_{i,j+1}\right) = \sum_{i=1}^{c} \left( \frac{\alpha_{i,\text{ref}} D x_{D,i}}{\alpha_{i,\text{ref}} - \phi} \right)\)</span></p>
+<p>Second Underwood Equation. —- Use to find <span class="math notranslate nohighlight">\(V_{\text{min}}\)</span></p>
+<p>Use cases</p>
+<ol class="arabic simple">
+<li><p>All NKs are non-distributive
+<span class="math notranslate nohighlight">\(D_{x_{HNK}} = 0\)</span> and <span class="math notranslate nohighlight">\(D_{L, \text{LNK}} = F z_{\text{LNK}}\)</span></p></li>
+<li><p>Use Fenske results for NK distributions here.</p></li>
+</ol>
+<p>Note constant relativity assumption:
+Geometric mean applies</p>
+<p>Options:
+<span class="math notranslate nohighlight">\((\alpha_{B} \alpha_{D} \alpha_{F})^{1/3}\)</span>
+<span class="math notranslate nohighlight">\((\alpha_{B} \alpha_{D})^{1/2}\)</span></p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="gilliland">
+<h1>Gilliland<a class="headerlink" href="#gilliland" title="Link to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id18">
+<h1>19<a class="headerlink" href="#id18" title="Link to this heading">#</a></h1>
+<p><img alt="Image" src="Ch8/212 Content/DunnWorkstudy/Dunn-Images/10_Multicomponent%20Distillation_CH6/Slide47.jpg" /></p>
+<p>Gilliland Correlation for number of stages at a finite r</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id19">
+<h1>20<a class="headerlink" href="#id19" title="Link to this heading">#</a></h1>
+<p>One form of Fenske</p>
+<p><span class="math notranslate nohighlight">\(N_{\text{min}} = \frac{\ln \left[ \frac{(X_A/X_B)_D}{(X_A/X_B)_R} \right]}{\ln \alpha_{AB}}\)</span></p>
+<p>Can be used to estimate stages to go from feed to distillate concentration for keys</p>
+<p><span class="math notranslate nohighlight">\( N_{F,\text{min}} = \frac{\ln \left[ \frac{(X_{LK}/X_{HK})_D}{(Z_{LK}/Z_{HK})} \right]}{\ln \alpha_{LK,HK}} \)</span></p>
+<p>Ratio of feed to total stages could be ~constant. –&gt; estimate feed stage.</p>
+<p><span class="math notranslate nohighlight">\(\frac{N_{F,\text{min}}}{N_{\text{min}}} = \frac{N_F}{N}\)</span></p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id20">
+<h1>21<a class="headerlink" href="#id20" title="Link to this heading">#</a></h1>
+<p>Liddle fit the curve – once you find the x you could calculate the N</p>
+<p>For <span class="math notranslate nohighlight">\(0 \leq x \leq 0.01\)</span>:</p>
+<p><span class="math notranslate nohighlight">\(\frac{N - N_{\text{min}}}{N + 1} = 1.0 - 18.5715x\)</span></p>
+<p>For <span class="math notranslate nohighlight">\(0.01 \leq x \leq 0.90\)</span>:</p>
+<p><span class="math notranslate nohighlight">\(\frac{N - N_{\text{min}}}{N + 1} = 0.545827 - 0.591422x + \frac{0.002743}{x}\)</span></p>
+<p>For <span class="math notranslate nohighlight">\(0.90 \leq x \leq 1.0\)</span>:</p>
+<p><span class="math notranslate nohighlight">\(\frac{N - N_{\text{min}}}{N + 1} = 0.16595 - 0.16595x\)</span></p>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "executablebooks/jupyter-book",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./Ch8\212 Content\DunnWorkstudy"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Multi-component distillation</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">2</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#keys-in-multi-component-distillation">Keys in multi-component distillation</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">3</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">4</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">5</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#external-column-balances">External column balances</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#fractional-recoveries">Fractional Recoveries</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">6</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">7</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">8</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">9</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">10</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">11</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">12</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">13</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#fenske-examples">Fenske Examples</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">14</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">15</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#underwood">Underwood</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">16</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">17</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">18</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#gilliland">Gilliland</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">19</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">20</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id20">21</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By J. J. Richards
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

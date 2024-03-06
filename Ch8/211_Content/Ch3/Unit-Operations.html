@@ -1,0 +1,928 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Unit Operations &#8212; Introduction to Thermodynamics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Ch8/211_Content/Ch3/Unit-Operations';</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/logo.png" class="logo__image only-light" alt="Introduction to Thermodynamics - Home"/>
+    <script>document.write(`<img src="../../../_static/logo.png" class="logo__image only-dark" alt="Introduction to Thermodynamics - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../../intro.html">
+                    Foreword
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Definitions and Balance Expressions</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch1/1.Thermodynamic-Definitions.html">Thermodynamic Definitions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch1/2.Real-Gas-Properties.html">Real Gas Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch1/3.Equations-of-State.html">Equations of State</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch1/4.Balance-Expressions.html">Macroscopic Balance Expressions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch1/5.Conservation-of-Mass.html">Conservation of Mass</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Foundations of Thermodynamics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch2/1.Conservation-of-Energy.html">Conservation of Energy and the 1st Law of Thermodynamics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch2/2.Expansion-of-a-Gas.html">Expansion of a Gas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch2/3.Entropy-Balance-Expression.html">Balance Expression for Entropy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch2/4.Entropy-at-0K.html">Entropy at 0K</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch2/5.Free-Energies.html">Free Energy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch2/6.Changes-of-State.html">Changes of State</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Applications of Thermodynamics in Chemical Engineering</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch3/1.Unit-Operations.html">Unit Operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch3/2.Property-Diagram-Single-Components.html">Property Database for Common Substances</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch3/3.Heat-Engines.html">Heat Engines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch3/4.Refrigeration.html">Refrigeration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch3/5.Liquefaction.html">Liquefaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch3/6.Optimizing-with-Python.html">Optimizing with Python</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Vapor-Liquid Equilibrium for Non-Ideal Gases</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch4/1.Deriving-Useful-Thermodynamic-Relationships.html">Deriving Useful Thermodynamic Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch4/2.Virial-Equations-of-State.html">Volumetric Equations of State</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch4/3.Law-of-Corresponding-States.html">Law of Corresponding States and Critical Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch4/4.Thermal-Variables-from-EOS.html">Computing Thermal Variables from an Equation of State</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch4/7.Constructing-Property-Diagrams.html">Constructing Property Diagrams</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Thermodynamics of Mixtures</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch5/1.Introduction-to-Mixtures.html">Introduction to Mixtures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch5/3.Gaseous-Mixtures.html">Gaseous Mixtures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch5/4.Liquid-Mixtures.html">Liquid Mixtures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch5/5.Accuracy-EOS.html">Calculating the Accuracy of Equations of State</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch7/7.Activity-Coefficient-Models.html">Activity Coefficients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch7/8.Calculating-Mixture-Fugacity.html">Vapor-Liquid Equilibrium</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch7/9.Mixture-Equilibrium.html">Equilibrium of Mixtures</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Exercises</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../Exercises/Ch1.html">Exercises for Chapter 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Exercises/Ch2.html">Exercises for Chapter 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Exercises/Ch3.html">Exercises for Chapter 3</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../_sources/Ch8/211_Content/Ch3/Unit-Operations.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Unit Operations</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unit-operations-summarized">Unit Operations Summarized:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#compressors">Compressors</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#common-assumptions-for-an-adiabatic-compressor">Common Assumptions for an Adiabatic Compressor:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simplified-mass-energy-and-entropy-balance-expressions">Simplified Mass, Energy, and Entropy Balance Expressions:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#turbines">Turbines</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Common Assumptions for an Adiabatic Compressor:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Simplified Mass, Energy, and Entropy Balance Expressions:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pumps">Pumps</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#common-assumptions">Common Assumptions:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simplified-mass-energy-and-entropy-balance-expressions-for-assumptions-above">Simplified Mass, Energy, and Entropy Balance Expressions for Assumptions Above:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#throttle-valves">Throttle Valves</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Common Assumptions:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Simplified Mass, Energy, and Entropy Balance Expressions for Assumptions Above:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#heat-exchangers">Heat Exchangers</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Common Assumptions:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Simplified Mass, Energy, and Entropy Balance Expressions for Assumptions Above:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boilers">Boilers</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Common Assumptions:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Simplified Mass, Energy, and Entropy Balance Expressions for Assumptions Above:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#condenser">Condenser</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">Common Assumptions:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">Simplified Mass, Energy, and Entropy Balance Expressions for Assumptions Above:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#evaporators">Evaporators</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">Common Assumptions:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">Simplified Mass, Energy, and Entropy Balance Expressions for Assumptions Above:</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="unit-operations">
+<h1>Unit Operations<a class="headerlink" href="#unit-operations" title="Link to this heading">#</a></h1>
+<p>The traditional role of a chemical engineer is to oversee the design, operation, and optimization of <strong>unit operations</strong> that are used to produce useful products. Unit Operations in physical plants are single peices of equipment that have a specific role in changing the state of matter and it is their combination that makes the conversion of one state of matter to another possible. Understanding the role of unit operations in process design is core to chemical engineering practice.</p>
+<p>In this class, we will review three examples of useful processes that act on single component fluids that exist within a variety of industrial settings. These include:</p>
+<ul class="simple">
+<li><p>Power Generation</p></li>
+<li><p>Refrigeration</p></li>
+<li><p>Liquefaction</p></li>
+</ul>
+<p>Before we can do that, we need to review common unit operations that are encountered in industrial settings that make these processes possible.</p>
+<div class="alert alert-block alert-warning">
+<b>Note:</b> These processes commonly employ phase change to perform their function. Therefore in this part of the class we will heavily rely on property diagrams/tabulated data to perform our calculations.
+</div>
+<section id="unit-operations-summarized">
+<h2>Unit Operations Summarized:<a class="headerlink" href="#unit-operations-summarized" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p><a class="reference internal" href="#unitop-compressor"><span class="std std-ref">Compressors</span></a></p></li>
+<li><p><a class="reference internal" href="#unitop-turbine"><span class="std std-ref">Turbines</span></a></p></li>
+<li><p><a class="reference internal" href="#unitop-pump"><span class="std std-ref">Pumps</span></a></p></li>
+<li><p><a class="reference internal" href="#unitop_throttlevalve"><span class="xref myst">Throttle Valves</span></a></p></li>
+<li><p><a class="reference internal" href="#unitop_flashdrums"><span class="xref myst">Flash Drums</span></a></p></li>
+<li><p><a class="reference internal" href="#unitop-heatexchanger"><span class="std std-ref">Heat Exchangers</span></a></p></li>
+<li><p><a class="reference internal" href="#unitop_nozzle"><span class="xref myst">Nozzles</span></a></p></li>
+<li><p><a class="reference internal" href="#unitop_boilers"><span class="xref myst">Boilers/Evaporators</span></a></p></li>
+<li><p><a class="reference internal" href="#unitop_condensor"><span class="xref myst">Condensors</span></a></p></li>
+</ol>
+</section>
+<section id="compressors">
+<span id="unitop-compressor"></span><h2>Compressors<a class="headerlink" href="#compressors" title="Link to this heading">#</a></h2>
+<p>The schematic of an <em>adiabatic compressor</em> is shown below. A <em>well-designed</em> adiabatic compressor increases the pressure of a gaseous fluid <strong>isoentropically</strong>. A compressor is said to be well-designed if it fulfills the common assumptions below.</p>
+<p>Compressors work by using electric motors to turn high-speed rotors that cause a significant increase in the gas pressure and temperature. In a compressor care must be taken in its design to ensure that the temperature of the compressed gas does not exceed the operating temperature of the rotors, fan blades, bearings, and gaskets.</p>
+<a class="reference internal image-reference" href="Ch8/211_Content/Ch3/images/UnitOperation-Compressor.png"><img alt="Ch8/211_Content/Ch3/images/UnitOperation-Compressor.png" src="Ch8/211_Content/Ch3/images/UnitOperation-Compressor.png" style="width: 300px;" /></a>
+<p>Compressors are generally designed to achieve a desired internal compression ratio (<span class="math notranslate nohighlight">\(R\)</span>):</p>
+<div class="math notranslate nohighlight">
+\[ R = \dfrac{P_2}{P_1} \]</div>
+<p>where (1) is the inlet pressure and (2) is the outlet pressure. You will see in unit operations that this compression ratio defines the efficiency of the compression process, but also the design of the compressor. While outside the scope of this class, common compressors will include</p>
+<ol class="arabic simple">
+<li><p><em>adiabatic compression</em> - reversible compression where the gas is assumed to be compressed <em>adiabatically</em></p></li>
+<li><p><em>isothermal compression</em> - reversible compression where cooling is cooling is performed during compression so that the compression is <em>isothermal</em></p></li>
+<li><p><em>polytropic compression</em> - reversible compression where the fluid is neither <em>isothermal</em> nor <em>adiabatic</em></p></li>
+</ol>
+<section id="common-assumptions-for-an-adiabatic-compressor">
+<h3>Common Assumptions for an Adiabatic Compressor:<a class="headerlink" href="#common-assumptions-for-an-adiabatic-compressor" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>reversible operation</p></li>
+<li><p>adiabatic (well-insulated/designed)</p></li>
+<li><p>operates at a steady state</p></li>
+<li><p>Kinetic and potential energy changes are negligible</p></li>
+<li><p>Operates on a single gaseous phase - no condensation within a turbine is permissible</p></li>
+</ul>
+</section>
+<section id="simplified-mass-energy-and-entropy-balance-expressions">
+<h3>Simplified Mass, Energy, and Entropy Balance Expressions:<a class="headerlink" href="#simplified-mass-energy-and-entropy-balance-expressions" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Mass Balance Simplifies to:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\dot{N}_1=\dot{N}_2\]</div>
+<ol class="arabic simple" start="2">
+<li><p>Energy Balance Simplifies to:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\dot{W}_s=\dot{N}_1\big(\underline{H}_2-\underline{H}_1\big)\]</div>
+<ol class="arabic simple" start="3">
+<li><p>Entropy Balance Simplifies to:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\underline{S}_2=\underline{S}_1\]</div>
+</section>
+</section>
+<section id="turbines">
+<span id="unitop-turbine"></span><h2>Turbines<a class="headerlink" href="#turbines" title="Link to this heading">#</a></h2>
+<p>The schematic of an <em>adiabatic turbine</em> is shown below. A <em>well-designed</em> adiabatic turbine extracts work <strong>isoentropically</strong> from the decrease in pressure of a high pressure gaseous fluid.</p>
+<p>Turbines work by using a high pressure gas to turn high speed rotors that convert mechanical energy to electricity and result in the reduction of pressure and temperature of the gas at the turbine outlet. In a turbine care must be taken to ensure that the working fluid and conditions of the expansion are such that the temperature of the gas does not drop below the critical temperature, risking condensation and damage of the high speed turbines.</p>
+<a class="reference internal image-reference" href="Ch8/211_Content/Ch3/images/UnitOperation-Turbine.png"><img alt="Ch8/211_Content/Ch3/images/UnitOperation-Turbine.png" src="Ch8/211_Content/Ch3/images/UnitOperation-Turbine.png" style="width: 300px;" /></a>
+<p>Steam turbines are generally designed to maximize the work output from the available enthalpy in the incoming gas stream or:</p>
+<div class="math notranslate nohighlight">
+\[ \dfrac{\dot{W}}{\dot{N}_1\underline{H}_2} \]</div>
+<p>where (1) is the inlet and (2) is the outlet flow. You will see that this condition is satisfied when <span class="math notranslate nohighlight">\(\underline{H}_1 &lt;&lt; \underline{H}_2\)</span>.</p>
+<p>For ideal gases, <em>gas turbines</em>, the work is maximized when inlet pressure and temperature are large and the outlet pressure and temperature is small (i.e., the enthaply differences between inlet and outlet are maximized). These high temperatures and pressures are achieved by combining in-line compression with combustion to heat and pressurize the air prior to expansion across the turbine. The <a class="reference external" href="https://www.energy.gov/fecm/how-gas-turbine-power-plants-work">Department of Energy (DOE)</a> operates a funding program that has raised the operating temperature of metals within Turbines to exceed <span class="math notranslate nohighlight">\(800^{o} C\)</span>. Gas turbines are currently playing a critical role in the push to move away from coal-fired power plants.</p>
+<p>For steam, <em>steam turbines</em>, the goal of the designer is similar to that of <em>gas turbines</em> with the caveat that significant condensation of the steam must be avoided within the turbine (steam quality must exceed 90% for the turbine to operate safely). Therefore, high inlet temperatures and pressures are desired. These pressures are achieved by optimizing the combustion within boilers where high pressure water is fed into a combustion chamber and vaporized to form super-heated steam at high pressures. Typical temperatures achievable in modern boilers exceed <span class="math notranslate nohighlight">\(600^{o}C\)</span> and pressures approach <span class="math notranslate nohighlight">\(50\)</span> bar.</p>
+<p>An <em>adiabatic turbine</em> is said to be well-designed if it fulfills the common assumptions below.</p>
+<section id="id1">
+<h3>Common Assumptions for an Adiabatic Compressor:<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>reversible operation</p></li>
+<li><p>adiabatic (well-insulated/designed)</p></li>
+<li><p>operates at a steady state</p></li>
+<li><p>Kinetic and potential energy changes are negligible</p></li>
+<li><p>Operates on a single gaseous phase - no condensation within a turbine is permissible</p></li>
+</ul>
+</section>
+<section id="id2">
+<h3>Simplified Mass, Energy, and Entropy Balance Expressions:<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Mass Balance Simplifies to:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\dot{N}_1=\dot{N}_2\]</div>
+<ol class="arabic simple" start="2">
+<li><p>Energy Balance Simplifies to:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\dot{W}_s=\dot{N}_1\big(\underline{H}_2-\underline{H}_1\big)\]</div>
+<ol class="arabic simple" start="3">
+<li><p>Entropy Balance Simplifies to:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\underline{S}_2=\underline{S}_1\]</div>
+<div class="alert alert-block alert-warning">
+<b>Note:</b> The design equations for the compressor and turbine are the same.
+</div>
+</section>
+</section>
+<section id="pumps">
+<span id="unitop-pump"></span><h2>Pumps<a class="headerlink" href="#pumps" title="Link to this heading">#</a></h2>
+<p>Pumps handle liquids and can be used for a variety of purposes including increasing the velocity, elevation, or the pressure of a liquid. In pumps, the density of the fluid remains unchanged due to the compression because fluids are incompressible. Therefore, the enthalpy change as a result of a pump is dominated by the pressure change of that fluid.</p>
+<a class="reference internal image-reference" href="Ch8/211_Content/Ch3/images/UnitOperation-Pump.png"><img alt="Ch8/211_Content/Ch3/images/UnitOperation-Pump.png" src="Ch8/211_Content/Ch3/images/UnitOperation-Pump.png" style="width: 300px;" /></a>
+<p>The efficiency of a pump is determined by how much pressure can be achieved out the outlet for a given amount of input work. While their design is complex and they are sensitive to inlet conditions, pumps routinely achieve pseudo-reversible pressure increases. A major challenge for pumps is avoiding <em>caviation</em>, which is the formation of vacuum cavities in a continuous fluid. These vacuum <em>bubbles</em> can cause damage to the pump and efficiency losses.</p>
+<section id="common-assumptions">
+<h3>Common Assumptions:<a class="headerlink" href="#common-assumptions" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>reversible operation</p></li>
+<li><p>adiabatic (well-insulated/designed)</p></li>
+<li><p>operates at a steady state</p></li>
+<li><p>Kinetic and potential energy changes are negligible - this will only be true in this class.</p></li>
+<li><p>Operates on a single liquid phase - no vaporization within a pump is permissible</p></li>
+</ul>
+</section>
+<section id="simplified-mass-energy-and-entropy-balance-expressions-for-assumptions-above">
+<h3>Simplified Mass, Energy, and Entropy Balance Expressions for Assumptions Above:<a class="headerlink" href="#simplified-mass-energy-and-entropy-balance-expressions-for-assumptions-above" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Mass Balance Simplifies to:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\dot{N}_1=\dot{N}_2\]</div>
+<ol class="arabic simple" start="2">
+<li><p>Energy Balance Simplifies to:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\dot{W}_s=\dot{N}_1\big(\underline{H}_2-\underline{H}_1\big)\approx \dot{N}\underline{V}\big(P_2-P_1\big)\]</div>
+<ol class="arabic simple" start="3">
+<li><p>Entropy Balance Simplifies to:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\underline{S}_2=\underline{S}_1\]</div>
+<div class="alert alert-block alert-warning">
+<b>Note:</b> The design equation for pumps is almost identical to that of turbines and compressors but with the enthalpy change for the liquid depending mainly on the difference in pressure from the outlet to the inlet due to the fluids incompressible nature. 
+</div>
+</section>
+</section>
+<section id="throttle-valves">
+<span id="unitop-throttle-valve"></span><h2>Throttle Valves<a class="headerlink" href="#throttle-valves" title="Link to this heading">#</a></h2>
+<p>Throttle valves are commonly used to rapidly and <em>isoenthalpically</em> decrease the temperature and pressure of a high pressure vapor.</p>
+<a class="reference internal image-reference" href="Ch8/211_Content/Ch3/images/UnitOperation-ThrottleValve.png"><img alt="Ch8/211_Content/Ch3/images/UnitOperation-ThrottleValve.png" src="Ch8/211_Content/Ch3/images/UnitOperation-ThrottleValve.png" style="width: 400px;" /></a>
+<p>Throttle valves have a relatively simple operation and in this class they are commonly used to perform <em>liquefaction</em> or making a saturated liquid. This is useful for a variety of purposes and we will see throttle valves appear both in refrigerators and in liquefaction applications.</p>
+<section id="id3">
+<h3>Common Assumptions:<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>adiabatic (well-insulated/designed)</p></li>
+<li><p>operates at a steady state</p></li>
+<li><p>Kinetic and potential energy changes are negligible - this will only be true in this class.</p></li>
+<li><p>Operates on a single liquid phase - no vaporization within a pump is permissible</p></li>
+<li><p>Connected to a flash drum where the condensate is collected</p></li>
+</ul>
+</section>
+<section id="id4">
+<h3>Simplified Mass, Energy, and Entropy Balance Expressions for Assumptions Above:<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Mass Balance Simplifies to:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\dot{N}_1=\dot{N}_2\]</div>
+<ol class="arabic simple" start="2">
+<li><p>Energy Balance Simplifies to:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\underline{H}_2=\underline{H}_1\]</div>
+<ol class="arabic simple" start="3">
+<li><p>Entropy Balance Simplifies to:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[0=\dot{N}_1\big(\underline{S}_2-\underline{S}_1\big)+\dot{S}_{gen}\]</div>
+<div class="alert alert-block alert-warning">
+<b>Note:</b> The design equations for a throttle valve emphasize that the process is isoenthalpic and one can anticipate large amounts of entropy generation!
+</div></section>
+</section>
+<section id="heat-exchangers">
+<span id="unitop-heatexchanger"></span><h2>Heat Exchangers<a class="headerlink" href="#heat-exchangers" title="Link to this heading">#</a></h2>
+<p>Heat exhangers use the thermal contact between two fluids/gases to change their temperature. This can be for both heating and cooling applications, but the general process is schematically represented below.</p>
+<a class="reference internal image-reference" href="Ch8/211_Content/Ch3/images/UnitOperation-HeatExchanger.png"><img alt="Ch8/211_Content/Ch3/images/UnitOperation-HeatExchanger.png" src="Ch8/211_Content/Ch3/images/UnitOperation-HeatExchanger.png" style="width: 400px;" /></a>
+<p>The design of heat exchangers is a paricularly important area of chemical engineering and we will only mention their role here in the context of liquefaction. You will learn much more in <em>Heat Transfer</em></p>
+<section id="id5">
+<h3>Common Assumptions:<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>operates at a steady state</p></li>
+<li><p>Kinetic and potential energy changes are negligible - this will only be true in this class.</p></li>
+<li><p>Operates on a two single phase fluids - generally without phase change, but this is not always the case</p></li>
+</ul>
+</section>
+<section id="id6">
+<h3>Simplified Mass, Energy, and Entropy Balance Expressions for Assumptions Above:<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Mass Balance Simplifies to:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\dot{N}_1=\dot{N}_2; \dot{N}_3=\dot{N}_4\]</div>
+<ol class="arabic simple" start="2">
+<li><p>Energy Balance Simplifies to:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\dot{N}_3\big(\underline{H}_4-\underline{H}_3\big)=\dot{N}_1\big(\underline{H}_2-\underline{H}_1\big)\]</div>
+<ol class="arabic simple" start="3">
+<li><p>Entropy Balance Simplifies to:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[0=\dot{N}_3\big(\underline{S}_4-\underline{S}_3\big)+\dot{N}_1\big(\underline{S}_2-\underline{S}_1\big)+\dfrac{\dot{Q}}{T_b}+\dot{S}_{gen}\]</div>
+<p>In the above <span class="math notranslate nohighlight">\(T_b\)</span> is the bulk temperature of the heat exchanged between the two fluids during their interaction.</p>
+</section>
+</section>
+<section id="boilers">
+<span id="unitop-boilers"></span><h2>Boilers<a class="headerlink" href="#boilers" title="Link to this heading">#</a></h2>
+<p>Boilers use heat exchangers to boil a liquid fed into a flash drum. Boilers operate <em>isobarically</em> with the phase change occuring within the system and the output is typically a supersaturated vapor.</p>
+<a class="reference internal image-reference" href="Ch8/211_Content/Ch3/images/UnitOperation-Boiler.png"><img alt="Ch8/211_Content/Ch3/images/UnitOperation-Boiler.png" src="Ch8/211_Content/Ch3/images/UnitOperation-Boiler.png" style="width: 400px;" /></a>
+<p>The goal of boilers is to fully utilize all the input thermal energy from the heat exchanger to transform a liquid to a vapor with a desired outlet temperature and pressure.</p>
+<section id="id7">
+<h3>Common Assumptions:<a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>operates at a steady state</p></li>
+<li><p>Kinetic and potential energy changes are negligible - this will only be true in this class.</p></li>
+<li><p><em>isobaric operation</em> within phase change within the system</p></li>
+</ul>
+</section>
+<section id="id8">
+<h3>Simplified Mass, Energy, and Entropy Balance Expressions for Assumptions Above:<a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Mass Balance Simplifies to:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\dot{N}_1=\dot{N}_2\]</div>
+<ol class="arabic simple" start="2">
+<li><p>Energy Balance Simplifies to:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\dot{Q}=\dot{N}_1\big(\underline{H}_2-\underline{H}_1\big)\]</div>
+<ol class="arabic simple" start="3">
+<li><p>Entropy Balance Simplifies to:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[0=\dot{N}_1\big(\underline{S}_2-\underline{S}_1\big)+\dfrac{\dot{Q}}{T_b}+\dot{S}_{gen}\]</div>
+<p>In the above <span class="math notranslate nohighlight">\(T_b\)</span> is the bulk temperature of the heat exchanged between the two fluids during their interaction.</p>
+</section>
+</section>
+<section id="condenser">
+<span id="id9"></span><h2>Condenser<a class="headerlink" href="#condenser" title="Link to this heading">#</a></h2>
+<p>Condensers use coolant to condense low pressure vapor fed into the inlet. Condensers operate <em>isobarically</em> with the phase change occuring within the system and the output is typically a saturated liquid.</p>
+<a class="reference internal image-reference" href="Ch8/211_Content/Ch3/images/UnitOperation-Condenser.png"><img alt="Ch8/211_Content/Ch3/images/UnitOperation-Condenser.png" src="Ch8/211_Content/Ch3/images/UnitOperation-Condenser.png" style="width: 400px;" /></a>
+<p>The goal of condensers is to efficiently extract heat from the vapor so that it can be recycled back into a closed process. Condensers typically operate using cooling water from natural streams/rivers and in larger scale power plants the heat the water gains must be exhausted to the atmosphere prior to the water being returned to the environment. To accomplish this, often the cooling water is fed into a cooling tower which sprays hot water droplets, causing them to fall. During their fall, a small fraction of the water evaporates cooling the remainder of the water in the tower to permissible temperatures.</p>
+<section id="id10">
+<h3>Common Assumptions:<a class="headerlink" href="#id10" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>operates at a steady state</p></li>
+<li><p>Kinetic and potential energy changes are negligible - this will only be true in this class.</p></li>
+<li><p><em>isobaric operation</em> within phase change occuring from a vapor to a liquid phase.</p></li>
+</ul>
+</section>
+<section id="id11">
+<h3>Simplified Mass, Energy, and Entropy Balance Expressions for Assumptions Above:<a class="headerlink" href="#id11" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Mass Balance Simplifies to:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\dot{N}_1=\dot{N}_2\]</div>
+<ol class="arabic simple" start="2">
+<li><p>Energy Balance Simplifies to:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\dot{Q}=\dot{N}_1\big(\underline{H}_2-\underline{H}_1\big)\]</div>
+<ol class="arabic simple" start="3">
+<li><p>Entropy Balance Simplifies to:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[0=\dot{N}_1\big(\underline{S}_2-\underline{S}_1\big)+\dfrac{\dot{Q}}{T_b}+\dot{S}_{gen}\]</div>
+<p>In the above <span class="math notranslate nohighlight">\(T_b\)</span> is the bulk temperature of the heat transfered to the fluid within the boiler.</p>
+<div class="alert alert-block alert-warning">
+<b>Note:</b> The design equations heat exchangers, boilers, condensors, and evaporators all are very similar
+</div>
+</section>
+</section>
+<section id="evaporators">
+<span id="id12"></span><h2>Evaporators<a class="headerlink" href="#evaporators" title="Link to this heading">#</a></h2>
+<p>Boilers use heat to boil a liquid fed into the inlet. Boilers operate <em>isobarically</em> with the phase change occuring within the system and the output is typically a supersaturated vapor.</p>
+<a class="reference internal image-reference" href="Ch8/211_Content/Ch3/images/UnitOperation-Boiler.png"><img alt="Ch8/211_Content/Ch3/images/UnitOperation-Boiler.png" src="Ch8/211_Content/Ch3/images/UnitOperation-Boiler.png" style="width: 400px;" /></a>
+<p>The goal of boilers is to fully utilize all the input thermal energy to transform a liquid to a vapor with a desired outlet temperature and pressure.</p>
+<section id="id13">
+<h3>Common Assumptions:<a class="headerlink" href="#id13" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>operates at a steady state</p></li>
+<li><p>Kinetic and potential energy changes are negligible - this will only be true in this class.</p></li>
+<li><p><em>isobaric operatin</em> within phase change within the system</p></li>
+</ul>
+</section>
+<section id="id14">
+<h3>Simplified Mass, Energy, and Entropy Balance Expressions for Assumptions Above:<a class="headerlink" href="#id14" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Mass Balance Simplifies to:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\dot{N}_1=\dot{N}_2; \dot{N}_3=\dot{N}_4\]</div>
+<ol class="arabic simple" start="2">
+<li><p>Energy Balance Simplifies to:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\dot{N}_3\big(\underline{H}_4-\underline{H}_3\big)=\dot{N}_1\big(\underline{H}_2-\underline{H}_1\big)\]</div>
+<ol class="arabic simple" start="3">
+<li><p>Entropy Balance Simplifies to:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[0=\dot{N}_1\big(\underline{S}_2-\underline{S}_1\big)+\dfrac{\dot{Q}}{T_b}+\dot{S}_{gen}\]</div>
+<p>In the above <span class="math notranslate nohighlight">\(T_b\)</span> is the bulk temperature of the heat transfered to the fluid within the boiler.</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "executablebooks/jupyter-book",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./Ch8\211_Content\Ch3"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unit-operations-summarized">Unit Operations Summarized:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#compressors">Compressors</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#common-assumptions-for-an-adiabatic-compressor">Common Assumptions for an Adiabatic Compressor:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simplified-mass-energy-and-entropy-balance-expressions">Simplified Mass, Energy, and Entropy Balance Expressions:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#turbines">Turbines</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Common Assumptions for an Adiabatic Compressor:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Simplified Mass, Energy, and Entropy Balance Expressions:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pumps">Pumps</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#common-assumptions">Common Assumptions:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simplified-mass-energy-and-entropy-balance-expressions-for-assumptions-above">Simplified Mass, Energy, and Entropy Balance Expressions for Assumptions Above:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#throttle-valves">Throttle Valves</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Common Assumptions:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Simplified Mass, Energy, and Entropy Balance Expressions for Assumptions Above:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#heat-exchangers">Heat Exchangers</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Common Assumptions:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Simplified Mass, Energy, and Entropy Balance Expressions for Assumptions Above:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boilers">Boilers</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Common Assumptions:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Simplified Mass, Energy, and Entropy Balance Expressions for Assumptions Above:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#condenser">Condenser</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">Common Assumptions:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">Simplified Mass, Energy, and Entropy Balance Expressions for Assumptions Above:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#evaporators">Evaporators</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">Common Assumptions:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">Simplified Mass, Energy, and Entropy Balance Expressions for Assumptions Above:</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By J. J. Richards
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

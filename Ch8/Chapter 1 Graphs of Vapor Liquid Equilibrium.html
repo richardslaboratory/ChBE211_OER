@@ -1,0 +1,626 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Chapter 1 &#8212; Introduction to Thermodynamics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Ch8/Chapter 1 Graphs of Vapor Liquid Equilibrium';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Introduction to Thermodynamics - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Introduction to Thermodynamics - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Foreword
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Definitions and Balance Expressions</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Ch1/1.Thermodynamic-Definitions.html">Thermodynamic Definitions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch1/2.Real-Gas-Properties.html">Real Gas Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch1/3.Equations-of-State.html">Equations of State</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch1/4.Balance-Expressions.html">Macroscopic Balance Expressions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch1/5.Conservation-of-Mass.html">Conservation of Mass</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Foundations of Thermodynamics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Ch2/1.Conservation-of-Energy.html">Conservation of Energy and the 1st Law of Thermodynamics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch2/2.Expansion-of-a-Gas.html">Expansion of a Gas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch2/3.Entropy-Balance-Expression.html">Balance Expression for Entropy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch2/4.Entropy-at-0K.html">Entropy at 0K</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch2/5.Free-Energies.html">Free Energy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch2/6.Changes-of-State.html">Changes of State</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Applications of Thermodynamics in Chemical Engineering</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Ch3/1.Unit-Operations.html">Unit Operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch3/2.Property-Diagram-Single-Components.html">Property Database for Common Substances</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch3/3.Heat-Engines.html">Heat Engines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch3/4.Refrigeration.html">Refrigeration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch3/5.Liquefaction.html">Liquefaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch3/6.Optimizing-with-Python.html">Optimizing with Python</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Vapor-Liquid Equilibrium for Non-Ideal Gases</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Ch4/1.Deriving-Useful-Thermodynamic-Relationships.html">Deriving Useful Thermodynamic Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch4/2.Virial-Equations-of-State.html">Volumetric Equations of State</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch4/3.Law-of-Corresponding-States.html">Law of Corresponding States and Critical Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch4/4.Thermal-Variables-from-EOS.html">Computing Thermal Variables from an Equation of State</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../Ch4/7.Constructing-Property-Diagrams.html">Constructing Property Diagrams</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Thermodynamics of Mixtures</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Ch5/1.Introduction-to-Mixtures.html">Introduction to Mixtures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch5/3.Gaseous-Mixtures.html">Gaseous Mixtures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch5/4.Liquid-Mixtures.html">Liquid Mixtures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch5/5.Accuracy-EOS.html">Calculating the Accuracy of Equations of State</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch7/7.Activity-Coefficient-Models.html">Activity Coefficients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch7/8.Calculating-Mixture-Fugacity.html">Vapor-Liquid Equilibrium</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch7/9.Mixture-Equilibrium.html">Equilibrium of Mixtures</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Exercises</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Exercises/Ch1.html">Exercises for Chapter 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Exercises/Ch2.html">Exercises for Chapter 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Exercises/Ch3.html">Exercises for Chapter 3</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/Ch8/Chapter 1 Graphs of Vapor Liquid Equilibrium.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Chapter 1</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#different-types-of-separations">Different types of Separations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#foundational-data-and-graphs-of-vapor-liquid-equilibrium">Foundational data and graphs of vapor-liquid equilibrium</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#x-y-diagrams">x-y diagrams</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#t-x-y-diagrams">T-x-y diagrams</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#p-x-y-diagrams">P-x-y diagrams</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-take-aways">Key Take Aways</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="chapter-1">
+<h1>Chapter 1<a class="headerlink" href="#chapter-1" title="Link to this heading">#</a></h1>
+<section id="different-types-of-separations">
+<h2>Different types of Separations<a class="headerlink" href="#different-types-of-separations" title="Link to this heading">#</a></h2>
+<p>Engineers need to separate many types of mixtures to achieve multiple purposes.  One of the most common purposes is to remove a saleable product from a solvent or mixture of multiple products.  Another purpose could be to remove a pollutant or toxin from a waste stream.</p>
+<p>In this course, we will focus on separating:</p>
+<ul class="simple">
+<li><p>liquids from vapors</p></li>
+<li><p>liquids from liquids</p></li>
+</ul>
+<p>To achieve these types of separations, it is essential to exploit properties such as boiling point and solubility.</p>
+<p>It is important to understand these properties of mixtures at the operating conditions of a chemical process.  Mixtures exhibit different properties depending on which components are present and the temperature and pressure of the system.</p>
+<p>We will begin our exploration of separations by considering separations of liquids and vapors.  To achieve these separations, it is important to understand how a given mixture behaves at equilibrium conditions.</p>
+</section>
+<section id="foundational-data-and-graphs-of-vapor-liquid-equilibrium">
+<h2>Foundational data and graphs of vapor-liquid equilibrium<a class="headerlink" href="#foundational-data-and-graphs-of-vapor-liquid-equilibrium" title="Link to this heading">#</a></h2>
+<p>There are three foundational graphs we will apply in our exploration of vapor-liquid equilibrium:</p>
+<ul class="simple">
+<li><p>x-y</p></li>
+<li><p>T-x-y</p></li>
+<li><p>P-x-y</p></li>
+</ul>
+<p>In exploring these graphs, we will rely on data from the [Dortmund Databank] (<a class="reference external" href="http://www.ddbst.com/free-data.html">http://www.ddbst.com/free-data.html</a>)</p>
+<section id="x-y-diagrams">
+<h3>x-y diagrams<a class="headerlink" href="#x-y-diagrams" title="Link to this heading">#</a></h3>
+<p>Here is an example of an x-y diagram for acetonitrile and 1-butanol at 101.325 kPa.
+<img alt="VLE%20Acetonitrile.png" src="Ch8/attachment:VLE%20Acetonitrile.png" /></p>
+<p>In this diagram, for every mole fraction (x) of acetonitrile in the liquid phase (x-axis), we have its corresponding mole fraction in the vapor phase (y).  The figure tells us that the pressure is constant.</p>
+<p>What do we know about the temperature?</p>
+<p><strong>Key point: At every point on this x-y diagram the system is in equilibrium.</strong></p>
+<p>At equilibrium, the temperature and pressure in the vapor and liquid phase are equal and constant.  The Gibb’s free energies of each component in each phase are equal.  In the equations below, the superscripts I and II refer to the liquid and vapor phases.</p>
+<p><span class="math notranslate nohighlight">\(T^{I}=T^{II}\)</span></p>
+<p><span class="math notranslate nohighlight">\(P^{I}=P^{II}\)</span></p>
+<p><span class="math notranslate nohighlight">\(G_{i}^{I}=G_{i}^{II}\)</span></p>
+<p>The figure below indicates a single point (circled in pink) on this x-y diagram.  What do we know about the liquid and vapor phase compositions at this point?</p>
+<p><img alt="VLE%20Acetonitrile%20modified.png" src="Ch8/attachment:VLE%20Acetonitrile%20modified.png" /></p>
+<p>In the next figure, we have a new x-y chart for the same system, but at a temperature of 333.15 K.</p>
+<p>What do we know about the pressure of this system?  For the same spot on the diagram as is circled in chart above, what are the liquid and vapor phase compositions?  For what regions of the chart do we see the most differences in system behavior?</p>
+<p><img alt="VLE%20Acetonitrile%20second%20Temp.png" src="Ch8/attachment:VLE%20Acetonitrile%20second%20Temp.png" /></p>
+</section>
+<section id="t-x-y-diagrams">
+<h3>T-x-y diagrams<a class="headerlink" href="#t-x-y-diagrams" title="Link to this heading">#</a></h3>
+<p>The Dortmund data bank also has T-x-y diagrams for the acetonitrile/1-butanol system</p>
+<p><img alt="Acetonitrile%20TXY.png" src="Ch8/attachment:Acetonitrile%20TXY.png" /></p>
+<p>This figure is plotted at a constant temperature of 101.325 Pa.  The figure illustrates the composition of the liquid and vapor phases as the temperature is varied at this single pressure.  The lower line with points in the shape of circles is the composition of acetonitrile in the liquid phase (x).  The higher line with the points in the shape of triangles is the composition of acetonitrile in the vapor phase (y).</p>
+<p>In the figure below, the region above the vapor phase composition line is labeled as vapor.  We know that this region is fully vapor because as T increases at a constant P and the system moves into a single phase, that phase will be vapor.  On the other hand, when the temperature decreases to regions below the liquid phase composition line, the single phase present is liquid.  Between the two lines, the mixture is in two phases.</p>
+<p>Note, when the temperature and pressure of a system dictate that it is in a single phase, it is <em>not possible</em> to separate the mixture using vapor-liquid separation techniques that we will soon discuss, like flash tanks and distillation columns.  Temperature and pressure must be chosen for any one mixture to enable vapor-liquid separation.</p>
+<p><img alt="Acetonitrile%20TXY%20labeled.png" src="Ch8/attachment:Acetonitrile%20TXY%20labeled.png" /></p>
+<p>The concept of a <strong>tie line</strong> is important to apply with T-x-y diagrams.</p>
+<p>A tie line is drawn at a temperature of 362 K in the figure below.  The points of intersection of the tie line with the vapor and liquid curves tell us the vapor and liquid composition of the mixture at this temperature (and the pressure, which is constant and known for T-x-y diagrams).  In this figure, the tie line is at a temperature of 362 K. The mole fraction of acetonitrile in the liquid phase is about 0.45 at this temperature. The mole fraction of acetonitrile in the vapor phase is 0.8.</p>
+<p>What are the liquid and vapor phase mole fractions of 1-butanol?</p>
+<p>What temperature was the first x-y diagram plotted at?</p>
+<p>T-x-y diagrams tell us when to expect phase changes as a system moves across a range of temperatures at a constant pressure.  The T-x-y diagram can tell us which component is “lighter” or boils at a lower temperature at the pressure of the diagram.  Look at the T-x-y diagram for acetonitrile and 1-butanol above.  Which component would you guess has a lower boiling point?</p>
+<p>As a hint, consider what happens when the system <em>only</em> contains acetonitrile in the liquid phase such that x=1.  The system transitions to vapor at about 355 K.  On the other hand, when x=0 and the system only contains 1-butanol, the system would transition to vapor at 390 K.</p>
+<p>Therefore, acetonitrile is the more volatile component.  In fact, at 101.325 kPa (or 1 atm) acetonitrile’s boiling point is 355 K; 1-butanol’s is 390 K.</p>
+<p>What we really need T-x-y diagrams for is to tell us, for a system at a constant pressure and let’s say a fixed liquid phase composition, what temperature do we need to be at to get to a two-phase system that is separable at all.  We can also use it to tell us what temperature we need to get to to achieve a target composition in the liquid and vapor phase.  This information is important for chemical engineers who need to produce, for example, products at a certain purity so that they can be sold or further processed.</p>
+<p>Let’s say we start with an acetonitrile, 1-butanol system at 360 K and a liquid phase composition of 0.3 mol acetonitrile/mol liquid phase.  The hollow orange circle on the chart below marks this point. When <span class="math notranslate nohighlight">\(x_{acetonitrile}\)</span> is 0.3 at this temperature, the system is entirely liquid.  As the temperature heats up at constant composition, at T=366K, the system enters the two phase region.  With the tie line, we know at equilibrium at this temperature, when <span class="math notranslate nohighlight">\(x_{acetonitrile}\)</span> is 0.3, <span class="math notranslate nohighlight">\(y_{acetonitrile}\)</span> is 0.7.  What do we know about <span class="math notranslate nohighlight">\(x_{1-butanol}\)</span> and <span class="math notranslate nohighlight">\(y_{1-butanol}\)</span>?  <em>Remember that in each phase, the sum of mole fractions must equal 1.</em></p>
+<p>The point where the x-phase composition line is reached at a constant liquid phase composition is called the <strong>bubble point</strong>.  Before that temperature is reached, the only phase is <em>liquid</em> but at that temperature, the very first bubble forms and the system becomes two-phase.  The x-composition line is in fact connecting all the bubble points of the system as the liquid phase mole fraction goes from 0 to 1.</p>
+<p><img alt="TXY_lowT.jpg" src="Ch8/attachment:TXY_lowT.jpg" /></p>
+<p>What if we want a higher mole fraction of 1-butanol in the vapor phase upon separation?  1-butanol is the less volatile component. To push more of it into the vapor phase, we need to increase the temperature beyond 366 K.  Let’s try 382 K.</p>
+<p><img alt="TXY_highT.jpg" src="Ch8/attachment:TXY_highT.jpg" /></p>
+<p>At this temperature, we achieve a vapor phase mole fraction of acetonitrile of 0.3, which means that the vapor phase mole fraction of 1-butanol is 0.7. Do we need to start at a mole fraction of 0.3 at 366 K to achieve this composition?  No, an acetonitrile, 1-butanol system at 101.325 kPa and 382 K will always have this equilibrium concentration, regardless of the starting composition.</p>
+<p>Another key concept to understand about T-x-y diagrams is the <strong>dew point</strong>.  At a constant mole fraction in the vapor region, as the temperature decreases at a constant pressure, eventually, the first drop of a liquid will appear and the system becomes two phases.  The figure below depicts the dew point at a vapor phase composition of acetonitrile of 0.6.</p>
+<p><img alt="TXY_Dew.jpg" src="Ch8/attachment:TXY_Dew.jpg" /></p>
+<p>From a T-x-y diagram we can plot an x-y diagram at a constant pressure.  For the acetonitrile, 1-butanol system we have been considering at 101.325 kPa, if we consider all the tie lines, we will see the relationship between the points these tie lines connect and the points on the x-y plot.  In the T-x-y chart below, the tie line at 366 indicates that at this temperature and 101.325 kPa, the equilibrium composition has a liquid phase acetonitrile mole fraction of 0.3 and a vapor phase acetonitrile mole fraction of 0.7.  These points are marked on the T-x-y diagram with orange circles.  The corresponding point on the x-y diagram is indicated with an orange circle.  Because we have the T-x-y chart available, we know that this equilibrium composition occurs at a temparture of 366 K.</p>
+<p><img alt="TXY_XY.jpg" src="Ch8/attachment:TXY_XY.jpg" /></p>
+</section>
+<section id="p-x-y-diagrams">
+<h3>P-x-y diagrams<a class="headerlink" href="#p-x-y-diagrams" title="Link to this heading">#</a></h3>
+<p>The final graph type we will cover is P-x-y diagrams, which are drawn at a fixed temperature.  The P-x-y for the same acetonitrile, 1-butanol system we’ve been considering is below.  Note the temperature is constant at T = 333.15 K.  With the temperature held constant, regions of higher pressure will be in the liquid phase, so the upper left side of the figure that is single-phase is labeled as being in the liquid phase and lies above the liquid phase composition line (denoted with circles).  At lower pressures, the system will be in a single vapor phase.  This region is in the lower right corner, below the vapor phase composition line (denoted with triangles).  In between the two composition lines is the two-phase region.  Tie lines tell us, at a constant pressure, what the composition in the liquid and vapor phases is.  Take a moment to determine what the vapor and liquid phase compositions are at 24 kPa in the diagram below.</p>
+<p><img alt="Pxy%20Labeled.jpg" src="Ch8/attachment:Pxy%20Labeled.jpg" /></p>
+<p>Just as with the T-x-y diagram, it is possible to identify <strong>bubble and dew points</strong> on a P-x-y diagram.  The bubble point occurs when a system that is liquid phase only decreases in pressure such that a single bubble of gas forms.   The dew point occurs when a system is in a single, vapor phase and the pressure increases to the point where the first drop of liquid forms.</p>
+<p>In the figure below, the bubble point at an initial composition of 0.2 mole fraction acetonitrile in the liquid phase is shown at a pressure of 28 kPa, where the liquid phase composition line intersects the constant x=0.2 line.  We know from the tie line what the vapor phase composition is at the bubble point.  An analagous figure could be drawn for the dew point if we started at a vapor phase mole fraction of acetonitrile of 0.2 and 8 kPa.  The dew point would occur just at about 12 kPa.</p>
+<p><img alt="pXY_bubble.jpg" src="Ch8/attachment:pXY_bubble.jpg" /></p>
+</section>
+<section id="key-take-aways">
+<h3>Key Take Aways<a class="headerlink" href="#key-take-aways" title="Link to this heading">#</a></h3>
+<p>In this chapter we have reviewed three types of vapor-liquid equilibrium diagrams.  These diagrams help us understand the properties of systems we are trying to separate.  In particular, they help us understand the conditions at which the system contains two phases, which is necessary if we are to separate a binary system based on it separating into phases.</p>
+<ul class="simple">
+<li><p>x-y diagrams tell us equilibrium compositions at either a set T or P.</p></li>
+<li><p>T-x-y and P-x-y diagrams tell us where we will have a two-phase region and what equilibrium compositions will be</p></li>
+<li><p>We can determine bubble and dew points from T-x-y and P-x-y diagrams.</p></li>
+<li><p>For a given system, there are interrelationships among the diagrams.</p></li>
+</ul>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "executablebooks/jupyter-book",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./Ch8"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#different-types-of-separations">Different types of Separations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#foundational-data-and-graphs-of-vapor-liquid-equilibrium">Foundational data and graphs of vapor-liquid equilibrium</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#x-y-diagrams">x-y diagrams</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#t-x-y-diagrams">T-x-y diagrams</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#p-x-y-diagrams">P-x-y diagrams</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-take-aways">Key Take Aways</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By J. J. Richards
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,938 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Thermodynamics of Mixtures &#8212; Introduction to Thermodynamics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Ch8/Chapter 2 Thermodynamics of Equilibrium';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Introduction to Thermodynamics - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Introduction to Thermodynamics - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Foreword
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Definitions and Balance Expressions</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Ch1/1.Thermodynamic-Definitions.html">Thermodynamic Definitions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch1/2.Real-Gas-Properties.html">Real Gas Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch1/3.Equations-of-State.html">Equations of State</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch1/4.Balance-Expressions.html">Macroscopic Balance Expressions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch1/5.Conservation-of-Mass.html">Conservation of Mass</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Foundations of Thermodynamics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Ch2/1.Conservation-of-Energy.html">Conservation of Energy and the 1st Law of Thermodynamics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch2/2.Expansion-of-a-Gas.html">Expansion of a Gas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch2/3.Entropy-Balance-Expression.html">Balance Expression for Entropy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch2/4.Entropy-at-0K.html">Entropy at 0K</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch2/5.Free-Energies.html">Free Energy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch2/6.Changes-of-State.html">Changes of State</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Applications of Thermodynamics in Chemical Engineering</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Ch3/1.Unit-Operations.html">Unit Operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch3/2.Property-Diagram-Single-Components.html">Property Database for Common Substances</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch3/3.Heat-Engines.html">Heat Engines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch3/4.Refrigeration.html">Refrigeration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch3/5.Liquefaction.html">Liquefaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch3/6.Optimizing-with-Python.html">Optimizing with Python</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Vapor-Liquid Equilibrium for Non-Ideal Gases</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Ch4/1.Deriving-Useful-Thermodynamic-Relationships.html">Deriving Useful Thermodynamic Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch4/2.Virial-Equations-of-State.html">Volumetric Equations of State</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch4/3.Law-of-Corresponding-States.html">Law of Corresponding States and Critical Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch4/4.Thermal-Variables-from-EOS.html">Computing Thermal Variables from an Equation of State</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../Ch4/7.Constructing-Property-Diagrams.html">Constructing Property Diagrams</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Thermodynamics of Mixtures</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Ch5/1.Introduction-to-Mixtures.html">Introduction to Mixtures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch5/3.Gaseous-Mixtures.html">Gaseous Mixtures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch5/4.Liquid-Mixtures.html">Liquid Mixtures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch5/5.Accuracy-EOS.html">Calculating the Accuracy of Equations of State</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch7/7.Activity-Coefficient-Models.html">Activity Coefficients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch7/8.Calculating-Mixture-Fugacity.html">Vapor-Liquid Equilibrium</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch7/9.Mixture-Equilibrium.html">Equilibrium of Mixtures</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Exercises</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Exercises/Ch1.html">Exercises for Chapter 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Exercises/Ch2.html">Exercises for Chapter 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Exercises/Ch3.html">Exercises for Chapter 3</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/Ch8/Chapter 2 Thermodynamics of Equilibrium.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Thermodynamics of Mixtures</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Thermodynamics of Mixtures</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#characteristics-of-equilibrium">Characteristics of Equilibrium</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#defining-fugacity">Defining Fugacity</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#methods-to-determine-fugacities-in-mixtures">Methods to Determine Fugacities in Mixtures</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#equations-of-state-eos">Equations of State (EOS)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mixtures-may-or-may-not-be-ideal">Mixtures May or May Not Be Ideal</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#partial-molar-properties">Partial Molar Properties</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#excess-mixing-properties-account-for-differences-between-ideal-and-real-mixtures">Excess Mixing Properties Account for Differences Between Ideal and Real Mixtures</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-volume-at-constant-t-and-p">Example: Volume at Constant T and P</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ideal">Ideal:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#real">Real:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#at-equilibrium-gibbs-free-energies-of-each-phase-are-equal">At equilibrium: Gibbs free energies of each phase are equal</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#fugacity-of-a-single-component-in-multicomponent-systems">Fugacity of a Single Component in Multicomponent Systems</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#when-compressability-is-approximately-linear-as-a-function-of-mole-fraction-use-lewis-randall-rule-for-vapor-phase-fugacity">When compressability is approximately linear as a function of mole fraction use, Lewis-Randall Rule for vapor phase fugacity</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#alternative-use-truncated-virial-eos-for-dilute-gases">Alternative: Use Truncated Virial EOS for dilute gases</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-single-component-fugacity-vapor-phase">Summary: single component fugacity, vapor phase</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#liquids">Liquids</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#key-concept-activity-coefficient">Key Concept: Activity Coefficient</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#fugacity-coefficients-also-relate-to-excess-gibbs-free-energy">Fugacity Coefficients Also Relate to Excess Gibbs Free Energy</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#liquid-mixtures">Liquid Mixtures</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-system">Simple system</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-complex-systems">More complex systems</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-do-we-need-so-many-models">Why do we need so many models?</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#key-points-about-uniquac-and-unifac">Key Points about UNIQUAC and UNIFAC</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="thermodynamics-of-mixtures">
+<h1>Thermodynamics of Mixtures<a class="headerlink" href="#thermodynamics-of-mixtures" title="Link to this heading">#</a></h1>
+<section id="characteristics-of-equilibrium">
+<h2>Characteristics of Equilibrium<a class="headerlink" href="#characteristics-of-equilibrium" title="Link to this heading">#</a></h2>
+<p>At equilibrium, the following are equal for each component</p>
+<ul class="simple">
+<li><p>Temperature</p></li>
+<li><p>Pressure</p></li>
+<li><p>Fugacity</p></li>
+</ul>
+<p>We encountered pure component fugacity and fugacity coefficient in 211. As a reminder:</p>
+<p>Fugacity:
+$<span class="math notranslate nohighlight">\(f = P\,exp\left \{ \frac{\underline{G}(T,P)-\underline{G}^{IG}(T,P)}{RT} \right \} \\ = P\,exp\left \{ \frac{1}{RT}\int_{0}^{P}\left ( \underline{V} - \frac{RT}{P}dP \right ) \right \}\)</span>$</p>
+<p>Fugacity Coefficient:
+$<span class="math notranslate nohighlight">\(\Phi = \frac{f}{P}= exp\left \{ \frac{\underline{G}(T,P)-\underline{G}^{IG}(T,P)}{RT} \right \} \\= exp\left \{ \frac{1}{RT}\int_{0}^{P}\left ( \underline{V} - \frac{RT}{P}dP \right ) \right \}\)</span>$</p>
+<p>Yet, in these sytems, x = 1 and y = 1. The question was just how much of the pure component was in each phase.</p>
+</section>
+<section id="defining-fugacity">
+<h2>Defining Fugacity<a class="headerlink" href="#defining-fugacity" title="Link to this heading">#</a></h2>
+<p>Oxford Dictionary: Fugacity is a thermodynamic property of a <em>real gas</em> which if <strong>substituted</strong> for the pressure or partial pressure in the equations for an ideal gas gives equations applicable to the real gas</p>
+<p>From 211: It is not immediately obvious how equilibrium conditions are determine from a volumetric equation of state. We needed something else to make this connection. Hence, the concept of fugacity was invented. Fugacity is a mathematical relationship representing how fugitive (volatile) a fluid is.</p>
+</section>
+<section id="methods-to-determine-fugacities-in-mixtures">
+<h2>Methods to Determine Fugacities in Mixtures<a class="headerlink" href="#methods-to-determine-fugacities-in-mixtures" title="Link to this heading">#</a></h2>
+<p>There are three methods we can use to determine fugacities in mixtures:</p>
+<ul class="simple">
+<li><p>Equations of State</p></li>
+<li><p>Data</p></li>
+<li><p>Predictive Models</p></li>
+</ul>
+<section id="equations-of-state-eos">
+<h3>Equations of State (EOS)<a class="headerlink" href="#equations-of-state-eos" title="Link to this heading">#</a></h3>
+<p>Equations of state relate <strong>state variables: P, T, V</strong>. They have undergone many changes and advancements to better characterize chemical behavior. In the case of separations, EOSs need to help us understand the behavior of each component in a mixture. To do this well, they need to capture things like interactions among molecules at different conditions.</p>
+<p>Note that developing EOS is a long-standing area of research.  As Kontogeorgis et al. (2020) summarize, this research has spanned centuries (<a class="reference external" href="https://www.sciencedirect.com/science/article/pii/S259014002030006X">https://www.sciencedirect.com/science/article/pii/S259014002030006X</a>).</p>
+</section>
+</section>
+<section id="mixtures-may-or-may-not-be-ideal">
+<h2>Mixtures May or May Not Be Ideal<a class="headerlink" href="#mixtures-may-or-may-not-be-ideal" title="Link to this heading">#</a></h2>
+<p>Mixtures may or may not behave ideally. However, we can typically assume a gaseous mixture to be ideal when the system is:</p>
+<ul class="simple">
+<li><p>At low temperature (T), and low pressure (P)</p></li>
+<li><p>The mixture is very dilute; interactions among molecules do not contribute significantly to total system energy</p></li>
+</ul>
+<p>When we have an ideal mixture system, the ideal gas law applies $<span class="math notranslate nohighlight">\(PV = nRT\)</span>$</p>
+<p>Additionally, there is no change in properties upon mixing (like internal energy, etc).</p>
+<p><strong>Key point:</strong> in an ideal mixture, the partial pressure of a species is equal to its mole fraction times the total pressure <span class="math notranslate nohighlight">\(P_i = x_iP\)</span>)</p>
+<p>Unfortunately, most mixtures are not ideal. But, we still need a way to estimate their thermodynamic properties.</p>
+</section>
+<section id="partial-molar-properties">
+<h2>Partial Molar Properties<a class="headerlink" href="#partial-molar-properties" title="Link to this heading">#</a></h2>
+<p>A property that is a function of (T, P, and <span class="math notranslate nohighlight">\(\underline{x}\)</span>) is a function of temperature, pressure, and all of the mole fractions. That is, the function depends on the relative amounts of every component in a phase, not just one.</p>
+<p>The <strong>overbar</strong> on a property means it is a partial molar property.</p>
+<p>Example:
+$<span class="math notranslate nohighlight">\(V = x_1\overline{V_1} + x_2\overline{V_2}\)</span>$</p>
+</section>
+<section id="excess-mixing-properties-account-for-differences-between-ideal-and-real-mixtures">
+<h2>Excess Mixing Properties Account for Differences Between Ideal and Real Mixtures<a class="headerlink" href="#excess-mixing-properties-account-for-differences-between-ideal-and-real-mixtures" title="Link to this heading">#</a></h2>
+<section id="example-volume-at-constant-t-and-p">
+<h3>Example: Volume at Constant T and P<a class="headerlink" href="#example-volume-at-constant-t-and-p" title="Link to this heading">#</a></h3>
+<section id="ideal">
+<h4>Ideal:<a class="headerlink" href="#ideal" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Partial molar volume of i in an ideal mixture equals its molar property $<span class="math notranslate nohighlight">\(\overline{V}^{IM} = \underline{V_i}\)</span>$</p></li>
+<li><p>Change in volume upon mixing of multiple components is 0
+$<span class="math notranslate nohighlight">\( \Delta_{mix}\;\underline{V}^{IM} = 0\)</span>$</p></li>
+<li><p>Molar volume of an ideal mixture is the sum of the molar volumes of each of its components times their molar volumes
+$<span class="math notranslate nohighlight">\( \underline{V}^{IM} = \sum_{i=1}^{c} x_i\underline{V_i}\)</span>$</p></li>
+</ul>
+</section>
+<section id="real">
+<h4>Real:<a class="headerlink" href="#real" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Excess partial molar volume of i in a real mixture is its partial molar volume at this T and P less its molar volume under ideal conditions
+$<span class="math notranslate nohighlight">\( \overline{V}_i^{ex} = \overline{V}_i - \underline{V}_i\)</span>$</p></li>
+<li><p>Excess molar volume of a real mixture is the change upon mixing of its molar volume</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[ \underline{V}^{ex} = \Delta_{mix}\; \underline{V} \]</div>
+<ul class="simple">
+<li><p>Combining, we get:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[ \underline{V} = \sum_{i=1}^{c} x_i\underline{V_i} + \Delta_{mix}\; \underline{V} = \underline{V}^{IM} + \underline{V}^{ex}\]</div>
+</section>
+</section>
+</section>
+<section id="at-equilibrium-gibbs-free-energies-of-each-phase-are-equal">
+<h2>At equilibrium: Gibbs free energies of each phase are equal<a class="headerlink" href="#at-equilibrium-gibbs-free-energies-of-each-phase-are-equal" title="Link to this heading">#</a></h2>
+<p>This equilibrium criterion gives us a way to work towards understanding the composition of each phase.</p>
+<p>Using the relationships between Gibbs free energy and fugacity (see Section 9.2), it is possible to demonstrate that fugacities of components in different phases are also equal at equilibrium.</p>
+<div class="math notranslate nohighlight">
+\[ \overline{f}_i^I = \overline{f}_i(T, P, \underline{x}^I) = \underline{f}_i(T, P, \underline{x}^{II}) = \overline{f}_i^{II} \]</div>
+<p><span style="color:#DA7407"><strong>At equilibrium, the fugacities of each component must be equal in the two phases.</strong></span></p>
+<p>This is what makes it so important to be able to find fugacities and, eventually, relate them to composition. We want to be able to predict composition at different T and P, so we know if we are able to hit our desired concentrations, for example, of products.</p>
+</section>
+</section>
+<section id="fugacity-of-a-single-component-in-multicomponent-systems">
+<h1>Fugacity of a Single Component in Multicomponent Systems<a class="headerlink" href="#fugacity-of-a-single-component-in-multicomponent-systems" title="Link to this heading">#</a></h1>
+<ul class="simple">
+<li><p>Fugacity of component <em>i</em> in a mixture:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[ \overline{f}_i(T, P, \underline{x}) = P\,exp\left \{ \frac{\overline{G}_i(T,P,\underline{x})-\underline{G}_i^{IG}(T,P,\underline{x})}{RT} \right \} \]</div>
+<ul class="simple">
+<li><p>Fugacity coefficient for a component <em>i</em> in a mixture:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[ \Phi_i = \frac{\overline{f}_i}{x_iP} \]</div>
+<p>Fugacity is introduced to handle non-ideality.</p>
+<p><span style="color:#DA7407"><strong>As pressures lower towards 0, the system will act increasingly ideal.</strong></span></p>
+<div class="math notranslate nohighlight">
+\[ \overline{f}_i \rightarrow x_iP \equiv P_i \]</div>
+</section>
+<section id="when-compressability-is-approximately-linear-as-a-function-of-mole-fraction-use-lewis-randall-rule-for-vapor-phase-fugacity">
+<h1>When compressability is approximately linear as a function of mole fraction use, Lewis-Randall Rule for vapor phase fugacity<a class="headerlink" href="#when-compressability-is-approximately-linear-as-a-function-of-mole-fraction-use-lewis-randall-rule-for-vapor-phase-fugacity" title="Link to this heading">#</a></h1>
+<p>Compressibility:</p>
+<div class="math notranslate nohighlight">
+\[ Z = \frac{P}{NRT} \]</div>
+<p>For ideal gases, <span class="math notranslate nohighlight">\(Z = 1\)</span>. Z could be a linear function of a mole fraction over a P range for some gaseous mixtures. In this case, we can use the Lewis-Randall Rule to estimate a component’s vapor phase fugacity.</p>
+<p><span style="color:#DA7407"><strong>The Lewis-Randall Rule</strong></span>
+$<span class="math notranslate nohighlight">\( \overline{f}_i^V(T,P,\underline{y}) = y_if_i^V(T,P) \)</span>$</p>
+<p>We need to know pure component vapor phase fugacity and vapor phase mole fraction.</p>
+</section>
+<section id="alternative-use-truncated-virial-eos-for-dilute-gases">
+<h1>Alternative: Use Truncated Virial EOS for dilute gases<a class="headerlink" href="#alternative-use-truncated-virial-eos-for-dilute-gases" title="Link to this heading">#</a></h1>
+<p>One option is the <em>“truncated virial”</em> EOS.</p>
+<p>Virial EOS describes the behavior of dilute gases and are typically written as an expansion of compressibility, <span class="math notranslate nohighlight">\(Z\)</span>.</p>
+<p>Low pressure, truncated virial equation of state:</p>
+<div class="math notranslate nohighlight">
+\[ \frac{P\underline{V}}{RT} = 1 + \frac{B_{mix}(T,\underline{y})}{\underline{V}} = Z_{mix} \]</div>
+<p>where</p>
+<div class="math notranslate nohighlight">
+\[ B_{mix}(T,\underline{y}) = \sum_i \sum_j{y_iy_jB_{ij}(T)}\]</div>
+<p>B is a function of T, and</p>
+<div class="math notranslate nohighlight">
+\[B_{ij} = B_{ji}\]</div>
+<p><span style="color:#DA7407"><strong>Equation for calculating fugacity of a component in a gaseous mixture using Virial EOS:</strong></span></p>
+<div class="math notranslate nohighlight">
+\[ ln\left (\frac{\overline{f}_i^V}{y_iP} \right) = \frac{2P}{Z_{mix}RT} \sum_j{y_jB_{ij}(T)-ln(Z_{mix})}\]</div>
+<p>where</p>
+<div class="math notranslate nohighlight">
+\[ Z_{mix} = \frac{1}{2} \left ( 1 + \sqrt{1 + \frac{4B_{mix}}{RT}} \right ) \]</div>
+</section>
+<section id="summary-single-component-fugacity-vapor-phase">
+<h1>Summary: single component fugacity, vapor phase<a class="headerlink" href="#summary-single-component-fugacity-vapor-phase" title="Link to this heading">#</a></h1>
+<p>We now have two ways to estimate a single component’s fugacity in a mixture of gases:</p>
+<ul class="simple">
+<li><p>Lewis-Randall rule: relies on one type of behavior (linear changes in compressibility as a function of mole fraction)</p></li>
+<li><p>Virial Equation of State: best for lower pressures</p></li>
+</ul>
+</section>
+<section id="liquids">
+<h1>Liquids<a class="headerlink" href="#liquids" title="Link to this heading">#</a></h1>
+<p>We want to be able to characterize liquid mixtures and first need to think about how they behave when they are ideal and not ideal.</p>
+<div class="math notranslate nohighlight">
+\[ \overline{H}_i^{IM}(T,P,\underline{x}) = \underline{H}_i(T,P)\]</div>
+<div class="math notranslate nohighlight">
+\[ \overline{V}_i^{IM}(T,P,\underline{x}) = \underline{V}_i(T,P)\]</div>
+<p><em>Interpreting these equations:</em> In an ideal mixture, for any compoennt, its partial molar property (enthaly, volume, etc) will be equal to its property per mole. This is true at any T, P composition.</p>
+<div class="math notranslate nohighlight">
+\[ \Delta_{mix}V^{IM}(T,P,\underline{x}) = 0 \]</div>
+<div class="math notranslate nohighlight">
+\[ \Delta_{mix}H^{IM}(T,P,\underline{x}) = 0 \]</div>
+<p><em>Interpreting these equations:</em> There is no <span class="math notranslate nohighlight">\(V\)</span> or <span class="math notranslate nohighlight">\(H\)</span> change when an ideal mixture forms from pure components.</p>
+</section>
+<section id="key-concept-activity-coefficient">
+<h1>Key Concept: Activity Coefficient<a class="headerlink" href="#key-concept-activity-coefficient" title="Link to this heading">#</a></h1>
+<ul class="simple">
+<li><p>When an EOS is available for <strong>both</strong> the pure and mixed fluid, we have enough information to characterize the system</p>
+<ul>
+<li><p>Peng-Robinson could work</p></li>
+</ul>
+</li>
+<li><p>Yet, this is rare, so we bring in another relationship developed through thermo theory (the activity coefficient, <span class="math notranslate nohighlight">\(\gamma_i\)</span>)</p></li>
+</ul>
+<p style="text-align: center;"> <span style="color:#7B2CBF">$\overline{f}_i^L(T,P,\underline{x})$</span>
+$ = x_i$ <span style="color:#F41101">$\gamma_i(T,P,\underline{x})$</span> <span style="color:#78A57E">$f_i^L(T,P)$</span></p>
+<ul class="simple">
+<li><p><span style="color:#7B2CBF">Fugacity of component <em>i</em> in a mixture</span></p></li>
+<li><p><span style="color:#F41101">Activity coefficient</span></p></li>
+<li><p><span style="color:#78A57E">Pure liquid fugacity</span></p></li>
+</ul>
+<p>If the mixtures were <strong>ideal</strong>, the fugacity of the component would be equal to its mole fraction times the pure component fugacity (<span style="color:#F41101">activity coefficient = 1</span>)</p>
+</section>
+<section id="fugacity-coefficients-also-relate-to-excess-gibbs-free-energy">
+<h1>Fugacity Coefficients Also Relate to Excess Gibbs Free Energy<a class="headerlink" href="#fugacity-coefficients-also-relate-to-excess-gibbs-free-energy" title="Link to this heading">#</a></h1>
+<p>Recall:</p>
+<div class="math notranslate nohighlight">
+\[ \overline{G}_i^{ex} = RTln(\gamma_i(T,P,\underline{x}) \]</div>
+<p>It is possible to measure <span class="math notranslate nohighlight">\(\overline{G}_i^{ex}\)</span> experimentally and then estimate the activity coefficient. Based on these relationships (see Section 9.3), it is possible to derive the <span style="color:#DA7407"><strong>Gibbs-Duhem Equation</strong></span> for activity coefficients:</p>
+<p>For a single T, P:</p>
+<div class="math notranslate nohighlight">
+\[ x_1 \left (\frac{\partial ln\gamma_1}{\partial x_1} \right)_{T,P} + x_2 \left (\frac{\partial ln\gamma_2}{\partial x_2} \right)_{T,P} = 0\]</div>
+<p>Over a <em>narrow</em> temperature range, we can adjust for changes in T:</p>
+<div class="math notranslate nohighlight">
+\[\gamma_i(T_2,P,\underline{x}) = \gamma_i(T_1,P,\underline{x})exp \left [ \frac{\overline{H}_i^{ex}}{R} \left (\frac{1}{T_2}-\frac{1}{T_1} \right ) \right ]\]</div>
+</section>
+<section id="liquid-mixtures">
+<h1>Liquid Mixtures<a class="headerlink" href="#liquid-mixtures" title="Link to this heading">#</a></h1>
+<p>Approaches:</p>
+<ul class="simple">
+<li><p>Equations of state (example: Peng-Robinson)</p></li>
+<li><p>When EOS fails, we need to turn to other methods</p></li>
+</ul>
+<p style="text-align: center;"> <span style="color:#7B2CBF">$\overline{f}_i^L(T,P,\underline{x})$</span>
+$ = x_i$ <span style="color:#F41101">$\gamma_i(T,P,\underline{x})$</span> <span style="color:#78A57E">$f_i^L(T,P)$</span></p>
+<p>We are considering simple mixtures - mixtures in which all components are in the liquid phase at T and P of mixing. We would take a different approach to characterizing mixtures with dissolved solids or gases.</p>
+<p>The change in Gibbs free energy when a simple mixture is formed is:</p>
+<div class="math notranslate nohighlight">
+\[ \Delta_{mix}\underline{G} = \Delta_{mix}\underline{G}^{IM} + \underline{G}^{ex} = RT \sum_{i=1}^{c}{x_iln(x_i) + \underline{G}^{ex}(\underline{x})} \]</div>
+<p>One way to find <span class="math notranslate nohighlight">\(\underline{G}^{ex}\)</span> is by fitting data. Figure 9.5-2 in the book has examples of data.</p>
+<p><strong>INSERT IMAGE</strong></p>
+<section id="simple-system">
+<h2>Simple system<a class="headerlink" href="#simple-system" title="Link to this heading">#</a></h2>
+<p>The simplest polynomial that represents <span class="math notranslate nohighlight">\(\underline{G}^{ex}\)</span> is <span class="math notranslate nohighlight">\(Ax_1x_2\)</span></p>
+<p>From this relationship, we can derive the one-constant Margules activity coefficients.</p>
+<div class="math notranslate nohighlight">
+\[ RT\,ln\gamma_1 = Ax_2^2 \]</div>
+<div class="math notranslate nohighlight">
+\[ RT\,ln\gamma_2 = Ax_1^2 \]</div>
+<p>What happens to <span class="math notranslate nohighlight">\(\gamma_1\)</span> as <span class="math notranslate nohighlight">\(x_1\)</span> moves towards 1? (Assume <span class="math notranslate nohighlight">\(A/RT = 1\)</span>)</p>
+<p><span class="math notranslate nohighlight">\(\gamma_1\)</span> moves towards 1, which means the fugacity of component in the mixture is about equal to the pure liquid fugacity.</p>
+<p style="text-align: center;"> <span style="color:#7B2CBF">$\overline{f}_i^L(T,P,\underline{x})$</span>
+$ = x_i$ <span style="color:#F41101">$\gamma_i(T,P,\underline{x})$</span> <span style="color:#78A57E">$f_i^L(T,P)$</span></p>
+<p>As species <em>i</em> becomes more dilute, its behavior increasingly deviates from the pure component’s.</p>
+</section>
+<section id="more-complex-systems">
+<h2>More complex systems<a class="headerlink" href="#more-complex-systems" title="Link to this heading">#</a></h2>
+<p>For more complex systems, the simplest polynomial does not do a good job characterizing the system.</p>
+<p>We need to use a polynomial with more terms to capture behavior. Use Redlich-Kister expansion:</p>
+<div class="math notranslate nohighlight">
+\[\underline{G}^{ex} = x_1x_2\{A + B(x_1 - x_2) + C(x_1 - x_2)^2 + \cdots \}\]</div>
+<p><span style="color:#DA7407"><strong>Two Constant Margules Equations:</strong></span></p>
+<div class="math notranslate nohighlight">
+\[ RT\,ln\gamma_1 = \alpha_1x_2^2 + \beta_1x_2^3 \]</div>
+<div class="math notranslate nohighlight">
+\[ RT\,ln\gamma_2 = \alpha_1x_2^2 + \beta_1x_1^3 \]</div>
+<p>where</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} \alpha_i = A + 3(-1)^{i+1}B \\ \beta_i = 4(-1)^iB \end{split}\]</div>
+<p>Redlich-Kister expansion assumes completely random mixtures of molecules form.</p>
+<p>Other expansion methods yield the <span style="color:#DA7407"><strong>van Laar Equations:</strong></span></p>
+<div class="math notranslate nohighlight">
+\[ln(\gamma_1) = \frac{\alpha}{\left [ 1 + \frac{\alpha}{\beta}\frac{x_1}{x_2} \right ]^2}; \;\; \alpha = 2q_1a_{12}\]</div>
+<div class="math notranslate nohighlight">
+\[ln(\gamma_2) = \frac{\beta}{\left [ 1 + \frac{\beta}{\alpha}\frac{x_2}{x_1} \right ]^2}; \;\; \beta = 2q_2a_{12} \]</div>
+<p><span class="math notranslate nohighlight">\(q\)</span> is a measure of the volume of a molecule (could be “b” from van der Waals equation)</p>
+<p>Usually parameters are found by fitting equations to experimental activity coefficient data.</p>
+<p><span style="color:#DA7407"><strong>van Laar equations when data are limited:</strong></span></p>
+<div class="math notranslate nohighlight">
+\[ \alpha = \left (1 + \frac{x_2ln(\gamma_2)}{x_1ln(\gamma_1)} \right)^2 ln(\gamma_1) \]</div>
+<div class="math notranslate nohighlight">
+\[ \beta = \left (1 + \frac{x_1ln(\gamma_1)}{x_2ln(\gamma_2)} \right)^2 ln(\gamma_2) \]</div>
+<p>Advantage: if we have <span class="math notranslate nohighlight">\(\gamma_1\)</span> and <span class="math notranslate nohighlight">\(\gamma_2\)</span> at a single mole fraction, we can evaluate <span class="math notranslate nohighlight">\(\alpha\)</span> and <span class="math notranslate nohighlight">\(\beta\)</span> and then calculate activity coefficients at different mole fractions.</p>
+<p>Note: Table 9.5-1 has <span class="math notranslate nohighlight">\(\alpha\)</span> and <span class="math notranslate nohighlight">\(\beta\)</span> for a few two-component mixtures.</p>
+<p><span style="color:#DA7407">We will revist van Laar when we start to talk about azeotropes.</span></p>
+</section>
+<section id="why-do-we-need-so-many-models">
+<h2>Why do we need so many models?<a class="headerlink" href="#why-do-we-need-so-many-models" title="Link to this heading">#</a></h2>
+<p>Different approaches to modeling treat interactions among molecules differently.</p>
+<p>Redlich-Kister expansion assumes:</p>
+<ul class="simple">
+<li><p>Completely random mixtures are formed. The environment around any one molecule reflects the ratio of mole fractions in the entire mixture.</p></li>
+<li><p>In reality, any one molecule’s “neighborhood” may not be so simple to characterize</p></li>
+<li><p>Other models account for differences in how molecules interact based on size and energy</p>
+<ul>
+<li><p>Local composition is not equal to bulk composition in these cases</p></li>
+</ul>
+</li>
+</ul>
+<p><span style="color:#DA7407"><strong>Two-parameter Wilson Equation:</strong></span></p>
+<p>The two-parameter Wilson equation accounts for a local environment around molecules that may not reflect the bulk composition.</p>
+<div class="math notranslate nohighlight">
+\[ \frac{\underline{G}^E}{RT} = -x_1ln(x_1 + x_2\Lambda_{12}) - x_2ln(x_2 + x_1\Lambda_{21}) \]</div>
+<div class="math notranslate nohighlight">
+\[ln(\gamma_1) = -ln(x_1 + x_2\Lambda_{12}) + x_2 \left [ \frac{\Lambda_{12}}{x_1 + x_2\Lambda_{12}} - \frac{\Lambda_{21}}{x_1\Lambda_{21} + x_2} \right ] \]</div>
+<div class="math notranslate nohighlight">
+\[ln(\gamma_2) = -ln(x_2 + x_1\Lambda_{21}) + x_1 \left [ \frac{\Lambda_{12}}{x_1 + x_2\Lambda_{12}} - \frac{\Lambda_{21}}{x_1\Lambda_{21} + x_2} \right ] \]</div>
+<p>At infinite dilution, species 1 or 2 become infinitely dilute such that <span class="math notranslate nohighlight">\(x_1\)</span> or <span class="math notranslate nohighlight">\(x_2\)</span> is equal to zero</p>
+<div class="math notranslate nohighlight">
+\[ ln(\gamma_1^\infty) = -ln(\Lambda_{12}) + 1 - \Lambda_{21}; \;\; ln(\gamma_2^\infty) = -ln(\Lambda_{21}) + 1 - \Lambda_{12} \]</div>
+<p><span style="color:#DA7407">Parameters <span class="math notranslate nohighlight">\(\Lambda_{ij}\)</span> account for the differences in size and interaction energies of mixture components. These essentially weight the mole fractions.</span></p>
+<p><span style="color:#DA7407"><strong>Non-Random Two-Liquid (NRTL) Model:</strong></span></p>
+<p>Another model that lets us account for different local environments around molecules is the non-random two-liquid (NRTL) model:</p>
+<div class="math notranslate nohighlight">
+\[ \frac{\underline{G}^E}{RT} = x_1x_2 \left (\frac{\tau{21}G_{21}}{x_1 + x_2G_{21}} + \frac {\tau_{12}G_{12}}{x_2 + x_1G_{12}} \right ) \]</div>
+<div class="math notranslate nohighlight">
+\[ ln(G_{12}) = -\alpha\tau_{12}; \;\; ln(G_{21}) = -\alpha\tau_{21} \]</div>
+<p><span style="color:#DA7407"><span class="math notranslate nohighlight">\(\tau\)</span> replaces <span class="math notranslate nohighlight">\(\Lambda\)</span> as the parameter reflecting size/energies of molecules </span></p>
+<div class="math notranslate nohighlight">
+\[ ln(\gamma_1) = x_2^2 \left [ \tau_{21} \left ( \frac{G_{21}}{x_1 + x_2G_{21}} \right )^2 + \frac{\tau_{12}G_{12}}{(x_2 + x_1G_{12})^2} \right ] \]</div>
+<div class="math notranslate nohighlight">
+\[ ln(\gamma_2) = x_1^2 \left [ \tau_{12} \left ( \frac{G_{12}}{x_2 + x_1G_{12}} \right )^2 + \frac{\tau_{21}G_{21}}{(x_1 + x_2G_{21})^2} \right ] \]</div>
+<p><span style="color:#DA7407"><strong>Universal Quasichemical Model (UNIQUAC):</strong></span></p>
+<p>Based on statistical mechanics:</p>
+<div class="math notranslate nohighlight">
+\[ \frac{\underline{G}^{ex}}{RT} = \frac{\underline{G}^{ex}(combinatorial)}{RT} + \frac{\underline{G}^{ex}(residual)}{RT} \]</div>
+<p>Combinational accounts for differences in molecular shapes and sizes.
+Residual accounts for differences in molecular energies.</p>
+<div class="math notranslate nohighlight">
+\[ ln(\gamma_i) = ln(\gamma_i(combinatorial)) + ln(\gamma_i(residual)) \]</div>
+<div class="math notranslate nohighlight">
+\[ ln(\gamma_i(combinatorial)) = ln\frac{\phi_i}{x_i} - \frac{z}{2}q_iln\frac{\phi_i}{\theta_i} + l_i - \frac{\phi_i}{x_i}\sum_{j}{x_jl_j}\]</div>
+<div class="math notranslate nohighlight">
+\[ ln(\gamma_i(residual)) = q_i \left [ 1 - ln \left (\sum_{j}{\theta_j \tau_{ji}} \right ) - \sum_{j}{\frac{\theta_j\tau_{ij}}{\sum_{k}\theta_k\tau_{kj}}} \right ] \]</div>
+<div class="math notranslate nohighlight">
+\[l_i = \frac{(r_i - q_i)z}{2-(r_i - 1)}\]</div>
+<p>where <span class="math notranslate nohighlight">\(r_i\)</span> = volume parameter for species <em>i</em>, <span class="math notranslate nohighlight">\(q_i\)</span> = surface area parameter for species <em>i</em>. <em>Derived from molecular structure information.</em> <span class="math notranslate nohighlight">\(\tau\)</span> are the adjustable parameters.</p>
+<p>Area fraction of species <em>i</em>: $<span class="math notranslate nohighlight">\(\theta_i = \frac{x_iq_i}{\sum_j{x_j}{q_j}} \)</span>$</p>
+<p>Volume fraction of species <em>i</em>: $<span class="math notranslate nohighlight">\(\phi_i = \frac{x_ir_i}{\sum_{j}{x_jr_j}} \)</span>$</p>
+<p>What if we have no data, which is entirely possible given the wide range of mixtures we might have?</p>
+<p>We can use predictive methods based on theory.</p>
+<p>We will talk about one of these <span style="color:#DA7407"><strong>UNIFAC - UNIquac Functional-group Activity Coefficient</strong></span></p>
+<p>This method is based on UNIQUAC:</p>
+<div class="math notranslate nohighlight">
+\[ ln(\gamma_i) = ln(\gamma_i(combinatorial)) + ln(\gamma_i(residual)) \]</div>
+<div class="math notranslate nohighlight">
+\[ ln(\gamma_i(combinatorial)) = ln\frac{\phi_i}{x_i} - \frac{z}{2}q_iln\frac{\phi_i}{\theta_i} + l_i - \frac{\phi_i}{x_i}\sum_{j}{x_jl_j}\]</div>
+<p>This term relies on having data to fit.</p>
+<div class="math notranslate nohighlight">
+\[ln(\gamma_i(combinatorial)) = ln\frac{\phi_i^\prime}{x_i} + 1 - \frac{\phi_i^\prime}{x_1} - \frac{z}{2}q_i \left ( 1 + ln\frac{\phi_i}{\theta_i} - \frac{\phi_i}{\theta_i} \right ) \]</div>
+<div class="math notranslate nohighlight">
+\[\phi_i^\prime = \frac{x_ir_i^{3/4}}{\sum_{j}{x_jr_j^{3/4}}} \]</div>
+<div class="math notranslate nohighlight">
+\[ ln(\Gamma_k) = Q_k \left [ 1 - ln \left (\sum_m{\theta_m \Psi_{mk}} \right ) - \sum_m{\frac{\theta_m\Psi_{mk}}{\sum_n{\theta_n\Psi_{nm}}}} \right ] \]</div>
+<p>Surface area fraction of group m:</p>
+<div class="math notranslate nohighlight">
+\[ \theta_m = \frac{X_mQ_m}{\sum_n{X_nQ_n}} \]</div>
+<p>where <span class="math notranslate nohighlight">\(X_m\)</span> is the mole fraction of group M in mixture</p>
+<div class="math notranslate nohighlight">
+\[\Psi_m = exp \left [ \frac{-(u_{mn}-u_{nm})}{kT} \right ] \]</div>
+<p><span class="math notranslate nohighlight">\(u_{mn}\)</span> measures the interaction energy between groups <em>m</em> and <em>n</em>. These are unknowns that need to be determined through a lot of experimental data. Assumed to be the same regardless of the molecule.</p>
+<div class="math notranslate nohighlight">
+\[ln(\gamma_i(residual)) = \sum_k{v_k^{(i)}\left [ln(\Gamma_k) - ln(\Gamma_k^{(i)})\right ]}\]</div>
+<p>where <span class="math notranslate nohighlight">\(v_k^{(i)}\)</span> is the number of <em>k</em> groups in species <em>i</em>. If we have a pure species <em>i</em>, the activity coefficient will be zero.</p>
+</section>
+</section>
+<section id="key-points-about-uniquac-and-unifac">
+<h1>Key Points about UNIQUAC and UNIFAC<a class="headerlink" href="#key-points-about-uniquac-and-unifac" title="Link to this heading">#</a></h1>
+<ul class="simple">
+<li><p>One is predictive (UNIFAC) and the other is based on correlations with data (UNIQUAC)</p></li>
+<li><p>Use UNIFAC when there are no data for the mixture we are working with</p></li>
+<li><p>Both methods account for the size/shape and interaction energy of molecules within mixtures</p></li>
+</ul>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "executablebooks/jupyter-book",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./Ch8"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Thermodynamics of Mixtures</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#characteristics-of-equilibrium">Characteristics of Equilibrium</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#defining-fugacity">Defining Fugacity</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#methods-to-determine-fugacities-in-mixtures">Methods to Determine Fugacities in Mixtures</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#equations-of-state-eos">Equations of State (EOS)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mixtures-may-or-may-not-be-ideal">Mixtures May or May Not Be Ideal</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#partial-molar-properties">Partial Molar Properties</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#excess-mixing-properties-account-for-differences-between-ideal-and-real-mixtures">Excess Mixing Properties Account for Differences Between Ideal and Real Mixtures</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-volume-at-constant-t-and-p">Example: Volume at Constant T and P</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ideal">Ideal:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#real">Real:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#at-equilibrium-gibbs-free-energies-of-each-phase-are-equal">At equilibrium: Gibbs free energies of each phase are equal</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#fugacity-of-a-single-component-in-multicomponent-systems">Fugacity of a Single Component in Multicomponent Systems</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#when-compressability-is-approximately-linear-as-a-function-of-mole-fraction-use-lewis-randall-rule-for-vapor-phase-fugacity">When compressability is approximately linear as a function of mole fraction use, Lewis-Randall Rule for vapor phase fugacity</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#alternative-use-truncated-virial-eos-for-dilute-gases">Alternative: Use Truncated Virial EOS for dilute gases</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-single-component-fugacity-vapor-phase">Summary: single component fugacity, vapor phase</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#liquids">Liquids</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#key-concept-activity-coefficient">Key Concept: Activity Coefficient</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#fugacity-coefficients-also-relate-to-excess-gibbs-free-energy">Fugacity Coefficients Also Relate to Excess Gibbs Free Energy</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#liquid-mixtures">Liquid Mixtures</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-system">Simple system</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-complex-systems">More complex systems</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-do-we-need-so-many-models">Why do we need so many models?</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#key-points-about-uniquac-and-unifac">Key Points about UNIQUAC and UNIFAC</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By J. J. Richards
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

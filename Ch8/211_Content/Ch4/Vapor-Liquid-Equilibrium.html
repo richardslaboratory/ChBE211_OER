@@ -1,0 +1,715 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Vapor Liquid Equilibrium &#8212; Introduction to Thermodynamics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Ch8/211_Content/Ch4/Vapor-Liquid-Equilibrium';</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/logo.png" class="logo__image only-light" alt="Introduction to Thermodynamics - Home"/>
+    <script>document.write(`<img src="../../../_static/logo.png" class="logo__image only-dark" alt="Introduction to Thermodynamics - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../../intro.html">
+                    Foreword
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Definitions and Balance Expressions</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch1/1.Thermodynamic-Definitions.html">Thermodynamic Definitions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch1/2.Real-Gas-Properties.html">Real Gas Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch1/3.Equations-of-State.html">Equations of State</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch1/4.Balance-Expressions.html">Macroscopic Balance Expressions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch1/5.Conservation-of-Mass.html">Conservation of Mass</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Foundations of Thermodynamics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch2/1.Conservation-of-Energy.html">Conservation of Energy and the 1st Law of Thermodynamics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch2/2.Expansion-of-a-Gas.html">Expansion of a Gas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch2/3.Entropy-Balance-Expression.html">Balance Expression for Entropy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch2/4.Entropy-at-0K.html">Entropy at 0K</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch2/5.Free-Energies.html">Free Energy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch2/6.Changes-of-State.html">Changes of State</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Applications of Thermodynamics in Chemical Engineering</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch3/1.Unit-Operations.html">Unit Operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch3/2.Property-Diagram-Single-Components.html">Property Database for Common Substances</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch3/3.Heat-Engines.html">Heat Engines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch3/4.Refrigeration.html">Refrigeration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch3/5.Liquefaction.html">Liquefaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch3/6.Optimizing-with-Python.html">Optimizing with Python</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Vapor-Liquid Equilibrium for Non-Ideal Gases</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch4/1.Deriving-Useful-Thermodynamic-Relationships.html">Deriving Useful Thermodynamic Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch4/2.Virial-Equations-of-State.html">Volumetric Equations of State</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch4/3.Law-of-Corresponding-States.html">Law of Corresponding States and Critical Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch4/4.Thermal-Variables-from-EOS.html">Computing Thermal Variables from an Equation of State</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch4/7.Constructing-Property-Diagrams.html">Constructing Property Diagrams</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Thermodynamics of Mixtures</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch5/1.Introduction-to-Mixtures.html">Introduction to Mixtures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch5/3.Gaseous-Mixtures.html">Gaseous Mixtures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch5/4.Liquid-Mixtures.html">Liquid Mixtures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch5/5.Accuracy-EOS.html">Calculating the Accuracy of Equations of State</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch7/7.Activity-Coefficient-Models.html">Activity Coefficients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch7/8.Calculating-Mixture-Fugacity.html">Vapor-Liquid Equilibrium</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch7/9.Mixture-Equilibrium.html">Equilibrium of Mixtures</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Exercises</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../Exercises/Ch1.html">Exercises for Chapter 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Exercises/Ch2.html">Exercises for Chapter 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Exercises/Ch3.html">Exercises for Chapter 3</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../_sources/Ch8/211_Content/Ch4/Vapor-Liquid-Equilibrium.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Vapor Liquid Equilibrium</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#we-define-equilibrium-with-two-criteria">We define Equilibrium with Two Criteria:</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ds-0-equivalence-of-temperature-pressure-and-free-energy-of-the-vapor-and-liquid-phase"><span class="math notranslate nohighlight">\(dS=0\)</span>: Equivalence of Temperature, Pressure, and Free Energy of the vapor and liquid phase</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stability-d-2s-0">Stability - <span class="math notranslate nohighlight">\(d^2S&lt;0\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#actual-equilibrium">Actual Equilibrium</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example">Example</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interactive-example">Interactive Example</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="vapor-liquid-equilibrium">
+<h1>Vapor Liquid Equilibrium<a class="headerlink" href="#vapor-liquid-equilibrium" title="Link to this heading">#</a></h1>
+<p><strong>Equilibrium</strong> is generally defined for an isolated system. We learned previously that for isolated systems (systems without the flow of mass and energy across the system boundary) that the mass, energy, and entropy balance expressions simplify to:</p>
+<p><span class="math notranslate nohighlight">\(\quad\dfrac{dM}{dt}=0\)</span></p>
+<p><span class="math notranslate nohighlight">\(\quad\dfrac{dU}{dt}=0\)</span></p>
+<p><span class="math notranslate nohighlight">\(\quad\dfrac{dS}{dt}=\dot{S}_{gen}\)</span></p>
+<p>Under these circumstances, the only changes that take place occur due to internal temperature, mass, and velocity gradients present within the system that will dissipate over time. This dissipation will generate entropy and cause the total system energy to increase with time. Ultimately, if we wait long enough then the gradients will be eliminated and all time evolution of the system will stop. We call this state <em>equilibrium</em>.</p>
+<p>At equilibrium <span class="math notranslate nohighlight">\(S\)</span> is both at a maximum (due to the entropy generation term always being positive) and no longer time dependent. Mathematically,</p>
+<section id="we-define-equilibrium-with-two-criteria">
+<h2>We define Equilibrium with Two Criteria:<a class="headerlink" href="#we-define-equilibrium-with-two-criteria" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(dS=0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(d^2S&lt;0\)</span></p></li>
+</ol>
+<section id="ds-0-equivalence-of-temperature-pressure-and-free-energy-of-the-vapor-and-liquid-phase">
+<h3><span class="math notranslate nohighlight">\(dS=0\)</span>: Equivalence of Temperature, Pressure, and Free Energy of the vapor and liquid phase<a class="headerlink" href="#ds-0-equivalence-of-temperature-pressure-and-free-energy-of-the-vapor-and-liquid-phase" title="Link to this heading">#</a></h3>
+<p>For an isolated system with volume <span class="math notranslate nohighlight">\(V\)</span>, containing <span class="math notranslate nohighlight">\(N\)</span> moles of gas, we can envision there being an equilibrium between a vapor and liquid and we want to know what are the constraints on those two phases.</p>
+<p>To identify those constraints, we assume that the entropy is a function of <span class="math notranslate nohighlight">\(V\)</span>, <span class="math notranslate nohighlight">\(N\)</span>, and <span class="math notranslate nohighlight">\(U\)</span> and begin by expressing the entropy in its <em>differential form</em> as:</p>
+<div class="math notranslate nohighlight">
+\[dS=\bigg(\dfrac{\partial S}{\partial U}\bigg)_{V,N} dU+
+\bigg(\dfrac{\partial S}{\partial V}\bigg)_{N,U} dV+
+\bigg(\dfrac{\partial S}{\partial N}\bigg)_{U,V} dN
+\]</div>
+<p>our thermodynamic relationships can be employed to transform the above to:</p>
+<div class="math notranslate nohighlight">
+\[dS=\dfrac{1}{T} dU+
+\dfrac{P}{T} dV-
+\dfrac{\underline{G}}{T} dN
+\]</div>
+<p>In order for <span class="math notranslate nohighlight">\(dS=0\)</span> the prefactors of the total differentials above must be uniform everywhere within the system. So if we consider for example a vapor (v) and liquid (l) to be in equilibrium for a given density and internal volume, then equilibrium will be satisfied if:</p>
+<div class="math notranslate nohighlight">
+\[dS=dS^v+dS^l=0\]</div>
+<div class="math notranslate nohighlight">
+\[
+\bigg(\dfrac{1}{T^{v}}dU^v+\dfrac{1}{T^{l}}dU^l\bigg)+
+\bigg(\dfrac{P^v}{T^v} dV^v+\dfrac{P^l}{T^l} dV^l\bigg)-
+\bigg(\dfrac{\underline{G}^v}{T^v} dN^v+\dfrac{\underline{G}^l}{T^l} dN^l\bigg)=0
+\]</div>
+<p>Because the system is isolated, N, V, and U are constant at equilibrium throughout the box so that</p>
+<p><span class="math notranslate nohighlight">\(\quad dN=dN^v+dN^l=0\)</span></p>
+<p><span class="math notranslate nohighlight">\(\quad dU=dU^v+dU^l=0\)</span></p>
+<p><span class="math notranslate nohighlight">\(\quad dV=dV^v+dV^l=0\)</span></p>
+<p>Therefore, the above can be rewritten as:</p>
+<div class="math notranslate nohighlight">
+\[
+\bigg(\dfrac{1}{T^{v}}-\dfrac{1}{T^{l}}\bigg)dU^v+
+\bigg(\dfrac{P^v}{T^v}-\dfrac{P^l}{T^l}\bigg)dV^v-
+\bigg(\dfrac{\underline{G}^v}{T^v}-\dfrac{\underline{G}^l}{T^l}\bigg)dN^v=0
+\]</div>
+<p>Inspecting the equation above, <span class="math notranslate nohighlight">\(dS=0\)</span>, if three criteria are satisfied.</p>
+<ol class="arabic simple">
+<li><p>Thermal Equilibrium - <span class="math notranslate nohighlight">\(T^{v}=T^{l}\)</span></p></li>
+<li><p>Mechanical Equilibrium - <span class="math notranslate nohighlight">\(P^{v}=P^{l}\)</span></p></li>
+<li><p>Free Energy - <span class="math notranslate nohighlight">\(\underline{G}^v=\underline{G}^l\)</span></p></li>
+</ol>
+</section>
+</section>
+<section id="stability-d-2s-0">
+<h2>Stability - <span class="math notranslate nohighlight">\(d^2S&lt;0\)</span><a class="headerlink" href="#stability-d-2s-0" title="Link to this heading">#</a></h2>
+<p>A similar, though tedious argument can be made to derive an expression for <span class="math notranslate nohighlight">\(d^2 S\)</span>. Without derivation, I provide the result as:</p>
+<div class="math notranslate nohighlight">
+\[C_v=\bigg(\dfrac{\partial \underline{U}}{\partial T}\bigg)_V&gt;0\]</div>
+<div class="math notranslate nohighlight">
+\[\bigg(\dfrac{\partial P}{\partial \underline{V}}\bigg)_T&lt;0\]</div>
+<p>While the mathematical significance of these relationships is clear, they also provide some important intuition. An unstable thermodynamic state is one where an increase in temperature leads to a decrease in internal energy and the rate of molecular fluctuations. Clearly this is counterintuitive and no substance exists that obeys such behavior. The second criteria is more useful as it is something that can be evaluated using the equation of state alone. We will see this shortly.</p>
+</section>
+<section id="actual-equilibrium">
+<h2>Actual Equilibrium<a class="headerlink" href="#actual-equilibrium" title="Link to this heading">#</a></h2>
+<p>Let’s return to the criteria for equilibrium for a second which are:</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(T^{v}=T^{l}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(P^{v}=P^{l}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\underline{G}^v=\underline{G}^l\)</span></p></li>
+</ol>
+<p>It is relatively easy to recognize how an equation of state might be used to evalue Criteria (1) and (2), but (3) is a little bit more difficult to see. As a starting point, we will return to using phasepy to compute the real isotherm of water vapor and liquid water in equilibrium.</p>
+</section>
+<section id="example">
+<h2>Example<a class="headerlink" href="#example" title="Link to this heading">#</a></h2>
+<p>Use the information in the steam tables to show that the above criteria are satisfied for steam at <span class="math notranslate nohighlight">\(100^{o}C\)</span> and <span class="math notranslate nohighlight">\(P=0.10135\)</span> <span class="math notranslate nohighlight">\(MPa\)</span></p>
+</section>
+<section id="interactive-example">
+<h2>Interactive Example<a class="headerlink" href="#interactive-example" title="Link to this heading">#</a></h2>
+<p>Using the Peng Robinson Equation of state and the critical properties for steam,</p>
+<ol class="arabic simple">
+<li><p>Identify the saturation pressure for any isotherm <span class="math notranslate nohighlight">\(T&lt;T_c\)</span></p></li>
+<li><p>Identify the unstable phase points for any isotherm <span class="math notranslate nohighlight">\(T&lt;T_c\)</span></p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> notebook
+<span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="kn">from</span> <span class="nn">phasepy</span> <span class="kn">import</span> <span class="n">component</span><span class="p">,</span> <span class="n">mixture</span><span class="p">,</span> <span class="n">preos</span>
+<span class="n">Tc</span><span class="o">=</span><span class="mf">647.13</span>
+<span class="n">Pc</span><span class="o">=</span><span class="mf">220.55</span>
+<span class="n">w</span><span class="o">=</span><span class="mf">0.344861</span>
+<span class="n">Tr</span><span class="o">=</span><span class="mf">0.95</span>
+
+<span class="n">water</span> <span class="o">=</span> <span class="n">component</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;water&#39;</span><span class="p">,</span> <span class="n">Tc</span><span class="o">=</span><span class="n">Tc</span><span class="p">,</span> <span class="n">Pc</span><span class="o">=</span><span class="n">Pc</span><span class="p">,</span> <span class="n">w</span><span class="o">=</span><span class="n">w</span><span class="p">)</span>
+<span class="n">eos</span><span class="o">=</span><span class="n">preos</span><span class="p">(</span><span class="n">water</span><span class="p">,</span><span class="s1">&#39;mhv_unifac&#39;</span><span class="p">)</span>
+<span class="n">R</span><span class="o">=</span><span class="mf">8.314</span> 
+<span class="c1">##create the plot</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">yscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;P (bar)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$V$ $(cm^3/mol)$&#39;</span><span class="p">)</span>
+
+<span class="n">v</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">eos</span><span class="o">.</span><span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="mf">1.1</span><span class="p">),</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="mi">100</span><span class="o">*</span><span class="n">eos</span><span class="o">.</span><span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span><span class="mi">201</span><span class="p">)</span>
+<span class="k">if</span><span class="p">(</span><span class="n">Tr</span><span class="o">&lt;</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">psat</span><span class="p">,</span><span class="n">vl</span><span class="p">,</span><span class="n">vv</span><span class="o">=</span><span class="n">eos</span><span class="o">.</span><span class="n">psat</span><span class="p">(</span><span class="n">Tr</span><span class="o">*</span><span class="n">Tc</span><span class="p">)</span>
+    
+    
+    <span class="n">mask</span><span class="o">=</span><span class="p">(</span><span class="n">v</span><span class="o">&lt;=</span><span class="n">vl</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">v</span><span class="o">&gt;=</span><span class="n">vv</span><span class="p">)</span>
+    <span class="n">line1</span><span class="p">,</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">v</span><span class="p">,</span><span class="n">eos</span><span class="p">(</span><span class="n">Tr</span><span class="o">*</span><span class="n">Tc</span><span class="p">,</span><span class="n">v</span><span class="p">),</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+    <span class="n">P</span><span class="o">=</span><span class="n">eos</span><span class="p">(</span><span class="n">Tr</span><span class="o">*</span><span class="n">Tc</span><span class="p">,</span><span class="n">v</span><span class="p">)</span>
+    
+    <span class="n">dPdV</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">gradient</span><span class="p">(</span><span class="n">P</span><span class="p">,</span><span class="n">v</span><span class="p">)</span>
+    
+    <span class="n">P_</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">P</span><span class="p">[</span><span class="n">v</span><span class="o">&lt;=</span><span class="n">vl</span><span class="p">],</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">psat</span><span class="p">),</span><span class="n">np</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">P</span><span class="p">[</span><span class="n">v</span><span class="o">&gt;=</span><span class="n">vv</span><span class="p">],</span><span class="mi">0</span><span class="p">,</span><span class="n">psat</span><span class="p">)))</span>
+    <span class="n">V_</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="n">v</span><span class="o">&lt;=</span><span class="n">vl</span><span class="p">],</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">vl</span><span class="p">),</span><span class="n">np</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="n">v</span><span class="o">&gt;=</span><span class="n">vv</span><span class="p">],</span><span class="mi">0</span><span class="p">,</span><span class="n">vl</span><span class="p">)))</span>
+                      
+    <span class="n">line2</span><span class="p">,</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">V_</span><span class="p">,</span><span class="n">P_</span><span class="p">,</span><span class="s1">&#39;g&#39;</span><span class="p">)</span>
+    <span class="n">line3</span><span class="p">,</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="n">dPdV</span><span class="o">&lt;=</span><span class="mi">0</span><span class="p">],</span><span class="n">P</span><span class="p">[</span><span class="n">dPdV</span><span class="o">&lt;=</span><span class="mi">0</span><span class="p">],</span><span class="s1">&#39;*b&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">line1</span><span class="p">,</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">v</span><span class="p">,</span><span class="n">eos</span><span class="p">(</span><span class="n">Tr</span><span class="o">*</span><span class="n">Tc</span><span class="p">,</span><span class="n">v</span><span class="p">),</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">v</span><span class="p">),</span><span class="nb">max</span><span class="p">(</span><span class="n">v</span><span class="p">))</span>
+
+
+
+<span class="c1">##update the plot</span>
+<span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="n">Tr</span> <span class="o">=</span> <span class="mf">0.93</span><span class="p">):</span>
+    <span class="n">psat</span><span class="p">,</span><span class="n">vl</span><span class="p">,</span><span class="n">vv</span><span class="o">=</span><span class="n">eos</span><span class="o">.</span><span class="n">psat</span><span class="p">(</span><span class="n">Tr</span><span class="o">*</span><span class="n">Tc</span><span class="p">)</span>
+
+    <span class="n">mask</span><span class="o">=</span><span class="p">(</span><span class="n">v</span><span class="o">&lt;</span><span class="n">vl</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">v</span><span class="o">&gt;</span><span class="n">vv</span><span class="p">)</span>
+    <span class="n">line1</span><span class="o">.</span><span class="n">set_data</span><span class="p">(</span><span class="n">v</span><span class="p">,</span><span class="n">eos</span><span class="p">(</span><span class="n">Tr</span><span class="o">*</span><span class="n">Tc</span><span class="p">,</span><span class="n">v</span><span class="p">))</span>
+    <span class="n">line1</span><span class="o">.</span><span class="n">set_label</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$P_</span><span class="si">{EOS}</span><span class="s1">$&#39;</span><span class="p">)</span>
+    <span class="n">P</span><span class="o">=</span><span class="n">eos</span><span class="p">(</span><span class="n">Tr</span><span class="o">*</span><span class="n">Tc</span><span class="p">,</span><span class="n">v</span><span class="p">)</span>
+
+    <span class="n">P_</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">P</span><span class="p">[</span><span class="n">v</span><span class="o">&lt;=</span><span class="n">vl</span><span class="p">],</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">psat</span><span class="p">),</span><span class="n">np</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">P</span><span class="p">[</span><span class="n">v</span><span class="o">&gt;=</span><span class="n">vv</span><span class="p">],</span><span class="mi">0</span><span class="p">,</span><span class="n">psat</span><span class="p">)))</span>
+    <span class="n">V_</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="n">v</span><span class="o">&lt;=</span><span class="n">vl</span><span class="p">],</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">vl</span><span class="p">),</span><span class="n">np</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="n">v</span><span class="o">&gt;=</span><span class="n">vv</span><span class="p">],</span><span class="mi">0</span><span class="p">,</span><span class="n">vl</span><span class="p">)))</span>
+    
+    <span class="n">dPdV</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">gradient</span><span class="p">(</span><span class="n">P</span><span class="p">,</span><span class="n">v</span><span class="p">)</span>
+    <span class="n">line3</span><span class="o">.</span><span class="n">set_data</span><span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="n">dPdV</span><span class="o">&lt;=</span><span class="mi">0</span><span class="p">],</span><span class="n">P</span><span class="p">[</span><span class="n">dPdV</span><span class="o">&lt;=</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">line2</span><span class="o">.</span><span class="n">set_data</span><span class="p">(</span><span class="n">V_</span><span class="p">,</span><span class="n">P_</span><span class="p">)</span>
+    <span class="n">line2</span><span class="o">.</span><span class="n">set_label</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$P_</span><span class="si">{real}</span><span class="s1">$&#39;</span><span class="p">)</span>
+    
+    <span class="c1">#plt.annotate()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">draw_idle</span><span class="p">()</span>
+
+<span class="n">interact</span><span class="p">(</span><span class="n">update</span><span class="p">,</span><span class="n">Tr</span><span class="o">=</span><span class="p">(</span><span class="mf">0.92</span><span class="p">,</span><span class="mf">0.99</span><span class="p">,</span><span class="mf">0.001</span><span class="p">));</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">6</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="ne">----&gt; </span><span class="mi">6</span> <span class="kn">from</span> <span class="nn">phasepy</span> <span class="kn">import</span> <span class="n">component</span><span class="p">,</span> <span class="n">mixture</span><span class="p">,</span> <span class="n">preos</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="n">Tc</span><span class="o">=</span><span class="mf">647.13</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="n">Pc</span><span class="o">=</span><span class="mf">220.55</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;phasepy&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "executablebooks/jupyter-book",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./Ch8\211_Content\Ch4"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#we-define-equilibrium-with-two-criteria">We define Equilibrium with Two Criteria:</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ds-0-equivalence-of-temperature-pressure-and-free-energy-of-the-vapor-and-liquid-phase"><span class="math notranslate nohighlight">\(dS=0\)</span>: Equivalence of Temperature, Pressure, and Free Energy of the vapor and liquid phase</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stability-d-2s-0">Stability - <span class="math notranslate nohighlight">\(d^2S&lt;0\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#actual-equilibrium">Actual Equilibrium</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example">Example</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interactive-example">Interactive Example</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By J. J. Richards
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

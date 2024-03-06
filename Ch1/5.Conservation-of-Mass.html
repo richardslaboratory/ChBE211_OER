@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Conservation of Mass &#8212; Introduction to Thermodynamics</title>
   
@@ -19,49 +18,45 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509" />
-  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=bd9e20870c6007c4c509"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'Ch1/5.Conservation-of-Mass';</script>
@@ -81,7 +76,6 @@ const thebe_selector_output = ".output, .cell_output"
   <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
     <i class="fa-solid fa-arrow-up"></i>
@@ -121,20 +115,15 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
-
-  <header>
   
-    <div class="bd-header navbar navbar-expand-lg bd-navbar">
-    </div>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
   
-  </header>
 
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
       
       
-      
-        
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -168,7 +157,18 @@ const thebe_selector_output = ".output, .cell_output"
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -210,19 +210,18 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../Ch4/2.Virial-Equations-of-State.html">Volumetric Equations of State</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Ch4/3.Law-of-Corresponding-States.html">Law of Corresponding States and Critical Properties</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Ch4/4.Thermal-Variables-from-EOS.html">Computing Thermal Variables from an Equation of State</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Ch4/5.Calculating-Fugacity.html">Calculating Fugacity</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Ch4/6.Vapor-Liquid-Equilibrium.html">Vapor Liquid Equilibrium</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="../Ch4/7.Constructing-Property-Diagrams.html">Constructing Property Diagrams</a></li>
+
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Thermodynamics of Mixtures</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../Ch6/1.Species-Balance-Expression.html">Species Balance Expression and Reaction Kinetics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch5/1.Introduction-to-Mixtures.html">Introduction to Mixtures</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Ch5/3.Gaseous-Mixtures.html">Gaseous Mixtures</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Ch5/4.Liquid-Mixtures.html">Liquid Mixtures</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Ch5/5.Accuracy-EOS.html">Calculating the Accuracy of Equations of State</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Ch6/6.Chemical-Equilibrium.html">Chemical Equilibrium</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Ch7/7.Activity-Coefficient-Models.html">Activity Coefficients</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Ch7/8.Calculating-Mixture-Fugacity.html">Calculating Fugacity of Mixtures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch7/8.Calculating-Mixture-Fugacity.html">Vapor-Liquid Equilibrium</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Ch7/9.Mixture-Equilibrium.html">Equilibrium of Mixtures</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Exercises</span></p>
@@ -431,42 +430,42 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="conservation-of-mass">
-<h1>Conservation of Mass<a class="headerlink" href="#conservation-of-mass" title="Permalink to this heading">#</a></h1>
+<h1>Conservation of Mass<a class="headerlink" href="#conservation-of-mass" title="Link to this heading">#</a></h1>
 <section id="topics">
-<h2>Topics<a class="headerlink" href="#topics" title="Permalink to this heading">#</a></h2>
+<h2>Topics<a class="headerlink" href="#topics" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p><span class="xref myst">Laws of Conservation</span></p></li>
-<li><p><span class="xref myst">Differential vs. the Difference Forms</span></p></li>
+<li><p><a class="reference internal" href="#3.1"><span class="xref myst">Laws of Conservation</span></a></p></li>
+<li><p><a class="reference internal" href="#3.2"><span class="xref myst">Differential vs. the Difference Forms</span></a></p></li>
 </ul>
 </section>
 <section id="supplemental-reading">
-<h2>Supplemental Reading<a class="headerlink" href="#supplemental-reading" title="Permalink to this heading">#</a></h2>
+<h2>Supplemental Reading<a class="headerlink" href="#supplemental-reading" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>links to OER relevant to this topic.</p></li>
 </ul>
 <p><a id="3.1"></a></p>
 </section>
 <section id="conservation-of-material">
-<h2>Conservation of Material<a class="headerlink" href="#conservation-of-material" title="Permalink to this heading">#</a></h2>
+<h2>Conservation of Material<a class="headerlink" href="#conservation-of-material" title="Link to this heading">#</a></h2>
 <p>Conservation laws are balance expressions where the <span class="math notranslate nohighlight">\(\dot{\theta}_{gen}=0\)</span> or the rate of generation or consumption of <span class="math notranslate nohighlight">\(\theta\)</span> within the control volume is 0.</p>
 <p>Conserved quantities are quantities that obey conservation laws. There are man</p>
 </section>
 <section id="conservation-of-moles">
-<h2>Conservation of Moles<a class="headerlink" href="#conservation-of-moles" title="Permalink to this heading">#</a></h2>
+<h2>Conservation of Moles<a class="headerlink" href="#conservation-of-moles" title="Link to this heading">#</a></h2>
 <p>The <em>differential form</em> of the balance expression is given as:</p>
 <p><span class="math notranslate nohighlight">\(\quad\quad \dfrac{d\theta}{dt}=\sum_k\dot{\theta}_k+\dot{\theta}_{gen}\)</span></p>
 <p>Substituting <span class="math notranslate nohighlight">\(N\)</span> for <span class="math notranslate nohighlight">\(\theta\)</span> and setting <span class="math notranslate nohighlight">\(\dot{\theta}_{gen}=0\)</span>, we arrive at the statement of the <em>conservation of moles</em>:</p>
 <p><span class="math notranslate nohighlight">\(\quad\quad \dfrac{dN}{dt}=\sum_k\dot{N}_k\)</span></p>
 </section>
 <section id="id1">
-<h2>Conservation of Mass<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<h2>Conservation of Mass<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <p>Equivelantly the <em>conservation of mass</em>. Recall that we can convert between moles and mass for a single component species using the molecular weight of that species <span class="math notranslate nohighlight">\(M=N\times M_W\)</span></p>
 <div class="math notranslate nohighlight">
 \[\dfrac{dM}{dt}=\sum_k\dot{M}_k\]</div>
 <p><a id="3.2"></a></p>
 </section>
 <section id="distinguishing-the-difference-from-the-differential-form">
-<h2>Distinguishing the Difference from the Differential Form<a class="headerlink" href="#distinguishing-the-difference-from-the-differential-form" title="Permalink to this heading">#</a></h2>
+<h2>Distinguishing the Difference from the Differential Form<a class="headerlink" href="#distinguishing-the-difference-from-the-differential-form" title="Link to this heading">#</a></h2>
 <p>The <em>difference form</em> of the conservation of mass and moles can be found by integrating with respect to time the differential form. We can write the following for example using the <em>conservation of mass</em></p>
 <p><span class="math notranslate nohighlight">\(\quad\quad \int_{t_1}^{t_2}\bigg[\dfrac{dM}{dt}=\sum_k\dot{M}_k\bigg]dt\)</span></p>
 <p>which can be broken into pieces:</p>
@@ -482,11 +481,11 @@ document.write(`
 </div>
 </section>
 <section id="example">
-<h2>Example<a class="headerlink" href="#example" title="Permalink to this heading">#</a></h2>
+<h2>Example<a class="headerlink" href="#example" title="Link to this heading">#</a></h2>
 <p>A tank initially filled with <span class="math notranslate nohighlight">\(1000\)</span> <span class="math notranslate nohighlight">\(m^3\)</span> of water has a valve opened at the bottom. The water drains through a pipe with a flow rate, <span class="math notranslate nohighlight">\(\dot{V}(t)\)</span>.  The volumetric flow rate of water leaving the tank is a linear function of the liquid height, <span class="math notranslate nohighlight">\(h\)</span>, and changes as a function of time.  The initial rate of water leaving the tank was measured to be <span class="math notranslate nohighlight">\(\dot{V}_0=1\)</span> <span class="math notranslate nohighlight">\(m^3/s\)</span>.</p>
 <p>Calculate the time that it takes for 90% of the water to drain from the tank.</p>
 <section id="solution-to-example-problem">
-<h3>Solution to Example Problem<a class="headerlink" href="#solution-to-example-problem" title="Permalink to this heading">#</a></h3>
+<h3>Solution to Example Problem<a class="headerlink" href="#solution-to-example-problem" title="Link to this heading">#</a></h3>
 <p>Solution:</p>
 <p>In order to solve this problem, we first need to simplify the mass balance expression.</p>
 <p><span class="math notranslate nohighlight">\(\quad (1)\)</span> <span class="math notranslate nohighlight">\(\dfrac{dM}{dt}=\sum_{k}\dot{M}_k\)</span></p>
@@ -615,7 +614,7 @@ By J. J. Richards
 
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
@@ -639,8 +638,8 @@ By J. J. Richards
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
 
   <footer class="bd-footer">
   </footer>

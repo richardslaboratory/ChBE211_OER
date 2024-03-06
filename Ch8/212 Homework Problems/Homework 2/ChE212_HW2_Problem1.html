@@ -1,0 +1,946 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>ChE 212: Homework 2 Problem 1 &#8212; Introduction to Thermodynamics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Ch8/212 Homework Problems/Homework 2/ChE212_HW2_Problem1';</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/logo.png" class="logo__image only-light" alt="Introduction to Thermodynamics - Home"/>
+    <script>document.write(`<img src="../../../_static/logo.png" class="logo__image only-dark" alt="Introduction to Thermodynamics - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../../intro.html">
+                    Foreword
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Definitions and Balance Expressions</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch1/1.Thermodynamic-Definitions.html">Thermodynamic Definitions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch1/2.Real-Gas-Properties.html">Real Gas Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch1/3.Equations-of-State.html">Equations of State</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch1/4.Balance-Expressions.html">Macroscopic Balance Expressions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch1/5.Conservation-of-Mass.html">Conservation of Mass</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Foundations of Thermodynamics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch2/1.Conservation-of-Energy.html">Conservation of Energy and the 1st Law of Thermodynamics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch2/2.Expansion-of-a-Gas.html">Expansion of a Gas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch2/3.Entropy-Balance-Expression.html">Balance Expression for Entropy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch2/4.Entropy-at-0K.html">Entropy at 0K</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch2/5.Free-Energies.html">Free Energy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch2/6.Changes-of-State.html">Changes of State</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Applications of Thermodynamics in Chemical Engineering</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch3/1.Unit-Operations.html">Unit Operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch3/2.Property-Diagram-Single-Components.html">Property Database for Common Substances</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch3/3.Heat-Engines.html">Heat Engines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch3/4.Refrigeration.html">Refrigeration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch3/5.Liquefaction.html">Liquefaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch3/6.Optimizing-with-Python.html">Optimizing with Python</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Vapor-Liquid Equilibrium for Non-Ideal Gases</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch4/1.Deriving-Useful-Thermodynamic-Relationships.html">Deriving Useful Thermodynamic Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch4/2.Virial-Equations-of-State.html">Volumetric Equations of State</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch4/3.Law-of-Corresponding-States.html">Law of Corresponding States and Critical Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch4/4.Thermal-Variables-from-EOS.html">Computing Thermal Variables from an Equation of State</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch4/7.Constructing-Property-Diagrams.html">Constructing Property Diagrams</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Thermodynamics of Mixtures</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch5/1.Introduction-to-Mixtures.html">Introduction to Mixtures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch5/3.Gaseous-Mixtures.html">Gaseous Mixtures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch5/4.Liquid-Mixtures.html">Liquid Mixtures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch5/5.Accuracy-EOS.html">Calculating the Accuracy of Equations of State</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch7/7.Activity-Coefficient-Models.html">Activity Coefficients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch7/8.Calculating-Mixture-Fugacity.html">Vapor-Liquid Equilibrium</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch7/9.Mixture-Equilibrium.html">Equilibrium of Mixtures</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Exercises</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../Exercises/Ch1.html">Exercises for Chapter 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Exercises/Ch2.html">Exercises for Chapter 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Exercises/Ch3.html">Exercises for Chapter 3</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../_sources/Ch8/212 Homework Problems/Homework 2/ChE212_HW2_Problem1.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>ChE 212: Homework 2 Problem 1</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">ChE 212: Homework 2 Problem 1</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-statement">Problem Statement:</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lets-import-python-packages-we-might-need">Let’s import Python packages we might need</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-rachford-rice-equation">Set up Rachford-Rice Equation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-variables-do-we-need-to-define">What Variables Do We Need To Define?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#we-can-solve-for-p-sat-k-i-and-f-using-our-equations-above">We can solve for <span class="math notranslate nohighlight">\(P^{sat}\)</span>, <span class="math notranslate nohighlight">\(K_i\)</span>, and <span class="math notranslate nohighlight">\(F\)</span> using our equations above.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#whats-phi-we-have-to-find-it-using-the-rachford-rice-equation-and-iteration">What’s <span class="math notranslate nohighlight">\(\phi\)</span>? We have to find it using the Rachford-Rice Equation and iteration</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#we-use-a-similar-approach-to-homework-1-problem-3">We use a similar approach to Homework 1 Problem 3</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lets-define-a-function-that-will-help-solve-for-phi-heres-well-move-the-z-2-equation-to-the-other-side-to-solve">Let’s define a function that will help solve for <span class="math notranslate nohighlight">\(\phi\)</span>. Here’s we’ll move the <span class="math notranslate nohighlight">\(z_2\)</span> equation to the other side to solve</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-minimization-problem">A minimization problem!</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#we-need-to-define-an-initial-guess-array-we-dont-know-what-phi-might-be-so-we-might-make-a-guess-that-phi-is-between-0-and-1-we-choose-1000-increments-between-0-and-1-to-be-evaluated">We need to define an initial guess array. We don’t know what <span class="math notranslate nohighlight">\(\phi\)</span> might be, so we might make a guess that <span class="math notranslate nohighlight">\(\phi\)</span> is between 0 and 1. We choose 1000 increments between 0 and 1 to be evaluated</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#note-1000-increments-is-arbitrary-one-can-choose-any-positive-integer">Note: 1000 increments is arbitrary. One can choose any positive integer!</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lets-solve-for-phi">Let’s solve for <span class="math notranslate nohighlight">\(\phi\)</span>!</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#great-we-have-phi-now-we-can-solve-for-x-i-and-y-i">Great, we have <span class="math notranslate nohighlight">\(\phi\)</span>! Now we can solve for <span class="math notranslate nohighlight">\(x_i\)</span> and <span class="math notranslate nohighlight">\(y_i\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#so-that-was-part-a-lets-move-onto-part-b-which-isnt-too-bad-because-we-already-did-the-hard-work-everything-is-the-same-but-our-z-1-and-z-2">So that was part a. Let’s move onto part b - which isn’t too bad because we already did the hard work! Everything is the same but our <span class="math notranslate nohighlight">\(z_1\)</span> and <span class="math notranslate nohighlight">\(z_2\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#notice-anything-interesting-about-your-answers">Notice anything interesting about your answers?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#they-should-be-the-same-why-because-the-mixture-exits-in-equilibrium-which-is-always-the-same-at-a-given-temperature-and-pressure">They should be the same! Why? Because the mixture exits in equilibrium, which is always the same at a given temperature and pressure!</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="che-212-homework-2-problem-1">
+<h1>ChE 212: Homework 2 Problem 1<a class="headerlink" href="#che-212-homework-2-problem-1" title="Link to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="problem-statement">
+<h1>Problem Statement:<a class="headerlink" href="#problem-statement" title="Link to this heading">#</a></h1>
+<p>A binary mixture of 40 mol% vinylacetylene and 60 mol% toluene is to be flashed at 1 atm pressure and 60C. The Vapor-Liquid Equilibrium (VLE) is adequately represented by Raoult’s Law, with the Antoine coefficients for vapor pressures given in the table below.</p>
+<p>a) Solve the Rachford-Rice equations for the fraction of the feed that is vapor (<span class="math notranslate nohighlight">\(\phi\)</span>) and for the composition of the vapor and liquid streams leaving the flash vessel.</p>
+<p>b) Repeat the calculations at the same T and P, but with feed compositions of 30 mol% and 50 mol% vinylacetylene.</p>
+<p>Antoine Coefficient Data (P in mmHg, T in C)</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>Toluene</p></th>
+<th class="head"><p>Vinylacetylene</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>A</p></td>
+<td><p>6.95087</p></td>
+<td><p>7.02515</p></td>
+</tr>
+<tr class="row-odd"><td><p>B</p></td>
+<td><p>1342.31</p></td>
+<td><p>999.110</p></td>
+</tr>
+<tr class="row-even"><td><p>C</p></td>
+<td><p>219.187</p></td>
+<td><p>235.817</p></td>
+</tr>
+</tbody>
+</table>
+<section id="lets-import-python-packages-we-might-need">
+<h2>Let’s import Python packages we might need<a class="headerlink" href="#lets-import-python-packages-we-might-need" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="set-up-rachford-rice-equation">
+<h2>Set up Rachford-Rice Equation<a class="headerlink" href="#set-up-rachford-rice-equation" title="Link to this heading">#</a></h2>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{equation}
+    Fz_i = Vy_i + Lx_i \label{Fzi} \\
+\end{equation}\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{equation}
+    z_i = \frac{V}{F}y_i + \frac{L}{F}x_i \label{zi}
+\end{equation}\]</div>
+<p>Define:
+$<span class="math notranslate nohighlight">\(\begin{equation}
+    V = \phi F \label{V} \\
+\end{equation}\)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\(\begin{equation}
+    \phi = \frac{V}{F} \label{phi}
+\end{equation}\)</span>$</p>
+<p>And:
+$<span class="math notranslate nohighlight">\(\begin{equation}
+    L =F-V \label{L} \\
+\end{equation}\)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\(\begin{equation}
+    L=F-\phi F = F(1-\phi) \label{Lsub}
+\end{equation}\)</span>$</p>
+<p>Plug in Equation \ref{phi}
+$<span class="math notranslate nohighlight">\(\begin{equation}
+    \frac{L}{F} = (1-\phi) \label{Lsub2}
+\end{equation}\)</span>$</p>
+<p>And:</p>
+<div class="math notranslate nohighlight">
+\[\begin{equation}
+    z_i = \phi y_i + (1-\phi)x_i \label{ziphi}
+\end{equation}\]</div>
+<p>We know Raoult’s Law:</p>
+<div class="math notranslate nohighlight">
+\[\begin{equation}
+    Py_i = P_i^{sat}x_i \label{Psat}
+\end{equation}\]</div>
+<p>Rearrange for <span class="math notranslate nohighlight">\(y_i\)</span>:
+$<span class="math notranslate nohighlight">\(\begin{equation}
+    y_i = \frac{P_i^{sat}}{P}x_i = K_ix_i \label{Ki}
+\end{equation}\)</span><span class="math notranslate nohighlight">\(
+where \)</span>K_i$ is the equilibrium value - which is constant for ideal mixtures at a single T and P</p>
+<p>Substitute Equation <span class="math notranslate nohighlight">\(\ref{eq:Ki}\)</span> into Equation <span class="math notranslate nohighlight">\(\ref{eq:ziphi}\)</span></p>
+<div class="math notranslate nohighlight">
+\[\begin{equation}
+    z_i = \phi K_ix_i + (1-\phi)x_i \label{ziKi}
+\end{equation}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{equation}
+    z_i = x_i(\phi K_i + (1-\phi)) = x_i(1 + \phi(K_i-1)) \label{ziKi2}
+\end{equation}\]</div>
+<p>Now:</p>
+<div class="math notranslate nohighlight">
+\[\begin{equation}
+    x_i = \frac{z_i}{1+\phi(K_i-1)} \label{xiziKi}
+\end{equation}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{equation}
+    y_i = \frac{K_iz_i}{1+\phi(K_i-1)} \label{yiziKi}
+\end{equation}\]</div>
+<p>And we know:
+$<span class="math notranslate nohighlight">\(\begin{equation}
+    \sum y_i - \sum x_i = 0 \label{sum}
+\end{equation}\)</span>$</p>
+<p>Plugging in everything:
+$<span class="math notranslate nohighlight">\(\begin{equation}
+    \sum_{i} \frac{z_i(K_i - 1)}{1+\phi(K_i - 1)} = 0 \label{RRE}
+\end{equation}\)</span>$</p>
+<p>We get the Rachford-Rice Equation!</p>
+</section>
+<section id="what-variables-do-we-need-to-define">
+<h2>What Variables Do We Need To Define?<a class="headerlink" href="#what-variables-do-we-need-to-define" title="Link to this heading">#</a></h2>
+<p>Let “1” be Toluene and “2” be Vinylacetylene</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Temperature and Pressure</span>
+<span class="n">T</span> <span class="o">=</span> <span class="mi">60</span> <span class="c1">#C</span>
+<span class="n">P</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1">#atm</span>
+
+<span class="c1">## Antoine Coefficients</span>
+<span class="n">A_tol</span> <span class="o">=</span> <span class="mf">6.95087</span>
+<span class="n">B_tol</span> <span class="o">=</span> <span class="mf">1342.31</span>
+<span class="n">C_tol</span> <span class="o">=</span> <span class="mf">219.2</span>
+<span class="n">A_va</span> <span class="o">=</span> <span class="mf">7.02515</span>
+<span class="n">B_va</span> <span class="o">=</span> <span class="mf">999.11</span>
+<span class="n">C_va</span> <span class="o">=</span> <span class="mf">235.817</span>
+
+<span class="c1">## Entering Mol Fractions</span>
+<span class="n">z1</span> <span class="o">=</span> <span class="mf">.6</span>
+<span class="n">z2</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">z1</span>
+
+<span class="c1">## A basis</span>
+<span class="n">Basis</span> <span class="o">=</span> <span class="mi">1000</span> <span class="c1">##kmol/hr</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="we-can-solve-for-p-sat-k-i-and-f-using-our-equations-above">
+<h2>We can solve for <span class="math notranslate nohighlight">\(P^{sat}\)</span>, <span class="math notranslate nohighlight">\(K_i\)</span>, and <span class="math notranslate nohighlight">\(F\)</span> using our equations above.<a class="headerlink" href="#we-can-solve-for-p-sat-k-i-and-f-using-our-equations-above" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Saturated Pressures using Antoine Equation</span>
+
+<span class="n">Psat_tol_mmHg</span> <span class="o">=</span> <span class="mi">10</span><span class="o">**</span><span class="p">(</span><span class="n">A_tol</span> <span class="o">-</span> <span class="n">B_tol</span><span class="o">/</span><span class="p">(</span><span class="n">T</span><span class="o">+</span><span class="n">C_tol</span><span class="p">))</span> <span class="c1">## mmHg</span>
+<span class="n">Psat_tol</span> <span class="o">=</span> <span class="n">Psat_tol_mmHg</span><span class="o">/</span><span class="mi">760</span> <span class="c1">## atm</span>
+
+<span class="n">Psat_va_mmHg</span> <span class="o">=</span> <span class="mi">10</span><span class="o">**</span><span class="p">(</span><span class="n">A_va</span> <span class="o">-</span> <span class="n">B_va</span><span class="o">/</span><span class="p">(</span><span class="n">T</span><span class="o">+</span><span class="n">C_va</span><span class="p">))</span> <span class="c1">## mmHg</span>
+<span class="n">Psat_va</span> <span class="o">=</span> <span class="n">Psat_va_mmHg</span><span class="o">/</span><span class="mi">760</span> <span class="c1">## atm</span>
+
+<span class="c1">## Ki = Psat/P</span>
+
+<span class="n">K1</span> <span class="o">=</span> <span class="n">Psat_tol</span><span class="o">/</span><span class="n">P</span> <span class="c1">## unitless</span>
+<span class="n">K2</span> <span class="o">=</span> <span class="n">Psat_va</span><span class="o">/</span><span class="n">P</span> <span class="c1">## unitless</span>
+
+<span class="c1">## F</span>
+
+<span class="n">F_tol</span> <span class="o">=</span> <span class="n">z_tol</span> <span class="o">*</span> <span class="n">Basis</span> <span class="c1">## kmol/hr</span>
+<span class="n">F_va</span> <span class="o">=</span> <span class="n">z_va</span> <span class="o">*</span> <span class="n">Basis</span> <span class="c1">## kmol/hr</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">16</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="n">K2</span> <span class="o">=</span> <span class="n">Psat_va</span><span class="o">/</span><span class="n">P</span> <span class="c1">## unitless</span>
+<span class="g g-Whitespace">     </span><span class="mi">14</span> <span class="c1">## F</span>
+<span class="ne">---&gt; </span><span class="mi">16</span> <span class="n">F_tol</span> <span class="o">=</span> <span class="n">z_tol</span> <span class="o">*</span> <span class="n">Basis</span> <span class="c1">## kmol/hr</span>
+<span class="g g-Whitespace">     </span><span class="mi">17</span> <span class="n">F_va</span> <span class="o">=</span> <span class="n">z_va</span> <span class="o">*</span> <span class="n">Basis</span>
+
+<span class="ne">NameError</span>: name &#39;z_tol&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="whats-phi-we-have-to-find-it-using-the-rachford-rice-equation-and-iteration">
+<h2>What’s <span class="math notranslate nohighlight">\(\phi\)</span>? We have to find it using the Rachford-Rice Equation and iteration<a class="headerlink" href="#whats-phi-we-have-to-find-it-using-the-rachford-rice-equation-and-iteration" title="Link to this heading">#</a></h2>
+<p>We need to make
+$<span class="math notranslate nohighlight">\(\frac{z_1(K_1-1)}{(1+\phi(K_1-1))} = \frac{z_2(K_2-1)}{(1+\phi(K_2-1))}\)</span>$</p>
+</section>
+<section id="we-use-a-similar-approach-to-homework-1-problem-3">
+<h2>We use a similar approach to Homework 1 Problem 3<a class="headerlink" href="#we-use-a-similar-approach-to-homework-1-problem-3" title="Link to this heading">#</a></h2>
+</section>
+<section id="lets-define-a-function-that-will-help-solve-for-phi-heres-well-move-the-z-2-equation-to-the-other-side-to-solve">
+<h2>Let’s define a function that will help solve for <span class="math notranslate nohighlight">\(\phi\)</span>. Here’s we’ll move the <span class="math notranslate nohighlight">\(z_2\)</span> equation to the other side to solve<a class="headerlink" href="#lets-define-a-function-that-will-help-solve-for-phi-heres-well-move-the-z-2-equation-to-the-other-side-to-solve" title="Link to this heading">#</a></h2>
+<div class="math notranslate nohighlight">
+\[\frac{z_1(K_1-1)}{(1+\phi(K_1-1))} + \frac{z_2(K_2-1)}{(1+\phi(K_2-1))} = 0\]</div>
+</section>
+<section id="a-minimization-problem">
+<h2>A minimization problem!<a class="headerlink" href="#a-minimization-problem" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">phi_solver</span><span class="p">(</span><span class="n">phi</span><span class="p">,</span><span class="n">z1</span><span class="p">,</span><span class="n">z2</span><span class="p">):</span>
+    <span class="n">z1eq</span> <span class="o">=</span> <span class="p">(</span><span class="n">z1</span><span class="o">*</span><span class="p">(</span><span class="n">K1</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="p">(</span><span class="n">phi</span><span class="o">*</span><span class="p">(</span><span class="n">K1</span><span class="o">-</span><span class="mi">1</span><span class="p">)))</span>
+    <span class="n">z2eq</span> <span class="o">=</span> <span class="p">(</span><span class="n">z2</span><span class="o">*</span><span class="p">(</span><span class="n">K2</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="p">(</span><span class="n">phi</span><span class="o">*</span><span class="p">(</span><span class="n">K2</span><span class="o">-</span><span class="mi">1</span><span class="p">)))</span>
+    <span class="n">diff</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">z1eq</span> <span class="o">+</span> <span class="n">z2eq</span><span class="p">)</span> <span class="c1">## this is what we want to minimize</span>
+    <span class="k">return</span> <span class="n">diff</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="we-need-to-define-an-initial-guess-array-we-dont-know-what-phi-might-be-so-we-might-make-a-guess-that-phi-is-between-0-and-1-we-choose-1000-increments-between-0-and-1-to-be-evaluated">
+<h2>We need to define an initial guess array. We don’t know what <span class="math notranslate nohighlight">\(\phi\)</span> might be, so we might make a guess that <span class="math notranslate nohighlight">\(\phi\)</span> is between 0 and 1. We choose 1000 increments between 0 and 1 to be evaluated<a class="headerlink" href="#we-need-to-define-an-initial-guess-array-we-dont-know-what-phi-might-be-so-we-might-make-a-guess-that-phi-is-between-0-and-1-we-choose-1000-increments-between-0-and-1-to-be-evaluated" title="Link to this heading">#</a></h2>
+<section id="note-1000-increments-is-arbitrary-one-can-choose-any-positive-integer">
+<h3>Note: 1000 increments is arbitrary. One can choose any positive integer!<a class="headerlink" href="#note-1000-increments-is-arbitrary-one-can-choose-any-positive-integer" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">phi_guess</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1000</span><span class="p">)</span> <span class="c1"># phi can only be between 0 and 1</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="lets-solve-for-phi">
+<h2>Let’s solve for <span class="math notranslate nohighlight">\(\phi\)</span>!<a class="headerlink" href="#lets-solve-for-phi" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">min_diff</span> <span class="o">=</span> <span class="mi">1000</span> <span class="c1">## we define a variable min_diff that sets a baseline our difference comparison</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">phi_guess</span><span class="p">)):</span>
+    <span class="n">diff_out</span> <span class="o">=</span> <span class="n">phi_solver</span><span class="p">(</span><span class="n">phi_guess</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">z1</span><span class="p">,</span><span class="n">z2</span><span class="p">)</span> <span class="c1">## using the function above pull out phi</span>
+    <span class="k">if</span> <span class="n">diff_out</span> <span class="o">&lt;</span> <span class="n">min_diff</span><span class="p">:</span> <span class="c1">## if we reach a new minimum (less than the previous min_diff)</span>
+        <span class="n">min_diff</span> <span class="o">=</span> <span class="n">diff_out</span> <span class="c1">## we establish whatever difference from the function output as the new min_diff</span>
+        <span class="n">phi</span> <span class="o">=</span> <span class="n">phi_guess</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="c1">## this pulls out the phi at that minimum difference</span>
+
+
+<span class="c1">## rounding phi to not have so many decimals</span>
+<span class="n">phi</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">phi</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span> <span class="c1">## three decimals</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Phi: </span><span class="si">{</span><span class="n">phi</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1">## this prints the phi that satisfies the Rachford Rice Equation</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Phi: 0.365
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="great-we-have-phi-now-we-can-solve-for-x-i-and-y-i">
+<h2>Great, we have <span class="math notranslate nohighlight">\(\phi\)</span>! Now we can solve for <span class="math notranslate nohighlight">\(x_i\)</span> and <span class="math notranslate nohighlight">\(y_i\)</span><a class="headerlink" href="#great-we-have-phi-now-we-can-solve-for-x-i-and-y-i" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x1</span> <span class="o">=</span> <span class="n">z1</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="p">(</span><span class="n">phi</span><span class="o">*</span><span class="p">(</span><span class="n">K1</span><span class="o">-</span><span class="mi">1</span><span class="p">)))</span>
+<span class="n">x2</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">x1</span> <span class="c1">## because mol fractions have to add up to 1</span>
+<span class="n">y1</span> <span class="o">=</span> <span class="n">K1</span><span class="o">*</span><span class="n">x1</span>
+<span class="n">y2</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">y1</span>
+
+<span class="c1">## Let&#39;s round to two decimals so we don&#39;t have really long numbers</span>
+<span class="n">x1</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">x2</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">x2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">y1</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">y1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">y2</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">y2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Toluene x: </span><span class="si">{</span><span class="n">x1</span><span class="si">}</span><span class="s2">, y: </span><span class="si">{</span><span class="n">y1</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Vinylacetylene x: </span><span class="si">{</span><span class="n">x2</span><span class="si">}</span><span class="s2">, y: </span><span class="si">{</span><span class="n">y2</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Toluene x: 0.85, y: 0.16
+Vinylacetylene x: 0.15, y: 0.84
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="so-that-was-part-a-lets-move-onto-part-b-which-isnt-too-bad-because-we-already-did-the-hard-work-everything-is-the-same-but-our-z-1-and-z-2">
+<h2>So that was part a. Let’s move onto part b - which isn’t too bad because we already did the hard work! Everything is the same but our <span class="math notranslate nohighlight">\(z_1\)</span> and <span class="math notranslate nohighlight">\(z_2\)</span><a class="headerlink" href="#so-that-was-part-a-lets-move-onto-part-b-which-isnt-too-bad-because-we-already-did-the-hard-work-everything-is-the-same-but-our-z-1-and-z-2" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## when z_va = .3</span>
+
+<span class="c1">## changing the z values</span>
+<span class="n">z1</span> <span class="o">=</span> <span class="mf">.7</span>
+<span class="n">z2</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">z1</span> 
+
+<span class="c1">## solve for phi</span>
+<span class="n">min_diff</span> <span class="o">=</span> <span class="mi">1000</span> <span class="c1">## have to reset this!</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">phi_guess</span><span class="p">)):</span>
+    <span class="n">diff_out</span> <span class="o">=</span> <span class="n">phi_solver</span><span class="p">(</span><span class="n">phi_guess</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">z1</span><span class="p">,</span><span class="n">z2</span><span class="p">)</span> <span class="c1">## using the function above pull out phi</span>
+    <span class="k">if</span> <span class="n">diff_out</span> <span class="o">&lt;</span> <span class="n">min_diff</span><span class="p">:</span> <span class="c1">## if we reach a new minimum (less than the previous min_diff)</span>
+        <span class="n">min_diff</span> <span class="o">=</span> <span class="n">diff_out</span> <span class="c1">## we establish whatever difference from the function output as the new min_diff</span>
+        <span class="n">phi</span> <span class="o">=</span> <span class="n">phi_guess</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="c1">## this pulls out the phi at that minimum difference</span>
+<span class="n">phi</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">phi</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Phi: </span><span class="si">{</span><span class="n">phi</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1">## calculate x1, x2, y1, y2</span>
+<span class="n">x1</span> <span class="o">=</span> <span class="n">z1</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="p">(</span><span class="n">phi</span><span class="o">*</span><span class="p">(</span><span class="n">K1</span><span class="o">-</span><span class="mi">1</span><span class="p">)))</span>
+<span class="n">x2</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">x1</span> <span class="c1">## because mol fractions have to add up to 1</span>
+<span class="n">y1</span> <span class="o">=</span> <span class="n">K1</span><span class="o">*</span><span class="n">x1</span>
+<span class="n">y2</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">y1</span>
+
+<span class="c1">## Let&#39;s round to two decimals so we don&#39;t have really long numbers</span>
+<span class="n">x1</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">x2</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">x2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">y1</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">y1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">y2</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">y2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="c1">## print answer</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Toluene x: </span><span class="si">{</span><span class="n">x1</span><span class="si">}</span><span class="s2">, y: </span><span class="si">{</span><span class="n">y1</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Vinylacetylene x: </span><span class="si">{</span><span class="n">x2</span><span class="si">}</span><span class="s2">, y: </span><span class="si">{</span><span class="n">y2</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Phi: 0.223
+Toluene x: 0.86, y: 0.16
+Vinylacetylene x: 0.14, y: 0.84
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## when z_va = .3</span>
+
+<span class="c1">## changing the z values</span>
+<span class="n">z1</span> <span class="o">=</span> <span class="mf">.5</span>
+<span class="n">z2</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">z1</span> 
+
+<span class="c1">## solve for phi</span>
+<span class="n">min_diff</span> <span class="o">=</span> <span class="mi">1000</span> <span class="c1">## have to reset this!</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">phi_guess</span><span class="p">)):</span>
+    <span class="n">diff_out</span> <span class="o">=</span> <span class="n">phi_solver</span><span class="p">(</span><span class="n">phi_guess</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">z1</span><span class="p">,</span><span class="n">z2</span><span class="p">)</span> <span class="c1">## using the function above pull out phi</span>
+    <span class="k">if</span> <span class="n">diff_out</span> <span class="o">&lt;</span> <span class="n">min_diff</span><span class="p">:</span> <span class="c1">## if we reach a new minimum (less than the previous min_diff)</span>
+        <span class="n">min_diff</span> <span class="o">=</span> <span class="n">diff_out</span> <span class="c1">## we establish whatever difference from the function output as the new min_diff</span>
+        <span class="n">phi</span> <span class="o">=</span> <span class="n">phi_guess</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="c1">## this pulls out the phi at that minimum difference</span>
+<span class="n">phi</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">phi</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Phi: </span><span class="si">{</span><span class="n">phi</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1">## calculate x1, x2, y1, y2</span>
+<span class="n">x1</span> <span class="o">=</span> <span class="n">z1</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="p">(</span><span class="n">phi</span><span class="o">*</span><span class="p">(</span><span class="n">K1</span><span class="o">-</span><span class="mi">1</span><span class="p">)))</span>
+<span class="n">x2</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">x1</span> <span class="c1">## because mol fractions have to add up to 1</span>
+<span class="n">y1</span> <span class="o">=</span> <span class="n">K1</span><span class="o">*</span><span class="n">x1</span>
+<span class="n">y2</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">y1</span>
+
+<span class="c1">## Let&#39;s round to two decimals so we don&#39;t have really long numbers</span>
+<span class="n">x1</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">x2</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">x2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">y1</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">y1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">y2</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">y2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="c1">## print answer</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Toluene x: </span><span class="si">{</span><span class="n">x1</span><span class="si">}</span><span class="s2">, y: </span><span class="si">{</span><span class="n">y1</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Vinylacetylene x: </span><span class="si">{</span><span class="n">x2</span><span class="si">}</span><span class="s2">, y: </span><span class="si">{</span><span class="n">y2</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Phi: 0.509
+Toluene x: 0.86, y: 0.16
+Vinylacetylene x: 0.14, y: 0.84
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="notice-anything-interesting-about-your-answers">
+<h2>Notice anything interesting about your answers?<a class="headerlink" href="#notice-anything-interesting-about-your-answers" title="Link to this heading">#</a></h2>
+</section>
+<section id="they-should-be-the-same-why-because-the-mixture-exits-in-equilibrium-which-is-always-the-same-at-a-given-temperature-and-pressure">
+<h2>They should be the same! Why? Because the mixture exits in equilibrium, which is always the same at a given temperature and pressure!<a class="headerlink" href="#they-should-be-the-same-why-because-the-mixture-exits-in-equilibrium-which-is-always-the-same-at-a-given-temperature-and-pressure" title="Link to this heading">#</a></h2>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "executablebooks/jupyter-book",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./Ch8\212 Homework Problems\Homework 2"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">ChE 212: Homework 2 Problem 1</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-statement">Problem Statement:</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lets-import-python-packages-we-might-need">Let’s import Python packages we might need</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-rachford-rice-equation">Set up Rachford-Rice Equation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-variables-do-we-need-to-define">What Variables Do We Need To Define?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#we-can-solve-for-p-sat-k-i-and-f-using-our-equations-above">We can solve for <span class="math notranslate nohighlight">\(P^{sat}\)</span>, <span class="math notranslate nohighlight">\(K_i\)</span>, and <span class="math notranslate nohighlight">\(F\)</span> using our equations above.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#whats-phi-we-have-to-find-it-using-the-rachford-rice-equation-and-iteration">What’s <span class="math notranslate nohighlight">\(\phi\)</span>? We have to find it using the Rachford-Rice Equation and iteration</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#we-use-a-similar-approach-to-homework-1-problem-3">We use a similar approach to Homework 1 Problem 3</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lets-define-a-function-that-will-help-solve-for-phi-heres-well-move-the-z-2-equation-to-the-other-side-to-solve">Let’s define a function that will help solve for <span class="math notranslate nohighlight">\(\phi\)</span>. Here’s we’ll move the <span class="math notranslate nohighlight">\(z_2\)</span> equation to the other side to solve</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-minimization-problem">A minimization problem!</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#we-need-to-define-an-initial-guess-array-we-dont-know-what-phi-might-be-so-we-might-make-a-guess-that-phi-is-between-0-and-1-we-choose-1000-increments-between-0-and-1-to-be-evaluated">We need to define an initial guess array. We don’t know what <span class="math notranslate nohighlight">\(\phi\)</span> might be, so we might make a guess that <span class="math notranslate nohighlight">\(\phi\)</span> is between 0 and 1. We choose 1000 increments between 0 and 1 to be evaluated</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#note-1000-increments-is-arbitrary-one-can-choose-any-positive-integer">Note: 1000 increments is arbitrary. One can choose any positive integer!</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lets-solve-for-phi">Let’s solve for <span class="math notranslate nohighlight">\(\phi\)</span>!</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#great-we-have-phi-now-we-can-solve-for-x-i-and-y-i">Great, we have <span class="math notranslate nohighlight">\(\phi\)</span>! Now we can solve for <span class="math notranslate nohighlight">\(x_i\)</span> and <span class="math notranslate nohighlight">\(y_i\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#so-that-was-part-a-lets-move-onto-part-b-which-isnt-too-bad-because-we-already-did-the-hard-work-everything-is-the-same-but-our-z-1-and-z-2">So that was part a. Let’s move onto part b - which isn’t too bad because we already did the hard work! Everything is the same but our <span class="math notranslate nohighlight">\(z_1\)</span> and <span class="math notranslate nohighlight">\(z_2\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#notice-anything-interesting-about-your-answers">Notice anything interesting about your answers?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#they-should-be-the-same-why-because-the-mixture-exits-in-equilibrium-which-is-always-the-same-at-a-given-temperature-and-pressure">They should be the same! Why? Because the mixture exits in equilibrium, which is always the same at a given temperature and pressure!</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By J. J. Richards
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

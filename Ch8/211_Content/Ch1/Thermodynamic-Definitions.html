@@ -1,0 +1,781 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Thermodynamic Definitions &#8212; Introduction to Thermodynamics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Ch8/211_Content/Ch1/Thermodynamic-Definitions';</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/logo.png" class="logo__image only-light" alt="Introduction to Thermodynamics - Home"/>
+    <script>document.write(`<img src="../../../_static/logo.png" class="logo__image only-dark" alt="Introduction to Thermodynamics - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../../intro.html">
+                    Foreword
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Definitions and Balance Expressions</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch1/1.Thermodynamic-Definitions.html">Thermodynamic Definitions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch1/2.Real-Gas-Properties.html">Real Gas Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch1/3.Equations-of-State.html">Equations of State</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch1/4.Balance-Expressions.html">Macroscopic Balance Expressions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch1/5.Conservation-of-Mass.html">Conservation of Mass</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Foundations of Thermodynamics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch2/1.Conservation-of-Energy.html">Conservation of Energy and the 1st Law of Thermodynamics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch2/2.Expansion-of-a-Gas.html">Expansion of a Gas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch2/3.Entropy-Balance-Expression.html">Balance Expression for Entropy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch2/4.Entropy-at-0K.html">Entropy at 0K</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch2/5.Free-Energies.html">Free Energy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch2/6.Changes-of-State.html">Changes of State</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Applications of Thermodynamics in Chemical Engineering</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch3/1.Unit-Operations.html">Unit Operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch3/2.Property-Diagram-Single-Components.html">Property Database for Common Substances</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch3/3.Heat-Engines.html">Heat Engines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch3/4.Refrigeration.html">Refrigeration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch3/5.Liquefaction.html">Liquefaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch3/6.Optimizing-with-Python.html">Optimizing with Python</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Vapor-Liquid Equilibrium for Non-Ideal Gases</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch4/1.Deriving-Useful-Thermodynamic-Relationships.html">Deriving Useful Thermodynamic Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch4/2.Virial-Equations-of-State.html">Volumetric Equations of State</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch4/3.Law-of-Corresponding-States.html">Law of Corresponding States and Critical Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch4/4.Thermal-Variables-from-EOS.html">Computing Thermal Variables from an Equation of State</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch4/7.Constructing-Property-Diagrams.html">Constructing Property Diagrams</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Thermodynamics of Mixtures</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch5/1.Introduction-to-Mixtures.html">Introduction to Mixtures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch5/3.Gaseous-Mixtures.html">Gaseous Mixtures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch5/4.Liquid-Mixtures.html">Liquid Mixtures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch5/5.Accuracy-EOS.html">Calculating the Accuracy of Equations of State</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch7/7.Activity-Coefficient-Models.html">Activity Coefficients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch7/8.Calculating-Mixture-Fugacity.html">Vapor-Liquid Equilibrium</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch7/9.Mixture-Equilibrium.html">Equilibrium of Mixtures</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Exercises</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../Exercises/Ch1.html">Exercises for Chapter 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Exercises/Ch2.html">Exercises for Chapter 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Exercises/Ch3.html">Exercises for Chapter 3</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../_sources/Ch8/211_Content/Ch1/Thermodynamic-Definitions.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Thermodynamic Definitions</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#state-variables">State Variables</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#volumetric-variables">Volumetric Variables:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#thermal-variables">Thermal Variables:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gibbs-phase-rule">Gibbs’ Phase Rule:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extensive-and-intensive-variables">Extensive and Intensive Variables</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-do-we-make-this-distinction">Why do we make this distinction?:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-units">Working with Units</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Examples</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="thermodynamic-definitions">
+<h1>Thermodynamic Definitions<a class="headerlink" href="#thermodynamic-definitions" title="Link to this heading">#</a></h1>
+<p>Topics covered in this section include:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#1.1"><span class="xref myst">State Variables</span></a></p></li>
+<li><p><a class="reference internal" href="#1.2"><span class="xref myst">Extensive and Intensive Variables</span></a></p></li>
+<li><p><a class="reference internal" href="#1.3"><span class="xref myst">Working with Units</span></a></p></li>
+</ul>
+<p>For supplemental reading please visit the following links:</p>
+<ul class="simple">
+<li><p>links to OER relevant to this topic.</p></li>
+</ul>
+<p><a id="1.1"></a></p>
+<section id="state-variables">
+<h2>State Variables<a class="headerlink" href="#state-variables" title="Link to this heading">#</a></h2>
+<p><em>State variables</em> are descriptors of the physical state of a system.</p>
+<p>They come in two flavors:</p>
+<ol class="arabic simple">
+<li><p>Volumetric Variables</p></li>
+<li><p>Thermal Variables</p></li>
+</ol>
+<section id="volumetric-variables">
+<h3>Volumetric Variables:<a class="headerlink" href="#volumetric-variables" title="Link to this heading">#</a></h3>
+<p><em>Volumetric variables</em> are state variables that we measure directly or control in the laboratory or physical plant. A major goal of thermodynamics is to recognize that for a given substance these variables are often not independent of one another. In other words, their magnitude is something that is determined by underlying thermodynamic relationshps that we will cover in this class.</p>
+<p>Examples of Volumetric State Variables in this class - <span class="math notranslate nohighlight">\(T, P, V, N, M, x_{i}, C_{i}\)</span></p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(T\)</span> is the temperature</p></li>
+<li><p><span class="math notranslate nohighlight">\(P\)</span> is the pressure</p></li>
+<li><p><span class="math notranslate nohighlight">\(V\)</span> is the volume</p></li>
+<li><p><span class="math notranslate nohighlight">\(N\)</span> is the number of moles</p></li>
+<li><p><span class="math notranslate nohighlight">\(M\)</span> is the mass</p></li>
+<li><p><span class="math notranslate nohighlight">\(x_i\)</span> is the mole fraction of species <span class="math notranslate nohighlight">\(i\)</span> in a mixture</p></li>
+<li><p><span class="math notranslate nohighlight">\(C_i\)</span> is the mass concentration of species <span class="math notranslate nohighlight">\(i\)</span> in a mixture</p></li>
+</ul>
+</section>
+<section id="thermal-variables">
+<h3>Thermal Variables:<a class="headerlink" href="#thermal-variables" title="Link to this heading">#</a></h3>
+<p><em>Thermal variables</em> are state variables that govern the flow of heat, its use to perform work, and the direction of physical processes and how they evolve with time and towards equilibrium. These are variables that are often difficult to measure directly but manifest themselves through their influence on volumetric variables and the relationships between them.</p>
+<p>Examples of Thermal State Variables in this class - <span class="math notranslate nohighlight">\(H, U, S, G, A , \mathit{f}, \phi\)</span></p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(H\)</span> is the enthalpy</p></li>
+<li><p><span class="math notranslate nohighlight">\(U\)</span> is the internal energy</p></li>
+<li><p><span class="math notranslate nohighlight">\(S\)</span> is the entropy</p></li>
+<li><p><span class="math notranslate nohighlight">\(G\)</span> is the Gibbs free energy</p></li>
+<li><p><span class="math notranslate nohighlight">\(A\)</span> is the Helmholtz free energy</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathit{f}\)</span> is the fugacity</p></li>
+<li><p><span class="math notranslate nohighlight">\(\phi\)</span> is the fugacity coefficient</p></li>
+</ul>
+</section>
+<section id="gibbs-phase-rule">
+<h3>Gibbs’ Phase Rule:<a class="headerlink" href="#gibbs-phase-rule" title="Link to this heading">#</a></h3>
+<p>A system can be composed of an arbitrary <strong>number</strong> of phases (<span class="math notranslate nohighlight">\(P\)</span>) and components (<span class="math notranslate nohighlight">\(C\)</span>) and potentially include any number of chemical reactions (<span class="math notranslate nohighlight">\(M\)</span>). Additionally, these characteristics can change as a function of time. Gibbs observed that for systems in equilibrium, state variables could not be set independently from one another and there were constraints on how many variables could be specified.</p>
+<p>We call the number of variables that we can control in a system, the number degrees of freedom (DOF).</p>
+<p>Gibbs defined the number of degrees of freedom by <strong>phase rule</strong> is given as:</p>
+<p><span class="math notranslate nohighlight">\(\quad DOF=2+C-P+M\)</span></p>
+</section>
+<section id="exercises">
+<h3>Exercises:<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h3>
+<p>Example Exam Questions:</p>
+<ol class="arabic simple">
+<li><p>For one component, one phase systems with no reactions: P=1, C=1, R=0, DOF=2</p></li>
+<li></li>
+</ol>
+</section>
+</section>
+<section id="extensive-and-intensive-variables">
+<h2>Extensive and Intensive Variables<a class="headerlink" href="#extensive-and-intensive-variables" title="Link to this heading">#</a></h2>
+<p><a id="1.2"></a></p>
+<p>Distinguishing intensive and extensive variables are an important topic in this class as many properties that we seek to measure or determine are dependent on how much of a material is present within a system of interest.</p>
+<p>Let’s consider some variable <span class="math notranslate nohighlight">\(\theta\)</span>. <span class="math notranslate nohighlight">\(\theta\)</span> is called an <em>extensive</em> variable if the magnitude of <span class="math notranslate nohighlight">\(\theta\)</span> depends on the total amount of material present. We can keep track of the total amount of material present by defining the total mass of that material <span class="math notranslate nohighlight">\(M\)</span> or the total number of a moles of that material <span class="math notranslate nohighlight">\(N\)</span>.</p>
+<div class="alert alert-block alert-info">
+<b>Mulit-component Materials:</b> Materials with more than one component will also specify the composition.
+</div>
+<p>We can eliminate the extensive nature of the variable <span class="math notranslate nohighlight">\(\theta\)</span> by dividing its extensive value by the mass or the total number of moles. such variables, we call <em>intensive</em>. In this book, we distinguish extensive from intensive variables with accents.</p>
+<p><span class="math notranslate nohighlight">\(\quad \hat{\theta}=\dfrac{\theta}{M}\)</span> where <span class="math notranslate nohighlight">\(\hat{\theta}\)</span> indicates that the normalization is performed based on the total mass</p>
+<p><span class="math notranslate nohighlight">\(\quad \underline{\theta}=\dfrac{\theta}{N}\)</span> where <span class="math notranslate nohighlight">\(\underline{\theta}\)</span>  indicates that the normalization is performed based on the total number of moles.</p>
+<section id="why-do-we-make-this-distinction">
+<h3>Why do we make this distinction?:<a class="headerlink" href="#why-do-we-make-this-distinction" title="Link to this heading">#</a></h3>
+<p>Extensive variables are often found in our <em>macroscopic system balance expressions</em> and are useful for calculating things like the total work done or the total amount of heat evolved in a process.</p>
+<p>Intensive variables are often found in equations of state and are useful for relating thermodynamic quantities to one another and often make the expressions more compact and easier to read.</p>
+<div class="alert alert-block alert-info">
+<b>Opinion:</b> I find calculations are often most easily performed using intensive variables.
+</div>
+</section>
+<section id="examples">
+<h3>Examples<a class="headerlink" href="#examples" title="Link to this heading">#</a></h3>
+<p><a id="1.3"></a></p>
+</section>
+</section>
+<section id="working-with-units">
+<h2>Working with Units<a class="headerlink" href="#working-with-units" title="Link to this heading">#</a></h2>
+<p>Below is a list of the 7 fundamental units that are used in the International Standard (SI) systems of measurement to define the magnitude of measured quantities.</p>
+<table class="infobox" style="width: 760px; height: 603px;">
+    <tbody>
+        <tr style="height: 32px;">
+            <td style="text-align: center; vertical-align: middle; width: 759px; height: 32px;" colspan="3"><a class="inline_disabled" href="https://en.wikipedia.org/wiki/International_System_of_Units" target="_blank" rel="noopener"><strong>SI base units</strong></a></td>
+        </tr>
+        <tr style="height: 32px;">
+            <td style="text-align: center; vertical-align: middle; width: 177.461px; height: 32px;"><strong>Symbol</strong></td>
+            <td style="text-align: center; vertical-align: middle; width: 264.531px; height: 32px;"><strong>Name</strong></td>
+            <td style="text-align: center; vertical-align: middle; width: 316.43px; height: 32px;"><strong>Quantity</strong></td>
+        </tr>
+        <tr style="height: 32px;">
+            <td style="text-align: center; vertical-align: middle; width: 177.594px; height: 32px;">s</td>
+            <td style="text-align: center; vertical-align: middle; width: 264.68px; height: 32px;"><a title="Second" href="https://canvas.northwestern.edu/wiki/Second">second</a></td>
+            <td style="text-align: center; vertical-align: middle; width: 316.562px; height: 32px;"><a title="Time" href="https://canvas.northwestern.edu/wiki/Time">time</a></td>
+        </tr>
+        <tr style="height: 32px;">
+            <td style="text-align: center; vertical-align: middle; width: 177.633px; height: 32px;">m</td>
+            <td style="text-align: center; vertical-align: middle; width: 264.719px; height: 32px;"><a title="Metre" href="https://canvas.northwestern.edu/wiki/Metre">metre</a></td>
+            <td style="text-align: center; vertical-align: middle; width: 316.602px; height: 32px;"><a title="Length" href="https://canvas.northwestern.edu/wiki/Length">length</a></td>
+        </tr>
+        <tr style="height: 32px;">
+            <td style="text-align: center; vertical-align: middle; width: 177.641px; height: 32px;">kg</td>
+            <td style="text-align: center; vertical-align: middle; width: 264.726px; height: 32px;"><a title="" href="https://canvas.northwestern.edu/wiki/Kilogram">kilogram</a></td>
+            <td style="text-align: center; vertical-align: middle; width: 316.625px; height: 32px;"><a title="" href="https://canvas.northwestern.edu/wiki/Mass">mass</a></td>
+        </tr>
+        <tr style="height: 32px;">
+            <td style="text-align: center; vertical-align: middle; width: 177.641px; height: 32px;">A</td>
+            <td style="text-align: center; vertical-align: middle; width: 264.719px; height: 32px;"><a title="Mass" href="https://canvas.northwestern.edu/wiki/Ampere">ampere</a></td>
+            <td style="text-align: center; vertical-align: middle; width: 316.641px; height: 32px;"><a title="Electric current" href="https://canvas.northwestern.edu/wiki/Electric_current">electric current</a></td>
+        </tr>
+        <tr style="height: 32px;">
+            <td style="text-align: center; vertical-align: middle; width: 177.641px; height: 32px;">K</td>
+            <td style="text-align: center; vertical-align: middle; width: 264.719px; height: 32px;"><a title="Kelvin" href="https://canvas.northwestern.edu/wiki/Kelvin">kelvin</a></td>
+            <td style="text-align: center; vertical-align: middle; width: 316.641px; height: 32px;"><a title="Thermodynamic temperature" href="https://canvas.northwestern.edu/wiki/Thermodynamic_temperature">thermodynamic temperature</a></td>
+        </tr>
+        <tr style="height: 32px;">
+            <td style="text-align: center; vertical-align: middle; width: 177.641px; height: 32px;">mol</td>
+            <td style="text-align: center; vertical-align: middle; width: 264.719px; height: 32px;"><a title="Mole (unit)" href="https://canvas.northwestern.edu/wiki/Mole_(unit)">mole</a></td>
+            <td style="text-align: center; vertical-align: middle; width: 316.641px; height: 32px;"><a title="Amount of substance" href="https://canvas.northwestern.edu/wiki/Amount_of_substance">amount of substance</a></td>
+        </tr>
+        <tr style="height: 32px;">
+            <td style="text-align: center; vertical-align: middle; width: 177.641px; height: 32px;">cd</td>
+            <td style="text-align: center; vertical-align: middle; width: 264.719px; height: 32px;"><a title="Candela" href="https://canvas.northwestern.edu/wiki/Candela">candela</a></td>
+            <td style="text-align: center; vertical-align: middle; width: 316.641px; height: 32px;"><a title="Luminous intensity" href="https://canvas.northwestern.edu/wiki/Luminous_intensity">luminous intensity</a></td>
+        </tr>
+        <tr style="height: 32px;">
+            <td style="text-align: center; vertical-align: middle; width: 759px; height: 32px;" colspan="3"><strong>SI defining constants</strong></td>
+        </tr>
+        <tr style="height: 32px;">
+            <td style="text-align: center; vertical-align: middle; width: 177.641px; height: 32px;"><strong>Symbol</strong></td>
+            <td style="text-align: center; vertical-align: middle; width: 264.719px; height: 32px;"><strong>Name</strong></td>
+            <td style="text-align: center; vertical-align: middle; width: 316.641px; height: 32px;"><strong>Exact value</strong></td>
+        </tr>
+        <tr style="height: 32px;">
+            <td style="text-align: center; vertical-align: middle; width: 177.641px; height: 32px;"><span class="texhtml">&Delta;<i>&nu;</i><sub>Cs</sub></span></td>
+            <td style="text-align: center; vertical-align: middle; width: 264.719px; height: 32px;"><a title="Caesium standard" href="https://canvas.northwestern.edu/wiki/Caesium_standard">hyperfine transition frequency of Cs</a></td>
+            <td style="text-align: center; vertical-align: middle; width: 316.641px; height: 32px;"><span class="nowrap">9<span style="margin-left: .25em;">192</span><span style="margin-left: .25em;">631</span><span style="margin-left: .25em;">770</span>&nbsp;Hz</span></td>
+        </tr>
+        <tr style="height: 32px;">
+            <td style="text-align: center; vertical-align: middle; width: 177.641px; height: 32px;"><span class="texhtml mvar" style="font-style: italic;">c</span></td>
+            <td style="text-align: center; vertical-align: middle; width: 264.719px; height: 32px;"><a title="Speed of light" href="https://canvas.northwestern.edu/wiki/Speed_of_light">speed of light</a></td>
+            <td style="text-align: center; vertical-align: middle; width: 316.641px; height: 32px;"><span class="nowrap">299<span style="margin-left: .25em;">792</span><span style="margin-left: .25em;">458</span>&nbsp;m/s</span></td>
+        </tr>
+        <tr style="height: 32px;">
+            <td style="text-align: center; vertical-align: middle; width: 177.641px; height: 32px;"><span class="texhtml mvar" style="font-style: italic;">h</span></td>
+            <td style="text-align: center; vertical-align: middle; width: 264.719px; height: 32px;"><a title="Planck constant" href="https://canvas.northwestern.edu/wiki/Planck_constant">Planck constant</a></td>
+            <td style="text-align: center; vertical-align: middle; width: 316.641px; height: 32px;"><span class="nowrap">6.626<span style="margin-left: .25em;">070</span><span style="margin-left: .25em;">15</span><span style="margin-left: 0.25em; margin-right: 0.15em;">&times;</span>10<sup>&minus;34</sup>&nbsp;J&sdot;s</span></td>
+        </tr>
+        <tr style="height: 32px;">
+            <td style="text-align: center; vertical-align: middle; width: 177.641px; height: 32px;"><span class="texhtml mvar" style="font-style: italic;">e</span></td>
+            <td style="text-align: center; vertical-align: middle; width: 264.719px; height: 32px;"><a title="Elementary charge" href="https://canvas.northwestern.edu/wiki/Elementary_charge">elementary charge</a></td>
+            <td style="text-align: center; vertical-align: middle; width: 316.641px; height: 32px;"><span class="nowrap">1.602<span style="margin-left: .25em;">176</span><span style="margin-left: .25em;">634</span><span style="margin-left: 0.25em; margin-right: 0.15em;">&times;</span>10<sup>&minus;19</sup>&nbsp;C</span></td>
+        </tr>
+        <tr style="height: 32px;">
+            <td style="text-align: center; vertical-align: middle; width: 177.641px; height: 32px;"><span class="texhtml mvar" style="font-style: italic;">k</span></td>
+            <td style="text-align: center; vertical-align: middle; width: 264.719px; height: 32px;"><a title="Boltzmann constant" href="https://canvas.northwestern.edu/wiki/Boltzmann_constant">Boltzmann constant</a></td>
+            <td style="text-align: center; vertical-align: middle; width: 316.641px; height: 32px;"><span class="nowrap">1.380<span style="margin-left: .25em;">649</span><span style="margin-left: 0.25em; margin-right: 0.15em;">&times;</span>10<sup>&minus;23</sup>&nbsp;J/K</span></td>
+        </tr>
+        <tr style="height: 32px;">
+            <td style="text-align: center; vertical-align: middle; width: 177.641px; height: 32px;"><span class="texhtml"><i>N</i><sub>A</sub></span></td>
+            <td style="text-align: center; vertical-align: middle; width: 264.719px; height: 32px;"><a title="Avogadro constant" href="https://canvas.northwestern.edu/wiki/Avogadro_constant">Avogadro constant</a></td>
+            <td style="text-align: center; vertical-align: middle; width: 316.641px; height: 32px;"><span class="nowrap">6.022<span style="margin-left: .25em;">140</span><span style="margin-left: .25em;">76</span><span style="margin-left: 0.25em; margin-right: 0.15em;">&times;</span>10<sup>23</sup>&nbsp;mol<sup>&minus;1</sup></span></td>
+        </tr>
+        <tr style="height: 59px;">
+            <td style="text-align: center; vertical-align: middle; width: 177.641px; height: 59px;"><span class="texhtml"><i>K</i><sub>cd</sub></span></td>
+            <td style="text-align: center; vertical-align: middle; width: 264.719px; height: 59px;"><a title="Luminous efficacy" href="https://canvas.northwestern.edu/wiki/Luminous_efficacy">luminous efficacy</a> of <span class="nowrap">540&nbsp;THz</span> radiation</td>
+            <td style="text-align: center; vertical-align: middle; width: 316.641px; height: 59px;"><span class="nowrap">683&nbsp;lm/W</span></td>
+        </tr>
+    </tbody>
+</table>
+<div class="alert alert-block alert-info">
+<b>Other Units:</b> All Other Units are derived from these fundamental units
+</div>
+<section id="id1">
+<h3>Examples<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Gas_constant">Gas Constant</a></p></li>
+</ol>
+<p><span class="math notranslate nohighlight">\(\quad\quad R\)</span> molar equivalent of Boltzmann’s constant <span class="math notranslate nohighlight">\(R=k_B N_A=8.314\)</span> <span class="math notranslate nohighlight">\(\bigg[\dfrac{J}{mol\cdot K}\bigg]\)</span></p>
+<ol class="arabic simple" start="2">
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Pressure">Pressure</a></p></li>
+</ol>
+<p><span class="math notranslate nohighlight">\(\quad\quad  P=\frac{Force}{Area}=\frac{Mass\:\times Acceleration\:}{Area}=\frac{kg\cdot m}{m^2\cdot s^2}=\frac{kg}{m\cdot s^2}=Pa\)</span>”</p>
+<div class="alert alert-block alert-info">
+<b>Note:</b> Note 1 bar is $10^5$ Pa
+</div>
+<ol class="arabic simple" start="3">
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Work_(physics)">Work (Extrinsic)</a></p></li>
+</ol>
+<p><span class="math notranslate nohighlight">\(\quad\quad W=\int_C\textbf{F}ds=Force\:\times Distance=\frac{kg\cdot m\cdot m}{s^2}=\frac{kg\cdot m^2}{s^2}\)</span></p>
+<ol class="arabic simple" start="4">
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Volume">Volume</a></p></li>
+</ol>
+<p><span class="math notranslate nohighlight">\(\quad\quad V=Distance^3=m^3\)</span></p>
+<ol class="arabic simple" start="5">
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Energy">Energy</a>
+<span class="math notranslate nohighlight">\(\quad\quad E=Force\:\times Distance=\frac{kg\cdot m\cdot m}{s^2}=\frac{kg\cdot m^2}{s^2}\)</span></p></li>
+</ol>
+<p>Energy has the same units as work. Examples of energy include:</p>
+<ul class="simple">
+<li><p>Potential Energy, PE</p></li>
+<li><p>Kinetic Energy, KE</p></li>
+<li><p>Work, W</p></li>
+<li><p>Heat, Q</p></li>
+<li><p>Entropy <span class="math notranslate nohighlight">\(\int S dT\)</span>” /&gt;, where <span class="math notranslate nohighlight">\(S\)</span> is the entropy and <span class="math notranslate nohighlight">\(T\)</span> the temperature. A change in entropy or temperature corresponds to a change in energy.</p></li>
+</ul>
+<div class="alert alert-block alert-info">
+<b>Note:</b> Energy is often defined with respect to some reference state
+</div>
+<div class="alert alert-block alert-info">
+<b>Hint:</b> Always convert Temperature to K before performing calculations.
+</div></section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "executablebooks/jupyter-book",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./Ch8\211_Content\Ch1"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#state-variables">State Variables</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#volumetric-variables">Volumetric Variables:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#thermal-variables">Thermal Variables:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gibbs-phase-rule">Gibbs’ Phase Rule:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extensive-and-intensive-variables">Extensive and Intensive Variables</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-do-we-make-this-distinction">Why do we make this distinction?:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-units">Working with Units</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Examples</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By J. J. Richards
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

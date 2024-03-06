@@ -1,0 +1,835 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Liquid Liquid Extraction &#8212; Introduction to Thermodynamics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Ch8/212 Content/DunnWorkstudy/15_LLE Continued_CH8';</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/logo.png" class="logo__image only-light" alt="Introduction to Thermodynamics - Home"/>
+    <script>document.write(`<img src="../../../_static/logo.png" class="logo__image only-dark" alt="Introduction to Thermodynamics - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../../intro.html">
+                    Foreword
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Definitions and Balance Expressions</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch1/1.Thermodynamic-Definitions.html">Thermodynamic Definitions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch1/2.Real-Gas-Properties.html">Real Gas Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch1/3.Equations-of-State.html">Equations of State</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch1/4.Balance-Expressions.html">Macroscopic Balance Expressions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch1/5.Conservation-of-Mass.html">Conservation of Mass</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Foundations of Thermodynamics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch2/1.Conservation-of-Energy.html">Conservation of Energy and the 1st Law of Thermodynamics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch2/2.Expansion-of-a-Gas.html">Expansion of a Gas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch2/3.Entropy-Balance-Expression.html">Balance Expression for Entropy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch2/4.Entropy-at-0K.html">Entropy at 0K</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch2/5.Free-Energies.html">Free Energy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch2/6.Changes-of-State.html">Changes of State</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Applications of Thermodynamics in Chemical Engineering</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch3/1.Unit-Operations.html">Unit Operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch3/2.Property-Diagram-Single-Components.html">Property Database for Common Substances</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch3/3.Heat-Engines.html">Heat Engines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch3/4.Refrigeration.html">Refrigeration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch3/5.Liquefaction.html">Liquefaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch3/6.Optimizing-with-Python.html">Optimizing with Python</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Vapor-Liquid Equilibrium for Non-Ideal Gases</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch4/1.Deriving-Useful-Thermodynamic-Relationships.html">Deriving Useful Thermodynamic Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch4/2.Virial-Equations-of-State.html">Volumetric Equations of State</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch4/3.Law-of-Corresponding-States.html">Law of Corresponding States and Critical Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch4/4.Thermal-Variables-from-EOS.html">Computing Thermal Variables from an Equation of State</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch4/7.Constructing-Property-Diagrams.html">Constructing Property Diagrams</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Thermodynamics of Mixtures</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch5/1.Introduction-to-Mixtures.html">Introduction to Mixtures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch5/3.Gaseous-Mixtures.html">Gaseous Mixtures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch5/4.Liquid-Mixtures.html">Liquid Mixtures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch5/5.Accuracy-EOS.html">Calculating the Accuracy of Equations of State</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch7/7.Activity-Coefficient-Models.html">Activity Coefficients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch7/8.Calculating-Mixture-Fugacity.html">Vapor-Liquid Equilibrium</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch7/9.Mixture-Equilibrium.html">Equilibrium of Mixtures</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Exercises</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../Exercises/Ch1.html">Exercises for Chapter 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Exercises/Ch2.html">Exercises for Chapter 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Exercises/Ch3.html">Exercises for Chapter 3</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../_sources/Ch8/212 Content/DunnWorkstudy/15_LLE Continued_CH8.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Liquid Liquid Extraction</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Liquid Liquid Extraction</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kremser-dilute-fractional-extraction-concentrated-lle">Kremser,Dilute Fractional Extraction, Concentrated LLE</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">1</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#establishing-our-nomenclature">Establishing our nomenclature</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">2</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#absorption-factor-and-extraction-factor">Absorption Factor and Extraction Factor</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">3</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Absorption Factor and Extraction Factor</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">4</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Absorption Factor and Extraction Factor</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">5</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Establishing our nomenclature</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">6</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dilute-fractional-extraction">Dilute fractional extraction</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">7</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#will-a-solute-go-up-or-down-in-a-column">Will a solute go up or down in a column?</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">8</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#external-mass-balance-on-the-column">External mass balance on the column:</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">9</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">10</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">11</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">12</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">13</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#concentrated-immiscible-extraction">Concentrated Immiscible Extraction</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">14</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">15</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#solvent-choice-governed-by-solute-solubility">Solvent choice governed by solute solubility</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">16</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#making-solvents-consumes-energy">Making solvents consumes energy</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id20">17</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id21">18</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="liquid-liquid-extraction">
+<h1>Liquid Liquid Extraction<a class="headerlink" href="#liquid-liquid-extraction" title="Link to this heading">#</a></h1>
+<section id="kremser-dilute-fractional-extraction-concentrated-lle">
+<h2>Kremser,Dilute Fractional Extraction, Concentrated LLE<a class="headerlink" href="#kremser-dilute-fractional-extraction-concentrated-lle" title="Link to this heading">#</a></h2>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>1<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="establishing-our-nomenclature">
+<h1>Establishing our nomenclature<a class="headerlink" href="#establishing-our-nomenclature" title="Link to this heading">#</a></h1>
+<ul class="simple">
+<li><p><strong>A</strong>: the <em>solute</em>. The compound we would like to separate out from one of the two liquid phases</p></li>
+<li><p><strong>D</strong>: the <em>diluent</em>. Liquid that enters the LLE process with the solute in it.</p></li>
+<li><p><strong>Raffinate</strong>: diluent + solute</p></li>
+<li><p><strong>S</strong>: the <em>solvent</em>. The liquid phase that serves as the separating agent into with the solute moves via mass transfer.</p></li>
+<li><p><strong>Extract</strong>: solvent + solute</p></li>
+</ul>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id2">
+<h1>2<a class="headerlink" href="#id2" title="Link to this heading">#</a></h1>
+<section id="absorption-factor-and-extraction-factor">
+<h2>Absorption Factor and Extraction Factor<a class="headerlink" href="#absorption-factor-and-extraction-factor" title="Link to this heading">#</a></h2>
+<div class="math notranslate nohighlight">
+\[ \frac{L}{mV} \]</div>
+<p>Think about the absorption factor in terms of the objectives of absorption: Drive a solute from the <em>gas</em> to the <em>liquid</em> phase.</p>
+<p>We want this value to be large.</p>
+<div class="math notranslate nohighlight">
+\[ \frac{L}{\frac{H}{P} \cdot V} \]</div>
+<p>For absorption, m is dependent upon total pressure.</p>
+<p>For the same value of H, a higher pressure will lead to a higher absorption factor.</p>
+<p>This lines up with the general sense that higher pressures will drive the solute to the liquid phase.</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id3">
+<h1>3<a class="headerlink" href="#id3" title="Link to this heading">#</a></h1>
+<section id="id4">
+<h2>Absorption Factor and Extraction Factor<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
+<div class="math notranslate nohighlight">
+\[ \frac{mV}{L} \]</div>
+<p>The inverse of the absorption factor could be called the stripping factor. In stripping we want to drive a solute from the <em>liquid</em> to the <em>gas</em> phase.</p>
+<p>We want this value to be large.</p>
+<div class="math notranslate nohighlight">
+\[ \frac{\frac{H}{P} \cdot V}{L} \]</div>
+<p>For stripping, m is dependent upon total pressure.</p>
+<p>For the same value of H, a lower pressure will lead to a higher stripping factor.</p>
+<p>This lines up with the general sense that low pressures will be favorable for a solute volatilizing into the gas phase.</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id5">
+<h1>4<a class="headerlink" href="#id5" title="Link to this heading">#</a></h1>
+<section id="id6">
+<h2>Absorption Factor and Extraction Factor<a class="headerlink" href="#id6" title="Link to this heading">#</a></h2>
+<div class="math notranslate nohighlight">
+\[ \frac{mE}{R} \]</div>
+<p>In LLE, the extraction factor gives us a sense for how favorable the system is for driving the solute into the <em>extract</em>, or the target liquid phase.</p>
+<div class="math notranslate nohighlight">
+\[ \frac{K_D E}{R} \]</div>
+<p>For extraction, m the distribution coefficient.</p>
+<p>It is T dependent, and not necessarily a linear function of T (see table 13-3)</p>
+<div class="math notranslate nohighlight">
+\[ K_D = \frac{y}{x} \]</div>
+<p>Additionally, for a given T we can choose among different solvents to achieve a high <span class="math notranslate nohighlight">\( K_D \)</span>.</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id7">
+<h1>5<a class="headerlink" href="#id7" title="Link to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id8">
+<h1>Establishing our nomenclature<a class="headerlink" href="#id8" title="Link to this heading">#</a></h1>
+<ul class="simple">
+<li><p><strong>A</strong>: the <em>solute</em>. The compound we would like to separate out from one of the two liquid phases</p></li>
+<li><p><strong>D</strong>: the <em>diluent</em>. Liquid that enters the LLE process with the solute in it.</p></li>
+<li><p><strong>Raffinate</strong>: diluent + solute</p></li>
+<li><p><strong>S</strong>: the <em>solvent</em>. The liquid phase that serves as the separating agent into with the solute moves via mass transfer.</p></li>
+<li><p><strong>Extract</strong>: solvent + solute</p></li>
+</ul>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id9">
+<h1>6<a class="headerlink" href="#id9" title="Link to this heading">#</a></h1>
+<p><img alt="Image" src="Ch8/212 Content/DunnWorkstudy/Dunn-Images/15_LLE%20Continued_CH8/Slide9.jpg" /></p>
+<section id="dilute-fractional-extraction">
+<h2>Dilute fractional extraction<a class="headerlink" href="#dilute-fractional-extraction" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Use two solvents to fractionate solutes from each other.</p></li>
+<li><p>Solute A prefers solvent 1; concentrates at top of column</p></li>
+<li><p>Solute B prefers solvent 2; concentrates at bottom of column</p></li>
+<li><p>Equilibrium curve can be different for the two sections</p></li>
+<li><p>Could have reflux at one or both ends</p></li>
+</ul>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id10">
+<h1>7<a class="headerlink" href="#id10" title="Link to this heading">#</a></h1>
+<p><img alt="Image" src="Ch8/212 Content/DunnWorkstudy/Dunn-Images/15_LLE%20Continued_CH8/Slide11.jpg" /></p>
+<section id="will-a-solute-go-up-or-down-in-a-column">
+<h2>Will a solute go up or down in a column?<a class="headerlink" href="#will-a-solute-go-up-or-down-in-a-column" title="Link to this heading">#</a></h2>
+<div class="math notranslate nohighlight">
+\[ \frac{\text{Solute A flow up the column}}{\text{Solute A flow down the column}}\frac{y_{A,j}E_j}{x_{A,j}R_j} = \frac{K_{d,A}E_j}{R_j} \]</div>
+<p>If this quantity is &gt; 1, solute will move UP at stage j<br />
+If this quantity is &lt; 1, the solute will move DOWN at stage j</p>
+<div class="math notranslate nohighlight">
+\[ \left( \frac{K_{d,A}E}{R} \right)_j &gt; 1 \]</div>
+<div class="math notranslate nohighlight">
+\[ \left( \frac{K_{d,A}E}{R} \right)_j &lt; 1  \]</div>
+<p>What levers do we have to control whether these quantities are &lt; or &gt; 1?</p>
+<ul class="simple">
+<li><p>Change solvent, adjust T, change E or R</p></li>
+</ul>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id11">
+<h1>8<a class="headerlink" href="#id11" title="Link to this heading">#</a></h1>
+<p><img alt="Image" src="Ch8/212 Content/DunnWorkstudy/Dunn-Images/15_LLE%20Continued_CH8/Slide13.jpg" /></p>
+<section id="external-mass-balance-on-the-column">
+<h2>External mass balance on the column:<a class="headerlink" href="#external-mass-balance-on-the-column" title="Link to this heading">#</a></h2>
+<div class="math notranslate nohighlight">
+\[ R + \overline{E} + F = E + \overline{R} \]</div>
+<div class="math notranslate nohighlight">
+\[ Rx_{A,0} + \overline{E}y_{A,N+1} + Fz_{A,F} = Ey_{A,1} + \overline{R}x_{A,N} \]</div>
+<div class="math notranslate nohighlight">
+\[ Rx_{B,0} + \overline{E}y_{B,N+1} + Fz_{B,F} = Ey_{B,1} + \overline{R}x_{B,N} \]</div>
+<p>If feed is in Solvent 1 (extract)
+$<span class="math notranslate nohighlight">\( E = \overline{E} + F \)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\( \overline{R} = R \)</span>$</p>
+<p>If feed is in Solvent 2 (diluent)
+$<span class="math notranslate nohighlight">\( \overline{E} = E \)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\( \overline{R} = R + F \)</span>$</p>
+<p>Top Operating Line: j is because we have two solutes
+$<span class="math notranslate nohighlight">\( y_{i,j+1} = \left( \frac{{R}}{E} \right)x_{i,j} + [y_{i,j} - \left( \frac{R}{E} \right)x_{i,0}] \)</span>$</p>
+<p>Bottom Operating Line
+$<span class="math notranslate nohighlight">\( y_{i,k+1} = \left( \frac{\overline{R}}{E} \right)x_{i,k} - \left[ \left( \frac{\overline{R}}{E} \right)x_{i,N} - y_{i,N+1} \right] \)</span>$</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id12">
+<h1>9<a class="headerlink" href="#id12" title="Link to this heading">#</a></h1>
+<p><img alt="Image" src="Ch8/212 Content/DunnWorkstudy/Dunn-Images/15_LLE%20Continued_CH8/Slide15.jpg" /></p>
+<p>ABSORPTION – how is solute concentration changing in column</p>
+<p>It is moving from gas to liquid</p>
+<p>Solute concentration in y increasing as go down column</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id13">
+<h1>10<a class="headerlink" href="#id13" title="Link to this heading">#</a></h1>
+<p><img alt="Image" src="Ch8/212 Content/DunnWorkstudy/Dunn-Images/15_LLE%20Continued_CH8/Slide17.jpg" /></p>
+<p>STRIPPING – how is solute concentration changing in column</p>
+<p>It is moving from liquid to gas</p>
+<p>Op line BELOW eq line</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id14">
+<h1>11<a class="headerlink" href="#id14" title="Link to this heading">#</a></h1>
+<p><img alt="Image" src="Ch8/212 Content/DunnWorkstudy/Dunn-Images/15_LLE%20Continued_CH8/Slide19.jpg" /></p>
+<p>Two column sections could be operated at different T, P so could have different equilibrium curves.</p>
+<p>More stages in top of column will result in more A out in top Solvent 1 stream. <span class="math notranslate nohighlight">\(y_{B,1}\)</span> be lower</p>
+<p>More stages in column bottom increase <span class="math notranslate nohighlight">\(x_{B,N}\)</span>.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id15">
+<h1>12<a class="headerlink" href="#id15" title="Link to this heading">#</a></h1>
+<p><img alt="Image" src="Ch8/212 Content/DunnWorkstudy/Dunn-Images/15_LLE%20Continued_CH8/Slide21.jpg" /></p>
+<p>One McCabe Thelie Chart per solute</p>
+<p>Solutes ABSORBED in top of column – solute in extract is increasing as we go down column.</p>
+<p>Solutes STRIPPED in bottom of column – solute in extract is increasing as we go up column.</p>
+<p><span class="math notranslate nohighlight">\( N = 8 \)</span></p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id16">
+<h1>13<a class="headerlink" href="#id16" title="Link to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="concentrated-immiscible-extraction">
+<h1>Concentrated Immiscible Extraction<a class="headerlink" href="#concentrated-immiscible-extraction" title="Link to this heading">#</a></h1>
+<ul class="simple">
+<li><p>Diluent and solvent flow rate constant</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[ X = \frac{x}{1 - x} = \frac{\text{kg solute}}{\text{kg diluent}} \]</div>
+<div class="math notranslate nohighlight">
+\[ Y = \frac{y}{1 - y} = \frac{\text{kg solute}}{\text{kg diluent}} \]</div>
+<div class="math notranslate nohighlight">
+\[ Y_{j+1} = \left( \frac{F_D}{F_S} \right) X_j + \left( Y_1 - \frac{F_D}{F_S} X_0 \right) \]</div>
+<p>Operating line. Green quantities generally known.</p>
+<p><span class="math notranslate nohighlight">\( X_{N}, Y_{N+1} \)</span>also generally known. These are a point on the operating line.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id17">
+<h1>14<a class="headerlink" href="#id17" title="Link to this heading">#</a></h1>
+<p><img alt="Image" src="Ch8/212 Content/DunnWorkstudy/Dunn-Images/15_LLE%20Continued_CH8/Slide39.jpg" /></p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id18">
+<h1>15<a class="headerlink" href="#id18" title="Link to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="solvent-choice-governed-by-solute-solubility">
+<h1>Solvent choice governed by solute solubility<a class="headerlink" href="#solvent-choice-governed-by-solute-solubility" title="Link to this heading">#</a></h1>
+<ul class="simple">
+<li><p>Some solvents pose health and environmental risks</p></li>
+<li><p>Amide solvents: reproductive toxicity</p></li>
+<li><p>Hydrocarbon solvents: flammable, don’t dissolve in water and can bioaccumulate</p></li>
+<li><p>The European Union has a piece of legislation in place around chemical safety: “Registration, Evaluation, Authorization, and Restriction of Chemicals”</p></li>
+<li><p>In 2015, the EU banned chloroform, benzene… Many other compounds some of which we talk about in our text!</p></li>
+</ul>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id19">
+<h1>16<a class="headerlink" href="#id19" title="Link to this heading">#</a></h1>
+<p><img alt="Image" src="Ch8/212 Content/DunnWorkstudy/Dunn-Images/15_LLE%20Continued_CH8/Slide43.jpg" /></p>
+<section id="making-solvents-consumes-energy">
+<h2>Making solvents consumes energy<a class="headerlink" href="#making-solvents-consumes-energy" title="Link to this heading">#</a></h2>
+<p>Cumulative Energy Demand: CED<br />
+Distillation credit: purify the solvent and recycle it<br />
+With incineration: recover the energy it contains when it is spent</p>
+<p>The more complex the supply chain, the more energy you save by recycling through distillation</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id20">
+<h1>17<a class="headerlink" href="#id20" title="Link to this heading">#</a></h1>
+<p><img alt="Image" src="Ch8/212 Content/DunnWorkstudy/Dunn-Images/15_LLE%20Continued_CH8/Slide45.jpg" /></p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id21">
+<h1>18<a class="headerlink" href="#id21" title="Link to this heading">#</a></h1>
+<p><img alt="Image" src="Ch8/212 Content/DunnWorkstudy/Dunn-Images/15_LLE%20Continued_CH8/Slide47.jpg" /></p>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "executablebooks/jupyter-book",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./Ch8\212 Content\DunnWorkstudy"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Liquid Liquid Extraction</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kremser-dilute-fractional-extraction-concentrated-lle">Kremser,Dilute Fractional Extraction, Concentrated LLE</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">1</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#establishing-our-nomenclature">Establishing our nomenclature</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">2</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#absorption-factor-and-extraction-factor">Absorption Factor and Extraction Factor</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">3</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Absorption Factor and Extraction Factor</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">4</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Absorption Factor and Extraction Factor</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">5</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Establishing our nomenclature</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">6</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dilute-fractional-extraction">Dilute fractional extraction</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">7</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#will-a-solute-go-up-or-down-in-a-column">Will a solute go up or down in a column?</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">8</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#external-mass-balance-on-the-column">External mass balance on the column:</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">9</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">10</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">11</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">12</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">13</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#concentrated-immiscible-extraction">Concentrated Immiscible Extraction</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">14</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">15</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#solvent-choice-governed-by-solute-solubility">Solvent choice governed by solute solubility</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">16</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#making-solvents-consumes-energy">Making solvents consumes energy</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id20">17</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id21">18</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By J. J. Richards
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

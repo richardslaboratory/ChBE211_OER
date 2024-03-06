@@ -1,0 +1,3706 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Volumetric Equations of State &#8212; Introduction to Thermodynamics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="application/vnd.jupyter.widget-state+json">{"state": {"f302796fca2d4374ae2cb79525e2283d": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "0895773bbd5345c6b4f6e8e81e1103e5": {"model_name": "VBoxModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": ["widget-interact"], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "VBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "VBoxView", "box_style": "", "children": ["IPY_MODEL_dee7d8a7190f4afc986ae295619b0dd7", "IPY_MODEL_0736a257c7734ca1bda7fa594133499f"], "layout": "IPY_MODEL_f302796fca2d4374ae2cb79525e2283d", "tabbable": null, "tooltip": null}}, "bf7f546a117d44b184095ecaeb65b8d0": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "7ddb0940824e405e85cf9ed21e464c1c": {"model_name": "SliderStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "SliderStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "StyleView", "description_width": "", "handle_color": null}}, "dee7d8a7190f4afc986ae295619b0dd7": {"model_name": "FloatSliderModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "FloatSliderModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "FloatSliderView", "behavior": "drag-tap", "continuous_update": true, "description": "T", "description_allow_html": false, "disabled": false, "layout": "IPY_MODEL_bf7f546a117d44b184095ecaeb65b8d0", "max": 1000.0, "min": 1.0, "orientation": "horizontal", "readout": true, "readout_format": ".2f", "step": 1.0, "style": "IPY_MODEL_7ddb0940824e405e85cf9ed21e464c1c", "tabbable": null, "tooltip": null, "value": 273.0}}, "4e6633d11ee6410b9c1456598a296cba": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "0736a257c7734ca1bda7fa594133499f": {"model_name": "OutputModel", "model_module": "@jupyter-widgets/output", "model_module_version": "1.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/output", "_model_module_version": "1.0.0", "_model_name": "OutputModel", "_view_count": null, "_view_module": "@jupyter-widgets/output", "_view_module_version": "1.0.0", "_view_name": "OutputView", "layout": "IPY_MODEL_4e6633d11ee6410b9c1456598a296cba", "msg_id": "", "outputs": [], "tabbable": null, "tooltip": null}}, "25327764a3cd49a68fc51d538743b9b1": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "205e8c2677134fc3a5804c55e39653ab": {"model_name": "VBoxModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": ["widget-interact"], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "VBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "VBoxView", "box_style": "", "children": ["IPY_MODEL_e3c2da6bf3b44517bff5c7525336035e", "IPY_MODEL_126137841c94436e96a30abcb0f8250a", "IPY_MODEL_0a1de4cc08f84833aee31f6b10b24580"], "layout": "IPY_MODEL_25327764a3cd49a68fc51d538743b9b1", "tabbable": null, "tooltip": null}}, "7a4373233d644a248c4f645abf171bd9": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "78ab7e9db97344ddb5765777d9a09dea": {"model_name": "SliderStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "SliderStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "StyleView", "description_width": "", "handle_color": null}}, "e3c2da6bf3b44517bff5c7525336035e": {"model_name": "FloatSliderModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "FloatSliderModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "FloatSliderView", "behavior": "drag-tap", "continuous_update": true, "description": "T", "description_allow_html": false, "disabled": false, "layout": "IPY_MODEL_7a4373233d644a248c4f645abf171bd9", "max": 1000.0, "min": 1.0, "orientation": "horizontal", "readout": true, "readout_format": ".2f", "step": 1.0, "style": "IPY_MODEL_78ab7e9db97344ddb5765777d9a09dea", "tabbable": null, "tooltip": null, "value": 273.0}}, "506b561957f04db182ac8f70fb186e87": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "c5d18a274c5945798d6277e6165e2b20": {"model_name": "SliderStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "SliderStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "StyleView", "description_width": "", "handle_color": null}}, "126137841c94436e96a30abcb0f8250a": {"model_name": "FloatSliderModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "FloatSliderModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "FloatSliderView", "behavior": "drag-tap", "continuous_update": true, "description": "a", "description_allow_html": false, "disabled": false, "layout": "IPY_MODEL_506b561957f04db182ac8f70fb186e87", "max": 1.0, "min": 0.001, "orientation": "horizontal", "readout": true, "readout_format": ".2f", "step": 0.001, "style": "IPY_MODEL_c5d18a274c5945798d6277e6165e2b20", "tabbable": null, "tooltip": null, "value": 0.2}}, "4b2a3dd80cca4d7ab795a433507048f1": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "0a1de4cc08f84833aee31f6b10b24580": {"model_name": "OutputModel", "model_module": "@jupyter-widgets/output", "model_module_version": "1.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/output", "_model_module_version": "1.0.0", "_model_name": "OutputModel", "_view_count": null, "_view_module": "@jupyter-widgets/output", "_view_module_version": "1.0.0", "_view_name": "OutputView", "layout": "IPY_MODEL_4b2a3dd80cca4d7ab795a433507048f1", "msg_id": "", "outputs": [], "tabbable": null, "tooltip": null}}, "944fa197d17f499b9453dcecb5b9b63b": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "1e7be9f97e044975986d187eeb605e41": {"model_name": "VBoxModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": ["widget-interact"], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "VBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "VBoxView", "box_style": "", "children": ["IPY_MODEL_99a247c336514774952986d8c5e7047c", "IPY_MODEL_1b73134ff2d94348befacd90c5afc954", "IPY_MODEL_26759d6af09248b98a2eb398f85264f1", "IPY_MODEL_fa364346eec742b4b787a5b390595c76"], "layout": "IPY_MODEL_944fa197d17f499b9453dcecb5b9b63b", "tabbable": null, "tooltip": null}}, "77a4d212b02440d5a158f445366304ac": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "2b31fe9d2bc245f5a4cad4d9e4886e89": {"model_name": "SliderStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "SliderStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "StyleView", "description_width": "", "handle_color": null}}, "99a247c336514774952986d8c5e7047c": {"model_name": "FloatSliderModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "FloatSliderModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "FloatSliderView", "behavior": "drag-tap", "continuous_update": true, "description": "T", "description_allow_html": false, "disabled": false, "layout": "IPY_MODEL_77a4d212b02440d5a158f445366304ac", "max": 1000.0, "min": 1.0, "orientation": "horizontal", "readout": true, "readout_format": ".2f", "step": 1.0, "style": "IPY_MODEL_2b31fe9d2bc245f5a4cad4d9e4886e89", "tabbable": null, "tooltip": null, "value": 273.0}}, "b33b9a962cb24568837c00f97365c5d3": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "86463878d8ee46488e90a90ae5c9ef97": {"model_name": "SliderStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "SliderStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "StyleView", "description_width": "", "handle_color": null}}, "1b73134ff2d94348befacd90c5afc954": {"model_name": "FloatSliderModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "FloatSliderModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "FloatSliderView", "behavior": "drag-tap", "continuous_update": true, "description": "a", "description_allow_html": false, "disabled": false, "layout": "IPY_MODEL_b33b9a962cb24568837c00f97365c5d3", "max": 1.0, "min": 0.001, "orientation": "horizontal", "readout": true, "readout_format": ".2f", "step": 0.001, "style": "IPY_MODEL_86463878d8ee46488e90a90ae5c9ef97", "tabbable": null, "tooltip": null, "value": 0.2}}, "d296781528d54d7fa8727d1fce80b4d3": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "55a11538ce3a4c35b4a6fe560e1e102b": {"model_name": "SliderStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "SliderStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "StyleView", "description_width": "", "handle_color": null}}, "26759d6af09248b98a2eb398f85264f1": {"model_name": "IntSliderModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "IntSliderModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "IntSliderView", "behavior": "drag-tap", "continuous_update": true, "description": "b", "description_allow_html": false, "disabled": false, "layout": "IPY_MODEL_d296781528d54d7fa8727d1fce80b4d3", "max": 100, "min": 1, "orientation": "horizontal", "readout": true, "readout_format": "d", "step": 1, "style": "IPY_MODEL_55a11538ce3a4c35b4a6fe560e1e102b", "tabbable": null, "tooltip": null, "value": 20}}, "40455de7a375428c86b813161d277c53": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "fa364346eec742b4b787a5b390595c76": {"model_name": "OutputModel", "model_module": "@jupyter-widgets/output", "model_module_version": "1.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/output", "_model_module_version": "1.0.0", "_model_name": "OutputModel", "_view_count": null, "_view_module": "@jupyter-widgets/output", "_view_module_version": "1.0.0", "_view_name": "OutputView", "layout": "IPY_MODEL_40455de7a375428c86b813161d277c53", "msg_id": "", "outputs": [], "tabbable": null, "tooltip": null}}}, "version_major": 2, "version_minor": 0}</script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script crossorigin="anonymous" data-jupyter-widgets-cdn="https://cdn.jsdelivr.net/npm/" src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@1.0.6/dist/embed-amd.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Ch8/211_Content/Ch4/Virial-Equations-of-State';</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/logo.png" class="logo__image only-light" alt="Introduction to Thermodynamics - Home"/>
+    <script>document.write(`<img src="../../../_static/logo.png" class="logo__image only-dark" alt="Introduction to Thermodynamics - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../../intro.html">
+                    Foreword
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Definitions and Balance Expressions</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch1/1.Thermodynamic-Definitions.html">Thermodynamic Definitions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch1/2.Real-Gas-Properties.html">Real Gas Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch1/3.Equations-of-State.html">Equations of State</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch1/4.Balance-Expressions.html">Macroscopic Balance Expressions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch1/5.Conservation-of-Mass.html">Conservation of Mass</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Foundations of Thermodynamics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch2/1.Conservation-of-Energy.html">Conservation of Energy and the 1st Law of Thermodynamics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch2/2.Expansion-of-a-Gas.html">Expansion of a Gas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch2/3.Entropy-Balance-Expression.html">Balance Expression for Entropy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch2/4.Entropy-at-0K.html">Entropy at 0K</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch2/5.Free-Energies.html">Free Energy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch2/6.Changes-of-State.html">Changes of State</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Applications of Thermodynamics in Chemical Engineering</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch3/1.Unit-Operations.html">Unit Operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch3/2.Property-Diagram-Single-Components.html">Property Database for Common Substances</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch3/3.Heat-Engines.html">Heat Engines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch3/4.Refrigeration.html">Refrigeration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch3/5.Liquefaction.html">Liquefaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch3/6.Optimizing-with-Python.html">Optimizing with Python</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Vapor-Liquid Equilibrium for Non-Ideal Gases</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch4/1.Deriving-Useful-Thermodynamic-Relationships.html">Deriving Useful Thermodynamic Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch4/2.Virial-Equations-of-State.html">Volumetric Equations of State</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch4/3.Law-of-Corresponding-States.html">Law of Corresponding States and Critical Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch4/4.Thermal-Variables-from-EOS.html">Computing Thermal Variables from an Equation of State</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch4/7.Constructing-Property-Diagrams.html">Constructing Property Diagrams</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Thermodynamics of Mixtures</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch5/1.Introduction-to-Mixtures.html">Introduction to Mixtures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch5/3.Gaseous-Mixtures.html">Gaseous Mixtures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch5/4.Liquid-Mixtures.html">Liquid Mixtures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch5/5.Accuracy-EOS.html">Calculating the Accuracy of Equations of State</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch7/7.Activity-Coefficient-Models.html">Activity Coefficients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch7/8.Calculating-Mixture-Fugacity.html">Vapor-Liquid Equilibrium</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Ch7/9.Mixture-Equilibrium.html">Equilibrium of Mixtures</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Exercises</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../Exercises/Ch1.html">Exercises for Chapter 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Exercises/Ch2.html">Exercises for Chapter 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Exercises/Ch3.html">Exercises for Chapter 3</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../_sources/Ch8/211_Content/Ch4/Virial-Equations-of-State.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Volumetric Equations of State</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generalized-form-of-the-volumetric-equation-of-state">Generalized Form of the Volumetric Equation of State</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#first-order-equations-of-state">First Order Equations of State</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#second-order-equations-of-state">Second Order Equations of State</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cubic-third-order-equations-of-state">Cubic (Third Order) Equations of State</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#van-der-waal-equation-of-state-1873">Van der Waal Equation of State - 1873</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#redlich-kwong-equation-of-state-1949">Redlich-Kwong Equation of State - 1949</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#peng-robinson-equation-of-state-1976">Peng-Robinson Equation of State - 1976</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="volumetric-equations-of-state">
+<h1>Volumetric Equations of State<a class="headerlink" href="#volumetric-equations-of-state" title="Link to this heading">#</a></h1>
+<section id="generalized-form-of-the-volumetric-equation-of-state">
+<h2>Generalized Form of the Volumetric Equation of State<a class="headerlink" href="#generalized-form-of-the-volumetric-equation-of-state" title="Link to this heading">#</a></h2>
+<p>Cubic forms of volumetric equations of state played a central role in thermodynamics at the turn of the 19th century and continue to be used today to compute changes in <em>thermal variables</em> in terms of changes in <em>volumetric variables</em>. As was discussed in the first half of your course, we use the first and second laws of thermodynamics to compute how changes of state of liquid and vapors can be used to describe the flows of energy and mass in various unit operations. A necessary part of the problem solving that takes place is the ability to obtain high quality volumetric and thermal data for single component and multicomponent substances and mixtures of interest.</p>
+<p>The starting point for computer <em>thermal variables</em> from <em>volumetric variables</em> is the volumetric equation of state, which relates <span class="math notranslate nohighlight">\(P\)</span>, <span class="math notranslate nohighlight">\(T\)</span>, and <span class="math notranslate nohighlight">\(\underline{V}\)</span>. The ideal gas law is one form of a cubic equation of state and for the purposes of this lecture, we will write the ideal gas law as:</p>
+<div class="math notranslate nohighlight">
+\[\dfrac{P\underline{V}}{RT}=1\]</div>
+<p>For simplicity, we define a property called the compressibility <span class="math notranslate nohighlight">\(Z=\dfrac{P\underline{V}}{RT}\)</span> for more generalized forms of equations of state so that they may be written compactly. Using the compressibility, it is possible to define different orders of <em>equations of state</em> by writing the equation of state in terms of a polynomial expression of the form:</p>
+<div class="math notranslate nohighlight">
+\[ 0=\sum_{i,0}^{n} a_i Z^i \]</div>
+<p>where the integer <span class="math notranslate nohighlight">\(n\)</span> is the highest order of the polynomial expression.</p>
+<section id="first-order-equations-of-state">
+<h3>First Order Equations of State<a class="headerlink" href="#first-order-equations-of-state" title="Link to this heading">#</a></h3>
+<p>The ideal gas law is an example of a <em>first-order</em> equation of state because the highest power of the compressibility in the ideal gas law is <span class="math notranslate nohighlight">\(n=1\)</span>. All first order equations of state can be written as:</p>
+<div class="math notranslate nohighlight">
+\[ \beta Z+\gamma=0 \]</div>
+<p>where <span class="math notranslate nohighlight">\(\beta\)</span> and <span class="math notranslate nohighlight">\(\gamma\)</span> are parameters of the 1st order polynomial expression. For the ideal gas law, <span class="math notranslate nohighlight">\(\beta=1\)</span> and <span class="math notranslate nohighlight">\(\gamma=-1\)</span></p>
+<p>An interactive example of a plot of the ideal gas law is given below. In this example, by changing the Temperature, you will notice that the line shape does not change, but the curve shifts vertically up and down with increases and decreases in Temperature. The ideal gas is a 1-phase fluid at all Temperatures and its behavior is defined over all conceivable phase space, but only accurate in the fully expanded limit, <span class="math notranslate nohighlight">\(lim_{P\rightarrow 0}\)</span> or <span class="math notranslate nohighlight">\(lim_{\underline{V}\rightarrow \infty}\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> notebook
+<span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+
+<span class="c1">##lets define some properties</span>
+<span class="n">R</span><span class="o">=</span><span class="mf">8.314</span><span class="c1">##J/mol*K</span>
+
+<span class="c1">##typical molar valume ranges fall in this value of density</span>
+<span class="n">V</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">201</span><span class="p">)</span><span class="c1">##cm3/mol</span>
+<span class="n">T</span><span class="o">=</span><span class="mi">298</span> <span class="c1">## Kelvin</span>
+
+<span class="k">def</span> <span class="nf">P_IG</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="n">V</span><span class="p">):</span>    
+    <span class="k">return</span> <span class="n">R</span><span class="o">*</span><span class="n">T</span><span class="o">/</span><span class="n">V</span> <span class="c1">## units returned in bar</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span><span class="c1">##create a subplot for plotting</span>
+
+<span class="n">line</span><span class="p">,</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">V</span><span class="p">,</span><span class="n">P_IG</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="n">V</span><span class="p">),</span><span class="s1">&#39;-r&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;$IG_{T=</span><span class="si">%3.1f</span><span class="s1"> K}$&#39;</span><span class="o">%</span><span class="k">T</span>)##plot the isotherm
+
+<span class="n">plt</span><span class="o">.</span><span class="n">yscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;P (bar)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$V$ $(cm^3/mol)$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+
+<span class="c1">##replots based on value of sliders.</span>
+<span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="n">T</span><span class="o">=</span><span class="mi">273</span><span class="p">):</span>
+    <span class="n">line</span><span class="o">.</span><span class="n">set_data</span><span class="p">(</span><span class="n">V</span><span class="p">,</span><span class="n">P_IG</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="n">V</span><span class="p">))</span>
+    <span class="n">line</span><span class="o">.</span><span class="n">set_label</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$IG_{T=</span><span class="si">%3.1f</span><span class="s1"> K}$&#39;</span><span class="o">%</span><span class="k">T</span>)
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">V</span><span class="p">),</span><span class="nb">max</span><span class="p">(</span><span class="n">V</span><span class="p">))</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">P_IG</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="n">V</span><span class="p">)),</span><span class="nb">max</span><span class="p">(</span><span class="n">P_IG</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="n">V</span><span class="p">)))</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+    
+    <span class="n">fig</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">draw_idle</span><span class="p">()</span>
+    
+<span class="n">interact</span><span class="p">(</span><span class="n">update</span><span class="p">,</span><span class="n">T</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mf">1000.0</span><span class="p">,</span><span class="mf">1.0</span><span class="p">));</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/javascript">/* Put everything inside the global mpl namespace */
+/* global mpl */
+window.mpl = {};
+
+mpl.get_websocket_type = function () {
+    if (typeof WebSocket !== 'undefined') {
+        return WebSocket;
+    } else if (typeof MozWebSocket !== 'undefined') {
+        return MozWebSocket;
+    } else {
+        alert(
+            'Your browser does not have WebSocket support. ' +
+                'Please try Chrome, Safari or Firefox ≥ 6. ' +
+                'Firefox 4 and 5 are also supported but you ' +
+                'have to enable WebSockets in about:config.'
+        );
+    }
+};
+
+mpl.figure = function (figure_id, websocket, ondownload, parent_element) {
+    this.id = figure_id;
+
+    this.ws = websocket;
+
+    this.supports_binary = this.ws.binaryType !== undefined;
+
+    if (!this.supports_binary) {
+        var warnings = document.getElementById('mpl-warnings');
+        if (warnings) {
+            warnings.style.display = 'block';
+            warnings.textContent =
+                'This browser does not support binary websocket messages. ' +
+                'Performance may be slow.';
+        }
+    }
+
+    this.imageObj = new Image();
+
+    this.context = undefined;
+    this.message = undefined;
+    this.canvas = undefined;
+    this.rubberband_canvas = undefined;
+    this.rubberband_context = undefined;
+    this.format_dropdown = undefined;
+
+    this.image_mode = 'full';
+
+    this.root = document.createElement('div');
+    this.root.setAttribute('style', 'display: inline-block');
+    this._root_extra_style(this.root);
+
+    parent_element.appendChild(this.root);
+
+    this._init_header(this);
+    this._init_canvas(this);
+    this._init_toolbar(this);
+
+    var fig = this;
+
+    this.waiting = false;
+
+    this.ws.onopen = function () {
+        fig.send_message('supports_binary', { value: fig.supports_binary });
+        fig.send_message('send_image_mode', {});
+        if (fig.ratio !== 1) {
+            fig.send_message('set_device_pixel_ratio', {
+                device_pixel_ratio: fig.ratio,
+            });
+        }
+        fig.send_message('refresh', {});
+    };
+
+    this.imageObj.onload = function () {
+        if (fig.image_mode === 'full') {
+            // Full images could contain transparency (where diff images
+            // almost always do), so we need to clear the canvas so that
+            // there is no ghosting.
+            fig.context.clearRect(0, 0, fig.canvas.width, fig.canvas.height);
+        }
+        fig.context.drawImage(fig.imageObj, 0, 0);
+    };
+
+    this.imageObj.onunload = function () {
+        fig.ws.close();
+    };
+
+    this.ws.onmessage = this._make_on_message_function(this);
+
+    this.ondownload = ondownload;
+};
+
+mpl.figure.prototype._init_header = function () {
+    var titlebar = document.createElement('div');
+    titlebar.classList =
+        'ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix';
+    var titletext = document.createElement('div');
+    titletext.classList = 'ui-dialog-title';
+    titletext.setAttribute(
+        'style',
+        'width: 100%; text-align: center; padding: 3px;'
+    );
+    titlebar.appendChild(titletext);
+    this.root.appendChild(titlebar);
+    this.header = titletext;
+};
+
+mpl.figure.prototype._canvas_extra_style = function (_canvas_div) {};
+
+mpl.figure.prototype._root_extra_style = function (_canvas_div) {};
+
+mpl.figure.prototype._init_canvas = function () {
+    var fig = this;
+
+    var canvas_div = (this.canvas_div = document.createElement('div'));
+    canvas_div.setAttribute('tabindex', '0');
+    canvas_div.setAttribute(
+        'style',
+        'border: 1px solid #ddd;' +
+            'box-sizing: content-box;' +
+            'clear: both;' +
+            'min-height: 1px;' +
+            'min-width: 1px;' +
+            'outline: 0;' +
+            'overflow: hidden;' +
+            'position: relative;' +
+            'resize: both;' +
+            'z-index: 2;'
+    );
+
+    function on_keyboard_event_closure(name) {
+        return function (event) {
+            return fig.key_event(event, name);
+        };
+    }
+
+    canvas_div.addEventListener(
+        'keydown',
+        on_keyboard_event_closure('key_press')
+    );
+    canvas_div.addEventListener(
+        'keyup',
+        on_keyboard_event_closure('key_release')
+    );
+
+    this._canvas_extra_style(canvas_div);
+    this.root.appendChild(canvas_div);
+
+    var canvas = (this.canvas = document.createElement('canvas'));
+    canvas.classList.add('mpl-canvas');
+    canvas.setAttribute(
+        'style',
+        'box-sizing: content-box;' +
+            'pointer-events: none;' +
+            'position: relative;' +
+            'z-index: 0;'
+    );
+
+    this.context = canvas.getContext('2d');
+
+    var backingStore =
+        this.context.backingStorePixelRatio ||
+        this.context.webkitBackingStorePixelRatio ||
+        this.context.mozBackingStorePixelRatio ||
+        this.context.msBackingStorePixelRatio ||
+        this.context.oBackingStorePixelRatio ||
+        this.context.backingStorePixelRatio ||
+        1;
+
+    this.ratio = (window.devicePixelRatio || 1) / backingStore;
+
+    var rubberband_canvas = (this.rubberband_canvas = document.createElement(
+        'canvas'
+    ));
+    rubberband_canvas.setAttribute(
+        'style',
+        'box-sizing: content-box;' +
+            'left: 0;' +
+            'pointer-events: none;' +
+            'position: absolute;' +
+            'top: 0;' +
+            'z-index: 1;'
+    );
+
+    // Apply a ponyfill if ResizeObserver is not implemented by browser.
+    if (this.ResizeObserver === undefined) {
+        if (window.ResizeObserver !== undefined) {
+            this.ResizeObserver = window.ResizeObserver;
+        } else {
+            var obs = _JSXTOOLS_RESIZE_OBSERVER({});
+            this.ResizeObserver = obs.ResizeObserver;
+        }
+    }
+
+    this.resizeObserverInstance = new this.ResizeObserver(function (entries) {
+        var nentries = entries.length;
+        for (var i = 0; i < nentries; i++) {
+            var entry = entries[i];
+            var width, height;
+            if (entry.contentBoxSize) {
+                if (entry.contentBoxSize instanceof Array) {
+                    // Chrome 84 implements new version of spec.
+                    width = entry.contentBoxSize[0].inlineSize;
+                    height = entry.contentBoxSize[0].blockSize;
+                } else {
+                    // Firefox implements old version of spec.
+                    width = entry.contentBoxSize.inlineSize;
+                    height = entry.contentBoxSize.blockSize;
+                }
+            } else {
+                // Chrome <84 implements even older version of spec.
+                width = entry.contentRect.width;
+                height = entry.contentRect.height;
+            }
+
+            // Keep the size of the canvas and rubber band canvas in sync with
+            // the canvas container.
+            if (entry.devicePixelContentBoxSize) {
+                // Chrome 84 implements new version of spec.
+                canvas.setAttribute(
+                    'width',
+                    entry.devicePixelContentBoxSize[0].inlineSize
+                );
+                canvas.setAttribute(
+                    'height',
+                    entry.devicePixelContentBoxSize[0].blockSize
+                );
+            } else {
+                canvas.setAttribute('width', width * fig.ratio);
+                canvas.setAttribute('height', height * fig.ratio);
+            }
+            /* This rescales the canvas back to display pixels, so that it
+             * appears correct on HiDPI screens. */
+            canvas.style.width = width + 'px';
+            canvas.style.height = height + 'px';
+
+            rubberband_canvas.setAttribute('width', width);
+            rubberband_canvas.setAttribute('height', height);
+
+            // And update the size in Python. We ignore the initial 0/0 size
+            // that occurs as the element is placed into the DOM, which should
+            // otherwise not happen due to the minimum size styling.
+            if (fig.ws.readyState == 1 && width != 0 && height != 0) {
+                fig.request_resize(width, height);
+            }
+        }
+    });
+    this.resizeObserverInstance.observe(canvas_div);
+
+    function on_mouse_event_closure(name) {
+        /* User Agent sniffing is bad, but WebKit is busted:
+         * https://bugs.webkit.org/show_bug.cgi?id=144526
+         * https://bugs.webkit.org/show_bug.cgi?id=181818
+         * The worst that happens here is that they get an extra browser
+         * selection when dragging, if this check fails to catch them.
+         */
+        var UA = navigator.userAgent;
+        var isWebKit = /AppleWebKit/.test(UA) && !/Chrome/.test(UA);
+        if(isWebKit) {
+            return function (event) {
+                /* This prevents the web browser from automatically changing to
+                 * the text insertion cursor when the button is pressed. We
+                 * want to control all of the cursor setting manually through
+                 * the 'cursor' event from matplotlib */
+                event.preventDefault()
+                return fig.mouse_event(event, name);
+            };
+        } else {
+            return function (event) {
+                return fig.mouse_event(event, name);
+            };
+        }
+    }
+
+    canvas_div.addEventListener(
+        'mousedown',
+        on_mouse_event_closure('button_press')
+    );
+    canvas_div.addEventListener(
+        'mouseup',
+        on_mouse_event_closure('button_release')
+    );
+    canvas_div.addEventListener(
+        'dblclick',
+        on_mouse_event_closure('dblclick')
+    );
+    // Throttle sequential mouse events to 1 every 20ms.
+    canvas_div.addEventListener(
+        'mousemove',
+        on_mouse_event_closure('motion_notify')
+    );
+
+    canvas_div.addEventListener(
+        'mouseenter',
+        on_mouse_event_closure('figure_enter')
+    );
+    canvas_div.addEventListener(
+        'mouseleave',
+        on_mouse_event_closure('figure_leave')
+    );
+
+    canvas_div.addEventListener('wheel', function (event) {
+        if (event.deltaY < 0) {
+            event.step = 1;
+        } else {
+            event.step = -1;
+        }
+        on_mouse_event_closure('scroll')(event);
+    });
+
+    canvas_div.appendChild(canvas);
+    canvas_div.appendChild(rubberband_canvas);
+
+    this.rubberband_context = rubberband_canvas.getContext('2d');
+    this.rubberband_context.strokeStyle = '#000000';
+
+    this._resize_canvas = function (width, height, forward) {
+        if (forward) {
+            canvas_div.style.width = width + 'px';
+            canvas_div.style.height = height + 'px';
+        }
+    };
+
+    // Disable right mouse context menu.
+    canvas_div.addEventListener('contextmenu', function (_e) {
+        event.preventDefault();
+        return false;
+    });
+
+    function set_focus() {
+        canvas.focus();
+        canvas_div.focus();
+    }
+
+    window.setTimeout(set_focus, 100);
+};
+
+mpl.figure.prototype._init_toolbar = function () {
+    var fig = this;
+
+    var toolbar = document.createElement('div');
+    toolbar.classList = 'mpl-toolbar';
+    this.root.appendChild(toolbar);
+
+    function on_click_closure(name) {
+        return function (_event) {
+            return fig.toolbar_button_onclick(name);
+        };
+    }
+
+    function on_mouseover_closure(tooltip) {
+        return function (event) {
+            if (!event.currentTarget.disabled) {
+                return fig.toolbar_button_onmouseover(tooltip);
+            }
+        };
+    }
+
+    fig.buttons = {};
+    var buttonGroup = document.createElement('div');
+    buttonGroup.classList = 'mpl-button-group';
+    for (var toolbar_ind in mpl.toolbar_items) {
+        var name = mpl.toolbar_items[toolbar_ind][0];
+        var tooltip = mpl.toolbar_items[toolbar_ind][1];
+        var image = mpl.toolbar_items[toolbar_ind][2];
+        var method_name = mpl.toolbar_items[toolbar_ind][3];
+
+        if (!name) {
+            /* Instead of a spacer, we start a new button group. */
+            if (buttonGroup.hasChildNodes()) {
+                toolbar.appendChild(buttonGroup);
+            }
+            buttonGroup = document.createElement('div');
+            buttonGroup.classList = 'mpl-button-group';
+            continue;
+        }
+
+        var button = (fig.buttons[name] = document.createElement('button'));
+        button.classList = 'mpl-widget';
+        button.setAttribute('role', 'button');
+        button.setAttribute('aria-disabled', 'false');
+        button.addEventListener('click', on_click_closure(method_name));
+        button.addEventListener('mouseover', on_mouseover_closure(tooltip));
+
+        var icon_img = document.createElement('img');
+        icon_img.src = '_images/' + image + '.png';
+        icon_img.srcset = '_images/' + image + '_large.png 2x';
+        icon_img.alt = tooltip;
+        button.appendChild(icon_img);
+
+        buttonGroup.appendChild(button);
+    }
+
+    if (buttonGroup.hasChildNodes()) {
+        toolbar.appendChild(buttonGroup);
+    }
+
+    var fmt_picker = document.createElement('select');
+    fmt_picker.classList = 'mpl-widget';
+    toolbar.appendChild(fmt_picker);
+    this.format_dropdown = fmt_picker;
+
+    for (var ind in mpl.extensions) {
+        var fmt = mpl.extensions[ind];
+        var option = document.createElement('option');
+        option.selected = fmt === mpl.default_extension;
+        option.innerHTML = fmt;
+        fmt_picker.appendChild(option);
+    }
+
+    var status_bar = document.createElement('span');
+    status_bar.classList = 'mpl-message';
+    toolbar.appendChild(status_bar);
+    this.message = status_bar;
+};
+
+mpl.figure.prototype.request_resize = function (x_pixels, y_pixels) {
+    // Request matplotlib to resize the figure. Matplotlib will then trigger a resize in the client,
+    // which will in turn request a refresh of the image.
+    this.send_message('resize', { width: x_pixels, height: y_pixels });
+};
+
+mpl.figure.prototype.send_message = function (type, properties) {
+    properties['type'] = type;
+    properties['figure_id'] = this.id;
+    this.ws.send(JSON.stringify(properties));
+};
+
+mpl.figure.prototype.send_draw_message = function () {
+    if (!this.waiting) {
+        this.waiting = true;
+        this.ws.send(JSON.stringify({ type: 'draw', figure_id: this.id }));
+    }
+};
+
+mpl.figure.prototype.handle_save = function (fig, _msg) {
+    var format_dropdown = fig.format_dropdown;
+    var format = format_dropdown.options[format_dropdown.selectedIndex].value;
+    fig.ondownload(fig, format);
+};
+
+mpl.figure.prototype.handle_resize = function (fig, msg) {
+    var size = msg['size'];
+    if (size[0] !== fig.canvas.width || size[1] !== fig.canvas.height) {
+        fig._resize_canvas(size[0], size[1], msg['forward']);
+        fig.send_message('refresh', {});
+    }
+};
+
+mpl.figure.prototype.handle_rubberband = function (fig, msg) {
+    var x0 = msg['x0'] / fig.ratio;
+    var y0 = (fig.canvas.height - msg['y0']) / fig.ratio;
+    var x1 = msg['x1'] / fig.ratio;
+    var y1 = (fig.canvas.height - msg['y1']) / fig.ratio;
+    x0 = Math.floor(x0) + 0.5;
+    y0 = Math.floor(y0) + 0.5;
+    x1 = Math.floor(x1) + 0.5;
+    y1 = Math.floor(y1) + 0.5;
+    var min_x = Math.min(x0, x1);
+    var min_y = Math.min(y0, y1);
+    var width = Math.abs(x1 - x0);
+    var height = Math.abs(y1 - y0);
+
+    fig.rubberband_context.clearRect(
+        0,
+        0,
+        fig.canvas.width / fig.ratio,
+        fig.canvas.height / fig.ratio
+    );
+
+    fig.rubberband_context.strokeRect(min_x, min_y, width, height);
+};
+
+mpl.figure.prototype.handle_figure_label = function (fig, msg) {
+    // Updates the figure title.
+    fig.header.textContent = msg['label'];
+};
+
+mpl.figure.prototype.handle_cursor = function (fig, msg) {
+    fig.canvas_div.style.cursor = msg['cursor'];
+};
+
+mpl.figure.prototype.handle_message = function (fig, msg) {
+    fig.message.textContent = msg['message'];
+};
+
+mpl.figure.prototype.handle_draw = function (fig, _msg) {
+    // Request the server to send over a new figure.
+    fig.send_draw_message();
+};
+
+mpl.figure.prototype.handle_image_mode = function (fig, msg) {
+    fig.image_mode = msg['mode'];
+};
+
+mpl.figure.prototype.handle_history_buttons = function (fig, msg) {
+    for (var key in msg) {
+        if (!(key in fig.buttons)) {
+            continue;
+        }
+        fig.buttons[key].disabled = !msg[key];
+        fig.buttons[key].setAttribute('aria-disabled', !msg[key]);
+    }
+};
+
+mpl.figure.prototype.handle_navigate_mode = function (fig, msg) {
+    if (msg['mode'] === 'PAN') {
+        fig.buttons['Pan'].classList.add('active');
+        fig.buttons['Zoom'].classList.remove('active');
+    } else if (msg['mode'] === 'ZOOM') {
+        fig.buttons['Pan'].classList.remove('active');
+        fig.buttons['Zoom'].classList.add('active');
+    } else {
+        fig.buttons['Pan'].classList.remove('active');
+        fig.buttons['Zoom'].classList.remove('active');
+    }
+};
+
+mpl.figure.prototype.updated_canvas_event = function () {
+    // Called whenever the canvas gets updated.
+    this.send_message('ack', {});
+};
+
+// A function to construct a web socket function for onmessage handling.
+// Called in the figure constructor.
+mpl.figure.prototype._make_on_message_function = function (fig) {
+    return function socket_on_message(evt) {
+        if (evt.data instanceof Blob) {
+            var img = evt.data;
+            if (img.type !== 'image/png') {
+                /* FIXME: We get "Resource interpreted as Image but
+                 * transferred with MIME type text/plain:" errors on
+                 * Chrome.  But how to set the MIME type?  It doesn't seem
+                 * to be part of the websocket stream */
+                img.type = 'image/png';
+            }
+
+            /* Free the memory for the previous frames */
+            if (fig.imageObj.src) {
+                (window.URL || window.webkitURL).revokeObjectURL(
+                    fig.imageObj.src
+                );
+            }
+
+            fig.imageObj.src = (window.URL || window.webkitURL).createObjectURL(
+                img
+            );
+            fig.updated_canvas_event();
+            fig.waiting = false;
+            return;
+        } else if (
+            typeof evt.data === 'string' &&
+            evt.data.slice(0, 21) === 'data:image/png;base64'
+        ) {
+            fig.imageObj.src = evt.data;
+            fig.updated_canvas_event();
+            fig.waiting = false;
+            return;
+        }
+
+        var msg = JSON.parse(evt.data);
+        var msg_type = msg['type'];
+
+        // Call the  "handle_{type}" callback, which takes
+        // the figure and JSON message as its only arguments.
+        try {
+            var callback = fig['handle_' + msg_type];
+        } catch (e) {
+            console.log(
+                "No handler for the '" + msg_type + "' message type: ",
+                msg
+            );
+            return;
+        }
+
+        if (callback) {
+            try {
+                // console.log("Handling '" + msg_type + "' message: ", msg);
+                callback(fig, msg);
+            } catch (e) {
+                console.log(
+                    "Exception inside the 'handler_" + msg_type + "' callback:",
+                    e,
+                    e.stack,
+                    msg
+                );
+            }
+        }
+    };
+};
+
+function getModifiers(event) {
+    var mods = [];
+    if (event.ctrlKey) {
+        mods.push('ctrl');
+    }
+    if (event.altKey) {
+        mods.push('alt');
+    }
+    if (event.shiftKey) {
+        mods.push('shift');
+    }
+    if (event.metaKey) {
+        mods.push('meta');
+    }
+    return mods;
+}
+
+/*
+ * return a copy of an object with only non-object keys
+ * we need this to avoid circular references
+ * https://stackoverflow.com/a/24161582/3208463
+ */
+function simpleKeys(original) {
+    return Object.keys(original).reduce(function (obj, key) {
+        if (typeof original[key] !== 'object') {
+            obj[key] = original[key];
+        }
+        return obj;
+    }, {});
+}
+
+mpl.figure.prototype.mouse_event = function (event, name) {
+    if (name === 'button_press') {
+        this.canvas.focus();
+        this.canvas_div.focus();
+    }
+
+    // from https://stackoverflow.com/q/1114465
+    var boundingRect = this.canvas.getBoundingClientRect();
+    var x = (event.clientX - boundingRect.left) * this.ratio;
+    var y = (event.clientY - boundingRect.top) * this.ratio;
+
+    this.send_message(name, {
+        x: x,
+        y: y,
+        button: event.button,
+        step: event.step,
+        modifiers: getModifiers(event),
+        guiEvent: simpleKeys(event),
+    });
+
+    return false;
+};
+
+mpl.figure.prototype._key_event_extra = function (_event, _name) {
+    // Handle any extra behaviour associated with a key event
+};
+
+mpl.figure.prototype.key_event = function (event, name) {
+    // Prevent repeat events
+    if (name === 'key_press') {
+        if (event.key === this._key) {
+            return;
+        } else {
+            this._key = event.key;
+        }
+    }
+    if (name === 'key_release') {
+        this._key = null;
+    }
+
+    var value = '';
+    if (event.ctrlKey && event.key !== 'Control') {
+        value += 'ctrl+';
+    }
+    else if (event.altKey && event.key !== 'Alt') {
+        value += 'alt+';
+    }
+    else if (event.shiftKey && event.key !== 'Shift') {
+        value += 'shift+';
+    }
+
+    value += 'k' + event.key;
+
+    this._key_event_extra(event, name);
+
+    this.send_message(name, { key: value, guiEvent: simpleKeys(event) });
+    return false;
+};
+
+mpl.figure.prototype.toolbar_button_onclick = function (name) {
+    if (name === 'download') {
+        this.handle_save(this, null);
+    } else {
+        this.send_message('toolbar_button', { name: name });
+    }
+};
+
+mpl.figure.prototype.toolbar_button_onmouseover = function (tooltip) {
+    this.message.textContent = tooltip;
+};
+
+///////////////// REMAINING CONTENT GENERATED BY embed_js.py /////////////////
+// prettier-ignore
+var _JSXTOOLS_RESIZE_OBSERVER=function(A){var t,i=new WeakMap,n=new WeakMap,a=new WeakMap,r=new WeakMap,o=new Set;function s(e){if(!(this instanceof s))throw new TypeError("Constructor requires 'new' operator");i.set(this,e)}function h(){throw new TypeError("Function is not a constructor")}function c(e,t,i,n){e=0 in arguments?Number(arguments[0]):0,t=1 in arguments?Number(arguments[1]):0,i=2 in arguments?Number(arguments[2]):0,n=3 in arguments?Number(arguments[3]):0,this.right=(this.x=this.left=e)+(this.width=i),this.bottom=(this.y=this.top=t)+(this.height=n),Object.freeze(this)}function d(){t=requestAnimationFrame(d);var s=new WeakMap,p=new Set;o.forEach((function(t){r.get(t).forEach((function(i){var r=t instanceof window.SVGElement,o=a.get(t),d=r?0:parseFloat(o.paddingTop),f=r?0:parseFloat(o.paddingRight),l=r?0:parseFloat(o.paddingBottom),u=r?0:parseFloat(o.paddingLeft),g=r?0:parseFloat(o.borderTopWidth),m=r?0:parseFloat(o.borderRightWidth),w=r?0:parseFloat(o.borderBottomWidth),b=u+f,F=d+l,v=(r?0:parseFloat(o.borderLeftWidth))+m,W=g+w,y=r?0:t.offsetHeight-W-t.clientHeight,E=r?0:t.offsetWidth-v-t.clientWidth,R=b+v,z=F+W,M=r?t.width:parseFloat(o.width)-R-E,O=r?t.height:parseFloat(o.height)-z-y;if(n.has(t)){var k=n.get(t);if(k[0]===M&&k[1]===O)return}n.set(t,[M,O]);var S=Object.create(h.prototype);S.target=t,S.contentRect=new c(u,d,M,O),s.has(i)||(s.set(i,[]),p.add(i)),s.get(i).push(S)}))})),p.forEach((function(e){i.get(e).call(e,s.get(e),e)}))}return s.prototype.observe=function(i){if(i instanceof window.Element){r.has(i)||(r.set(i,new Set),o.add(i),a.set(i,window.getComputedStyle(i)));var n=r.get(i);n.has(this)||n.add(this),cancelAnimationFrame(t),t=requestAnimationFrame(d)}},s.prototype.unobserve=function(i){if(i instanceof window.Element&&r.has(i)){var n=r.get(i);n.has(this)&&(n.delete(this),n.size||(r.delete(i),o.delete(i))),n.size||r.delete(i),o.size||cancelAnimationFrame(t)}},A.DOMRectReadOnly=c,A.ResizeObserver=s,A.ResizeObserverEntry=h,A}; // eslint-disable-line
+mpl.toolbar_items = [["Home", "Reset original view", "fa fa-home", "home"], ["Back", "Back to previous view", "fa fa-arrow-left", "back"], ["Forward", "Forward to next view", "fa fa-arrow-right", "forward"], ["", "", "", ""], ["Pan", "Left button pans, Right button zooms\nx/y fixes axis, CTRL fixes aspect", "fa fa-arrows", "pan"], ["Zoom", "Zoom to rectangle\nx/y fixes axis", "fa fa-square-o", "zoom"], ["", "", "", ""], ["Download", "Download plot", "fa fa-floppy-o", "download"]];
+
+mpl.extensions = ["eps", "jpeg", "pgf", "pdf", "png", "ps", "raw", "svg", "tif", "webp"];
+
+mpl.default_extension = "png";/* global mpl */
+
+var comm_websocket_adapter = function (comm) {
+    // Create a "websocket"-like object which calls the given IPython comm
+    // object with the appropriate methods. Currently this is a non binary
+    // socket, so there is still some room for performance tuning.
+    var ws = {};
+
+    ws.binaryType = comm.kernel.ws.binaryType;
+    ws.readyState = comm.kernel.ws.readyState;
+    function updateReadyState(_event) {
+        if (comm.kernel.ws) {
+            ws.readyState = comm.kernel.ws.readyState;
+        } else {
+            ws.readyState = 3; // Closed state.
+        }
+    }
+    comm.kernel.ws.addEventListener('open', updateReadyState);
+    comm.kernel.ws.addEventListener('close', updateReadyState);
+    comm.kernel.ws.addEventListener('error', updateReadyState);
+
+    ws.close = function () {
+        comm.close();
+    };
+    ws.send = function (m) {
+        //console.log('sending', m);
+        comm.send(m);
+    };
+    // Register the callback with on_msg.
+    comm.on_msg(function (msg) {
+        //console.log('receiving', msg['content']['data'], msg);
+        var data = msg['content']['data'];
+        if (data['blob'] !== undefined) {
+            data = {
+                data: new Blob(msg['buffers'], { type: data['blob'] }),
+            };
+        }
+        // Pass the mpl event to the overridden (by mpl) onmessage function.
+        ws.onmessage(data);
+    });
+    return ws;
+};
+
+mpl.mpl_figure_comm = function (comm, msg) {
+    // This is the function which gets called when the mpl process
+    // starts-up an IPython Comm through the "matplotlib" channel.
+
+    var id = msg.content.data.id;
+    // Get hold of the div created by the display call when the Comm
+    // socket was opened in Python.
+    var element = document.getElementById(id);
+    var ws_proxy = comm_websocket_adapter(comm);
+
+    function ondownload(figure, _format) {
+        window.open(figure.canvas.toDataURL());
+    }
+
+    var fig = new mpl.figure(id, ws_proxy, ondownload, element);
+
+    // Call onopen now - mpl needs it, as it is assuming we've passed it a real
+    // web socket which is closed, not our websocket->open comm proxy.
+    ws_proxy.onopen();
+
+    fig.parent_element = element;
+    fig.cell_info = mpl.find_output_cell("<div id='" + id + "'></div>");
+    if (!fig.cell_info) {
+        console.error('Failed to find cell for figure', id, fig);
+        return;
+    }
+    fig.cell_info[0].output_area.element.on(
+        'cleared',
+        { fig: fig },
+        fig._remove_fig_handler
+    );
+};
+
+mpl.figure.prototype.handle_close = function (fig, msg) {
+    var width = fig.canvas.width / fig.ratio;
+    fig.cell_info[0].output_area.element.off(
+        'cleared',
+        fig._remove_fig_handler
+    );
+    fig.resizeObserverInstance.unobserve(fig.canvas_div);
+
+    // Update the output cell to use the data from the current canvas.
+    fig.push_to_output();
+    var dataURL = fig.canvas.toDataURL();
+    // Re-enable the keyboard manager in IPython - without this line, in FF,
+    // the notebook keyboard shortcuts fail.
+    IPython.keyboard_manager.enable();
+    fig.parent_element.innerHTML =
+        '<img src="' + dataURL + '" width="' + width + '">';
+    fig.close_ws(fig, msg);
+};
+
+mpl.figure.prototype.close_ws = function (fig, msg) {
+    fig.send_message('closing', msg);
+    // fig.ws.close()
+};
+
+mpl.figure.prototype.push_to_output = function (_remove_interactive) {
+    // Turn the data on the canvas into data in the output cell.
+    var width = this.canvas.width / this.ratio;
+    var dataURL = this.canvas.toDataURL();
+    this.cell_info[1]['text/html'] =
+        '<img src="' + dataURL + '" width="' + width + '">';
+};
+
+mpl.figure.prototype.updated_canvas_event = function () {
+    // Tell IPython that the notebook contents must change.
+    IPython.notebook.set_dirty(true);
+    this.send_message('ack', {});
+    var fig = this;
+    // Wait a second, then push the new image to the DOM so
+    // that it is saved nicely (might be nice to debounce this).
+    setTimeout(function () {
+        fig.push_to_output();
+    }, 1000);
+};
+
+mpl.figure.prototype._init_toolbar = function () {
+    var fig = this;
+
+    var toolbar = document.createElement('div');
+    toolbar.classList = 'btn-toolbar';
+    this.root.appendChild(toolbar);
+
+    function on_click_closure(name) {
+        return function (_event) {
+            return fig.toolbar_button_onclick(name);
+        };
+    }
+
+    function on_mouseover_closure(tooltip) {
+        return function (event) {
+            if (!event.currentTarget.disabled) {
+                return fig.toolbar_button_onmouseover(tooltip);
+            }
+        };
+    }
+
+    fig.buttons = {};
+    var buttonGroup = document.createElement('div');
+    buttonGroup.classList = 'btn-group';
+    var button;
+    for (var toolbar_ind in mpl.toolbar_items) {
+        var name = mpl.toolbar_items[toolbar_ind][0];
+        var tooltip = mpl.toolbar_items[toolbar_ind][1];
+        var image = mpl.toolbar_items[toolbar_ind][2];
+        var method_name = mpl.toolbar_items[toolbar_ind][3];
+
+        if (!name) {
+            /* Instead of a spacer, we start a new button group. */
+            if (buttonGroup.hasChildNodes()) {
+                toolbar.appendChild(buttonGroup);
+            }
+            buttonGroup = document.createElement('div');
+            buttonGroup.classList = 'btn-group';
+            continue;
+        }
+
+        button = fig.buttons[name] = document.createElement('button');
+        button.classList = 'btn btn-default';
+        button.href = '#';
+        button.title = name;
+        button.innerHTML = '<i class="fa ' + image + ' fa-lg"></i>';
+        button.addEventListener('click', on_click_closure(method_name));
+        button.addEventListener('mouseover', on_mouseover_closure(tooltip));
+        buttonGroup.appendChild(button);
+    }
+
+    if (buttonGroup.hasChildNodes()) {
+        toolbar.appendChild(buttonGroup);
+    }
+
+    // Add the status bar.
+    var status_bar = document.createElement('span');
+    status_bar.classList = 'mpl-message pull-right';
+    toolbar.appendChild(status_bar);
+    this.message = status_bar;
+
+    // Add the close button to the window.
+    var buttongrp = document.createElement('div');
+    buttongrp.classList = 'btn-group inline pull-right';
+    button = document.createElement('button');
+    button.classList = 'btn btn-mini btn-primary';
+    button.href = '#';
+    button.title = 'Stop Interaction';
+    button.innerHTML = '<i class="fa fa-power-off icon-remove icon-large"></i>';
+    button.addEventListener('click', function (_evt) {
+        fig.handle_close(fig, {});
+    });
+    button.addEventListener(
+        'mouseover',
+        on_mouseover_closure('Stop Interaction')
+    );
+    buttongrp.appendChild(button);
+    var titlebar = this.root.querySelector('.ui-dialog-titlebar');
+    titlebar.insertBefore(buttongrp, titlebar.firstChild);
+};
+
+mpl.figure.prototype._remove_fig_handler = function (event) {
+    var fig = event.data.fig;
+    if (event.target !== this) {
+        // Ignore bubbled events from children.
+        return;
+    }
+    fig.close_ws(fig, {});
+};
+
+mpl.figure.prototype._root_extra_style = function (el) {
+    el.style.boxSizing = 'content-box'; // override notebook setting of border-box.
+};
+
+mpl.figure.prototype._canvas_extra_style = function (el) {
+    // this is important to make the div 'focusable
+    el.setAttribute('tabindex', 0);
+    // reach out to IPython and tell the keyboard manager to turn it's self
+    // off when our div gets focus
+
+    // location in version 3
+    if (IPython.notebook.keyboard_manager) {
+        IPython.notebook.keyboard_manager.register_events(el);
+    } else {
+        // location in version 2
+        IPython.keyboard_manager.register_events(el);
+    }
+};
+
+mpl.figure.prototype._key_event_extra = function (event, _name) {
+    // Check for shift+enter
+    if (event.shiftKey && event.which === 13) {
+        this.canvas_div.blur();
+        // select the cell after this one
+        var index = IPython.notebook.find_cell_index(this.cell_info[0]);
+        IPython.notebook.select(index + 1);
+    }
+};
+
+mpl.figure.prototype.handle_save = function (fig, _msg) {
+    fig.ondownload(fig, null);
+};
+
+mpl.find_output_cell = function (html_output) {
+    // Return the cell and output element which can be found *uniquely* in the notebook.
+    // Note - this is a bit hacky, but it is done because the "notebook_saving.Notebook"
+    // IPython event is triggered only after the cells have been serialised, which for
+    // our purposes (turning an active figure into a static one), is too late.
+    var cells = IPython.notebook.get_cells();
+    var ncells = cells.length;
+    for (var i = 0; i < ncells; i++) {
+        var cell = cells[i];
+        if (cell.cell_type === 'code') {
+            for (var j = 0; j < cell.output_area.outputs.length; j++) {
+                var data = cell.output_area.outputs[j];
+                if (data.data) {
+                    // IPython >= 3 moved mimebundle to data attribute of output
+                    data = data.data;
+                }
+                if (data['text/html'] === html_output) {
+                    return [cell, data, j];
+                }
+            }
+        }
+    }
+};
+
+// Register the function which deals with the matplotlib target/channel.
+// The kernel may be null if the page has been refreshed.
+if (IPython.notebook.kernel !== null) {
+    IPython.notebook.kernel.comm_manager.register_target(
+        'matplotlib',
+        mpl.mpl_figure_comm
+    );
+}
+</script><div class="output text_html"><div id='9c2bda05-ac3d-4acb-9cea-abaf8c49e59b'></div></div><script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "0895773bbd5345c6b4f6e8e81e1103e5"}</script></div>
+</div>
+</section>
+<section id="second-order-equations-of-state">
+<h3>Second Order Equations of State<a class="headerlink" href="#second-order-equations-of-state" title="Link to this heading">#</a></h3>
+<p>The Virial Equation of State is an example of a <em>second-order</em> equation of state because the highest power of the compressibility is <span class="math notranslate nohighlight">\(n=2\)</span> in the general form. All second-order equations of state can be written as:</p>
+<div class="math notranslate nohighlight">
+\[ \alpha Z^2 + \beta Z+\gamma=0 \]</div>
+<p>where <span class="math notranslate nohighlight">\(\beta\)</span> and <span class="math notranslate nohighlight">\(\gamma\)</span> are parameters of the 1st order polynomial expression. Traditionally, the virial equation of state is given as <span class="math notranslate nohighlight">\(\alpha=1\)</span> <span class="math notranslate nohighlight">\(\beta=-\dfrac{aP}{(RT)^2}\)</span> and <span class="math notranslate nohighlight">\(\gamma=0\)</span></p>
+<p>The virial equation of state is often not written in this explicit polynomial form, but instead in a form the reflects the expected deviation from the ideal gas law.</p>
+<div class="math notranslate nohighlight">
+\[\dfrac{P\underline{V}}{RT}=1-\dfrac{a(T)}{RT\underline{V}}\]</div>
+<p>or</p>
+<div class="math notranslate nohighlight">
+\[Z=1-\dfrac{B(T)}{\underline{V}}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> notebook
+<span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1">##lets define some properties</span>
+<span class="n">R</span><span class="o">=</span><span class="mf">8.314</span><span class="c1">##J/mol*K</span>
+
+<span class="c1">##typical molar valume ranges fall in this value of density</span>
+<span class="n">V</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">201</span><span class="p">)</span><span class="c1">##cm3/mol</span>
+<span class="n">T</span><span class="o">=</span><span class="mi">298</span> <span class="c1">## Kelvin</span>
+<span class="n">a</span><span class="o">=</span><span class="mf">0.2</span><span class="c1">##Pa*m^6/mol</span>
+
+<span class="k">def</span> <span class="nf">P_VEOS</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="n">V</span><span class="p">,</span><span class="n">a</span><span class="p">):</span>
+    
+    <span class="k">return</span> <span class="n">R</span><span class="o">*</span><span class="n">T</span><span class="o">/</span><span class="n">V</span><span class="o">-</span><span class="n">a</span><span class="o">*</span><span class="mi">10</span><span class="o">**</span><span class="mi">6</span><span class="o">/</span><span class="n">V</span><span class="o">**</span><span class="mi">2</span> <span class="c1">## units returned in bar</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="n">line1</span><span class="p">,</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">V</span><span class="p">,</span><span class="n">P_IG</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="n">V</span><span class="p">),</span><span class="s1">&#39;-r&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;$IG_{T=</span><span class="si">%3.1f</span><span class="s1"> K}$&#39;</span><span class="o">%</span><span class="k">T</span>)
+<span class="n">line2</span><span class="p">,</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">V</span><span class="p">,</span><span class="n">P_VEOS</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="n">V</span><span class="p">,</span><span class="n">a</span><span class="p">),</span><span class="s1">&#39;-b&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;$VEOS_{T=</span><span class="si">%3.1f</span><span class="s1"> K}$&#39;</span><span class="o">%</span><span class="k">T</span>)
+
+<span class="n">plt</span><span class="o">.</span><span class="n">yscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;P (bar)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$V$ $(cm^3/mol)$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="n">T</span><span class="o">=</span><span class="mi">273</span><span class="p">,</span><span class="n">a</span><span class="o">=</span><span class="mf">0.2</span><span class="p">):</span>
+    <span class="n">line1</span><span class="o">.</span><span class="n">set_data</span><span class="p">(</span><span class="n">V</span><span class="p">,</span><span class="n">P_IG</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="n">V</span><span class="p">))</span>
+    <span class="n">line1</span><span class="o">.</span><span class="n">set_label</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$IG_{T=</span><span class="si">%3.1f</span><span class="s1"> K}$&#39;</span><span class="o">%</span><span class="k">T</span>)
+    <span class="n">line2</span><span class="o">.</span><span class="n">set_data</span><span class="p">(</span><span class="n">V</span><span class="p">,</span><span class="n">P_VEOS</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="n">V</span><span class="p">,</span><span class="n">a</span><span class="p">))</span>
+    <span class="n">line2</span><span class="o">.</span><span class="n">set_label</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$IG_{T=</span><span class="si">%3.1f</span><span class="s1"> K}$&#39;</span><span class="o">%</span><span class="k">T</span>)
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">V</span><span class="p">),</span><span class="nb">max</span><span class="p">(</span><span class="n">V</span><span class="p">))</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">P_IG</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="n">V</span><span class="p">)),</span><span class="nb">max</span><span class="p">(</span><span class="n">P_IG</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="n">V</span><span class="p">)))</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">draw_idle</span><span class="p">()</span>
+    
+<span class="n">interact</span><span class="p">(</span><span class="n">update</span><span class="p">,</span><span class="n">T</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mf">1000.0</span><span class="p">,</span><span class="mf">1.0</span><span class="p">),</span><span class="n">a</span><span class="o">=</span><span class="p">(</span><span class="mf">0.001</span><span class="p">,</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">0.001</span><span class="p">));</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/javascript">/* Put everything inside the global mpl namespace */
+/* global mpl */
+window.mpl = {};
+
+mpl.get_websocket_type = function () {
+    if (typeof WebSocket !== 'undefined') {
+        return WebSocket;
+    } else if (typeof MozWebSocket !== 'undefined') {
+        return MozWebSocket;
+    } else {
+        alert(
+            'Your browser does not have WebSocket support. ' +
+                'Please try Chrome, Safari or Firefox ≥ 6. ' +
+                'Firefox 4 and 5 are also supported but you ' +
+                'have to enable WebSockets in about:config.'
+        );
+    }
+};
+
+mpl.figure = function (figure_id, websocket, ondownload, parent_element) {
+    this.id = figure_id;
+
+    this.ws = websocket;
+
+    this.supports_binary = this.ws.binaryType !== undefined;
+
+    if (!this.supports_binary) {
+        var warnings = document.getElementById('mpl-warnings');
+        if (warnings) {
+            warnings.style.display = 'block';
+            warnings.textContent =
+                'This browser does not support binary websocket messages. ' +
+                'Performance may be slow.';
+        }
+    }
+
+    this.imageObj = new Image();
+
+    this.context = undefined;
+    this.message = undefined;
+    this.canvas = undefined;
+    this.rubberband_canvas = undefined;
+    this.rubberband_context = undefined;
+    this.format_dropdown = undefined;
+
+    this.image_mode = 'full';
+
+    this.root = document.createElement('div');
+    this.root.setAttribute('style', 'display: inline-block');
+    this._root_extra_style(this.root);
+
+    parent_element.appendChild(this.root);
+
+    this._init_header(this);
+    this._init_canvas(this);
+    this._init_toolbar(this);
+
+    var fig = this;
+
+    this.waiting = false;
+
+    this.ws.onopen = function () {
+        fig.send_message('supports_binary', { value: fig.supports_binary });
+        fig.send_message('send_image_mode', {});
+        if (fig.ratio !== 1) {
+            fig.send_message('set_device_pixel_ratio', {
+                device_pixel_ratio: fig.ratio,
+            });
+        }
+        fig.send_message('refresh', {});
+    };
+
+    this.imageObj.onload = function () {
+        if (fig.image_mode === 'full') {
+            // Full images could contain transparency (where diff images
+            // almost always do), so we need to clear the canvas so that
+            // there is no ghosting.
+            fig.context.clearRect(0, 0, fig.canvas.width, fig.canvas.height);
+        }
+        fig.context.drawImage(fig.imageObj, 0, 0);
+    };
+
+    this.imageObj.onunload = function () {
+        fig.ws.close();
+    };
+
+    this.ws.onmessage = this._make_on_message_function(this);
+
+    this.ondownload = ondownload;
+};
+
+mpl.figure.prototype._init_header = function () {
+    var titlebar = document.createElement('div');
+    titlebar.classList =
+        'ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix';
+    var titletext = document.createElement('div');
+    titletext.classList = 'ui-dialog-title';
+    titletext.setAttribute(
+        'style',
+        'width: 100%; text-align: center; padding: 3px;'
+    );
+    titlebar.appendChild(titletext);
+    this.root.appendChild(titlebar);
+    this.header = titletext;
+};
+
+mpl.figure.prototype._canvas_extra_style = function (_canvas_div) {};
+
+mpl.figure.prototype._root_extra_style = function (_canvas_div) {};
+
+mpl.figure.prototype._init_canvas = function () {
+    var fig = this;
+
+    var canvas_div = (this.canvas_div = document.createElement('div'));
+    canvas_div.setAttribute('tabindex', '0');
+    canvas_div.setAttribute(
+        'style',
+        'border: 1px solid #ddd;' +
+            'box-sizing: content-box;' +
+            'clear: both;' +
+            'min-height: 1px;' +
+            'min-width: 1px;' +
+            'outline: 0;' +
+            'overflow: hidden;' +
+            'position: relative;' +
+            'resize: both;' +
+            'z-index: 2;'
+    );
+
+    function on_keyboard_event_closure(name) {
+        return function (event) {
+            return fig.key_event(event, name);
+        };
+    }
+
+    canvas_div.addEventListener(
+        'keydown',
+        on_keyboard_event_closure('key_press')
+    );
+    canvas_div.addEventListener(
+        'keyup',
+        on_keyboard_event_closure('key_release')
+    );
+
+    this._canvas_extra_style(canvas_div);
+    this.root.appendChild(canvas_div);
+
+    var canvas = (this.canvas = document.createElement('canvas'));
+    canvas.classList.add('mpl-canvas');
+    canvas.setAttribute(
+        'style',
+        'box-sizing: content-box;' +
+            'pointer-events: none;' +
+            'position: relative;' +
+            'z-index: 0;'
+    );
+
+    this.context = canvas.getContext('2d');
+
+    var backingStore =
+        this.context.backingStorePixelRatio ||
+        this.context.webkitBackingStorePixelRatio ||
+        this.context.mozBackingStorePixelRatio ||
+        this.context.msBackingStorePixelRatio ||
+        this.context.oBackingStorePixelRatio ||
+        this.context.backingStorePixelRatio ||
+        1;
+
+    this.ratio = (window.devicePixelRatio || 1) / backingStore;
+
+    var rubberband_canvas = (this.rubberband_canvas = document.createElement(
+        'canvas'
+    ));
+    rubberband_canvas.setAttribute(
+        'style',
+        'box-sizing: content-box;' +
+            'left: 0;' +
+            'pointer-events: none;' +
+            'position: absolute;' +
+            'top: 0;' +
+            'z-index: 1;'
+    );
+
+    // Apply a ponyfill if ResizeObserver is not implemented by browser.
+    if (this.ResizeObserver === undefined) {
+        if (window.ResizeObserver !== undefined) {
+            this.ResizeObserver = window.ResizeObserver;
+        } else {
+            var obs = _JSXTOOLS_RESIZE_OBSERVER({});
+            this.ResizeObserver = obs.ResizeObserver;
+        }
+    }
+
+    this.resizeObserverInstance = new this.ResizeObserver(function (entries) {
+        var nentries = entries.length;
+        for (var i = 0; i < nentries; i++) {
+            var entry = entries[i];
+            var width, height;
+            if (entry.contentBoxSize) {
+                if (entry.contentBoxSize instanceof Array) {
+                    // Chrome 84 implements new version of spec.
+                    width = entry.contentBoxSize[0].inlineSize;
+                    height = entry.contentBoxSize[0].blockSize;
+                } else {
+                    // Firefox implements old version of spec.
+                    width = entry.contentBoxSize.inlineSize;
+                    height = entry.contentBoxSize.blockSize;
+                }
+            } else {
+                // Chrome <84 implements even older version of spec.
+                width = entry.contentRect.width;
+                height = entry.contentRect.height;
+            }
+
+            // Keep the size of the canvas and rubber band canvas in sync with
+            // the canvas container.
+            if (entry.devicePixelContentBoxSize) {
+                // Chrome 84 implements new version of spec.
+                canvas.setAttribute(
+                    'width',
+                    entry.devicePixelContentBoxSize[0].inlineSize
+                );
+                canvas.setAttribute(
+                    'height',
+                    entry.devicePixelContentBoxSize[0].blockSize
+                );
+            } else {
+                canvas.setAttribute('width', width * fig.ratio);
+                canvas.setAttribute('height', height * fig.ratio);
+            }
+            /* This rescales the canvas back to display pixels, so that it
+             * appears correct on HiDPI screens. */
+            canvas.style.width = width + 'px';
+            canvas.style.height = height + 'px';
+
+            rubberband_canvas.setAttribute('width', width);
+            rubberband_canvas.setAttribute('height', height);
+
+            // And update the size in Python. We ignore the initial 0/0 size
+            // that occurs as the element is placed into the DOM, which should
+            // otherwise not happen due to the minimum size styling.
+            if (fig.ws.readyState == 1 && width != 0 && height != 0) {
+                fig.request_resize(width, height);
+            }
+        }
+    });
+    this.resizeObserverInstance.observe(canvas_div);
+
+    function on_mouse_event_closure(name) {
+        /* User Agent sniffing is bad, but WebKit is busted:
+         * https://bugs.webkit.org/show_bug.cgi?id=144526
+         * https://bugs.webkit.org/show_bug.cgi?id=181818
+         * The worst that happens here is that they get an extra browser
+         * selection when dragging, if this check fails to catch them.
+         */
+        var UA = navigator.userAgent;
+        var isWebKit = /AppleWebKit/.test(UA) && !/Chrome/.test(UA);
+        if(isWebKit) {
+            return function (event) {
+                /* This prevents the web browser from automatically changing to
+                 * the text insertion cursor when the button is pressed. We
+                 * want to control all of the cursor setting manually through
+                 * the 'cursor' event from matplotlib */
+                event.preventDefault()
+                return fig.mouse_event(event, name);
+            };
+        } else {
+            return function (event) {
+                return fig.mouse_event(event, name);
+            };
+        }
+    }
+
+    canvas_div.addEventListener(
+        'mousedown',
+        on_mouse_event_closure('button_press')
+    );
+    canvas_div.addEventListener(
+        'mouseup',
+        on_mouse_event_closure('button_release')
+    );
+    canvas_div.addEventListener(
+        'dblclick',
+        on_mouse_event_closure('dblclick')
+    );
+    // Throttle sequential mouse events to 1 every 20ms.
+    canvas_div.addEventListener(
+        'mousemove',
+        on_mouse_event_closure('motion_notify')
+    );
+
+    canvas_div.addEventListener(
+        'mouseenter',
+        on_mouse_event_closure('figure_enter')
+    );
+    canvas_div.addEventListener(
+        'mouseleave',
+        on_mouse_event_closure('figure_leave')
+    );
+
+    canvas_div.addEventListener('wheel', function (event) {
+        if (event.deltaY < 0) {
+            event.step = 1;
+        } else {
+            event.step = -1;
+        }
+        on_mouse_event_closure('scroll')(event);
+    });
+
+    canvas_div.appendChild(canvas);
+    canvas_div.appendChild(rubberband_canvas);
+
+    this.rubberband_context = rubberband_canvas.getContext('2d');
+    this.rubberband_context.strokeStyle = '#000000';
+
+    this._resize_canvas = function (width, height, forward) {
+        if (forward) {
+            canvas_div.style.width = width + 'px';
+            canvas_div.style.height = height + 'px';
+        }
+    };
+
+    // Disable right mouse context menu.
+    canvas_div.addEventListener('contextmenu', function (_e) {
+        event.preventDefault();
+        return false;
+    });
+
+    function set_focus() {
+        canvas.focus();
+        canvas_div.focus();
+    }
+
+    window.setTimeout(set_focus, 100);
+};
+
+mpl.figure.prototype._init_toolbar = function () {
+    var fig = this;
+
+    var toolbar = document.createElement('div');
+    toolbar.classList = 'mpl-toolbar';
+    this.root.appendChild(toolbar);
+
+    function on_click_closure(name) {
+        return function (_event) {
+            return fig.toolbar_button_onclick(name);
+        };
+    }
+
+    function on_mouseover_closure(tooltip) {
+        return function (event) {
+            if (!event.currentTarget.disabled) {
+                return fig.toolbar_button_onmouseover(tooltip);
+            }
+        };
+    }
+
+    fig.buttons = {};
+    var buttonGroup = document.createElement('div');
+    buttonGroup.classList = 'mpl-button-group';
+    for (var toolbar_ind in mpl.toolbar_items) {
+        var name = mpl.toolbar_items[toolbar_ind][0];
+        var tooltip = mpl.toolbar_items[toolbar_ind][1];
+        var image = mpl.toolbar_items[toolbar_ind][2];
+        var method_name = mpl.toolbar_items[toolbar_ind][3];
+
+        if (!name) {
+            /* Instead of a spacer, we start a new button group. */
+            if (buttonGroup.hasChildNodes()) {
+                toolbar.appendChild(buttonGroup);
+            }
+            buttonGroup = document.createElement('div');
+            buttonGroup.classList = 'mpl-button-group';
+            continue;
+        }
+
+        var button = (fig.buttons[name] = document.createElement('button'));
+        button.classList = 'mpl-widget';
+        button.setAttribute('role', 'button');
+        button.setAttribute('aria-disabled', 'false');
+        button.addEventListener('click', on_click_closure(method_name));
+        button.addEventListener('mouseover', on_mouseover_closure(tooltip));
+
+        var icon_img = document.createElement('img');
+        icon_img.src = '_images/' + image + '.png';
+        icon_img.srcset = '_images/' + image + '_large.png 2x';
+        icon_img.alt = tooltip;
+        button.appendChild(icon_img);
+
+        buttonGroup.appendChild(button);
+    }
+
+    if (buttonGroup.hasChildNodes()) {
+        toolbar.appendChild(buttonGroup);
+    }
+
+    var fmt_picker = document.createElement('select');
+    fmt_picker.classList = 'mpl-widget';
+    toolbar.appendChild(fmt_picker);
+    this.format_dropdown = fmt_picker;
+
+    for (var ind in mpl.extensions) {
+        var fmt = mpl.extensions[ind];
+        var option = document.createElement('option');
+        option.selected = fmt === mpl.default_extension;
+        option.innerHTML = fmt;
+        fmt_picker.appendChild(option);
+    }
+
+    var status_bar = document.createElement('span');
+    status_bar.classList = 'mpl-message';
+    toolbar.appendChild(status_bar);
+    this.message = status_bar;
+};
+
+mpl.figure.prototype.request_resize = function (x_pixels, y_pixels) {
+    // Request matplotlib to resize the figure. Matplotlib will then trigger a resize in the client,
+    // which will in turn request a refresh of the image.
+    this.send_message('resize', { width: x_pixels, height: y_pixels });
+};
+
+mpl.figure.prototype.send_message = function (type, properties) {
+    properties['type'] = type;
+    properties['figure_id'] = this.id;
+    this.ws.send(JSON.stringify(properties));
+};
+
+mpl.figure.prototype.send_draw_message = function () {
+    if (!this.waiting) {
+        this.waiting = true;
+        this.ws.send(JSON.stringify({ type: 'draw', figure_id: this.id }));
+    }
+};
+
+mpl.figure.prototype.handle_save = function (fig, _msg) {
+    var format_dropdown = fig.format_dropdown;
+    var format = format_dropdown.options[format_dropdown.selectedIndex].value;
+    fig.ondownload(fig, format);
+};
+
+mpl.figure.prototype.handle_resize = function (fig, msg) {
+    var size = msg['size'];
+    if (size[0] !== fig.canvas.width || size[1] !== fig.canvas.height) {
+        fig._resize_canvas(size[0], size[1], msg['forward']);
+        fig.send_message('refresh', {});
+    }
+};
+
+mpl.figure.prototype.handle_rubberband = function (fig, msg) {
+    var x0 = msg['x0'] / fig.ratio;
+    var y0 = (fig.canvas.height - msg['y0']) / fig.ratio;
+    var x1 = msg['x1'] / fig.ratio;
+    var y1 = (fig.canvas.height - msg['y1']) / fig.ratio;
+    x0 = Math.floor(x0) + 0.5;
+    y0 = Math.floor(y0) + 0.5;
+    x1 = Math.floor(x1) + 0.5;
+    y1 = Math.floor(y1) + 0.5;
+    var min_x = Math.min(x0, x1);
+    var min_y = Math.min(y0, y1);
+    var width = Math.abs(x1 - x0);
+    var height = Math.abs(y1 - y0);
+
+    fig.rubberband_context.clearRect(
+        0,
+        0,
+        fig.canvas.width / fig.ratio,
+        fig.canvas.height / fig.ratio
+    );
+
+    fig.rubberband_context.strokeRect(min_x, min_y, width, height);
+};
+
+mpl.figure.prototype.handle_figure_label = function (fig, msg) {
+    // Updates the figure title.
+    fig.header.textContent = msg['label'];
+};
+
+mpl.figure.prototype.handle_cursor = function (fig, msg) {
+    fig.canvas_div.style.cursor = msg['cursor'];
+};
+
+mpl.figure.prototype.handle_message = function (fig, msg) {
+    fig.message.textContent = msg['message'];
+};
+
+mpl.figure.prototype.handle_draw = function (fig, _msg) {
+    // Request the server to send over a new figure.
+    fig.send_draw_message();
+};
+
+mpl.figure.prototype.handle_image_mode = function (fig, msg) {
+    fig.image_mode = msg['mode'];
+};
+
+mpl.figure.prototype.handle_history_buttons = function (fig, msg) {
+    for (var key in msg) {
+        if (!(key in fig.buttons)) {
+            continue;
+        }
+        fig.buttons[key].disabled = !msg[key];
+        fig.buttons[key].setAttribute('aria-disabled', !msg[key]);
+    }
+};
+
+mpl.figure.prototype.handle_navigate_mode = function (fig, msg) {
+    if (msg['mode'] === 'PAN') {
+        fig.buttons['Pan'].classList.add('active');
+        fig.buttons['Zoom'].classList.remove('active');
+    } else if (msg['mode'] === 'ZOOM') {
+        fig.buttons['Pan'].classList.remove('active');
+        fig.buttons['Zoom'].classList.add('active');
+    } else {
+        fig.buttons['Pan'].classList.remove('active');
+        fig.buttons['Zoom'].classList.remove('active');
+    }
+};
+
+mpl.figure.prototype.updated_canvas_event = function () {
+    // Called whenever the canvas gets updated.
+    this.send_message('ack', {});
+};
+
+// A function to construct a web socket function for onmessage handling.
+// Called in the figure constructor.
+mpl.figure.prototype._make_on_message_function = function (fig) {
+    return function socket_on_message(evt) {
+        if (evt.data instanceof Blob) {
+            var img = evt.data;
+            if (img.type !== 'image/png') {
+                /* FIXME: We get "Resource interpreted as Image but
+                 * transferred with MIME type text/plain:" errors on
+                 * Chrome.  But how to set the MIME type?  It doesn't seem
+                 * to be part of the websocket stream */
+                img.type = 'image/png';
+            }
+
+            /* Free the memory for the previous frames */
+            if (fig.imageObj.src) {
+                (window.URL || window.webkitURL).revokeObjectURL(
+                    fig.imageObj.src
+                );
+            }
+
+            fig.imageObj.src = (window.URL || window.webkitURL).createObjectURL(
+                img
+            );
+            fig.updated_canvas_event();
+            fig.waiting = false;
+            return;
+        } else if (
+            typeof evt.data === 'string' &&
+            evt.data.slice(0, 21) === 'data:image/png;base64'
+        ) {
+            fig.imageObj.src = evt.data;
+            fig.updated_canvas_event();
+            fig.waiting = false;
+            return;
+        }
+
+        var msg = JSON.parse(evt.data);
+        var msg_type = msg['type'];
+
+        // Call the  "handle_{type}" callback, which takes
+        // the figure and JSON message as its only arguments.
+        try {
+            var callback = fig['handle_' + msg_type];
+        } catch (e) {
+            console.log(
+                "No handler for the '" + msg_type + "' message type: ",
+                msg
+            );
+            return;
+        }
+
+        if (callback) {
+            try {
+                // console.log("Handling '" + msg_type + "' message: ", msg);
+                callback(fig, msg);
+            } catch (e) {
+                console.log(
+                    "Exception inside the 'handler_" + msg_type + "' callback:",
+                    e,
+                    e.stack,
+                    msg
+                );
+            }
+        }
+    };
+};
+
+function getModifiers(event) {
+    var mods = [];
+    if (event.ctrlKey) {
+        mods.push('ctrl');
+    }
+    if (event.altKey) {
+        mods.push('alt');
+    }
+    if (event.shiftKey) {
+        mods.push('shift');
+    }
+    if (event.metaKey) {
+        mods.push('meta');
+    }
+    return mods;
+}
+
+/*
+ * return a copy of an object with only non-object keys
+ * we need this to avoid circular references
+ * https://stackoverflow.com/a/24161582/3208463
+ */
+function simpleKeys(original) {
+    return Object.keys(original).reduce(function (obj, key) {
+        if (typeof original[key] !== 'object') {
+            obj[key] = original[key];
+        }
+        return obj;
+    }, {});
+}
+
+mpl.figure.prototype.mouse_event = function (event, name) {
+    if (name === 'button_press') {
+        this.canvas.focus();
+        this.canvas_div.focus();
+    }
+
+    // from https://stackoverflow.com/q/1114465
+    var boundingRect = this.canvas.getBoundingClientRect();
+    var x = (event.clientX - boundingRect.left) * this.ratio;
+    var y = (event.clientY - boundingRect.top) * this.ratio;
+
+    this.send_message(name, {
+        x: x,
+        y: y,
+        button: event.button,
+        step: event.step,
+        modifiers: getModifiers(event),
+        guiEvent: simpleKeys(event),
+    });
+
+    return false;
+};
+
+mpl.figure.prototype._key_event_extra = function (_event, _name) {
+    // Handle any extra behaviour associated with a key event
+};
+
+mpl.figure.prototype.key_event = function (event, name) {
+    // Prevent repeat events
+    if (name === 'key_press') {
+        if (event.key === this._key) {
+            return;
+        } else {
+            this._key = event.key;
+        }
+    }
+    if (name === 'key_release') {
+        this._key = null;
+    }
+
+    var value = '';
+    if (event.ctrlKey && event.key !== 'Control') {
+        value += 'ctrl+';
+    }
+    else if (event.altKey && event.key !== 'Alt') {
+        value += 'alt+';
+    }
+    else if (event.shiftKey && event.key !== 'Shift') {
+        value += 'shift+';
+    }
+
+    value += 'k' + event.key;
+
+    this._key_event_extra(event, name);
+
+    this.send_message(name, { key: value, guiEvent: simpleKeys(event) });
+    return false;
+};
+
+mpl.figure.prototype.toolbar_button_onclick = function (name) {
+    if (name === 'download') {
+        this.handle_save(this, null);
+    } else {
+        this.send_message('toolbar_button', { name: name });
+    }
+};
+
+mpl.figure.prototype.toolbar_button_onmouseover = function (tooltip) {
+    this.message.textContent = tooltip;
+};
+
+///////////////// REMAINING CONTENT GENERATED BY embed_js.py /////////////////
+// prettier-ignore
+var _JSXTOOLS_RESIZE_OBSERVER=function(A){var t,i=new WeakMap,n=new WeakMap,a=new WeakMap,r=new WeakMap,o=new Set;function s(e){if(!(this instanceof s))throw new TypeError("Constructor requires 'new' operator");i.set(this,e)}function h(){throw new TypeError("Function is not a constructor")}function c(e,t,i,n){e=0 in arguments?Number(arguments[0]):0,t=1 in arguments?Number(arguments[1]):0,i=2 in arguments?Number(arguments[2]):0,n=3 in arguments?Number(arguments[3]):0,this.right=(this.x=this.left=e)+(this.width=i),this.bottom=(this.y=this.top=t)+(this.height=n),Object.freeze(this)}function d(){t=requestAnimationFrame(d);var s=new WeakMap,p=new Set;o.forEach((function(t){r.get(t).forEach((function(i){var r=t instanceof window.SVGElement,o=a.get(t),d=r?0:parseFloat(o.paddingTop),f=r?0:parseFloat(o.paddingRight),l=r?0:parseFloat(o.paddingBottom),u=r?0:parseFloat(o.paddingLeft),g=r?0:parseFloat(o.borderTopWidth),m=r?0:parseFloat(o.borderRightWidth),w=r?0:parseFloat(o.borderBottomWidth),b=u+f,F=d+l,v=(r?0:parseFloat(o.borderLeftWidth))+m,W=g+w,y=r?0:t.offsetHeight-W-t.clientHeight,E=r?0:t.offsetWidth-v-t.clientWidth,R=b+v,z=F+W,M=r?t.width:parseFloat(o.width)-R-E,O=r?t.height:parseFloat(o.height)-z-y;if(n.has(t)){var k=n.get(t);if(k[0]===M&&k[1]===O)return}n.set(t,[M,O]);var S=Object.create(h.prototype);S.target=t,S.contentRect=new c(u,d,M,O),s.has(i)||(s.set(i,[]),p.add(i)),s.get(i).push(S)}))})),p.forEach((function(e){i.get(e).call(e,s.get(e),e)}))}return s.prototype.observe=function(i){if(i instanceof window.Element){r.has(i)||(r.set(i,new Set),o.add(i),a.set(i,window.getComputedStyle(i)));var n=r.get(i);n.has(this)||n.add(this),cancelAnimationFrame(t),t=requestAnimationFrame(d)}},s.prototype.unobserve=function(i){if(i instanceof window.Element&&r.has(i)){var n=r.get(i);n.has(this)&&(n.delete(this),n.size||(r.delete(i),o.delete(i))),n.size||r.delete(i),o.size||cancelAnimationFrame(t)}},A.DOMRectReadOnly=c,A.ResizeObserver=s,A.ResizeObserverEntry=h,A}; // eslint-disable-line
+mpl.toolbar_items = [["Home", "Reset original view", "fa fa-home", "home"], ["Back", "Back to previous view", "fa fa-arrow-left", "back"], ["Forward", "Forward to next view", "fa fa-arrow-right", "forward"], ["", "", "", ""], ["Pan", "Left button pans, Right button zooms\nx/y fixes axis, CTRL fixes aspect", "fa fa-arrows", "pan"], ["Zoom", "Zoom to rectangle\nx/y fixes axis", "fa fa-square-o", "zoom"], ["", "", "", ""], ["Download", "Download plot", "fa fa-floppy-o", "download"]];
+
+mpl.extensions = ["eps", "jpeg", "pgf", "pdf", "png", "ps", "raw", "svg", "tif", "webp"];
+
+mpl.default_extension = "png";/* global mpl */
+
+var comm_websocket_adapter = function (comm) {
+    // Create a "websocket"-like object which calls the given IPython comm
+    // object with the appropriate methods. Currently this is a non binary
+    // socket, so there is still some room for performance tuning.
+    var ws = {};
+
+    ws.binaryType = comm.kernel.ws.binaryType;
+    ws.readyState = comm.kernel.ws.readyState;
+    function updateReadyState(_event) {
+        if (comm.kernel.ws) {
+            ws.readyState = comm.kernel.ws.readyState;
+        } else {
+            ws.readyState = 3; // Closed state.
+        }
+    }
+    comm.kernel.ws.addEventListener('open', updateReadyState);
+    comm.kernel.ws.addEventListener('close', updateReadyState);
+    comm.kernel.ws.addEventListener('error', updateReadyState);
+
+    ws.close = function () {
+        comm.close();
+    };
+    ws.send = function (m) {
+        //console.log('sending', m);
+        comm.send(m);
+    };
+    // Register the callback with on_msg.
+    comm.on_msg(function (msg) {
+        //console.log('receiving', msg['content']['data'], msg);
+        var data = msg['content']['data'];
+        if (data['blob'] !== undefined) {
+            data = {
+                data: new Blob(msg['buffers'], { type: data['blob'] }),
+            };
+        }
+        // Pass the mpl event to the overridden (by mpl) onmessage function.
+        ws.onmessage(data);
+    });
+    return ws;
+};
+
+mpl.mpl_figure_comm = function (comm, msg) {
+    // This is the function which gets called when the mpl process
+    // starts-up an IPython Comm through the "matplotlib" channel.
+
+    var id = msg.content.data.id;
+    // Get hold of the div created by the display call when the Comm
+    // socket was opened in Python.
+    var element = document.getElementById(id);
+    var ws_proxy = comm_websocket_adapter(comm);
+
+    function ondownload(figure, _format) {
+        window.open(figure.canvas.toDataURL());
+    }
+
+    var fig = new mpl.figure(id, ws_proxy, ondownload, element);
+
+    // Call onopen now - mpl needs it, as it is assuming we've passed it a real
+    // web socket which is closed, not our websocket->open comm proxy.
+    ws_proxy.onopen();
+
+    fig.parent_element = element;
+    fig.cell_info = mpl.find_output_cell("<div id='" + id + "'></div>");
+    if (!fig.cell_info) {
+        console.error('Failed to find cell for figure', id, fig);
+        return;
+    }
+    fig.cell_info[0].output_area.element.on(
+        'cleared',
+        { fig: fig },
+        fig._remove_fig_handler
+    );
+};
+
+mpl.figure.prototype.handle_close = function (fig, msg) {
+    var width = fig.canvas.width / fig.ratio;
+    fig.cell_info[0].output_area.element.off(
+        'cleared',
+        fig._remove_fig_handler
+    );
+    fig.resizeObserverInstance.unobserve(fig.canvas_div);
+
+    // Update the output cell to use the data from the current canvas.
+    fig.push_to_output();
+    var dataURL = fig.canvas.toDataURL();
+    // Re-enable the keyboard manager in IPython - without this line, in FF,
+    // the notebook keyboard shortcuts fail.
+    IPython.keyboard_manager.enable();
+    fig.parent_element.innerHTML =
+        '<img src="' + dataURL + '" width="' + width + '">';
+    fig.close_ws(fig, msg);
+};
+
+mpl.figure.prototype.close_ws = function (fig, msg) {
+    fig.send_message('closing', msg);
+    // fig.ws.close()
+};
+
+mpl.figure.prototype.push_to_output = function (_remove_interactive) {
+    // Turn the data on the canvas into data in the output cell.
+    var width = this.canvas.width / this.ratio;
+    var dataURL = this.canvas.toDataURL();
+    this.cell_info[1]['text/html'] =
+        '<img src="' + dataURL + '" width="' + width + '">';
+};
+
+mpl.figure.prototype.updated_canvas_event = function () {
+    // Tell IPython that the notebook contents must change.
+    IPython.notebook.set_dirty(true);
+    this.send_message('ack', {});
+    var fig = this;
+    // Wait a second, then push the new image to the DOM so
+    // that it is saved nicely (might be nice to debounce this).
+    setTimeout(function () {
+        fig.push_to_output();
+    }, 1000);
+};
+
+mpl.figure.prototype._init_toolbar = function () {
+    var fig = this;
+
+    var toolbar = document.createElement('div');
+    toolbar.classList = 'btn-toolbar';
+    this.root.appendChild(toolbar);
+
+    function on_click_closure(name) {
+        return function (_event) {
+            return fig.toolbar_button_onclick(name);
+        };
+    }
+
+    function on_mouseover_closure(tooltip) {
+        return function (event) {
+            if (!event.currentTarget.disabled) {
+                return fig.toolbar_button_onmouseover(tooltip);
+            }
+        };
+    }
+
+    fig.buttons = {};
+    var buttonGroup = document.createElement('div');
+    buttonGroup.classList = 'btn-group';
+    var button;
+    for (var toolbar_ind in mpl.toolbar_items) {
+        var name = mpl.toolbar_items[toolbar_ind][0];
+        var tooltip = mpl.toolbar_items[toolbar_ind][1];
+        var image = mpl.toolbar_items[toolbar_ind][2];
+        var method_name = mpl.toolbar_items[toolbar_ind][3];
+
+        if (!name) {
+            /* Instead of a spacer, we start a new button group. */
+            if (buttonGroup.hasChildNodes()) {
+                toolbar.appendChild(buttonGroup);
+            }
+            buttonGroup = document.createElement('div');
+            buttonGroup.classList = 'btn-group';
+            continue;
+        }
+
+        button = fig.buttons[name] = document.createElement('button');
+        button.classList = 'btn btn-default';
+        button.href = '#';
+        button.title = name;
+        button.innerHTML = '<i class="fa ' + image + ' fa-lg"></i>';
+        button.addEventListener('click', on_click_closure(method_name));
+        button.addEventListener('mouseover', on_mouseover_closure(tooltip));
+        buttonGroup.appendChild(button);
+    }
+
+    if (buttonGroup.hasChildNodes()) {
+        toolbar.appendChild(buttonGroup);
+    }
+
+    // Add the status bar.
+    var status_bar = document.createElement('span');
+    status_bar.classList = 'mpl-message pull-right';
+    toolbar.appendChild(status_bar);
+    this.message = status_bar;
+
+    // Add the close button to the window.
+    var buttongrp = document.createElement('div');
+    buttongrp.classList = 'btn-group inline pull-right';
+    button = document.createElement('button');
+    button.classList = 'btn btn-mini btn-primary';
+    button.href = '#';
+    button.title = 'Stop Interaction';
+    button.innerHTML = '<i class="fa fa-power-off icon-remove icon-large"></i>';
+    button.addEventListener('click', function (_evt) {
+        fig.handle_close(fig, {});
+    });
+    button.addEventListener(
+        'mouseover',
+        on_mouseover_closure('Stop Interaction')
+    );
+    buttongrp.appendChild(button);
+    var titlebar = this.root.querySelector('.ui-dialog-titlebar');
+    titlebar.insertBefore(buttongrp, titlebar.firstChild);
+};
+
+mpl.figure.prototype._remove_fig_handler = function (event) {
+    var fig = event.data.fig;
+    if (event.target !== this) {
+        // Ignore bubbled events from children.
+        return;
+    }
+    fig.close_ws(fig, {});
+};
+
+mpl.figure.prototype._root_extra_style = function (el) {
+    el.style.boxSizing = 'content-box'; // override notebook setting of border-box.
+};
+
+mpl.figure.prototype._canvas_extra_style = function (el) {
+    // this is important to make the div 'focusable
+    el.setAttribute('tabindex', 0);
+    // reach out to IPython and tell the keyboard manager to turn it's self
+    // off when our div gets focus
+
+    // location in version 3
+    if (IPython.notebook.keyboard_manager) {
+        IPython.notebook.keyboard_manager.register_events(el);
+    } else {
+        // location in version 2
+        IPython.keyboard_manager.register_events(el);
+    }
+};
+
+mpl.figure.prototype._key_event_extra = function (event, _name) {
+    // Check for shift+enter
+    if (event.shiftKey && event.which === 13) {
+        this.canvas_div.blur();
+        // select the cell after this one
+        var index = IPython.notebook.find_cell_index(this.cell_info[0]);
+        IPython.notebook.select(index + 1);
+    }
+};
+
+mpl.figure.prototype.handle_save = function (fig, _msg) {
+    fig.ondownload(fig, null);
+};
+
+mpl.find_output_cell = function (html_output) {
+    // Return the cell and output element which can be found *uniquely* in the notebook.
+    // Note - this is a bit hacky, but it is done because the "notebook_saving.Notebook"
+    // IPython event is triggered only after the cells have been serialised, which for
+    // our purposes (turning an active figure into a static one), is too late.
+    var cells = IPython.notebook.get_cells();
+    var ncells = cells.length;
+    for (var i = 0; i < ncells; i++) {
+        var cell = cells[i];
+        if (cell.cell_type === 'code') {
+            for (var j = 0; j < cell.output_area.outputs.length; j++) {
+                var data = cell.output_area.outputs[j];
+                if (data.data) {
+                    // IPython >= 3 moved mimebundle to data attribute of output
+                    data = data.data;
+                }
+                if (data['text/html'] === html_output) {
+                    return [cell, data, j];
+                }
+            }
+        }
+    }
+};
+
+// Register the function which deals with the matplotlib target/channel.
+// The kernel may be null if the page has been refreshed.
+if (IPython.notebook.kernel !== null) {
+    IPython.notebook.kernel.comm_manager.register_target(
+        'matplotlib',
+        mpl.mpl_figure_comm
+    );
+}
+</script><div class="output text_html"><div id='99e15bcf-bd24-4763-99a0-1b33c490d193'></div></div><script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "205e8c2677134fc3a5804c55e39653ab"}</script></div>
+</div>
+</section>
+</section>
+<section id="cubic-third-order-equations-of-state">
+<h2>Cubic (Third Order) Equations of State<a class="headerlink" href="#cubic-third-order-equations-of-state" title="Link to this heading">#</a></h2>
+<p>Cubic Equations of State are <em>third-order</em> equations of state because the highest power of the compressibility is <span class="math notranslate nohighlight">\(n=3\)</span> in the general form. All cubic equations of state can be written as:</p>
+<div class="math notranslate nohighlight">
+\[Z^3 + \alpha Z^2 + \beta Z+\gamma=0 \]</div>
+<p>where <span class="math notranslate nohighlight">\(\alpha\)</span>, <span class="math notranslate nohighlight">\(\beta\)</span>, and <span class="math notranslate nohighlight">\(\gamma\)</span> are parameters of the 3rd order polynomial expression. Cubic equations of state have a special place in the history of thermodynamics because Van der Waal’s equation of state was the first to provide quantitative predictions of vapor-liquid equilibrium. Van der Waal showed that it is only when the cubic term is included can there be a circumstance where equilibrium between a vapor and a liquid can be calculated.</p>
+<section id="van-der-waal-equation-of-state-1873">
+<h3>Van der Waal Equation of State - 1873<a class="headerlink" href="#van-der-waal-equation-of-state-1873" title="Link to this heading">#</a></h3>
+<p>Van der Waal’s Equation of state has the form:</p>
+<div class="math notranslate nohighlight">
+\[P=\dfrac{RT}{\underline{V}-b}-\dfrac{a}{\underline{V}^2}\]</div>
+<p>The Van der Waal Equation of state has two parameters, <span class="math notranslate nohighlight">\(a\)</span>, and <span class="math notranslate nohighlight">\(b\)</span>. <span class="math notranslate nohighlight">\(a\)</span> is called the attraction parameter and represents the favorable interactions between gas molecules that occur when they are at higher densities. <span class="math notranslate nohighlight">\(b\)</span> is called the excluded volume parameter or sometimes the repulsive parameter and can be thought of as representing the effective volume of a gas molecule. An interesting feature of Van der Waal’s equation of state is that it diverges in the <span class="math notranslate nohighlight">\(lim_{\underline{V}\rightarrow b} P\rightarrow\infty\)</span></p>
+</section>
+<section id="redlich-kwong-equation-of-state-1949">
+<h3>Redlich-Kwong Equation of State - 1949<a class="headerlink" href="#redlich-kwong-equation-of-state-1949" title="Link to this heading">#</a></h3>
+<p>The Redlich-Kwong Equation of state has the form:</p>
+<div class="math notranslate nohighlight">
+\[P=\dfrac{RT}{\underline{V}-b}-\dfrac{a}{\sqrt{T}\underline{V}(\underline{V}+b)}\]</div>
+<p>The Redlich-Kwong Equation of State was a notable improvement over Van Der Waals, but still performed poorly at predicting liquid phase densities.</p>
+</section>
+<section id="peng-robinson-equation-of-state-1976">
+<h3>Peng-Robinson Equation of State - 1976<a class="headerlink" href="#peng-robinson-equation-of-state-1976" title="Link to this heading">#</a></h3>
+<p>The <a class="reference external" href="https://pubs.acs.org/doi/abs/10.1021/i160057a011">Peng-Robinson Equation of State</a> has the form:</p>
+<div class="math notranslate nohighlight">
+\[P=\dfrac{RT}{\underline{V}-b}-\dfrac{a\alpha}{\underline{V}(\underline{V}+b)+b(\underline{V}-b)}\]</div>
+<p>where an additional parameter <span class="math notranslate nohighlight">\(\alpha=\big(1+\kappa(1-T_r^{0.5})\big)^2\)</span> has been introduced where <span class="math notranslate nohighlight">\(\kappa=0.37464+1.54226\omega-0.26992\omega^2\)</span></p>
+<p>In this expression, <span class="math notranslate nohighlight">\(\omega\)</span> is the accentric factor and <span class="math notranslate nohighlight">\(T_r\)</span> is the reduced temperature. For the definition of the reduced temperature see the discussion on the law of corresponding states and critical properties.</p>
+<p>The introduction of a third constant, <span class="math notranslate nohighlight">\(\omega\)</span>, provided a much more accurate expression both for single components but also for binary mixtures.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> notebook
+<span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1">##lets define some properties</span>
+<span class="n">R</span><span class="o">=</span><span class="mf">8.314</span><span class="c1">##J/mol*K</span>
+
+<span class="c1">##typical molar valume ranges fall in this value of density</span>
+
+<span class="n">T</span><span class="o">=</span><span class="mi">298</span> <span class="c1">## Kelvin</span>
+<span class="n">a</span><span class="o">=</span><span class="mf">0.2</span><span class="c1">##Pa*m^6/mol</span>
+<span class="n">b</span><span class="o">=</span><span class="mi">18</span>
+
+<span class="n">V</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">b</span><span class="p">),</span><span class="mi">5</span><span class="p">,</span><span class="mi">201</span><span class="p">)</span><span class="c1">##cm3/mol</span>
+
+<span class="k">def</span> <span class="nf">P_VEOS</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="n">V</span><span class="p">,</span><span class="n">a</span><span class="p">):</span>
+    
+    <span class="k">return</span> <span class="n">R</span><span class="o">*</span><span class="n">T</span><span class="o">/</span><span class="n">V</span><span class="o">-</span><span class="n">a</span><span class="o">*</span><span class="mi">10</span><span class="o">**</span><span class="mi">6</span><span class="o">/</span><span class="n">V</span><span class="o">**</span><span class="mi">2</span> <span class="c1">## units returned in bar</span>
+
+<span class="k">def</span> <span class="nf">P_VDW</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="n">V</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">R</span><span class="o">*</span><span class="n">T</span><span class="o">/</span><span class="p">(</span><span class="n">V</span><span class="o">-</span><span class="n">b</span><span class="p">)</span><span class="o">-</span><span class="n">a</span><span class="o">*</span><span class="mi">10</span><span class="o">**</span><span class="mi">6</span><span class="o">/</span><span class="n">V</span><span class="o">**</span><span class="mi">2</span> <span class="c1">## units returned in bar</span>
+
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="n">line1</span><span class="p">,</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">V</span><span class="p">,</span><span class="n">P_IG</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="n">V</span><span class="p">),</span><span class="s1">&#39;-r&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;$IG_{T=</span><span class="si">%3.1f</span><span class="s1"> K}$&#39;</span><span class="o">%</span><span class="k">T</span>)
+<span class="n">line2</span><span class="p">,</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">V</span><span class="p">,</span><span class="n">P_VEOS</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="n">V</span><span class="p">,</span><span class="n">a</span><span class="p">),</span><span class="s1">&#39;-b&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;$V_{T=</span><span class="si">%3.1f</span><span class="s1"> K}$&#39;</span><span class="o">%</span><span class="k">T</span>)
+<span class="n">line3</span><span class="p">,</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">V</span><span class="p">,</span><span class="n">P_VDW</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="n">V</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">),</span><span class="s1">&#39;-g&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;$VDW_{T=</span><span class="si">%3.1f</span><span class="s1"> K}$&#39;</span><span class="o">%</span><span class="k">T</span>)
+
+<span class="n">plt</span><span class="o">.</span><span class="n">yscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;P (bar)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$V$ $(cm^3/mol)$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="n">T</span><span class="o">=</span><span class="mi">273</span><span class="p">,</span><span class="n">a</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span><span class="n">b</span><span class="o">=</span><span class="mi">20</span><span class="p">):</span>
+    <span class="n">line1</span><span class="o">.</span><span class="n">set_data</span><span class="p">(</span><span class="n">V</span><span class="p">,</span><span class="n">P_IG</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="n">V</span><span class="p">))</span>
+    <span class="n">line1</span><span class="o">.</span><span class="n">set_label</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$IG_{T=</span><span class="si">%3.1f</span><span class="s1"> K}$&#39;</span><span class="o">%</span><span class="k">T</span>)
+    <span class="n">line2</span><span class="o">.</span><span class="n">set_data</span><span class="p">(</span><span class="n">V</span><span class="p">,</span><span class="n">P_VEOS</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="n">V</span><span class="p">,</span><span class="n">a</span><span class="p">))</span>
+    <span class="n">line2</span><span class="o">.</span><span class="n">set_label</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$V_{T=</span><span class="si">%3.1f</span><span class="s1"> K}$&#39;</span><span class="o">%</span><span class="k">T</span>)
+    <span class="n">line3</span><span class="o">.</span><span class="n">set_data</span><span class="p">(</span><span class="n">V</span><span class="p">,</span><span class="n">P_VDW</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="n">V</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">))</span>
+    <span class="n">line3</span><span class="o">.</span><span class="n">set_label</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$VDW_{T=</span><span class="si">%3.1f</span><span class="s1"> K}$&#39;</span><span class="o">%</span><span class="k">T</span>)
+    
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mf">1.1</span><span class="o">*</span><span class="n">b</span><span class="p">,</span><span class="nb">max</span><span class="p">(</span><span class="n">V</span><span class="p">))</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">P_IG</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="n">V</span><span class="p">)),</span><span class="nb">max</span><span class="p">(</span><span class="n">P_IG</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="n">V</span><span class="p">)))</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">draw_idle</span><span class="p">()</span>
+    
+<span class="n">interact</span><span class="p">(</span><span class="n">update</span><span class="p">,</span><span class="n">T</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mf">1000.0</span><span class="p">,</span><span class="mf">1.0</span><span class="p">),</span><span class="n">a</span><span class="o">=</span><span class="p">(</span><span class="mf">0.001</span><span class="p">,</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">0.001</span><span class="p">),</span><span class="n">b</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">1</span><span class="p">));</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/javascript">/* Put everything inside the global mpl namespace */
+/* global mpl */
+window.mpl = {};
+
+mpl.get_websocket_type = function () {
+    if (typeof WebSocket !== 'undefined') {
+        return WebSocket;
+    } else if (typeof MozWebSocket !== 'undefined') {
+        return MozWebSocket;
+    } else {
+        alert(
+            'Your browser does not have WebSocket support. ' +
+                'Please try Chrome, Safari or Firefox ≥ 6. ' +
+                'Firefox 4 and 5 are also supported but you ' +
+                'have to enable WebSockets in about:config.'
+        );
+    }
+};
+
+mpl.figure = function (figure_id, websocket, ondownload, parent_element) {
+    this.id = figure_id;
+
+    this.ws = websocket;
+
+    this.supports_binary = this.ws.binaryType !== undefined;
+
+    if (!this.supports_binary) {
+        var warnings = document.getElementById('mpl-warnings');
+        if (warnings) {
+            warnings.style.display = 'block';
+            warnings.textContent =
+                'This browser does not support binary websocket messages. ' +
+                'Performance may be slow.';
+        }
+    }
+
+    this.imageObj = new Image();
+
+    this.context = undefined;
+    this.message = undefined;
+    this.canvas = undefined;
+    this.rubberband_canvas = undefined;
+    this.rubberband_context = undefined;
+    this.format_dropdown = undefined;
+
+    this.image_mode = 'full';
+
+    this.root = document.createElement('div');
+    this.root.setAttribute('style', 'display: inline-block');
+    this._root_extra_style(this.root);
+
+    parent_element.appendChild(this.root);
+
+    this._init_header(this);
+    this._init_canvas(this);
+    this._init_toolbar(this);
+
+    var fig = this;
+
+    this.waiting = false;
+
+    this.ws.onopen = function () {
+        fig.send_message('supports_binary', { value: fig.supports_binary });
+        fig.send_message('send_image_mode', {});
+        if (fig.ratio !== 1) {
+            fig.send_message('set_device_pixel_ratio', {
+                device_pixel_ratio: fig.ratio,
+            });
+        }
+        fig.send_message('refresh', {});
+    };
+
+    this.imageObj.onload = function () {
+        if (fig.image_mode === 'full') {
+            // Full images could contain transparency (where diff images
+            // almost always do), so we need to clear the canvas so that
+            // there is no ghosting.
+            fig.context.clearRect(0, 0, fig.canvas.width, fig.canvas.height);
+        }
+        fig.context.drawImage(fig.imageObj, 0, 0);
+    };
+
+    this.imageObj.onunload = function () {
+        fig.ws.close();
+    };
+
+    this.ws.onmessage = this._make_on_message_function(this);
+
+    this.ondownload = ondownload;
+};
+
+mpl.figure.prototype._init_header = function () {
+    var titlebar = document.createElement('div');
+    titlebar.classList =
+        'ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix';
+    var titletext = document.createElement('div');
+    titletext.classList = 'ui-dialog-title';
+    titletext.setAttribute(
+        'style',
+        'width: 100%; text-align: center; padding: 3px;'
+    );
+    titlebar.appendChild(titletext);
+    this.root.appendChild(titlebar);
+    this.header = titletext;
+};
+
+mpl.figure.prototype._canvas_extra_style = function (_canvas_div) {};
+
+mpl.figure.prototype._root_extra_style = function (_canvas_div) {};
+
+mpl.figure.prototype._init_canvas = function () {
+    var fig = this;
+
+    var canvas_div = (this.canvas_div = document.createElement('div'));
+    canvas_div.setAttribute('tabindex', '0');
+    canvas_div.setAttribute(
+        'style',
+        'border: 1px solid #ddd;' +
+            'box-sizing: content-box;' +
+            'clear: both;' +
+            'min-height: 1px;' +
+            'min-width: 1px;' +
+            'outline: 0;' +
+            'overflow: hidden;' +
+            'position: relative;' +
+            'resize: both;' +
+            'z-index: 2;'
+    );
+
+    function on_keyboard_event_closure(name) {
+        return function (event) {
+            return fig.key_event(event, name);
+        };
+    }
+
+    canvas_div.addEventListener(
+        'keydown',
+        on_keyboard_event_closure('key_press')
+    );
+    canvas_div.addEventListener(
+        'keyup',
+        on_keyboard_event_closure('key_release')
+    );
+
+    this._canvas_extra_style(canvas_div);
+    this.root.appendChild(canvas_div);
+
+    var canvas = (this.canvas = document.createElement('canvas'));
+    canvas.classList.add('mpl-canvas');
+    canvas.setAttribute(
+        'style',
+        'box-sizing: content-box;' +
+            'pointer-events: none;' +
+            'position: relative;' +
+            'z-index: 0;'
+    );
+
+    this.context = canvas.getContext('2d');
+
+    var backingStore =
+        this.context.backingStorePixelRatio ||
+        this.context.webkitBackingStorePixelRatio ||
+        this.context.mozBackingStorePixelRatio ||
+        this.context.msBackingStorePixelRatio ||
+        this.context.oBackingStorePixelRatio ||
+        this.context.backingStorePixelRatio ||
+        1;
+
+    this.ratio = (window.devicePixelRatio || 1) / backingStore;
+
+    var rubberband_canvas = (this.rubberband_canvas = document.createElement(
+        'canvas'
+    ));
+    rubberband_canvas.setAttribute(
+        'style',
+        'box-sizing: content-box;' +
+            'left: 0;' +
+            'pointer-events: none;' +
+            'position: absolute;' +
+            'top: 0;' +
+            'z-index: 1;'
+    );
+
+    // Apply a ponyfill if ResizeObserver is not implemented by browser.
+    if (this.ResizeObserver === undefined) {
+        if (window.ResizeObserver !== undefined) {
+            this.ResizeObserver = window.ResizeObserver;
+        } else {
+            var obs = _JSXTOOLS_RESIZE_OBSERVER({});
+            this.ResizeObserver = obs.ResizeObserver;
+        }
+    }
+
+    this.resizeObserverInstance = new this.ResizeObserver(function (entries) {
+        var nentries = entries.length;
+        for (var i = 0; i < nentries; i++) {
+            var entry = entries[i];
+            var width, height;
+            if (entry.contentBoxSize) {
+                if (entry.contentBoxSize instanceof Array) {
+                    // Chrome 84 implements new version of spec.
+                    width = entry.contentBoxSize[0].inlineSize;
+                    height = entry.contentBoxSize[0].blockSize;
+                } else {
+                    // Firefox implements old version of spec.
+                    width = entry.contentBoxSize.inlineSize;
+                    height = entry.contentBoxSize.blockSize;
+                }
+            } else {
+                // Chrome <84 implements even older version of spec.
+                width = entry.contentRect.width;
+                height = entry.contentRect.height;
+            }
+
+            // Keep the size of the canvas and rubber band canvas in sync with
+            // the canvas container.
+            if (entry.devicePixelContentBoxSize) {
+                // Chrome 84 implements new version of spec.
+                canvas.setAttribute(
+                    'width',
+                    entry.devicePixelContentBoxSize[0].inlineSize
+                );
+                canvas.setAttribute(
+                    'height',
+                    entry.devicePixelContentBoxSize[0].blockSize
+                );
+            } else {
+                canvas.setAttribute('width', width * fig.ratio);
+                canvas.setAttribute('height', height * fig.ratio);
+            }
+            /* This rescales the canvas back to display pixels, so that it
+             * appears correct on HiDPI screens. */
+            canvas.style.width = width + 'px';
+            canvas.style.height = height + 'px';
+
+            rubberband_canvas.setAttribute('width', width);
+            rubberband_canvas.setAttribute('height', height);
+
+            // And update the size in Python. We ignore the initial 0/0 size
+            // that occurs as the element is placed into the DOM, which should
+            // otherwise not happen due to the minimum size styling.
+            if (fig.ws.readyState == 1 && width != 0 && height != 0) {
+                fig.request_resize(width, height);
+            }
+        }
+    });
+    this.resizeObserverInstance.observe(canvas_div);
+
+    function on_mouse_event_closure(name) {
+        /* User Agent sniffing is bad, but WebKit is busted:
+         * https://bugs.webkit.org/show_bug.cgi?id=144526
+         * https://bugs.webkit.org/show_bug.cgi?id=181818
+         * The worst that happens here is that they get an extra browser
+         * selection when dragging, if this check fails to catch them.
+         */
+        var UA = navigator.userAgent;
+        var isWebKit = /AppleWebKit/.test(UA) && !/Chrome/.test(UA);
+        if(isWebKit) {
+            return function (event) {
+                /* This prevents the web browser from automatically changing to
+                 * the text insertion cursor when the button is pressed. We
+                 * want to control all of the cursor setting manually through
+                 * the 'cursor' event from matplotlib */
+                event.preventDefault()
+                return fig.mouse_event(event, name);
+            };
+        } else {
+            return function (event) {
+                return fig.mouse_event(event, name);
+            };
+        }
+    }
+
+    canvas_div.addEventListener(
+        'mousedown',
+        on_mouse_event_closure('button_press')
+    );
+    canvas_div.addEventListener(
+        'mouseup',
+        on_mouse_event_closure('button_release')
+    );
+    canvas_div.addEventListener(
+        'dblclick',
+        on_mouse_event_closure('dblclick')
+    );
+    // Throttle sequential mouse events to 1 every 20ms.
+    canvas_div.addEventListener(
+        'mousemove',
+        on_mouse_event_closure('motion_notify')
+    );
+
+    canvas_div.addEventListener(
+        'mouseenter',
+        on_mouse_event_closure('figure_enter')
+    );
+    canvas_div.addEventListener(
+        'mouseleave',
+        on_mouse_event_closure('figure_leave')
+    );
+
+    canvas_div.addEventListener('wheel', function (event) {
+        if (event.deltaY < 0) {
+            event.step = 1;
+        } else {
+            event.step = -1;
+        }
+        on_mouse_event_closure('scroll')(event);
+    });
+
+    canvas_div.appendChild(canvas);
+    canvas_div.appendChild(rubberband_canvas);
+
+    this.rubberband_context = rubberband_canvas.getContext('2d');
+    this.rubberband_context.strokeStyle = '#000000';
+
+    this._resize_canvas = function (width, height, forward) {
+        if (forward) {
+            canvas_div.style.width = width + 'px';
+            canvas_div.style.height = height + 'px';
+        }
+    };
+
+    // Disable right mouse context menu.
+    canvas_div.addEventListener('contextmenu', function (_e) {
+        event.preventDefault();
+        return false;
+    });
+
+    function set_focus() {
+        canvas.focus();
+        canvas_div.focus();
+    }
+
+    window.setTimeout(set_focus, 100);
+};
+
+mpl.figure.prototype._init_toolbar = function () {
+    var fig = this;
+
+    var toolbar = document.createElement('div');
+    toolbar.classList = 'mpl-toolbar';
+    this.root.appendChild(toolbar);
+
+    function on_click_closure(name) {
+        return function (_event) {
+            return fig.toolbar_button_onclick(name);
+        };
+    }
+
+    function on_mouseover_closure(tooltip) {
+        return function (event) {
+            if (!event.currentTarget.disabled) {
+                return fig.toolbar_button_onmouseover(tooltip);
+            }
+        };
+    }
+
+    fig.buttons = {};
+    var buttonGroup = document.createElement('div');
+    buttonGroup.classList = 'mpl-button-group';
+    for (var toolbar_ind in mpl.toolbar_items) {
+        var name = mpl.toolbar_items[toolbar_ind][0];
+        var tooltip = mpl.toolbar_items[toolbar_ind][1];
+        var image = mpl.toolbar_items[toolbar_ind][2];
+        var method_name = mpl.toolbar_items[toolbar_ind][3];
+
+        if (!name) {
+            /* Instead of a spacer, we start a new button group. */
+            if (buttonGroup.hasChildNodes()) {
+                toolbar.appendChild(buttonGroup);
+            }
+            buttonGroup = document.createElement('div');
+            buttonGroup.classList = 'mpl-button-group';
+            continue;
+        }
+
+        var button = (fig.buttons[name] = document.createElement('button'));
+        button.classList = 'mpl-widget';
+        button.setAttribute('role', 'button');
+        button.setAttribute('aria-disabled', 'false');
+        button.addEventListener('click', on_click_closure(method_name));
+        button.addEventListener('mouseover', on_mouseover_closure(tooltip));
+
+        var icon_img = document.createElement('img');
+        icon_img.src = '_images/' + image + '.png';
+        icon_img.srcset = '_images/' + image + '_large.png 2x';
+        icon_img.alt = tooltip;
+        button.appendChild(icon_img);
+
+        buttonGroup.appendChild(button);
+    }
+
+    if (buttonGroup.hasChildNodes()) {
+        toolbar.appendChild(buttonGroup);
+    }
+
+    var fmt_picker = document.createElement('select');
+    fmt_picker.classList = 'mpl-widget';
+    toolbar.appendChild(fmt_picker);
+    this.format_dropdown = fmt_picker;
+
+    for (var ind in mpl.extensions) {
+        var fmt = mpl.extensions[ind];
+        var option = document.createElement('option');
+        option.selected = fmt === mpl.default_extension;
+        option.innerHTML = fmt;
+        fmt_picker.appendChild(option);
+    }
+
+    var status_bar = document.createElement('span');
+    status_bar.classList = 'mpl-message';
+    toolbar.appendChild(status_bar);
+    this.message = status_bar;
+};
+
+mpl.figure.prototype.request_resize = function (x_pixels, y_pixels) {
+    // Request matplotlib to resize the figure. Matplotlib will then trigger a resize in the client,
+    // which will in turn request a refresh of the image.
+    this.send_message('resize', { width: x_pixels, height: y_pixels });
+};
+
+mpl.figure.prototype.send_message = function (type, properties) {
+    properties['type'] = type;
+    properties['figure_id'] = this.id;
+    this.ws.send(JSON.stringify(properties));
+};
+
+mpl.figure.prototype.send_draw_message = function () {
+    if (!this.waiting) {
+        this.waiting = true;
+        this.ws.send(JSON.stringify({ type: 'draw', figure_id: this.id }));
+    }
+};
+
+mpl.figure.prototype.handle_save = function (fig, _msg) {
+    var format_dropdown = fig.format_dropdown;
+    var format = format_dropdown.options[format_dropdown.selectedIndex].value;
+    fig.ondownload(fig, format);
+};
+
+mpl.figure.prototype.handle_resize = function (fig, msg) {
+    var size = msg['size'];
+    if (size[0] !== fig.canvas.width || size[1] !== fig.canvas.height) {
+        fig._resize_canvas(size[0], size[1], msg['forward']);
+        fig.send_message('refresh', {});
+    }
+};
+
+mpl.figure.prototype.handle_rubberband = function (fig, msg) {
+    var x0 = msg['x0'] / fig.ratio;
+    var y0 = (fig.canvas.height - msg['y0']) / fig.ratio;
+    var x1 = msg['x1'] / fig.ratio;
+    var y1 = (fig.canvas.height - msg['y1']) / fig.ratio;
+    x0 = Math.floor(x0) + 0.5;
+    y0 = Math.floor(y0) + 0.5;
+    x1 = Math.floor(x1) + 0.5;
+    y1 = Math.floor(y1) + 0.5;
+    var min_x = Math.min(x0, x1);
+    var min_y = Math.min(y0, y1);
+    var width = Math.abs(x1 - x0);
+    var height = Math.abs(y1 - y0);
+
+    fig.rubberband_context.clearRect(
+        0,
+        0,
+        fig.canvas.width / fig.ratio,
+        fig.canvas.height / fig.ratio
+    );
+
+    fig.rubberband_context.strokeRect(min_x, min_y, width, height);
+};
+
+mpl.figure.prototype.handle_figure_label = function (fig, msg) {
+    // Updates the figure title.
+    fig.header.textContent = msg['label'];
+};
+
+mpl.figure.prototype.handle_cursor = function (fig, msg) {
+    fig.canvas_div.style.cursor = msg['cursor'];
+};
+
+mpl.figure.prototype.handle_message = function (fig, msg) {
+    fig.message.textContent = msg['message'];
+};
+
+mpl.figure.prototype.handle_draw = function (fig, _msg) {
+    // Request the server to send over a new figure.
+    fig.send_draw_message();
+};
+
+mpl.figure.prototype.handle_image_mode = function (fig, msg) {
+    fig.image_mode = msg['mode'];
+};
+
+mpl.figure.prototype.handle_history_buttons = function (fig, msg) {
+    for (var key in msg) {
+        if (!(key in fig.buttons)) {
+            continue;
+        }
+        fig.buttons[key].disabled = !msg[key];
+        fig.buttons[key].setAttribute('aria-disabled', !msg[key]);
+    }
+};
+
+mpl.figure.prototype.handle_navigate_mode = function (fig, msg) {
+    if (msg['mode'] === 'PAN') {
+        fig.buttons['Pan'].classList.add('active');
+        fig.buttons['Zoom'].classList.remove('active');
+    } else if (msg['mode'] === 'ZOOM') {
+        fig.buttons['Pan'].classList.remove('active');
+        fig.buttons['Zoom'].classList.add('active');
+    } else {
+        fig.buttons['Pan'].classList.remove('active');
+        fig.buttons['Zoom'].classList.remove('active');
+    }
+};
+
+mpl.figure.prototype.updated_canvas_event = function () {
+    // Called whenever the canvas gets updated.
+    this.send_message('ack', {});
+};
+
+// A function to construct a web socket function for onmessage handling.
+// Called in the figure constructor.
+mpl.figure.prototype._make_on_message_function = function (fig) {
+    return function socket_on_message(evt) {
+        if (evt.data instanceof Blob) {
+            var img = evt.data;
+            if (img.type !== 'image/png') {
+                /* FIXME: We get "Resource interpreted as Image but
+                 * transferred with MIME type text/plain:" errors on
+                 * Chrome.  But how to set the MIME type?  It doesn't seem
+                 * to be part of the websocket stream */
+                img.type = 'image/png';
+            }
+
+            /* Free the memory for the previous frames */
+            if (fig.imageObj.src) {
+                (window.URL || window.webkitURL).revokeObjectURL(
+                    fig.imageObj.src
+                );
+            }
+
+            fig.imageObj.src = (window.URL || window.webkitURL).createObjectURL(
+                img
+            );
+            fig.updated_canvas_event();
+            fig.waiting = false;
+            return;
+        } else if (
+            typeof evt.data === 'string' &&
+            evt.data.slice(0, 21) === 'data:image/png;base64'
+        ) {
+            fig.imageObj.src = evt.data;
+            fig.updated_canvas_event();
+            fig.waiting = false;
+            return;
+        }
+
+        var msg = JSON.parse(evt.data);
+        var msg_type = msg['type'];
+
+        // Call the  "handle_{type}" callback, which takes
+        // the figure and JSON message as its only arguments.
+        try {
+            var callback = fig['handle_' + msg_type];
+        } catch (e) {
+            console.log(
+                "No handler for the '" + msg_type + "' message type: ",
+                msg
+            );
+            return;
+        }
+
+        if (callback) {
+            try {
+                // console.log("Handling '" + msg_type + "' message: ", msg);
+                callback(fig, msg);
+            } catch (e) {
+                console.log(
+                    "Exception inside the 'handler_" + msg_type + "' callback:",
+                    e,
+                    e.stack,
+                    msg
+                );
+            }
+        }
+    };
+};
+
+function getModifiers(event) {
+    var mods = [];
+    if (event.ctrlKey) {
+        mods.push('ctrl');
+    }
+    if (event.altKey) {
+        mods.push('alt');
+    }
+    if (event.shiftKey) {
+        mods.push('shift');
+    }
+    if (event.metaKey) {
+        mods.push('meta');
+    }
+    return mods;
+}
+
+/*
+ * return a copy of an object with only non-object keys
+ * we need this to avoid circular references
+ * https://stackoverflow.com/a/24161582/3208463
+ */
+function simpleKeys(original) {
+    return Object.keys(original).reduce(function (obj, key) {
+        if (typeof original[key] !== 'object') {
+            obj[key] = original[key];
+        }
+        return obj;
+    }, {});
+}
+
+mpl.figure.prototype.mouse_event = function (event, name) {
+    if (name === 'button_press') {
+        this.canvas.focus();
+        this.canvas_div.focus();
+    }
+
+    // from https://stackoverflow.com/q/1114465
+    var boundingRect = this.canvas.getBoundingClientRect();
+    var x = (event.clientX - boundingRect.left) * this.ratio;
+    var y = (event.clientY - boundingRect.top) * this.ratio;
+
+    this.send_message(name, {
+        x: x,
+        y: y,
+        button: event.button,
+        step: event.step,
+        modifiers: getModifiers(event),
+        guiEvent: simpleKeys(event),
+    });
+
+    return false;
+};
+
+mpl.figure.prototype._key_event_extra = function (_event, _name) {
+    // Handle any extra behaviour associated with a key event
+};
+
+mpl.figure.prototype.key_event = function (event, name) {
+    // Prevent repeat events
+    if (name === 'key_press') {
+        if (event.key === this._key) {
+            return;
+        } else {
+            this._key = event.key;
+        }
+    }
+    if (name === 'key_release') {
+        this._key = null;
+    }
+
+    var value = '';
+    if (event.ctrlKey && event.key !== 'Control') {
+        value += 'ctrl+';
+    }
+    else if (event.altKey && event.key !== 'Alt') {
+        value += 'alt+';
+    }
+    else if (event.shiftKey && event.key !== 'Shift') {
+        value += 'shift+';
+    }
+
+    value += 'k' + event.key;
+
+    this._key_event_extra(event, name);
+
+    this.send_message(name, { key: value, guiEvent: simpleKeys(event) });
+    return false;
+};
+
+mpl.figure.prototype.toolbar_button_onclick = function (name) {
+    if (name === 'download') {
+        this.handle_save(this, null);
+    } else {
+        this.send_message('toolbar_button', { name: name });
+    }
+};
+
+mpl.figure.prototype.toolbar_button_onmouseover = function (tooltip) {
+    this.message.textContent = tooltip;
+};
+
+///////////////// REMAINING CONTENT GENERATED BY embed_js.py /////////////////
+// prettier-ignore
+var _JSXTOOLS_RESIZE_OBSERVER=function(A){var t,i=new WeakMap,n=new WeakMap,a=new WeakMap,r=new WeakMap,o=new Set;function s(e){if(!(this instanceof s))throw new TypeError("Constructor requires 'new' operator");i.set(this,e)}function h(){throw new TypeError("Function is not a constructor")}function c(e,t,i,n){e=0 in arguments?Number(arguments[0]):0,t=1 in arguments?Number(arguments[1]):0,i=2 in arguments?Number(arguments[2]):0,n=3 in arguments?Number(arguments[3]):0,this.right=(this.x=this.left=e)+(this.width=i),this.bottom=(this.y=this.top=t)+(this.height=n),Object.freeze(this)}function d(){t=requestAnimationFrame(d);var s=new WeakMap,p=new Set;o.forEach((function(t){r.get(t).forEach((function(i){var r=t instanceof window.SVGElement,o=a.get(t),d=r?0:parseFloat(o.paddingTop),f=r?0:parseFloat(o.paddingRight),l=r?0:parseFloat(o.paddingBottom),u=r?0:parseFloat(o.paddingLeft),g=r?0:parseFloat(o.borderTopWidth),m=r?0:parseFloat(o.borderRightWidth),w=r?0:parseFloat(o.borderBottomWidth),b=u+f,F=d+l,v=(r?0:parseFloat(o.borderLeftWidth))+m,W=g+w,y=r?0:t.offsetHeight-W-t.clientHeight,E=r?0:t.offsetWidth-v-t.clientWidth,R=b+v,z=F+W,M=r?t.width:parseFloat(o.width)-R-E,O=r?t.height:parseFloat(o.height)-z-y;if(n.has(t)){var k=n.get(t);if(k[0]===M&&k[1]===O)return}n.set(t,[M,O]);var S=Object.create(h.prototype);S.target=t,S.contentRect=new c(u,d,M,O),s.has(i)||(s.set(i,[]),p.add(i)),s.get(i).push(S)}))})),p.forEach((function(e){i.get(e).call(e,s.get(e),e)}))}return s.prototype.observe=function(i){if(i instanceof window.Element){r.has(i)||(r.set(i,new Set),o.add(i),a.set(i,window.getComputedStyle(i)));var n=r.get(i);n.has(this)||n.add(this),cancelAnimationFrame(t),t=requestAnimationFrame(d)}},s.prototype.unobserve=function(i){if(i instanceof window.Element&&r.has(i)){var n=r.get(i);n.has(this)&&(n.delete(this),n.size||(r.delete(i),o.delete(i))),n.size||r.delete(i),o.size||cancelAnimationFrame(t)}},A.DOMRectReadOnly=c,A.ResizeObserver=s,A.ResizeObserverEntry=h,A}; // eslint-disable-line
+mpl.toolbar_items = [["Home", "Reset original view", "fa fa-home", "home"], ["Back", "Back to previous view", "fa fa-arrow-left", "back"], ["Forward", "Forward to next view", "fa fa-arrow-right", "forward"], ["", "", "", ""], ["Pan", "Left button pans, Right button zooms\nx/y fixes axis, CTRL fixes aspect", "fa fa-arrows", "pan"], ["Zoom", "Zoom to rectangle\nx/y fixes axis", "fa fa-square-o", "zoom"], ["", "", "", ""], ["Download", "Download plot", "fa fa-floppy-o", "download"]];
+
+mpl.extensions = ["eps", "jpeg", "pgf", "pdf", "png", "ps", "raw", "svg", "tif", "webp"];
+
+mpl.default_extension = "png";/* global mpl */
+
+var comm_websocket_adapter = function (comm) {
+    // Create a "websocket"-like object which calls the given IPython comm
+    // object with the appropriate methods. Currently this is a non binary
+    // socket, so there is still some room for performance tuning.
+    var ws = {};
+
+    ws.binaryType = comm.kernel.ws.binaryType;
+    ws.readyState = comm.kernel.ws.readyState;
+    function updateReadyState(_event) {
+        if (comm.kernel.ws) {
+            ws.readyState = comm.kernel.ws.readyState;
+        } else {
+            ws.readyState = 3; // Closed state.
+        }
+    }
+    comm.kernel.ws.addEventListener('open', updateReadyState);
+    comm.kernel.ws.addEventListener('close', updateReadyState);
+    comm.kernel.ws.addEventListener('error', updateReadyState);
+
+    ws.close = function () {
+        comm.close();
+    };
+    ws.send = function (m) {
+        //console.log('sending', m);
+        comm.send(m);
+    };
+    // Register the callback with on_msg.
+    comm.on_msg(function (msg) {
+        //console.log('receiving', msg['content']['data'], msg);
+        var data = msg['content']['data'];
+        if (data['blob'] !== undefined) {
+            data = {
+                data: new Blob(msg['buffers'], { type: data['blob'] }),
+            };
+        }
+        // Pass the mpl event to the overridden (by mpl) onmessage function.
+        ws.onmessage(data);
+    });
+    return ws;
+};
+
+mpl.mpl_figure_comm = function (comm, msg) {
+    // This is the function which gets called when the mpl process
+    // starts-up an IPython Comm through the "matplotlib" channel.
+
+    var id = msg.content.data.id;
+    // Get hold of the div created by the display call when the Comm
+    // socket was opened in Python.
+    var element = document.getElementById(id);
+    var ws_proxy = comm_websocket_adapter(comm);
+
+    function ondownload(figure, _format) {
+        window.open(figure.canvas.toDataURL());
+    }
+
+    var fig = new mpl.figure(id, ws_proxy, ondownload, element);
+
+    // Call onopen now - mpl needs it, as it is assuming we've passed it a real
+    // web socket which is closed, not our websocket->open comm proxy.
+    ws_proxy.onopen();
+
+    fig.parent_element = element;
+    fig.cell_info = mpl.find_output_cell("<div id='" + id + "'></div>");
+    if (!fig.cell_info) {
+        console.error('Failed to find cell for figure', id, fig);
+        return;
+    }
+    fig.cell_info[0].output_area.element.on(
+        'cleared',
+        { fig: fig },
+        fig._remove_fig_handler
+    );
+};
+
+mpl.figure.prototype.handle_close = function (fig, msg) {
+    var width = fig.canvas.width / fig.ratio;
+    fig.cell_info[0].output_area.element.off(
+        'cleared',
+        fig._remove_fig_handler
+    );
+    fig.resizeObserverInstance.unobserve(fig.canvas_div);
+
+    // Update the output cell to use the data from the current canvas.
+    fig.push_to_output();
+    var dataURL = fig.canvas.toDataURL();
+    // Re-enable the keyboard manager in IPython - without this line, in FF,
+    // the notebook keyboard shortcuts fail.
+    IPython.keyboard_manager.enable();
+    fig.parent_element.innerHTML =
+        '<img src="' + dataURL + '" width="' + width + '">';
+    fig.close_ws(fig, msg);
+};
+
+mpl.figure.prototype.close_ws = function (fig, msg) {
+    fig.send_message('closing', msg);
+    // fig.ws.close()
+};
+
+mpl.figure.prototype.push_to_output = function (_remove_interactive) {
+    // Turn the data on the canvas into data in the output cell.
+    var width = this.canvas.width / this.ratio;
+    var dataURL = this.canvas.toDataURL();
+    this.cell_info[1]['text/html'] =
+        '<img src="' + dataURL + '" width="' + width + '">';
+};
+
+mpl.figure.prototype.updated_canvas_event = function () {
+    // Tell IPython that the notebook contents must change.
+    IPython.notebook.set_dirty(true);
+    this.send_message('ack', {});
+    var fig = this;
+    // Wait a second, then push the new image to the DOM so
+    // that it is saved nicely (might be nice to debounce this).
+    setTimeout(function () {
+        fig.push_to_output();
+    }, 1000);
+};
+
+mpl.figure.prototype._init_toolbar = function () {
+    var fig = this;
+
+    var toolbar = document.createElement('div');
+    toolbar.classList = 'btn-toolbar';
+    this.root.appendChild(toolbar);
+
+    function on_click_closure(name) {
+        return function (_event) {
+            return fig.toolbar_button_onclick(name);
+        };
+    }
+
+    function on_mouseover_closure(tooltip) {
+        return function (event) {
+            if (!event.currentTarget.disabled) {
+                return fig.toolbar_button_onmouseover(tooltip);
+            }
+        };
+    }
+
+    fig.buttons = {};
+    var buttonGroup = document.createElement('div');
+    buttonGroup.classList = 'btn-group';
+    var button;
+    for (var toolbar_ind in mpl.toolbar_items) {
+        var name = mpl.toolbar_items[toolbar_ind][0];
+        var tooltip = mpl.toolbar_items[toolbar_ind][1];
+        var image = mpl.toolbar_items[toolbar_ind][2];
+        var method_name = mpl.toolbar_items[toolbar_ind][3];
+
+        if (!name) {
+            /* Instead of a spacer, we start a new button group. */
+            if (buttonGroup.hasChildNodes()) {
+                toolbar.appendChild(buttonGroup);
+            }
+            buttonGroup = document.createElement('div');
+            buttonGroup.classList = 'btn-group';
+            continue;
+        }
+
+        button = fig.buttons[name] = document.createElement('button');
+        button.classList = 'btn btn-default';
+        button.href = '#';
+        button.title = name;
+        button.innerHTML = '<i class="fa ' + image + ' fa-lg"></i>';
+        button.addEventListener('click', on_click_closure(method_name));
+        button.addEventListener('mouseover', on_mouseover_closure(tooltip));
+        buttonGroup.appendChild(button);
+    }
+
+    if (buttonGroup.hasChildNodes()) {
+        toolbar.appendChild(buttonGroup);
+    }
+
+    // Add the status bar.
+    var status_bar = document.createElement('span');
+    status_bar.classList = 'mpl-message pull-right';
+    toolbar.appendChild(status_bar);
+    this.message = status_bar;
+
+    // Add the close button to the window.
+    var buttongrp = document.createElement('div');
+    buttongrp.classList = 'btn-group inline pull-right';
+    button = document.createElement('button');
+    button.classList = 'btn btn-mini btn-primary';
+    button.href = '#';
+    button.title = 'Stop Interaction';
+    button.innerHTML = '<i class="fa fa-power-off icon-remove icon-large"></i>';
+    button.addEventListener('click', function (_evt) {
+        fig.handle_close(fig, {});
+    });
+    button.addEventListener(
+        'mouseover',
+        on_mouseover_closure('Stop Interaction')
+    );
+    buttongrp.appendChild(button);
+    var titlebar = this.root.querySelector('.ui-dialog-titlebar');
+    titlebar.insertBefore(buttongrp, titlebar.firstChild);
+};
+
+mpl.figure.prototype._remove_fig_handler = function (event) {
+    var fig = event.data.fig;
+    if (event.target !== this) {
+        // Ignore bubbled events from children.
+        return;
+    }
+    fig.close_ws(fig, {});
+};
+
+mpl.figure.prototype._root_extra_style = function (el) {
+    el.style.boxSizing = 'content-box'; // override notebook setting of border-box.
+};
+
+mpl.figure.prototype._canvas_extra_style = function (el) {
+    // this is important to make the div 'focusable
+    el.setAttribute('tabindex', 0);
+    // reach out to IPython and tell the keyboard manager to turn it's self
+    // off when our div gets focus
+
+    // location in version 3
+    if (IPython.notebook.keyboard_manager) {
+        IPython.notebook.keyboard_manager.register_events(el);
+    } else {
+        // location in version 2
+        IPython.keyboard_manager.register_events(el);
+    }
+};
+
+mpl.figure.prototype._key_event_extra = function (event, _name) {
+    // Check for shift+enter
+    if (event.shiftKey && event.which === 13) {
+        this.canvas_div.blur();
+        // select the cell after this one
+        var index = IPython.notebook.find_cell_index(this.cell_info[0]);
+        IPython.notebook.select(index + 1);
+    }
+};
+
+mpl.figure.prototype.handle_save = function (fig, _msg) {
+    fig.ondownload(fig, null);
+};
+
+mpl.find_output_cell = function (html_output) {
+    // Return the cell and output element which can be found *uniquely* in the notebook.
+    // Note - this is a bit hacky, but it is done because the "notebook_saving.Notebook"
+    // IPython event is triggered only after the cells have been serialised, which for
+    // our purposes (turning an active figure into a static one), is too late.
+    var cells = IPython.notebook.get_cells();
+    var ncells = cells.length;
+    for (var i = 0; i < ncells; i++) {
+        var cell = cells[i];
+        if (cell.cell_type === 'code') {
+            for (var j = 0; j < cell.output_area.outputs.length; j++) {
+                var data = cell.output_area.outputs[j];
+                if (data.data) {
+                    // IPython >= 3 moved mimebundle to data attribute of output
+                    data = data.data;
+                }
+                if (data['text/html'] === html_output) {
+                    return [cell, data, j];
+                }
+            }
+        }
+    }
+};
+
+// Register the function which deals with the matplotlib target/channel.
+// The kernel may be null if the page has been refreshed.
+if (IPython.notebook.kernel !== null) {
+    IPython.notebook.kernel.comm_manager.register_target(
+        'matplotlib',
+        mpl.mpl_figure_comm
+    );
+}
+</script><div class="output text_html"><div id='1d6cfb2d-4cba-4fd1-a484-aef930d8f411'></div></div><script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "1e7be9f97e044975986d187eeb605e41"}</script></div>
+</div>
+</section>
+</section>
+<section id="exercises">
+<h2>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Using the NIST property database, determine <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> for steam at 500 K using both the Redlich-Kwong and Van der Waal’s Equation of State.</p></li>
+</ol>
+<ul class="simple">
+<li><p>How do the values compare?</p></li>
+<li><p>Were there any major challenges that you encountered in determining the values for either equation</p></li>
+</ul>
+<ol class="arabic simple" start="2">
+<li><p>Generate a plot of the Peng-Robinson Equation of State for methane. Please provide at least 5 isotherms spanning a range of reduced temperatures including 0.5, 0.75, 0.9, 1.0, 2.0.</p></li>
+</ol>
+<ul class="simple">
+<li><p>Describe the general featuers of the isotherms above and below the critical temperature.</p></li>
+<li><p>As the molecular weight of the hydrocarbon increases, it has an interesting effect on the the parameters <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span>. Based on these changes, wht do you observe about changes in <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span>.</p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "executablebooks/jupyter-book",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./Ch8\211_Content\Ch4"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generalized-form-of-the-volumetric-equation-of-state">Generalized Form of the Volumetric Equation of State</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#first-order-equations-of-state">First Order Equations of State</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#second-order-equations-of-state">Second Order Equations of State</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cubic-third-order-equations-of-state">Cubic (Third Order) Equations of State</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#van-der-waal-equation-of-state-1873">Van der Waal Equation of State - 1873</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#redlich-kwong-equation-of-state-1949">Redlich-Kwong Equation of State - 1949</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#peng-robinson-equation-of-state-1976">Peng-Robinson Equation of State - 1976</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By J. J. Richards
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

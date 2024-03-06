@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Deriving Useful Thermodynamic Properties &#8212; Introduction to Thermodynamics</title>
   
@@ -19,49 +18,45 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509" />
-  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=bd9e20870c6007c4c509"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'Ch4/1.Deriving-Useful-Thermodynamic-Relationships';</script>
@@ -81,7 +76,6 @@ const thebe_selector_output = ".output, .cell_output"
   <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
     <i class="fa-solid fa-arrow-up"></i>
@@ -121,20 +115,15 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
-
-  <header>
   
-    <div class="bd-header navbar navbar-expand-lg bd-navbar">
-    </div>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
   
-  </header>
 
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
       
       
-      
-        
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -168,7 +157,18 @@ const thebe_selector_output = ".output, .cell_output"
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -210,19 +210,18 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="2.Virial-Equations-of-State.html">Volumetric Equations of State</a></li>
 <li class="toctree-l1"><a class="reference internal" href="3.Law-of-Corresponding-States.html">Law of Corresponding States and Critical Properties</a></li>
 <li class="toctree-l1"><a class="reference internal" href="4.Thermal-Variables-from-EOS.html">Computing Thermal Variables from an Equation of State</a></li>
-<li class="toctree-l1"><a class="reference internal" href="5.Calculating-Fugacity.html">Calculating Fugacity</a></li>
-<li class="toctree-l1"><a class="reference internal" href="6.Vapor-Liquid-Equilibrium.html">Vapor Liquid Equilibrium</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="7.Constructing-Property-Diagrams.html">Constructing Property Diagrams</a></li>
+
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Thermodynamics of Mixtures</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../Ch6/1.Species-Balance-Expression.html">Species Balance Expression and Reaction Kinetics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch5/1.Introduction-to-Mixtures.html">Introduction to Mixtures</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Ch5/3.Gaseous-Mixtures.html">Gaseous Mixtures</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Ch5/4.Liquid-Mixtures.html">Liquid Mixtures</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Ch5/5.Accuracy-EOS.html">Calculating the Accuracy of Equations of State</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Ch6/6.Chemical-Equilibrium.html">Chemical Equilibrium</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Ch7/7.Activity-Coefficient-Models.html">Activity Coefficients</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Ch7/8.Calculating-Mixture-Fugacity.html">Calculating Fugacity of Mixtures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch7/8.Calculating-Mixture-Fugacity.html">Vapor-Liquid Equilibrium</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Ch7/9.Mixture-Equilibrium.html">Equilibrium of Mixtures</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Exercises</span></p>
@@ -457,7 +456,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="deriving-useful-thermodynamic-properties">
-<h1>Deriving Useful Thermodynamic Properties<a class="headerlink" href="#deriving-useful-thermodynamic-properties" title="Permalink to this heading">#</a></h1>
+<h1>Deriving Useful Thermodynamic Properties<a class="headerlink" href="#deriving-useful-thermodynamic-properties" title="Link to this heading">#</a></h1>
 <p>Up to this point in the class, we have used either the <em>ideal gas</em> properties or tabluated <em>real fluid</em> physical properties to compute the amount of heat and work required to change the state of substances, perform useful tasks like liquefaction, refrigeration, and power generation. In this chapter, we seek to develop a more generalized approach for such computations that allows for the estimation of <em>thermal</em> variables in terms of <em>volumetric</em> variables.</p>
 <p>The outline of the content in this section is as follows:</p>
 <ol class="arabic simple">
@@ -466,16 +465,16 @@ document.write(`
 <li><p>A summary of a few of the most useful expressions</p></li>
 </ol>
 <section id="mathematical-preliminaries">
-<h2>Mathematical Preliminaries<a class="headerlink" href="#mathematical-preliminaries" title="Permalink to this heading">#</a></h2>
+<h2>Mathematical Preliminaries<a class="headerlink" href="#mathematical-preliminaries" title="Link to this heading">#</a></h2>
 <section id="multivariate-calculus">
-<h3>Multivariate Calculus<a class="headerlink" href="#multivariate-calculus" title="Permalink to this heading">#</a></h3>
+<h3>Multivariate Calculus<a class="headerlink" href="#multivariate-calculus" title="Link to this heading">#</a></h3>
 <p>Recall from calculus that if we have a function <span class="math notranslate nohighlight">\(\theta(X,Y,Z)\)</span> that is a function of multiple variables, we can write the total differential for <span class="math notranslate nohighlight">\(\theta\)</span> as:</p>
 <p><span class="math notranslate nohighlight">\(\quad d\theta=\bigg(\dfrac{\partial\theta}{\partial X}\bigg)_{Y,Z}dX+\bigg(\dfrac{\partial\theta}{\partial Y}\bigg)_{X,Z}dY+\bigg(\dfrac{\partial\theta}{\partial Z}\bigg)_{X,Y}dZ\)</span></p>
 <p>We will combine this mathematical fact with the combined form of the 1st and 2nd laws to derive useful quantities:</p>
 <p><span class="math notranslate nohighlight">\(\quad d\underline{U}=Td\underline{S}-Pd\underline{V}\)</span></p>
 </section>
 <section id="closed-system-expressions">
-<h3>Closed System Expressions:<a class="headerlink" href="#closed-system-expressions" title="Permalink to this heading">#</a></h3>
+<h3>Closed System Expressions:<a class="headerlink" href="#closed-system-expressions" title="Link to this heading">#</a></h3>
 <p>For closed system problems, we general compute the change in internal energy <span class="math notranslate nohighlight">\(\underline{U}\)</span> in terms of other variables.</p>
 <p>Now lets see that in this combination of the first and second laws, there are differential expressions for <span class="math notranslate nohighlight">\(\underline{V}\)</span> and <span class="math notranslate nohighlight">\(\underline{S}\)</span> on the l.h.s. and <span class="math notranslate nohighlight">\(\underline{U}\)</span> on the r.h.s. If we use our the calculus description above to write <span class="math notranslate nohighlight">\(\underline{U}(\underline{S},\underline{V})\)</span>, we can also write:</p>
 <p><span class="math notranslate nohighlight">\(\quad d\underline{U}=\bigg(\dfrac{\partial\underline{U}}{\partial \underline{V}}\bigg)_{\underline{S}}d\underline{V}+\bigg(\dfrac{\partial\underline{U}}{\partial \underline{S}}\bigg)_{\underline{V}}d\underline{S}\)</span></p>
@@ -495,7 +494,7 @@ document.write(`
 <p><span class="math notranslate nohighlight">\(\quad \bigg(\dfrac{\partial\underline{A}}{\partial T}\bigg)_{\underline{V}}=\underline{S}\)</span></p>
 </section>
 <section id="open-system-expressions">
-<h3>Open System Expressions:<a class="headerlink" href="#open-system-expressions" title="Permalink to this heading">#</a></h3>
+<h3>Open System Expressions:<a class="headerlink" href="#open-system-expressions" title="Link to this heading">#</a></h3>
 <p>For open system problems, we gernally compute the change in enthalpy <span class="math notranslate nohighlight">\(\underline{H}\)</span> in terms of other state variables. As we did above we can transform the equation by employing the definition of the enthalpy <span class="math notranslate nohighlight">\(H=U+PV\)</span>.</p>
 <p><span class="math notranslate nohighlight">\(\quad d\underline{H}=d\underline{U}+Pd\underline{V}+\underline{V}dP\)</span></p>
 <p>again if we substitute for <span class="math notranslate nohighlight">\(d\underline{U}\)</span>, we get:</p>
@@ -522,14 +521,14 @@ document.write(`
 </section>
 </section>
 <section id="maxwells-equations">
-<h2>Maxwell’s Equations<a class="headerlink" href="#maxwells-equations" title="Permalink to this heading">#</a></h2>
+<h2>Maxwell’s Equations<a class="headerlink" href="#maxwells-equations" title="Link to this heading">#</a></h2>
 <p>Alright so that was a useful exercise, we collected a few new ways to inter-relate properties, but we didn’t really accomplish the goal we set out for ourselves - to be able to compute thermal variables in terms of the volumetric variables. To do so, we return to two of the expressions above useful for closed and open system problems:</p>
 <p><span class="math notranslate nohighlight">\(\quad d\underline{U}=Td\underline{S}-Pd\underline{V}\)</span></p>
 <p><span class="math notranslate nohighlight">\(\quad d\underline{H}=Td\underline{S}+\underline{V}dP\)</span></p>
 <p>We can see that in the above, we have <span class="math notranslate nohighlight">\(d\underline{H}\)</span> and <span class="math notranslate nohighlight">\(d\underline{U}\)</span> in terms of <span class="math notranslate nohighlight">\(P\)</span>, <span class="math notranslate nohighlight">\(\underline{V}\)</span>, <span class="math notranslate nohighlight">\(T\)</span> and <span class="math notranslate nohighlight">\(\underline{S}\)</span>, but we cannot calculate <span class="math notranslate nohighlight">\(d\underline{S}\)</span></p>
 <p>So let’s use the approach explored above to develop expressions <span class="math notranslate nohighlight">\(\underline{S}\big(\underline{V},T\big)\)</span> and <span class="math notranslate nohighlight">\(\underline{S}\big(P,T\big)\)</span>.</p>
 <section id="expressions-for-enthalpy-and-internal-energy">
-<h3>Expressions for Enthalpy and Internal Energy<a class="headerlink" href="#expressions-for-enthalpy-and-internal-energy" title="Permalink to this heading">#</a></h3>
+<h3>Expressions for Enthalpy and Internal Energy<a class="headerlink" href="#expressions-for-enthalpy-and-internal-energy" title="Link to this heading">#</a></h3>
 <p>Let’s start with <span class="math notranslate nohighlight">\(\underline{S}\big(\underline{V},T\big)\)</span>:</p>
 <p><span class="math notranslate nohighlight">\(\quad d\underline{S}=\bigg(\dfrac{\partial\underline{S}}{\partial T}\bigg)_{\underline{V}}dT+
 \bigg(\dfrac{\partial\underline{S}}{\partial \underline{V}}\bigg)_{T}d\underline{V}\)</span></p>
@@ -543,18 +542,18 @@ document.write(`
 </ol>
 </section>
 <section id="applying-chain-rule">
-<h3>Applying Chain Rule:<a class="headerlink" href="#applying-chain-rule" title="Permalink to this heading">#</a></h3>
+<h3>Applying Chain Rule:<a class="headerlink" href="#applying-chain-rule" title="Link to this heading">#</a></h3>
 <section id="from-the-definitions-of-the-heat-capacities">
-<h4>From the definitions of the heat capacities<a class="headerlink" href="#from-the-definitions-of-the-heat-capacities" title="Permalink to this heading">#</a></h4>
+<h4>From the definitions of the heat capacities<a class="headerlink" href="#from-the-definitions-of-the-heat-capacities" title="Link to this heading">#</a></h4>
 <p><span class="math notranslate nohighlight">\(\quad \bigg(\dfrac{\partial\underline{S}}{\partial T}\bigg)_{\underline{V}}=
 \bigg(\dfrac{\partial\underline{S}}{\partial \underline{U}}\bigg)_{\underline{V}}\bigg(\dfrac{\partial\underline{U}}{\partial T}\bigg)_{\underline{V}}=\dfrac{1}{T}C_{V}\)</span></p>
 <p><span class="math notranslate nohighlight">\(\quad \bigg(\dfrac{\partial\underline{S}}{\partial T}\bigg)_{P}=\bigg(\dfrac{\partial\underline{S}}{\partial \underline{H}}\bigg)_{P}\bigg(\dfrac{\partial\underline{H}}{\partial T}\bigg)_{P}=\dfrac{1}{T}C_P\)</span></p>
 </section>
 </section>
 <section id="applying-commutative-property-for-partial-derivatives">
-<h3>Applying commutative property for partial derivatives.<a class="headerlink" href="#applying-commutative-property-for-partial-derivatives" title="Permalink to this heading">#</a></h3>
+<h3>Applying commutative property for partial derivatives.<a class="headerlink" href="#applying-commutative-property-for-partial-derivatives" title="Link to this heading">#</a></h3>
 <section id="from-the-differential-balance-on-the-helmholtz-free-energy">
-<h4>From the differential balance on the Helmholtz Free Energy:<a class="headerlink" href="#from-the-differential-balance-on-the-helmholtz-free-energy" title="Permalink to this heading">#</a></h4>
+<h4>From the differential balance on the Helmholtz Free Energy:<a class="headerlink" href="#from-the-differential-balance-on-the-helmholtz-free-energy" title="Link to this heading">#</a></h4>
 <p><span class="math notranslate nohighlight">\(\quad d\underline{A}=-Pd\underline{V} - \underline{S}dT\)</span></p>
 <p>The communtative property states that:</p>
 <p><span class="math notranslate nohighlight">\(\dfrac{\partial}{\partial T}\bigg|_\underline{V} \bigg(\dfrac{\partial \underline{A}}{\partial \underline{V}}\bigg)_T = 
@@ -563,7 +562,7 @@ document.write(`
 <p><span class="math notranslate nohighlight">\(\quad \bigg(\dfrac{\partial P}{\partial \underline{T}}\bigg)_\underline{V}= \bigg(\dfrac{\partial \underline{S}}{\partial \underline{V}}\bigg)_{T}\)</span></p>
 </section>
 <section id="from-the-differential-balance-on-the-gibbs-free-energy">
-<h4>From the differential balance on the Gibb’s Free Energy:<a class="headerlink" href="#from-the-differential-balance-on-the-gibbs-free-energy" title="Permalink to this heading">#</a></h4>
+<h4>From the differential balance on the Gibb’s Free Energy:<a class="headerlink" href="#from-the-differential-balance-on-the-gibbs-free-energy" title="Link to this heading">#</a></h4>
 <p><span class="math notranslate nohighlight">\(\quad d\underline{G}=\underline{V}dP - \underline{S}dT\)</span></p>
 <p>The communtative property states that:</p>
 <p><span class="math notranslate nohighlight">\(\dfrac{\partial}{\partial T}\bigg|_P \bigg(\dfrac{\partial \underline{G}}{\partial P}\bigg)_T = 
@@ -578,12 +577,12 @@ document.write(`
 </section>
 </section>
 <section id="useful-expressions-for-calculations">
-<h2>Useful Expressions for Calculations<a class="headerlink" href="#useful-expressions-for-calculations" title="Permalink to this heading">#</a></h2>
+<h2>Useful Expressions for Calculations<a class="headerlink" href="#useful-expressions-for-calculations" title="Link to this heading">#</a></h2>
 <p>Recall, that we wanted an expression for <span class="math notranslate nohighlight">\(d\underline{S}\)</span></p>
 <p><span class="math notranslate nohighlight">\(\quad d\underline{U}=Td\underline{S}-Pd\underline{V}\)</span></p>
 <p><span class="math notranslate nohighlight">\(\quad d\underline{H}=Td\underline{S}+\underline{V}dP\)</span></p>
 <section id="id1">
-<h3>Closed System Expressions<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
+<h3>Closed System Expressions<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
 <p><span class="math notranslate nohighlight">\(\underline{S}\big(\underline{V},T\big)\)</span>:</p>
 <p><span class="math notranslate nohighlight">\(\quad d\underline{S}=\dfrac{C_V}{T}dT+
 \bigg(\dfrac{\partial P}{\partial T}\bigg)_{\underline{V}}d\underline{V}\)</span></p>
@@ -592,7 +591,7 @@ document.write(`
 \bigg(T\bigg(\dfrac{\partial P}{\partial T}\bigg)_{\underline{V}}-P\bigg)d\underline{V}\)</span></p>
 </section>
 <section id="id2">
-<h3>Open System Expressions<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
+<h3>Open System Expressions<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
 <p><span class="math notranslate nohighlight">\(\underline{S}\big(P,T\big)\)</span>:</p>
 <p><span class="math notranslate nohighlight">\(\quad d\underline{S}=\dfrac{C_P}{T}dT-
 \bigg(\dfrac{\partial \underline{V}}{\partial T}\bigg)_PdP\)</span></p>
@@ -603,12 +602,12 @@ document.write(`
 </section>
 </section>
 <section id="illustration">
-<h2>Illustration<a class="headerlink" href="#illustration" title="Permalink to this heading">#</a></h2>
+<h2>Illustration<a class="headerlink" href="#illustration" title="Link to this heading">#</a></h2>
 <p>The implications of the above expressions are that if we have a volumetric equation of state and heat capacity information, we can directly calculate <strong>thermal variables</strong> with volumetric variables alone. Let’s check our work first using the ideal gas law:</p>
 <p><span class="math notranslate nohighlight">\(\quad \dfrac{P\underline{V}}{RT}=1\)</span></p>
 <p>Plugging and chugging into the expressions above confirm our findings in Ch 3. that the change in internal energy and enthalpy of an ideal gas is only dependent on the heat capacities and the change in entropy is given logarithmic functions of the volumetric variables.</p>
 <section id="closed-system-ideal-gas">
-<h3>Closed System Ideal Gas<a class="headerlink" href="#closed-system-ideal-gas" title="Permalink to this heading">#</a></h3>
+<h3>Closed System Ideal Gas<a class="headerlink" href="#closed-system-ideal-gas" title="Link to this heading">#</a></h3>
 <p><span class="math notranslate nohighlight">\(\underline{S}\big(\underline{V},T\big)\)</span>:</p>
 <p><span class="math notranslate nohighlight">\(\quad d\underline{S}=\dfrac{C_V}{T}dT+
 \dfrac{R}{\underline{V}}d\underline{V}\)</span></p>
@@ -616,7 +615,7 @@ document.write(`
 <p><span class="math notranslate nohighlight">\(\quad d\underline{U}=C_{V}dT\)</span></p>
 </section>
 <section id="id3">
-<h3>Open System Expressions<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
+<h3>Open System Expressions<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
 <p><span class="math notranslate nohighlight">\(\underline{S}\big(P,T\big)\)</span>:</p>
 <p><span class="math notranslate nohighlight">\(\quad d\underline{S}=\dfrac{C_P}{T}dT-
 \dfrac{R}{P}dP\)</span></p>
@@ -625,9 +624,9 @@ document.write(`
 </section>
 </section>
 <section id="example-problems">
-<h2>Example Problems<a class="headerlink" href="#example-problems" title="Permalink to this heading">#</a></h2>
+<h2>Example Problems<a class="headerlink" href="#example-problems" title="Link to this heading">#</a></h2>
 <section id="problem-1">
-<h3>Problem 1<a class="headerlink" href="#problem-1" title="Permalink to this heading">#</a></h3>
+<h3>Problem 1<a class="headerlink" href="#problem-1" title="Link to this heading">#</a></h3>
 <p>Using the virial equation of state for Nitrogen</p>
 <p><span class="math notranslate nohighlight">\(\quad \dfrac{P\underline{V}}{RT}=1-\dfrac{a}{\underline{V}}\)</span></p>
 <p>where</p>
@@ -635,7 +634,7 @@ document.write(`
 <p>Compare the following two types of compression:</p>
 </section>
 <section id="isothermal-compression-of-nitrogen-in-a-compressor">
-<h3>Isothermal Compression of Nitrogen in a Compressor<a class="headerlink" href="#isothermal-compression-of-nitrogen-in-a-compressor" title="Permalink to this heading">#</a></h3>
+<h3>Isothermal Compression of Nitrogen in a Compressor<a class="headerlink" href="#isothermal-compression-of-nitrogen-in-a-compressor" title="Link to this heading">#</a></h3>
 <p>For a compressor that operates at isothermally, reversibly, and at steady state:</p>
 <ol class="arabic simple">
 <li><p>Compute the work required to compress nitrogen from 1 bar to 10 bar with an inlet temperature of 200 K.</p></li>
@@ -644,7 +643,7 @@ document.write(`
 </ol>
 </section>
 <section id="isothermal-compression-of-nitrogen-in-a-piston">
-<h3>Isothermal Compression of Nitrogen in a Piston<a class="headerlink" href="#isothermal-compression-of-nitrogen-in-a-piston" title="Permalink to this heading">#</a></h3>
+<h3>Isothermal Compression of Nitrogen in a Piston<a class="headerlink" href="#isothermal-compression-of-nitrogen-in-a-piston" title="Link to this heading">#</a></h3>
 <p>For a piston that operates isothermally and reversibly:</p>
 <ol class="arabic simple">
 <li><p>Compute the work required to compress nitrogen from 1 bar to 10 bar with at a temperature of 200 K.</p></li>
@@ -653,7 +652,7 @@ document.write(`
 </ol>
 </section>
 <section id="adiabatic-compression-of-nitrogen-in-a-compressor">
-<h3>Adiabatic Compression of Nitrogen in a Compressor<a class="headerlink" href="#adiabatic-compression-of-nitrogen-in-a-compressor" title="Permalink to this heading">#</a></h3>
+<h3>Adiabatic Compression of Nitrogen in a Compressor<a class="headerlink" href="#adiabatic-compression-of-nitrogen-in-a-compressor" title="Link to this heading">#</a></h3>
 <p>Now consider a compressor that operates adiabatically, reversibly, and at steady state. How is the computation different for this case?</p>
 <p>This will be the central subject of the next lecture.</p>
 </section>
@@ -784,7 +783,7 @@ By J. J. Richards
 
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
@@ -808,8 +807,8 @@ By J. J. Richards
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
 
   <footer class="bd-footer">
   </footer>
