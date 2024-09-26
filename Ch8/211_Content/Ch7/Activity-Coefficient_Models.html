@@ -210,7 +210,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../Ch4/2.Virial-Equations-of-State.html">Volumetric Equations of State</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../Ch4/3.Law-of-Corresponding-States.html">Law of Corresponding States and Critical Properties</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../Ch4/4.Thermal-Variables-from-EOS.html">Computing Thermal Variables from an Equation of State</a></li>
-
 <li class="toctree-l1"><a class="reference internal" href="../../../Ch4/7.Constructing-Property-Diagrams.html">Constructing Property Diagrams</a></li>
 
 </ul>
@@ -222,7 +221,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../Ch5/5.Accuracy-EOS.html">Calculating the Accuracy of Equations of State</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../Ch7/7.Activity-Coefficient-Models.html">Activity Coefficients</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../Ch7/8.Calculating-Mixture-Fugacity.html">Vapor-Liquid Equilibrium</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../Ch7/9.Mixture-Equilibrium.html">Equilibrium of Mixtures</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Exercises</span></p>
 <ul class="nav bd-sidenav">
@@ -734,10 +732,10 @@ x_1\dfrac{a_1}{\underline{V}_1}+x_2\dfrac{a_2}{\underline{V}_2}\)</span></p></li
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x175a8f3e850&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x29d8b714d50&gt;
 </pre></div>
 </div>
-<img alt="../../../_images/2dd521e9cfd68adad678f292b94ac8f9b6bd3dce28ad6f1bc260b1ddd11a1a23.png" src="../../../_images/2dd521e9cfd68adad678f292b94ac8f9b6bd3dce28ad6f1bc260b1ddd11a1a23.png" />
+<img alt="../../../_images/e187e476089e956880b49bff970dbc48eb9e03f7985f9b25ac1ecd52f4f0a472.png" src="../../../_images/e187e476089e956880b49bff970dbc48eb9e03f7985f9b25ac1ecd52f4f0a472.png" />
 </div>
 </div>
 </section>
@@ -804,10 +802,10 @@ x_1\dfrac{a_1}{\underline{V}_1}+x_2\dfrac{a_2}{\underline{V}_2}\)</span></p></li
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x175aa436450&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x29d8bac4950&gt;
 </pre></div>
 </div>
-<img alt="../../../_images/02603253c61d274b255efef1acbdb05c0e2400a8fece870418a0a5bbf88ecfad.png" src="../../../_images/02603253c61d274b255efef1acbdb05c0e2400a8fece870418a0a5bbf88ecfad.png" />
+<img alt="../../../_images/6dfea86e51a8919ad02f61d2d800cce603288c4dc2dff37fdc5c70b6813b5d75.png" src="../../../_images/6dfea86e51a8919ad02f61d2d800cce603288c4dc2dff37fdc5c70b6813b5d75.png" />
 </div>
 </div>
 <p>We can see that the Margules expression requires 4 constants to provide an accurate description of the compositional dependence of the excess molar Gibbs energy. This is compared with the 5 constants for the van Laar equation. While this seems to suggest that the Margules expression is superior, we can imagine needing to describe the temperature and pressure dependence of the constants in the Margules expressions would require vast quantities of emperical data. Where the 4 constants contained within the van der Waals equation of state remain unchanged. This is one of the core strengths of thermodynamic theory - the ability to predict quantitatively behavior from a minimal set of tabulated thermodynamic information.</p>
@@ -853,20 +851,6 @@ x_1\dfrac{a_1}{\underline{V}_1}+x_2\dfrac{a_2}{\underline{V}_2}\)</span></p></li
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">phasepy</span> <span class="kn">import</span> <span class="n">component</span><span class="p">,</span> <span class="n">mixture</span><span class="p">,</span> <span class="n">preos</span><span class="p">,</span> <span class="n">vdweos</span><span class="p">,</span> <span class="n">rkseos</span><span class="p">,</span><span class="n">virialgamma</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">water</span> <span class="o">=</span> <span class="n">component</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;water&#39;</span><span class="p">,</span><span class="n">Tc</span><span class="o">=</span><span class="mf">647.13</span><span class="p">,</span> <span class="n">Pc</span><span class="o">=</span><span class="mf">220.55</span><span class="p">,</span> <span class="n">Zc</span><span class="o">=</span><span class="mf">0.229</span><span class="p">,</span> <span class="n">Vc</span><span class="o">=</span><span class="mf">55.948</span><span class="p">,</span> <span class="n">w</span><span class="o">=</span><span class="mf">0.344861</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span>                   <span class="n">GC</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;H2O&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">},</span> <span class="n">ri</span><span class="o">=</span><span class="mf">0.92</span><span class="p">,</span> <span class="n">qi</span><span class="o">=</span><span class="mf">1.4</span><span class="p">,</span> <span class="n">Mw</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">ethanol</span> <span class="o">=</span> <span class="n">component</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;ethanol&#39;</span><span class="p">,</span><span class="n">Tc</span><span class="o">=</span><span class="mi">514</span><span class="p">,</span> <span class="n">Pc</span><span class="o">=</span><span class="mf">61.37</span><span class="p">,</span> <span class="n">Zc</span><span class="o">=</span><span class="mf">0.241</span><span class="p">,</span> <span class="n">Vc</span><span class="o">=</span><span class="mi">168</span><span class="p">,</span> <span class="n">w</span><span class="o">=</span><span class="mf">0.643558</span><span class="p">,</span> 
-<span class="g g-Whitespace">      </span><span class="mi">6</span>                     <span class="n">GC</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;CH3&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;CH2&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;OH(P)&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">},</span><span class="n">ri</span><span class="o">=</span><span class="mf">2.1055</span><span class="p">,</span> <span class="n">qi</span><span class="o">=</span><span class="mf">1.972</span><span class="p">,</span> <span class="n">Mw</span><span class="o">=</span><span class="mf">46.07</span><span class="p">)</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;phasepy&#39;
-</pre></div>
-</div>
-</div>
 </div>
 </section>
 <section id="initializing-vdw-equation-of-state">
@@ -879,6 +863,26 @@ x_1\dfrac{a_1}{\underline{V}_1}+x_2\dfrac{a_2}{\underline{V}_2}\)</span></p></li
 <span class="n">eos1</span> <span class="o">=</span> <span class="n">vdweos</span><span class="p">(</span><span class="n">mix</span><span class="p">)</span>
 <span class="n">model1</span> <span class="o">=</span> <span class="n">virialgamma</span><span class="p">(</span><span class="n">mix</span><span class="p">,</span><span class="n">actmodel</span><span class="o">=</span><span class="s1">&#39;uniquac&#39;</span><span class="p">)</span>
 eos1<span class="o">?</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">Exception</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">5</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">mix</span><span class="o">.</span><span class="n">kij_cubic</span><span class="p">(</span><span class="n">Kij</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">eos1</span> <span class="o">=</span> <span class="n">vdweos</span><span class="p">(</span><span class="n">mix</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">5</span> <span class="n">model1</span> <span class="o">=</span> <span class="n">virialgamma</span><span class="p">(</span><span class="n">mix</span><span class="p">,</span><span class="n">actmodel</span><span class="o">=</span><span class="s1">&#39;uniquac&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">get_ipython</span><span class="p">()</span><span class="o">.</span><span class="n">run_line_magic</span><span class="p">(</span><span class="s1">&#39;pinfo&#39;</span><span class="p">,</span> <span class="s1">&#39;eos1&#39;</span><span class="p">)</span>
+
+<span class="nn">File C:\ProgramData\anaconda3\Lib\site-packages\phasepy\actmodels\virialgama.py:147,</span> in <span class="ni">virialgamma.__init__</span><span class="nt">(self, mix, virialmodel, actmodel)</span>
+<span class="g g-Whitespace">    </span><span class="mi">145</span>         <span class="bp">self</span><span class="o">.</span><span class="n">actm_temp</span> <span class="o">=</span> <span class="n">actm_temp</span><span class="o">.</span><span class="fm">__get__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">146</span>     <span class="k">else</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">147</span>         <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s1">&#39;UNIQUAC parameters needed&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">149</span> <span class="k">elif</span> <span class="n">actmodel</span> <span class="o">==</span> <span class="s1">&#39;rk&#39;</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">150</span>     <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">mix</span><span class="p">,</span> <span class="s1">&#39;rkp&#39;</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">mix</span><span class="p">,</span> <span class="s1">&#39;rkpT&#39;</span><span class="p">):</span>
+
+<span class="ne">Exception</span>: UNIQUAC parameters needed
 </pre></div>
 </div>
 </div>
