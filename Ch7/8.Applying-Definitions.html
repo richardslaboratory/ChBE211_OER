@@ -1,0 +1,883 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Applying our Thermodynamic Definitions to Mixtures &#8212; Introduction to Thermodynamics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Ch7/8.Applying-Definitions';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Introduction to Thermodynamics - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Introduction to Thermodynamics - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Foreword
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Definitions and Balance Expressions</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Ch1/1.Thermodynamic-Definitions.html">Thermodynamic Definitions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch1/2.Real-Gas-Properties.html">Real Gas Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch1/3.Equations-of-State.html">Equations of State</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch1/4.Balance-Expressions.html">Macroscopic Balance Expressions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch1/5.Conservation-of-Mass.html">Conservation of Mass</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Foundations of Thermodynamics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Ch2/1.Conservation-of-Energy.html">Conservation of Energy and the 1st Law of Thermodynamics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch2/2.Expansion-of-a-Gas.html">Expansion of a Gas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch2/3.Entropy-Balance-Expression.html">Balance Expression for Entropy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch2/4.Entropy-at-0K.html">Entropy at 0K</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch2/5.Free-Energies.html">Free Energy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch2/6.Changes-of-State.html">Changes of State</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Applications of Thermodynamics in Chemical Engineering</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Ch3/1.Unit-Operations.html">Unit Operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch3/2.Property-Diagram-Single-Components.html">Property Database for Common Substances</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch3/3.Heat-Engines.html">Heat Engines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch3/4.Refrigeration.html">Refrigeration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch3/5.Liquefaction.html">Liquefaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch3/6.Optimizing-with-Python.html">Optimizing with Python</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Vapor-Liquid Equilibrium for Non-Ideal Gases</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Ch4/1.Deriving-Useful-Thermodynamic-Relationships.html">Deriving Useful Thermodynamic Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch4/2.Virial-Equations-of-State.html">Volumetric Equations of State</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch4/3.Law-of-Corresponding-States.html">Law of Corresponding States and Critical Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch4/4.Thermal-Variables-from-EOS.html">Computing Thermal Variables from an Equation of State</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../Ch4/7.Constructing-Property-Diagrams.html">Constructing Property Diagrams</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Thermodynamics of Mixtures</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Ch5/1.Introduction-to-Mixtures.html">Introduction to Mixtures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch5/3.Gaseous-Mixtures.html">Gaseous Mixtures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch5/4.Liquid-Mixtures.html">Liquid Mixtures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch5/5.Accuracy-EOS.html">Calculating the Accuracy of Equations of State</a></li>
+<li class="toctree-l1"><a class="reference internal" href="7.Activity-Coefficient-Models.html">Activity Coefficients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="8.Calculating-Mixture-Fugacity.html">Vapor-Liquid Equilibrium</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Exercises</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Exercises/Ch1.html">Exercises for Chapter 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Exercises/Ch2.html">Exercises for Chapter 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Exercises/Ch3.html">Exercises for Chapter 3</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/Ch7/8.Applying-Definitions.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Applying our Thermodynamic Definitions to Mixtures</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#activity-coefficients-from-empirical-correlations">Activity Coefficients from Empirical Correlations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#where-do-mixture-properties-come-from">Where do mixture properties come from?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#determining-whether-a-mixture-is-ideal">Determining whether a mixture is ideal:</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#calculating-the-molar-volume-of-a-mixture-from-the-gibbs-free-energy">Calculating the molar volume of a mixture from the Gibb’s Free Energy:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#calculating-the-enthalpy-of-a-mixture-from-the-gibbs-free-energy">Calculating the Enthalpy of a mixture from the Gibb’s Free Energy:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#developing-expressions-for-activity-and-fugacity-coefficients-of-species-1-and-2-in-the-mixture">Developing Expressions for Activity and Fugacity Coefficients of species 1 and 2 in the mixture</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#activity-coefficients-from-a-volumetric-equation-of-state">Activity Coefficients from a Volumetric Equation of State</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#van-laar-theory">Van Laar Theory</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#i-from-t-1-p-1-we-have-x-1-moles-of-species-1-and-x-2-moles-of-species-2-we-take-an-isothermal-pathway-to-the-ideal-gas-state-for-both-species-in-isolation-such-that">(I) from <span class="math notranslate nohighlight">\(T_1\)</span>, <span class="math notranslate nohighlight">\(P_1\)</span> we have <span class="math notranslate nohighlight">\(x_1\)</span> moles of species <span class="math notranslate nohighlight">\(1\)</span> and <span class="math notranslate nohighlight">\(x_2\)</span> moles of species <span class="math notranslate nohighlight">\(2\)</span>. We take an isothermal pathway to the ideal gas state for both species in isolation such that:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ii-next-we-form-an-ideal-gas-mixture-of-species-1-and-2-the-result-of-this-mixing-produces-no-excess-internal-energy-relative-to-the-ideal-gas-mixture">(II) Next we form an ideal gas mixture of species 1 and 2. The result of this mixing produces no excess internal energy relative to the ideal gas mixture.</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#iii-finally-we-return-the-mixture-back-to-t-1-and-p-1-isothermally">(III) Finally we return the mixture back to <span class="math notranslate nohighlight">\(T_1\)</span> and <span class="math notranslate nohighlight">\(P_1\)</span> isothermally.</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#calculating-the-activity-coefficients">Calculating the Activity Coefficients</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-of-van-laar-equations-with-activity-coefficients-ammonia-and-water-system">Example of van Laar Equations with Activity Coefficients - Ammonia and Water System</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wilson-equation">Wilson Equation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lets-fit-the-wilson-equation-to-the-ammonia-water-system-to-see-if-we-can-improve-the-fit">Let’s fit the Wilson Equation to the ammonia-water system to see if we can improve the fit.</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="applying-our-thermodynamic-definitions-to-mixtures">
+<h1>Applying our Thermodynamic Definitions to Mixtures<a class="headerlink" href="#applying-our-thermodynamic-definitions-to-mixtures" title="Link to this heading">#</a></h1>
+<p>The goal of this notebook is to apply our definitions for mixtures partial molar properties and activity coefficients. Note that our focus will be based on two separate approaches:</p>
+<ol class="arabic simple">
+<li><p>Activity coefficient expressions from Empirical correlations (the Redlich Keister Expression)</p></li>
+<li><p>Activity coefficient expressions from Mixture Equations of State</p></li>
+</ol>
+<p>Then we will compare the two approaches using real property data.</p>
+<section id="activity-coefficients-from-empirical-correlations">
+<h2>Activity Coefficients from Empirical Correlations<a class="headerlink" href="#activity-coefficients-from-empirical-correlations" title="Link to this heading">#</a></h2>
+<p>Last time, we define the activity coefficient as given by:</p>
+<div class="math notranslate nohighlight">
+\[RT\ln{\gamma_i} = \bar{G}_i^{ex} = \bigg(\dfrac{\partial (G^{ex})}{\partial N_i}\bigg)_{T,P,N_{j\ne i}}\]</div>
+<p>where <span class="math notranslate nohighlight">\(G_{ex} = N \underline{G}^{ex} = \underline{G}(T,P,\underline{x}) - \underline{G}_{im}(T,P,\underline{x})\)</span></p>
+<p>Given a mixture whose Gibb’s Energy is given as:</p>
+<div class="math notranslate nohighlight">
+\[\underline{G} = x_1\underline{G}_1 + x_2\underline{G}_2 + RT(x_1\ln x_1 + x_2\ln x_2) +ax_1x_2\]</div>
+<section id="where-do-mixture-properties-come-from">
+<h3>Where do mixture properties come from?<a class="headerlink" href="#where-do-mixture-properties-come-from" title="Link to this heading">#</a></h3>
+<p>Measurements of the heat of mixing as a function of temperature can be readily used to estimate <span class="math notranslate nohighlight">\(\underline{G}\)</span> via the relationship,</p>
+<div class="math notranslate nohighlight">
+\[\underline{H} =  -T^2 \dfrac{\partial}{\partial T}\bigg|_P\bigg(\dfrac{\underline{G}}{T}\bigg)\]</div>
+<p>Therefore by measuring <span class="math notranslate nohighlight">\(\underline{H}(T,P,\underline{x})\)</span>, one can calculate <span class="math notranslate nohighlight">\(\underline{G}\)</span> of a mixture and fit the experimental data to the Redlich Keister Expression given as:</p>
+<div class="math notranslate nohighlight">
+\[\underline{G} = x_1\underline{G}_1 + x_2\underline{G}_2 + RT(x_1\ln x_1 + x_2\ln x_2) + x_1x_2 \sum_n a_n(x_1-x_2)^n\]</div>
+<p>The result will be empirical correlations that can be used to tabulate the activity coefficients - note that the parameters of that empirical fit <span class="math notranslate nohighlight">\(a_n\)</span> do not have physical meaning, but can be stored for mixtures of certain types.</p>
+</section>
+<section id="determining-whether-a-mixture-is-ideal">
+<h3>Determining whether a mixture is ideal:<a class="headerlink" href="#determining-whether-a-mixture-is-ideal" title="Link to this heading">#</a></h3>
+<p>An ideal mixture is a mixture whose properties are given as: <span class="math notranslate nohighlight">\(\underline{\theta}(T,P,\underline{x}) = \sum_i x_i\underline{\theta}_i(T,P)\)</span></p>
+<section id="calculating-the-molar-volume-of-a-mixture-from-the-gibbs-free-energy">
+<h4>Calculating the molar volume of a mixture from the Gibb’s Free Energy:<a class="headerlink" href="#calculating-the-molar-volume-of-a-mixture-from-the-gibbs-free-energy" title="Link to this heading">#</a></h4>
+<p>From Ch. 6,</p>
+<div class="math notranslate nohighlight">
+\[\underline{V} = \bigg(\dfrac{\partial \underline{G}}{\partial P} \bigg)_{T,N}\]</div>
+<p>Evaluating, <span class="math notranslate nohighlight">\(\bigg(\dfrac{\partial \underline{G}}{\partial P} \bigg)_{T,N}\)</span>, we can substitute:</p>
+<p><span class="math notranslate nohighlight">\(\dfrac{\partial}{\partial P} \bigg|_{T,N}\bigg(x_1\underline{G}_1 + x_2\underline{G}_2 + RT(x_1\ln x_1 + x_2\ln x_2) +ax_1x_2\bigg)\)</span></p>
+<p>after applying the operator, only <span class="math notranslate nohighlight">\(\underline{G}_1\)</span> and <span class="math notranslate nohighlight">\(\underline{G}_2\)</span> are functions of Pressure, therefore:</p>
+<p><span class="math notranslate nohighlight">\(\bigg(\dfrac{\partial \underline{G}}{\partial P} \bigg)_{T,N} = x_1 \bigg(\dfrac{\partial \underline{G}_1}{\partial P} \bigg)_{T,N} + x_2 \bigg(\dfrac{\partial \underline{G}_2}{\partial P} \bigg)_{T,N}=
+x_1\underline{V}_1 + x_2\underline{V}_2\)</span></p>
+</section>
+<section id="calculating-the-enthalpy-of-a-mixture-from-the-gibbs-free-energy">
+<h4>Calculating the Enthalpy of a mixture from the Gibb’s Free Energy:<a class="headerlink" href="#calculating-the-enthalpy-of-a-mixture-from-the-gibbs-free-energy" title="Link to this heading">#</a></h4>
+<div class="math notranslate nohighlight">
+\[\underline{H} =  -T^2 \dfrac{\partial}{\partial T}\bigg|_P\bigg(\dfrac{\underline{G}}{T}\bigg)\]</div>
+<p>performing the substitution as before, we find:
+<span class="math notranslate nohighlight">\(\dfrac{\partial}{\partial T}\bigg|_P\bigg(\dfrac{1}{T}\bigg(x_1\underline{G}_1 + x_2\underline{G}_2 + RT(x_1\ln x_1 + x_2\ln x_2) +ax_1x_2\bigg)\bigg)\)</span></p>
+<p>this time, <span class="math notranslate nohighlight">\(\dfrac{\underline{G}_1}{T}\)</span>, <span class="math notranslate nohighlight">\(\dfrac{\underline{G}_2}{T}\)</span>, and <span class="math notranslate nohighlight">\(\dfrac{a}{T}\)</span> are functions of temperature so that the derivative becomes:</p>
+<p><span class="math notranslate nohighlight">\(\underline{H} = -T^2 \bigg(x_1\dfrac{-\underline{H}_1}{T^2} + x_2\dfrac{-\underline{H}_2}{T^2}-\dfrac{a}{T^2}x_1x_2\bigg)\)</span></p>
+<p>or</p>
+<p><span class="math notranslate nohighlight">\(\underline{H} = x_1\underline{H}_1 + x_2\underline{H}_2 + \dfrac{a} x_1 x_2\)</span></p>
+<p>An ideal mixture requires that <span class="math notranslate nohighlight">\(\underline{H} = x_1\underline{H}_1 + x_2\underline{H}_2\)</span>, therefore the <strong>mixture is not ideal</strong></p>
+<p>We can further convince ourselves of this by calculating the partial molar enthalpy of this mixture:</p>
+<p><span class="math notranslate nohighlight">\(\bar{H}_1(T,P,\underline{x}) = \bigg(\dfrac{\partial H}{\partial N_1}\bigg)_{T,P,N_{j\ne i}} = \underline{H}_1 + a x_2^2\)</span></p>
+<p>For the mixture to be ideal, <span class="math notranslate nohighlight">\(\bar{H}_1 = \underline{H}_1\)</span></p>
+<p>Note:</p>
+<p>This above equation is a correlative relationship for calculating activity coefficients called the <em>one constant Margules expression</em></p>
+</section>
+</section>
+<section id="developing-expressions-for-activity-and-fugacity-coefficients-of-species-1-and-2-in-the-mixture">
+<h3>Developing Expressions for Activity and Fugacity Coefficients of species 1 and 2 in the mixture<a class="headerlink" href="#developing-expressions-for-activity-and-fugacity-coefficients-of-species-1-and-2-in-the-mixture" title="Link to this heading">#</a></h3>
+<p>Lets use the expression above to calculate the activity coefficient. Returning to the definition of the activity coefficient, we can write:</p>
+<div class="math notranslate nohighlight">
+\[RT\ln{\gamma_i} = \bar{G}_i^{ex} = \bigg(\dfrac{\partial (G^{ex})}{\partial N_i}\bigg)_{T,P,N_{j\ne i}}\]</div>
+<p>so we need to find <span class="math notranslate nohighlight">\(\underline{G}^{ex} = N\underline{G}^{ex} = N (a x_1 x_2) = a \dfrac{N_1 N_2}{N_1+N_2} \)</span></p>
+<p>evaluating the derivative</p>
+<p><span class="math notranslate nohighlight">\(\dfrac{\partial}{\partial N_1}\bigg|_{T,P,N_{2}}\bigg(a \dfrac{N_1 N_2}{N_1+N_2}\bigg)\)</span></p>
+<p>we get:</p>
+<p><span class="math notranslate nohighlight">\(\bar{G}_1^{ex} = a\bigg[\dfrac{N_2}{N_1+N_2} - \dfrac{N_1 N_2}{(N_1 + N_2)^2}\bigg] = a(x_2-x_1x_2) = ax_2^2\)</span></p>
+<p>Therefore,</p>
+<div class="math notranslate nohighlight">
+\[RT ln{\gamma_1} = \bar{G}_1^{ex} = ax_2^2\]</div>
+<p>via a similar manipulation it is possible to show that:</p>
+<div class="math notranslate nohighlight">
+\[RT ln{\gamma_2} = \bar{G}_2^{ex} = ax_1^2\]</div>
+</section>
+</section>
+<section id="activity-coefficients-from-a-volumetric-equation-of-state">
+<h2>Activity Coefficients from a Volumetric Equation of State<a class="headerlink" href="#activity-coefficients-from-a-volumetric-equation-of-state" title="Link to this heading">#</a></h2>
+<section id="van-laar-theory">
+<h3>Van Laar Theory<a class="headerlink" href="#van-laar-theory" title="Link to this heading">#</a></h3>
+<p>We will see that empirical activity coefficient models abound and come in many flavors. Many of them are correlated to experimental data performed on mixtures (i.e., densities and heats of mixing) and therefore, they relay on the availability of experimental data for their accuracy.</p>
+<p>The Theory of van Laar is one example of an activity coefficient model that can be calculated from the equation of state alone. This theory allows for the estimation of activity coefficients and thus equilibrium using only a volumetric equations of state. Its derivation is useful as it illustrates the use of calculus and first principle thermodynamics to derive an expression for a thermal variable.</p>
+<p>Van Laar theory is based on two assumptions:</p>
+<ol class="arabic simple">
+<li><p>The binary mixture is composed of two species of similar size and energies of interaction</p></li>
+<li><p>the van der Waals equation of state applies to both the pure fluid and the binary mixture.</p></li>
+</ol>
+<p>The first assumption has the implication that <span class="math notranslate nohighlight">\(\underline{S}^{ex}=0\)</span> and <span class="math notranslate nohighlight">\(\underline{V}^{ex}=0\)</span></p>
+<p>so that <span class="math notranslate nohighlight">\(\underline{G}^{ex} = \underline{U}^{ex} + P\underline{V}^{ex} - T\underline{S}^{ex} \sim \underline{U}^{ex}\)</span></p>
+<p>Based on this assumption, we can then compute the molar excess Gibb’s free energy by harnessing our thermodynamic definition:</p>
+<div class="math notranslate nohighlight">
+\[\bigg(\dfrac{\partial \underline{U}}{\partial \underline{V}}\bigg)_T = T \bigg(\dfrac{\partial P}{\partial T}\bigg)_\underline{V} - P\]</div>
+<p>and by taking a strategic path to compute <span class="math notranslate nohighlight">\(\Delta_{mix} \underline{U}\)</span>. That path consists of the following steps:</p>
+<section id="i-from-t-1-p-1-we-have-x-1-moles-of-species-1-and-x-2-moles-of-species-2-we-take-an-isothermal-pathway-to-the-ideal-gas-state-for-both-species-in-isolation-such-that">
+<h4>(I) from <span class="math notranslate nohighlight">\(T_1\)</span>, <span class="math notranslate nohighlight">\(P_1\)</span> we have <span class="math notranslate nohighlight">\(x_1\)</span> moles of species <span class="math notranslate nohighlight">\(1\)</span> and <span class="math notranslate nohighlight">\(x_2\)</span> moles of species <span class="math notranslate nohighlight">\(2\)</span>. We take an isothermal pathway to the ideal gas state for both species in isolation such that:<a class="headerlink" href="#i-from-t-1-p-1-we-have-x-1-moles-of-species-1-and-x-2-moles-of-species-2-we-take-an-isothermal-pathway-to-the-ideal-gas-state-for-both-species-in-isolation-such-that" title="Link to this heading">#</a></h4>
+<div class="math notranslate nohighlight">
+\[\Delta_{mix}\underline{U}^{I} = 
+x_1 \int_{\underline{V}_1}^\infty\bigg(\dfrac{\partial \underline{U}}{\partial \underline{V}}\bigg)_{T_1} d\underline{V}+
+x_2 \int_{\underline{V}_2}^\infty\bigg(\dfrac{\partial \underline{U}}{\partial \underline{V}}\bigg)_{T_1} d\underline{V}\]</div>
+</section>
+<section id="ii-next-we-form-an-ideal-gas-mixture-of-species-1-and-2-the-result-of-this-mixing-produces-no-excess-internal-energy-relative-to-the-ideal-gas-mixture">
+<h4>(II) Next we form an ideal gas mixture of species 1 and 2. The result of this mixing produces no excess internal energy relative to the ideal gas mixture.<a class="headerlink" href="#ii-next-we-form-an-ideal-gas-mixture-of-species-1-and-2-the-result-of-this-mixing-produces-no-excess-internal-energy-relative-to-the-ideal-gas-mixture" title="Link to this heading">#</a></h4>
+</section>
+<section id="iii-finally-we-return-the-mixture-back-to-t-1-and-p-1-isothermally">
+<h4>(III) Finally we return the mixture back to <span class="math notranslate nohighlight">\(T_1\)</span> and <span class="math notranslate nohighlight">\(P_1\)</span> isothermally.<a class="headerlink" href="#iii-finally-we-return-the-mixture-back-to-t-1-and-p-1-isothermally" title="Link to this heading">#</a></h4>
+<div class="math notranslate nohighlight">
+\[\Delta_{mix}\underline{U}^{III} = \int_{\infty}^{\underline{V}_{mix}}\bigg(\dfrac{\partial \underline{U}}{\partial \underline{V}}\bigg)_{T_1} d\underline{V}\]</div>
+<p>Summing up the two steps, and applying the definition to the VDW equation of state, we find that:</p>
+<div class="math notranslate nohighlight">
+\[\Delta_{mix}\underline{U} = x_1\dfrac{a_1}{\underline{V}_1} + x_2\dfrac{a_2}{\underline{V}_2} - \dfrac{a_{mix}}{\underline{V}_{mix}}\]</div>
+<p>For liquids, <span class="math notranslate nohighlight">\(\underline{V}_i \sim b_i\)</span>, so the above can be simplified further to:</p>
+<div class="math notranslate nohighlight">
+\[\underline{G}^{ex} = \Delta_{mix}\underline{U} = x_1\dfrac{a_1}{b_1} + x_2\dfrac{a_2}{b_2} - \dfrac{a_{mix}}{b_{mix}}\]</div>
+</section>
+</section>
+<section id="calculating-the-activity-coefficients">
+<h3>Calculating the Activity Coefficients<a class="headerlink" href="#calculating-the-activity-coefficients" title="Link to this heading">#</a></h3>
+<p>To calculate the activity coefficients, we must find <span class="math notranslate nohighlight">\(\bar{G}_1^{ex}\)</span> and <span class="math notranslate nohighlight">\(\bar{G}_2^{ex}\)</span>. The procedure is the same as above:</p>
+<div class="math notranslate nohighlight">
+\[\dfrac{\partial}{\partial N_1}\bigg|_{T,P,N_{2}}\bigg(N_1\dfrac{a_1}{b_1} + N_2\dfrac{a_2}{b_2} - N\dfrac{a_{mix}}{b_{mix}}\bigg)\]</div>
+<p>applying the mixing rules from van Der Waal, <span class="math notranslate nohighlight">\(a_{mix} = x_1^2 a_1^2 + x_2^2 a_2^2 + 2x_1x_2 a_{12}\)</span> and <span class="math notranslate nohighlight">\(b_{mix} = x_1 b_1 + x_2 b_2\)</span></p>
+<p>the above becomes:</p>
+<div class="math notranslate nohighlight">
+\[\bar{G}_1^{ex}=\dfrac{a_1}{b_1} - \dfrac{a_{mix}}{b_{mix}} + \dfrac{\partial}{\partial N_1}\bigg|_{T,P,N_{2}}\bigg(\dfrac{N_1\dfrac{N_1}{N_1+N_2} a_1^2 + N_2\dfrac{N_2}{N_1+N_2}a_2^2 + 2N_1\dfrac{N_2}{N_1+N_2} a_{12}}{\dfrac{N_1}{N_1+N_2} b_1 + \dfrac{N_2}{N_1+N_2}b_2}\bigg)\]</div>
+<p>which simplifies to:</p>
+<div class="math notranslate nohighlight">
+\[\bar{G}_1^{ex}=\dfrac{a_1}{b_1} - \dfrac{a_{mix}}{b_{mix}} + \dfrac{\partial}{\partial N_1}\bigg|_{T,P,N_{2}}\bigg(\dfrac{N_1^2a_1^2 + N_2^2 a_2^2 + 2N_1N_2a_{12}}{N_1b_1 + N_2b_2}\bigg)=
+\dfrac{2N_1a_1^2 + 2N_2a_{12}}{N_1b_1 + N_2b_2} - \dfrac{1}{b_1}\dfrac{N_1^2a_1^2 + N_2^2 a_2^2 + 2N_1N_2a_{12}}{(N_1b_1 + N_2b_2)^2}
+\]</div>
+<p>writing the above in terms of mole fractions:</p>
+<div class="math notranslate nohighlight">
+\[\bar{G}_1^{ex}=\dfrac{2x_1a_1^2 + 2x_2a_{12}}{x_1b_1 + x_2b_2} - \dfrac{1}{b_1}\dfrac{x_1^2a_1^2 + x_2^2 a_2^2 + 2x_1x_2a_{12}}{(x_1b_1 + x_2b_2)^2}=
+\dfrac{2x_1a_1^2 + 2x_2a_{12}}{b_{mix}} - \dfrac{1}{b_1}\dfrac{a_{mix}}{b_{mix}^2}
+\]</div>
+<p>With some algebraic effort, the above can be simplified to the traditional form of the <em>van Laar</em> equations provided that <span class="math notranslate nohighlight">\(\kappa_{ij}=0\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\ln\gamma_1 = \dfrac{\alpha}{\bigg[1+\dfrac{\alpha x_1}{\beta x_2}\bigg]^2}\]</div>
+<div class="math notranslate nohighlight">
+\[\ln\gamma_2 = \dfrac{\beta}{\bigg[1+\dfrac{\beta x_2}{\alpha x_1}\bigg]^2}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\alpha = \dfrac{b_1}{RT}\bigg[\dfrac{\sqrt{a_1}}{b_1}-\dfrac{\sqrt{a_2}}{b_2}\bigg]^2\)</span> and <span class="math notranslate nohighlight">\(\beta = \dfrac{b_2}{RT}\bigg[\dfrac{\sqrt{a_1}}{b_1}-\dfrac{\sqrt{a_2}}{b_2}\bigg]^2\)</span></p>
+<p>The advantage of the van Laar equations is that they have a functional form that has a firm grounding in physics, this makes them superior to the Margules equations which are essentially polynomial fits to experimental data.</p>
+</section>
+<section id="example-of-van-laar-equations-with-activity-coefficients-ammonia-and-water-system">
+<h3>Example of van Laar Equations with Activity Coefficients - Ammonia and Water System<a class="headerlink" href="#example-of-van-laar-equations-with-activity-coefficients-ammonia-and-water-system" title="Link to this heading">#</a></h3>
+<p>When ammonia is added to water it dissolves releasing heat, it also generates ions which are solvated by a water cage surrounding the ammonium cation. The result is that its solution is highly non-ideal and practically difficult for the van Laar Equation predicted from the individual species alone to be predictive. We can see that if we plot the activity of the ammonia water system taken from this <a class="reference external" href="https://doi.org/10.1021/i160068a007">paper</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="n">R</span> <span class="o">=</span> <span class="mf">8.314</span><span class="c1">#J/(mol*K)</span>
+<span class="n">activity</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">([(</span><span class="mf">0.09756097560975607</span><span class="p">,</span> <span class="mf">1.3220399305364636</span><span class="p">),</span>
+<span class="p">(</span><span class="mf">0.21138211382113825</span><span class="p">,</span> <span class="mf">1.8366384065130346</span><span class="p">),</span>
+<span class="p">(</span><span class="mf">0.31436314363143625</span><span class="p">,</span> <span class="mf">2.443185298653521</span><span class="p">),</span>
+<span class="p">(</span><span class="mf">0.41463414634146345</span><span class="p">,</span> <span class="mf">3.3314596251303343</span><span class="p">),</span>
+<span class="p">(</span><span class="mf">0.5121951219512196</span><span class="p">,</span> <span class="mf">4.349989541895558</span><span class="p">),</span>
+<span class="p">(</span><span class="mf">0.6205962059620597</span><span class="p">,</span> <span class="mf">5.2411281040738285</span><span class="p">),</span>
+<span class="p">(</span><span class="mf">0.7154471544715446</span><span class="p">,</span> <span class="mf">5.718921814192971</span><span class="p">),</span>
+<span class="p">(</span><span class="mf">0.8238482384823849</span><span class="p">,</span> <span class="mf">5.758292636711616</span><span class="p">),</span>
+<span class="p">(</span><span class="mf">0.915989159891599</span><span class="p">,</span> <span class="mf">5.761577693510011</span><span class="p">)])</span><span class="c1">##activity of ammonia in water at 60 C</span>
+
+<span class="c1">## Ammonia</span>
+<span class="n">MW1</span> <span class="o">=</span> <span class="mf">17.031</span> <span class="c1">#g/mol</span>
+<span class="n">Tc1</span> <span class="o">=</span> <span class="mf">405.6</span><span class="c1">#K</span>
+<span class="n">Pc1</span> <span class="o">=</span> <span class="mf">11.28</span><span class="o">*</span><span class="mi">10</span><span class="o">**</span><span class="mi">6</span><span class="c1">#Pa</span>
+<span class="n">Vc1</span> <span class="o">=</span> <span class="mf">0.0724</span><span class="o">/</span><span class="mi">1000</span><span class="c1">#(m^3/mol)</span>
+<span class="n">w1</span> <span class="o">=</span> <span class="mf">0.250</span>
+
+<span class="n">a1</span> <span class="o">=</span> <span class="mi">27</span><span class="o">*</span><span class="p">(</span><span class="n">R</span><span class="o">*</span><span class="n">Tc1</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="mi">64</span><span class="o">*</span><span class="n">Pc1</span><span class="p">)</span>
+<span class="n">b1</span> <span class="o">=</span> <span class="mf">0.125</span><span class="o">*</span><span class="p">(</span><span class="n">R</span><span class="o">*</span><span class="n">Tc1</span><span class="p">)</span><span class="o">/</span><span class="n">Pc1</span>
+
+<span class="c1">## Water</span>
+<span class="n">MW2</span> <span class="o">=</span> <span class="mf">18.015</span> <span class="c1">#g/mol</span>
+<span class="n">Tc2</span> <span class="o">=</span> <span class="mf">647.3</span><span class="c1">#K</span>
+<span class="n">Pc2</span> <span class="o">=</span> <span class="mf">22.048</span><span class="o">*</span><span class="mi">10</span><span class="o">**</span><span class="mi">6</span><span class="c1">#Pa</span>
+<span class="n">Vc2</span> <span class="o">=</span> <span class="mf">0.056</span><span class="o">/</span><span class="mi">1000</span><span class="c1">#(m^3/mol)</span>
+<span class="n">w2</span> <span class="o">=</span> <span class="mf">0.229</span>
+
+<span class="n">a2</span> <span class="o">=</span> <span class="mi">27</span><span class="o">*</span><span class="p">(</span><span class="n">R</span><span class="o">*</span><span class="n">Tc2</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="mi">64</span><span class="o">*</span><span class="n">Pc2</span><span class="p">)</span>
+<span class="n">b2</span> <span class="o">=</span> <span class="mf">0.125</span><span class="o">*</span><span class="p">(</span><span class="n">R</span><span class="o">*</span><span class="n">Tc2</span><span class="p">)</span><span class="o">/</span><span class="n">Pc2</span>
+
+
+<span class="n">x1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">0.01</span><span class="p">,</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">0.01</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">lngamma1</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">alpha</span><span class="p">,</span><span class="n">beta</span><span class="p">):</span>
+    <span class="n">x2</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">x1</span>
+    
+    <span class="k">return</span> <span class="n">alpha</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">alpha</span><span class="o">*</span><span class="n">x1</span><span class="o">/</span><span class="p">(</span><span class="n">beta</span><span class="o">*</span><span class="n">x2</span><span class="p">))</span><span class="o">**</span><span class="mi">2</span> 
+
+<span class="k">def</span> <span class="nf">lngamma2</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">alpha</span><span class="p">,</span><span class="n">beta</span><span class="p">):</span>
+    <span class="n">x2</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">x1</span>
+    <span class="k">return</span> <span class="n">beta</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">beta</span><span class="o">*</span><span class="n">x2</span><span class="o">/</span><span class="p">(</span><span class="n">alpha</span><span class="o">*</span><span class="n">x1</span><span class="p">))</span><span class="o">**</span><span class="mi">2</span> 
+
+<span class="n">T</span> <span class="o">=</span> <span class="mi">60</span> <span class="o">+</span> <span class="mf">273.15</span>
+<span class="n">alpha</span> <span class="o">=</span> <span class="n">b1</span><span class="o">/</span><span class="p">(</span><span class="n">R</span><span class="o">*</span><span class="n">T</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">a1</span><span class="p">)</span><span class="o">/</span><span class="n">b1</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">a2</span><span class="p">)</span><span class="o">/</span><span class="n">b2</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
+<span class="n">beta</span> <span class="o">=</span> <span class="n">b2</span><span class="o">/</span><span class="p">(</span><span class="n">R</span><span class="o">*</span><span class="n">T</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">a1</span><span class="p">)</span><span class="o">/</span><span class="n">b1</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">a2</span><span class="p">)</span><span class="o">/</span><span class="n">b2</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">alpha</span><span class="p">,</span><span class="n">beta</span><span class="p">)</span>
+<span class="c1">#plt.plot(x1,lngamma1(x1,T),&#39;-r&#39;)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">lngamma2</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">alpha</span><span class="p">,</span><span class="n">beta</span><span class="p">),</span><span class="s1">&#39;--r&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">activity</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">activity</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$x_1$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$ln\gamma_2$&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6511165980932356 0.5316261394034939
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;$ln\\gamma_2$&#39;)
+</pre></div>
+</div>
+<img alt="../_images/073368559d572948b5b06980be6f78cb117a42af5c6864a13e65f6a1c57a0686.png" src="../_images/073368559d572948b5b06980be6f78cb117a42af5c6864a13e65f6a1c57a0686.png" />
+</div>
+</div>
+<p>The correlation above is not great, so we can try to fit alpha and beta to get better agreement w/ experimental data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">curve_fit</span>
+<span class="k">def</span> <span class="nf">lngamma2_vanlaar</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">alpha</span><span class="p">,</span><span class="n">beta</span><span class="p">):</span>
+    <span class="n">x2</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">x1</span>
+    <span class="c1">#alpha = b1/(R*T)*(np.sqrt(a1)/b1 - np.sqrt(a2)/b2)**2</span>
+    <span class="c1">#beta = b2/(R*T)*(np.sqrt(a1)/b1 - np.sqrt(a2)/b2)**2</span>
+    <span class="k">return</span> <span class="n">beta</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">beta</span><span class="o">*</span><span class="n">x2</span><span class="o">/</span><span class="p">(</span><span class="n">alpha</span><span class="o">*</span><span class="n">x1</span><span class="p">))</span><span class="o">**</span><span class="mi">2</span> 
+
+<span class="n">popt</span><span class="p">,</span> <span class="n">cov</span> <span class="o">=</span> <span class="n">curve_fit</span><span class="p">(</span><span class="n">lngamma2_vanlaar</span><span class="p">,</span> <span class="n">activity</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">activity</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">popt</span><span class="p">)</span>
+
+<span class="n">vanlaar</span> <span class="o">=</span> <span class="n">lngamma2_vanlaar</span><span class="p">(</span><span class="n">activity</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="o">*</span><span class="n">popt</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">activity</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">activity</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">activity</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">vanlaar</span><span class="p">,</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">lngamma2</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">alpha</span><span class="p">,</span><span class="n">beta</span><span class="p">),</span><span class="s1">&#39;--r&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$x_1$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$ln\gamma_2$&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[10.27693453  1.9315719 ]
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;$ln\\gamma_2$&#39;)
+</pre></div>
+</div>
+<img alt="../_images/474fdb72250c6b46f5829b8700959c6fa0cc067e5bb314534d25885d4cec253e.png" src="../_images/474fdb72250c6b46f5829b8700959c6fa0cc067e5bb314534d25885d4cec253e.png" />
+</div>
+</div>
+<p>The fit is better, but of course can be improved further. Let’s write the Wilson Equation</p>
+</section>
+</section>
+<section id="wilson-equation">
+<h2>Wilson Equation<a class="headerlink" href="#wilson-equation" title="Link to this heading">#</a></h2>
+<p>An example is the <a class="reference external" href="https://doi.org/10.1021/ja01056a002">Wilson equation</a> which gives the molar excess Gibb’s Free Energy as:</p>
+<div class="math notranslate nohighlight">
+\[\underline{G}^{ex}= RT[-x_1 \ln(x_1+x_2\Lambda_{12}) - x_2 \ln(x_2 + x_1 \Lambda_{21})]\]</div>
+<p>which has the activity coefficients:</p>
+<div class="math notranslate nohighlight">
+\[ln\gamma_1 = -ln(1 - x_2\Lambda_{21})+x_2\bigg[\dfrac{x_2\Lambda_{12}}{1 - x_1 \Lambda_{12}} - \dfrac{x_1\Lambda_{21}}{1 - x_2 A_{21}}\bigg]\]</div>
+<div class="math notranslate nohighlight">
+\[ln\gamma_2 = -ln(1 - x_1\Lambda_{12})-x_1\bigg[\dfrac{x_2\Lambda_{12}}{1 - x_1 \Lambda_{12}} - \dfrac{x_1\Lambda_{21}}{1 - x_2 A_{21}}\bigg]\]</div>
+<section id="lets-fit-the-wilson-equation-to-the-ammonia-water-system-to-see-if-we-can-improve-the-fit">
+<h3>Let’s fit the Wilson Equation to the ammonia-water system to see if we can improve the fit.<a class="headerlink" href="#lets-fit-the-wilson-equation-to-the-ammonia-water-system-to-see-if-we-can-improve-the-fit" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">lngamma1_wilson</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">):</span>
+    <span class="n">x2</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">x1</span>
+    <span class="c1">#alpha = b1/(R*T)*(np.sqrt(a1)/b1 - np.sqrt(a2)/b2)**2</span>
+    <span class="c1">#beta = b2/(R*T)*(np.sqrt(a1)/b1 - np.sqrt(a2)/b2)**2</span>
+    <span class="k">return</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">x2</span><span class="o">*</span><span class="n">b</span><span class="p">)</span> <span class="o">+</span> <span class="n">x2</span><span class="o">*</span><span class="p">(</span><span class="n">x2</span><span class="o">*</span><span class="n">a</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">x1</span><span class="o">*</span><span class="n">a</span><span class="p">)</span><span class="o">-</span><span class="n">x1</span><span class="o">*</span><span class="n">b</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">x2</span><span class="o">*</span><span class="n">b</span><span class="p">))</span>
+
+<span class="k">def</span> <span class="nf">lngamma2_wilson</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">):</span>
+    <span class="n">x2</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">x1</span>
+    <span class="c1">#alpha = b1/(R*T)*(np.sqrt(a1)/b1 - np.sqrt(a2)/b2)**2</span>
+    <span class="c1">#beta = b2/(R*T)*(np.sqrt(a1)/b1 - np.sqrt(a2)/b2)**2</span>
+    <span class="k">return</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">x1</span><span class="o">*</span><span class="n">a</span><span class="p">)</span> <span class="o">-</span> <span class="n">x1</span><span class="o">*</span><span class="p">(</span><span class="n">x2</span><span class="o">*</span><span class="n">a</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">x1</span><span class="o">*</span><span class="n">a</span><span class="p">)</span><span class="o">-</span><span class="n">x1</span><span class="o">*</span><span class="n">b</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">x2</span><span class="o">*</span><span class="n">b</span><span class="p">))</span>
+
+<span class="n">popt</span><span class="p">,</span> <span class="n">cov</span> <span class="o">=</span> <span class="n">curve_fit</span><span class="p">(</span><span class="n">lngamma2_wilson</span><span class="p">,</span> 
+                      <span class="n">activity</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+                      <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">activity</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">popt</span><span class="p">)</span>
+<span class="n">wilson</span> <span class="o">=</span> <span class="n">lngamma2_wilson</span><span class="p">(</span><span class="n">activity</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="o">*</span><span class="n">popt</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">activity</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">activity</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span><span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;data&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">activity</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">vanlaar</span><span class="p">,</span><span class="s1">&#39;-k&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;van Laar - fit&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">activity</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">wilson</span><span class="p">,</span><span class="s1">&#39;--k&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;Wilson&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">lngamma2</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">alpha</span><span class="p">,</span><span class="n">beta</span><span class="p">),</span><span class="s1">&#39;--r&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;van Laar - pred&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$x_1$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$ln\gamma_2$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1. 1.]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\richa\AppData\Local\Temp\ipykernel_21944\3583261276.py:11: RuntimeWarning: invalid value encountered in log
+  return -np.log(1 - x1*a) - x1*(x2*a/(1-x1*a)-x1*b/(1-x2*b))
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x2643d71e890&gt;
+</pre></div>
+</div>
+<img alt="../_images/7bef1eaa643502e21c77b5bab9d808db0dfe9c33b3082539443bf9fa46651d56.png" src="../_images/7bef1eaa643502e21c77b5bab9d808db0dfe9c33b3082539443bf9fa46651d56.png" />
+</div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "executablebooks/jupyter-book",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./Ch7"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#activity-coefficients-from-empirical-correlations">Activity Coefficients from Empirical Correlations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#where-do-mixture-properties-come-from">Where do mixture properties come from?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#determining-whether-a-mixture-is-ideal">Determining whether a mixture is ideal:</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#calculating-the-molar-volume-of-a-mixture-from-the-gibbs-free-energy">Calculating the molar volume of a mixture from the Gibb’s Free Energy:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#calculating-the-enthalpy-of-a-mixture-from-the-gibbs-free-energy">Calculating the Enthalpy of a mixture from the Gibb’s Free Energy:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#developing-expressions-for-activity-and-fugacity-coefficients-of-species-1-and-2-in-the-mixture">Developing Expressions for Activity and Fugacity Coefficients of species 1 and 2 in the mixture</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#activity-coefficients-from-a-volumetric-equation-of-state">Activity Coefficients from a Volumetric Equation of State</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#van-laar-theory">Van Laar Theory</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#i-from-t-1-p-1-we-have-x-1-moles-of-species-1-and-x-2-moles-of-species-2-we-take-an-isothermal-pathway-to-the-ideal-gas-state-for-both-species-in-isolation-such-that">(I) from <span class="math notranslate nohighlight">\(T_1\)</span>, <span class="math notranslate nohighlight">\(P_1\)</span> we have <span class="math notranslate nohighlight">\(x_1\)</span> moles of species <span class="math notranslate nohighlight">\(1\)</span> and <span class="math notranslate nohighlight">\(x_2\)</span> moles of species <span class="math notranslate nohighlight">\(2\)</span>. We take an isothermal pathway to the ideal gas state for both species in isolation such that:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ii-next-we-form-an-ideal-gas-mixture-of-species-1-and-2-the-result-of-this-mixing-produces-no-excess-internal-energy-relative-to-the-ideal-gas-mixture">(II) Next we form an ideal gas mixture of species 1 and 2. The result of this mixing produces no excess internal energy relative to the ideal gas mixture.</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#iii-finally-we-return-the-mixture-back-to-t-1-and-p-1-isothermally">(III) Finally we return the mixture back to <span class="math notranslate nohighlight">\(T_1\)</span> and <span class="math notranslate nohighlight">\(P_1\)</span> isothermally.</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#calculating-the-activity-coefficients">Calculating the Activity Coefficients</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-of-van-laar-equations-with-activity-coefficients-ammonia-and-water-system">Example of van Laar Equations with Activity Coefficients - Ammonia and Water System</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wilson-equation">Wilson Equation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lets-fit-the-wilson-equation-to-the-ammonia-water-system-to-see-if-we-can-improve-the-fit">Let’s fit the Wilson Equation to the ammonia-water system to see if we can improve the fit.</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By J. J. Richards
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

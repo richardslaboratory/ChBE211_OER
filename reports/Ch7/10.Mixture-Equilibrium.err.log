@@ -1,0 +1,94 @@
+Traceback (most recent call last):
+  File "C:\Users\richa\AppData\Roaming\Python\Python311\site-packages\jupyter_cache\executors\utils.py", line 58, in single_nb_execution
+    executenb(
+  File "C:\ProgramData\anaconda3\Lib\site-packages\nbclient\client.py", line 1305, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\ProgramData\anaconda3\Lib\site-packages\jupyter_core\utils\__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\ProgramData\anaconda3\Lib\asyncio\base_events.py", line 653, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "C:\ProgramData\anaconda3\Lib\site-packages\nbclient\client.py", line 705, in async_execute
+    await self.async_execute_cell(
+  File "C:\ProgramData\anaconda3\Lib\site-packages\nbclient\client.py", line 1058, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\ProgramData\anaconda3\Lib\site-packages\nbclient\client.py", line 914, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+##Antoine Coefficients
+#Water
+A_wat = 5.40221
+B_wat = 1838.675
+C_wat = -31.737
+#Ethanol
+A_eth = 5.24677
+B_eth = 1598.673
+C_eth = -46.424
+
+## Establishing new P
+P = 1.01325 # bar
+
+## Let's define a temperature range to iterative over:
+
+def Antoine(T,A,B,C):
+    return 10**(A - (B/(T + C)))
+
+def g(T,xA): ## this is a function. we pass in a temperature (T) and an array index (i)
+    xB = 1 - xA
+    PsatA = Antoine(T,A_wat,B_wat,C_wat) ## saturated pressure using inputted T
+    PsatB = Antoine(T,A_eth,B_eth,C_eth) 
+    Ptest = xA*PsatA + xB*PsatB
+    yA = xA*(PsatA/P) ## calculating vapor molar fraction of water
+    yB = xB*(PsatB/P) ## calculating vapor molar fraction of ethanol
+    diff = np.abs(P - Ptest) ## is how we can easily find a minimum. we want this value to be as close to zero as possible!
+    return diff
+
+Tguess = np.linspace(350,380,1000)
+Tsat = [] ## define an empty array to store our iterative solution temperature values.
+for xA in x1_:
+    diff = g(Tguess,xA)
+    Tsat.append(Temp[list(diff).index(np.min(diff))]) ## enumerate over the list of differences and find the T w/ the minimum diff. 
+
+Tsat = np.asarray(Tsat)
+
+PsatA = Antoine(Tsat,A_wat,B_wat,C_wat) ## saturated pressure using inputted T
+PsatB = Antoine(Tsat,A_eth,B_eth,C_eth)
+
+y1_ = x1_*(PsatA/P) ## calculating vapor molar fraction of water and storing into yA
+y2_ = (1-x1_)*(PsatB/P) ## calculating vapor molar fraction of ethanol and storing into yB
+x2_ = 1-x1_
+plt.figure(dpi=300,figsize=(2,2))
+
+plt.plot(data_bubbleT[0],data_bubbleT[1]-273,
+         marker='o',linestyle='-',color='b', label = 'Bubble')
+plt.plot(data_dewT[0],data_dewT[1]-273,
+         marker='o',linestyle='-',color='r', label = 'Dew')
+
+plt.fill_between(x2_,ymin, ymax, interpolate = True, 
+                 color='grey', alpha = 0.5, zorder=0, label = '2 Phase')
+
+plt.plot(x2_,Tsat-273.15,"-b", label = 'Dew - hand')
+plt.plot(y2_,Tsat-273.15,"-r", label = 'Bubble - hand')
+plt.ylabel(r'$T$ $(^oC)$')
+plt.xlabel(r'$x_2$')
+
+plt.xticks(np.arange(0,1.2,0.2))
+plt.title('P = 1bar')
+plt.legend(frameon=False, fontsize=4)
+------------------
+
+
+[1;31m---------------------------------------------------------------------------[0m
+[1;31mNameError[0m                                 Traceback (most recent call last)
+Cell [1;32mIn[4], line 33[0m
+[0;32m     31[0m [38;5;28;01mfor[39;00m xA [38;5;129;01min[39;00m x1_:
+[0;32m     32[0m     diff [38;5;241m=[39m g(Tguess,xA)
+[1;32m---> 33[0m     Tsat[38;5;241m.[39mappend(Temp[[38;5;28mlist[39m(diff)[38;5;241m.[39mindex(np[38;5;241m.[39mmin(diff))]) [38;5;66;03m## enumerate over the list of differences and find the T w/ the minimum diff. [39;00m
+[0;32m     35[0m Tsat [38;5;241m=[39m np[38;5;241m.[39masarray(Tsat)
+[0;32m     37[0m PsatA [38;5;241m=[39m Antoine(Tsat,A_wat,B_wat,C_wat) [38;5;66;03m## saturated pressure using inputted T[39;00m
+
+[1;31mNameError[0m: name 'Temp' is not defined
+
