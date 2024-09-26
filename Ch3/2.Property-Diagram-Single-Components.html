@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
@@ -443,18 +443,6 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">selenium</span> <span class="kn">import</span> <span class="n">webdriver</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">from</span> <span class="nn">selenium.webdriver.common.action_chains</span> <span class="kn">import</span> <span class="n">ActionChains</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">from</span> <span class="nn">selenium.webdriver.common.keys</span> <span class="kn">import</span> <span class="n">Keys</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;selenium&#39;
-</pre></div>
-</div>
-</div>
 </div>
 <p>For obtaining property data from different fluids, we need to access the html elements on the <a class="reference external" href="https://webbook.nist.gov/chemistry/fluid/">NIST Property Database</a>. Selenium will allow us to interact directly with the html elements of the webpage including clicking buttons, setting values of drop down menus, and downloading data. Essentially all of the functionality that a user has access to can be automated in selenium.</p>
 </section>
@@ -544,6 +532,58 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NoSuchElementException</span><span class="g g-Whitespace">                    </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">7</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">T</span> <span class="o">=</span> <span class="o">-</span><span class="mi">80</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">search_box</span> <span class="o">=</span> <span class="n">driver</span><span class="o">.</span><span class="n">find_element</span><span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">NAME</span><span class="p">,</span><span class="s1">&#39;T&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">driver</span><span class="o">.</span><span class="n">execute_script</span><span class="p">(</span><span class="s2">&quot;arguments[0].value=arguments[1]&quot;</span><span class="p">,</span> <span class="n">search_box</span><span class="p">,</span><span class="s1">&#39;</span><span class="si">%.5f</span><span class="s1">&#39;</span><span class="o">%</span><span class="k">T</span>)
+
+<span class="nn">File ~\AppData\Roaming\Python\Python311\site-packages\selenium\webdriver\remote\webdriver.py:748,</span> in <span class="ni">WebDriver.find_element</span><span class="nt">(self, by, value)</span>
+<span class="g g-Whitespace">    </span><span class="mi">745</span>     <span class="n">by</span> <span class="o">=</span> <span class="n">By</span><span class="o">.</span><span class="n">CSS_SELECTOR</span>
+<span class="g g-Whitespace">    </span><span class="mi">746</span>     <span class="n">value</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;[name=&quot;</span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s1">&quot;]&#39;</span>
+<span class="ne">--&gt; </span><span class="mi">748</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">Command</span><span class="o">.</span><span class="n">FIND_ELEMENT</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;using&quot;</span><span class="p">:</span> <span class="n">by</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="n">value</span><span class="p">})[</span><span class="s2">&quot;value&quot;</span><span class="p">]</span>
+
+<span class="nn">File ~\AppData\Roaming\Python\Python311\site-packages\selenium\webdriver\remote\webdriver.py:354,</span> in <span class="ni">WebDriver.execute</span><span class="nt">(self, driver_command, params)</span>
+<span class="g g-Whitespace">    </span><span class="mi">352</span> <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">command_executor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">driver_command</span><span class="p">,</span> <span class="n">params</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">353</span> <span class="k">if</span> <span class="n">response</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">354</span>     <span class="bp">self</span><span class="o">.</span><span class="n">error_handler</span><span class="o">.</span><span class="n">check_response</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">355</span>     <span class="n">response</span><span class="p">[</span><span class="s2">&quot;value&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_unwrap_value</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;value&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">))</span>
+<span class="g g-Whitespace">    </span><span class="mi">356</span>     <span class="k">return</span> <span class="n">response</span>
+
+<span class="nn">File ~\AppData\Roaming\Python\Python311\site-packages\selenium\webdriver\remote\errorhandler.py:229,</span> in <span class="ni">ErrorHandler.check_response</span><span class="nt">(self, response)</span>
+<span class="g g-Whitespace">    </span><span class="mi">227</span>         <span class="n">alert_text</span> <span class="o">=</span> <span class="n">value</span><span class="p">[</span><span class="s2">&quot;alert&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;text&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">228</span>     <span class="k">raise</span> <span class="n">exception_class</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">screen</span><span class="p">,</span> <span class="n">stacktrace</span><span class="p">,</span> <span class="n">alert_text</span><span class="p">)</span>  <span class="c1"># type: ignore[call-arg]  # mypy is not smart enough here</span>
+<span class="ne">--&gt; </span><span class="mi">229</span> <span class="k">raise</span> <span class="n">exception_class</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">screen</span><span class="p">,</span> <span class="n">stacktrace</span><span class="p">)</span>
+
+<span class="ne">NoSuchElementException</span>: Message: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;[name=&quot;T&quot;]&quot;}
+  <span class="p">(</span><span class="n">Session</span> <span class="n">info</span><span class="p">:</span> <span class="n">chrome</span><span class="o">=</span><span class="mf">123.0.6312.58</span><span class="p">);</span> <span class="n">For</span> <span class="n">documentation</span> <span class="n">on</span> <span class="n">this</span> <span class="n">error</span><span class="p">,</span> <span class="n">please</span> <span class="n">visit</span><span class="p">:</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="o">.</span><span class="n">selenium</span><span class="o">.</span><span class="n">dev</span><span class="o">/</span><span class="n">documentation</span><span class="o">/</span><span class="n">webdriver</span><span class="o">/</span><span class="n">troubleshooting</span><span class="o">/</span><span class="n">errors</span><span class="c1">#no-such-element-exception</span>
+<span class="ne">Stacktrace</span>:
+	<span class="n">GetHandleVerifier</span> <span class="p">[</span><span class="mh">0x00007FF707487032</span><span class="o">+</span><span class="mi">63090</span><span class="p">]</span>
+	<span class="p">(</span><span class="n">No</span> <span class="n">symbol</span><span class="p">)</span> <span class="p">[</span><span class="mh">0x00007FF7073F2C82</span><span class="p">]</span>
+	<span class="p">(</span><span class="n">No</span> <span class="n">symbol</span><span class="p">)</span> <span class="p">[</span><span class="mh">0x00007FF70728EC65</span><span class="p">]</span>
+	<span class="p">(</span><span class="n">No</span> <span class="n">symbol</span><span class="p">)</span> <span class="p">[</span><span class="mh">0x00007FF7072D499D</span><span class="p">]</span>
+	<span class="p">(</span><span class="n">No</span> <span class="n">symbol</span><span class="p">)</span> <span class="p">[</span><span class="mh">0x00007FF7072D4ADC</span><span class="p">]</span>
+	<span class="p">(</span><span class="n">No</span> <span class="n">symbol</span><span class="p">)</span> <span class="p">[</span><span class="mh">0x00007FF707315B37</span><span class="p">]</span>
+	<span class="p">(</span><span class="n">No</span> <span class="n">symbol</span><span class="p">)</span> <span class="p">[</span><span class="mh">0x00007FF7072F701F</span><span class="p">]</span>
+	<span class="p">(</span><span class="n">No</span> <span class="n">symbol</span><span class="p">)</span> <span class="p">[</span><span class="mh">0x00007FF707313412</span><span class="p">]</span>
+	<span class="p">(</span><span class="n">No</span> <span class="n">symbol</span><span class="p">)</span> <span class="p">[</span><span class="mh">0x00007FF7072F6D83</span><span class="p">]</span>
+	<span class="p">(</span><span class="n">No</span> <span class="n">symbol</span><span class="p">)</span> <span class="p">[</span><span class="mh">0x00007FF7072C83A8</span><span class="p">]</span>
+	<span class="p">(</span><span class="n">No</span> <span class="n">symbol</span><span class="p">)</span> <span class="p">[</span><span class="mh">0x00007FF7072C9441</span><span class="p">]</span>
+	<span class="n">GetHandleVerifier</span> <span class="p">[</span><span class="mh">0x00007FF7078825AD</span><span class="o">+</span><span class="mi">4238317</span><span class="p">]</span>
+	<span class="n">GetHandleVerifier</span> <span class="p">[</span><span class="mh">0x00007FF7078BF70D</span><span class="o">+</span><span class="mi">4488525</span><span class="p">]</span>
+	<span class="n">GetHandleVerifier</span> <span class="p">[</span><span class="mh">0x00007FF7078B79EF</span><span class="o">+</span><span class="mi">4456495</span><span class="p">]</span>
+	<span class="n">GetHandleVerifier</span> <span class="p">[</span><span class="mh">0x00007FF707560576</span><span class="o">+</span><span class="mi">953270</span><span class="p">]</span>
+	<span class="p">(</span><span class="n">No</span> <span class="n">symbol</span><span class="p">)</span> <span class="p">[</span><span class="mh">0x00007FF7073FE54F</span><span class="p">]</span>
+	<span class="p">(</span><span class="n">No</span> <span class="n">symbol</span><span class="p">)</span> <span class="p">[</span><span class="mh">0x00007FF7073F9224</span><span class="p">]</span>
+	<span class="p">(</span><span class="n">No</span> <span class="n">symbol</span><span class="p">)</span> <span class="p">[</span><span class="mh">0x00007FF7073F935B</span><span class="p">]</span>
+	<span class="p">(</span><span class="n">No</span> <span class="n">symbol</span><span class="p">)</span> <span class="p">[</span><span class="mh">0x00007FF7073E9B94</span><span class="p">]</span>
+	<span class="n">BaseThreadInitThunk</span> <span class="p">[</span><span class="mh">0x00007FF84A29257D</span><span class="o">+</span><span class="mi">29</span><span class="p">]</span>
+	<span class="n">RtlUserThreadStart</span> <span class="p">[</span><span class="mh">0x00007FF84AD0AF28</span><span class="o">+</span><span class="mi">40</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="step-6-get-the-data">
@@ -624,9 +664,6 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;0th Law of Thermodynamics.png&#39;, &#39;Arrow of time.png&#39;, &#39;Carnot Heat Engine.png&#39;, &#39;Carnot Heat Pump.png&#39;, &#39;Carnot Pathways.png&#39;, &#39;Entropy and Equilibrium.png&#39;, &#39;Figure 4.png&#39;, &#39;Figure1.png&#39;, &#39;Figure2.png&#39;, &#39;Heat Engine Reservoir.png&#39;, &#39;Heat Engine.png&#39;, &#39;Heat Pump (colling).png&#39;, &#39;Heat Pump (heating).png&#39;, &#39;Heat Pumps - Image and COP.png&#39;, &#39;Ideal Gas Thermometer.png&#39;, &#39;Liquefaction.png&#39;, &#39;Liquefaction.pptx&#39;, &#39;Macroscopic Balance Expression.png&#39;, &#39;Macroscopic Balance.png&#39;, &#39;methane_P-Hdiagram.png&#39;, &#39;P-V Diagram Steam Isotherms.png&#39;, &#39;Phase Change Coordinate.png&#39;, &#39;Piston_Annotated.png&#39;, &#39;Process Diagram.png&#39;, &#39;Rankine Cycle - Pathway.png&#39;, &#39;Rankine Cycle.png&#39;, &#39;Rankine Refrigeration Cycle.png&#39;, &#39;Reaction Coordinate.png&#39;, &#39;Simple Liquefaction.png&#39;, &#39;TS - Rankine Refrigeration Cycle.png&#39;, &#39;Unit Operation - Boiler.png&#39;, &#39;Unit Operation - Compressor.png&#39;, &#39;Unit Operation - Condenser.png&#39;, &#39;Unit Operation - Heat Exchanger.png&#39;, &#39;Unit Operation - Nozzle.png&#39;, &#39;Unit Operation - Pump.png&#39;, &#39;Unit Operation - Throttle Valve.png&#39;, &#39;Unit Operation - Turbine.png&#39;, &#39;waals-lecture.pdf&#39;, &#39;water_T-Sdiagram.png&#39;]
-</pre></div>
-</div>
 <img alt="../_images/b667b7a7f524340fb12016f1ae06d068a7c849da3b0c15215d99c2c3e1c00620.png" src="../_images/b667b7a7f524340fb12016f1ae06d068a7c849da3b0c15215d99c2c3e1c00620.png" />
 </div>
 </div>

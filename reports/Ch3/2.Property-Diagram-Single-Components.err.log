@@ -18,23 +18,59 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-from selenium import webdriver
-from selenium.webdriver.common.action_chains import ActionChains
-from selenium.webdriver.common.keys import Keys
-import time
-import numpy as np
-import pandas as pd
-from selenium.webdriver.common.by import By
-
+T = -80
+search_box = driver.find_element(By.NAME,'T')
+driver.execute_script("arguments[0].value=arguments[1]", search_box,'%.5f'%T)
 ------------------
 
 
 [1;31m---------------------------------------------------------------------------[0m
-[1;31mModuleNotFoundError[0m                       Traceback (most recent call last)
-Cell [1;32mIn[1], line 1[0m
-[1;32m----> 1[0m [38;5;28;01mfrom[39;00m [38;5;21;01mselenium[39;00m [38;5;28;01mimport[39;00m webdriver
-[0;32m      2[0m [38;5;28;01mfrom[39;00m [38;5;21;01mselenium[39;00m[38;5;21;01m.[39;00m[38;5;21;01mwebdriver[39;00m[38;5;21;01m.[39;00m[38;5;21;01mcommon[39;00m[38;5;21;01m.[39;00m[38;5;21;01maction_chains[39;00m [38;5;28;01mimport[39;00m ActionChains
-[0;32m      3[0m [38;5;28;01mfrom[39;00m [38;5;21;01mselenium[39;00m[38;5;21;01m.[39;00m[38;5;21;01mwebdriver[39;00m[38;5;21;01m.[39;00m[38;5;21;01mcommon[39;00m[38;5;21;01m.[39;00m[38;5;21;01mkeys[39;00m [38;5;28;01mimport[39;00m Keys
+[1;31mNoSuchElementException[0m                    Traceback (most recent call last)
+Cell [1;32mIn[7], line 2[0m
+[0;32m      1[0m T [38;5;241m=[39m [38;5;241m-[39m[38;5;241m80[39m
+[1;32m----> 2[0m search_box [38;5;241m=[39m driver[38;5;241m.[39mfind_element(By[38;5;241m.[39mNAME,[38;5;124m'[39m[38;5;124mT[39m[38;5;124m'[39m)
+[0;32m      3[0m driver[38;5;241m.[39mexecute_script([38;5;124m"[39m[38;5;124marguments[0].value=arguments[1][39m[38;5;124m"[39m, search_box,[38;5;124m'[39m[38;5;132;01m%.5f[39;00m[38;5;124m'[39m[38;5;241m%[39mT)
 
-[1;31mModuleNotFoundError[0m: No module named 'selenium'
+File [1;32m~\AppData\Roaming\Python\Python311\site-packages\selenium\webdriver\remote\webdriver.py:748[0m, in [0;36mWebDriver.find_element[1;34m(self, by, value)[0m
+[0;32m    745[0m     by [38;5;241m=[39m By[38;5;241m.[39mCSS_SELECTOR
+[0;32m    746[0m     value [38;5;241m=[39m [38;5;124mf[39m[38;5;124m'[39m[38;5;124m[name=[39m[38;5;124m"[39m[38;5;132;01m{[39;00mvalue[38;5;132;01m}[39;00m[38;5;124m"[39m[38;5;124m][39m[38;5;124m'[39m
+[1;32m--> 748[0m [38;5;28;01mreturn[39;00m [38;5;28mself[39m[38;5;241m.[39mexecute(Command[38;5;241m.[39mFIND_ELEMENT, {[38;5;124m"[39m[38;5;124musing[39m[38;5;124m"[39m: by, [38;5;124m"[39m[38;5;124mvalue[39m[38;5;124m"[39m: value})[[38;5;124m"[39m[38;5;124mvalue[39m[38;5;124m"[39m]
+
+File [1;32m~\AppData\Roaming\Python\Python311\site-packages\selenium\webdriver\remote\webdriver.py:354[0m, in [0;36mWebDriver.execute[1;34m(self, driver_command, params)[0m
+[0;32m    352[0m response [38;5;241m=[39m [38;5;28mself[39m[38;5;241m.[39mcommand_executor[38;5;241m.[39mexecute(driver_command, params)
+[0;32m    353[0m [38;5;28;01mif[39;00m response:
+[1;32m--> 354[0m     [38;5;28mself[39m[38;5;241m.[39merror_handler[38;5;241m.[39mcheck_response(response)
+[0;32m    355[0m     response[[38;5;124m"[39m[38;5;124mvalue[39m[38;5;124m"[39m] [38;5;241m=[39m [38;5;28mself[39m[38;5;241m.[39m_unwrap_value(response[38;5;241m.[39mget([38;5;124m"[39m[38;5;124mvalue[39m[38;5;124m"[39m, [38;5;28;01mNone[39;00m))
+[0;32m    356[0m     [38;5;28;01mreturn[39;00m response
+
+File [1;32m~\AppData\Roaming\Python\Python311\site-packages\selenium\webdriver\remote\errorhandler.py:229[0m, in [0;36mErrorHandler.check_response[1;34m(self, response)[0m
+[0;32m    227[0m         alert_text [38;5;241m=[39m value[[38;5;124m"[39m[38;5;124malert[39m[38;5;124m"[39m][38;5;241m.[39mget([38;5;124m"[39m[38;5;124mtext[39m[38;5;124m"[39m)
+[0;32m    228[0m     [38;5;28;01mraise[39;00m exception_class(message, screen, stacktrace, alert_text)  [38;5;66;03m# type: ignore[call-arg]  # mypy is not smart enough here[39;00m
+[1;32m--> 229[0m [38;5;28;01mraise[39;00m exception_class(message, screen, stacktrace)
+
+[1;31mNoSuchElementException[0m: Message: no such element: Unable to locate element: {"method":"css selector","selector":"[name="T"]"}
+  (Session info: chrome=123.0.6312.58); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	GetHandleVerifier [0x00007FF707487032+63090]
+	(No symbol) [0x00007FF7073F2C82]
+	(No symbol) [0x00007FF70728EC65]
+	(No symbol) [0x00007FF7072D499D]
+	(No symbol) [0x00007FF7072D4ADC]
+	(No symbol) [0x00007FF707315B37]
+	(No symbol) [0x00007FF7072F701F]
+	(No symbol) [0x00007FF707313412]
+	(No symbol) [0x00007FF7072F6D83]
+	(No symbol) [0x00007FF7072C83A8]
+	(No symbol) [0x00007FF7072C9441]
+	GetHandleVerifier [0x00007FF7078825AD+4238317]
+	GetHandleVerifier [0x00007FF7078BF70D+4488525]
+	GetHandleVerifier [0x00007FF7078B79EF+4456495]
+	GetHandleVerifier [0x00007FF707560576+953270]
+	(No symbol) [0x00007FF7073FE54F]
+	(No symbol) [0x00007FF7073F9224]
+	(No symbol) [0x00007FF7073F935B]
+	(No symbol) [0x00007FF7073E9B94]
+	BaseThreadInitThunk [0x00007FF84A29257D+29]
+	RtlUserThreadStart [0x00007FF84AD0AF28+40]
+
 
