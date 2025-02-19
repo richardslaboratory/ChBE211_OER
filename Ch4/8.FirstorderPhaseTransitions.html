@@ -473,12 +473,14 @@
     <span class="k">except</span><span class="p">:</span>
         <span class="k">pass</span><span class="c1">#print(&#39;psat not found at T=%f&#39;%T)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">V_v</span><span class="p">,</span> <span class="n">Psat</span><span class="p">,</span> <span class="s1">&#39;ob&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">V_l</span><span class="p">,</span> <span class="n">Psat</span><span class="p">,</span> <span class="s1">&#39;*b&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">steam_properties</span><span class="p">[</span><span class="s1">&#39;Volume (l, l/mol)&#39;</span><span class="p">]</span><span class="o">*</span><span class="mi">10</span><span class="o">**</span><span class="mi">3</span><span class="p">,</span> 
          <span class="n">steam_properties</span><span class="p">[</span><span class="s1">&#39;Pressure (MPa)&#39;</span><span class="p">]</span><span class="o">*</span><span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;-r&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">steam_properties</span><span class="p">[</span><span class="s1">&#39;Volume (v, l/mol)&#39;</span><span class="p">]</span><span class="o">*</span><span class="mi">10</span><span class="o">**</span><span class="mi">3</span><span class="p">,</span> 
          <span class="n">steam_properties</span><span class="p">[</span><span class="s1">&#39;Pressure (MPa)&#39;</span><span class="p">]</span><span class="o">*</span><span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;--r&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">V_v</span><span class="p">,</span> <span class="n">Psat</span><span class="p">,</span> <span class="s1">&#39;ob&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">V_l</span><span class="p">,</span> <span class="n">Psat</span><span class="p">,</span> <span class="s1">&#39;*b&#39;</span><span class="p">)</span>
+
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$P^</span><span class="si">{sat}</span><span class="s1">$ $(bar)$&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$V$ $(cm^3/mol)$&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">yscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
@@ -493,7 +495,7 @@
   warn(&#39;Temperature is greater than critical temperature, returning critical point&#39;)
 </pre></div>
 </div>
-<img alt="../_images/3318d687d69e6f42c95bad71bac2e6a97ffe4a9348ed6ad1db4b113c93c9e71d.png" src="../_images/3318d687d69e6f42c95bad71bac2e6a97ffe4a9348ed6ad1db4b113c93c9e71d.png" />
+<img alt="../_images/9be6c2a2f29fdb0feca232ab097733f2882dd34cb6e411995b79f973ca7c1ccc.png" src="../_images/9be6c2a2f29fdb0feca232ab097733f2882dd34cb6e411995b79f973ca7c1ccc.png" />
 </div>
 </div>
 </section>

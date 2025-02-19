@@ -451,14 +451,14 @@
 <p>and substituting we get:</p>
 <div class="math notranslate nohighlight">
 \[\underline{G}^R(T,P)=
-\int_{0}^{P\underline{V}}d(P\underline{V})-\int_{0}^{P}Pd\underline{V}
--\int_{0}^{P\underline{V}}\dfrac{RT}{P\underline{V}}d(P\underline{V})+\int_{0}^{P}\dfrac{RT}{\underline{V}}d\underline{V}\]</div>
-<p>Using the definition of the compressibility,<span class="math notranslate nohighlight">\(Z=\dfrac{P\underline{V}}{RT}\)</span> the above can be reformulated</p>
+\int_{0}^{P\underline{V}}d(P\underline{V})-\int_{\infty}^{\underline{V}}Pd\underline{V}
+-\int_{0}^{P\underline{V}}\dfrac{RT}{P\underline{V}}d(P\underline{V})+\int_{\infty}^{\underline{V}}\dfrac{RT}{\underline{V}}d\underline{V}\]</div>
+<p>Using the definition of the compressibility, <span class="math notranslate nohighlight">\(Z=\dfrac{P\underline{V}}{RT}\)</span> the above can be reformulated</p>
 <div class="math notranslate nohighlight">
 \[\underline{G}^R(T,P)=
-RT\int_{0}^{Z}d(Z)-\int_{0}^{P}Pd\underline{V}
--RT\int_{0}^{P\underline{V}}\dfrac{1}{Z}d(Z)+\int_{0}^{P}\dfrac{RT}{\underline{V}}d\underline{V}=
-RT(Z-1) - RTln(Z) + \int_{0}^{P}\big(\dfrac{RT}{\underline{V}}-P\big)d\underline{V} \]</div>
+RT\int_{1}^{Z}d(Z)-\int_{\infty}^{\underline{V}}P d\underline{V}
+-RT\int_{1}^{Z}\dfrac{1}{Z}d(Z)+\int_{\infty}^{\underline{V}}\dfrac{RT}{\underline{V}}d\underline{V}=
+RT(Z-1) - RTln(Z) + \int_{\infty}^{\underline{V}}\big(\dfrac{RT}{\underline{V}}-P\big)d\underline{V} \]</div>
 <p>Dividing both sides by <span class="math notranslate nohighlight">\(RT\)</span> to make the expression unitless, we define the <strong>fugacity coefficient <span class="math notranslate nohighlight">\(\phi\)</span></strong> as:</p>
 <div class="math notranslate nohighlight">
 \[ln{\phi}=\dfrac{1}{RT}\int_{\infty}^{\underline{V}}\bigg(\dfrac{RT}{\underline{V}}-P\bigg)d\underline{V}+(Z-1) - ln(Z)\]</div>
@@ -541,7 +541,7 @@ RT(Z-1) - RTln(Z) + \int_{0}^{P}\big(\dfrac{RT}{\underline{V}}-P\big)d\underline
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x220b094bb00&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x1dd770a3380&gt;
 </pre></div>
 </div>
 </div>
