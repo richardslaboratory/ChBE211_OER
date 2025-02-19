@@ -1,0 +1,995 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Phase Transitions &#8212; Introduction to Thermodynamics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Ch4/8.FirstorderPhaseTransitions';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Introduction to Mixtures" href="../Ch5/1.Introduction-to-Mixtures.html" />
+    <link rel="prev" title="Constructing Property Diagrams" href="7.Constructing-Property-Diagrams.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Introduction to Thermodynamics - Home"/>
+    <img src="../_static/logo.png" class="logo__image only-dark pst-js-only" alt="Introduction to Thermodynamics - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Foreword
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Definitions and Balance Expressions</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Ch1/1.Thermodynamic-Definitions.html">Thermodynamic Definitions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch1/2.Real-Gas-Properties.html">Real Gas Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch1/3.Equations-of-State.html">Equations of State</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch1/4.Balance-Expressions.html">Macroscopic Balance Expressions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch1/5.Conservation-of-Mass.html">Conservation of Mass</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Foundations of Thermodynamics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Ch2/1.Conservation-of-Energy.html">Conservation of Energy and the 1st Law of Thermodynamics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch2/2.Expansion-of-a-Gas.html">Expansion of a Gas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch2/3.Entropy-Balance-Expression.html">Balance Expression for Entropy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch2/4.Entropy-at-0K.html">Entropy at 0K</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch2/5.Free-Energies.html">Free Energy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch2/6.Changes-of-State.html">Changes of State</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Applications of Thermodynamics in Chemical Engineering</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Ch3/1.Unit-Operations.html">Unit Operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch3/2.Property-Diagram-Single-Components.html">Property Database for Common Substances</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch3/3.Heat-Engines.html">Heat Engines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch3/4.Refrigeration.html">Refrigeration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch3/5.Liquefaction.html">Liquefaction</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Vapor-Liquid Equilibrium for Non-Ideal Gases</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="1.Deriving-Useful-Thermodynamic-Relationships.html">Deriving Useful Thermodynamic Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2.Virial-Equations-of-State.html">Volumetric Equations of State</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3.Law-of-Corresponding-States.html">Law of Corresponding States and Critical Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4.Thermal-Variables-from-EOS.html">Computing Thermal Variables from an Equation of State</a></li>
+<li class="toctree-l1"><a class="reference internal" href="5.Vapor-Liquid-Equilibrium.html">Vapor Liquid Equilibrium</a></li>
+<li class="toctree-l1"><a class="reference internal" href="6.Calculating-Fugacity.html">Calculating Fugacity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="7.Constructing-Property-Diagrams.html">Constructing Property Diagrams</a></li>
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Phase Transitions</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Thermodynamics of Mixtures</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Ch5/1.Introduction-to-Mixtures.html">Introduction to Mixtures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch5/3.Gaseous-Mixtures.html">Gaseous Mixtures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch5/4.Liquid-Mixtures.html">Liquid Mixtures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch5/5.Accuracy-EOS.html">Calculating the Accuracy of Equations of State</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch7/7.Activity-Coefficient-Models.html">Activity Coefficients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch7/8.Calculating-Mixture-Fugacity.html">Vapor-Liquid Equilibrium</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/Ch4/8.FirstorderPhaseTransitions.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Phase Transitions</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#phase-behavior">Phase Behavior</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#steam-p-underline-v-diagram">Steam - <span class="math notranslate nohighlight">\(P-\underline{V}\)</span> Diagram</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#steam-p-t-behavior">Steam - <span class="math notranslate nohighlight">\(P-T\)</span> Behavior</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phase-diagram-for-water">Phase Diagram for Water</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#first-order-phase-transition">First Order Phase Transition</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#order-of-a-phase-transition">Order of a phase transition:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#clausius-clapyron-equation">Clausius-Clapyron Equation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#test-your-understanding">Test your understanding:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#antoine-equation">Antoine Equation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#as-the-antoine-equation-is-empirical-the-parameters-a-b-and-c-need-to-be-determined-through-a-curve-fit">As the Antoine Equation is Empirical, the parameters A, B, and C need to be determined through a curve fit:</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="phase-transitions">
+<h1>Phase Transitions<a class="headerlink" href="#phase-transitions" title="Link to this heading">#</a></h1>
+<section id="phase-behavior">
+<h2>Phase Behavior<a class="headerlink" href="#phase-behavior" title="Link to this heading">#</a></h2>
+<p>Up to this point we have been mainly concerned with calculating the VLE envelope from a volumetric equation of state. However, what is not probably obvious at this point is why this is necessary/useful.</p>
+<p>We have pointed out in class that we have three problem solving strategies:</p>
+<ol class="arabic simple">
+<li><p>Ideal Gas</p></li>
+<li><p>Real Gas Properties</p></li>
+<li><p>Cubic Equations of State</p></li>
+</ol>
+<p>We now have all the tools we need to solve chemical engineering problems involving phase change using strategies (2) and (3), noting that phase change can never be computed using strategy (1).</p>
+<blockquote>
+<div><p>The ideal gas law can still be used to approximate the properties of the vapor phase at low pressures during the vapor-liquid transition!</p>
+</div></blockquote>
+<p>The accuracy of (3) will depend on the quality of the E.O.S… Let’s see how accurate the Peng Robinson Equation of State is at predicted the VLE behavior of a few simple gases.</p>
+<section id="steam-p-underline-v-diagram">
+<h3>Steam - <span class="math notranslate nohighlight">\(P-\underline{V}\)</span> Diagram<a class="headerlink" href="#steam-p-underline-v-diagram" title="Link to this heading">#</a></h3>
+<p>The illustration below uses Phasepy, a python package, to calculate the VLE envelope using the Peng Robinson Equation of state. Comparing it with the NIST property database for steam, we see excellent agreement between the predicted values from the PR EOS and the real properties, indicating that the computation is highly accurate.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">phasepy</span> <span class="kn">import</span> <span class="n">component</span><span class="p">,</span> <span class="n">mixture</span><span class="p">,</span> <span class="n">preos</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="c1">## import real steam properties</span>
+<span class="n">directory</span> <span class="o">=</span> <span class="s1">&#39;data&#39;</span>
+<span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;saturated_steam_properties.txt&#39;</span>
+<span class="n">steam_properties</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">directory</span><span class="p">,</span> <span class="n">filename</span><span class="p">),</span> <span class="n">delimiter</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="c1">## instantiate a model class for the PREOS using phasepy </span>
+<span class="n">water</span> <span class="o">=</span> <span class="n">component</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;water&#39;</span><span class="p">,</span> <span class="n">Tc</span><span class="o">=</span><span class="mf">647.1</span><span class="p">,</span> <span class="n">Pc</span><span class="o">=</span><span class="mf">220.64</span><span class="p">,</span> <span class="n">w</span><span class="o">=</span><span class="mf">0.344</span><span class="p">)</span>
+<span class="n">eos</span> <span class="o">=</span> <span class="n">preos</span><span class="p">(</span><span class="n">water</span><span class="p">)</span>
+
+<span class="n">V_v</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">V_l</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">Psat</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">Tsat</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">T_</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">steam_properties</span><span class="p">[</span><span class="s1">&#39;Temperature (K)&#39;</span><span class="p">]),</span> <span class="nb">max</span><span class="p">(</span><span class="n">steam_properties</span><span class="p">[</span><span class="s1">&#39;Temperature (K)&#39;</span><span class="p">]))</span>
+<span class="k">for</span> <span class="n">T</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">steam_properties</span><span class="p">[</span><span class="s1">&#39;Temperature (K)&#39;</span><span class="p">]):</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">ps</span><span class="p">,</span> <span class="n">vl</span><span class="p">,</span> <span class="n">vv</span> <span class="o">=</span> <span class="n">eos</span><span class="o">.</span><span class="n">psat</span><span class="p">(</span><span class="n">T</span><span class="o">=</span><span class="n">T</span><span class="p">)</span>
+        <span class="n">V_v</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">vv</span><span class="p">)</span>
+        <span class="n">V_l</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">vl</span><span class="p">)</span>
+        <span class="n">Psat</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ps</span><span class="p">)</span>
+        <span class="n">Tsat</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">T</span><span class="p">)</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="k">pass</span><span class="c1">#print(&#39;psat not found at T=%f&#39;%T)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">steam_properties</span><span class="p">[</span><span class="s1">&#39;Volume (l, l/mol)&#39;</span><span class="p">]</span><span class="o">*</span><span class="mi">10</span><span class="o">**</span><span class="mi">3</span><span class="p">,</span> 
+         <span class="n">steam_properties</span><span class="p">[</span><span class="s1">&#39;Pressure (MPa)&#39;</span><span class="p">]</span><span class="o">*</span><span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;-r&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">steam_properties</span><span class="p">[</span><span class="s1">&#39;Volume (v, l/mol)&#39;</span><span class="p">]</span><span class="o">*</span><span class="mi">10</span><span class="o">**</span><span class="mi">3</span><span class="p">,</span> 
+         <span class="n">steam_properties</span><span class="p">[</span><span class="s1">&#39;Pressure (MPa)&#39;</span><span class="p">]</span><span class="o">*</span><span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;--r&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">V_v</span><span class="p">,</span> <span class="n">Psat</span><span class="p">,</span> <span class="s1">&#39;ob&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">V_l</span><span class="p">,</span> <span class="n">Psat</span><span class="p">,</span> <span class="s1">&#39;*b&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$P^</span><span class="si">{sat}</span><span class="s1">$ $(bar)$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$V$ $(cm^3/mol)$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">yscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="c1">#steam_properties.keys()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\richa\AppData\Roaming\Python\Python312\site-packages\phasepy\cubic\psatpure.py:28: UserWarning: Temperature is greater than critical temperature, returning critical point
+  warn(&#39;Temperature is greater than critical temperature, returning critical point&#39;)
+</pre></div>
+</div>
+<img alt="../_images/3318d687d69e6f42c95bad71bac2e6a97ffe4a9348ed6ad1db4b113c93c9e71d.png" src="../_images/3318d687d69e6f42c95bad71bac2e6a97ffe4a9348ed6ad1db4b113c93c9e71d.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="steam-p-t-behavior">
+<h2>Steam - <span class="math notranslate nohighlight">\(P-T\)</span> Behavior<a class="headerlink" href="#steam-p-t-behavior" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">Tsat</span><span class="p">)</span><span class="o">-</span><span class="mf">273.15</span><span class="p">,</span> <span class="n">Psat</span><span class="p">,</span> <span class="s1">&#39;ob&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">steam_properties</span><span class="p">[</span><span class="s1">&#39;Temperature (K)&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="mf">273.15</span><span class="p">,</span> 
+         <span class="n">steam_properties</span><span class="p">[</span><span class="s1">&#39;Pressure (MPa)&#39;</span><span class="p">]</span><span class="o">*</span><span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;-r&#39;</span><span class="p">)</span>
+
+<span class="c1">#plt.plot([0, 0, 238.5-273.15], [0.00611657, 1.01325, 2099])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$P^</span><span class="si">{sat}</span><span class="s1">$ $(bar)$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$T$ $(^o C)$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">yscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+<span class="c1">#plt.xscale(&#39;log&#39;)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/405e414a3426d6ba803fa5be186977372ffa8619b15ec8aeab5b9e7c4a0540ac.png" src="../_images/405e414a3426d6ba803fa5be186977372ffa8619b15ec8aeab5b9e7c4a0540ac.png" />
+</div>
+</div>
+<section id="phase-diagram-for-water">
+<h3><a class="reference external" href="https://en.m.wikipedia.org/wiki/File:Phase_diagram_of_water.svg">Phase Diagram for Water</a><a class="headerlink" href="#phase-diagram-for-water" title="Link to this heading">#</a></h3>
+<p>Major talking points on the above image:</p>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=Juz9pVVsmQQ">Triple Point</a> (DOF = 0, C=1, P=3)</p></li>
+<li><p>Solid Phase Equilibrium</p>
+<ul class="simple">
+<li><p><strong><a class="reference external" href="https://www.youtube.com/watch?v=8Gj8dr6AsYg">Sublimation</a></strong> - solid to gas transition</p></li>
+<li><p><strong>Melting</strong> - solid to liquid transition</p></li>
+</ul>
+</li>
+<li><p>Ice Phases</p>
+<ul class="simple">
+<li><p><strong><a class="reference external" href="https://www.youtube.com/watch?v=dER6E2cb-y4">Exotic forms of ice</a></strong> - Experiments on ice structure</p></li>
+<li><p><strong><a class="reference external" href="https://www.youtube.com/watch?v=W-FqE81rhqA">Diamon Anvil</a></strong>
+<a class="reference external" href="https://www.youtube.com/watch?v=eyn7MusdQ9g">Check out this PBS Spacetime Video</a></p></li>
+</ul>
+</li>
+</ol>
+</section>
+</section>
+<section id="first-order-phase-transition">
+<h2>First Order Phase Transition<a class="headerlink" href="#first-order-phase-transition" title="Link to this heading">#</a></h2>
+<p>Phase transitions can be classified based on the order of the transition, which refers to the nature of the change in the thermodynamic properties of the system. The two main types are <strong>first-order</strong> and <strong>second-order</strong> (or higher-order) phase transitions.</p>
+<ol class="arabic simple">
+<li><p><strong>First-Order Phase Transitions</strong>:</p>
+<ul class="simple">
+<li><p><strong>Definition</strong>: These transitions involve a discontinuous change in some thermodynamic quantity, such as density or entropy. They are characterized by the absorption or release of latent heat.</p></li>
+<li><p><strong>Examples</strong>: Melting of ice, boiling of water, and condensation of steam.</p></li>
+<li><p><strong>Characteristics</strong>:</p>
+<ul>
+<li><p>Discontinuous change in properties (e.g., volume, entropy).</p></li>
+<li><p>Latent heat is involved.</p></li>
+<li><p>Coexistence of phases at the transition temperature and pressure.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>Second-Order (or Continuous) Phase Transitions</strong>:</p>
+<ul class="simple">
+<li><p><strong>Definition</strong>: These transitions involve a continuous change in the thermodynamic properties of the system. There is no latent heat involved.</p></li>
+<li><p><strong>Examples</strong>: The transition from a ferromagnetic to a paramagnetic state at the Curie point.</p></li>
+<li><p><strong>Characteristics</strong>:</p>
+<ul>
+<li><p>Continuous change in properties.</p></li>
+<li><p>No latent heat.</p></li>
+<li><p>Divergence in specific heat, susceptibility, or other response functions.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<p>For more detailed information, you can refer to resources like the <a class="reference external" href="https://en.wikipedia.org/wiki/Phase_transition">Wikipedia page on Phase Transitions</a></p>
+<section id="order-of-a-phase-transition">
+<h3>Order of a phase transition:<a class="headerlink" href="#order-of-a-phase-transition" title="Link to this heading">#</a></h3>
+<p><em>First-order phase transitions exhibit a discontinuity in the first derivative of the free energy with respect to some thermodynamic variable.</em></p>
+<p>Lets plot the Gibb’s Free Energy as a function of Pressure and Temperature for several isotherms:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">directory</span> <span class="o">=</span> <span class="s1">&#39;data&#39;</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">filename</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">directory</span><span class="p">):</span>    
+    <span class="k">if</span><span class="p">(</span><span class="s1">&#39;isotherm&#39;</span> <span class="ow">in</span> <span class="n">filename</span><span class="p">):</span>
+        <span class="n">isotherm</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">directory</span><span class="p">,</span> <span class="n">filename</span><span class="p">),</span> <span class="n">delimiter</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
+
+        <span class="n">H</span> <span class="o">=</span> <span class="n">isotherm</span><span class="p">[</span><span class="s1">&#39;Enthalpy (kJ/mol)&#39;</span><span class="p">]</span>
+        <span class="n">S</span> <span class="o">=</span> <span class="n">isotherm</span><span class="p">[</span><span class="s1">&#39;Entropy (J/mol*K)&#39;</span><span class="p">]</span>
+        <span class="n">T</span> <span class="o">=</span> <span class="n">isotherm</span><span class="p">[</span><span class="s1">&#39;Temperature (K)&#39;</span><span class="p">]</span>
+        <span class="n">P</span> <span class="o">=</span> <span class="n">isotherm</span><span class="p">[</span><span class="s1">&#39;Pressure (MPa)&#39;</span><span class="p">]</span><span class="o">*</span><span class="mi">10</span>
+        <span class="n">G</span> <span class="o">=</span> <span class="n">H</span><span class="o">*</span><span class="mi">1000</span> <span class="o">-</span> <span class="n">T</span><span class="o">*</span><span class="n">S</span>
+
+        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">P</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">G</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span><span class="o">/</span><span class="mi">1000</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="n">filename</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;_&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s1">&#39;T=&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s1">&#39;K.txt&#39;</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$G$ $(kJ/mol)$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$P$ $(bar)$&#39;</span><span class="p">)</span>
+<span class="c1">#plt.yscale(&#39;log&#39;)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">ncols</span> <span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">frameon</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/c6d40ebb77a52cf38d392f5b8e9eed89d08bbf262f03ed1c44d9d6b97e9527dc.png" src="../_images/c6d40ebb77a52cf38d392f5b8e9eed89d08bbf262f03ed1c44d9d6b97e9527dc.png" />
+</div>
+</div>
+<p>The implication of the statement above is that:</p>
+<div class="math notranslate nohighlight">
+\[\bigg(\dfrac{\partial \underline{G}}{\partial P}\bigg)_T\]</div>
+<p>will exhibit one discontinuity at the onset of the vapor to fluid transition such that:</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}
+\bigg(\dfrac{\partial \underline{G}}{\partial P}\bigg)_T^v \ne 
+\bigg(\dfrac{\partial \underline{G}}{\partial P}\bigg)_T^l
+$$\\\We can see if this is the case for the conditions above by taking the first derivative of the $\underline{G}(P, T)$ function at constant temperature. bigg(\dfrac{\partial \underline{G}}{\partial P}\bigg)_T$$$$\bigg(\dfrac{\partial \underline{G}}{\partial P}\bigg)_T$$\end{aligned}\end{align} \]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">directory</span> <span class="o">=</span> <span class="s1">&#39;data&#39;</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+
+<span class="c1"># Suppress all warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">filename</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">directory</span><span class="p">):</span>    
+    <span class="k">if</span><span class="p">(</span><span class="s1">&#39;isotherm&#39;</span> <span class="ow">in</span> <span class="n">filename</span><span class="p">):</span>
+        <span class="n">isotherm</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">directory</span><span class="p">,</span> <span class="n">filename</span><span class="p">),</span> <span class="n">delimiter</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
+
+        <span class="n">H</span> <span class="o">=</span> <span class="n">isotherm</span><span class="p">[</span><span class="s1">&#39;Enthalpy (kJ/mol)&#39;</span><span class="p">]</span>
+        <span class="n">S</span> <span class="o">=</span> <span class="n">isotherm</span><span class="p">[</span><span class="s1">&#39;Entropy (J/mol*K)&#39;</span><span class="p">]</span>
+        <span class="n">T</span> <span class="o">=</span> <span class="n">isotherm</span><span class="p">[</span><span class="s1">&#39;Temperature (K)&#39;</span><span class="p">]</span>
+        <span class="n">P</span> <span class="o">=</span> <span class="n">isotherm</span><span class="p">[</span><span class="s1">&#39;Pressure (MPa)&#39;</span><span class="p">]</span><span class="o">*</span><span class="mi">10</span>
+        <span class="n">G</span> <span class="o">=</span> <span class="n">H</span><span class="o">*</span><span class="mi">1000</span> <span class="o">-</span> <span class="n">T</span><span class="o">*</span><span class="n">S</span>
+        <span class="n">dGdP</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">gradient</span><span class="p">(</span><span class="n">G</span><span class="o">/</span><span class="mi">1000</span><span class="p">,</span> <span class="n">P</span><span class="p">);</span>
+        <span class="n">mask</span> <span class="o">=</span> <span class="p">(</span><span class="n">dGdP</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">P</span><span class="p">[</span><span class="n">mask</span><span class="p">],</span> <span class="n">dGdP</span><span class="p">[</span><span class="n">mask</span><span class="p">],</span> <span class="n">label</span> <span class="o">=</span> <span class="n">filename</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;_&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s1">&#39;T=&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s1">&#39;K.txt&#39;</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$(\dfrac{\partial G}{\partial P})_T$ $(kJ/(mol\cdot bar))$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$P$ $(bar)$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">yscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">ncols</span> <span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">frameon</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/71247a20a1b6cb507112eaf79d2f9eaa38d80b03af646b7a04dd473d2797bfbf.png" src="../_images/71247a20a1b6cb507112eaf79d2f9eaa38d80b03af646b7a04dd473d2797bfbf.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="clausius-clapyron-equation">
+<h2>Clausius-Clapyron Equation<a class="headerlink" href="#clausius-clapyron-equation" title="Link to this heading">#</a></h2>
+<p>Sure! The Clausius-Clapeyron equation describes the relationship between the vapor pressure and temperature of a substance during a phase transition. Here’s a step-by-step derivation:</p>
+<ol class="arabic simple">
+<li><p><strong>Start with the Gibbs Free Energy</strong>:
+For two phases in equilibrium (e.g., liquid and vapor), the Gibbs free energy per mole <span class="math notranslate nohighlight">\(\underline{G}\)</span> is equal:
+$<span class="math notranslate nohighlight">\(
+\underline{G}^{l} = \underline{G}^{v}
+\)</span>$</p></li>
+<li><p><strong>Differential Form of Gibbs Free Energy</strong>:
+The differential form of the Gibbs free energy is:
+$<span class="math notranslate nohighlight">\(
+d\underline{G} = \underline{V}dP - \underline{S}dT
+\)</span><span class="math notranslate nohighlight">\(
+where \)</span>\underline{V}<span class="math notranslate nohighlight">\( is the molar volume, \)</span>P<span class="math notranslate nohighlight">\( is the pressure, \)</span>\underline{S}<span class="math notranslate nohighlight">\( is the entropy, and \)</span>T$ is the temperature.</p></li>
+<li><p><strong>Equilibrium Condition</strong>:
+At equilibrium, the change in Gibbs free energy for both phases must be equal:
+$<span class="math notranslate nohighlight">\(
+d\underline{G}^{l} = d\underline{G}^{v}
+\)</span><span class="math notranslate nohighlight">\(
+Therefore:
+\)</span><span class="math notranslate nohighlight">\(
+\underline{V}^l dP - \underline{S}^l dT = \underline{V}^v dP - \underline{S}^v dT
+\)</span>$</p></li>
+<li><p><strong>Rearrange the Equation</strong>:
+Rearrange to isolate <span class="math notranslate nohighlight">\(dP/dT\)</span>:
+$<span class="math notranslate nohighlight">\(
+(\underline{V}^v - \underline{V}^l) dP = (\underline{S}^v - \underline{S}^l) dT
+\)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\(
+\frac{dP}{dT} = \frac{\underline{S}^v - \underline{S}^l}{\underline{V}^v - \underline{V}^l}
+\)</span>$</p></li>
+<li><p><strong>Entropy Change</strong>:
+The entropy change <span class="math notranslate nohighlight">\(\Delta \underline{S}\)</span> during the phase transition is related to the enthalpy change <span class="math notranslate nohighlight">\(\Delta \underline{H}\)</span> by:
+$<span class="math notranslate nohighlight">\(
+\Delta \underline{S} = \frac{\Delta \underline{H}}{T}
+\)</span>$</p></li>
+</ol>
+<blockquote>
+<div><p>Note that we get this from the relationship that <span class="math notranslate nohighlight">\(d\underline{H} = \underline{V}dP - Td\underline{S}\)</span>. When a phase change occurs, the <span class="math notranslate nohighlight">\(dP=0\)</span> from the vapor to the liquid phase.</p>
+</div></blockquote>
+<ol class="arabic simple" start="6">
+<li><p><strong>Substitute Entropy Change</strong>:
+Substitute <span class="math notranslate nohighlight">\(\Delta \underline{S}\)</span> into the equation:
+$<span class="math notranslate nohighlight">\(
+\frac{dP}{dT} = \frac{\Delta \underline{H}}{T (\underline{V}^v - \underline{V}^l)}
+\)</span>$</p></li>
+<li><p><strong>Ideal Gas Approximation</strong>:
+For the vapor phase, we can use the ideal gas law <span class="math notranslate nohighlight">\(V^v = \frac{RT}{P}\)</span>, and since <span class="math notranslate nohighlight">\(\underline{V}^v&gt;&gt;\underline{V}^l\)</span>, we approximate <span class="math notranslate nohighlight">\(\underline{V}^v - \underline{V}^l \sim \underline{V}^v\)</span>:
+$<span class="math notranslate nohighlight">\(
+\frac{dP}{dT} = \frac{\Delta \underline{H}}{T \left(\frac{RT}{P}\right)}
+\)</span><span class="math notranslate nohighlight">\(
+This simplifies to:
+\)</span><span class="math notranslate nohighlight">\(
+\frac{dP}{dT} = \frac{P \Delta \underline{H}}{R T^2}
+\)</span>$</p></li>
+<li><p><strong>Integrate the Equation</strong>:
+Integrate both sides to obtain the Clausius-Clapeyron equation:
+$<span class="math notranslate nohighlight">\(
+\int_{P_1}^{P_2} \frac{dP}{P} = \frac{\Delta \underline{H}}{R} \int_{T_1}^{T_2} \frac{dT}{T^2}
+\)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\(
+\ln \left(\frac{P_2}{P_1}\right) = -\frac{\Delta_{vap} \underline{H}}{R} \left(\frac{1}{T_2} - \frac{1}{T_1}\right)
+\)</span>$</p></li>
+</ol>
+<p>This is the Clausius-Clapeyron equation, which relates the change in vapor pressure to the change in temperature for a phase transition.</p>
+<p>The equation states that if I know the latent heat of vaporization, <span class="math notranslate nohighlight">\(\Delta \underline{H}^{v\rightarrow l}\)</span> at a given temperature <span class="math notranslate nohighlight">\(T_1\)</span> and pressure <span class="math notranslate nohighlight">\(P_1\)</span>, then I can predict the equilibrium vapor pressure, <span class="math notranslate nohighlight">\(P_2\)</span>, of a substance at difference temperature <span class="math notranslate nohighlight">\(T_2\)</span>.</p>
+<section id="test-your-understanding">
+<h3>Test your understanding:<a class="headerlink" href="#test-your-understanding" title="Link to this heading">#</a></h3>
+<p>Work illustration problem 7.7-1 in Sandler and 7.18a in the back of the book.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="n">directory</span> <span class="o">=</span> <span class="s1">&#39;data&#39;</span>
+<span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;saturated_steam_properties.txt&#39;</span>
+
+<span class="n">steam_properties</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">directory</span><span class="p">,</span> <span class="n">filename</span><span class="p">),</span> <span class="n">delimiter</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="c1"># Constants</span>
+<span class="n">R</span> <span class="o">=</span> <span class="mf">8.314</span>  <span class="c1"># Universal gas constant, J/(mol*K)</span>
+<span class="n">delta_H_vap</span> <span class="o">=</span> <span class="mf">40.79e3</span>  <span class="c1"># Enthalpy of vaporization for water, J/mol</span>
+
+<span class="c1"># Function to calculate vapor pressure using Clausius-Clapeyron equation</span>
+<span class="k">def</span> <span class="nf">vapor_pressure</span><span class="p">(</span><span class="n">T1</span><span class="p">,</span> <span class="n">P1</span><span class="p">,</span> <span class="n">T2</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">P1</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">delta_H_vap</span> <span class="o">/</span> <span class="n">R</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">T2</span> <span class="o">-</span> <span class="mi">1</span><span class="o">/</span><span class="n">T1</span><span class="p">))</span>
+
+<span class="c1"># Given data</span>
+<span class="n">T1</span> <span class="o">=</span> <span class="mf">373.15</span>  <span class="c1"># Boiling point of water at 1 atm in Kelvin (100°C)</span>
+<span class="n">P1</span> <span class="o">=</span> <span class="mi">101325</span>  <span class="c1"># Vapor pressure at boiling point in Pa (1 atm)</span>
+
+<span class="c1"># Temperature range for the plot</span>
+<span class="n">T</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">273.15</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">steam_properties</span><span class="p">[</span><span class="s1">&#39;Temperature (K)&#39;</span><span class="p">]),</span> <span class="mi">100</span><span class="p">)</span>  <span class="c1"># From 0°C to 100°C in Kelvin</span>
+
+<span class="c1"># Calculate vapor pressures for the temperature range</span>
+<span class="n">P</span> <span class="o">=</span> <span class="n">vapor_pressure</span><span class="p">(</span><span class="n">T1</span><span class="p">,</span> <span class="n">P1</span><span class="p">,</span> <span class="n">T</span><span class="p">)</span>
+
+<span class="c1"># Plot the results</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">T</span> <span class="o">-</span> <span class="mf">273.15</span><span class="p">,</span> <span class="n">P</span> <span class="o">/</span> <span class="mi">10</span><span class="o">**</span><span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;-k&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;Clausius-Clapyron&#39;</span><span class="p">)</span>  <span class="c1"># Convert temperature to °C and pressure to kPa</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">steam_properties</span><span class="p">[</span><span class="s1">&#39;Temperature (K)&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="mf">273.15</span><span class="p">,</span>
+         <span class="n">steam_properties</span><span class="p">[</span><span class="s1">&#39;Pressure (MPa)&#39;</span><span class="p">]</span><span class="o">*</span><span class="mi">10</span><span class="p">,</span> 
+         <span class="s1">&#39;or&#39;</span><span class="p">,</span> <span class="n">zorder</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;NIST Properties&#39;</span><span class="p">)</span>
+<span class="c1">#plt.plot(steam_properties</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Temperature (°C)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Pressure (bar)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">yscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+<span class="c1">#plt.xscale(&#39;log&#39;)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">frameon</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/f5b3e11a6a48d355a5853ed4537ddb9fe47a1179bb27c64a11694f38269ad7f4.png" src="../_images/f5b3e11a6a48d355a5853ed4537ddb9fe47a1179bb27c64a11694f38269ad7f4.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="antoine-equation">
+<h2>Antoine Equation<a class="headerlink" href="#antoine-equation" title="Link to this heading">#</a></h2>
+<p>The transition from step 7 above to 8 required a definite integral. If instead, an indefinite integration of the equation:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{dP}{dT} = \frac{P \Delta \underline{H}}{R T^2}
+\]</div>
+<p>and by rearrangement:
+$<span class="math notranslate nohighlight">\(
+\frac{1}{P}dP = \frac{B}{T^2}dT
+\)</span>$</p>
+<p>where <span class="math notranslate nohighlight">\(B=\Delta \underline{H}/R\)</span></p>
+<p>Integration of the above yields:</p>
+<div class="math notranslate nohighlight">
+\[
+lnP^{vap} = -\frac{B}{T} + A
+\]</div>
+<p>In practice, an emperical relationship is used, called the <strong>Antoine Equation</strong></p>
+<div class="math notranslate nohighlight">
+\[
+\log{P^{vap}} = A - \dfrac{B}{T + C}
+\]</div>
+<section id="as-the-antoine-equation-is-empirical-the-parameters-a-b-and-c-need-to-be-determined-through-a-curve-fit">
+<h3>As the Antoine Equation is Empirical, the parameters A, B, and C need to be determined through a curve fit:<a class="headerlink" href="#as-the-antoine-equation-is-empirical-the-parameters-a-b-and-c-need-to-be-determined-through-a-curve-fit" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">curve_fit</span>
+<span class="n">directory</span> <span class="o">=</span> <span class="s1">&#39;data&#39;</span>
+<span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;saturated_steam_properties.txt&#39;</span>
+
+<span class="n">steam_properties</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">directory</span><span class="p">,</span> <span class="n">filename</span><span class="p">),</span> <span class="n">delimiter</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="c1"># Constants</span>
+<span class="n">R</span> <span class="o">=</span> <span class="mf">8.314</span>  <span class="c1"># Universal gas constant, J/(mol*K)</span>
+<span class="n">delta_H_vap</span> <span class="o">=</span> <span class="mf">40.79e3</span>  <span class="c1"># Enthalpy of vaporization for water, J/mol</span>
+
+<span class="c1"># Function to calculate vapor pressure using Clausius-Clapeyron equation</span>
+<span class="k">def</span> <span class="nf">log_vapor_pressure</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">C</span><span class="p">):</span>
+    
+    <span class="k">return</span> <span class="o">-</span><span class="n">A</span><span class="o">-</span><span class="n">B</span><span class="o">/</span><span class="p">(</span><span class="n">T</span><span class="o">+</span><span class="n">C</span><span class="p">)</span>
+
+<span class="n">T</span> <span class="o">=</span> <span class="n">steam_properties</span><span class="p">[</span><span class="s1">&#39;Temperature (K)&#39;</span><span class="p">]</span>
+<span class="n">P</span> <span class="o">=</span> <span class="n">steam_properties</span><span class="p">[</span><span class="s1">&#39;Pressure (MPa)&#39;</span><span class="p">]</span>
+<span class="n">lnP</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">steam_properties</span><span class="p">[</span><span class="s1">&#39;Pressure (MPa)&#39;</span><span class="p">])</span>
+
+<span class="n">popt</span><span class="p">,</span> <span class="n">cov</span> <span class="o">=</span> <span class="n">curve_fit</span><span class="p">(</span><span class="n">log_vapor_pressure</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">lnP</span><span class="p">)</span>
+
+<span class="c1"># Plot the results</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">T</span> <span class="o">-</span> <span class="mf">273.15</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">log_vapor_pressure</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="o">*</span><span class="n">popt</span><span class="p">))</span><span class="o">*</span><span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;-k&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;Antoine&#39;</span><span class="p">)</span>  <span class="c1"># Convert temperature to °C and pressure to kPa</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">steam_properties</span><span class="p">[</span><span class="s1">&#39;Temperature (K)&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="mf">273.15</span><span class="p">,</span>
+         <span class="n">steam_properties</span><span class="p">[</span><span class="s1">&#39;Pressure (MPa)&#39;</span><span class="p">]</span><span class="o">*</span><span class="mi">10</span><span class="p">,</span> 
+         <span class="s1">&#39;or&#39;</span><span class="p">,</span> <span class="n">zorder</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;NIST Properties&#39;</span><span class="p">)</span>
+<span class="c1">#plt.plot(steam_properties</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Temperature (°C)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Pressure (bar)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">yscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+<span class="c1">#plt.xscale(&#39;log&#39;)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">frameon</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s1">&#39;A=</span><span class="si">%3.2f</span><span class="s1">&#39;</span><span class="o">%</span><span class="k">popt</span>[0], xy=(0.05, 0.90), xycoords = &#39;axes fraction&#39;)
+<span class="n">plt</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s1">&#39;B=</span><span class="si">%3.2f</span><span class="s1">&#39;</span><span class="o">%</span><span class="k">popt</span>[1], xy=(0.05, 0.80), xycoords = &#39;axes fraction&#39;)
+<span class="n">plt</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s1">&#39;C=</span><span class="si">%3.2f</span><span class="s1"> K&#39;</span><span class="o">%</span><span class="k">popt</span>[2], xy=(0.05, 0.70), xycoords = &#39;axes fraction&#39;)
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/00e81a86b3b319664a4d5956878eeb535e9ced435c935302a830271cf29218b3.png" src="../_images/00e81a86b3b319664a4d5956878eeb535e9ced435c935302a830271cf29218b3.png" />
+</div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "executablebooks/jupyter-book",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./Ch4"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="7.Constructing-Property-Diagrams.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Constructing Property Diagrams</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../Ch5/1.Introduction-to-Mixtures.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Introduction to Mixtures</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#phase-behavior">Phase Behavior</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#steam-p-underline-v-diagram">Steam - <span class="math notranslate nohighlight">\(P-\underline{V}\)</span> Diagram</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#steam-p-t-behavior">Steam - <span class="math notranslate nohighlight">\(P-T\)</span> Behavior</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phase-diagram-for-water">Phase Diagram for Water</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#first-order-phase-transition">First Order Phase Transition</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#order-of-a-phase-transition">Order of a phase transition:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#clausius-clapyron-equation">Clausius-Clapyron Equation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#test-your-understanding">Test your understanding:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#antoine-equation">Antoine Equation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#as-the-antoine-equation-is-empirical-the-parameters-a-b-and-c-need-to-be-determined-through-a-curve-fit">As the Antoine Equation is Empirical, the parameters A, B, and C need to be determined through a curve fit:</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By J. J. Richards
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

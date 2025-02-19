@@ -205,6 +205,7 @@
 <li class="toctree-l1"><a class="reference internal" href="6.Calculating-Fugacity.html">Calculating Fugacity</a></li>
 <li class="toctree-l1"><a class="reference internal" href="7.Constructing-Property-Diagrams.html">Constructing Property Diagrams</a></li>
 
+<li class="toctree-l1"><a class="reference internal" href="8.FirstorderPhaseTransitions.html">Phase Transitions</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Thermodynamics of Mixtures</span></p>
 <ul class="nav bd-sidenav">
@@ -498,7 +499,7 @@
 </ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> notebook
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
 <span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -507,10 +508,10 @@
 <span class="n">Tc</span><span class="o">=</span><span class="mf">647.13</span>
 <span class="n">Pc</span><span class="o">=</span><span class="mf">220.55</span>
 <span class="n">w</span><span class="o">=</span><span class="mf">0.344861</span>
-<span class="n">Tr</span><span class="o">=</span><span class="mf">0.95</span>
+<span class="n">Tr</span><span class="o">=</span><span class="mf">0.80</span>
 
 <span class="n">water</span> <span class="o">=</span> <span class="n">component</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;water&#39;</span><span class="p">,</span> <span class="n">Tc</span><span class="o">=</span><span class="n">Tc</span><span class="p">,</span> <span class="n">Pc</span><span class="o">=</span><span class="n">Pc</span><span class="p">,</span> <span class="n">w</span><span class="o">=</span><span class="n">w</span><span class="p">)</span>
-<span class="n">eos</span><span class="o">=</span><span class="n">preos</span><span class="p">(</span><span class="n">water</span><span class="p">,</span><span class="s1">&#39;mhv_unifac&#39;</span><span class="p">)</span>
+<span class="n">eos</span> <span class="o">=</span> <span class="n">preos</span><span class="p">(</span><span class="n">water</span><span class="p">,</span><span class="s1">&#39;mhv_unifac&#39;</span><span class="p">)</span>
 <span class="n">R</span><span class="o">=</span><span class="mf">8.314</span> 
 <span class="c1">##create the plot</span>
 <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
@@ -544,7 +545,7 @@
 
 
 <span class="c1">##update the plot</span>
-<span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="n">Tr</span> <span class="o">=</span> <span class="mf">0.93</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="n">Tr</span> <span class="o">=</span> <span class="mf">0.8</span><span class="p">):</span>
     <span class="n">psat</span><span class="p">,</span><span class="n">vl</span><span class="p">,</span><span class="n">vv</span><span class="o">=</span><span class="n">eos</span><span class="o">.</span><span class="n">psat</span><span class="p">(</span><span class="n">Tr</span><span class="o">*</span><span class="n">Tc</span><span class="p">)</span>
 
     <span class="n">mask</span><span class="o">=</span><span class="p">(</span><span class="n">v</span><span class="o">&lt;</span><span class="n">vl</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">v</span><span class="o">&gt;</span><span class="n">vv</span><span class="p">)</span>
@@ -569,16 +570,19 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">6</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="ne">----&gt; </span><span class="mi">6</span> <span class="kn">from</span> <span class="nn">phasepy</span> <span class="kn">import</span> <span class="n">component</span><span class="p">,</span> <span class="n">mixture</span><span class="p">,</span> <span class="n">preos</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="n">Tc</span><span class="o">=</span><span class="mf">647.13</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="n">Pc</span><span class="o">=</span><span class="mf">220.55</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;phasepy&#39;
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "53aa8af4f11c4e71b4d0723b58de2696"}</script></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">jupyter</span> <span class="n">labextension</span> <span class="nb">list</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+    <span class="n">jupyter</span> <span class="n">labextension</span> <span class="nb">list</span>
+            <span class="o">^</span>
+<span class="ne">SyntaxError</span>: invalid syntax
 </pre></div>
 </div>
 </div>

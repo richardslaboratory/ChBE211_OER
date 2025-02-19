@@ -205,6 +205,7 @@
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Calculating Fugacity</a></li>
 <li class="toctree-l1"><a class="reference internal" href="7.Constructing-Property-Diagrams.html">Constructing Property Diagrams</a></li>
 
+<li class="toctree-l1"><a class="reference internal" href="8.FirstorderPhaseTransitions.html">Phase Transitions</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Thermodynamics of Mixtures</span></p>
 <ul class="nav bd-sidenav">
@@ -518,20 +519,6 @@ RT(Z-1) - RTln(Z) + \int_{0}^{P}\big(\dfrac{RT}{\underline{V}}-P\big)d\underline
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">8</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="ne">----&gt; </span><span class="mi">8</span> <span class="kn">from</span> <span class="nn">phasepy</span> <span class="kn">import</span> <span class="n">component</span><span class="p">,</span> <span class="n">mixture</span><span class="p">,</span> <span class="n">preos</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="n">Tc</span><span class="o">=</span><span class="mf">647.13</span> <span class="c1">#K</span>
-<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="n">Pc</span><span class="o">=</span><span class="mf">220.55</span> <span class="c1">#bar</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;phasepy&#39;
-</pre></div>
-</div>
-</div>
 </div>
 </section>
 <section id="next-lets-calculate-an-isotherm-below-t-c">
@@ -554,10 +541,9 @@ RT(Z-1) - RTln(Z) + \int_{0}^{P}\big(\dfrac{RT}{\underline{V}}-P\big)d\underline
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x1d15c2b4610&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x220b094bb00&gt;
 </pre></div>
 </div>
-<img alt="../_images/a1f79a2b39da9bf0a91a3b3764d97ff1df264a5bdef52928d29b58df173c2dc2.png" src="../_images/a1f79a2b39da9bf0a91a3b3764d97ff1df264a5bdef52928d29b58df173c2dc2.png" />
 </div>
 </div>
 </section>
@@ -641,7 +627,6 @@ RT(Z-1) - RTln(Z) + \int_{0}^{P}\big(\dfrac{RT}{\underline{V}}-P\big)d\underline
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;$V$ $(cm^3/mol)$&#39;)
 </pre></div>
 </div>
-<img alt="../_images/8a20f3ff7827cf31f0c4e0ac3f8eecae43f6ed6c29e6fb53e0d46047c8e5195b.png" src="../_images/8a20f3ff7827cf31f0c4e0ac3f8eecae43f6ed6c29e6fb53e0d46047c8e5195b.png" />
 </div>
 </div>
 </section>
@@ -678,7 +663,6 @@ RT(Z-1) - RTln(Z) + \int_{0}^{P}\big(\dfrac{RT}{\underline{V}}-P\big)d\underline
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;$V$ $(cm^3/mol)$&#39;)
 </pre></div>
 </div>
-<img alt="../_images/f392fad54b808cea500f654053d82596e3995fe93cb10ea74899b97f66f3988a.png" src="../_images/f392fad54b808cea500f654053d82596e3995fe93cb10ea74899b97f66f3988a.png" />
 </div>
 </div>
 </section>
@@ -762,7 +746,6 @@ RT(Z-1) - RTln(Z) + \int_{0}^{P}\big(\dfrac{RT}{\underline{V}}-P\big)d\underline
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;$\\ln{\\phi}$&#39;)
 </pre></div>
 </div>
-<img alt="../_images/a36218cf79718e19678e3c087d1e8f069494fdc9f7985aacd2b1b76b7ec66b77.png" src="../_images/a36218cf79718e19678e3c087d1e8f069494fdc9f7985aacd2b1b76b7ec66b77.png" />
 </div>
 </div>
 <p>The starred point is the point where the fugacity of the liquid and vapor phases are equal</p>
@@ -843,10 +826,42 @@ RT(Z-1) - RTln(Z) + \int_{0}^{P}\big(\dfrac{RT}{\underline{V}}-P\big)d\underline
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;$V$ $(cm^3/mol)$&#39;)
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">50</span>
+<span class="g g-Whitespace">     </span><span class="mi">47</span> <span class="k">for</span> <span class="n">Tr</span> <span class="ow">in</span> <span class="p">[</span><span class="mf">0.98</span><span class="p">,</span><span class="mf">0.97</span><span class="p">,</span><span class="mf">0.96</span><span class="p">,</span><span class="mf">0.95</span><span class="p">,</span><span class="mf">0.94</span><span class="p">,</span><span class="mf">0.93</span><span class="p">,</span><span class="mf">0.92</span><span class="p">,</span><span class="mf">0.91</span><span class="p">,</span><span class="mf">0.9</span><span class="p">,</span><span class="mf">0.8</span><span class="p">,</span><span class="mf">0.7</span><span class="p">,</span><span class="mf">0.6</span><span class="p">]:</span>
+<span class="g g-Whitespace">     </span><span class="mi">49</span>     <span class="n">ps</span><span class="p">,</span><span class="n">vv</span><span class="p">,</span><span class="n">vl</span><span class="o">=</span><span class="n">psat</span><span class="p">(</span><span class="n">Tr</span><span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">50</span>     <span class="n">ps</span><span class="p">,</span><span class="n">vv</span><span class="p">,</span><span class="n">vl</span><span class="o">=</span><span class="n">psat</span><span class="p">(</span><span class="n">Tr</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">51</span>                   <span class="n">prmin</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">ps</span><span class="o">/</span><span class="n">Pc</span><span class="o">*</span><span class="mf">0.5</span><span class="p">),</span>
+<span class="g g-Whitespace">     </span><span class="mi">52</span>                   <span class="n">prmax</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">ps</span><span class="o">/</span><span class="n">Pc</span><span class="o">*</span><span class="mf">1.5</span><span class="p">),</span>
+<span class="g g-Whitespace">     </span><span class="mi">53</span>                  <span class="n">npts</span><span class="o">=</span><span class="mi">1001</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">55</span>     <span class="c1">#print(Tr,ps,vv,vl)</span>
+<span class="g g-Whitespace">     </span><span class="mi">56</span>     <span class="n">veqv_</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">vv</span><span class="o">*</span><span class="mi">10</span><span class="o">**</span><span class="mi">6</span><span class="p">)</span>
+
+<span class="nn">Cell In[6], line 13,</span> in <span class="ni">psat</span><span class="nt">(Tr, prmin, prmax, npts)</span>
+<span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="n">T</span><span class="o">=</span><span class="n">Tc</span><span class="o">*</span><span class="n">Tr</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="c1">###Find roots of cubic equation of state</span>
+<span class="ne">---&gt; </span><span class="mi">13</span> <span class="n">roots</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">roots</span><span class="p">(</span><span class="n">Zcoeff</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="n">P</span><span class="p">))</span>
+<span class="g g-Whitespace">     </span><span class="mi">15</span> <span class="c1">#roots array contains three roots</span>
+<span class="g g-Whitespace">     </span><span class="mi">16</span> <span class="c1">#check if roots contains three real values</span>
+<span class="g g-Whitespace">     </span><span class="mi">17</span> <span class="n">check</span><span class="o">=</span><span class="mi">0</span>
+
+<span class="nn">File C:\ProgramData\anaconda3\Lib\site-packages\numpy\lib\polynomial.py:260,</span> in <span class="ni">roots</span><span class="nt">(p)</span>
+<span class="g g-Whitespace">    </span><span class="mi">257</span>     <span class="n">roots</span> <span class="o">=</span> <span class="n">NX</span><span class="o">.</span><span class="n">array</span><span class="p">([])</span>
+<span class="g g-Whitespace">    </span><span class="mi">259</span> <span class="c1"># tack any zeros onto the back of the array</span>
+<span class="ne">--&gt; </span><span class="mi">260</span> <span class="n">roots</span> <span class="o">=</span> <span class="n">hstack</span><span class="p">((</span><span class="n">roots</span><span class="p">,</span> <span class="n">NX</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">trailing_zeros</span><span class="p">,</span> <span class="n">roots</span><span class="o">.</span><span class="n">dtype</span><span class="p">)))</span>
+<span class="g g-Whitespace">    </span><span class="mi">261</span> <span class="k">return</span> <span class="n">roots</span>
+
+<span class="nn">File C:\ProgramData\anaconda3\Lib\site-packages\numpy\core\shape_base.py:357,</span> in <span class="ni">hstack</span><span class="nt">(tup, dtype, casting)</span>
+<span class="g g-Whitespace">    </span><span class="mi">355</span> <span class="c1"># As a special case, dimension 0 of 1-dimensional arrays is &quot;horizontal&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">356</span> <span class="k">if</span> <span class="n">arrs</span> <span class="ow">and</span> <span class="n">arrs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">ndim</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">357</span>     <span class="k">return</span> <span class="n">_nx</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span><span class="n">arrs</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">,</span> <span class="n">casting</span><span class="o">=</span><span class="n">casting</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">358</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">359</span>     <span class="k">return</span> <span class="n">_nx</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span><span class="n">arrs</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">,</span> <span class="n">casting</span><span class="o">=</span><span class="n">casting</span><span class="p">)</span>
+
+<span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
 </div>
-<img alt="../_images/06ad764204d52b4d07aa67b735e6c3a581f4d80e286c9fa7780666b0d0433672.png" src="../_images/06ad764204d52b4d07aa67b735e6c3a581f4d80e286c9fa7780666b0d0433672.png" />
 </div>
 </div>
 <div class="cell docutils container">
