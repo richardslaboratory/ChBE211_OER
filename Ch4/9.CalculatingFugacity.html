@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Chapter 1 &#8212; Introduction to Thermodynamics</title>
+    <title>Calculating Fugacity &#8212; Introduction to Thermodynamics</title>
   
   
   
@@ -62,7 +62,7 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'Ch8/Chapter 1 Graphs of Vapor Liquid Equilibrium';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Ch4/9.CalculatingFugacity';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -197,15 +197,15 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Vapor-Liquid Equilibrium for Non-Ideal Gases</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../Ch4/1.Deriving-Useful-Thermodynamic-Relationships.html">Deriving Useful Thermodynamic Properties</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Ch4/2.Virial-Equations-of-State.html">Volumetric Equations of State</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Ch4/3.Law-of-Corresponding-States.html">Law of Corresponding States and Critical Properties</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Ch4/4.Thermal-Variables-from-EOS.html">Computing Thermal Variables from an Equation of State</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Ch4/5.Vapor-Liquid-Equilibrium.html">Vapor Liquid Equilibrium</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Ch4/6.Calculating-Fugacity.html">Calculating Fugacity</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Ch4/7.Constructing-Property-Diagrams.html">Constructing Property Diagrams</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1.Deriving-Useful-Thermodynamic-Relationships.html">Deriving Useful Thermodynamic Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2.Virial-Equations-of-State.html">Volumetric Equations of State</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3.Law-of-Corresponding-States.html">Law of Corresponding States and Critical Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4.Thermal-Variables-from-EOS.html">Computing Thermal Variables from an Equation of State</a></li>
+<li class="toctree-l1"><a class="reference internal" href="5.Vapor-Liquid-Equilibrium.html">Vapor Liquid Equilibrium</a></li>
+<li class="toctree-l1"><a class="reference internal" href="6.Calculating-Fugacity.html">Calculating Fugacity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="7.Constructing-Property-Diagrams.html">Constructing Property Diagrams</a></li>
 
-<li class="toctree-l1"><a class="reference internal" href="../Ch4/8.FirstorderPhaseTransitions.html">Phase Transitions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="8.FirstorderPhaseTransitions.html">Phase Transitions</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Thermodynamics of Mixtures</span></p>
 <ul class="nav bd-sidenav">
@@ -307,7 +307,7 @@
       
       
       
-      <li><a href="../_sources/Ch8/Chapter 1 Graphs of Vapor Liquid Equilibrium.ipynb" target="_blank"
+      <li><a href="../_sources/Ch4/9.CalculatingFugacity.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -383,7 +383,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Chapter 1</h1>
+    <h1>Calculating Fugacity</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -393,12 +393,12 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#different-types-of-separations">Different types of Separations</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#foundational-data-and-graphs-of-vapor-liquid-equilibrium">Foundational data and graphs of vapor-liquid equilibrium</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#x-y-diagrams">x-y diagrams</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#t-x-y-diagrams">T-x-y diagrams</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#p-x-y-diagrams">P-x-y diagrams</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-take-aways">Key Take Aways</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-steam-tables">Using Steam Tables</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-nist-properties">Using NIST Properties</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-equations-of-state-vdw">Using Equations of State: VDW</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#equation-of-state">Equation of state:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#expression-in-its-cubic-form">Expression in its cubic form:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fugacity-expression-from-sandler-eq-7-4-13">Fugacity expression from Sandler (Eq 7.4-13):</a></li>
 </ul>
 </li>
 </ul>
@@ -412,90 +412,100 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="chapter-1">
-<h1>Chapter 1<a class="headerlink" href="#chapter-1" title="Link to this heading">#</a></h1>
-<section id="different-types-of-separations">
-<h2>Different types of Separations<a class="headerlink" href="#different-types-of-separations" title="Link to this heading">#</a></h2>
-<p>Engineers need to separate many types of mixtures to achieve multiple purposes.  One of the most common purposes is to remove a saleable product from a solvent or mixture of multiple products.  Another purpose could be to remove a pollutant or toxin from a waste stream.</p>
-<p>In this course, we will focus on separating:</p>
-<ul class="simple">
-<li><p>liquids from vapors</p></li>
-<li><p>liquids from liquids</p></li>
-</ul>
-<p>To achieve these types of separations, it is essential to exploit properties such as boiling point and solubility.</p>
-<p>It is important to understand these properties of mixtures at the operating conditions of a chemical process.  Mixtures exhibit different properties depending on which components are present and the temperature and pressure of the system.</p>
-<p>We will begin our exploration of separations by considering separations of liquids and vapors.  To achieve these separations, it is important to understand how a given mixture behaves at equilibrium conditions.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="calculating-fugacity">
+<h1>Calculating Fugacity<a class="headerlink" href="#calculating-fugacity" title="Link to this heading">#</a></h1>
+<section id="using-steam-tables">
+<h2>Using Steam Tables<a class="headerlink" href="#using-steam-tables" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Isothermal properties for steam @ 300 C</span>
+<span class="n">P</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.10</span><span class="p">,</span> <span class="mf">0.20</span><span class="p">,</span> <span class="mf">0.30</span><span class="p">,</span> <span class="mf">0.40</span><span class="p">,</span> <span class="mf">0.50</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.2</span><span class="p">,</span> <span class="mf">1.4</span><span class="p">,</span> <span class="mf">1.6</span><span class="p">,</span> <span class="mf">1.8</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">4.5</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">,</span> <span class="mf">6.0</span><span class="p">,</span> <span class="mf">7.0</span><span class="p">,</span> <span class="mf">8.0</span><span class="p">]</span>
+<span class="n">V</span> <span class="o">=</span> <span class="p">[</span><span class="mf">26.445</span><span class="p">,</span> <span class="mf">5.284</span><span class="p">,</span> <span class="mf">2.639</span><span class="p">,</span> <span class="mf">1.316</span><span class="p">,</span> <span class="mf">0.875</span><span class="p">,</span> <span class="mf">0.654</span><span class="p">,</span> <span class="mf">0.522</span><span class="p">,</span> <span class="mf">0.433</span><span class="p">,</span> <span class="mf">0.324</span><span class="p">,</span> <span class="mf">0.257</span><span class="p">,</span> <span class="mf">0.213</span><span class="p">,</span> <span class="mf">0.182</span><span class="p">,</span> <span class="mf">0.159</span><span class="p">,</span> <span class="mf">0.140</span><span class="p">,</span> <span class="mf">0.125</span><span class="p">,</span> <span class="mf">0.099</span><span class="p">,</span> <span class="mf">0.081</span><span class="p">,</span> <span class="mf">0.068</span><span class="p">,</span> <span class="mf">0.059</span><span class="p">,</span> <span class="mf">0.051</span><span class="p">,</span> <span class="mf">0.045</span><span class="p">,</span> <span class="mf">0.036</span><span class="p">,</span> <span class="mf">0.029</span><span class="p">,</span> <span class="mf">0.0243</span><span class="p">]</span>
+<span class="c1">## P  (MPa)</span>
+<span class="c1">## V (m^3/kg)</span>
+<span class="n">MW</span> <span class="o">=</span> <span class="mi">18</span><span class="o">/</span><span class="mi">1000</span> <span class="c1">#kg/mol </span>
+<span class="n">V_mol</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">V</span><span class="p">)</span><span class="o">*</span><span class="n">MW</span> <span class="c1">##mol/m^3</span>
+<span class="n">R</span> <span class="o">=</span> <span class="mf">8.314</span> <span class="c1">#J/mol*K</span>
+
+<span class="n">T</span> <span class="o">=</span> <span class="mi">300</span>  <span class="c1"># C</span>
+<span class="n">V_IG</span> <span class="o">=</span> <span class="n">R</span><span class="o">*</span><span class="p">(</span><span class="n">T</span><span class="o">+</span><span class="mf">273.15</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">P</span><span class="p">)</span><span class="o">*</span><span class="mi">10</span><span class="o">**</span><span class="mi">6</span><span class="p">)</span> <span class="c1">#mol/m^3</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">V_mol</span><span class="p">,</span> <span class="n">P</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;steam&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">V_IG</span><span class="p">,</span> <span class="n">P</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;IG&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">yscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;P (MPa)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;V (m^3/mol)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">7</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1">## P  (MPa)</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="c1">## V (m^3/kg)</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">MW</span> <span class="o">=</span> <span class="mi">18</span><span class="o">/</span><span class="mi">1000</span> <span class="c1">#kg/mol </span>
+<span class="ne">----&gt; </span><span class="mi">7</span> <span class="n">V_mol</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">V</span><span class="p">)</span><span class="o">*</span><span class="n">MW</span> <span class="c1">##mol/m^3</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="n">R</span> <span class="o">=</span> <span class="mf">8.314</span> <span class="c1">#J/mol*K</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="n">T</span> <span class="o">=</span> <span class="mi">300</span>  <span class="c1"># C</span>
+
+<span class="ne">NameError</span>: name &#39;np&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">integrand</span> <span class="o">=</span> <span class="n">V_mol</span> <span class="o">-</span> <span class="n">V_IG</span>
+
+<span class="n">integrate</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">trapz</span><span class="p">(</span><span class="n">integrand</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span> <span class="n">P</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">integrate</span><span class="o">/</span><span class="p">(</span><span class="n">R</span><span class="o">*</span><span class="p">(</span><span class="n">T</span><span class="o">+</span><span class="mf">273.15</span><span class="p">))))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.9999997628518026
+</pre></div>
+</div>
+</div>
+</div>
 </section>
-<section id="foundational-data-and-graphs-of-vapor-liquid-equilibrium">
-<h2>Foundational data and graphs of vapor-liquid equilibrium<a class="headerlink" href="#foundational-data-and-graphs-of-vapor-liquid-equilibrium" title="Link to this heading">#</a></h2>
-<p>There are three foundational graphs we will apply in our exploration of vapor-liquid equilibrium:</p>
-<ul class="simple">
-<li><p>x-y</p></li>
-<li><p>T-x-y</p></li>
-<li><p>P-x-y</p></li>
-</ul>
-<p>In exploring these graphs, we will rely on data from the [Dortmund Databank] (<a class="reference external" href="http://www.ddbst.com/free-data.html">http://www.ddbst.com/free-data.html</a>)</p>
-<section id="x-y-diagrams">
-<h3>x-y diagrams<a class="headerlink" href="#x-y-diagrams" title="Link to this heading">#</a></h3>
-<p>Here is an example of an x-y diagram for acetonitrile and 1-butanol at 101.325 kPa.
-<img alt="VLE%20Acetonitrile.png" src="Ch8/attachment:VLE%20Acetonitrile.png" /></p>
-<p>In this diagram, for every mole fraction (x) of acetonitrile in the liquid phase (x-axis), we have its corresponding mole fraction in the vapor phase (y).  The figure tells us that the pressure is constant.</p>
-<p>What do we know about the temperature?</p>
-<p><strong>Key point: At every point on this x-y diagram the system is in equilibrium.</strong></p>
-<p>At equilibrium, the temperature and pressure in the vapor and liquid phase are equal and constant.  The Gibb’s free energies of each component in each phase are equal.  In the equations below, the superscripts I and II refer to the liquid and vapor phases.</p>
-<p><span class="math notranslate nohighlight">\(T^{I}=T^{II}\)</span></p>
-<p><span class="math notranslate nohighlight">\(P^{I}=P^{II}\)</span></p>
-<p><span class="math notranslate nohighlight">\(G_{i}^{I}=G_{i}^{II}\)</span></p>
-<p>The figure below indicates a single point (circled in pink) on this x-y diagram.  What do we know about the liquid and vapor phase compositions at this point?</p>
-<p><img alt="VLE%20Acetonitrile%20modified.png" src="Ch8/attachment:VLE%20Acetonitrile%20modified.png" /></p>
-<p>In the next figure, we have a new x-y chart for the same system, but at a temperature of 333.15 K.</p>
-<p>What do we know about the pressure of this system?  For the same spot on the diagram as is circled in chart above, what are the liquid and vapor phase compositions?  For what regions of the chart do we see the most differences in system behavior?</p>
-<p><img alt="VLE%20Acetonitrile%20second%20Temp.png" src="Ch8/attachment:VLE%20Acetonitrile%20second%20Temp.png" /></p>
+<section id="using-nist-properties">
+<h2>Using NIST Properties<a class="headerlink" href="#using-nist-properties" title="Link to this heading">#</a></h2>
 </section>
-<section id="t-x-y-diagrams">
-<h3>T-x-y diagrams<a class="headerlink" href="#t-x-y-diagrams" title="Link to this heading">#</a></h3>
-<p>The Dortmund data bank also has T-x-y diagrams for the acetonitrile/1-butanol system</p>
-<p><img alt="Acetonitrile%20TXY.png" src="Ch8/attachment:Acetonitrile%20TXY.png" /></p>
-<p>This figure is plotted at a constant temperature of 101.325 Pa.  The figure illustrates the composition of the liquid and vapor phases as the temperature is varied at this single pressure.  The lower line with points in the shape of circles is the composition of acetonitrile in the liquid phase (x).  The higher line with the points in the shape of triangles is the composition of acetonitrile in the vapor phase (y).</p>
-<p>In the figure below, the region above the vapor phase composition line is labeled as vapor.  We know that this region is fully vapor because as T increases at a constant P and the system moves into a single phase, that phase will be vapor.  On the other hand, when the temperature decreases to regions below the liquid phase composition line, the single phase present is liquid.  Between the two lines, the mixture is in two phases.</p>
-<p>Note, when the temperature and pressure of a system dictate that it is in a single phase, it is <em>not possible</em> to separate the mixture using vapor-liquid separation techniques that we will soon discuss, like flash tanks and distillation columns.  Temperature and pressure must be chosen for any one mixture to enable vapor-liquid separation.</p>
-<p><img alt="Acetonitrile%20TXY%20labeled.png" src="Ch8/attachment:Acetonitrile%20TXY%20labeled.png" /></p>
-<p>The concept of a <strong>tie line</strong> is important to apply with T-x-y diagrams.</p>
-<p>A tie line is drawn at a temperature of 362 K in the figure below.  The points of intersection of the tie line with the vapor and liquid curves tell us the vapor and liquid composition of the mixture at this temperature (and the pressure, which is constant and known for T-x-y diagrams).  In this figure, the tie line is at a temperature of 362 K. The mole fraction of acetonitrile in the liquid phase is about 0.45 at this temperature. The mole fraction of acetonitrile in the vapor phase is 0.8.</p>
-<p>What are the liquid and vapor phase mole fractions of 1-butanol?</p>
-<p>What temperature was the first x-y diagram plotted at?</p>
-<p>T-x-y diagrams tell us when to expect phase changes as a system moves across a range of temperatures at a constant pressure.  The T-x-y diagram can tell us which component is “lighter” or boils at a lower temperature at the pressure of the diagram.  Look at the T-x-y diagram for acetonitrile and 1-butanol above.  Which component would you guess has a lower boiling point?</p>
-<p>As a hint, consider what happens when the system <em>only</em> contains acetonitrile in the liquid phase such that x=1.  The system transitions to vapor at about 355 K.  On the other hand, when x=0 and the system only contains 1-butanol, the system would transition to vapor at 390 K.</p>
-<p>Therefore, acetonitrile is the more volatile component.  In fact, at 101.325 kPa (or 1 atm) acetonitrile’s boiling point is 355 K; 1-butanol’s is 390 K.</p>
-<p>What we really need T-x-y diagrams for is to tell us, for a system at a constant pressure and let’s say a fixed liquid phase composition, what temperature do we need to be at to get to a two-phase system that is separable at all.  We can also use it to tell us what temperature we need to get to to achieve a target composition in the liquid and vapor phase.  This information is important for chemical engineers who need to produce, for example, products at a certain purity so that they can be sold or further processed.</p>
-<p>Let’s say we start with an acetonitrile, 1-butanol system at 360 K and a liquid phase composition of 0.3 mol acetonitrile/mol liquid phase.  The hollow orange circle on the chart below marks this point. When <span class="math notranslate nohighlight">\(x_{acetonitrile}\)</span> is 0.3 at this temperature, the system is entirely liquid.  As the temperature heats up at constant composition, at T=366K, the system enters the two phase region.  With the tie line, we know at equilibrium at this temperature, when <span class="math notranslate nohighlight">\(x_{acetonitrile}\)</span> is 0.3, <span class="math notranslate nohighlight">\(y_{acetonitrile}\)</span> is 0.7.  What do we know about <span class="math notranslate nohighlight">\(x_{1-butanol}\)</span> and <span class="math notranslate nohighlight">\(y_{1-butanol}\)</span>?  <em>Remember that in each phase, the sum of mole fractions must equal 1.</em></p>
-<p>The point where the x-phase composition line is reached at a constant liquid phase composition is called the <strong>bubble point</strong>.  Before that temperature is reached, the only phase is <em>liquid</em> but at that temperature, the very first bubble forms and the system becomes two-phase.  The x-composition line is in fact connecting all the bubble points of the system as the liquid phase mole fraction goes from 0 to 1.</p>
-<p><img alt="TXY_lowT.jpg" src="Ch8/attachment:TXY_lowT.jpg" /></p>
-<p>What if we want a higher mole fraction of 1-butanol in the vapor phase upon separation?  1-butanol is the less volatile component. To push more of it into the vapor phase, we need to increase the temperature beyond 366 K.  Let’s try 382 K.</p>
-<p><img alt="TXY_highT.jpg" src="Ch8/attachment:TXY_highT.jpg" /></p>
-<p>At this temperature, we achieve a vapor phase mole fraction of acetonitrile of 0.3, which means that the vapor phase mole fraction of 1-butanol is 0.7. Do we need to start at a mole fraction of 0.3 at 366 K to achieve this composition?  No, an acetonitrile, 1-butanol system at 101.325 kPa and 382 K will always have this equilibrium concentration, regardless of the starting composition.</p>
-<p>Another key concept to understand about T-x-y diagrams is the <strong>dew point</strong>.  At a constant mole fraction in the vapor region, as the temperature decreases at a constant pressure, eventually, the first drop of a liquid will appear and the system becomes two phases.  The figure below depicts the dew point at a vapor phase composition of acetonitrile of 0.6.</p>
-<p><img alt="TXY_Dew.jpg" src="Ch8/attachment:TXY_Dew.jpg" /></p>
-<p>From a T-x-y diagram we can plot an x-y diagram at a constant pressure.  For the acetonitrile, 1-butanol system we have been considering at 101.325 kPa, if we consider all the tie lines, we will see the relationship between the points these tie lines connect and the points on the x-y plot.  In the T-x-y chart below, the tie line at 366 indicates that at this temperature and 101.325 kPa, the equilibrium composition has a liquid phase acetonitrile mole fraction of 0.3 and a vapor phase acetonitrile mole fraction of 0.7.  These points are marked on the T-x-y diagram with orange circles.  The corresponding point on the x-y diagram is indicated with an orange circle.  Because we have the T-x-y chart available, we know that this equilibrium composition occurs at a temparture of 366 K.</p>
-<p><img alt="TXY_XY.jpg" src="Ch8/attachment:TXY_XY.jpg" /></p>
+<section id="using-equations-of-state-vdw">
+<h2>Using Equations of State: VDW<a class="headerlink" href="#using-equations-of-state-vdw" title="Link to this heading">#</a></h2>
+<section id="equation-of-state">
+<h3>Equation of state:<a class="headerlink" href="#equation-of-state" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[P = \dfrac{RT}{\underline{V} - b} - \dfrac{a}{\underline{V}^2}\]</div>
+<p>where</p>
+<div class="math notranslate nohighlight">
+\[ a = 27\dfrac{(RT_c)^2}{64P_c} \text{and } b = 0.125\dfrac{RT_c}{P_c}\]</div>
 </section>
-<section id="p-x-y-diagrams">
-<h3>P-x-y diagrams<a class="headerlink" href="#p-x-y-diagrams" title="Link to this heading">#</a></h3>
-<p>The final graph type we will cover is P-x-y diagrams, which are drawn at a fixed temperature.  The P-x-y for the same acetonitrile, 1-butanol system we’ve been considering is below.  Note the temperature is constant at T = 333.15 K.  With the temperature held constant, regions of higher pressure will be in the liquid phase, so the upper left side of the figure that is single-phase is labeled as being in the liquid phase and lies above the liquid phase composition line (denoted with circles).  At lower pressures, the system will be in a single vapor phase.  This region is in the lower right corner, below the vapor phase composition line (denoted with triangles).  In between the two composition lines is the two-phase region.  Tie lines tell us, at a constant pressure, what the composition in the liquid and vapor phases is.  Take a moment to determine what the vapor and liquid phase compositions are at 24 kPa in the diagram below.</p>
-<p><img alt="Pxy%20Labeled.jpg" src="Ch8/attachment:Pxy%20Labeled.jpg" /></p>
-<p>Just as with the T-x-y diagram, it is possible to identify <strong>bubble and dew points</strong> on a P-x-y diagram.  The bubble point occurs when a system that is liquid phase only decreases in pressure such that a single bubble of gas forms.   The dew point occurs when a system is in a single, vapor phase and the pressure increases to the point where the first drop of liquid forms.</p>
-<p>In the figure below, the bubble point at an initial composition of 0.2 mole fraction acetonitrile in the liquid phase is shown at a pressure of 28 kPa, where the liquid phase composition line intersects the constant x=0.2 line.  We know from the tie line what the vapor phase composition is at the bubble point.  An analagous figure could be drawn for the dew point if we started at a vapor phase mole fraction of acetonitrile of 0.2 and 8 kPa.  The dew point would occur just at about 12 kPa.</p>
-<p><img alt="pXY_bubble.jpg" src="Ch8/attachment:pXY_bubble.jpg" /></p>
+<section id="expression-in-its-cubic-form">
+<h3>Expression in its cubic form:<a class="headerlink" href="#expression-in-its-cubic-form" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[ Z^3 + \alpha Z^2 + \beta Z + \gamma = 0 \]</div>
+<p>where</p>
+<p><span class="math notranslate nohighlight">\(\quad \alpha = -1 - B\)</span></p>
+<p><span class="math notranslate nohighlight">\(\quad \beta = A\)</span></p>
+<p><span class="math notranslate nohighlight">\(\quad \gamma = -AB\)</span></p>
+<p>where the constants <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> are given as:</p>
+<p><span class="math notranslate nohighlight">\( A = \dfrac{aP}{RT}^2 \)</span>
+<span class="math notranslate nohighlight">\( B = \dfrac{bP}{RT}\)</span></p>
 </section>
-<section id="key-take-aways">
-<h3>Key Take Aways<a class="headerlink" href="#key-take-aways" title="Link to this heading">#</a></h3>
-<p>In this chapter we have reviewed three types of vapor-liquid equilibrium diagrams.  These diagrams help us understand the properties of systems we are trying to separate.  In particular, they help us understand the conditions at which the system contains two phases, which is necessary if we are to separate a binary system based on it separating into phases.</p>
-<ul class="simple">
-<li><p>x-y diagrams tell us equilibrium compositions at either a set T or P.</p></li>
-<li><p>T-x-y and P-x-y diagrams tell us where we will have a two-phase region and what equilibrium compositions will be</p></li>
-<li><p>We can determine bubble and dew points from T-x-y and P-x-y diagrams.</p></li>
-<li><p>For a given system, there are interrelationships among the diagrams.</p></li>
-</ul>
+<section id="fugacity-expression-from-sandler-eq-7-4-13">
+<h3>Fugacity expression from Sandler (Eq 7.4-13):<a class="headerlink" href="#fugacity-expression-from-sandler-eq-7-4-13" title="Link to this heading">#</a></h3>
+<p>Sandler gives the fugacity coefficient, <span class="math notranslate nohighlight">\(\phi\)</span> for the VDW equation of state as:</p>
+<div class="math notranslate nohighlight">
+\[\ln{\phi} = (Z-1) - \ln{(Z-B)} - \dfrac{A}{Z}\]</div>
 </section>
 </section>
 </section>
@@ -513,7 +523,7 @@
         },
         kernelOptions: {
             name: "python3",
-            path: "./Ch8"
+            path: "./Ch4"
         },
         predefinedOutput: true
     }
@@ -547,12 +557,12 @@
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#different-types-of-separations">Different types of Separations</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#foundational-data-and-graphs-of-vapor-liquid-equilibrium">Foundational data and graphs of vapor-liquid equilibrium</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#x-y-diagrams">x-y diagrams</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#t-x-y-diagrams">T-x-y diagrams</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#p-x-y-diagrams">P-x-y diagrams</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-take-aways">Key Take Aways</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-steam-tables">Using Steam Tables</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-nist-properties">Using NIST Properties</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-equations-of-state-vdw">Using Equations of State: VDW</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#equation-of-state">Equation of state:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#expression-in-its-cubic-form">Expression in its cubic form:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fugacity-expression-from-sandler-eq-7-4-13">Fugacity expression from Sandler (Eq 7.4-13):</a></li>
 </ul>
 </li>
 </ul>

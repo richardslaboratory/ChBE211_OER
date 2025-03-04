@@ -1,0 +1,1282 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Equilibrium of Mixtures &#8212; Introduction to Thermodynamics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Ch7/6.Mixture-Equilibrium';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Activity Coefficients" href="7.Activity-Coefficient-Models.html" />
+    <link rel="prev" title="Calculating the Accuracy of Equations of State" href="../Ch5/5.Accuracy-EOS.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Introduction to Thermodynamics - Home"/>
+    <img src="../_static/logo.png" class="logo__image only-dark pst-js-only" alt="Introduction to Thermodynamics - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Foreword
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Definitions and Balance Expressions</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Ch1/1.Thermodynamic-Definitions.html">Thermodynamic Definitions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch1/2.Real-Gas-Properties.html">Real Gas Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch1/3.Equations-of-State.html">Equations of State</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch1/4.Balance-Expressions.html">Macroscopic Balance Expressions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch1/5.Conservation-of-Mass.html">Conservation of Mass</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Foundations of Thermodynamics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Ch2/1.Conservation-of-Energy.html">Conservation of Energy and the 1st Law of Thermodynamics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch2/2.Expansion-of-a-Gas.html">Expansion of a Gas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch2/3.Entropy-Balance-Expression.html">Balance Expression for Entropy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch2/4.Entropy-at-0K.html">Entropy at 0K</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch2/5.Free-Energies.html">Free Energy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch2/6.Changes-of-State.html">Changes of State</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Applications of Thermodynamics in Chemical Engineering</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Ch3/1.Unit-Operations.html">Unit Operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch3/2.Property-Diagram-Single-Components.html">Property Database for Common Substances</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch3/3.Heat-Engines.html">Heat Engines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch3/4.Refrigeration.html">Refrigeration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch3/5.Liquefaction.html">Liquefaction</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Vapor-Liquid Equilibrium for Non-Ideal Gases</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Ch4/1.Deriving-Useful-Thermodynamic-Relationships.html">Deriving Useful Thermodynamic Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch4/2.Virial-Equations-of-State.html">Volumetric Equations of State</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch4/3.Law-of-Corresponding-States.html">Law of Corresponding States and Critical Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch4/4.Thermal-Variables-from-EOS.html">Computing Thermal Variables from an Equation of State</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch4/5.Vapor-Liquid-Equilibrium.html">Vapor Liquid Equilibrium</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch4/6.Calculating-Fugacity.html">Calculating Fugacity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch4/7.Constructing-Property-Diagrams.html">Constructing Property Diagrams</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../Ch4/8.FirstorderPhaseTransitions.html">Phase Transitions</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Thermodynamics of Mixtures</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Ch5/1.Introduction-to-Mixtures.html">Introduction to Mixtures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch5/3.Gaseous-Mixtures.html">Gaseous Mixtures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch5/4.Liquid-Mixtures.html">Liquid Mixtures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch5/5.Accuracy-EOS.html">Calculating the Accuracy of Equations of State</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Equilibrium of Mixtures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="7.Activity-Coefficient-Models.html">Activity Coefficients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="8.Applying-Definitions.html">Applying our Thermodynamic Definitions to Mixtures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="9.Calculating-Mixture-Fugacity.html">Vapor-Liquid Equilibrium</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/Ch7/6.Mixture-Equilibrium.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Equilibrium of Mixtures</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fugacity-of-species-i-in-a-mixture">Fugacity of species i in a mixture</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gaseous-mixtures">Gaseous Mixtures</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-lewis-randall-rule">The Lewis-Randall Rule:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ideal-gas-mixtures-extension-of-the-lewis-randall-rule">Ideal Gas Mixtures - Extension of the Lewis-Randall Rule</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gaseous-mixtures-at-all-state-points">Gaseous Mixtures at all State Points</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#liquid-mixtures">Liquid Mixtures</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#continuous-modelling-fugacity-from-equation-of-state">Continuous Modelling - Fugacity from Equation of state</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#discontinuous-modelling-activity-coefficient-models">Discontinuous Modelling - Activity coefficient models</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#discontinuous-modelling-henrys-law">Discontinuous Modelling - Henry’s Law</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-of-activity-coefficient-models">Summary of Activity Coefficient Models</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#flash-and-dew-point-calculations">Flash and Dew Point Calculations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#diagrams-for-real-property-data">Diagrams for Real Property data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#diagram-using-calculated-t-x-y-diagram">Diagram Using Calculated T-x-y diagram</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-1-hand-calculation">Example 1: Hand Calculation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lets-also-generate-a-t-xy-plot">Let’s also generate a T-xy plot.</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-2-combining-preos-with-quadratic-mixing-rule-for-continuous-dew-point-and-bubble-point-calculations">Example 2: Combining PREOS with Quadratic Mixing Rule for Continuous Dew Point and Bubble Point Calculations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-3-combining-rkseos-with-quadratic-mixing-rule-for-continuous-dew-point-and-bubble-point-calculations">Example 3: Combining RKSEOS with Quadratic Mixing Rule for Continuous Dew Point and Bubble Point Calculations</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="equilibrium-of-mixtures">
+<h1>Equilibrium of Mixtures<a class="headerlink" href="#equilibrium-of-mixtures" title="Link to this heading">#</a></h1>
+<section id="fugacity-of-species-i-in-a-mixture">
+<h2>Fugacity of species i in a mixture<a class="headerlink" href="#fugacity-of-species-i-in-a-mixture" title="Link to this heading">#</a></h2>
+<p>The last ingredient that completes our thermodynamic description of mixture properties is describing vapor liquid equilibrium of mixtures. If we imagine a mixture inside an isolated container that undergoes a transition from a vapor phase to a liquid phase, then we can imagine that there will be two phases in coexistance.</p>
+<p>In chapter 7, we found that at a given a temperature a single component system has no degrees of freedom (i.e., the vapor pressure for a 2 phase system is defined by the selection of temperature). Recall that the criteria for equilibrium for a single component VLE was:</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(T_v=T_l\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(P_v=P_l\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\bar{f}_i^{L}=\bar{f}_i^{v}\)</span></p></li>
+</ol>
+<p>For real mixtures, we will see very similar criteria, except we will have to deal with the fact that there is more than one component. In the description of single component mixtures, we used the <em>fugacity</em> as a mathematical tool.</p>
+</section>
+<section id="gaseous-mixtures">
+<h2>Gaseous Mixtures<a class="headerlink" href="#gaseous-mixtures" title="Link to this heading">#</a></h2>
+<section id="the-lewis-randall-rule">
+<h3>The Lewis-Randall Rule:<a class="headerlink" href="#the-lewis-randall-rule" title="Link to this heading">#</a></h3>
+<p>Assumes that the mixture is relatively simple such that it follows <em>Amagat’s Law</em> that:</p>
+<p><span class="math notranslate nohighlight">\(\quad \underline{V}=\sum_i x_i \underline{V}_i\)</span></p>
+<p>or</p>
+<p><span class="math notranslate nohighlight">\(\quad Z=\sum_i y_i Z_i\)</span></p>
+<p>when this is the case, then if we consider the fugacity equation:</p>
+<div class="math notranslate nohighlight">
+\[\ln\bigg(\dfrac{\bar{f}_i}{y_if_i}\bigg)=\dfrac{1}{RT}\int_0^P\big(\bar{V}_i-\underline{V}_i\big)dP\]</div>
+<p>then if <span class="math notranslate nohighlight">\(\bar{V}_i=\underline{V}_i\)</span>, then the integrand is zero and we can see that</p>
+<div class="math notranslate nohighlight">
+\[\bar{f}_i=y_if_i\]</div>
+<p>where</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\bar{f}_i\)</span> is the fugacity of species <span class="math notranslate nohighlight">\(i\)</span> in the mixture</p></li>
+<li><p><span class="math notranslate nohighlight">\(y_i\)</span> is the mole fraction in the vapor phase</p></li>
+<li><p><span class="math notranslate nohighlight">\(f_i (T,P)\)</span> is the fugacity of species i in the pure phase at the same temperature and pressure</p></li>
+</ul>
+<p>recall that the expression for the fugacity is given as:</p>
+<div class="math notranslate nohighlight">
+\[\ln\bigg(\dfrac{f_i}{P}\bigg)=\dfrac{1}{RT}\int_\infty^\underline{V} \bigg(\dfrac{RT}{\underline{V}}-P\bigg)d\underline{V}-\ln Z +(Z-1)\]</div>
+<p>this equation can be estimated by from the equation of state information for the pure component alone.</p>
+</section>
+<section id="ideal-gas-mixtures-extension-of-the-lewis-randall-rule">
+<h3>Ideal Gas Mixtures - Extension of the Lewis-Randall Rule<a class="headerlink" href="#ideal-gas-mixtures-extension-of-the-lewis-randall-rule" title="Link to this heading">#</a></h3>
+<p>A special case of the Lewis-Randal rule is that if the gaseous mixture is at sufficiently low pressure, then the fugacity coefficient of the components will approach 1 or fugacity will approach the macroscopic pressure.</p>
+<div class="math notranslate nohighlight">
+\[lim_{P\rightarrow0} f_i\approx P \]</div>
+<p>In these special circumstances, the fugacity of species <span class="math notranslate nohighlight">\(i\)</span> is given simply by the partial pressure <span class="math notranslate nohighlight">\(P_i\)</span></p>
+<div class="math notranslate nohighlight">
+\[\bar{f}_i\approx y_iP = P_i\]</div>
+<p>This will only be applicable at the lowest pressures far from the two phase region of the equation of state.</p>
+</section>
+<section id="gaseous-mixtures-at-all-state-points">
+<h3>Gaseous Mixtures at all State Points<a class="headerlink" href="#gaseous-mixtures-at-all-state-points" title="Link to this heading">#</a></h3>
+<p>For the more general case, the fugacity of species <span class="math notranslate nohighlight">\(i\)</span> in a gaseous mixture must be estimated directly from the equation of state. Recall that in class, we derived an expression for the <span class="math notranslate nohighlight">\(\bar{f}_i\)</span> in terms of the equation of state as:</p>
+<div class="math notranslate nohighlight">
+\[\ln\bigg(\dfrac{\bar{f}_i}{y_iP}\bigg)=\dfrac{1}{RT}\int_\infty^\underline{V}\bigg(\dfrac{RT}{\underline{V}}-N\bigg(\dfrac{\partial P}{\partial N_i}\bigg)_{T,V,N_{i\ne j}}\bigg)d\underline{V} - lnZ\]</div>
+<p>where <span class="math notranslate nohighlight">\(P\)</span> is the pressure determined from the volumetric equation of state that includes the explicity composition and temperature dependence. In order to perform this calculation at a specified <span class="math notranslate nohighlight">\(T\)</span>, <span class="math notranslate nohighlight">\(P\)</span>, and mole fraction, we must follow a systematic procedure:</p>
+<ol class="arabic simple">
+<li><p>Obtain parameters <span class="math notranslate nohighlight">\(a_ii\)</span> and <span class="math notranslate nohighlight">\(b_i\)</span> for each pure component</p></li>
+<li><p>Compute the <span class="math notranslate nohighlight">\(a_{mix}\)</span> and <span class="math notranslate nohighlight">\(b_mix\)</span> as a function of the vapor phase composition using the desired mixing rule. Examples include:</p>
+<ul class="simple">
+<li><p>Quadratic Mixing Rules</p></li>
+<li><p>Sandler - Kwong Mixing Rules</p></li>
+</ul>
+</li>
+<li><p>Solve the cubic equation of state at the specified <span class="math notranslate nohighlight">\(T\)</span>, <span class="math notranslate nohighlight">\(P\)</span>, and <span class="math notranslate nohighlight">\(\underline{y}\)</span> to obtain the compressibility <span class="math notranslate nohighlight">\(Z\)</span></p></li>
+<li><p>Using the <span class="math notranslate nohighlight">\(Z\)</span> value compute the fugacity for each species using the equation above.</p></li>
+</ol>
+</section>
+</section>
+<section id="liquid-mixtures">
+<h2>Liquid Mixtures<a class="headerlink" href="#liquid-mixtures" title="Link to this heading">#</a></h2>
+<section id="continuous-modelling-fugacity-from-equation-of-state">
+<h3>Continuous Modelling - Fugacity from Equation of state<a class="headerlink" href="#continuous-modelling-fugacity-from-equation-of-state" title="Link to this heading">#</a></h3>
+<p>The estimation of the fugacities of liquid mixtures is more complicated for gaseous mixtures because liquids have higher densities and therefore require accurate predictions of compressibility far from their gaseous state. However, there are certain categories of mixtures where the equation of state does a good job of predicting VLE of mixtures.</p>
+<ol class="arabic simple">
+<li><p><em>Hydrocarbon mixtures</em> - hydrocarbons have similar boiling points and often are close to ideal mixtures. This greatly simplifies their behavior</p></li>
+<li><p><em>Dissolved Gases</em> - the solubility of gases dissolved in liquids will generally be well predicted from equation of state predictions alone.</p></li>
+</ol>
+</section>
+<section id="discontinuous-modelling-activity-coefficient-models">
+<h3>Discontinuous Modelling - Activity coefficient models<a class="headerlink" href="#discontinuous-modelling-activity-coefficient-models" title="Link to this heading">#</a></h3>
+<p>As we have discussed, in most cases mixtures involve more than one component whose density is not accurately described by an equation of state in the liquid phase. For example mixtures containing alcohols, organic or inorganic acids, or salts. In these cases, the approach of modeling fugacity from activity coefficient models is preferred. If this is the case, we proceed as discussed in previous lectures using the definition of the activity coefficient</p>
+<div class="math notranslate nohighlight">
+\[\bar{G}_i^{ex}=RT\ln{\gamma_i}=\dfrac{\partial}{\partial N_i}\bigg|_{N_{j\ne i},T,P}\bigg(G^{ex}\bigg)\]</div>
+<div class="math notranslate nohighlight">
+\[\gamma_i x_i f_i =\bar{f}_i \]</div>
+<p>where <span class="math notranslate nohighlight">\(f_i(T,P)\)</span> is the fugacity of species <span class="math notranslate nohighlight">\(i\)</span> at the temperature and pressure of the mixture.</p>
+<p>The activity coefficient models that we have discussed include:</p>
+<ol class="arabic simple">
+<li><p>Margules Equations</p></li>
+<li><p>Van Laar</p></li>
+<li><p>Wilson</p></li>
+<li><p>NRTL</p></li>
+<li><p>UNIQUAC and UNIFAC</p></li>
+</ol>
+</section>
+<section id="discontinuous-modelling-henrys-law">
+<h3>Discontinuous Modelling - Henry’s Law<a class="headerlink" href="#discontinuous-modelling-henrys-law" title="Link to this heading">#</a></h3>
+<p>If the pure species does not exist as a liquid at the temperature pressure of interest, than more appropriate starting points are used. In some cases, if the mixture is dilute, it is appropriate to use *Henry’s law constant$, which can be tabulated for a variety of soluble species/solvent pairs.</p>
+<p><span class="math notranslate nohighlight">\(\quad\quad \bar{f}_i^L =x_i H_i (T,P)\)</span> as <span class="math notranslate nohighlight">\(x_i\rightarrow 0\)</span></p>
+</section>
+<section id="summary-of-activity-coefficient-models">
+<h3>Summary of Activity Coefficient Models<a class="headerlink" href="#summary-of-activity-coefficient-models" title="Link to this heading">#</a></h3>
+<p>A table summarizing which activity coefficient model to use is given below based on experience and strength of correlation with experimental data.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Compound</p></th>
+<th class="head text-center"><p>Nonpolar</p></th>
+<th class="head text-center"><p>Weakly Polar</p></th>
+<th class="head text-center"><p>Strongly Polar</p></th>
+<th class="head text-center"><p>Water</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>Nonpolar</p></td>
+<td class="text-center"><p>All</p></td>
+<td class="text-center"><p>UNIQAC</p></td>
+<td class="text-center"><p>UNIQAC/Wilson</p></td>
+<td class="text-center"><p>Henry’s Constant</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Weakly Polar</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>UNIQAC</p></td>
+<td class="text-center"><p>Henry’s Constant</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Strongly Polar</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>UNIQAC</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Carboxylic Acids should be modelled with Wilson model.</p>
+<p>Definitions:</p>
+<ul class="simple">
+<li><p>nonpolar compounds: Chemical species with low dielectric constant</p>
+<ul>
+<li><p>Ex. hydrocarbons, symmetric small molecules</p></li>
+</ul>
+</li>
+<li><p>weakly polar compounds:</p>
+<ul>
+<li><p>Ex. Aldehydes, ethers, ketones</p></li>
+</ul>
+</li>
+<li><p>very polar compounds:</p>
+<ul>
+<li><p>Ex. Alcohols, amines</p></li>
+</ul>
+</li>
+</ul>
+<p>We can see that from the table above, the UNIQAC model is the most robust and general activity coefficient model with Henry’s constant being slightly preferred when the substance is dilute and potentially only slightly miscible with the species of interest.</p>
+</section>
+</section>
+<section id="flash-and-dew-point-calculations">
+<h2>Flash and Dew Point Calculations<a class="headerlink" href="#flash-and-dew-point-calculations" title="Link to this heading">#</a></h2>
+<p>Ultimately all of this framework boils down (no pun intended) to the fact that engineers need to separate many types of mixtures to achieve multiple purposes.  One of the most common purposes is to remove a saleable product from a solvent or mixture of multiple products.  Another purpose could be to remove a pollutant or toxin from a waste stream.
+To achieve these types of separations, we must be able to calculate the equilibrium between liquid mixtures. Before we begin, we need to introduce two new definitions:</p>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Flash_point">Flash Point</a></p></li>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Dew_point">Dew Point</a></p></li>
+</ol>
+<p>The flash points and dew points s are functions of composition, temperature, and pressure. Therefore, they are complicated to represent. Using fugacity coefficients and activity coefficients they can be calculated directly or alternatively measured by observing VLE of the mixture and putting the experimental data in a diagram so that it can be utilized to design separations. The foundational diagrams that we use in separations are:</p>
+<ul class="simple">
+<li><p>x-y - diagram</p></li>
+<li><p>T-x-y - diagram</p></li>
+<li><p>P-x-y - diagram</p></li>
+</ul>
+<section id="diagrams-for-real-property-data">
+<h3>Diagrams for Real Property data<a class="headerlink" href="#diagrams-for-real-property-data" title="Link to this heading">#</a></h3>
+<p>Example T-x,y diagram for the binary mixture of ethanol and water at 1 bar</p>
+<p>Mixtures of ethanol and water at room pressure have an azeotrope, a composition of ethanol (around 95 mol%) where the ethanol (species 2) and water (species 1) see each other as identical. Because of this, they cannot be separated further as the composition in the vapor phase and the liquid phases are the same.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">data_bubbleT</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">([(</span><span class="o">-</span><span class="mf">0.005804985729987333</span><span class="p">,</span> <span class="mf">373.01174851527213</span><span class="p">),</span>
+<span class="p">(</span><span class="mf">0.02864624223000123</span><span class="p">,</span> <span class="mf">366.37145443294014</span><span class="p">),</span>
+<span class="p">(</span><span class="mf">0.04196953883383053</span><span class="p">,</span> <span class="mf">364.2310726061938</span><span class="p">),</span>
+<span class="p">(</span><span class="mf">0.08335719365654065</span><span class="p">,</span> <span class="mf">360.3884029592958</span><span class="p">),</span>
+<span class="p">(</span><span class="mf">0.12629192104849957</span><span class="p">,</span> <span class="mf">358.35612225105984</span><span class="p">),</span>
+<span class="p">(</span><span class="mf">0.16724547192640565</span><span class="p">,</span> <span class="mf">357.09203003629847</span><span class="p">),</span>
+<span class="p">(</span><span class="mf">0.2099954742354691</span><span class="p">,</span> <span class="mf">356.157016320461</span><span class="p">),</span>
+<span class="p">(</span><span class="mf">0.29722727650574027</span><span class="p">,</span> <span class="mf">355.0001108350497</span><span class="p">),</span>
+<span class="p">(</span><span class="mf">0.3528572352196843</span><span class="p">,</span> <span class="mf">354.5581560742225</span><span class="p">),</span>
+<span class="p">(</span><span class="mf">0.3992740304242211</span><span class="p">,</span> <span class="mf">353.8423925592736</span><span class="p">),</span>
+<span class="p">(</span><span class="mf">0.4567466218400466</span><span class="p">,</span> <span class="mf">353.4551995492708</span><span class="p">),</span>
+<span class="p">(</span><span class="mf">0.5012468943095438</span><span class="p">,</span> <span class="mf">353.123581080457</span><span class="p">),</span>
+<span class="p">(</span><span class="mf">0.5698676444781055</span><span class="p">,</span> <span class="mf">352.51632507920084</span><span class="p">),</span>
+<span class="p">(</span><span class="mf">0.6143494444393132</span><span class="p">,</span> <span class="mf">352.2944333096269</span><span class="p">),</span>
+<span class="p">(</span><span class="mf">0.6366180531823513</span><span class="p">,</span> <span class="mf">352.01889737598015</span><span class="p">),</span>
+<span class="p">(</span><span class="mf">0.6866646962657825</span><span class="p">,</span> <span class="mf">351.7418374603995</span><span class="p">),</span>
+<span class="p">(</span><span class="mf">0.7274150495525036</span><span class="p">,</span> <span class="mf">351.68473893727656</span><span class="p">),</span>
+<span class="p">(</span><span class="mf">0.7756005874257634</span><span class="p">,</span> <span class="mf">351.46264397011146</span><span class="p">),</span>
+<span class="p">(</span><span class="mf">0.80894346488838</span><span class="p">,</span> <span class="mf">351.40595184217085</span><span class="p">),</span>
+<span class="p">(</span><span class="mf">0.8774995612779282</span><span class="p">,</span> <span class="mf">351.1827392882542</span><span class="p">),</span>
+<span class="p">(</span><span class="mf">0.9293611283008063</span><span class="p">,</span> <span class="mf">351.1250311723577</span><span class="p">),</span>
+<span class="p">(</span><span class="mf">0.9978618071654859</span><span class="p">,</span> <span class="mf">351.2309987161606</span><span class="p">),</span>
+<span class="p">])</span>
+
+<span class="n">data_dewT</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">([(</span><span class="o">-</span><span class="mf">0.003990061790540234</span><span class="p">,</span> <span class="mf">373.2311003149562</span><span class="p">),</span>
+<span class="p">(</span><span class="mf">0.2582964652855388</span><span class="p">,</span> <span class="mf">366.24912948304683</span><span class="p">),</span>
+<span class="p">(</span><span class="mf">0.316055380579852</span><span class="p">,</span> <span class="mf">364.1611726348262</span><span class="p">),</span>
+<span class="p">(</span><span class="mf">0.42411955407364993</span><span class="p">,</span> <span class="mf">360.2599820816669</span><span class="p">),</span>
+<span class="p">(</span><span class="mf">0.47823014898077926</span><span class="p">,</span> <span class="mf">357.8430483333179</span><span class="p">),</span>
+<span class="p">(</span><span class="mf">0.5227950752292898</span><span class="p">,</span> <span class="mf">357.12738641716464</span><span class="p">),</span>
+<span class="p">(</span><span class="mf">0.5563503865372359</span><span class="p">,</span> <span class="mf">355.8088372479657</span><span class="p">),</span>
+<span class="p">(</span><span class="mf">0.5898502803203132</span><span class="p">,</span> <span class="mf">354.8194681764863</span><span class="p">),</span>
+<span class="p">(</span><span class="mf">0.6029334343163786</span><span class="p">,</span> <span class="mf">354.1055334398581</span><span class="p">),</span>
+<span class="p">(</span><span class="mf">0.6252112793135616</span><span class="p">,</span> <span class="mf">353.77513415659143</span><span class="p">),</span>
+<span class="p">(</span><span class="mf">0.6401093572490741</span><span class="p">,</span> <span class="mf">353.2805512196473</span><span class="p">),</span>
+<span class="p">(</span><span class="mf">0.6512852247642447</span><span class="p">,</span> <span class="mf">352.89589817953424</span><span class="p">),</span>
+<span class="p">(</span><span class="mf">0.6828224145415585</span><span class="p">,</span> <span class="mf">352.56499090228965</span><span class="p">),</span>
+<span class="p">(</span><span class="mf">0.7032483905827154</span><span class="p">,</span> <span class="mf">352.2346932178185</span><span class="p">),</span>
+<span class="p">(</span><span class="mf">0.7496282407706729</span><span class="p">,</span> <span class="mf">351.73838310134937</span><span class="p">),</span>
+<span class="p">(</span><span class="mf">0.7866933286536313</span><span class="p">,</span> <span class="mf">351.57176107657773</span><span class="p">),</span>
+<span class="p">(</span><span class="mf">0.8682402164977971</span><span class="p">,</span> <span class="mf">351.1832472822322</span><span class="p">),</span>
+<span class="p">(</span><span class="mf">0.8904534077159667</span><span class="p">,</span> <span class="mf">351.236891446305</span><span class="p">),</span>
+<span class="p">(</span><span class="mf">0.9404446332745291</span><span class="p">,</span> <span class="mf">351.2890116284439</span><span class="p">),</span>
+<span class="p">(</span><span class="mf">0.9996674948507884</span><span class="p">,</span> <span class="mf">351.50521386546467</span><span class="p">)])</span>
+
+<span class="n">x2_</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">0.01</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mf">0.01</span><span class="p">)</span>
+<span class="n">x1_</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">x2_</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mf">1.5</span><span class="p">,</span><span class="mf">1.5</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data_bubbleT</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">data_bubbleT</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="mi">273</span><span class="p">,</span>
+         <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;Bubble&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data_dewT</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">data_dewT</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="mi">273</span><span class="p">,</span>
+         <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;Dew&#39;</span><span class="p">)</span>
+
+<span class="n">ymin</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">interp</span><span class="p">(</span><span class="n">x2_</span><span class="p">,</span><span class="n">data_dewT</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">data_dewT</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="mf">273.15</span><span class="p">)</span>
+<span class="n">ymax</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">interp</span><span class="p">(</span><span class="n">x2_</span><span class="p">,</span><span class="n">data_bubbleT</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">data_bubbleT</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="mf">273.15</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">x2_</span><span class="p">,</span><span class="n">ymin</span><span class="p">,</span> <span class="n">ymax</span><span class="p">,</span> <span class="n">interpolate</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> 
+                 <span class="n">color</span><span class="o">=</span><span class="s1">&#39;grey&#39;</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;2 Phase&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$T$ $(^oC)$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$x_2$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;P = 1bar&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mf">1.2</span><span class="p">,</span><span class="mf">0.2</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">frameon</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x1bb1d6abd70&gt;
+</pre></div>
+</div>
+<img alt="../_images/b0e11a1efa35b69da3132e9115337b0cc2ce8ef715b3f78d3754641052618a9a.png" src="../_images/b0e11a1efa35b69da3132e9115337b0cc2ce8ef715b3f78d3754641052618a9a.png" />
+</div>
+</div>
+<p>How do we read these diagrams and why are they called T-x,y diagrams when the x-axis indicates the molar composition of species 2 in the liquid phase. Well recall from Gibb’s Phase rule, that for a 2 component and 2 phase system the number of degrees of freedom is 2 or <span class="math notranslate nohighlight">\(DOF=2\)</span>.</p>
+<p>Therefore, if we are examining isobaric equilibrium data (like those presented above), we only have 1 degree of freedom remaining anywhere in the grey, 2 phase region bounded by the bubble temperature and the dew temperature envelopes. Therefore, if we specify a Temperature for example, then we should be able to know the composition of both the liquid and vapor phases. Let’s see this graphically.</p>
+<p>If I choose a temperature of <span class="math notranslate nohighlight">\(90^o C\)</span>, functionally what I need to do is draw a horizontal line through the 2 phase region as shown below:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">interpolate_sorted</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">x_</span><span class="p">,</span><span class="n">y_</span><span class="p">):</span>
+    
+    <span class="n">x_</span><span class="p">,</span><span class="n">y_</span> <span class="o">=</span> <span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="nb">sorted</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">x_</span><span class="o">.</span><span class="n">copy</span><span class="p">(),</span><span class="n">y_</span><span class="o">.</span><span class="n">copy</span><span class="p">())))</span>
+    
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">interp</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">x_</span><span class="p">,</span><span class="n">y_</span><span class="p">)</span>
+
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data_bubbleT</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">data_bubbleT</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="mi">273</span><span class="p">,</span>
+         <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;Bubble&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data_dewT</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">data_dewT</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="mi">273</span><span class="p">,</span>
+         <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;Dew&#39;</span><span class="p">)</span>
+
+<span class="n">ymin</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">interp</span><span class="p">(</span><span class="n">x2_</span><span class="p">,</span><span class="n">data_dewT</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">data_dewT</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="mf">273.15</span><span class="p">)</span>
+<span class="n">ymax</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">interp</span><span class="p">(</span><span class="n">x2_</span><span class="p">,</span><span class="n">data_bubbleT</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">data_bubbleT</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="mf">273.15</span><span class="p">)</span>
+
+<span class="n">T</span> <span class="o">=</span> <span class="mi">90</span>
+<span class="n">x2</span> <span class="o">=</span> <span class="n">interpolate_sorted</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="n">ymax</span><span class="p">,</span><span class="n">x2_</span><span class="p">)</span>
+<span class="n">y2</span> <span class="o">=</span> <span class="n">interpolate_sorted</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="n">ymin</span><span class="p">,</span><span class="n">x2_</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">x2_</span><span class="p">,</span><span class="n">ymin</span><span class="p">,</span> <span class="n">ymax</span><span class="p">,</span> <span class="n">interpolate</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> 
+                 <span class="n">color</span><span class="o">=</span><span class="s1">&#39;grey&#39;</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;2 Phase&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$T$ $(^oC)$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$x_2$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">x2</span><span class="p">,</span><span class="n">y2</span><span class="p">],[</span><span class="n">T</span><span class="p">,</span><span class="n">T</span><span class="p">],</span><span class="s1">&#39;-k&#39;</span><span class="p">,</span><span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mf">1.2</span><span class="p">,</span><span class="mf">0.2</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;P = 1bar&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">frameon</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;x2=</span><span class="si">{</span><span class="n">x2</span><span class="si">:</span><span class="s1">3.2f</span><span class="si">}</span><span class="s1"> and y2=</span><span class="si">{</span><span class="n">y2</span><span class="si">:</span><span class="s1">3.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x2=0.05 and y2=0.34
+</pre></div>
+</div>
+<img alt="../_images/2e75d5376cab2cbd0603e0277a42749cb9ed8a6b12812eccb50cfb60883d6ed5.png" src="../_images/2e75d5376cab2cbd0603e0277a42749cb9ed8a6b12812eccb50cfb60883d6ed5.png" />
+</div>
+</div>
+<p>Let’s try another temperature, this time lower so that we are very near the azeotrope. If we choose, <span class="math notranslate nohighlight">\(T=78.4 ^oC\)</span>, we find that the liquid phase mole fraction is almost equal to the vapor phase mole fraction resulting in poor separation from ethanol and water.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+
+
+<span class="n">T</span> <span class="o">=</span> <span class="mf">78.4</span>
+<span class="n">x2</span> <span class="o">=</span> <span class="n">interpolate_sorted</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="n">ymax</span><span class="p">,</span><span class="n">x2_</span><span class="p">)</span>
+<span class="n">y2</span> <span class="o">=</span> <span class="n">interpolate_sorted</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="n">ymin</span><span class="p">,</span><span class="n">x2_</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data_bubbleT</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">data_bubbleT</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="mi">273</span><span class="p">,</span>
+         <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;Bubble&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data_dewT</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">data_dewT</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="mi">273</span><span class="p">,</span>
+         <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;Dew&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">x2_</span><span class="p">,</span><span class="n">ymin</span><span class="p">,</span> <span class="n">ymax</span><span class="p">,</span> <span class="n">interpolate</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> 
+                 <span class="n">color</span><span class="o">=</span><span class="s1">&#39;grey&#39;</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;2 Phase&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$T$ $(^oC)$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$x_2$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">x2</span><span class="p">,</span><span class="n">y2</span><span class="p">],[</span><span class="n">T</span><span class="p">,</span><span class="n">T</span><span class="p">],</span><span class="s1">&#39;-k&#39;</span><span class="p">,</span><span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mf">1.2</span><span class="p">,</span><span class="mf">0.2</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;P = 1bar&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">frameon</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;x2=</span><span class="si">{</span><span class="n">x2</span><span class="si">:</span><span class="s1">3.2f</span><span class="si">}</span><span class="s1"> and y2=</span><span class="si">{</span><span class="n">y2</span><span class="si">:</span><span class="s1">3.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x2=0.76 and y2=0.79
+</pre></div>
+</div>
+<img alt="../_images/4f5e6bd557686fdca06f2916c61da74be9da8ff7931d6145c85d5e6555f15ef6.png" src="../_images/4f5e6bd557686fdca06f2916c61da74be9da8ff7931d6145c85d5e6555f15ef6.png" />
+</div>
+</div>
+</section>
+<section id="diagram-using-calculated-t-x-y-diagram">
+<h3>Diagram Using Calculated T-x-y diagram<a class="headerlink" href="#diagram-using-calculated-t-x-y-diagram" title="Link to this heading">#</a></h3>
+<p>We can also construct diagrams from equations of state alone. We will do this with a Python package called Phasepy.</p>
+<section id="example-1-hand-calculation">
+<h4>Example 1: Hand Calculation<a class="headerlink" href="#example-1-hand-calculation" title="Link to this heading">#</a></h4>
+<div class="math notranslate nohighlight">
+\[\overline{f}_i^L(T,P,\underline{x}) = x_i\gamma_i(T,P,\underline{x})P_i^{vap}(T)\phi_i^{L,vap}(T,P) = \overline{f}_i^V(T,P,\underline{y}) = y_iP\overline{\phi}_i^V(T,P,\underline{y}) \]</div>
+<p>Recall the <span style="color:#DA7407"><strong>The Lewis-Randall Rule</strong></span>:</p>
+<div class="math notranslate nohighlight">
+\[\overline{f}_i^V(T,P,\underline{y}) = y_if_i^V(T,P)\]</div>
+<p>We need to know the pure component vapor phase fugacity and vapor phase mole fraction.</p>
+<p><span style="color:#DA7407"><strong>VLE at Low Pressures:</strong></span></p>
+<div class="math notranslate nohighlight">
+\[x_i\gamma_i(T,P,\underline{x})P_i^{vap}(T) \left(\frac{f}{P} \right)_{sat,i} = y_iP\left(\frac{f}{P}\right)_i \]</div>
+<p>Summing over all components:</p>
+<div class="math notranslate nohighlight">
+\[\sum_i{x_i\gamma_i(T,P,\underline{x})P_i^{vap}(T) \left(\frac{f}{P} \right)_{sat,i}} = P\sum_i{y_i\left(\frac{f}{P}\right)_i} \]</div>
+<p>At low pressures, the gas phase is close to being ideal, so we can assume <span class="math notranslate nohighlight">\(\left ( \frac{f}{P} \right)_i = 1\)</span>. Our equation now becomes:</p>
+<div class="math notranslate nohighlight">
+\[\sum_i{x_i\gamma_i(T,P,\underline{x})P_i^{vap}(T) \left(\frac{f}{P} \right)_{sat,i}} = P \]</div>
+<p>And if the liquid phase is an ideal mixture, <span class="math notranslate nohighlight">\(\gamma_i = 1\)</span> and <span class="math notranslate nohighlight">\(\frac{f}{P} = 1\)</span>, we get <span style="color:#DA7407"><strong>Raoult’s Law (for ideal liquid and vapor phases):</strong></span></p>
+<div class="math notranslate nohighlight">
+\[x_iP_i^{vap}(T) = y_iP = P_i\]</div>
+<div class="math notranslate nohighlight">
+\[\sum{x_iP_i^{vap}(T)} = \sum{P_i} = P \]</div>
+<p>How can we find <span class="math notranslate nohighlight">\(P^{vap}\)</span> if we are not given it directly:</p>
+<p>Use <span style="color:#DA7407"><strong>Antoine Equation:</strong></span></p>
+<div class="math notranslate nohighlight">
+\[log\left(P^{vap}(T)\right) = A - \frac{B}{T+C} \]</div>
+<p>The NIST Chem WebBook has <span class="math notranslate nohighlight">\(A,B,C\)</span> parameters for many chemicals.</p>
+</section>
+</section>
+</section>
+<section id="lets-also-generate-a-t-xy-plot">
+<h2>Let’s also generate a T-xy plot.<a class="headerlink" href="#lets-also-generate-a-t-xy-plot" title="Link to this heading">#</a></h2>
+<p>Assume that we now have a constant pressure of 101.325 kPa = 1.01325 bar. This problem requires iterative solving because we need to find the temperature where we minimize the objective function :</p>
+<div class="math notranslate nohighlight">
+\[Obj = \bigg| \sum{x_iP_i^{vap}(T)} - P \bigg|  \]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">##Antoine Coefficients</span>
+<span class="c1">#Water</span>
+<span class="n">A_wat</span> <span class="o">=</span> <span class="mf">5.40221</span>
+<span class="n">B_wat</span> <span class="o">=</span> <span class="mf">1838.675</span>
+<span class="n">C_wat</span> <span class="o">=</span> <span class="o">-</span><span class="mf">31.737</span>
+<span class="c1">#Ethanol</span>
+<span class="n">A_eth</span> <span class="o">=</span> <span class="mf">5.24677</span>
+<span class="n">B_eth</span> <span class="o">=</span> <span class="mf">1598.673</span>
+<span class="n">C_eth</span> <span class="o">=</span> <span class="o">-</span><span class="mf">46.424</span>
+
+<span class="c1">## Establishing new P</span>
+<span class="n">P</span> <span class="o">=</span> <span class="mf">1.01325</span> <span class="c1"># bar</span>
+
+<span class="c1">## Let&#39;s define a temperature range to iterative over:</span>
+
+<span class="k">def</span> <span class="nf">Antoine</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="n">A</span><span class="p">,</span><span class="n">B</span><span class="p">,</span><span class="n">C</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mi">10</span><span class="o">**</span><span class="p">(</span><span class="n">A</span> <span class="o">-</span> <span class="p">(</span><span class="n">B</span><span class="o">/</span><span class="p">(</span><span class="n">T</span> <span class="o">+</span> <span class="n">C</span><span class="p">)))</span>
+
+<span class="k">def</span> <span class="nf">g</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="n">xA</span><span class="p">):</span> <span class="c1">## this is a function. we pass in a temperature (T) and an array index (i)</span>
+    <span class="n">xB</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">xA</span>
+    <span class="n">PsatA</span> <span class="o">=</span> <span class="n">Antoine</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="n">A_wat</span><span class="p">,</span><span class="n">B_wat</span><span class="p">,</span><span class="n">C_wat</span><span class="p">)</span> <span class="c1">## saturated pressure using inputted T</span>
+    <span class="n">PsatB</span> <span class="o">=</span> <span class="n">Antoine</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="n">A_eth</span><span class="p">,</span><span class="n">B_eth</span><span class="p">,</span><span class="n">C_eth</span><span class="p">)</span> 
+    <span class="n">Ptest</span> <span class="o">=</span> <span class="n">xA</span><span class="o">*</span><span class="n">PsatA</span> <span class="o">+</span> <span class="n">xB</span><span class="o">*</span><span class="n">PsatB</span>
+    <span class="n">yA</span> <span class="o">=</span> <span class="n">xA</span><span class="o">*</span><span class="p">(</span><span class="n">PsatA</span><span class="o">/</span><span class="n">P</span><span class="p">)</span> <span class="c1">## calculating vapor molar fraction of water</span>
+    <span class="n">yB</span> <span class="o">=</span> <span class="n">xB</span><span class="o">*</span><span class="p">(</span><span class="n">PsatB</span><span class="o">/</span><span class="n">P</span><span class="p">)</span> <span class="c1">## calculating vapor molar fraction of ethanol</span>
+    <span class="n">diff</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">P</span> <span class="o">-</span> <span class="n">Ptest</span><span class="p">)</span> <span class="c1">## is how we can easily find a minimum. we want this value to be as close to zero as possible!</span>
+    <span class="k">return</span> <span class="n">diff</span>
+
+<span class="n">Tguess</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">350</span><span class="p">,</span><span class="mi">380</span><span class="p">,</span><span class="mi">1000</span><span class="p">)</span>
+<span class="n">Tsat</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1">## define an empty array to store our iterative solution temperature values.</span>
+<span class="k">for</span> <span class="n">xA</span> <span class="ow">in</span> <span class="n">x1_</span><span class="p">:</span>
+    <span class="n">diff</span> <span class="o">=</span> <span class="n">g</span><span class="p">(</span><span class="n">Tguess</span><span class="p">,</span><span class="n">xA</span><span class="p">)</span>
+    <span class="n">Tsat</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Temp</span><span class="p">[</span><span class="nb">list</span><span class="p">(</span><span class="n">diff</span><span class="p">)</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">diff</span><span class="p">))])</span> <span class="c1">## enumerate over the list of differences and find the T w/ the minimum diff. </span>
+
+<span class="n">Tsat</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">Tsat</span><span class="p">)</span>
+
+<span class="n">PsatA</span> <span class="o">=</span> <span class="n">Antoine</span><span class="p">(</span><span class="n">Tsat</span><span class="p">,</span><span class="n">A_wat</span><span class="p">,</span><span class="n">B_wat</span><span class="p">,</span><span class="n">C_wat</span><span class="p">)</span> <span class="c1">## saturated pressure using inputted T</span>
+<span class="n">PsatB</span> <span class="o">=</span> <span class="n">Antoine</span><span class="p">(</span><span class="n">Tsat</span><span class="p">,</span><span class="n">A_eth</span><span class="p">,</span><span class="n">B_eth</span><span class="p">,</span><span class="n">C_eth</span><span class="p">)</span>
+
+<span class="n">y1_</span> <span class="o">=</span> <span class="n">x1_</span><span class="o">*</span><span class="p">(</span><span class="n">PsatA</span><span class="o">/</span><span class="n">P</span><span class="p">)</span> <span class="c1">## calculating vapor molar fraction of water and storing into yA</span>
+<span class="n">y2_</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">x1_</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">PsatB</span><span class="o">/</span><span class="n">P</span><span class="p">)</span> <span class="c1">## calculating vapor molar fraction of ethanol and storing into yB</span>
+<span class="n">x2_</span> <span class="o">=</span> <span class="mi">1</span><span class="o">-</span><span class="n">x1_</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data_bubbleT</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">data_bubbleT</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="mi">273</span><span class="p">,</span>
+         <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;Bubble&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data_dewT</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">data_dewT</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="mi">273</span><span class="p">,</span>
+         <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;Dew&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">x2_</span><span class="p">,</span><span class="n">ymin</span><span class="p">,</span> <span class="n">ymax</span><span class="p">,</span> <span class="n">interpolate</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> 
+                 <span class="n">color</span><span class="o">=</span><span class="s1">&#39;grey&#39;</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;2 Phase&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x2_</span><span class="p">,</span><span class="n">Tsat</span><span class="o">-</span><span class="mf">273.15</span><span class="p">,</span><span class="s2">&quot;-b&quot;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;Dew - hand&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">y2_</span><span class="p">,</span><span class="n">Tsat</span><span class="o">-</span><span class="mf">273.15</span><span class="p">,</span><span class="s2">&quot;-r&quot;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;Bubble - hand&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$T$ $(^oC)$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$x_2$&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mf">1.2</span><span class="p">,</span><span class="mf">0.2</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;P = 1bar&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">frameon</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">33</span>
+<span class="g g-Whitespace">     </span><span class="mi">31</span> <span class="k">for</span> <span class="n">xA</span> <span class="ow">in</span> <span class="n">x1_</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">32</span>     <span class="n">diff</span> <span class="o">=</span> <span class="n">g</span><span class="p">(</span><span class="n">Tguess</span><span class="p">,</span><span class="n">xA</span><span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">33</span>     <span class="n">Tsat</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Temp</span><span class="p">[</span><span class="nb">list</span><span class="p">(</span><span class="n">diff</span><span class="p">)</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">diff</span><span class="p">))])</span> <span class="c1">## enumerate over the list of differences and find the T w/ the minimum diff. </span>
+<span class="g g-Whitespace">     </span><span class="mi">35</span> <span class="n">Tsat</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">Tsat</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">37</span> <span class="n">PsatA</span> <span class="o">=</span> <span class="n">Antoine</span><span class="p">(</span><span class="n">Tsat</span><span class="p">,</span><span class="n">A_wat</span><span class="p">,</span><span class="n">B_wat</span><span class="p">,</span><span class="n">C_wat</span><span class="p">)</span> <span class="c1">## saturated pressure using inputted T</span>
+
+<span class="ne">NameError</span>: name &#39;Temp&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<p>Obviously this is a very poor approximation, but what if we relax the simplicity of the model and include the activity coefficients using the van Laar Equations:</p>
+<section id="example-2-combining-preos-with-quadratic-mixing-rule-for-continuous-dew-point-and-bubble-point-calculations">
+<h3>Example 2: Combining PREOS with Quadratic Mixing Rule for Continuous Dew Point and Bubble Point Calculations<a class="headerlink" href="#example-2-combining-preos-with-quadratic-mixing-rule-for-continuous-dew-point-and-bubble-point-calculations" title="Link to this heading">#</a></h3>
+<p>In order to tell PhasePy what we want, we need to include many properties associated with the mixture.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">phasepy</span> <span class="kn">import</span> <span class="n">mixture</span><span class="p">,</span> <span class="n">component</span><span class="p">,</span> <span class="n">preos</span><span class="p">,</span> <span class="n">virialgamma</span><span class="p">,</span> <span class="n">rkseos</span>
+<span class="kn">from</span> <span class="nn">phasepy.equilibrium</span> <span class="kn">import</span> <span class="n">flash</span><span class="p">,</span><span class="n">bubblePy</span><span class="p">,</span> <span class="n">bubbleTy</span><span class="p">,</span><span class="n">dewPx</span><span class="p">,</span> <span class="n">dewTx</span>
+
+<span class="n">water</span> <span class="o">=</span> <span class="n">component</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;water&#39;</span><span class="p">,</span><span class="n">Tc</span><span class="o">=</span><span class="mf">647.13</span><span class="p">,</span> <span class="n">Pc</span><span class="o">=</span><span class="mf">220.55</span><span class="p">,</span> <span class="n">Zc</span><span class="o">=</span><span class="mf">0.229</span><span class="p">,</span> <span class="n">Vc</span><span class="o">=</span><span class="mf">55.948</span><span class="p">,</span> <span class="n">w</span><span class="o">=</span><span class="mf">0.344861</span><span class="p">,</span>
+                  <span class="n">GC</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;H2O&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">},</span> <span class="n">ri</span><span class="o">=</span><span class="mf">0.92</span><span class="p">,</span> <span class="n">qi</span><span class="o">=</span><span class="mf">1.4</span><span class="p">,</span> <span class="n">Mw</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span> <span class="c1">##feeds PhasePy the fluid properties and Group Contributions</span>
+<span class="n">ethanol</span> <span class="o">=</span> <span class="n">component</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;ethanol&#39;</span><span class="p">,</span><span class="n">Tc</span><span class="o">=</span><span class="mi">514</span><span class="p">,</span> <span class="n">Pc</span><span class="o">=</span><span class="mf">61.37</span><span class="p">,</span> <span class="n">Zc</span><span class="o">=</span><span class="mf">0.241</span><span class="p">,</span> <span class="n">Vc</span><span class="o">=</span><span class="mi">168</span><span class="p">,</span> <span class="n">w</span><span class="o">=</span><span class="mf">0.643558</span><span class="p">,</span>  
+                    <span class="n">GC</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;CH3&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;CH2&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;OH(P)&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">},</span><span class="n">ri</span><span class="o">=</span><span class="mf">2.1055</span><span class="p">,</span> <span class="n">qi</span><span class="o">=</span><span class="mf">1.972</span><span class="p">,</span> <span class="n">Mw</span><span class="o">=</span><span class="mf">46.07</span><span class="p">)</span> <span class="c1">#</span>
+
+<span class="n">mix1</span> <span class="o">=</span> <span class="n">mixture</span><span class="p">(</span><span class="n">water</span><span class="p">,</span> <span class="n">ethanol</span><span class="p">)</span>
+<span class="n">Kij</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.11</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mf">0.11</span><span class="p">,</span> <span class="mi">0</span><span class="p">]])</span> <span class="c1">##species kappy_ij</span>
+<span class="n">mix1</span><span class="o">.</span><span class="n">kij_cubic</span><span class="p">(</span><span class="n">Kij</span><span class="p">)</span>
+<span class="n">eos1</span> <span class="o">=</span> <span class="n">preos</span><span class="p">(</span><span class="n">mix1</span><span class="p">,</span> <span class="n">mixrule</span><span class="o">=</span><span class="s1">&#39;qmr&#39;</span><span class="p">)</span> <span class="c1">#describes mixture using quadratic mixing rule</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now that everything is defined, we can actually construct the Txy diagram.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## loop over calculation for every composition desired.</span>
+<span class="n">Tdew_</span><span class="o">=</span><span class="p">[]</span>
+<span class="n">Tbubble_</span><span class="o">=</span><span class="p">[]</span>
+
+<span class="n">y_guess</span><span class="o">=</span><span class="p">[</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.5</span><span class="p">]</span>
+<span class="n">T_guess</span><span class="o">=</span><span class="mi">280</span>
+
+<span class="c1">##loop over eqch composition</span>
+<span class="k">for</span> <span class="n">x1</span> <span class="ow">in</span> <span class="n">x1_</span><span class="p">:</span>
+    
+    
+    <span class="c1">##these are iterative calculations and so they need guesss</span>
+    <span class="n">X</span><span class="o">=</span><span class="p">[</span><span class="n">x1</span><span class="p">,</span><span class="mi">1</span><span class="o">-</span><span class="n">x1</span><span class="p">]</span>
+    <span class="n">Ybubble</span><span class="p">,</span><span class="n">Tbubble</span><span class="o">=</span><span class="n">bubbleTy</span><span class="p">(</span><span class="n">y_guess</span><span class="p">,</span><span class="n">T_guess</span><span class="p">,</span><span class="n">X</span><span class="p">,</span><span class="n">P</span><span class="p">,</span><span class="n">eos1</span><span class="p">,</span><span class="n">full_output</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> 
+    <span class="n">Ydew</span><span class="p">,</span><span class="n">Tdew</span><span class="o">=</span><span class="n">dewTx</span><span class="p">(</span><span class="n">y_guess</span><span class="p">,</span><span class="n">T_guess</span><span class="p">,</span><span class="n">X</span><span class="p">,</span><span class="n">P</span><span class="p">,</span><span class="n">eos1</span><span class="p">,</span><span class="n">full_output</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+    <span class="n">Tbubble_</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Tbubble</span><span class="p">)</span>
+    <span class="n">Tdew_</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Tdew</span><span class="p">)</span>
+
+<span class="c1">##plot the result</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">x1_</span><span class="p">),</span><span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">Tbubble_</span><span class="p">)</span><span class="o">-</span><span class="mf">273.15</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;bubble PREOS&#39;</span><span class="p">)</span>   
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">x1_</span><span class="p">),</span><span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">Tdew_</span><span class="p">)</span><span class="o">-</span><span class="mf">273.15</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;dew PREOS&#39;</span><span class="p">)</span>    
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data_bubbleT</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">data_bubbleT</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="mi">273</span><span class="p">,</span>
+         <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;Bubble&#39;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data_dewT</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">data_dewT</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="mi">273</span><span class="p">,</span>
+         <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;Dew&#39;</span><span class="p">,</span><span class="n">markersize</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">x1_</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">Tdew_</span><span class="p">)</span><span class="o">-</span><span class="mf">273.15</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">Tbubble_</span><span class="p">)</span><span class="o">-</span><span class="mf">273.15</span><span class="p">,</span> <span class="n">interpolate</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> 
+                 <span class="n">color</span><span class="o">=</span><span class="s1">&#39;grey&#39;</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;2 Phase&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$T$ $(^oC)$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$x_2$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mf">1.2</span><span class="p">,</span><span class="mf">0.2</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;P = 1bar&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">frameon</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x2048d2c4890&gt;
+</pre></div>
+</div>
+<img alt="../_images/7eed4d8e77b68edbb5dbcfe64ca5e2f836560c98562f4e0f4edd3798704fec2b.png" src="../_images/7eed4d8e77b68edbb5dbcfe64ca5e2f836560c98562f4e0f4edd3798704fec2b.png" />
+</div>
+</div>
+</section>
+<section id="example-3-combining-rkseos-with-quadratic-mixing-rule-for-continuous-dew-point-and-bubble-point-calculations">
+<h3>Example 3: Combining RKSEOS with Quadratic Mixing Rule for Continuous Dew Point and Bubble Point Calculations<a class="headerlink" href="#example-3-combining-rkseos-with-quadratic-mixing-rule-for-continuous-dew-point-and-bubble-point-calculations" title="Link to this heading">#</a></h3>
+<p>Instead of using the Peng Robinson Equation of State, we are going to utilize unifac for the mixing rules and combine it with the RKS Equation of state. In this strategy the activity will be calculated using UNIFAC group contributions in the liquid phase and the fugacity calculated using the RKS equation of state.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mix2</span> <span class="o">=</span> <span class="n">mixture</span><span class="p">(</span><span class="n">water</span><span class="p">,</span><span class="n">ethanol</span><span class="p">)</span>
+<span class="n">mix2</span><span class="o">.</span><span class="n">unifac</span><span class="p">()</span>
+<span class="n">eos2</span> <span class="o">=</span> <span class="n">rkseos</span><span class="p">(</span><span class="n">mix2</span><span class="p">,</span><span class="n">mixrule</span><span class="o">=</span><span class="s1">&#39;mhv1_unifac&#39;</span><span class="p">)</span>
+<span class="n">Tdew_</span><span class="o">=</span><span class="p">[]</span>
+<span class="n">Tbubble_</span><span class="o">=</span><span class="p">[]</span>
+<span class="k">for</span> <span class="n">x1</span> <span class="ow">in</span> <span class="n">x1_</span><span class="p">:</span>
+    <span class="n">y_guess</span><span class="o">=</span><span class="p">[</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.5</span><span class="p">]</span>
+    <span class="n">T_guess</span><span class="o">=</span><span class="mi">280</span>
+
+    <span class="n">X</span><span class="o">=</span><span class="p">[</span><span class="n">x1</span><span class="p">,</span><span class="mi">1</span><span class="o">-</span><span class="n">x1</span><span class="p">]</span>
+    <span class="n">Ybubble</span><span class="p">,</span><span class="n">Tbubble</span><span class="o">=</span><span class="n">bubbleTy</span><span class="p">(</span><span class="n">y_guess</span><span class="p">,</span><span class="n">T_guess</span><span class="p">,</span><span class="n">X</span><span class="p">,</span><span class="n">P</span><span class="p">,</span><span class="n">eos2</span><span class="p">,</span><span class="n">full_output</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">Ydew</span><span class="p">,</span><span class="n">Tdew</span><span class="o">=</span><span class="n">dewTx</span><span class="p">(</span><span class="n">y_guess</span><span class="p">,</span><span class="n">T_guess</span><span class="p">,</span><span class="n">X</span><span class="p">,</span><span class="n">P</span><span class="p">,</span><span class="n">eos2</span><span class="p">,</span><span class="n">full_output</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+    <span class="c1">#print(X,Y,T)</span>
+    <span class="n">Tbubble_</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Tbubble</span><span class="p">)</span>
+    <span class="n">Tdew_</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Tdew</span><span class="p">)</span>
+        
+        
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">x1_</span><span class="p">),</span><span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">Tbubble_</span><span class="p">)</span><span class="o">-</span><span class="mf">273.15</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;bubble RKS&#39;</span><span class="p">)</span>   
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">x1_</span><span class="p">),</span><span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">Tdew_</span><span class="p">)</span><span class="o">-</span><span class="mf">273.15</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;dew RKS&#39;</span><span class="p">)</span>    
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data_bubbleT</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">data_bubbleT</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="mi">273</span><span class="p">,</span>
+         <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;Bubble&#39;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data_dewT</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">data_dewT</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="mi">273</span><span class="p">,</span>
+         <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;Dew&#39;</span><span class="p">,</span><span class="n">markersize</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">x1_</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">Tdew_</span><span class="p">)</span><span class="o">-</span><span class="mf">273.15</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">Tbubble_</span><span class="p">)</span><span class="o">-</span><span class="mf">273.15</span><span class="p">,</span> <span class="n">interpolate</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> 
+                 <span class="n">color</span><span class="o">=</span><span class="s1">&#39;grey&#39;</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;2 Phase&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$T$ $(^oC)$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$x_2$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mf">1.2</span><span class="p">,</span><span class="mf">0.2</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;P = 1bar&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">frameon</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x20491cd2f10&gt;
+</pre></div>
+</div>
+<img alt="../_images/afcbe09a7f043cd57d73a03ca0bce238427ba9536beb73250cdc93d5e6b3f2c3.png" src="../_images/afcbe09a7f043cd57d73a03ca0bce238427ba9536beb73250cdc93d5e6b3f2c3.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">R</span> <span class="o">=</span> <span class="mf">8.314</span>
+<span class="c1">##Antoine Coefficients</span>
+<span class="c1">#Water</span>
+<span class="n">A_wat</span> <span class="o">=</span> <span class="mf">5.40221</span>
+<span class="n">B_wat</span> <span class="o">=</span> <span class="mf">1838.675</span>
+<span class="n">C_wat</span> <span class="o">=</span> <span class="o">-</span><span class="mf">31.737</span>
+<span class="c1">##species 1 is water</span>
+<span class="n">a1</span><span class="o">=</span><span class="mf">0.5542</span><span class="c1">#Pa m^6/mol^2</span>
+<span class="n">b1</span><span class="o">=</span><span class="mf">3.051</span><span class="o">*</span><span class="mi">10</span><span class="o">**-</span><span class="mi">5</span> <span class="c1">##m^3/mol</span>
+
+<span class="c1">#Ethanol</span>
+<span class="n">A_eth</span> <span class="o">=</span> <span class="mf">5.24677</span>
+<span class="n">B_eth</span> <span class="o">=</span> <span class="mf">1598.673</span>
+<span class="n">C_eth</span> <span class="o">=</span> <span class="o">-</span><span class="mf">46.424</span>
+
+<span class="c1">##species 2 is ethanol</span>
+<span class="n">a2</span><span class="o">=</span><span class="mf">1.218</span><span class="c1">#Pa m^6/mol^2</span>
+<span class="n">b2</span><span class="o">=</span><span class="mf">8.407</span><span class="o">*</span><span class="mi">10</span><span class="o">**-</span><span class="mi">5</span> <span class="c1">##m^3/mol</span>
+
+<span class="k">def</span> <span class="nf">alpha</span><span class="p">(</span><span class="n">T</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">b1</span><span class="o">/</span><span class="p">(</span><span class="n">R</span><span class="o">*</span><span class="n">T</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">a1</span><span class="p">)</span><span class="o">/</span><span class="n">b1</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">a2</span><span class="p">)</span><span class="o">/</span><span class="n">b2</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>     
+<span class="k">def</span> <span class="nf">beta</span><span class="p">(</span><span class="n">T</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">b2</span><span class="o">/</span><span class="p">(</span><span class="n">R</span><span class="o">*</span><span class="n">T</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">a1</span><span class="p">)</span><span class="o">/</span><span class="n">b1</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">a2</span><span class="p">)</span><span class="o">/</span><span class="n">b2</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
+<span class="k">def</span> <span class="nf">lngamma1</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="n">xA</span><span class="p">):</span> 
+    <span class="n">xB</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">xA</span>
+    <span class="k">return</span> <span class="n">alpha</span><span class="p">(</span><span class="n">T</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">alpha</span><span class="p">(</span><span class="n">T</span><span class="p">)</span><span class="o">*</span><span class="n">xA</span><span class="o">/</span><span class="p">(</span><span class="n">beta</span><span class="p">(</span><span class="n">T</span><span class="p">)</span><span class="o">*</span><span class="n">xB</span><span class="p">))</span><span class="o">**</span><span class="mi">2</span>
+<span class="k">def</span> <span class="nf">lngamma2</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="n">xA</span><span class="p">):</span>
+    <span class="n">xB</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">xA</span>
+    <span class="k">return</span> <span class="n">beta</span><span class="p">(</span><span class="n">T</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">beta</span><span class="p">(</span><span class="n">T</span><span class="p">)</span><span class="o">*</span><span class="n">xB</span><span class="o">/</span><span class="p">(</span><span class="n">alpha</span><span class="p">(</span><span class="n">T</span><span class="p">)</span><span class="o">*</span><span class="n">xA</span><span class="p">))</span><span class="o">**</span><span class="mi">2</span>
+
+<span class="k">def</span> <span class="nf">fugacity</span><span class="p">(</span><span class="n">Z</span><span class="p">,</span><span class="n">A</span><span class="p">,</span><span class="n">B</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">Z</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">Z</span> <span class="o">-</span> <span class="n">B</span><span class="p">)</span> <span class="o">-</span> <span class="n">A</span><span class="o">/</span><span class="n">Z</span>
+
+<span class="c1">## Establishing new P</span>
+<span class="n">P</span> <span class="o">=</span> <span class="mf">1.01325</span> <span class="c1"># bar</span>
+
+<span class="c1">## Let&#39;s define a temperature range to iterative over</span>
+<span class="k">def</span> <span class="nf">g</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="n">xA</span><span class="p">):</span> <span class="c1">## this is a function. we pass in a temperature (T) and an array index (i)</span>
+    <span class="n">xB</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">xA</span>
+    
+    <span class="c1">##need to calculate the fugacity of the each species</span>
+    <span class="n">A1</span> <span class="o">=</span> <span class="n">a1</span><span class="o">*</span><span class="n">P</span><span class="o">/</span><span class="p">(</span><span class="n">R</span><span class="o">*</span><span class="n">T</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
+    <span class="n">B1</span> <span class="o">=</span> <span class="n">b1</span><span class="o">*</span><span class="n">P</span><span class="o">/</span><span class="p">(</span><span class="n">R</span><span class="o">*</span><span class="n">T</span><span class="p">)</span>
+    <span class="n">A2</span> <span class="o">=</span> <span class="n">a2</span><span class="o">*</span><span class="n">P</span><span class="o">/</span><span class="p">(</span><span class="n">R</span><span class="o">*</span><span class="n">T</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
+    <span class="n">B2</span> <span class="o">=</span> <span class="n">b2</span><span class="o">*</span><span class="n">P</span><span class="o">/</span><span class="p">(</span><span class="n">R</span><span class="o">*</span><span class="n">T</span><span class="p">)</span>
+    
+    <span class="n">roots1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">roots</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="n">B1</span><span class="p">,</span><span class="n">A1</span><span class="p">,</span><span class="o">-</span><span class="n">A1</span><span class="o">*</span><span class="n">B1</span><span class="p">])</span>
+    <span class="n">roots2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">roots</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="n">B2</span><span class="p">,</span><span class="n">A2</span><span class="p">,</span><span class="o">-</span><span class="n">A2</span><span class="o">*</span><span class="n">B2</span><span class="p">])</span>
+    
+    <span class="c1">#liquid phase should be the minim compressibility root</span>
+    <span class="n">Z1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">roots1</span><span class="p">[</span><span class="n">roots1</span><span class="o">.</span><span class="n">imag</span> <span class="o">==</span> <span class="mi">0</span><span class="p">])</span>
+    <span class="n">Z2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">roots1</span><span class="p">[</span><span class="n">roots2</span><span class="o">.</span><span class="n">imag</span> <span class="o">==</span> <span class="mi">0</span><span class="p">])</span>
+    
+    <span class="c1">##find the roots of the cubic EOS.</span>
+    <span class="n">f1</span> <span class="o">=</span> <span class="n">P</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">fugacity</span><span class="p">(</span><span class="n">Z1</span><span class="p">,</span><span class="n">A1</span><span class="p">,</span><span class="n">B1</span><span class="p">))</span>
+    <span class="n">f2</span> <span class="o">=</span> <span class="n">P</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">fugacity</span><span class="p">(</span><span class="n">Z2</span><span class="p">,</span><span class="n">A2</span><span class="p">,</span><span class="n">B2</span><span class="p">))</span>
+    
+    <span class="n">Ptest</span> <span class="o">=</span> <span class="n">xA</span><span class="o">*</span><span class="n">f1</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">lngamma1</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="n">xA</span><span class="p">))</span> <span class="o">+</span> <span class="n">xB</span><span class="o">*</span><span class="n">f2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">lngamma2</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="n">xA</span><span class="p">))</span>
+    <span class="n">diff</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">P</span> <span class="o">-</span> <span class="n">Ptest</span><span class="p">)</span> <span class="c1">## is how we can easily find a minimum. we want this value to be as close to zero as possible!</span>
+    <span class="k">return</span> <span class="n">diff</span>
+
+
+<span class="n">Tsat</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1">## define an empty array to store our iterative solution temperature values.</span>
+<span class="k">for</span> <span class="n">xA</span> <span class="ow">in</span> <span class="n">x1_</span><span class="p">:</span>
+    <span class="n">diff</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">T</span> <span class="ow">in</span> <span class="n">Tguess</span><span class="p">:</span>
+        <span class="n">diff</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">g</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="n">xA</span><span class="p">))</span>
+    <span class="n">diff</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">diff</span><span class="p">)[</span><span class="n">np</span><span class="o">.</span><span class="n">isfinite</span><span class="p">(</span><span class="n">diff</span><span class="p">)]</span>
+    <span class="k">if</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">diff</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">):</span>
+        <span class="n">Tsat</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Temp</span><span class="p">[</span><span class="nb">list</span><span class="p">(</span><span class="n">diff</span><span class="p">)</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">diff</span><span class="p">))])</span> <span class="c1">## enumerate over the list of differences and find the T w/ the minimum diff. </span>
+<span class="n">Tsat</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">Tsat</span><span class="p">)</span>
+
+<span class="n">PsatA</span> <span class="o">=</span> <span class="n">Antoine</span><span class="p">(</span><span class="n">Tsat</span><span class="p">,</span><span class="n">A_wat</span><span class="p">,</span><span class="n">B_wat</span><span class="p">,</span><span class="n">C_wat</span><span class="p">)</span> <span class="c1">## saturated pressure using inputted T</span>
+<span class="n">PsatB</span> <span class="o">=</span> <span class="n">Antoine</span><span class="p">(</span><span class="n">Tsat</span><span class="p">,</span><span class="n">A_eth</span><span class="p">,</span><span class="n">B_eth</span><span class="p">,</span><span class="n">C_eth</span><span class="p">)</span>
+
+<span class="n">y1_</span> <span class="o">=</span> <span class="n">x1_</span><span class="o">*</span><span class="p">(</span><span class="n">PsatA</span><span class="o">/</span><span class="n">P</span><span class="p">)</span> <span class="c1">## calculating vapor molar fraction of water and storing into yA</span>
+<span class="n">y2_</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">x1_</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">PsatB</span><span class="o">/</span><span class="n">P</span><span class="p">)</span> <span class="c1">## calculating vapor molar fraction of ethanol and storing into yB</span>
+<span class="n">x2_</span> <span class="o">=</span> <span class="mi">1</span><span class="o">-</span><span class="n">x1_</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data_bubbleT</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">data_bubbleT</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="mi">273</span><span class="p">,</span>
+         <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;Bubble&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data_dewT</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">data_dewT</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="mi">273</span><span class="p">,</span>
+         <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;Dew&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">x2_</span><span class="p">,</span><span class="n">ymin</span><span class="p">,</span> <span class="n">ymax</span><span class="p">,</span> <span class="n">interpolate</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> 
+                 <span class="n">color</span><span class="o">=</span><span class="s1">&#39;grey&#39;</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;2 Phase&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x2_</span><span class="p">,</span><span class="n">Tsat</span><span class="o">-</span><span class="mf">273.15</span><span class="p">,</span><span class="s2">&quot;-b&quot;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;Dew - hand&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">y2_</span><span class="p">,</span><span class="n">Tsat</span><span class="o">-</span><span class="mf">273.15</span><span class="p">,</span><span class="s2">&quot;-r&quot;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;Bubble - hand&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$T$ $(^oC)$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$x_2$&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mf">1.2</span><span class="p">,</span><span class="mf">0.2</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;P = 1bar&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">frameon</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+
+<span class="n">We</span> <span class="n">can</span> <span class="n">see</span> <span class="n">the</span> <span class="n">vast</span> <span class="n">improvement</span> <span class="n">of</span> <span class="n">the</span> <span class="n">prediction</span> <span class="ow">and</span> <span class="n">its</span> <span class="n">agreement</span> <span class="k">with</span> <span class="n">the</span> <span class="n">experimental</span> <span class="n">data</span> <span class="n">using</span> <span class="n">more</span> <span class="n">sophisticated</span> <span class="n">models</span><span class="o">.</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\richa\AppData\Local\Temp\ipykernel_28212\3380466330.py:32: RuntimeWarning: invalid value encountered in log
+  return Z - 1 - np.log(Z - B) - A/Z
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">25</span><span class="p">],</span> <span class="n">line</span> <span class="mi">76</span>
+<span class="g g-Whitespace">     </span><span class="mi">73</span> <span class="n">PsatA</span> <span class="o">=</span> <span class="n">Antoine</span><span class="p">(</span><span class="n">Tsat</span><span class="p">,</span><span class="n">A_wat</span><span class="p">,</span><span class="n">B_wat</span><span class="p">,</span><span class="n">C_wat</span><span class="p">)</span> <span class="c1">## saturated pressure using inputted T</span>
+<span class="g g-Whitespace">     </span><span class="mi">74</span> <span class="n">PsatB</span> <span class="o">=</span> <span class="n">Antoine</span><span class="p">(</span><span class="n">Tsat</span><span class="p">,</span><span class="n">A_eth</span><span class="p">,</span><span class="n">B_eth</span><span class="p">,</span><span class="n">C_eth</span><span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">76</span> <span class="n">y1_</span> <span class="o">=</span> <span class="n">x1_</span><span class="o">*</span><span class="p">(</span><span class="n">PsatA</span><span class="o">/</span><span class="n">P</span><span class="p">)</span> <span class="c1">## calculating vapor molar fraction of water and storing into yA</span>
+<span class="g g-Whitespace">     </span><span class="mi">77</span> <span class="n">y2_</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">x1_</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">PsatB</span><span class="o">/</span><span class="n">P</span><span class="p">)</span> <span class="c1">## calculating vapor molar fraction of ethanol and storing into yB</span>
+<span class="g g-Whitespace">     </span><span class="mi">78</span> <span class="n">x2_</span> <span class="o">=</span> <span class="mi">1</span><span class="o">-</span><span class="n">x1_</span>
+
+<span class="ne">ValueError</span>: operands could not be broadcast together with shapes (99,) (0,) 
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "executablebooks/jupyter-book",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./Ch7"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../Ch5/5.Accuracy-EOS.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Calculating the Accuracy of Equations of State</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="7.Activity-Coefficient-Models.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Activity Coefficients</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fugacity-of-species-i-in-a-mixture">Fugacity of species i in a mixture</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gaseous-mixtures">Gaseous Mixtures</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-lewis-randall-rule">The Lewis-Randall Rule:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ideal-gas-mixtures-extension-of-the-lewis-randall-rule">Ideal Gas Mixtures - Extension of the Lewis-Randall Rule</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gaseous-mixtures-at-all-state-points">Gaseous Mixtures at all State Points</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#liquid-mixtures">Liquid Mixtures</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#continuous-modelling-fugacity-from-equation-of-state">Continuous Modelling - Fugacity from Equation of state</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#discontinuous-modelling-activity-coefficient-models">Discontinuous Modelling - Activity coefficient models</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#discontinuous-modelling-henrys-law">Discontinuous Modelling - Henry’s Law</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-of-activity-coefficient-models">Summary of Activity Coefficient Models</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#flash-and-dew-point-calculations">Flash and Dew Point Calculations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#diagrams-for-real-property-data">Diagrams for Real Property data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#diagram-using-calculated-t-x-y-diagram">Diagram Using Calculated T-x-y diagram</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-1-hand-calculation">Example 1: Hand Calculation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lets-also-generate-a-t-xy-plot">Let’s also generate a T-xy plot.</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-2-combining-preos-with-quadratic-mixing-rule-for-continuous-dew-point-and-bubble-point-calculations">Example 2: Combining PREOS with Quadratic Mixing Rule for Continuous Dew Point and Bubble Point Calculations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-3-combining-rkseos-with-quadratic-mixing-rule-for-continuous-dew-point-and-bubble-point-calculations">Example 3: Combining RKSEOS with Quadratic Mixing Rule for Continuous Dew Point and Bubble Point Calculations</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By J. J. Richards
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

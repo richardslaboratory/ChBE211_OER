@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -213,8 +213,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../Ch5/3.Gaseous-Mixtures.html">Gaseous Mixtures</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Ch5/4.Liquid-Mixtures.html">Liquid Mixtures</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Ch5/5.Accuracy-EOS.html">Calculating the Accuracy of Equations of State</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch7/6.Mixture-Equilibrium.html">Equilibrium of Mixtures</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Ch7/7.Activity-Coefficient-Models.html">Activity Coefficients</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Ch7/8.Calculating-Mixture-Fugacity.html">Vapor-Liquid Equilibrium</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch7/8.Applying-Definitions.html">Applying our Thermodynamic Definitions to Mixtures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch7/9.Calculating-Mixture-Fugacity.html">Vapor-Liquid Equilibrium</a></li>
 </ul>
 
     </div>
@@ -394,7 +396,7 @@
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Constructing Property Diagrams</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#vdw-equation-of-state">VDW Equation of State</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#equation-of-state">Equation of state:</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#expression-it-in-its-cubic-form">Expression it in its cubic form:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#expression-in-its-cubic-form">Expression in its cubic form:</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fugacity-expression-from-sandler-eq-7-4-13">Fugacity expression from Sandler (Eq 7.4-13):</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#critical-properties-of-ethane">Critical Properties of Ethane</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#calculating-the-fugacity-from-the-cubic-form-of-the-e-o-s">Calculating the Fugacity from the Cubic Form of the E.O.S</a></li>
@@ -440,8 +442,8 @@
 <div class="math notranslate nohighlight">
 \[ a = 27\dfrac{(RT_c)^2}{64P_c} \text{and } b = 0.125\dfrac{RT_c}{P_c}\]</div>
 </section>
-<section id="expression-it-in-its-cubic-form">
-<h2>Expression it in its cubic form:<a class="headerlink" href="#expression-it-in-its-cubic-form" title="Link to this heading">#</a></h2>
+<section id="expression-in-its-cubic-form">
+<h2>Expression in its cubic form:<a class="headerlink" href="#expression-in-its-cubic-form" title="Link to this heading">#</a></h2>
 <div class="math notranslate nohighlight">
 \[ Z^3 + \alpha Z^2 + \beta Z + \gamma = 0 \]</div>
 <p>where</p>
@@ -565,7 +567,7 @@
 <span class="n">fl_</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">P</span> <span class="ow">in</span> <span class="n">P_</span><span class="p">:</span>
 
-    <span class="n">roots</span><span class="p">,</span><span class="n">f</span> <span class="o">=</span> <span class="n">VDW_cubic</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="n">P</span><span class="p">)</span>
+    <span class="n">roots</span><span class="p">,</span> <span class="n">f</span> <span class="o">=</span> <span class="n">VDW_cubic</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="n">P</span><span class="p">)</span>
     <span class="n">roots_</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">roots</span><span class="p">)</span>
     <span class="n">fv_</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">f</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
     <span class="n">fl_</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">f</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
@@ -586,7 +588,7 @@
 <div class="cell_output docutils container">
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:21: SyntaxWarning: invalid escape sequence &#39;\p&#39;
 &lt;&gt;:21: SyntaxWarning: invalid escape sequence &#39;\p&#39;
-C:\Users\richa\AppData\Local\Temp\ipykernel_65300\2374625965.py:21: SyntaxWarning: invalid escape sequence &#39;\p&#39;
+C:\Users\richa\AppData\Local\Temp\ipykernel_36220\1907005480.py:21: SyntaxWarning: invalid escape sequence &#39;\p&#39;
   plt.ylabel(&#39;$ln\phi_i$&#39;)
 C:\ProgramData\anaconda3\Lib\site-packages\matplotlib\cbook.py:1762: ComplexWarning: Casting complex values to real discards the imaginary part
   return math.isfinite(val)
@@ -594,7 +596,7 @@ C:\ProgramData\anaconda3\Lib\site-packages\matplotlib\cbook.py:1398: ComplexWarn
   return np.asarray(x, float)
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x219b9ac9100&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x1d1315ebdd0&gt;
 </pre></div>
 </div>
 <img alt="../_images/6e22e98815980ee5b75907dfb7fe6c0ff54f09d8914fdd60c40d890c2fa3bdfd.png" src="../_images/6e22e98815980ee5b75907dfb7fe6c0ff54f09d8914fdd60c40d890c2fa3bdfd.png" />
@@ -673,11 +675,11 @@ C:\ProgramData\anaconda3\Lib\site-packages\matplotlib\cbook.py:1398: ComplexWarn
 &lt;&gt;:28: SyntaxWarning: invalid escape sequence &#39;\p&#39;
 &lt;&gt;:38: SyntaxWarning: invalid escape sequence &#39;\p&#39;
 &lt;&gt;:48: SyntaxWarning: invalid escape sequence &#39;\p&#39;
-C:\Users\richa\AppData\Local\Temp\ipykernel_65300\1027463628.py:28: SyntaxWarning: invalid escape sequence &#39;\p&#39;
+C:\Users\richa\AppData\Local\Temp\ipykernel_36220\1027463628.py:28: SyntaxWarning: invalid escape sequence &#39;\p&#39;
   plt.ylabel(&#39;$ln\phi_i$&#39;)
-C:\Users\richa\AppData\Local\Temp\ipykernel_65300\1027463628.py:38: SyntaxWarning: invalid escape sequence &#39;\p&#39;
+C:\Users\richa\AppData\Local\Temp\ipykernel_36220\1027463628.py:38: SyntaxWarning: invalid escape sequence &#39;\p&#39;
   plt.ylabel(&#39;$ln\phi_i$&#39;)
-C:\Users\richa\AppData\Local\Temp\ipykernel_65300\1027463628.py:48: SyntaxWarning: invalid escape sequence &#39;\p&#39;
+C:\Users\richa\AppData\Local\Temp\ipykernel_36220\1027463628.py:48: SyntaxWarning: invalid escape sequence &#39;\p&#39;
   plt.ylabel(&#39;$ln\phi_i$&#39;)
 </pre></div>
 </div>
@@ -749,7 +751,156 @@ C:\Users\richa\AppData\Local\Temp\ipykernel_65300\1027463628.py:48: SyntaxWarnin
 
 <span class="k">for</span> <span class="n">Tr</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.99</span><span class="p">,</span><span class="mf">0.01</span><span class="p">):</span>
     <span class="n">test</span> <span class="o">=</span> <span class="n">iterate2findPsat</span><span class="p">(</span><span class="n">Tr</span><span class="o">*</span><span class="n">Tc</span><span class="p">)</span>
-    
+    <span class="nb">print</span><span class="p">(</span><span class="n">test</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>135695.78472385704
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>154991.77464208688
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>176170.00734593684
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>199306.4858694622
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>224502.93700012527
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>251843.12434774838
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>281477.17838234577
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>313412.9636601845
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>347779.1506714817
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>384656.2389742191
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>424069.7195766826
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>466205.5450829386
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>511126.6023970411
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>558826.5870055164
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>609494.1402338201
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>663075.9384054104
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>719747.2805749156
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>779249.9096748888
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>842541.0935943672
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>908559.7427117148
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>977992.9967206203
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1050925.0308836836
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1127347.0899431615
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1207066.243238512
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1290272.5817792227
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1377175.865596366
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1467467.578922822
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1561828.2064113556
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1659235.0305047852
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1760351.9454615272
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1866115.9271268677
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1974106.493174444
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2086069.004158627
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2200525.731682629
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2315592.0873162835
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2434330.1075021923
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2558484.6778680277
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2687136.393723781
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2822833.0008527143
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2970348.7522905516
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3125263.232702889
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3287919.500211769
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3497943.2894588965
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3727176.3525457904
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3977696.6734803286
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4178127.473124395
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4329654.433987064
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4478727.935914555
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4622090.478330923
 </pre></div>
 </div>
 </div>
@@ -825,7 +976,7 @@ C:\Users\richa\AppData\Local\Temp\ipykernel_65300\1027463628.py:48: SyntaxWarnin
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Constructing Property Diagrams</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#vdw-equation-of-state">VDW Equation of State</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#equation-of-state">Equation of state:</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#expression-it-in-its-cubic-form">Expression it in its cubic form:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#expression-in-its-cubic-form">Expression in its cubic form:</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fugacity-expression-from-sandler-eq-7-4-13">Fugacity expression from Sandler (Eq 7.4-13):</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#critical-properties-of-ethane">Critical Properties of Ethane</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#calculating-the-fugacity-from-the-cubic-form-of-the-e-o-s">Calculating the Fugacity from the Cubic Form of the E.O.S</a></li>

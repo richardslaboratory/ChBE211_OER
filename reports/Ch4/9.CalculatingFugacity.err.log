@@ -1,0 +1,57 @@
+Traceback (most recent call last):
+  File "C:\Users\richa\AppData\Roaming\Python\Python312\site-packages\jupyter_cache\executors\utils.py", line 58, in single_nb_execution
+    executenb(
+  File "C:\ProgramData\anaconda3\Lib\site-packages\nbclient\client.py", line 1305, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\ProgramData\anaconda3\Lib\site-packages\jupyter_core\utils\__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\ProgramData\anaconda3\Lib\asyncio\base_events.py", line 687, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "C:\ProgramData\anaconda3\Lib\site-packages\nbclient\client.py", line 705, in async_execute
+    await self.async_execute_cell(
+  File "C:\ProgramData\anaconda3\Lib\site-packages\nbclient\client.py", line 1058, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\ProgramData\anaconda3\Lib\site-packages\nbclient\client.py", line 914, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+## Isothermal properties for steam @ 300 C
+P = [0.01, 0.05, 0.10, 0.20, 0.30, 0.40, 0.50, 0.6, 0.8, 1.0, 1.2, 1.4, 1.6, 1.8, 2.0, 2.5, 3.0, 3.5, 4.0, 4.5, 5.0, 6.0, 7.0, 8.0]
+V = [26.445, 5.284, 2.639, 1.316, 0.875, 0.654, 0.522, 0.433, 0.324, 0.257, 0.213, 0.182, 0.159, 0.140, 0.125, 0.099, 0.081, 0.068, 0.059, 0.051, 0.045, 0.036, 0.029, 0.0243]
+## P  (MPa)
+## V (m^3/kg)
+MW = 18/1000 #kg/mol 
+V_mol = np.array(V)*MW ##mol/m^3
+R = 8.314 #J/mol*K
+
+T = 300  # C
+V_IG = R*(T+273.15)/(np.array(P)*10**6) #mol/m^3
+import matplotlib.pyplot as plt
+import numpy as np
+
+plt.plot(V_mol, P, label = 'steam')
+plt.plot(V_IG, P, label = 'IG')
+plt.yscale('log')
+plt.xscale('log')
+plt.ylabel('P (MPa)')
+plt.xlabel('V (m^3/mol)')
+plt.legend()
+plt.show()
+------------------
+
+
+[1;31m---------------------------------------------------------------------------[0m
+[1;31mNameError[0m                                 Traceback (most recent call last)
+Cell [1;32mIn[1], line 7[0m
+[0;32m      4[0m [38;5;66;03m## P  (MPa)[39;00m
+[0;32m      5[0m [38;5;66;03m## V (m^3/kg)[39;00m
+[0;32m      6[0m MW [38;5;241m=[39m [38;5;241m18[39m[38;5;241m/[39m[38;5;241m1000[39m [38;5;66;03m#kg/mol [39;00m
+[1;32m----> 7[0m V_mol [38;5;241m=[39m np[38;5;241m.[39marray(V)[38;5;241m*[39mMW [38;5;66;03m##mol/m^3[39;00m
+[0;32m      8[0m R [38;5;241m=[39m [38;5;241m8.314[39m [38;5;66;03m#J/mol*K[39;00m
+[0;32m     10[0m T [38;5;241m=[39m [38;5;241m300[39m  [38;5;66;03m# C[39;00m
+
+[1;31mNameError[0m: name 'np' is not defined
+

@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -65,8 +65,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'Ch7/7.Activity-Coefficient-Models';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Vapor-Liquid Equilibrium" href="8.Calculating-Mixture-Fugacity.html" />
-    <link rel="prev" title="Calculating the Accuracy of Equations of State" href="../Ch5/5.Accuracy-EOS.html" />
+    <link rel="next" title="Applying our Thermodynamic Definitions to Mixtures" href="8.Applying-Definitions.html" />
+    <link rel="prev" title="Equilibrium of Mixtures" href="6.Mixture-Equilibrium.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -213,8 +213,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../Ch5/3.Gaseous-Mixtures.html">Gaseous Mixtures</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Ch5/4.Liquid-Mixtures.html">Liquid Mixtures</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Ch5/5.Accuracy-EOS.html">Calculating the Accuracy of Equations of State</a></li>
+<li class="toctree-l1"><a class="reference internal" href="6.Mixture-Equilibrium.html">Equilibrium of Mixtures</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Activity Coefficients</a></li>
-<li class="toctree-l1"><a class="reference internal" href="8.Calculating-Mixture-Fugacity.html">Vapor-Liquid Equilibrium</a></li>
+<li class="toctree-l1"><a class="reference internal" href="8.Applying-Definitions.html">Applying our Thermodynamic Definitions to Mixtures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="9.Calculating-Mixture-Fugacity.html">Vapor-Liquid Equilibrium</a></li>
 </ul>
 
     </div>
@@ -712,7 +714,7 @@ x_1\dfrac{a_1}{\underline{V}_1}+x_2\dfrac{a_2}{\underline{V}_2}\)</span></p></li
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x2192d0ae960&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x1b02b0c50d0&gt;
 </pre></div>
 </div>
 <img alt="../_images/e187e476089e956880b49bff970dbc48eb9e03f7985f9b25ac1ecd52f4f0a472.png" src="../_images/e187e476089e956880b49bff970dbc48eb9e03f7985f9b25ac1ecd52f4f0a472.png" />
@@ -782,7 +784,7 @@ x_1\dfrac{a_1}{\underline{V}_1}+x_2\dfrac{a_2}{\underline{V}_2}\)</span></p></li
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x2192d0d91f0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x1b02c30fa70&gt;
 </pre></div>
 </div>
 <img alt="../_images/6dfea86e51a8919ad02f61d2d800cce603288c4dc2dff37fdc5c70b6813b5d75.png" src="../_images/6dfea86e51a8919ad02f61d2d800cce603288c4dc2dff37fdc5c70b6813b5d75.png" />
@@ -827,20 +829,6 @@ x_1\dfrac{a_1}{\underline{V}_1}+x_2\dfrac{a_2}{\underline{V}_2}\)</span></p></li
                     <span class="n">GC</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;CH3&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;CH2&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;OH(P)&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">},</span><span class="n">ri</span><span class="o">=</span><span class="mf">2.1055</span><span class="p">,</span> <span class="n">qi</span><span class="o">=</span><span class="mf">1.972</span><span class="p">,</span> <span class="n">Mw</span><span class="o">=</span><span class="mf">46.07</span><span class="p">)</span>
 
 <span class="n">mix</span> <span class="o">=</span> <span class="n">mixture</span><span class="p">(</span><span class="n">water</span><span class="p">,</span><span class="n">ethanol</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">phasepy</span> <span class="kn">import</span> <span class="n">component</span><span class="p">,</span> <span class="n">mixture</span><span class="p">,</span> <span class="n">preos</span><span class="p">,</span> <span class="n">vdweos</span><span class="p">,</span> <span class="n">rkseos</span><span class="p">,</span><span class="n">virialgamma</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">water</span> <span class="o">=</span> <span class="n">component</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;water&#39;</span><span class="p">,</span><span class="n">Tc</span><span class="o">=</span><span class="mf">647.13</span><span class="p">,</span> <span class="n">Pc</span><span class="o">=</span><span class="mf">220.55</span><span class="p">,</span> <span class="n">Zc</span><span class="o">=</span><span class="mf">0.229</span><span class="p">,</span> <span class="n">Vc</span><span class="o">=</span><span class="mf">55.948</span><span class="p">,</span> <span class="n">w</span><span class="o">=</span><span class="mf">0.344861</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span>                   <span class="n">GC</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;H2O&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">},</span> <span class="n">ri</span><span class="o">=</span><span class="mf">0.92</span><span class="p">,</span> <span class="n">qi</span><span class="o">=</span><span class="mf">1.4</span><span class="p">,</span> <span class="n">Mw</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">ethanol</span> <span class="o">=</span> <span class="n">component</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;ethanol&#39;</span><span class="p">,</span><span class="n">Tc</span><span class="o">=</span><span class="mi">514</span><span class="p">,</span> <span class="n">Pc</span><span class="o">=</span><span class="mf">61.37</span><span class="p">,</span> <span class="n">Zc</span><span class="o">=</span><span class="mf">0.241</span><span class="p">,</span> <span class="n">Vc</span><span class="o">=</span><span class="mi">168</span><span class="p">,</span> <span class="n">w</span><span class="o">=</span><span class="mf">0.643558</span><span class="p">,</span> 
-<span class="g g-Whitespace">      </span><span class="mi">6</span>                     <span class="n">GC</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;CH3&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;CH2&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;OH(P)&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">},</span><span class="n">ri</span><span class="o">=</span><span class="mf">2.1055</span><span class="p">,</span> <span class="n">qi</span><span class="o">=</span><span class="mf">1.972</span><span class="p">,</span> <span class="n">Mw</span><span class="o">=</span><span class="mf">46.07</span><span class="p">)</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;phasepy&#39;
 </pre></div>
 </div>
 </div>
@@ -955,7 +943,7 @@ x_1\dfrac{a_1}{\underline{V}_1}+x_2\dfrac{a_2}{\underline{V}_2}\)</span></p></li
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[]
 </pre></div>
 </div>
-<img alt="../_images/6d559b9f3a653896890918934e1cd892a1931cfbffb91311a199adac2c08b7a1.png" src="../_images/6d559b9f3a653896890918934e1cd892a1931cfbffb91311a199adac2c08b7a1.png" />
+<img alt="../_images/9f6298991b3e7df5dd6116f6fec89db3f14155591771b8694765e8194ccb1f3c.png" src="../_images/9f6298991b3e7df5dd6116f6fec89db3f14155591771b8694765e8194ccb1f3c.png" />
 </div>
 </div>
 <p>The pressure of the fluid mixture can be computed at given composition, molar volume and temperature using the eos.pressure method.</p>
@@ -976,7 +964,7 @@ x_1\dfrac{a_1}{\underline{V}_1}+x_2\dfrac{a_2}{\underline{V}_2}\)</span></p></li
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/07c4267cf3dd8064af5c72905e99fc7436581bed84d99ea68e9c6eeb386b3cd1.png" src="../_images/07c4267cf3dd8064af5c72905e99fc7436581bed84d99ea68e9c6eeb386b3cd1.png" />
+<img alt="../_images/b9726054e1c25e1162b8496225e386666912bac8ab847781d0ebccaff6c4d662.png" src="../_images/b9726054e1c25e1162b8496225e386666912bac8ab847781d0ebccaff6c4d662.png" />
 </div>
 </div>
 </section>
@@ -1013,20 +1001,20 @@ x_1\dfrac{a_1}{\underline{V}_1}+x_2\dfrac{a_2}{\underline{V}_2}\)</span></p></li
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../Ch5/5.Accuracy-EOS.html"
+       href="6.Mixture-Equilibrium.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Calculating the Accuracy of Equations of State</p>
+        <p class="prev-next-title">Equilibrium of Mixtures</p>
       </div>
     </a>
     <a class="right-next"
-       href="8.Calculating-Mixture-Fugacity.html"
+       href="8.Applying-Definitions.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Vapor-Liquid Equilibrium</p>
+        <p class="prev-next-title">Applying our Thermodynamic Definitions to Mixtures</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
