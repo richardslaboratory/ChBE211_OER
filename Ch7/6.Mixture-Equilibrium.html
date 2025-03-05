@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -398,6 +398,7 @@
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-lewis-randall-rule">The Lewis-Randall Rule:</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ideal-gas-mixtures-extension-of-the-lewis-randall-rule">Ideal Gas Mixtures - Extension of the Lewis-Randall Rule</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gaseous-mixtures-at-all-state-points">Gaseous Mixtures at all State Points</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-show-that-for-the-virial-equation-of-state-for-a-binary-mixture-the-fugacity-coefficient-is-given-as">Example - Show that for the Virial Equation of State for a binary mixture, the fugacity coefficient is given as:</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#liquid-mixtures">Liquid Mixtures</a><ul class="nav section-nav flex-column">
@@ -436,6 +437,23 @@
 <section id="fugacity-of-species-i-in-a-mixture">
 <h2>Fugacity of species i in a mixture<a class="headerlink" href="#fugacity-of-species-i-in-a-mixture" title="Link to this heading">#</a></h2>
 <p>The last ingredient that completes our thermodynamic description of mixture properties is describing vapor liquid equilibrium of mixtures. If we imagine a mixture inside an isolated container that undergoes a transition from a vapor phase to a liquid phase, then we can imagine that there will be two phases in coexistance.</p>
+<p>The starting point for this is to adopt the approach from Ch 7.</p>
+<div class="math notranslate nohighlight">
+\[dG = - SdT + VdP +\sum_i^C \bar{G}_i dN_I\]</div>
+<p>from this, and employing the definition of the partial molar property, we conclude that:</p>
+<div class="math notranslate nohighlight">
+\[\bar{S}_i = - \bigg(\dfrac{\partial \bar{G}_i}{\partial T}\bigg)_{P, N_j}\]</div>
+<div class="math notranslate nohighlight">
+\[\bar{V}_i = - \bigg(\dfrac{\partial \bar{G}_i}{\partial P}\bigg)_{T, N_j}\]</div>
+<p>As in the pure phase case, the partial molar volume is the more useful relationship:</p>
+<div class="math notranslate nohighlight">
+\[\Delta\bar{G}_i = \int \bar{V}_i dP\]</div>
+<p>In analogy to our Ch 7 approach for single components then, we find that:</p>
+<div class="math notranslate nohighlight">
+\[\bar{f}_i = x_i P exp\bigg[\dfrac{1}{RT}\bigg(\bar{G}_i - \bar{G}_i^{IGM}\bigg)\bigg]\]</div>
+<p>which we can rewrite as:</p>
+<div class="math notranslate nohighlight">
+\[\ln{\phi_i} = \ln{\dfrac{\bar{f}_i}{x_i P}} = \dfrac{1}{RT}\int_0^P\big(\bar{V}_i-\underline{V}_i\big)dP\]</div>
 <p>In chapter 7, we found that at a given a temperature a single component system has no degrees of freedom (i.e., the vapor pressure for a 2 phase system is defined by the selection of temperature). Recall that the criteria for equilibrium for a single component VLE was:</p>
 <ol class="arabic simple">
 <li><p><span class="math notranslate nohighlight">\(T_v=T_l\)</span></p></li>
@@ -497,6 +515,11 @@
 <li><p>Using the <span class="math notranslate nohighlight">\(Z\)</span> value compute the fugacity for each species using the equation above.</p></li>
 </ol>
 </section>
+<section id="example-show-that-for-the-virial-equation-of-state-for-a-binary-mixture-the-fugacity-coefficient-is-given-as">
+<h3>Example - Show that for the Virial Equation of State for a binary mixture, the fugacity coefficient is given as:<a class="headerlink" href="#example-show-that-for-the-virial-equation-of-state-for-a-binary-mixture-the-fugacity-coefficient-is-given-as" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\ln\bigg(\dfrac{\bar{f}_1}{y_1 P}\bigg) = \dfrac{2P}{Z_{mix} RT} y_2 B_{12}(T) - \ln{Z_{mix}}\]</div>
+</section>
 </section>
 <section id="liquid-mixtures">
 <h2>Liquid Mixtures<a class="headerlink" href="#liquid-mixtures" title="Link to this heading">#</a></h2>
@@ -510,12 +533,13 @@
 </section>
 <section id="discontinuous-modelling-activity-coefficient-models">
 <h3>Discontinuous Modelling - Activity coefficient models<a class="headerlink" href="#discontinuous-modelling-activity-coefficient-models" title="Link to this heading">#</a></h3>
-<p>As we have discussed, in most cases mixtures involve more than one component whose density is not accurately described by an equation of state in the liquid phase. For example mixtures containing alcohols, organic or inorganic acids, or salts. In these cases, the approach of modeling fugacity from activity coefficient models is preferred. If this is the case, we proceed as discussed in previous lectures using the definition of the activity coefficient</p>
-<div class="math notranslate nohighlight">
-\[\bar{G}_i^{ex}=RT\ln{\gamma_i}=\dfrac{\partial}{\partial N_i}\bigg|_{N_{j\ne i},T,P}\bigg(G^{ex}\bigg)\]</div>
+<p>As we have discussed, in most cases mixtures involve more than one component whose density is not accurately described by an equation of state in the liquid phase. For example mixtures containing alcohols, organic or inorganic acids, or salts. In these cases, the approach of modeling fugacity from activity coefficient models is preferred. If this is the case, we proceed as discussed in previous lectures using the definition of the activity coefficient which has the following definition</p>
 <div class="math notranslate nohighlight">
 \[\gamma_i x_i f_i =\bar{f}_i \]</div>
 <p>where <span class="math notranslate nohighlight">\(f_i(T,P)\)</span> is the fugacity of species <span class="math notranslate nohighlight">\(i\)</span> at the temperature and pressure of the mixture.</p>
+<p>The activity coefficient can be calculated from the excess molar properties of a liquid, <span class="math notranslate nohighlight">\(\bar{V}_i^{ex}\)</span>,<span class="math notranslate nohighlight">\(\bar{H}_i^{ex}\)</span>, <span class="math notranslate nohighlight">\(\bar{S}_i^{ex}\)</span></p>
+<div class="math notranslate nohighlight">
+\[\bar{G}_i^{ex}=RT\ln{\gamma_i}=\dfrac{\partial}{\partial N_i}\bigg|_{N_{j\ne i},T,P}\bigg(G^{ex}\bigg)\]</div>
 <p>The activity coefficient models that we have discussed include:</p>
 <ol class="arabic simple">
 <li><p>Margules Equations</p></li>
@@ -676,7 +700,7 @@ To achieve these types of separations, we must be able to calculate the equilibr
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x1bb1d6abd70&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x16727927b90&gt;
 </pre></div>
 </div>
 <img alt="../_images/b0e11a1efa35b69da3132e9115337b0cc2ce8ef715b3f78d3754641052618a9a.png" src="../_images/b0e11a1efa35b69da3132e9115337b0cc2ce8ef715b3f78d3754641052618a9a.png" />
@@ -1203,6 +1227,7 @@ To achieve these types of separations, we must be able to calculate the equilibr
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-lewis-randall-rule">The Lewis-Randall Rule:</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ideal-gas-mixtures-extension-of-the-lewis-randall-rule">Ideal Gas Mixtures - Extension of the Lewis-Randall Rule</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gaseous-mixtures-at-all-state-points">Gaseous Mixtures at all State Points</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-show-that-for-the-virial-equation-of-state-for-a-binary-mixture-the-fugacity-coefficient-is-given-as">Example - Show that for the Virial Equation of State for a binary mixture, the fugacity coefficient is given as:</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#liquid-mixtures">Liquid Mixtures</a><ul class="nav section-nav flex-column">

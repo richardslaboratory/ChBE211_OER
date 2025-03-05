@@ -213,8 +213,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../Ch5/3.Gaseous-Mixtures.html">Gaseous Mixtures</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Ch5/4.Liquid-Mixtures.html">Liquid Mixtures</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Ch5/5.Accuracy-EOS.html">Calculating the Accuracy of Equations of State</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch7/6.Mixture-Equilibrium.html">Equilibrium of Mixtures</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Ch7/7.Activity-Coefficient-Models.html">Activity Coefficients</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Ch7/8.Calculating-Mixture-Fugacity.html">Vapor-Liquid Equilibrium</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch7/8.Applying-Definitions.html">Applying our Thermodynamic Definitions to Mixtures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch7/9.Calculating-Mixture-Fugacity.html">Vapor-Liquid Equilibrium</a></li>
 </ul>
 
     </div>
@@ -541,7 +543,7 @@ RT(Z-1) - RTln(Z) + \int_{\infty}^{\underline{V}}\big(\dfrac{RT}{\underline{V}}-
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x1dd770a3380&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x2365f3e1c40&gt;
 </pre></div>
 </div>
 </div>
@@ -838,26 +840,39 @@ RT(Z-1) - RTln(Z) + \int_{\infty}^{\underline{V}}\big(\dfrac{RT}{\underline{V}}-
 <span class="g g-Whitespace">     </span><span class="mi">55</span>     <span class="c1">#print(Tr,ps,vv,vl)</span>
 <span class="g g-Whitespace">     </span><span class="mi">56</span>     <span class="n">veqv_</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">vv</span><span class="o">*</span><span class="mi">10</span><span class="o">**</span><span class="mi">6</span><span class="p">)</span>
 
-<span class="nn">Cell In[6], line 13,</span> in <span class="ni">psat</span><span class="nt">(Tr, prmin, prmax, npts)</span>
-<span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="n">T</span><span class="o">=</span><span class="n">Tc</span><span class="o">*</span><span class="n">Tr</span>
-<span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="c1">###Find roots of cubic equation of state</span>
-<span class="ne">---&gt; </span><span class="mi">13</span> <span class="n">roots</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">roots</span><span class="p">(</span><span class="n">Zcoeff</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="n">P</span><span class="p">))</span>
-<span class="g g-Whitespace">     </span><span class="mi">15</span> <span class="c1">#roots array contains three roots</span>
-<span class="g g-Whitespace">     </span><span class="mi">16</span> <span class="c1">#check if roots contains three real values</span>
-<span class="g g-Whitespace">     </span><span class="mi">17</span> <span class="n">check</span><span class="o">=</span><span class="mi">0</span>
+<span class="nn">Cell In[6], line 35,</span> in <span class="ni">psat</span><span class="nt">(Tr, prmin, prmax, npts)</span>
+<span class="g g-Whitespace">     </span><span class="mi">32</span> <span class="n">vl_</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Vl</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">34</span> <span class="n">phiv</span><span class="o">=</span><span class="n">quad</span><span class="p">(</span><span class="n">Integrand</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span><span class="n">Vv</span><span class="p">,</span><span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">T</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="p">(</span><span class="n">R</span><span class="o">*</span><span class="n">T</span><span class="p">)</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">Zv</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="n">Zv</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="c1">#calculate the fugacity coefficient for a vapor</span>
+<span class="ne">---&gt; </span><span class="mi">35</span> <span class="n">phil</span><span class="o">=</span><span class="n">quad</span><span class="p">(</span><span class="n">Integrand</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span><span class="n">Vl</span><span class="p">,</span><span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">T</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="p">(</span><span class="n">R</span><span class="o">*</span><span class="n">T</span><span class="p">)</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">Zl</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="n">Zl</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="c1">#calculate the fugacity coefficient for a liquid</span>
+<span class="g g-Whitespace">     </span><span class="mi">37</span> <span class="n">phiv_</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">phiv</span><span class="p">)</span><span class="c1">#calculate the fugacity coefficient for a vapor</span>
+<span class="g g-Whitespace">     </span><span class="mi">38</span> <span class="n">phil_</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">phil</span><span class="p">)</span><span class="c1">#calculate the fugacity coefficient for a liquid</span>
 
-<span class="nn">File C:\ProgramData\anaconda3\Lib\site-packages\numpy\lib\polynomial.py:260,</span> in <span class="ni">roots</span><span class="nt">(p)</span>
-<span class="g g-Whitespace">    </span><span class="mi">257</span>     <span class="n">roots</span> <span class="o">=</span> <span class="n">NX</span><span class="o">.</span><span class="n">array</span><span class="p">([])</span>
-<span class="g g-Whitespace">    </span><span class="mi">259</span> <span class="c1"># tack any zeros onto the back of the array</span>
-<span class="ne">--&gt; </span><span class="mi">260</span> <span class="n">roots</span> <span class="o">=</span> <span class="n">hstack</span><span class="p">((</span><span class="n">roots</span><span class="p">,</span> <span class="n">NX</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">trailing_zeros</span><span class="p">,</span> <span class="n">roots</span><span class="o">.</span><span class="n">dtype</span><span class="p">)))</span>
-<span class="g g-Whitespace">    </span><span class="mi">261</span> <span class="k">return</span> <span class="n">roots</span>
+<span class="nn">File C:\ProgramData\anaconda3\Lib\site-packages\scipy\integrate\_quadpack_py.py:464,</span> in <span class="ni">quad</span><span class="nt">(func, a, b, args, full_output, epsabs, epsrel, limit, points, weight, wvar, wopts, maxp1, limlst, complex_func)</span>
+<span class="g g-Whitespace">    </span><span class="mi">461</span>     <span class="k">return</span> <span class="n">retval</span>
+<span class="g g-Whitespace">    </span><span class="mi">463</span> <span class="k">if</span> <span class="n">weight</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">464</span>     <span class="n">retval</span> <span class="o">=</span> <span class="n">_quad</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">full_output</span><span class="p">,</span> <span class="n">epsabs</span><span class="p">,</span> <span class="n">epsrel</span><span class="p">,</span> <span class="n">limit</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">465</span>                    <span class="n">points</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">466</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">467</span>     <span class="k">if</span> <span class="n">points</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
 
-<span class="nn">File C:\ProgramData\anaconda3\Lib\site-packages\numpy\core\shape_base.py:357,</span> in <span class="ni">hstack</span><span class="nt">(tup, dtype, casting)</span>
-<span class="g g-Whitespace">    </span><span class="mi">355</span> <span class="c1"># As a special case, dimension 0 of 1-dimensional arrays is &quot;horizontal&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">356</span> <span class="k">if</span> <span class="n">arrs</span> <span class="ow">and</span> <span class="n">arrs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">ndim</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">357</span>     <span class="k">return</span> <span class="n">_nx</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span><span class="n">arrs</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">,</span> <span class="n">casting</span><span class="o">=</span><span class="n">casting</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">358</span> <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">359</span>     <span class="k">return</span> <span class="n">_nx</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span><span class="n">arrs</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">,</span> <span class="n">casting</span><span class="o">=</span><span class="n">casting</span><span class="p">)</span>
+<span class="nn">File C:\ProgramData\anaconda3\Lib\site-packages\scipy\integrate\_quadpack_py.py:613,</span> in <span class="ni">_quad</span><span class="nt">(func, a, b, args, full_output, epsabs, epsrel, limit, points)</span>
+<span class="g g-Whitespace">    </span><span class="mi">611</span>         <span class="k">return</span> <span class="n">_quadpack</span><span class="o">.</span><span class="n">_qagse</span><span class="p">(</span><span class="n">func</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">args</span><span class="p">,</span><span class="n">full_output</span><span class="p">,</span><span class="n">epsabs</span><span class="p">,</span><span class="n">epsrel</span><span class="p">,</span><span class="n">limit</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">612</span>     <span class="k">else</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">613</span>         <span class="k">return</span> <span class="n">_quadpack</span><span class="o">.</span><span class="n">_qagie</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">bound</span><span class="p">,</span> <span class="n">infbounds</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">full_output</span><span class="p">,</span> 
+<span class="g g-Whitespace">    </span><span class="mi">614</span>                                 <span class="n">epsabs</span><span class="p">,</span> <span class="n">epsrel</span><span class="p">,</span> <span class="n">limit</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">615</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">616</span>     <span class="k">if</span> <span class="n">infbounds</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+
+<span class="nn">Cell In[5], line 22,</span> in <span class="ni">Integrand</span><span class="nt">(V, T)</span>
+<span class="g g-Whitespace">     </span><span class="mi">21</span> <span class="k">def</span> <span class="nf">Integrand</span><span class="p">(</span><span class="n">V</span><span class="p">,</span><span class="n">T</span><span class="p">):</span>
+<span class="ne">---&gt; </span><span class="mi">22</span>     <span class="k">return</span> <span class="n">R</span><span class="o">*</span><span class="n">T</span><span class="o">/</span><span class="n">V</span><span class="o">-</span><span class="n">PR_EOS</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="n">V</span><span class="p">)</span>
+
+<span class="nn">Cell In[5], line 5,</span> in <span class="ni">PR_EOS</span><span class="nt">(T, V)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">quad</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1">#This function returns the PR EOS</span>
+<span class="ne">----&gt; </span><span class="mi">5</span> <span class="k">def</span> <span class="nf">PR_EOS</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="n">V</span><span class="p">):</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span>     <span class="k">def</span> <span class="nf">kappa</span><span class="p">():</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span>         <span class="k">return</span> <span class="mf">0.37464</span><span class="o">+</span><span class="mf">1.54266</span><span class="o">*</span><span class="n">w</span><span class="o">-</span><span class="mf">0.26992</span><span class="o">*</span><span class="n">w</span><span class="o">**</span><span class="mi">2</span>
 
 <span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
