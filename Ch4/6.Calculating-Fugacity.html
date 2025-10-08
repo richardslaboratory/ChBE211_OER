@@ -30,11 +30,11 @@
   <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 <link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -45,7 +45,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=f281be69"></script>
@@ -58,8 +58,6 @@
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'Ch4/6.Calculating-Fugacity';</script>
@@ -506,11 +504,11 @@ RT(Z-1) - RTln(Z) + \int_{\infty}^{\underline{V}}\big(\dfrac{RT}{\underline{V}}-
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> notebook
 <span class="o">%</span><span class="k">matplotlib</span> inline
 
-<span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">ipywidgets</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 
-<span class="kn">from</span> <span class="nn">phasepy</span> <span class="kn">import</span> <span class="n">component</span><span class="p">,</span> <span class="n">mixture</span><span class="p">,</span> <span class="n">preos</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">phasepy</span><span class="w"> </span><span class="kn">import</span> <span class="n">component</span><span class="p">,</span> <span class="n">mixture</span><span class="p">,</span> <span class="n">preos</span>
 <span class="n">Tc</span><span class="o">=</span><span class="mf">647.13</span> <span class="c1">#K</span>
 <span class="n">Pc</span><span class="o">=</span><span class="mf">220.55</span> <span class="c1">#bar</span>
 <span class="n">Vc</span><span class="o">=</span><span class="mi">58</span> <span class="c1">#cm^3/mol</span>
@@ -543,7 +541,7 @@ RT(Z-1) - RTln(Z) + \int_{\infty}^{\underline{V}}\big(\dfrac{RT}{\underline{V}}-
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x2365f3e1c40&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x1e02658d370&gt;
 </pre></div>
 </div>
 </div>
@@ -575,14 +573,14 @@ RT(Z-1) - RTln(Z) + \int_{\infty}^{\underline{V}}\big(\dfrac{RT}{\underline{V}}-
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">##define the compressibility coefficients at a given temperature and pressure</span>
 
 <span class="n">R</span><span class="o">=</span><span class="mf">8.314</span><span class="c1">##j/mol*k</span>
-<span class="k">def</span> <span class="nf">Zcoeff</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="n">P</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">kappa</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">Zcoeff</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="n">P</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">kappa</span><span class="p">():</span>
         <span class="k">return</span> <span class="mf">0.37464</span><span class="o">+</span><span class="mf">1.54266</span><span class="o">*</span><span class="n">w</span><span class="o">-</span><span class="mf">0.26992</span><span class="o">*</span><span class="n">w</span><span class="o">**</span><span class="mi">2</span>
-    <span class="k">def</span> <span class="nf">alpha</span><span class="p">(</span><span class="n">Tr</span><span class="p">):</span>    
+    <span class="k">def</span><span class="w"> </span><span class="nf">alpha</span><span class="p">(</span><span class="n">Tr</span><span class="p">):</span>    
         <span class="k">return</span> <span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">kappa</span><span class="p">()</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">Tr</span><span class="p">)))</span><span class="o">**</span><span class="mi">2</span>
-    <span class="k">def</span> <span class="nf">a</span><span class="p">(</span><span class="n">Tr</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">a</span><span class="p">(</span><span class="n">Tr</span><span class="p">):</span>
         <span class="k">return</span> <span class="mf">0.45724</span><span class="o">*</span><span class="p">(</span><span class="n">R</span><span class="o">*</span><span class="n">Tc</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="n">Pc</span><span class="o">*</span><span class="mi">10</span><span class="o">**</span><span class="mi">5</span><span class="p">)</span><span class="o">*</span><span class="n">alpha</span><span class="p">(</span><span class="n">Tr</span><span class="p">)</span>
-    <span class="k">def</span> <span class="nf">b</span><span class="p">():</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">b</span><span class="p">():</span>
         <span class="k">return</span> <span class="mf">0.07780</span><span class="o">*</span><span class="n">R</span><span class="o">*</span><span class="n">Tc</span><span class="o">/</span><span class="p">(</span><span class="n">Pc</span><span class="o">*</span><span class="mi">10</span><span class="o">**</span><span class="mi">5</span><span class="p">)</span>
     <span class="n">Tr</span><span class="o">=</span><span class="n">T</span><span class="o">/</span><span class="n">Tc</span>
     
@@ -674,17 +672,17 @@ RT(Z-1) - RTln(Z) + \int_{\infty}^{\underline{V}}\big(\dfrac{RT}{\underline{V}}-
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
-<span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">quad</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy.integrate</span><span class="w"> </span><span class="kn">import</span> <span class="n">quad</span>
 
 <span class="c1">#This function returns the PR EOS</span>
-<span class="k">def</span> <span class="nf">PR_EOS</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="n">V</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">kappa</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">PR_EOS</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="n">V</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">kappa</span><span class="p">():</span>
         <span class="k">return</span> <span class="mf">0.37464</span><span class="o">+</span><span class="mf">1.54266</span><span class="o">*</span><span class="n">w</span><span class="o">-</span><span class="mf">0.26992</span><span class="o">*</span><span class="n">w</span><span class="o">**</span><span class="mi">2</span>
-    <span class="k">def</span> <span class="nf">alpha</span><span class="p">(</span><span class="n">Tr</span><span class="p">):</span>    
+    <span class="k">def</span><span class="w"> </span><span class="nf">alpha</span><span class="p">(</span><span class="n">Tr</span><span class="p">):</span>    
         <span class="k">return</span> <span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">kappa</span><span class="p">()</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">Tr</span><span class="p">)))</span><span class="o">**</span><span class="mi">2</span>
-    <span class="k">def</span> <span class="nf">a</span><span class="p">(</span><span class="n">Tr</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">a</span><span class="p">(</span><span class="n">Tr</span><span class="p">):</span>
         <span class="k">return</span> <span class="mf">0.45724</span><span class="o">*</span><span class="p">(</span><span class="n">R</span><span class="o">*</span><span class="n">Tc</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="n">Pc</span><span class="o">*</span><span class="mi">10</span><span class="o">**</span><span class="mi">5</span><span class="p">)</span><span class="o">*</span><span class="n">alpha</span><span class="p">(</span><span class="n">Tr</span><span class="p">)</span>
-    <span class="k">def</span> <span class="nf">b</span><span class="p">():</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">b</span><span class="p">():</span>
         <span class="k">return</span> <span class="mf">0.07780</span><span class="o">*</span><span class="n">R</span><span class="o">*</span><span class="n">Tc</span><span class="o">/</span><span class="p">(</span><span class="n">Pc</span><span class="o">*</span><span class="mi">10</span><span class="o">**</span><span class="mi">5</span><span class="p">)</span>
     <span class="n">Tr</span><span class="o">=</span><span class="n">T</span><span class="o">/</span><span class="n">Tc</span>
     <span class="n">P1</span><span class="o">=</span><span class="n">R</span><span class="o">*</span><span class="n">T</span><span class="o">/</span><span class="p">(</span><span class="n">V</span><span class="o">-</span><span class="n">b</span><span class="p">())</span>
@@ -693,7 +691,7 @@ RT(Z-1) - RTln(Z) + \int_{\infty}^{\underline{V}}\big(\dfrac{RT}{\underline{V}}-
     <span class="k">return</span> <span class="n">P1</span><span class="o">-</span><span class="n">P2</span>
 
 <span class="c1">##Integrates Fugacity</span>
-<span class="k">def</span> <span class="nf">Integrand</span><span class="p">(</span><span class="n">V</span><span class="p">,</span><span class="n">T</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">Integrand</span><span class="p">(</span><span class="n">V</span><span class="p">,</span><span class="n">T</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">R</span><span class="o">*</span><span class="n">T</span><span class="o">/</span><span class="n">V</span><span class="o">-</span><span class="n">PR_EOS</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="n">V</span><span class="p">)</span>
 <span class="c1">##for each temperatur</span>
 
@@ -757,7 +755,7 @@ RT(Z-1) - RTln(Z) + \int_{\infty}^{\underline{V}}\big(\dfrac{RT}{\underline{V}}-
 <p>We will copy the above into a function</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">psat</span><span class="p">(</span><span class="n">Tr</span><span class="p">,</span><span class="n">prmin</span><span class="o">=-</span><span class="mi">4</span><span class="p">,</span><span class="n">prmax</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">npts</span><span class="o">=</span><span class="mi">201</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">psat</span><span class="p">(</span><span class="n">Tr</span><span class="p">,</span><span class="n">prmin</span><span class="o">=-</span><span class="mi">4</span><span class="p">,</span><span class="n">prmax</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">npts</span><span class="o">=</span><span class="mi">201</span><span class="p">):</span>
     
     <span class="n">P_</span><span class="o">=</span><span class="p">[]</span>
     <span class="n">phiv_</span><span class="o">=</span><span class="p">[]</span>
@@ -864,15 +862,25 @@ RT(Z-1) - RTln(Z) + \int_{\infty}^{\underline{V}}\big(\dfrac{RT}{\underline{V}}-
 <span class="g g-Whitespace">    </span><span class="mi">616</span>     <span class="k">if</span> <span class="n">infbounds</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
 
 <span class="nn">Cell In[5], line 22,</span> in <span class="ni">Integrand</span><span class="nt">(V, T)</span>
-<span class="g g-Whitespace">     </span><span class="mi">21</span> <span class="k">def</span> <span class="nf">Integrand</span><span class="p">(</span><span class="n">V</span><span class="p">,</span><span class="n">T</span><span class="p">):</span>
+<span class="g g-Whitespace">     </span><span class="mi">21</span> <span class="k">def</span><span class="w"> </span><span class="nf">Integrand</span><span class="p">(</span><span class="n">V</span><span class="p">,</span><span class="n">T</span><span class="p">):</span>
 <span class="ne">---&gt; </span><span class="mi">22</span>     <span class="k">return</span> <span class="n">R</span><span class="o">*</span><span class="n">T</span><span class="o">/</span><span class="n">V</span><span class="o">-</span><span class="n">PR_EOS</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="n">V</span><span class="p">)</span>
 
-<span class="nn">Cell In[5], line 5,</span> in <span class="ni">PR_EOS</span><span class="nt">(T, V)</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">quad</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1">#This function returns the PR EOS</span>
-<span class="ne">----&gt; </span><span class="mi">5</span> <span class="k">def</span> <span class="nf">PR_EOS</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="n">V</span><span class="p">):</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span>     <span class="k">def</span> <span class="nf">kappa</span><span class="p">():</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span>         <span class="k">return</span> <span class="mf">0.37464</span><span class="o">+</span><span class="mf">1.54266</span><span class="o">*</span><span class="n">w</span><span class="o">-</span><span class="mf">0.26992</span><span class="o">*</span><span class="n">w</span><span class="o">**</span><span class="mi">2</span>
+<span class="nn">Cell In[5], line 16,</span> in <span class="ni">PR_EOS</span><span class="nt">(T, V)</span>
+<span class="g g-Whitespace">     </span><span class="mi">14</span> <span class="n">Tr</span><span class="o">=</span><span class="n">T</span><span class="o">/</span><span class="n">Tc</span>
+<span class="g g-Whitespace">     </span><span class="mi">15</span> <span class="n">P1</span><span class="o">=</span><span class="n">R</span><span class="o">*</span><span class="n">T</span><span class="o">/</span><span class="p">(</span><span class="n">V</span><span class="o">-</span><span class="n">b</span><span class="p">())</span>
+<span class="ne">---&gt; </span><span class="mi">16</span> <span class="n">P2</span><span class="o">=</span><span class="n">a</span><span class="p">(</span><span class="n">Tr</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">V</span><span class="o">*</span><span class="p">(</span><span class="n">V</span><span class="o">+</span><span class="n">b</span><span class="p">())</span><span class="o">+</span><span class="n">b</span><span class="p">()</span><span class="o">*</span><span class="p">(</span><span class="n">V</span><span class="o">-</span><span class="n">b</span><span class="p">()))</span>
+<span class="g g-Whitespace">     </span><span class="mi">18</span> <span class="k">return</span> <span class="n">P1</span><span class="o">-</span><span class="n">P2</span>
+
+<span class="nn">Cell In[5], line 11,</span> in <span class="ni">PR_EOS.&lt;locals&gt;.a</span><span class="nt">(Tr)</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="k">def</span><span class="w"> </span><span class="nf">a</span><span class="p">(</span><span class="n">Tr</span><span class="p">):</span>
+<span class="ne">---&gt; </span><span class="mi">11</span>     <span class="k">return</span> <span class="mf">0.45724</span><span class="o">*</span><span class="p">(</span><span class="n">R</span><span class="o">*</span><span class="n">Tc</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="n">Pc</span><span class="o">*</span><span class="mi">10</span><span class="o">**</span><span class="mi">5</span><span class="p">)</span><span class="o">*</span><span class="n">alpha</span><span class="p">(</span><span class="n">Tr</span><span class="p">)</span>
+
+<span class="nn">Cell In[5], line 8,</span> in <span class="ni">PR_EOS.&lt;locals&gt;.alpha</span><span class="nt">(Tr)</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="k">def</span><span class="w"> </span><span class="nf">kappa</span><span class="p">():</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span>     <span class="k">return</span> <span class="mf">0.37464</span><span class="o">+</span><span class="mf">1.54266</span><span class="o">*</span><span class="n">w</span><span class="o">-</span><span class="mf">0.26992</span><span class="o">*</span><span class="n">w</span><span class="o">**</span><span class="mi">2</span>
+<span class="ne">----&gt; </span><span class="mi">8</span> <span class="k">def</span><span class="w"> </span><span class="nf">alpha</span><span class="p">(</span><span class="n">Tr</span><span class="p">):</span>    
+<span class="g g-Whitespace">      </span><span class="mi">9</span>     <span class="k">return</span> <span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">kappa</span><span class="p">()</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">Tr</span><span class="p">)))</span><span class="o">**</span><span class="mi">2</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="k">def</span><span class="w"> </span><span class="nf">a</span><span class="p">(</span><span class="n">Tr</span><span class="p">):</span>
 
 <span class="ne">KeyboardInterrupt</span>: 
 </pre></div>

@@ -30,11 +30,11 @@
   <link href="../../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 <link href="../../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -45,7 +45,7 @@
 <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
     <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../../../_static/copybutton.js?v=f281be69"></script>
@@ -58,8 +58,6 @@
     <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'Ch8/211_Content/Ch3/Property-Diagram-Single-Components';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -412,10 +410,10 @@
 <h1>Property Database for Common Substances<a class="headerlink" href="#property-database-for-common-substances" title="Link to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">from</span> <span class="nn">chemicals</span> <span class="kn">import</span> <span class="n">acentric</span><span class="p">,</span> <span class="n">critical</span><span class="p">,</span> <span class="n">heat_capacity</span>
-<span class="kn">from</span> <span class="nn">phasepy</span> <span class="kn">import</span> <span class="n">component</span><span class="p">,</span> <span class="n">mixture</span><span class="p">,</span> <span class="n">preos</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">chemicals</span><span class="w"> </span><span class="kn">import</span> <span class="n">acentric</span><span class="p">,</span> <span class="n">critical</span><span class="p">,</span> <span class="n">heat_capacity</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">phasepy</span><span class="w"> </span><span class="kn">import</span> <span class="n">component</span><span class="p">,</span> <span class="n">mixture</span><span class="p">,</span> <span class="n">preos</span>
 
 <span class="n">CASRN</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;water&#39;</span><span class="p">:</span><span class="s1">&#39;7732-18-5&#39;</span><span class="p">,</span>
       <span class="s1">&#39;ethanol&#39;</span><span class="p">:</span><span class="s1">&#39;64-17-5&#39;</span><span class="p">}</span>
@@ -481,13 +479,13 @@
 <span class="n">Tr</span><span class="o">=</span><span class="mi">600</span><span class="c1">##K</span>
 <span class="n">Pr</span><span class="o">=</span><span class="mi">20</span><span class="c1">##bar</span>
 
-<span class="k">def</span> <span class="nf">dH_</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="n">P</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">dH_</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="n">P</span><span class="p">):</span>
     
-    <span class="k">def</span> <span class="nf">Cp_</span><span class="p">(</span><span class="n">T</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">Cp_</span><span class="p">(</span><span class="n">T</span><span class="p">):</span>
         
         <span class="k">return</span> 
     
-<span class="k">def</span> <span class="nf">SR_IG</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="n">P</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">SR_IG</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="n">P</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">Cp</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">T</span><span class="o">/</span><span class="n">Tr</span><span class="p">)</span><span class="o">+</span><span class="n">R</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">P</span><span class="o">/</span><span class="n">Pr</span><span class="p">)</span>
 
 <span class="k">for</span> <span class="n">P</span> <span class="ow">in</span> <span class="n">P_</span><span class="p">:</span>
@@ -507,14 +505,14 @@
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>22.064
 110.32
+220.64
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>220.64
-2206.4
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2206.4
 22064.0
 </pre></div>
 </div>
-<img alt="../../../_images/e5cd739587fd326cd177a49239a2d615c013e7e1d9eacde40c8158630c6866ba.png" src="../../../_images/e5cd739587fd326cd177a49239a2d615c013e7e1d9eacde40c8158630c6866ba.png" />
+<img alt="../../../_images/2c9d97ea9348dd66a41b190983a1779c979e686b83aeb759624e594553b67d13.png" src="../../../_images/2c9d97ea9348dd66a41b190983a1779c979e686b83aeb759624e594553b67d13.png" />
 </div>
 </div>
 </section>

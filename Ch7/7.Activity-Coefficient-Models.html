@@ -30,11 +30,11 @@
   <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 <link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -45,7 +45,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=f281be69"></script>
@@ -58,8 +58,6 @@
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'Ch7/7.Activity-Coefficient-Models';</script>
@@ -647,8 +645,8 @@ x_1\dfrac{a_1}{\underline{V}_1}+x_2\dfrac{a_2}{\underline{V}_2}\)</span></p></li
 <h2>Let’s begin by programming the equations<a class="headerlink" href="#lets-begin-by-programming-the-equations" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 
 <span class="c1">## Binary mixture calculation of van Laar and van der Waal</span>
 <span class="n">R</span><span class="o">=</span><span class="mf">8.314</span><span class="c1">##J/mol K</span>
@@ -667,24 +665,24 @@ x_1\dfrac{a_1}{\underline{V}_1}+x_2\dfrac{a_2}{\underline{V}_2}\)</span></p></li
 
 <span class="n">T</span><span class="o">=</span><span class="mi">298</span><span class="c1">##K</span>
 
-<span class="k">def</span> <span class="nf">amix</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">a1</span><span class="p">,</span><span class="n">a2</span><span class="p">,</span><span class="n">kij</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">amix</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">a1</span><span class="p">,</span><span class="n">a2</span><span class="p">,</span><span class="n">kij</span><span class="p">):</span>
     <span class="n">x2</span><span class="o">=</span><span class="mi">1</span><span class="o">-</span><span class="n">x1</span>
     <span class="n">a12</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">a1</span><span class="o">*</span><span class="n">a2</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">kij</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">a1</span><span class="o">*</span><span class="n">x1</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">a12</span><span class="o">*</span><span class="n">x1</span><span class="o">*</span><span class="n">x2</span><span class="o">+</span><span class="n">a2</span><span class="o">*</span><span class="n">x2</span><span class="o">**</span><span class="mi">2</span>
 
-<span class="k">def</span> <span class="nf">bmix</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">b1</span><span class="p">,</span><span class="n">b2</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">bmix</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">b1</span><span class="p">,</span><span class="n">b2</span><span class="p">):</span>
     <span class="n">x2</span><span class="o">=</span><span class="mi">1</span><span class="o">-</span><span class="n">x1</span>
     <span class="k">return</span> <span class="n">b1</span><span class="o">*</span><span class="n">x1</span><span class="o">+</span><span class="n">b2</span><span class="o">*</span><span class="n">x2</span>
 
-<span class="k">def</span> <span class="nf">VDW_EOS</span><span class="p">(</span><span class="n">V</span><span class="p">,</span><span class="n">T</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">VDW_EOS</span><span class="p">(</span><span class="n">V</span><span class="p">,</span><span class="n">T</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">R</span><span class="o">*</span><span class="n">T</span><span class="o">/</span><span class="p">(</span><span class="n">V</span><span class="o">-</span><span class="n">b</span><span class="p">)</span><span class="o">+</span><span class="n">a</span><span class="o">/</span><span class="n">V</span><span class="o">**</span><span class="mi">2</span>
     
-<span class="k">def</span> <span class="nf">activity</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="n">a1</span><span class="p">,</span><span class="n">a2</span><span class="p">,</span><span class="n">b1</span><span class="p">,</span><span class="n">b2</span><span class="p">,</span><span class="n">x1</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">activity</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="n">a1</span><span class="p">,</span><span class="n">a2</span><span class="p">,</span><span class="n">b1</span><span class="p">,</span><span class="n">b2</span><span class="p">,</span><span class="n">x1</span><span class="p">):</span>
     
-    <span class="k">def</span> <span class="nf">alpha</span><span class="p">(</span><span class="n">a1</span><span class="p">,</span><span class="n">a2</span><span class="p">,</span><span class="n">b1</span><span class="p">,</span><span class="n">b2</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">alpha</span><span class="p">(</span><span class="n">a1</span><span class="p">,</span><span class="n">a2</span><span class="p">,</span><span class="n">b1</span><span class="p">,</span><span class="n">b2</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">b1</span><span class="o">*</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">a1</span><span class="p">)</span><span class="o">/</span><span class="n">b1</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">a2</span><span class="p">)</span><span class="o">/</span><span class="n">b2</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
         
-    <span class="k">def</span> <span class="nf">beta</span><span class="p">(</span><span class="n">a1</span><span class="p">,</span><span class="n">a2</span><span class="p">,</span><span class="n">b1</span><span class="p">,</span><span class="n">b2</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">beta</span><span class="p">(</span><span class="n">a1</span><span class="p">,</span><span class="n">a2</span><span class="p">,</span><span class="n">b1</span><span class="p">,</span><span class="n">b2</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">b2</span><span class="o">*</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">a1</span><span class="p">)</span><span class="o">/</span><span class="n">b1</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">a2</span><span class="p">)</span><span class="o">/</span><span class="n">b2</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
     
     <span class="n">x2</span><span class="o">=</span><span class="mi">1</span><span class="o">-</span><span class="n">x1</span>
@@ -714,10 +712,10 @@ x_1\dfrac{a_1}{\underline{V}_1}+x_2\dfrac{a_2}{\underline{V}_2}\)</span></p></li
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x1b69296bdd0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x2c7a1932ea0&gt;
 </pre></div>
 </div>
-<img alt="../_images/e187e476089e956880b49bff970dbc48eb9e03f7985f9b25ac1ecd52f4f0a472.png" src="../_images/e187e476089e956880b49bff970dbc48eb9e03f7985f9b25ac1ecd52f4f0a472.png" />
+<img alt="../_images/d6098a27c21e4b7db97db38056843f1dd415d21e353f747209f7d6b3e43cfb8b.png" src="../_images/d6098a27c21e4b7db97db38056843f1dd415d21e353f747209f7d6b3e43cfb8b.png" />
 </div>
 </div>
 </section>
@@ -749,7 +747,7 @@ x_1\dfrac{a_1}{\underline{V}_1}+x_2\dfrac{a_2}{\underline{V}_2}\)</span></p></li
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">##</span>
-<span class="k">def</span> <span class="nf">G_ex</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="n">P</span><span class="p">,</span><span class="n">x1</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">G_ex</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="n">P</span><span class="p">,</span><span class="n">x1</span><span class="p">):</span>
     <span class="n">x2</span><span class="o">=</span><span class="mi">1</span><span class="o">-</span><span class="n">x1</span>
     <span class="k">return</span> <span class="n">x1</span><span class="o">*</span><span class="n">a1</span><span class="o">/</span><span class="n">b1</span><span class="o">+</span><span class="n">x2</span><span class="o">*</span><span class="n">a2</span><span class="o">/</span><span class="n">b2</span><span class="o">-</span><span class="n">amix</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">a1</span><span class="p">,</span><span class="n">a2</span><span class="p">,</span><span class="n">kij</span><span class="p">)</span><span class="o">/</span><span class="n">bmix</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">b1</span><span class="p">,</span><span class="n">b2</span><span class="p">)</span>
 
@@ -784,10 +782,10 @@ x_1\dfrac{a_1}{\underline{V}_1}+x_2\dfrac{a_2}{\underline{V}_2}\)</span></p></li
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x1b692cc1850&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x2c7a3c7fbf0&gt;
 </pre></div>
 </div>
-<img alt="../_images/6dfea86e51a8919ad02f61d2d800cce603288c4dc2dff37fdc5c70b6813b5d75.png" src="../_images/6dfea86e51a8919ad02f61d2d800cce603288c4dc2dff37fdc5c70b6813b5d75.png" />
+<img alt="../_images/2f9b82d453e818790d90667cf4d95429b01cc0797864e18d1d0e4aeacbef6f38.png" src="../_images/2f9b82d453e818790d90667cf4d95429b01cc0797864e18d1d0e4aeacbef6f38.png" />
 </div>
 </div>
 <p>We can see that the Margules expression requires 4 constants to provide an accurate description of the compositional dependence of the excess molar Gibbs energy. This is compared with the 5 constants for the van Laar equation. While this seems to suggest that the Margules expression is superior, we can imagine needing to describe the temperature and pressure dependence of the constants in the Margules expressions would require vast quantities of emperical data. Where the 4 constants contained within the van der Waals equation of state remain unchanged. This is one of the core strengths of thermodynamic theory - the ability to predict quantitatively behavior from a minimal set of tabulated thermodynamic information.</p>
@@ -821,7 +819,7 @@ x_1\dfrac{a_1}{\underline{V}_1}+x_2\dfrac{a_2}{\underline{V}_2}\)</span></p></li
 <p>Example adapted from <a class="reference external" href="https://github.com/gustavochm/phasepy/blob/1466977c148974729bdd60cda28515bd844f5fb9/examples/1.%20Components%20and%20mixtures.ipynb">phasepy documentation</a></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">phasepy</span> <span class="kn">import</span> <span class="n">component</span><span class="p">,</span> <span class="n">mixture</span><span class="p">,</span> <span class="n">preos</span><span class="p">,</span> <span class="n">vdweos</span><span class="p">,</span> <span class="n">rkseos</span><span class="p">,</span><span class="n">virialgamma</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">phasepy</span><span class="w"> </span><span class="kn">import</span> <span class="n">component</span><span class="p">,</span> <span class="n">mixture</span><span class="p">,</span> <span class="n">preos</span><span class="p">,</span> <span class="n">vdweos</span><span class="p">,</span> <span class="n">rkseos</span><span class="p">,</span><span class="n">virialgamma</span>
 
 <span class="n">water</span> <span class="o">=</span> <span class="n">component</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;water&#39;</span><span class="p">,</span><span class="n">Tc</span><span class="o">=</span><span class="mf">647.13</span><span class="p">,</span> <span class="n">Pc</span><span class="o">=</span><span class="mf">220.55</span><span class="p">,</span> <span class="n">Zc</span><span class="o">=</span><span class="mf">0.229</span><span class="p">,</span> <span class="n">Vc</span><span class="o">=</span><span class="mf">55.948</span><span class="p">,</span> <span class="n">w</span><span class="o">=</span><span class="mf">0.344861</span><span class="p">,</span>
                   <span class="n">GC</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;H2O&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">},</span> <span class="n">ri</span><span class="o">=</span><span class="mf">0.92</span><span class="p">,</span> <span class="n">qi</span><span class="o">=</span><span class="mf">1.4</span><span class="p">,</span> <span class="n">Mw</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
@@ -943,7 +941,7 @@ x_1\dfrac{a_1}{\underline{V}_1}+x_2\dfrac{a_2}{\underline{V}_2}\)</span></p></li
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[]
 </pre></div>
 </div>
-<img alt="../_images/9f6298991b3e7df5dd6116f6fec89db3f14155591771b8694765e8194ccb1f3c.png" src="../_images/9f6298991b3e7df5dd6116f6fec89db3f14155591771b8694765e8194ccb1f3c.png" />
+<img alt="../_images/6c58f36278229273266127fd9d9aa70d3f21802aae136e3c961ff914943a4e95.png" src="../_images/6c58f36278229273266127fd9d9aa70d3f21802aae136e3c961ff914943a4e95.png" />
 </div>
 </div>
 <p>The pressure of the fluid mixture can be computed at given composition, molar volume and temperature using the eos.pressure method.</p>
@@ -964,7 +962,7 @@ x_1\dfrac{a_1}{\underline{V}_1}+x_2\dfrac{a_2}{\underline{V}_2}\)</span></p></li
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/b9726054e1c25e1162b8496225e386666912bac8ab847781d0ebccaff6c4d662.png" src="../_images/b9726054e1c25e1162b8496225e386666912bac8ab847781d0ebccaff6c4d662.png" />
+<img alt="../_images/9e3fad6e20f0edcf243eb1491381b55fa0fa1584e1f690670c53b6844bc31335.png" src="../_images/9e3fad6e20f0edcf243eb1491381b55fa0fa1584e1f690670c53b6844bc31335.png" />
 </div>
 </div>
 </section>

@@ -30,11 +30,11 @@
   <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 <link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -45,7 +45,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=f281be69"></script>
@@ -58,8 +58,6 @@
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'Ch4/8.FirstorderPhaseTransitions';</script>
@@ -445,11 +443,11 @@
 <p>The illustration below uses Phasepy, a python package, to calculate the VLE envelope using the Peng Robinson Equation of state. Comparing it with the NIST property database for steam, we see excellent agreement between the predicted values from the PR EOS and the real properties, indicating that the computation is highly accurate.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">from</span> <span class="nn">phasepy</span> <span class="kn">import</span> <span class="n">component</span><span class="p">,</span> <span class="n">mixture</span><span class="p">,</span> <span class="n">preos</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">os</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">phasepy</span><span class="w"> </span><span class="kn">import</span> <span class="n">component</span><span class="p">,</span> <span class="n">mixture</span><span class="p">,</span> <span class="n">preos</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
 
 <span class="c1">## import real steam properties</span>
 <span class="n">directory</span> <span class="o">=</span> <span class="s1">&#39;data&#39;</span>
@@ -497,7 +495,7 @@
   warn(&#39;Temperature is greater than critical temperature, returning critical point&#39;)
 </pre></div>
 </div>
-<img alt="../_images/9be6c2a2f29fdb0feca232ab097733f2882dd34cb6e411995b79f973ca7c1ccc.png" src="../_images/9be6c2a2f29fdb0feca232ab097733f2882dd34cb6e411995b79f973ca7c1ccc.png" />
+<img alt="../_images/c5bb4a5a15c917032eec6136fa8e0b13dcc9fbbd7104957c31e514693c69eb98.png" src="../_images/c5bb4a5a15c917032eec6136fa8e0b13dcc9fbbd7104957c31e514693c69eb98.png" />
 </div>
 </div>
 </section>
@@ -521,7 +519,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/405e414a3426d6ba803fa5be186977372ffa8619b15ec8aeab5b9e7c4a0540ac.png" src="../_images/405e414a3426d6ba803fa5be186977372ffa8619b15ec8aeab5b9e7c4a0540ac.png" />
+<img alt="../_images/15765af2c4a9963012fde892286b645993fd7c60e324eb1157c7e286c1b4e62c.png" src="../_images/15765af2c4a9963012fde892286b645993fd7c60e324eb1157c7e286c1b4e62c.png" />
 </div>
 </div>
 <section id="phase-diagram-for-water">
@@ -608,7 +606,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/c6d40ebb77a52cf38d392f5b8e9eed89d08bbf262f03ed1c44d9d6b97e9527dc.png" src="../_images/c6d40ebb77a52cf38d392f5b8e9eed89d08bbf262f03ed1c44d9d6b97e9527dc.png" />
+<img alt="../_images/49bfcb431b5a1eb9280db715cde6d3f6964d434837c217818b3798aff6793a12.png" src="../_images/49bfcb431b5a1eb9280db715cde6d3f6964d434837c217818b3798aff6793a12.png" />
 </div>
 </div>
 <p>The implication of the statement above is that:</p>
@@ -623,7 +621,7 @@ $$\\\We can see if this is the case for the conditions above by taking the first
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">directory</span> <span class="o">=</span> <span class="s1">&#39;data&#39;</span>
-<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>
 
 <span class="c1"># Suppress all warnings</span>
 <span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
@@ -652,7 +650,7 @@ $$\\\We can see if this is the case for the conditions above by taking the first
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/71247a20a1b6cb507112eaf79d2f9eaa38d80b03af646b7a04dd473d2797bfbf.png" src="../_images/71247a20a1b6cb507112eaf79d2f9eaa38d80b03af646b7a04dd473d2797bfbf.png" />
+<img alt="../_images/daf4e8a982ba7054ef4945626b061e33acd9bb44e91a2e136aaedfc0d37d18ea.png" src="../_images/daf4e8a982ba7054ef4945626b061e33acd9bb44e91a2e136aaedfc0d37d18ea.png" />
 </div>
 </div>
 </section>
@@ -710,10 +708,10 @@ For the vapor phase, we can use the ideal gas law <span class="math notranslate 
 <p>Work illustration problem 7.7-1 in Sandler and 7.18a in the back of the book.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">os</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
 
 <span class="n">directory</span> <span class="o">=</span> <span class="s1">&#39;data&#39;</span>
 <span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;saturated_steam_properties.txt&#39;</span>
@@ -724,7 +722,7 @@ For the vapor phase, we can use the ideal gas law <span class="math notranslate 
 <span class="n">delta_H_vap</span> <span class="o">=</span> <span class="mf">40.79e3</span>  <span class="c1"># Enthalpy of vaporization for water, J/mol</span>
 
 <span class="c1"># Function to calculate vapor pressure using Clausius-Clapeyron equation</span>
-<span class="k">def</span> <span class="nf">vapor_pressure</span><span class="p">(</span><span class="n">T1</span><span class="p">,</span> <span class="n">P1</span><span class="p">,</span> <span class="n">T2</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">vapor_pressure</span><span class="p">(</span><span class="n">T1</span><span class="p">,</span> <span class="n">P1</span><span class="p">,</span> <span class="n">T2</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">P1</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">delta_H_vap</span> <span class="o">/</span> <span class="n">R</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">T2</span> <span class="o">-</span> <span class="mi">1</span><span class="o">/</span><span class="n">T1</span><span class="p">))</span>
 
 <span class="c1"># Given data</span>
@@ -754,7 +752,7 @@ For the vapor phase, we can use the ideal gas law <span class="math notranslate 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/f5b3e11a6a48d355a5853ed4537ddb9fe47a1179bb27c64a11694f38269ad7f4.png" src="../_images/f5b3e11a6a48d355a5853ed4537ddb9fe47a1179bb27c64a11694f38269ad7f4.png" />
+<img alt="../_images/5acce2352449ce567148cc615745671bdaff4a8fb0a37d6113d39ce509a371b9.png" src="../_images/5acce2352449ce567148cc615745671bdaff4a8fb0a37d6113d39ce509a371b9.png" />
 </div>
 </div>
 </section>
@@ -785,11 +783,11 @@ lnP^{vap} = -\frac{B}{T} + A
 <h3>As the Antoine Equation is Empirical, the parameters A, B, and C need to be determined through a curve fit:<a class="headerlink" href="#as-the-antoine-equation-is-empirical-the-parameters-a-b-and-c-need-to-be-determined-through-a-curve-fit" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">curve_fit</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy.optimize</span><span class="w"> </span><span class="kn">import</span> <span class="n">curve_fit</span>
 <span class="n">directory</span> <span class="o">=</span> <span class="s1">&#39;data&#39;</span>
 <span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;saturated_steam_properties.txt&#39;</span>
 
@@ -799,7 +797,7 @@ lnP^{vap} = -\frac{B}{T} + A
 <span class="n">delta_H_vap</span> <span class="o">=</span> <span class="mf">40.79e3</span>  <span class="c1"># Enthalpy of vaporization for water, J/mol</span>
 
 <span class="c1"># Function to calculate vapor pressure using Clausius-Clapeyron equation</span>
-<span class="k">def</span> <span class="nf">log_vapor_pressure</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">C</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">log_vapor_pressure</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">C</span><span class="p">):</span>
     
     <span class="k">return</span> <span class="o">-</span><span class="n">A</span><span class="o">-</span><span class="n">B</span><span class="o">/</span><span class="p">(</span><span class="n">T</span><span class="o">+</span><span class="n">C</span><span class="p">)</span>
 
@@ -831,7 +829,7 @@ lnP^{vap} = -\frac{B}{T} + A
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/00e81a86b3b319664a4d5956878eeb535e9ced435c935302a830271cf29218b3.png" src="../_images/00e81a86b3b319664a4d5956878eeb535e9ced435c935302a830271cf29218b3.png" />
+<img alt="../_images/bf52ff76727eabb22cf600eea1e5a9526907aee5ece874822aa7223873c1e94b.png" src="../_images/bf52ff76727eabb22cf600eea1e5a9526907aee5ece874822aa7223873c1e94b.png" />
 </div>
 </div>
 </section>

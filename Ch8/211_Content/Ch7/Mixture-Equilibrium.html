@@ -30,11 +30,11 @@
   <link href="../../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 <link href="../../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -45,7 +45,7 @@
 <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
     <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../../../_static/copybutton.js?v=f281be69"></script>
@@ -58,8 +58,6 @@
     <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'Ch8/211_Content/Ch7/Mixture-Equilibrium';</script>
@@ -580,11 +578,11 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> notebook
-<span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">phasepy</span> <span class="kn">import</span> <span class="n">mixture</span><span class="p">,</span> <span class="n">component</span><span class="p">,</span> <span class="n">preos</span><span class="p">,</span> <span class="n">virialgamma</span><span class="p">,</span> <span class="n">rkseos</span>
-<span class="kn">from</span> <span class="nn">phasepy.equilibrium</span> <span class="kn">import</span> <span class="n">flash</span><span class="p">,</span><span class="n">bubblePy</span><span class="p">,</span> <span class="n">bubbleTy</span><span class="p">,</span><span class="n">dewPx</span><span class="p">,</span> <span class="n">dewTx</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">ipywidgets</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">phasepy</span><span class="w"> </span><span class="kn">import</span> <span class="n">mixture</span><span class="p">,</span> <span class="n">component</span><span class="p">,</span> <span class="n">preos</span><span class="p">,</span> <span class="n">virialgamma</span><span class="p">,</span> <span class="n">rkseos</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">phasepy.equilibrium</span><span class="w"> </span><span class="kn">import</span> <span class="n">flash</span><span class="p">,</span><span class="n">bubblePy</span><span class="p">,</span> <span class="n">bubbleTy</span><span class="p">,</span><span class="n">dewPx</span><span class="p">,</span> <span class="n">dewTx</span>
 
 <span class="n">water</span> <span class="o">=</span> <span class="n">component</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;water&#39;</span><span class="p">,</span><span class="n">Tc</span><span class="o">=</span><span class="mf">647.13</span><span class="p">,</span> <span class="n">Pc</span><span class="o">=</span><span class="mf">220.55</span><span class="p">,</span> <span class="n">Zc</span><span class="o">=</span><span class="mf">0.229</span><span class="p">,</span> <span class="n">Vc</span><span class="o">=</span><span class="mf">55.948</span><span class="p">,</span> <span class="n">w</span><span class="o">=</span><span class="mf">0.344861</span><span class="p">,</span>
                   <span class="n">GC</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;H2O&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">},</span> <span class="n">ri</span><span class="o">=</span><span class="mf">0.92</span><span class="p">,</span> <span class="n">qi</span><span class="o">=</span><span class="mf">1.4</span><span class="p">,</span> <span class="n">Mw</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
@@ -1345,6 +1343,7 @@ mpl.figure.prototype.mouse_event = function (event, name) {
         y: y,
         button: event.button,
         step: event.step,
+        buttons: event.buttons,
         modifiers: getModifiers(event),
         guiEvent: simpleKeys(event),
     });
@@ -1682,7 +1681,7 @@ if (IPython.notebook.kernel !== null) {
         mpl.mpl_figure_comm
     );
 }
-</script><div class="output text_html"><div id='ce85c549-6707-4da1-8061-1e3d4534c48c'></div></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>77.40900410924246 101.3937251521769
+</script><div class="output text_html"><div id='1f188890-9676-4d6e-ab81-4f0c8c2f7100'></div></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>77.4090041092424 101.39372515217752
 </pre></div>
 </div>
 </div>
@@ -2375,6 +2374,7 @@ mpl.figure.prototype.mouse_event = function (event, name) {
         y: y,
         button: event.button,
         step: event.step,
+        buttons: event.buttons,
         modifiers: getModifiers(event),
         guiEvent: simpleKeys(event),
     });
@@ -2712,7 +2712,7 @@ if (IPython.notebook.kernel !== null) {
         mpl.mpl_figure_comm
     );
 }
-</script><div class="output text_html"><div id='e77bd234-3326-4260-ab17-2c9dd1f31e4f'></div></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>77.48193429014952 101.55179720539473
+</script><div class="output text_html"><div id='a9628dc1-7dcb-4c70-9772-c094a14b91ca'></div></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>77.48193429014918 101.55179720539473
 </pre></div>
 </div>
 </div>

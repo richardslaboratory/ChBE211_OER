@@ -30,11 +30,11 @@
   <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 <link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -45,7 +45,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=f281be69"></script>
@@ -58,8 +58,6 @@
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'Ch7/8.Applying-Definitions';</script>
@@ -577,8 +575,8 @@ x_2 \int_{\underline{V}_2}^\infty\bigg(\dfrac{\partial \underline{U}}{\partial \
 <p>When ammonia is added to water it dissolves releasing heat, it also generates ions which are solvated by a water cage surrounding the ammonium cation. The result is that its solution is highly non-ideal and practically difficult for the van Laar Equation predicted from the individual species alone to be predictive. We can see that if we plot the activity of the ammonia water system taken from this <a class="reference external" href="https://doi.org/10.1021/i160068a007">paper</a>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 <span class="n">R</span> <span class="o">=</span> <span class="mf">8.314</span><span class="c1">#J/(mol*K)</span>
 <span class="n">activity</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">([(</span><span class="mf">0.09756097560975607</span><span class="p">,</span> <span class="mf">1.3220399305364636</span><span class="p">),</span>
 <span class="p">(</span><span class="mf">0.21138211382113825</span><span class="p">,</span> <span class="mf">1.8366384065130346</span><span class="p">),</span>
@@ -613,12 +611,12 @@ x_2 \int_{\underline{V}_2}^\infty\bigg(\dfrac{\partial \underline{U}}{\partial \
 
 <span class="n">x1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">0.01</span><span class="p">,</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">0.01</span><span class="p">)</span>
 
-<span class="k">def</span> <span class="nf">lngamma1</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">alpha</span><span class="p">,</span><span class="n">beta</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">lngamma1</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">alpha</span><span class="p">,</span><span class="n">beta</span><span class="p">):</span>
     <span class="n">x2</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">x1</span>
     
     <span class="k">return</span> <span class="n">alpha</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">alpha</span><span class="o">*</span><span class="n">x1</span><span class="o">/</span><span class="p">(</span><span class="n">beta</span><span class="o">*</span><span class="n">x2</span><span class="p">))</span><span class="o">**</span><span class="mi">2</span> 
 
-<span class="k">def</span> <span class="nf">lngamma2</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">alpha</span><span class="p">,</span><span class="n">beta</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">lngamma2</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">alpha</span><span class="p">,</span><span class="n">beta</span><span class="p">):</span>
     <span class="n">x2</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">x1</span>
     <span class="k">return</span> <span class="n">beta</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">beta</span><span class="o">*</span><span class="n">x2</span><span class="o">/</span><span class="p">(</span><span class="n">alpha</span><span class="o">*</span><span class="n">x1</span><span class="p">))</span><span class="o">**</span><span class="mi">2</span> 
 
@@ -642,14 +640,14 @@ x_2 \int_{\underline{V}_2}^\infty\bigg(\dfrac{\partial \underline{U}}{\partial \
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;$ln\\gamma_2$&#39;)
 </pre></div>
 </div>
-<img alt="../_images/67ca7bac7896718d9437a1fbbd7043e0429cbbc81f2b98925159172e39ca5b5d.png" src="../_images/67ca7bac7896718d9437a1fbbd7043e0429cbbc81f2b98925159172e39ca5b5d.png" />
+<img alt="../_images/53f65293c9fc7c700a102b20a648601a1f642ad12fcf8a35dcbc68f360445d7d.png" src="../_images/53f65293c9fc7c700a102b20a648601a1f642ad12fcf8a35dcbc68f360445d7d.png" />
 </div>
 </div>
 <p>The correlation above is not great, so we can try to fit alpha and beta to get better agreement w/ experimental data.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">curve_fit</span>
-<span class="k">def</span> <span class="nf">lngamma2_vanlaar</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">alpha</span><span class="p">,</span><span class="n">beta</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">scipy.optimize</span><span class="w"> </span><span class="kn">import</span> <span class="n">curve_fit</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">lngamma2_vanlaar</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">alpha</span><span class="p">,</span><span class="n">beta</span><span class="p">):</span>
     <span class="n">x2</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">x1</span>
     <span class="c1">#alpha = b1/(R*T)*(np.sqrt(a1)/b1 - np.sqrt(a2)/b2)**2</span>
     <span class="c1">#beta = b2/(R*T)*(np.sqrt(a1)/b1 - np.sqrt(a2)/b2)**2</span>
@@ -675,7 +673,7 @@ x_2 \int_{\underline{V}_2}^\infty\bigg(\dfrac{\partial \underline{U}}{\partial \
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;$ln\\gamma_2$&#39;)
 </pre></div>
 </div>
-<img alt="../_images/fe9f5911bc26ff852de19974642be58195032da52cd2bfa03372f1f48bdf6361.png" src="../_images/fe9f5911bc26ff852de19974642be58195032da52cd2bfa03372f1f48bdf6361.png" />
+<img alt="../_images/314506b73090311fd9d9413e73862f8992b94416a95e59039a519a74a0116de9.png" src="../_images/314506b73090311fd9d9413e73862f8992b94416a95e59039a519a74a0116de9.png" />
 </div>
 </div>
 <p>The fit is better, but of course can be improved further. Let’s write the Wilson Equation</p>
@@ -695,13 +693,13 @@ x_2 \int_{\underline{V}_2}^\infty\bigg(\dfrac{\partial \underline{U}}{\partial \
 <h3>Let’s fit the Wilson Equation to the ammonia-water system to see if we can improve the fit.<a class="headerlink" href="#lets-fit-the-wilson-equation-to-the-ammonia-water-system-to-see-if-we-can-improve-the-fit" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">lngamma1_wilson</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">lngamma1_wilson</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">):</span>
     <span class="n">x2</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">x1</span>
     <span class="c1">#alpha = b1/(R*T)*(np.sqrt(a1)/b1 - np.sqrt(a2)/b2)**2</span>
     <span class="c1">#beta = b2/(R*T)*(np.sqrt(a1)/b1 - np.sqrt(a2)/b2)**2</span>
     <span class="k">return</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">x2</span><span class="o">*</span><span class="n">b</span><span class="p">)</span> <span class="o">+</span> <span class="n">x2</span><span class="o">*</span><span class="p">(</span><span class="n">x2</span><span class="o">*</span><span class="n">a</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">x1</span><span class="o">*</span><span class="n">a</span><span class="p">)</span><span class="o">-</span><span class="n">x1</span><span class="o">*</span><span class="n">b</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">x2</span><span class="o">*</span><span class="n">b</span><span class="p">))</span>
 
-<span class="k">def</span> <span class="nf">lngamma2_wilson</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">lngamma2_wilson</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">):</span>
     <span class="n">x2</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">x1</span>
     <span class="c1">#alpha = b1/(R*T)*(np.sqrt(a1)/b1 - np.sqrt(a2)/b2)**2</span>
     <span class="c1">#beta = b2/(R*T)*(np.sqrt(a1)/b1 - np.sqrt(a2)/b2)**2</span>
@@ -727,14 +725,14 @@ x_2 \int_{\underline{V}_2}^\infty\bigg(\dfrac{\partial \underline{U}}{\partial \
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1. 1.]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\richa\AppData\Local\Temp\ipykernel_4480\3583261276.py:11: RuntimeWarning: invalid value encountered in log
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\richa\AppData\Local\Temp\ipykernel_51292\3583261276.py:11: RuntimeWarning: invalid value encountered in log
   return -np.log(1 - x1*a) - x1*(x2*a/(1-x1*a)-x1*b/(1-x2*b))
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x274827de300&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x193d8892fc0&gt;
 </pre></div>
 </div>
-<img alt="../_images/94b33390053235b8028497439b1aec6987076042072c2dda668b7de138708d32.png" src="../_images/94b33390053235b8028497439b1aec6987076042072c2dda668b7de138708d32.png" />
+<img alt="../_images/7167da7e3a97c69ee3675b5829e572412a8baf215927d5b15168b3440b79084d.png" src="../_images/7167da7e3a97c69ee3675b5829e572412a8baf215927d5b15168b3440b79084d.png" />
 </div>
 </div>
 </section>

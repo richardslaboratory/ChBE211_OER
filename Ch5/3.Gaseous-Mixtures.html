@@ -30,11 +30,11 @@
   <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 <link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -45,7 +45,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=f281be69"></script>
@@ -58,8 +58,6 @@
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'Ch5/3.Gaseous-Mixtures';</script>
@@ -536,8 +534,8 @@
 </ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 
 <span class="n">water</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Tc&#39;</span><span class="p">:</span><span class="mf">647.3</span><span class="p">,</span> <span class="s1">&#39;Pc&#39;</span><span class="p">:</span><span class="mf">22.048</span><span class="o">*</span><span class="mi">10</span><span class="o">**</span><span class="mi">6</span><span class="p">,</span> <span class="s1">&#39;Vc&#39;</span><span class="p">:</span><span class="mf">0.056</span><span class="o">/</span><span class="mi">1000</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">:</span><span class="mf">0.344</span><span class="p">}</span>
 <span class="n">ethanol</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Tc&#39;</span><span class="p">:</span><span class="mf">516.25</span><span class="p">,</span> <span class="s1">&#39;Pc&#39;</span><span class="p">:</span><span class="mf">6.390</span><span class="o">*</span><span class="mi">10</span><span class="o">**</span><span class="mi">6</span><span class="p">,</span> <span class="s1">&#39;Vc&#39;</span><span class="p">:</span><span class="mf">46.1</span><span class="o">/</span><span class="mi">280</span><span class="o">/</span><span class="mi">1000</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">:</span><span class="mf">0.644</span><span class="p">}</span>
@@ -545,7 +543,7 @@
 <span class="n">k12</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.1</span>
 <span class="n">R</span> <span class="o">=</span> <span class="mf">8.314</span>
 <span class="c1">##composition dependence of the PR_EOS</span>
-<span class="k">def</span> <span class="nf">Pr_EOS</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="n">x1</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">Pr_EOS</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="n">x1</span><span class="p">):</span>
     
     <span class="c1">##calculate the PR constants for each species</span>
     <span class="c1">#species 1 is water</span>
@@ -585,10 +583,10 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x2530ca89b50&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x1d85a650440&gt;
 </pre></div>
 </div>
-<img alt="../_images/b2f392c6fc7d5a1ab9bfcacc27790deb2e1a67a3b7d5f5f75205d3522a6785ad.png" src="../_images/b2f392c6fc7d5a1ab9bfcacc27790deb2e1a67a3b7d5f5f75205d3522a6785ad.png" />
+<img alt="../_images/955a68e994421bb34917576f61dac9ca586a669b60a72aa5d513316b294c8b48.png" src="../_images/955a68e994421bb34917576f61dac9ca586a669b60a72aa5d513316b294c8b48.png" />
 </div>
 </div>
 </section>

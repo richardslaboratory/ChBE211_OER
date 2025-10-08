@@ -30,11 +30,11 @@
   <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 <link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -45,7 +45,7 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=f281be69"></script>
@@ -58,8 +58,6 @@
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'Ch4/7.Constructing-Property-Diagrams';</script>
@@ -423,10 +421,10 @@
 <h1>Constructing Property Diagrams<a class="headerlink" href="#constructing-property-diagrams" title="Link to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
 </pre></div>
 </div>
 </div>
@@ -498,7 +496,7 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">VDW</span><span class="p">(</span><span class="n">V</span><span class="p">,</span><span class="n">T</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">VDW</span><span class="p">(</span><span class="n">V</span><span class="p">,</span><span class="n">T</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    V in m^3/mol</span>
 <span class="sd">    T in K</span>
@@ -521,21 +519,21 @@
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;$V (m^3/mol)$&#39;)
 </pre></div>
 </div>
-<img alt="../_images/347ab1c6fbbc822962fbc92430cb77973aaaa5104c71521efbc578a7591a4dee.png" src="../_images/347ab1c6fbbc822962fbc92430cb77973aaaa5104c71521efbc578a7591a4dee.png" />
+<img alt="../_images/df6278c701d4a20568bf2fbb4bbd3fdfe86695bdc15d78e9d4492d77e18b93e4.png" src="../_images/df6278c701d4a20568bf2fbb4bbd3fdfe86695bdc15d78e9d4492d77e18b93e4.png" />
 </div>
 </div>
 <section id="calculating-the-fugacity-from-the-cubic-form-of-the-e-o-s">
 <h3>Calculating the Fugacity from the Cubic Form of the E.O.S<a class="headerlink" href="#calculating-the-fugacity-from-the-cubic-form-of-the-e-o-s" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">VDW_cubic</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="n">P</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">VDW_cubic</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="n">P</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    takes in temperature in K</span>
 <span class="sd">    takes in pressure in Pa</span>
 <span class="sd">    </span>
 <span class="sd">    returns roots of the E.oS. in compressibility, Z, and the fugacities of the v and l phases</span>
 <span class="sd">    &#39;&#39;&#39;</span>
-    <span class="k">def</span> <span class="nf">fugacity</span><span class="p">(</span><span class="n">Z</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">fugacity</span><span class="p">(</span><span class="n">Z</span><span class="p">):</span>
     
         <span class="k">return</span>  <span class="p">(</span><span class="n">Z</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">Z</span><span class="o">-</span><span class="n">B</span><span class="p">)</span> <span class="o">-</span> <span class="n">A</span><span class="o">/</span><span class="n">Z</span>
     
@@ -586,20 +584,16 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:21: SyntaxWarning: invalid escape sequence &#39;\p&#39;
-&lt;&gt;:21: SyntaxWarning: invalid escape sequence &#39;\p&#39;
-C:\Users\richa\AppData\Local\Temp\ipykernel_23004\1907005480.py:21: SyntaxWarning: invalid escape sequence &#39;\p&#39;
-  plt.ylabel(&#39;$ln\phi_i$&#39;)
-C:\ProgramData\anaconda3\Lib\site-packages\matplotlib\cbook.py:1762: ComplexWarning: Casting complex values to real discards the imaginary part
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\ProgramData\anaconda3\Lib\site-packages\matplotlib\cbook.py:1709: ComplexWarning: Casting complex values to real discards the imaginary part
   return math.isfinite(val)
-C:\ProgramData\anaconda3\Lib\site-packages\matplotlib\cbook.py:1398: ComplexWarning: Casting complex values to real discards the imaginary part
+C:\ProgramData\anaconda3\Lib\site-packages\matplotlib\cbook.py:1345: ComplexWarning: Casting complex values to real discards the imaginary part
   return np.asarray(x, float)
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x212af09bc80&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x2bd0c8b0a40&gt;
 </pre></div>
 </div>
-<img alt="../_images/6e22e98815980ee5b75907dfb7fe6c0ff54f09d8914fdd60c40d890c2fa3bdfd.png" src="../_images/6e22e98815980ee5b75907dfb7fe6c0ff54f09d8914fdd60c40d890c2fa3bdfd.png" />
+<img alt="../_images/9ab97a577f0adb38e890ae23997b91f8a2fbfeeac9edc869fae5d874f5b6f38a.png" src="../_images/9ab97a577f0adb38e890ae23997b91f8a2fbfeeac9edc869fae5d874f5b6f38a.png" />
 </div>
 </div>
 </section>
@@ -608,7 +602,7 @@ C:\ProgramData\anaconda3\Lib\site-packages\matplotlib\cbook.py:1398: ComplexWarn
 <h2>Finding the intersection of the two fugacities gives the vapor pressure<a class="headerlink" href="#finding-the-intersection-of-the-two-fugacities-gives-the-vapor-pressure" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">find_Psat</span><span class="p">(</span><span class="n">Pmin</span><span class="p">,</span><span class="n">Pmax</span><span class="p">,</span> <span class="n">thresh</span> <span class="o">=</span> <span class="mi">1</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">find_Psat</span><span class="p">(</span><span class="n">Pmin</span><span class="p">,</span><span class="n">Pmax</span><span class="p">,</span> <span class="n">thresh</span> <span class="o">=</span> <span class="mi">1</span><span class="p">):</span>
     <span class="c1">##first guess is broad search</span>
     <span class="n">P_</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">Pmin</span><span class="p">),</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">Pmax</span><span class="p">),</span><span class="mi">1000</span><span class="p">)</span>
     <span class="n">roots_</span> <span class="o">=</span> <span class="p">[]</span>
@@ -669,24 +663,10 @@ C:\ProgramData\anaconda3\Lib\site-packages\matplotlib\cbook.py:1398: ComplexWarn
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:28: SyntaxWarning: invalid escape sequence &#39;\p&#39;
-&lt;&gt;:38: SyntaxWarning: invalid escape sequence &#39;\p&#39;
-&lt;&gt;:48: SyntaxWarning: invalid escape sequence &#39;\p&#39;
-&lt;&gt;:28: SyntaxWarning: invalid escape sequence &#39;\p&#39;
-&lt;&gt;:38: SyntaxWarning: invalid escape sequence &#39;\p&#39;
-&lt;&gt;:48: SyntaxWarning: invalid escape sequence &#39;\p&#39;
-C:\Users\richa\AppData\Local\Temp\ipykernel_23004\1027463628.py:28: SyntaxWarning: invalid escape sequence &#39;\p&#39;
-  plt.ylabel(&#39;$ln\phi_i$&#39;)
-C:\Users\richa\AppData\Local\Temp\ipykernel_23004\1027463628.py:38: SyntaxWarning: invalid escape sequence &#39;\p&#39;
-  plt.ylabel(&#39;$ln\phi_i$&#39;)
-C:\Users\richa\AppData\Local\Temp\ipykernel_23004\1027463628.py:48: SyntaxWarning: invalid escape sequence &#39;\p&#39;
-  plt.ylabel(&#39;$ln\phi_i$&#39;)
-</pre></div>
-</div>
-<img alt="../_images/c544c0713596510b8787132732b0dc0a8b202539354ec92478df43b7357efd52.png" src="../_images/c544c0713596510b8787132732b0dc0a8b202539354ec92478df43b7357efd52.png" />
-<img alt="../_images/d304b20d9d1c6e2b416a6e20220348944af801e57c3c2c521011a573b49429c2.png" src="../_images/d304b20d9d1c6e2b416a6e20220348944af801e57c3c2c521011a573b49429c2.png" />
-<img alt="../_images/1ee67018834caa23b2bb1b1197660bb2331c2afbfc606b70e8a946ee64ecc031.png" src="../_images/1ee67018834caa23b2bb1b1197660bb2331c2afbfc606b70e8a946ee64ecc031.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>259.59 2463631.3069065055 0.0006098789812897459 0.00010788152979104126
+<img alt="../_images/03e67225416070b6f71c69ebbf4d19c39b069e9a3edec19eeb671faacf377070.png" src="../_images/03e67225416070b6f71c69ebbf4d19c39b069e9a3edec19eeb671faacf377070.png" />
+<img alt="../_images/b6b77024ef3415466d55ed51bfa628d1422d7f6883482bf76626fe61e06f9919.png" src="../_images/b6b77024ef3415466d55ed51bfa628d1422d7f6883482bf76626fe61e06f9919.png" />
+<img alt="../_images/86364ba3f5d3087d33f84ec680c1c880c0df6db5ac0b1044bb9e7f78d4902c09.png" src="../_images/86364ba3f5d3087d33f84ec680c1c880c0df6db5ac0b1044bb9e7f78d4902c09.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>259.59 2463631.3069065055 0.0006098789812897459 0.00010788152979104112
 </pre></div>
 </div>
 </div>
@@ -717,12 +697,12 @@ C:\Users\richa\AppData\Local\Temp\ipykernel_23004\1027463628.py:48: SyntaxWarnin
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;$V$ $(m^3/mol)$&#39;)
 </pre></div>
 </div>
-<img alt="../_images/b90b1661d2ac7669d90c720989e033f752d9cec875c4b6a14046468bd55e6775.png" src="../_images/b90b1661d2ac7669d90c720989e033f752d9cec875c4b6a14046468bd55e6775.png" />
+<img alt="../_images/88a8472584de7566a055f79909c93bf452cc9957521ead86b03792796abdbaeb.png" src="../_images/88a8472584de7566a055f79909c93bf452cc9957521ead86b03792796abdbaeb.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">iterate2findPsat</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="n">Pmin</span><span class="o">=</span><span class="mf">0.01</span><span class="o">*</span><span class="n">Pc</span><span class="p">,</span><span class="n">Pmax</span><span class="o">=</span><span class="n">Pc</span><span class="p">,</span> <span class="n">thresh</span> <span class="o">=</span> <span class="mi">1</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">iterate2findPsat</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="n">Pmin</span><span class="o">=</span><span class="mf">0.01</span><span class="o">*</span><span class="n">Pc</span><span class="p">,</span><span class="n">Pmax</span><span class="o">=</span><span class="n">Pc</span><span class="p">,</span> <span class="n">thresh</span> <span class="o">=</span> <span class="mi">1</span><span class="p">):</span>
     
     <span class="n">P_</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">Pmin</span><span class="p">),</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">Pmax</span><span class="p">),</span><span class="mi">1000</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>

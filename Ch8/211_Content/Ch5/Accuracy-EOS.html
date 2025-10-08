@@ -30,11 +30,11 @@
   <link href="../../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 <link href="../../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -45,7 +45,7 @@
 <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
     <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../../../_static/copybutton.js?v=f281be69"></script>
@@ -58,8 +58,6 @@
     <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'Ch8/211_Content/Ch5/Accuracy-EOS';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -405,8 +403,8 @@
                   
   <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 <span class="n">T</span><span class="o">=</span><span class="mi">298</span> <span class="c1">#K</span>
 <span class="n">P</span><span class="o">=</span><span class="mi">101325</span> <span class="c1">#Pa</span>
 
@@ -424,16 +422,16 @@
 <span class="n">R</span><span class="o">=</span><span class="mf">8.314</span><span class="c1">##j/mol*k</span>
 <span class="n">kij</span><span class="o">=-</span><span class="mf">0.11</span>
 
-<span class="k">def</span> <span class="nf">kappa</span><span class="p">(</span><span class="n">w</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">kappa</span><span class="p">(</span><span class="n">w</span><span class="p">):</span>
         <span class="k">return</span> <span class="mf">0.37464</span><span class="o">+</span><span class="mf">1.54266</span><span class="o">*</span><span class="n">w</span><span class="o">-</span><span class="mf">0.26992</span><span class="o">*</span><span class="n">w</span><span class="o">**</span><span class="mi">2</span>
-<span class="k">def</span> <span class="nf">alpha</span><span class="p">(</span><span class="n">Tr</span><span class="p">,</span><span class="n">w</span><span class="p">):</span>    
+<span class="k">def</span><span class="w"> </span><span class="nf">alpha</span><span class="p">(</span><span class="n">Tr</span><span class="p">,</span><span class="n">w</span><span class="p">):</span>    
     <span class="k">return</span> <span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">kappa</span><span class="p">(</span><span class="n">w</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">Tr</span><span class="p">)))</span><span class="o">**</span><span class="mi">2</span>
 
-<span class="k">def</span> <span class="nf">a</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="n">Tc</span><span class="p">,</span><span class="n">Pc</span><span class="p">,</span><span class="n">w</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">a</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="n">Tc</span><span class="p">,</span><span class="n">Pc</span><span class="p">,</span><span class="n">w</span><span class="p">):</span>
     <span class="n">Tr</span><span class="o">=</span><span class="n">T</span><span class="o">/</span><span class="n">Tc</span>
     <span class="k">return</span> <span class="mf">0.45724</span><span class="o">*</span><span class="p">(</span><span class="n">R</span><span class="o">*</span><span class="n">Tc</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="n">Pc</span><span class="o">*</span><span class="n">alpha</span><span class="p">(</span><span class="n">Tr</span><span class="p">,</span><span class="n">w</span><span class="p">)</span>
 
-<span class="k">def</span> <span class="nf">b</span><span class="p">(</span><span class="n">Tc</span><span class="p">,</span><span class="n">Pc</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">b</span><span class="p">(</span><span class="n">Tc</span><span class="p">,</span><span class="n">Pc</span><span class="p">):</span>
     <span class="k">return</span> <span class="mf">0.07780</span><span class="o">*</span><span class="n">R</span><span class="o">*</span><span class="n">Tc</span><span class="o">/</span><span class="p">(</span><span class="n">Pc</span><span class="p">)</span>
     
 
@@ -456,11 +454,11 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">amix</span><span class="p">(</span><span class="n">x1</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">amix</span><span class="p">(</span><span class="n">x1</span><span class="p">):</span>
     <span class="n">x2</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">x1</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">a1</span><span class="o">*</span><span class="n">x1</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="n">a2</span><span class="o">*</span><span class="n">x2</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="n">x1</span><span class="o">*</span><span class="n">x2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">a1</span><span class="o">*</span><span class="n">a2</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">kij</span><span class="p">)</span>
     
-<span class="k">def</span> <span class="nf">bmix</span><span class="p">(</span><span class="n">x1</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">bmix</span><span class="p">(</span><span class="n">x1</span><span class="p">):</span>
     <span class="n">x2</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">x1</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">b1</span><span class="o">*</span><span class="n">x1</span><span class="o">+</span><span class="n">b2</span><span class="o">*</span><span class="n">x2</span>
 
@@ -474,15 +472,15 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x20f12bb4650&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x24fabe324e0&gt;]
 </pre></div>
 </div>
-<img alt="../../../_images/ad6a11dadacea2e56639283edddaed5afc06fcb156d6d91f8ae728cb54ab69b3.png" src="../../../_images/ad6a11dadacea2e56639283edddaed5afc06fcb156d6d91f8ae728cb54ab69b3.png" />
+<img alt="../../../_images/3263759d5fd78e13818752f8ed6847a28976a0afbc2ec3a6dd8c05b7bf0f4e7d.png" src="../../../_images/3263759d5fd78e13818752f8ed6847a28976a0afbc2ec3a6dd8c05b7bf0f4e7d.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">Zcoeff</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="n">P</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">Zcoeff</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="n">P</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">):</span>
     <span class="n">A</span><span class="o">=</span><span class="n">a</span><span class="o">*</span><span class="n">P</span><span class="o">/</span><span class="p">(</span><span class="n">R</span><span class="o">*</span><span class="n">T</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
     <span class="n">B</span><span class="o">=</span><span class="n">b</span><span class="o">*</span><span class="n">P</span><span class="o">/</span><span class="p">(</span><span class="n">R</span><span class="o">*</span><span class="n">T</span><span class="p">)</span>
     
@@ -509,7 +507,7 @@
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;$\\underbar{V}$ $(cm^3/mol)$&#39;)
 </pre></div>
 </div>
-<img alt="../../../_images/d9f44f5cd4c8fd0aefdde2fcd6d58d1ddf062eda676e29943ea492fc62cd4e44.png" src="../../../_images/d9f44f5cd4c8fd0aefdde2fcd6d58d1ddf062eda676e29943ea492fc62cd4e44.png" />
+<img alt="../../../_images/2bc11638c375746c1ff8f0b4b8e640f2e25fc0f8e280983247d0a630f3ea0ed7.png" src="../../../_images/2bc11638c375746c1ff8f0b4b8e640f2e25fc0f8e280983247d0a630f3ea0ed7.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -540,10 +538,10 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x20f140f12e0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x24faf38f620&gt;]
 </pre></div>
 </div>
-<img alt="../../../_images/b0df9470f892db6a6a6793d434d7513a45676c8e75904fa4f8149ca052c54316.png" src="../../../_images/b0df9470f892db6a6a6793d434d7513a45676c8e75904fa4f8149ca052c54316.png" />
+<img alt="../../../_images/f01de79aa101e1b5ad359e4285aeffecf9f0bf9c9aa77a13fd762f4111b96abc.png" src="../../../_images/f01de79aa101e1b5ad359e4285aeffecf9f0bf9c9aa77a13fd762f4111b96abc.png" />
 </div>
 </div>
 
