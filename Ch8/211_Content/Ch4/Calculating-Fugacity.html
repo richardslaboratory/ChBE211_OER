@@ -541,7 +541,7 @@ RT(Z-1) - RTln(Z) + \int_{0}^{P}\big(\dfrac{RT}{\underline{V}}-P\big)d\underline
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x2d086a70a40&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x20ac0756ab0&gt;
 </pre></div>
 </div>
 </div>
@@ -865,12 +865,18 @@ RT(Z-1) - RTln(Z) + \int_{0}^{P}\big(\dfrac{RT}{\underline{V}}-P\big)d\underline
 <span class="g g-Whitespace">     </span><span class="mi">21</span> <span class="k">def</span><span class="w"> </span><span class="nf">Integrand</span><span class="p">(</span><span class="n">V</span><span class="p">,</span><span class="n">T</span><span class="p">):</span>
 <span class="ne">---&gt; </span><span class="mi">22</span>     <span class="k">return</span> <span class="n">R</span><span class="o">*</span><span class="n">T</span><span class="o">/</span><span class="n">V</span><span class="o">-</span><span class="n">PR_EOS</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="n">V</span><span class="p">)</span>
 
-<span class="nn">Cell In[5], line 5,</span> in <span class="ni">PR_EOS</span><span class="nt">(T, V)</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">from</span><span class="w"> </span><span class="nn">scipy.integrate</span><span class="w"> </span><span class="kn">import</span> <span class="n">quad</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1">#This function returns the PR EOS</span>
-<span class="ne">----&gt; </span><span class="mi">5</span> <span class="k">def</span><span class="w"> </span><span class="nf">PR_EOS</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="n">V</span><span class="p">):</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span>     <span class="k">def</span><span class="w"> </span><span class="nf">kappa</span><span class="p">():</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span>         <span class="k">return</span> <span class="mf">0.37464</span><span class="o">+</span><span class="mf">1.54266</span><span class="o">*</span><span class="n">w</span><span class="o">-</span><span class="mf">0.26992</span><span class="o">*</span><span class="n">w</span><span class="o">**</span><span class="mi">2</span>
+<span class="nn">Cell In[5], line 16,</span> in <span class="ni">PR_EOS</span><span class="nt">(T, V)</span>
+<span class="g g-Whitespace">     </span><span class="mi">14</span> <span class="n">Tr</span><span class="o">=</span><span class="n">T</span><span class="o">/</span><span class="n">Tc</span>
+<span class="g g-Whitespace">     </span><span class="mi">15</span> <span class="n">P1</span><span class="o">=</span><span class="n">R</span><span class="o">*</span><span class="n">T</span><span class="o">/</span><span class="p">(</span><span class="n">V</span><span class="o">-</span><span class="n">b</span><span class="p">())</span>
+<span class="ne">---&gt; </span><span class="mi">16</span> <span class="n">P2</span><span class="o">=</span><span class="n">a</span><span class="p">(</span><span class="n">Tr</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">V</span><span class="o">*</span><span class="p">(</span><span class="n">V</span><span class="o">+</span><span class="n">b</span><span class="p">())</span><span class="o">+</span><span class="n">b</span><span class="p">()</span><span class="o">*</span><span class="p">(</span><span class="n">V</span><span class="o">-</span><span class="n">b</span><span class="p">()))</span>
+<span class="g g-Whitespace">     </span><span class="mi">18</span> <span class="k">return</span> <span class="n">P1</span><span class="o">-</span><span class="n">P2</span>
+
+<span class="nn">Cell In[5], line 12,</span> in <span class="ni">PR_EOS.&lt;locals&gt;.b</span><span class="nt">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="k">def</span><span class="w"> </span><span class="nf">a</span><span class="p">(</span><span class="n">Tr</span><span class="p">):</span>
+<span class="g g-Whitespace">     </span><span class="mi">11</span>     <span class="k">return</span> <span class="mf">0.45724</span><span class="o">*</span><span class="p">(</span><span class="n">R</span><span class="o">*</span><span class="n">Tc</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="n">Pc</span><span class="o">*</span><span class="mi">10</span><span class="o">**</span><span class="mi">5</span><span class="p">)</span><span class="o">*</span><span class="n">alpha</span><span class="p">(</span><span class="n">Tr</span><span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">12</span> <span class="k">def</span><span class="w"> </span><span class="nf">b</span><span class="p">():</span>
+<span class="g g-Whitespace">     </span><span class="mi">13</span>     <span class="k">return</span> <span class="mf">0.07780</span><span class="o">*</span><span class="n">R</span><span class="o">*</span><span class="n">Tc</span><span class="o">/</span><span class="p">(</span><span class="n">Pc</span><span class="o">*</span><span class="mi">10</span><span class="o">**</span><span class="mi">5</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">14</span> <span class="n">Tr</span><span class="o">=</span><span class="n">T</span><span class="o">/</span><span class="n">Tc</span>
 
 <span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
