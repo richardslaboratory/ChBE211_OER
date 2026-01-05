@@ -395,7 +395,10 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#state-variables">State Variables</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#volumetric-variables">Volumetric Variables:</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#thermal-variables">Thermal Variables:</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gibbs-phase-rule">Gibbs’ Phase Rule:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gibbs-phase-rule">Gibbs’ Phase Rule:</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-equilibrium">Types of Equilibrium</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extensive-and-intensive-variables">Extensive and Intensive Variables</a><ul class="nav section-nav flex-column">
@@ -406,6 +409,7 @@
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#understanding-the-relationship-between-thermal-and-volumetric-variables">Understanding the Relationship between Thermal and Volumetric Variables</a></li>
 </ul>
             </nav>
         </div>
@@ -472,17 +476,25 @@
 <p>We call the number of variables that we can control in a system, the number degrees of freedom (DOF).</p>
 <p>Gibbs defined the number of degrees of freedom by <strong>phase rule</strong> is given as:</p>
 <p><span class="math notranslate nohighlight">\(\quad DOF=2+C-P+M\)</span></p>
+<section id="types-of-equilibrium">
+<h4>Types of Equilibrium<a class="headerlink" href="#types-of-equilibrium" title="Link to this heading">#</a></h4>
+<ol class="arabic simple">
+<li><p>Thermal - Systems that are in thermal contact with each other over time will evolve so that their temperatures are equal (conduction of heat).</p></li>
+<li><p>Mechanical - Systems that can exchange mass (ex., opening a pressurized cylinder) will evolve so that their pressures are equal.</p></li>
+<li><p>Chemical - Systems that are undergoing chemical reactions will change the relative abundance of their species such that the rate of the forward reaction is equal to the rate of the reverse reaction.</p></li>
+</ol>
+</section>
 </section>
 </section>
 <section id="extensive-and-intensive-variables">
 <h2>Extensive and Intensive Variables<a class="headerlink" href="#extensive-and-intensive-variables" title="Link to this heading">#</a></h2>
 <p><a id="1.2"></a></p>
-<p>Distinguishing intensive and extensive variables are an important topic in this class as many properties that we seek to measure or determine are dependent on how much of a material is present within a system of interest.</p>
+<p>Distinguishing intensive and extensive variables is an important topic in this class as many properties that we seek to measure or determine are dependent on how much of a material is present within a system of interest.</p>
 <p>Let’s consider some variable <span class="math notranslate nohighlight">\(\theta\)</span>. <span class="math notranslate nohighlight">\(\theta\)</span> is called an <em>extensive</em> variable if the magnitude of <span class="math notranslate nohighlight">\(\theta\)</span> depends on the total amount of material present. We can keep track of the total amount of material present by defining the total mass of that material <span class="math notranslate nohighlight">\(M\)</span> or the total number of a moles of that material <span class="math notranslate nohighlight">\(N\)</span>.</p>
 <div class="alert alert-block alert-info">
 <b>Mulit-component Materials:</b> Materials with more than one component will also specify the composition.
 </div>
-<p>We can eliminate the extensive nature of the variable <span class="math notranslate nohighlight">\(\theta\)</span> by dividing its extensive value by the mass or the total number of moles. such variables, we call <em>intensive</em>. In this book, we distinguish extensive from intensive variables with accents.</p>
+<p>We can eliminate the extensive nature of the variable <span class="math notranslate nohighlight">\(\theta\)</span> by dividing its extensive value by the mass or the total number of moles; such variables, we call <em>intensive</em>. In this book, we distinguish extensive from intensive variables with accents.</p>
 <p><span class="math notranslate nohighlight">\(\quad \hat{\theta}=\dfrac{\theta}{M}\)</span> where <span class="math notranslate nohighlight">\(\hat{\theta}\)</span> indicates that the normalization is performed based on the total mass</p>
 <p><span class="math notranslate nohighlight">\(\quad \underline{\theta}=\dfrac{\theta}{N}\)</span> where <span class="math notranslate nohighlight">\(\underline{\theta}\)</span>  indicates that the normalization is performed based on the total number of moles.</p>
 <section id="why-do-we-make-this-distinction">
@@ -599,9 +611,9 @@
 <ol class="arabic simple" start="2">
 <li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Pressure">Pressure</a></p></li>
 </ol>
-<p><span class="math notranslate nohighlight">\(\quad\quad  P=\frac{Force}{Area}=\frac{Mass\:\times Acceleration\:}{Area}=\frac{kg\cdot m}{m^2\cdot s^2}=\frac{kg}{m\cdot s^2}=Pa\)</span>”</p>
+<p><span class="math notranslate nohighlight">\(\quad\quad  P=\frac{Force}{Area}=\frac{Mass\:\times Acceleration\:}{Area}=\frac{kg\cdot m}{m^2\cdot s^2}=\frac{kg}{m\cdot s^2}=Pa\)</span></p>
 <div class="alert alert-block alert-info">
-<b>Note:</b> Note 1 bar is $10^5$ Pa
+<b>Note:</b> 1 bar is $10^5$ $Pa$
 </div>
 <ol class="arabic simple" start="3">
 <li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Work_(physics)">Work (Extrinsic)</a></p></li>
@@ -615,13 +627,13 @@
 <li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Energy">Energy</a>
 <span class="math notranslate nohighlight">\(\quad\quad E=Force\:\times Distance=\frac{kg\cdot m\cdot m}{s^2}=\frac{kg\cdot m^2}{s^2}\)</span></p></li>
 </ol>
-<p>Energy has the same units as work. Examples of energy include:</p>
+<p>Energy has the same units as work. Examples of energy, <span class="math notranslate nohighlight">\(E\)</span>, include:</p>
 <ul class="simple">
-<li><p>Potential Energy, PE</p></li>
-<li><p>Kinetic Energy, KE</p></li>
-<li><p>Work, W</p></li>
-<li><p>Heat, Q</p></li>
-<li><p>Entropy <span class="math notranslate nohighlight">\(\int S dT\)</span>” /&gt;, where <span class="math notranslate nohighlight">\(S\)</span> is the entropy and <span class="math notranslate nohighlight">\(T\)</span> the temperature. A change in entropy or temperature corresponds to a change in energy.</p></li>
+<li><p>Potential Energy, <span class="math notranslate nohighlight">\(PE\)</span></p></li>
+<li><p>Kinetic Energy, <span class="math notranslate nohighlight">\(KE\)</span></p></li>
+<li><p>Work, <span class="math notranslate nohighlight">\(W\)</span></p></li>
+<li><p>Heat, <span class="math notranslate nohighlight">\(Q\)</span></p></li>
+<li><p>Entropy <span class="math notranslate nohighlight">\(\int S dT\)</span>, where <span class="math notranslate nohighlight">\(S\)</span> is the entropy and <span class="math notranslate nohighlight">\(T\)</span> the temperature. A change in entropy or temperature corresponds to a change in energy.</p></li>
 </ul>
 <div class="alert alert-block alert-info">
 <b>Note:</b> Energy is often defined with respect to some reference state
@@ -629,6 +641,18 @@
 <div class="alert alert-block alert-info">
 <b>Hint:</b> Always convert Temperature to K before performing calculations.
 </div></section>
+</section>
+<section id="understanding-the-relationship-between-thermal-and-volumetric-variables">
+<h2>Understanding the Relationship between Thermal and Volumetric Variables<a class="headerlink" href="#understanding-the-relationship-between-thermal-and-volumetric-variables" title="Link to this heading">#</a></h2>
+<p>We often think about property changes in the context of initial and final states. Some action/process drives a system to change resulting in a change in measurable properties (Both volumetric and thermal). Because of the Gibb’s Phase Rule, the change in volumetric and thermal variables are strongly interrelated and in some cases not intuitively connected.</p>
+<p>Using the cylinder example above, consider the following scenario:</p>
+<ol class="arabic simple">
+<li><p>Heat is added to the piston (i.e., <span class="math notranslate nohighlight">\(Q &gt; 0\)</span>) containing a constant number of moles <span class="math notranslate nohighlight">\(N\)</span> of gas while <span class="math notranslate nohighlight">\(L\)</span> (and <span class="math notranslate nohighlight">\(V\)</span>) remains constant. What happens within the piston to the temperature and pressure? What about the energy content of the fluid w/in the piston?</p></li>
+<li><p>Work is extracted from the piston (i.e., <span class="math notranslate nohighlight">\(W&lt;0\)</span>) containing a constant number of moles <span class="math notranslate nohighlight">\(N\)</span> of gas while <span class="math notranslate nohighlight">\(L\)</span> remains constant. If the piston is well-insulated, what happens within the piston to the temperature and pressure? What about the energy content of the fluid w/in the piston?</p></li>
+<li><p>An elective vehicle battery is charged resulting in modest temperature and enormous pressure increases within the battery cells held at constant volume. What has happened to the energy content of the battery and what was necessary for this transformation to take place?</p></li>
+<li><p>During periods of excess solar electricity generation, work <span class="math notranslate nohighlight">\(W\)</span> is done to elevate enormous concrete blocks in the air. While the temperature and pressure of the blocks remains relatively unchanged, their energy content has changed dramatically. In what way and how might this be useful? What if we changed from concrete blocks to water?</p></li>
+<li><p>Water stored in a hydroelectric dam is at constant pressure and temperature.</p></li>
+</ol>
 </section>
 </section>
 
@@ -701,7 +725,10 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#state-variables">State Variables</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#volumetric-variables">Volumetric Variables:</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#thermal-variables">Thermal Variables:</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gibbs-phase-rule">Gibbs’ Phase Rule:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gibbs-phase-rule">Gibbs’ Phase Rule:</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-equilibrium">Types of Equilibrium</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extensive-and-intensive-variables">Extensive and Intensive Variables</a><ul class="nav section-nav flex-column">
@@ -712,6 +739,7 @@
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#understanding-the-relationship-between-thermal-and-volumetric-variables">Understanding the Relationship between Thermal and Volumetric Variables</a></li>
 </ul>
   </nav></div>
 
