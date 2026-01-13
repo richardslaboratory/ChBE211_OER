@@ -171,8 +171,7 @@
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Definitions and Balance Expressions</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../Ch1/1.Thermodynamic-Definitions.html">Thermodynamic Definitions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Ch1/2.Real-Gas-Properties.html">Real Gas Properties</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Ch1/3.Equations-of-State.html">Equations of State</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch1/3.Real-Gas-Properties.html">Real Gas Properties cont’d</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Ch1/4.Balance-Expressions.html">Macroscopic Balance Expressions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Ch1/5.Conservation-of-Mass.html">Conservation of Mass</a></li>
 </ul>
@@ -409,6 +408,11 @@
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-of-enthalpy">Definition of Enthalpy:</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-conservation-of-energy">The <em>Conservation of Energy</em></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-1-joule-thomson-expansion">Example 1 - Joule-Thomson Expansion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solution">Solution</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-2-filling-a-cylinder">Example 2 - Filling a Cylinder</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-solving-ideal-gas-problems">Example - Solving Ideal Gas Problems</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Solution</a></li>
 </ul>
             </nav>
         </div>
@@ -558,6 +562,111 @@
 <b>Note:</b> Feeling comfortable with notation is one of the most important aspects of this class and an area where students struggle.
 </div>
 </section>
+<section id="example-1-joule-thomson-expansion">
+<h2>Example 1 - Joule-Thomson Expansion<a class="headerlink" href="#example-1-joule-thomson-expansion" title="Link to this heading">#</a></h2>
+<p>A gas at pressure <span class="math notranslate nohighlight">\(P_1\)</span> and temperature <span class="math notranslate nohighlight">\(T_1\)</span> is steadily exhausted to the atmosphere at pressure <span class="math notranslate nohighlight">\(P_2\)</span> through a pressure reducing valve. Find an expression relating the downstream gas temperature <span class="math notranslate nohighlight">\(T_2 to \)</span>P_1<span class="math notranslate nohighlight">\(, \)</span>P_2<span class="math notranslate nohighlight">\(, and \)</span>T_1$. Since the gas flows rapidly, assume that the expansion is adiabatic.</p>
+</section>
+<section id="solution">
+<h2>Solution<a class="headerlink" href="#solution" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(\dfrac{dN}{dt} = \sum_i \dot{N}_i\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\dfrac{dU}{dt}=\sum_{k} \big(\dot{N}\underline{H}\big)_k+\sum_{j} \dot{Q}_j+ \dot{W}\)</span></p></li>
+</ol>
+<p>Simplifying, we have:</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(\dot{N}_1 + \dot{N}_2 = 0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\dot{N}_1 \underline{H}_1 + \dot{N}_2 \underline{H}_2 = 0 \)</span></p></li>
+</ol>
+<p>recognizing that <span class="math notranslate nohighlight">\(\dot{N} = \dot{N}_1 = -\dot{N}_2\)</span>, (2) becomes:</p>
+<div class="math notranslate nohighlight">
+\[\dot{N}(\underline{H}_1 -\underline{H}_2) = 0 \]</div>
+<p>or</p>
+<div class="math notranslate nohighlight">
+\[\underline{H}_1=\underline{H}_2\]</div>
+<p>Expansion across a valve is isoenthalpic.</p>
+<p><strong>Extended Example</strong></p>
+<p>Steam at 400 <span class="math notranslate nohighlight">\(bar\)</span> and 500 <span class="math notranslate nohighlight">\(^o C\)</span> undergoes a J-T Expansion to 1 <span class="math notranslate nohighlight">\(bar\)</span>. Determine the temperature of the steam exiting the expansion valve using:</p>
+<ul class="simple">
+<li><p>Fig. 3.3-1a</p></li>
+<li><p>Fig. 3.3-1b</p></li>
+<li><p>The steam tables in Appendix A.III</p></li>
+</ul>
+<p><strong>Answer</strong>: 214 <span class="math notranslate nohighlight">\(^oC\)</span></p>
+</section>
+<section id="example-2-filling-a-cylinder">
+<h2>Example 2 - Filling a Cylinder<a class="headerlink" href="#example-2-filling-a-cylinder" title="Link to this heading">#</a></h2>
+<p>A compressed-air tank is to be repressurized to 40 <span class="math notranslate nohighlight">\(bar\)</span> by an airline at 50 <span class="math notranslate nohighlight">\(bar\)</span> and 20 <span class="math notranslate nohighlight">\(^o C\)</span>. The repressurization occurs rapidly and the air is assumed to be an ideal gas with <span class="math notranslate nohighlight">\(C_v = 21 J/(mol \cdot K)\)</span>. Find the temperature of the air in the tank after refilling it if the tank initially contains air at 1 <span class="math notranslate nohighlight">\(bar\)</span> and 20 <span class="math notranslate nohighlight">\(^o C\)</span>.</p>
+<p>1 <span class="math notranslate nohighlight">\(N_1^f - N_1^i = \Delta N\)</span></p>
+<p>2 <span class="math notranslate nohighlight">\(N_1^f \underline{U}_1^f - N_1^i \underline{U}_1^i = \Delta N \underline{H}^{air}\)</span></p>
+<p>where <span class="math notranslate nohighlight">\(\Delta N\)</span> represents the <span class="math notranslate nohighlight">\(\dot{N}\Delta t\)</span></p>
+<p>Substituting 1 into two, we have:</p>
+<p><span class="math notranslate nohighlight">\(N_1^f \underline{U}_1^f - N_1^i \underline{U}_1^i = (N_1^f - N_1^i) \underline{H}^{air}\)</span></p>
+<p>Using the heat capacities, we have:</p>
+<p><span class="math notranslate nohighlight">\(C_v (N_1^f T_1^f - N_1^i T_1^i) = (N_1^f - N_1^i)C_p T^{air}\)</span></p>
+<p>substitution of <span class="math notranslate nohighlight">\(N = \dfrac{PV}{RT}\)</span> yields:</p>
+<p><span class="math notranslate nohighlight">\(C_v \bigg(\dfrac{PV}{RT}\bigg)_1^f T_1^f - C_v\bigg(\dfrac{PV}{RT}\bigg)_1^i T_1^i = \bigg(\bigg(\dfrac{PV}{RT}\bigg)_1^f - \bigg(\dfrac{PV}{RT}\bigg)_1^i\bigg)C_p T^{air}\)</span></p>
+<p>simplifying, we get:</p>
+<p><span class="math notranslate nohighlight">\(C_v P_1^f - C_v P_1^i = \bigg(\bigg(\dfrac{P}{T}\bigg)_1^f - \bigg(\dfrac{P}{T}\bigg)_1^i\bigg)C_p T^{air}\)</span>
+or</p>
+<p><span class="math notranslate nohighlight">\(\dfrac{C_v}{C_p}\dfrac{P_1^f - P_1^i}{T^{air}}  = \bigg(\bigg(\dfrac{P}{T}\bigg)_1^f - \bigg(\dfrac{P}{T}\bigg)_1^i\bigg)\)</span></p>
+<p>In the above,</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(T^{air} = 20^C\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(C_V = 21 J/(mol \cdot K)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(C_P = 29.314 J/(mol \cdot K)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(P_1^f = 40 bar\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(P_1^i = 1 bar\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(T_1^i = 20 ^o C\)</span></p></li>
+</ul>
+<p>1 equation and 1 unknown, we can solve - <span class="math notranslate nohighlight">\(T_1^f = 132.05 ^o C\)</span></p>
+</section>
+<section id="example-solving-ideal-gas-problems">
+<h2>Example - Solving Ideal Gas Problems<a class="headerlink" href="#example-solving-ideal-gas-problems" title="Link to this heading">#</a></h2>
+<p>A gas cylinder of 1 <span class="math notranslate nohighlight">\(m^3\)</span> volume containing nitrogen initially at a pressure of 40 <span class="math notranslate nohighlight">\(bar\)</span> and a temperature of 200 <span class="math notranslate nohighlight">\(K\)</span> is connected to another cylinder of 1 <span class="math notranslate nohighlight">\(m^3\)</span> volume that is evacuated. A valve between the two cylinders is opened until the pressures in the cylinders equalizes. Find the final temperature and pressure in each cylinder if there is no heat flow into or out of the cylinders (other than the exchange of mass). You may assume that the gas is ideal with a constant pressure heat capacity of 29.3 <span class="math notranslate nohighlight">\(J/(mol \cdot K)\)</span></p>
+</section>
+<section id="id1">
+<h2>Solution<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<p>First, we write the mass and energy balance expressions in their difference form.</p>
+<p>1 <span class="math notranslate nohighlight">\(N_1^i + N_2^i = N_1^f + N_2^f\)</span></p>
+<p>2 <span class="math notranslate nohighlight">\(N_1^i U_1^i + N_2^i U_2^i = N_1^f U_1^f + N_2^f U_2^f\)</span></p>
+<p>from (1), we can use the ideal gas law and the fact that <span class="math notranslate nohighlight">\(N_2^i=0\)</span> to write:</p>
+<p><span class="math notranslate nohighlight">\(\bigg(\dfrac{PV}{RT}\bigg)_1^i = \bigg(\dfrac{PV}{RT}\bigg)_1^f + \bigg(\dfrac{PV}{RT}\bigg)_2^f\)</span></p>
+<p>Because <span class="math notranslate nohighlight">\(V\)</span> is the same in all cylinders, and <span class="math notranslate nohighlight">\(P_1^f = P_2^f\)</span>,</p>
+<p><span class="math notranslate nohighlight">\(\bigg(\dfrac{P}{T}\bigg)_1^i = P^f\bigg(\bigg(\dfrac{1}{T}\bigg)_1^f + \bigg(\dfrac{1}{T}\bigg)_2^f\bigg)\)</span></p>
+<p>to obtain the second equation to solve for the three unknowns, we need the energy balance (2).</p>
+<p><span class="math notranslate nohighlight">\(\bigg(\dfrac{P}{T}\bigg)_1^i C_V T_1^i = \bigg(\dfrac{P}{T}\bigg)_1^f C_V T_1^f + \bigg(\dfrac{P}{T}\bigg)_2^f C_V T_2^f\)</span></p>
+<p>simplifying, we find that:</p>
+<p><span class="math notranslate nohighlight">\(P_1^i = 2P^f\)</span></p>
+<p>or <span class="math notranslate nohighlight">\(P^f = 0.5 *P_1^i = 20 bar\)</span></p>
+<p>Now that we have the final pressure, we can use the mass balance expression to obtain the final temperatures</p>
+<p><span class="math notranslate nohighlight">\(\bigg(\dfrac{2}{T}\bigg)_1^i = \bigg(\dfrac{1}{T}\bigg)_1^f + \bigg(\dfrac{1}{T}\bigg)_2^f\)</span></p>
+<p>We need one more equation to solve for the two unknowns. To find this equation we perform a mass and energy balance around the first tank:</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(\dfrac{dN}{dt} = \dot{N}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\dfrac{dU}{dt} = -\dot{N}_1\underline{H}_1\)</span></p></li>
+</ol>
+<p>Combining, we get:</p>
+<p><span class="math notranslate nohighlight">\(\dfrac{d(N \underline{U}_1)}{dt} = \dfrac{dN}{dt}\underline{H}_1\)</span></p>
+<p>if <span class="math notranslate nohighlight">\(N\)</span> and <span class="math notranslate nohighlight">\(U\)</span> are both functions of time, we can apply product rule to obtain:</p>
+<p><span class="math notranslate nohighlight">\(N\dfrac{d\underline{U}_1}{dt}  + \underline{U}_1\dfrac{dN}{dt}= \dfrac{dN}{dt}\underline{H}_1\)</span></p>
+<p>grouping terms, we find:</p>
+<p><span class="math notranslate nohighlight">\(N\dfrac{d\underline{U}_1}{dt} = \dfrac{dN}{dt}(\underline{H}_1 - \underline{U}_1)\)</span></p>
+<p>applying our definitions, we have:</p>
+<p><span class="math notranslate nohighlight">\(\bigg(\dfrac{PV}{RT}\bigg)_1 C_v \dfrac{dT_1}{dt} = \dfrac{d}{dt}\bigg(\dfrac{PV}{RT}\bigg)_1 (P\underline{V})_1\)</span></p>
+<p>or</p>
+<p><span class="math notranslate nohighlight">\(\bigg(\dfrac{PV}{RT}\bigg)_1 C_v \dfrac{dT_1}{dt} = (R T)_1\dfrac{d}{dt}\bigg(\dfrac{PV}{RT}\bigg)_1 \)</span></p>
+<p>multiplying by <span class="math notranslate nohighlight">\(R/V\)</span> yields:</p>
+<p><span class="math notranslate nohighlight">\(\dfrac{1}{T_1} \dfrac{C_v}{R} \dfrac{dT_1}{dt} = \dfrac{T_1}{P_1}\dfrac{d}{dt}\bigg(\dfrac{P}{T}\bigg)_1 \)</span></p>
+<p>or</p>
+<p><span class="math notranslate nohighlight">\(\dfrac{C_v}{R} \dfrac{d \ln T_1}{dt} = \dfrac{d}{dt}\ln\bigg(\dfrac{ P}{T}\bigg)_1 \)</span></p>
+<p>Integrating between the final and initial states yields the final expression:</p>
+<div class="math notranslate nohighlight">
+\[ \bigg(\dfrac{T_1^f}{T_1^i}\bigg)^{C_v/R} = \bigg(\dfrac{P_1^f}{P_1^i}\bigg) \bigg(\dfrac{T_1^i}{T_1^f}\bigg) \]</div>
+<p>which can be rearranged and simplified as follows:</p>
+<div class="math notranslate nohighlight">
+\[ \bigg(\dfrac{T_1^f}{T_1^i}\bigg)^{C_p/R} = \bigg(\dfrac{P_1^f}{P_1^i}\bigg) \]</div>
+<p>The result is it is now possible to find the temperaturtes.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -643,6 +752,11 @@
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-of-enthalpy">Definition of Enthalpy:</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-conservation-of-energy">The <em>Conservation of Energy</em></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-1-joule-thomson-expansion">Example 1 - Joule-Thomson Expansion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solution">Solution</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-2-filling-a-cylinder">Example 2 - Filling a Cylinder</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-solving-ideal-gas-problems">Example - Solving Ideal Gas Problems</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Solution</a></li>
 </ul>
   </nav></div>
 

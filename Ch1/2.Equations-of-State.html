@@ -171,7 +171,7 @@
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Definitions and Balance Expressions</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="1.Thermodynamic-Definitions.html">Thermodynamic Definitions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="3.Real-Gas-Properties.html">Real Gas Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3.Real-Gas-Properties.html">Real Gas Properties cont’d</a></li>
 <li class="toctree-l1"><a class="reference internal" href="4.Balance-Expressions.html">Macroscopic Balance Expressions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="5.Conservation-of-Mass.html">Conservation of Mass</a></li>
 </ul>
@@ -466,7 +466,7 @@
 <p>Experimentalists observing this behavior would have noted that for any pair of measured properties any value of the other property could have been measured. By controlling only one degree of freedom, a single degree of freedom remained allowing pairs of properties to adopt any value.</p>
 <p>However, if instead control two of these properties simultaneously, Ex:</p>
 <ul class="simple">
-<li><p>When <span class="math notranslate nohighlight">\(\Delta L=0\)</span> and  <span class="math notranslate nohighlight">\(\Delta F=0\)</span>, adding/removing heat to the system caused the liquid height to change linearly with the amount of heat added or removed.</p></li>
+<li><p>When <span class="math notranslate nohighlight">\(\Delta L=0\)</span> or  <span class="math notranslate nohighlight">\(\Delta F=0\)</span>, adding/removing heat to the system caused the liquid height to change linearly with the amount of heat added or removed.</p></li>
 </ul>
 <p>From these measurements, data plotted as <span class="math notranslate nohighlight">\(\Delta F \Delta L\)</span> vs <span class="math notranslate nohighlight">\(\Delta h\)</span> would have yielded a straight line whose slope and intercept changed with the accuracy and units of the measurement device. However, when the <span class="math notranslate nohighlight">\(\Delta h\)</span> was calibrated to the melting point and boiling point of water and the intercept of that line was identically equal to <span class="math notranslate nohighlight">\(0\)</span> if the temperature units were in <span class="math notranslate nohighlight">\(K\)</span>.</p>
 <p>Defining the <span class="math notranslate nohighlight">\(P_g=\dfrac{\Delta F}{A}\)</span> and the molar volume <span class="math notranslate nohighlight">\(\underline{V}=\dfrac{\Delta L\times A}{N}\)</span>, it would have been possible to define the gas constant <span class="math notranslate nohighlight">\(R\)</span> and the ideal gas law.</p>
@@ -542,7 +542,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x18c9ca07950&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x1579e707650&gt;
 </pre></div>
 </div>
 <img alt="../_images/aa1829267d16e14260fb8509788821faaca715065ca0ad55b2c4a69d12b04871.png" src="../_images/aa1829267d16e14260fb8509788821faaca715065ca0ad55b2c4a69d12b04871.png" />
@@ -565,7 +565,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x18c9c9cba70&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x1579e7dbd40&gt;
 </pre></div>
 </div>
 <img alt="../_images/631ff8323f6856b4c64f848866dcf5c89cab1484f76512ecf619a4a86186bc95.png" src="../_images/631ff8323f6856b4c64f848866dcf5c89cab1484f76512ecf619a4a86186bc95.png" />
@@ -599,7 +599,7 @@
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">steam_volumes_400C</span><span class="p">,</span> <span class="n">steam_pressures</span><span class="p">,</span> <span class="s1">&#39;ok&#39;</span><span class="p">)</span>
 
 <span class="k">for</span> <span class="n">T</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">400</span><span class="p">]:</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">volumes</span><span class="o">/</span><span class="n">MW_steam</span><span class="p">,</span> <span class="n">idealgaslaw</span><span class="p">(</span><span class="n">T</span> <span class="o">+</span> <span class="mf">273.15</span><span class="p">,</span> <span class="n">volumes</span><span class="p">)</span><span class="o">*</span><span class="n">Pa_MPa</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">T</span><span class="si">}</span><span class="s1"> K&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">volumes</span><span class="o">/</span><span class="n">MW_steam</span><span class="p">,</span> <span class="n">idealgaslaw</span><span class="p">(</span><span class="n">T</span> <span class="o">+</span> <span class="mf">273.15</span><span class="p">,</span> <span class="n">volumes</span><span class="p">)</span><span class="o">*</span><span class="n">Pa_MPa</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">T</span><span class="si">}</span><span class="s1"> C&#39;</span><span class="p">)</span>
 
 <span class="c1">#plt.plot(steam_volumes_500C, steam_pressures, &#39;-k&#39;)</span>
 <span class="c1">#plt.plot(steam_volumes_400C, steam_pressures, &#39;-k&#39;)</span>
@@ -614,10 +614,10 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x18ca019f6e0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x157a1e22180&gt;
 </pre></div>
 </div>
-<img alt="../_images/a72e38836359019e8c528eaa3288249ec344287040bd606a807ecd6a3d1f7e03.png" src="../_images/a72e38836359019e8c528eaa3288249ec344287040bd606a807ecd6a3d1f7e03.png" />
+<img alt="../_images/ebd348581026f2c1f2d4afe677689d0beb456c134f9f45895cf0c43f3fd80609.png" src="../_images/ebd348581026f2c1f2d4afe677689d0beb456c134f9f45895cf0c43f3fd80609.png" />
 </div>
 </div>
 <p><a id="2.4"></a></p>
