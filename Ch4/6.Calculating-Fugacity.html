@@ -171,8 +171,7 @@
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Definitions and Balance Expressions</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../Ch1/1.Thermodynamic-Definitions.html">Thermodynamic Definitions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Ch1/2.Real-Gas-Properties.html">Real Gas Properties</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Ch1/3.Equations-of-State.html">Equations of State</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ch1/3.Real-Gas-Properties.html">Real Gas Properties cont’d</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Ch1/4.Balance-Expressions.html">Macroscopic Balance Expressions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Ch1/5.Conservation-of-Mass.html">Conservation of Mass</a></li>
 </ul>
@@ -541,7 +540,7 @@ RT(Z-1) - RTln(Z) + \int_{\infty}^{\underline{V}}\big(\dfrac{RT}{\underline{V}}-
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x1d9dda49610&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x1f680975640&gt;
 </pre></div>
 </div>
 </div>
@@ -871,12 +870,19 @@ RT(Z-1) - RTln(Z) + \int_{\infty}^{\underline{V}}\big(\dfrac{RT}{\underline{V}}-
 <span class="ne">---&gt; </span><span class="mi">16</span> <span class="n">P2</span><span class="o">=</span><span class="n">a</span><span class="p">(</span><span class="n">Tr</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">V</span><span class="o">*</span><span class="p">(</span><span class="n">V</span><span class="o">+</span><span class="n">b</span><span class="p">())</span><span class="o">+</span><span class="n">b</span><span class="p">()</span><span class="o">*</span><span class="p">(</span><span class="n">V</span><span class="o">-</span><span class="n">b</span><span class="p">()))</span>
 <span class="g g-Whitespace">     </span><span class="mi">18</span> <span class="k">return</span> <span class="n">P1</span><span class="o">-</span><span class="n">P2</span>
 
-<span class="nn">Cell In[5], line 10,</span> in <span class="ni">PR_EOS.&lt;locals&gt;.a</span><span class="nt">(Tr)</span>
+<span class="nn">Cell In[5], line 11,</span> in <span class="ni">PR_EOS.&lt;locals&gt;.a</span><span class="nt">(Tr)</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="k">def</span><span class="w"> </span><span class="nf">a</span><span class="p">(</span><span class="n">Tr</span><span class="p">):</span>
+<span class="ne">---&gt; </span><span class="mi">11</span>     <span class="k">return</span> <span class="mf">0.45724</span><span class="o">*</span><span class="p">(</span><span class="n">R</span><span class="o">*</span><span class="n">Tc</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="n">Pc</span><span class="o">*</span><span class="mi">10</span><span class="o">**</span><span class="mi">5</span><span class="p">)</span><span class="o">*</span><span class="n">alpha</span><span class="p">(</span><span class="n">Tr</span><span class="p">)</span>
+
+<span class="nn">Cell In[5], line 9,</span> in <span class="ni">PR_EOS.&lt;locals&gt;.alpha</span><span class="nt">(Tr)</span>
 <span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="k">def</span><span class="w"> </span><span class="nf">alpha</span><span class="p">(</span><span class="n">Tr</span><span class="p">):</span>    
-<span class="g g-Whitespace">      </span><span class="mi">9</span>     <span class="k">return</span> <span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">kappa</span><span class="p">()</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">Tr</span><span class="p">)))</span><span class="o">**</span><span class="mi">2</span>
-<span class="ne">---&gt; </span><span class="mi">10</span> <span class="k">def</span><span class="w"> </span><span class="nf">a</span><span class="p">(</span><span class="n">Tr</span><span class="p">):</span>
-<span class="g g-Whitespace">     </span><span class="mi">11</span>     <span class="k">return</span> <span class="mf">0.45724</span><span class="o">*</span><span class="p">(</span><span class="n">R</span><span class="o">*</span><span class="n">Tc</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="n">Pc</span><span class="o">*</span><span class="mi">10</span><span class="o">**</span><span class="mi">5</span><span class="p">)</span><span class="o">*</span><span class="n">alpha</span><span class="p">(</span><span class="n">Tr</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="k">def</span><span class="w"> </span><span class="nf">b</span><span class="p">():</span>
+<span class="ne">----&gt; </span><span class="mi">9</span>     <span class="k">return</span> <span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">kappa</span><span class="p">()</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">Tr</span><span class="p">)))</span><span class="o">**</span><span class="mi">2</span>
+
+<span class="nn">Cell In[5], line 6,</span> in <span class="ni">PR_EOS.&lt;locals&gt;.kappa</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="k">def</span><span class="w"> </span><span class="nf">PR_EOS</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="n">V</span><span class="p">):</span>
+<span class="ne">----&gt; </span><span class="mi">6</span>     <span class="k">def</span><span class="w"> </span><span class="nf">kappa</span><span class="p">():</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span>         <span class="k">return</span> <span class="mf">0.37464</span><span class="o">+</span><span class="mf">1.54266</span><span class="o">*</span><span class="n">w</span><span class="o">-</span><span class="mf">0.26992</span><span class="o">*</span><span class="n">w</span><span class="o">**</span><span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span>     <span class="k">def</span><span class="w"> </span><span class="nf">alpha</span><span class="p">(</span><span class="n">Tr</span><span class="p">):</span>    
 
 <span class="ne">KeyboardInterrupt</span>: 
 </pre></div>

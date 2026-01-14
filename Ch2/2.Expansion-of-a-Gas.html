@@ -397,19 +397,24 @@
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#combined-expressions">(1+2) Combined Expressions</a></li>
 </ul>
 </li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reflection-question">Reflection Question:</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#steady-state-adiabatic-expansion-of-a-gas-across-a-turbine">Steady state, adiabatic expansion of a gas across a turbine</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">(1) Mass Balance Expression</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">(2) Energy Balance Expression</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">(1+2) Combined Expressions</a></li>
 </ul>
 </li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reflection-questions">Reflection Questions</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transient-adiabatic-expansion-of-a-gas-inside-a-piston">Transient, adiabatic expansion of a gas inside a piston</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">(1) Mass Balance Expression</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">(2) Energy Balance Expression</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#looking-at-the-difference-form">Looking at the difference form:</a></li>
 </ul>
 </li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-turbine">Example - Turbine</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-why-we-need-an-entropy-balance-expression">Example - Why we need an entropy balance expression.</a></li>
 </ul>
             </nav>
         </div>
@@ -474,7 +479,7 @@
 <div class="math notranslate nohighlight">
 \[\dot{N}_1=-\dot{N}_2\]</div>
 <div class="alert alert-block alert-info">
-<b>Note:</b> the sine convention for mass entering and leaving the system is preserved by the conservation of mass.
+<b>Note:</b> the sign convention for mass entering and leaving the system is preserved by the conservation of mass.
 </div>
 </section>
 <section id="energy-balance-expression">
@@ -498,9 +503,13 @@
 <p>or</p>
 <div class="math notranslate nohighlight">
 \[\underline{H}_2=\underline{H}_1\]</div>
-<p>We conclude from this exercise that the steady state, adiabatic expansion across a valve is <strong>isoenthalpic</strong></p>
-<p><a id="1.2"></a></p>
+<p>We conclude from this exercise that the steady state, adiabatic expansion across a valve is <strong>isoenthalpic</strong>.</p>
 </section>
+</section>
+<section id="reflection-question">
+<h3>Reflection Question:<a class="headerlink" href="#reflection-question" title="Link to this heading">#</a></h3>
+<p>How does the temperature of an ideal gas change due to expansion across a valve?</p>
+<p><a id="1.2"></a></p>
 </section>
 <section id="steady-state-adiabatic-expansion-of-a-gas-across-a-turbine">
 <h3>Steady state, adiabatic expansion of a gas across a turbine<a class="headerlink" href="#steady-state-adiabatic-expansion-of-a-gas-across-a-turbine" title="Link to this heading">#</a></h3>
@@ -520,7 +529,7 @@
 <div class="math notranslate nohighlight">
 \[\dot{N}_1=-\dot{N}_2\]</div>
 <div class="alert alert-block alert-info">
-<b>Note:</b> the sine convention for mass entering and leaving the system is preserved by the conservation of mass.
+<b>Note:</b> the sign convention for mass entering and leaving the system is preserved by the conservation of mass.
 </div>
 </section>
 <section id="id2">
@@ -535,7 +544,7 @@
 </ul>
 <p>The <strong>Conservation of Energy</strong> thus simplifies to:</p>
 <div class="math notranslate nohighlight">
-\[0=\dot{N}_1\underline{H}_1+\dot{N}_2\underline{H}_2 + W_s\]</div>
+\[0=\dot{N}_1\underline{H}_1+\dot{N}_2\underline{H}_2 + \dot{W}_s\]</div>
 </section>
 <section id="id3">
 <h4>(1+2) Combined Expressions<a class="headerlink" href="#id3" title="Link to this heading">#</a></h4>
@@ -550,8 +559,16 @@
 <li><p><span class="math notranslate nohighlight">\(\Delta\underline{H}&gt;0\)</span> when work is done on the system (this is the work of compression)</p></li>
 <li><p><span class="math notranslate nohighlight">\(\Delta\underline{H}&lt;0\)</span> when work is done by the system (this is the result of expansion when work is done by the system)</p></li>
 </ul>
-<p><a id="1.3"></a></p>
 </section>
+</section>
+<section id="reflection-questions">
+<h3>Reflection Questions<a class="headerlink" href="#reflection-questions" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>A compressor is very similar to a turbine except instead of extracting work from the expansion of a gas, a compressor uses work to increase the pressure of a gas. What is the relationship between the sign of the work and the change in enthalpy of the gas across a turbine and compressor?</p></li>
+<li><p>How do you solve a compressor/turbine problem using real gas properties?</p></li>
+<li><p>How do you solve a compressor/turbine problem using ideal gas properties?</p></li>
+</ol>
+<p><a id="1.3"></a></p>
 </section>
 <section id="transient-adiabatic-expansion-of-a-gas-inside-a-piston">
 <h3>Transient, adiabatic expansion of a gas inside a piston<a class="headerlink" href="#transient-adiabatic-expansion-of-a-gas-inside-a-piston" title="Link to this heading">#</a></h3>
@@ -588,7 +605,29 @@
 <li><p>compresssion where <span class="math notranslate nohighlight">\(\Delta V&gt;0\)</span>, yields <span class="math notranslate nohighlight">\(\Delta U &gt; 0\)</span></p></li>
 </ul>
 </section>
+<section id="looking-at-the-difference-form">
+<h4>Looking at the difference form:<a class="headerlink" href="#looking-at-the-difference-form" title="Link to this heading">#</a></h4>
+<p>Expansion of an ideal gas under constant pressure
+$<span class="math notranslate nohighlight">\(U_2 - U_1 = C_V^*(T_2-T_1) = -P^{ext}(V_2 - V_1) \)</span>$</p>
 </section>
+</section>
+</section>
+<section id="example-turbine">
+<h2>Example - Turbine<a class="headerlink" href="#example-turbine" title="Link to this heading">#</a></h2>
+<p>A well-insulated turbine generates <span class="math notranslate nohighlight">\(700\)</span> <span class="math notranslate nohighlight">\(kW\)</span> of power from steam available at <span class="math notranslate nohighlight">\(500\)</span> <span class="math notranslate nohighlight">\(^o C\)</span> and <span class="math notranslate nohighlight">\(5\)</span> <span class="math notranslate nohighlight">\(MPa\)</span>. At the outlet of the turbine, the steam is at <span class="math notranslate nohighlight">\(0.3\)</span> <span class="math notranslate nohighlight">\(MPa\)</span> and <span class="math notranslate nohighlight">\(200\)</span> <span class="math notranslate nohighlight">\(^o C\)</span>. What is the mass flow rate of steam through the turbine?</p>
+<p>For the same mass flow rate, if the turbine’s thermal insulation erodes such that <span class="math notranslate nohighlight">\(50\)</span> <span class="math notranslate nohighlight">\(kJ/kg\)</span> of steam escape, what will be the turbine’s new power output?</p>
+</section>
+<section id="example-why-we-need-an-entropy-balance-expression">
+<h2>Example - Why we need an entropy balance expression.<a class="headerlink" href="#example-why-we-need-an-entropy-balance-expression" title="Link to this heading">#</a></h2>
+<p><strong>Problem:</strong> An adiabatic compressor is operating on an ideal gas with constant pressure heat capacity of <span class="math notranslate nohighlight">\(29.3\)</span> <span class="math notranslate nohighlight">\(J/(mol\cdot K)\)</span>. The gas is available at <span class="math notranslate nohighlight">\(1\)</span> <span class="math notranslate nohighlight">\(bar\)</span> and <span class="math notranslate nohighlight">\(300\)</span> <span class="math notranslate nohighlight">\(K\)</span> and discharged at a pressure of <span class="math notranslate nohighlight">\(5\)</span> <span class="math notranslate nohighlight">\(bar\)</span>. What is the temperature of the gas exiting the turbine and what is the rate of work done if the gas flow rate is <span class="math notranslate nohighlight">\(3\)</span> <span class="math notranslate nohighlight">\(mol/s\)</span>.</p>
+<p><strong>Solution:</strong>
+Simplifying the Mass and Energy Balance Expressions, we find that:</p>
+<div class="math notranslate nohighlight">
+\[\dot{W} = \dot{N}(\underline{H}_2 - \underline{H}_1)\]</div>
+<p>Substituting in for the known properties of the ideal gas, we have:</p>
+<div class="math notranslate nohighlight">
+\[\dot{W} = C_p^*\dot{N}(T_2 - T_1)\]</div>
+<p>We see that there are two unknowns (<span class="math notranslate nohighlight">\(T_2\)</span> and <span class="math notranslate nohighlight">\(\dot{W}\)</span>) and only one equation.</p>
 </section>
 </section>
 
@@ -664,19 +703,24 @@
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#combined-expressions">(1+2) Combined Expressions</a></li>
 </ul>
 </li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reflection-question">Reflection Question:</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#steady-state-adiabatic-expansion-of-a-gas-across-a-turbine">Steady state, adiabatic expansion of a gas across a turbine</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">(1) Mass Balance Expression</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">(2) Energy Balance Expression</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">(1+2) Combined Expressions</a></li>
 </ul>
 </li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reflection-questions">Reflection Questions</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transient-adiabatic-expansion-of-a-gas-inside-a-piston">Transient, adiabatic expansion of a gas inside a piston</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">(1) Mass Balance Expression</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">(2) Energy Balance Expression</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#looking-at-the-difference-form">Looking at the difference form:</a></li>
 </ul>
 </li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-turbine">Example - Turbine</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-why-we-need-an-entropy-balance-expression">Example - Why we need an entropy balance expression.</a></li>
 </ul>
   </nav></div>
 
