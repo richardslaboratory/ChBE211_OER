@@ -405,6 +405,11 @@
 </li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#heat-engines">Heat Engines</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-heat-engine">Simple Heat Engine</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fluid-flow-heat-engine">Fluid Flow Heat Engine</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -430,9 +435,8 @@
 </ol>
 <p>If we combine (2) and (3), we can show that we get:</p>
 <p>rearranging, we get</p>
-<ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(\dfrac{dU}{dt}=\sum_k\big(\dot{N}(\underline{H}-T\underline{S}\big)_k+T\dfrac{dS}{dt}-P_{ext}\dfrac{dV}{dt}-T\dot{S}_{gen}+\dot{W}\)</span></p></li>
-</ul>
+<div class="math notranslate nohighlight">
+\[\dfrac{dU}{dt}=\sum_k\big(\dot{N}(\underline{H}-T\underline{S}\big)\big)_k+T\dfrac{dS}{dt}-P_{ext}\dfrac{dV}{dt}-T\dot{S}_{gen}+\dot{W}\]</div>
 <p>Two useful cases emerge from this mess:</p>
 <ol class="arabic simple">
 <li><p>Open System Problems at Steady State</p></li>
@@ -444,7 +448,7 @@
 <section id="open-systems-at-steady-state">
 <h3>Open Systems at Steady State<a class="headerlink" href="#open-systems-at-steady-state" title="Link to this heading">#</a></h3>
 <p>For an <em>open system</em> operating at <em>steady state</em> with <em>fixed boundaries</em>, we can write.</p>
-<p><span class="math notranslate nohighlight">\(\quad 0=\sum_k\big(\dot{N}(\underline{H}-T\underline{S}\big)_k-T\dot{S}_{gen}+\dot{W}\)</span></p>
+<p><span class="math notranslate nohighlight">\(\quad 0=\sum_k\big(\dot{N}(\underline{H}-T\underline{S}\big)\big)_k-T\dot{S}_{gen}+\dot{W}\)</span></p>
 <p>If we define the <strong>Gibb’s Free Energy</strong> as <span class="math notranslate nohighlight">\(G=H-TS\)</span>, then the above can be simplified as:</p>
 <p><span class="math notranslate nohighlight">\(\quad 0=\sum_k\big(\dot{N}\underline{G}\big)_k-T\dot{S}_{gen}+\dot{W}\)</span></p>
 <section id="conceptual-meaning-of-gibbs-free-energy">
@@ -497,6 +501,68 @@
 </ul>
 <p>We can imagine a sealed piston cyclically compressing and expanding a fluid. The implication of the statements above is that through each cycle of compression and expansion, additional work must be supplied to make up for the accumulating losses associated with entropy generation. Therefore, perpetual motion machines that operate at steady state are impossible to construct and violate the <strong>2nd Law of thermodynamics</strong>.</p>
 </section>
+</section>
+</section>
+<section id="heat-engines">
+<h2>Heat Engines<a class="headerlink" href="#heat-engines" title="Link to this heading">#</a></h2>
+<section id="simple-heat-engine">
+<h3>Simple Heat Engine<a class="headerlink" href="#simple-heat-engine" title="Link to this heading">#</a></h3>
+<p>Engineers for centuries have been concerned with desigining devices that convert heat to useful work while minimizing the entropy generated while doing so.</p>
+<p>Consider a simple heat engine where heat is an input and output and work results. This black box heat engine operates at steady state. The simplified mass and energy balance expressions have the form:</p>
+<ol class="arabic simple">
+<li><p>0 = 0</p></li>
+<li><p><span class="math notranslate nohighlight">\(\dot{Q}_H + \dot{Q}_C +\dot{W} = 0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\dfrac{\dot{Q}_H}{T_H} + \dfrac{\dot{Q}_C}{T_C} +\dot{S}_{gen} = 0\)</span></p></li>
+</ol>
+<p>substituting (3) into (2), we find that:</p>
+<div class="math notranslate nohighlight">
+\[\dot{W} = -\dot{Q}_H \bigg(\dfrac{T_H-T_C}{T_H}\bigg)-T_C \dot{S}_{gen}\]</div>
+<p>Based on the above, there are many profound observations:</p>
+<ol class="arabic simple">
+<li><p>The efficient of a heat engine defined in this way is defined as <span class="math notranslate nohighlight">\(\eta = \dfrac{-\dot{W}}{\dot{Q}_H}\)</span></p></li>
+<li><p>Maximizing the efficiency results from two processes (1) <span class="math notranslate nohighlight">\(T_C=0\)</span> (violation of 3rd law of thermo), (2) <span class="math notranslate nohighlight">\(\dot{S}_{gen}=0\)</span> or a versible process</p></li>
+<li><p>The final observation is that as the difference between <span class="math notranslate nohighlight">\(T_H\)</span> and <span class="math notranslate nohighlight">\(T_C\)</span> grows, the higher the efficiency for any process.</p></li>
+</ol>
+<p>Another important observation is made when solving for <span class="math notranslate nohighlight">\(\dot{Q}_C\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[\dot{Q}_C = - \dot{Q}_H \dfrac{T_C}{T_H} - T_C \dot{S}_{gen}\]</div>
+<p>This equation establishes that:</p>
+<ol class="arabic simple">
+<li><p>It is impossible to convert all the heat supplied to be converted to work, i.e., <span class="math notranslate nohighlight">\(\dot{Q}_C \ne 0\)</span></p></li>
+<li><p>It is possible to convert all the work into heat at any temperature</p></li>
+</ol>
+<p>The heat engine establishes that it is possible to interconvert between energy forms like heat and work but they are not equivelant.</p>
+</section>
+<section id="fluid-flow-heat-engine">
+<h3>Fluid Flow Heat Engine<a class="headerlink" href="#fluid-flow-heat-engine" title="Link to this heading">#</a></h3>
+<p>For a heat engine of the type depicted in Figure 4.3-1 in the book, we use the flow of mass to generate heat and work. Simplifying the mass energy and entropy balance expressions, we have:</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(\dot{N}_1 = -\dot{N}_2\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(0 = (\underline{H}_1 - \underline{H}_2)\dot{N}_1 + \dot{Q} + \dot{W}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(0 = (\underline{S}_1 - \underline{S}_2)\dot{N}_1 + \dfrac{\dot{Q}}{T} + \dot{S}_{gen}\)</span></p></li>
+</ol>
+<p>equating (2) and (3) through <span class="math notranslate nohighlight">\(\dot{Q}\)</span> yields the following expression</p>
+<div class="math notranslate nohighlight">
+\[\dot{W} = \dot{N} ((\underline{H}_2 - T\underline{S}_2) - (\underline{H}_1 - T\underline{S}_1)) + T\dot{S}_{gen}\]</div>
+<p>or rewriting w/ the free energies, we have</p>
+<div class="math notranslate nohighlight">
+\[\dot{W} = \dot{N} (\underline{G}_2 - \underline{G}_1) + T\dot{S}_{gen}\]</div>
+<p>For reversible work generation, the equation becomes:</p>
+<div class="math notranslate nohighlight">
+\[\dot{W} = \dot{N} (\underline{G}_2 - \underline{G}_1)\]</div>
+<p>The heat low for a reversible, isothermal process is given as:</p>
+<div class="math notranslate nohighlight">
+\[\dot{Q} = T \dot{N} (\underline{S}_2 - \underline{S}_1)\]</div>
+<p>It can be shown, that for any gas where <span class="math notranslate nohighlight">\(P_1 \underline{V}_1^\gamma = P_2 \underline{V}_2^\gamma = constant\)</span>, then the work can be reexpressed above as:</p>
+<div class="math notranslate nohighlight">
+\[\dot{W}_s = \dot{N} \dfrac{\gamma(P_2\underline{V}_2 - P_1\underline{V}_1)}{\gamma-1}\]</div>
+<p>A process that obeys the above equation is called a <strong>polytropic</strong> process. For an ideal gas it can be shown that:</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(\gamma = 0\)</span> for an <em>isobaric</em> process</p></li>
+<li><p><span class="math notranslate nohighlight">\(\gamma = 1\)</span> for an <em>isothermal</em> process</p></li>
+<li><p><span class="math notranslate nohighlight">\(\gamma = \infty\)</span> for an <em>isochoric</em> process</p></li>
+<li><p><span class="math notranslate nohighlight">\(\gamma = C_p/C_v\)</span> for an <em>isentropic</em> process</p></li>
+</ol>
 </section>
 </section>
 </section>
@@ -579,6 +645,11 @@
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#conceptual-meaning-of-the-helmholtz-free-energy">Conceptual Meaning of the “Helmholtz Free Energy”</a></li>
 </ul>
 </li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#heat-engines">Heat Engines</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-heat-engine">Simple Heat Engine</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fluid-flow-heat-engine">Fluid Flow Heat Engine</a></li>
 </ul>
 </li>
 </ul>

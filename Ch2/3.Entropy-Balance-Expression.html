@@ -405,7 +405,12 @@
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conservation-of-entropy">Conservation of Entropy</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-microscopic-entropy-balance">The Microscopic Entropy Balance</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-microscopic-entropy-balance">The Microscopic Entropy Balance</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-clausius-statement-of-the-second-law">Example - Clausius Statement of the Second Law</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-kelvin-planck-statement-of-the-second-law">Example - Kelvin-Planck Statement of the Second Law</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-example-turbine">Practical Example - Turbine</a></li>
 </ul>
             </nav>
         </div>
@@ -420,6 +425,10 @@
   <section class="tex2jax_ignore mathjax_ignore" id="balance-expression-for-entropy">
 <h1>Balance Expression for Entropy<a class="headerlink" href="#balance-expression-for-entropy" title="Link to this heading">#</a></h1>
 <p>The 2nd Law of Thermodynamics, the balance expression for entropy, and the 1st law of thermodynamics, the <em>conservation of energy</em>, are the foundation of thermodynamics. When combine with <em>conservation of mass</em>, we become fully equipped to solve thermodynamic problems.</p>
+<p>OER Examples for Entropy Balance</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=o4qwEgj9k1A&amp;amp;list=PL4xAk5aclnUiyy5I6QsjJ_3rdKoO0q04I">https://www.youtube.com/watch?v=o4qwEgj9k1A&amp;list=PL4xAk5aclnUiyy5I6QsjJ_3rdKoO0q04I</a></p></li>
+</ul>
 <section id="definition-of-entropy">
 <h2>Definition of Entropy<a class="headerlink" href="#definition-of-entropy" title="Link to this heading">#</a></h2>
 <section id="clausius-definition">
@@ -514,6 +523,85 @@
 </li>
 <li><p><span class="math notranslate nohighlight">\(\dfrac{d^2 S}{dt^2} = k_B -\dfrac{1}{W^2}\)</span></p></li>
 </ul>
+<section id="example-clausius-statement-of-the-second-law">
+<h3>Example - Clausius Statement of the Second Law<a class="headerlink" href="#example-clausius-statement-of-the-second-law" title="Link to this heading">#</a></h3>
+<p><strong>Problem Statement</strong>: “It is not possible to construct a device that operates in a cycle and whose sole effect is to transfer heat from a colder body to a hotter body. Show that when <span class="math notranslate nohighlight">\(\dot{S}_{gen} \ge 0\)</span>, that the process below is impossible.</p>
+<p><strong>Solution</strong></p>
+<p>This is Clausius’s statement of the second law in entropy: a cyclic device whose <em>only</em> effect is to move heat from cold to hot violates <span class="math notranslate nohighlight">\(\dot S_{gen} \ge 0\)</span>.</p>
+<ul>
+<li><p><strong>Setup of the device:</strong></p>
+<ul>
+<li><p>Device operates in a cycle → over one cycle, the change in entropy of the <em>device</em> is<br />
+$<span class="math notranslate nohighlight">\(
+S^f - S^i = 0
+\)</span>$</p>
+<p>and
+$<span class="math notranslate nohighlight">\(
+U^f - U^i = 0
+\)</span>$</p>
+</li>
+<li><p>It interacts with two reservoirs:</p>
+<ul class="simple">
+<li><p>Cold reservoir at temperature <span class="math notranslate nohighlight">\(T_c\)</span></p></li>
+<li><p>Hot reservoir at temperature <span class="math notranslate nohighlight">\(T_h\)</span>, with <span class="math notranslate nohighlight">\(T_h &gt; T_c\)</span></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>Energy Balance over the devise:</strong></p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(U^f-U^i = 0 = Q_h + Q_c\)</span></p></li>
+<li><p>so that <span class="math notranslate nohighlight">\(Q_h = -Q_c\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>Entropy balance for the device:</strong></p>
+<p>Over one cycle, the total entropy change of “device + reservoirs” is
+$<span class="math notranslate nohighlight">\(
+S^f - S^i = \dfrac{\dot{Q_h}}{T_h} + \dfrac{\dot{Q_c}}{T_c} + S_{gen}.
+\)</span>$</p>
+<p>Since the device is cyclic,
+$<span class="math notranslate nohighlight">\(
+S^f - S^i = 0.
+\)</span>$</p>
+<p>Thus
+$<span class="math notranslate nohighlight">\(
+S_{gen} = - \bigg(\frac{Q_h}{T_h} + \frac{Q_c}{T_c}\bigg) = Q_c\bigg(\frac{1}{T_h} - \frac{1}{T_c}\bigg).
+\)</span>$</p>
+</li>
+</ul>
+<p>because <span class="math notranslate nohighlight">\(T_h &gt; T_c\)</span>, the equation above implies that <span class="math notranslate nohighlight">\(S_{gen}&lt;0\)</span> whjich violates the second law.</p>
+<ul class="simple">
+<li><p><strong>Conclusion:</strong>
+The assumption that such a cyclic device can exist leads to <span class="math notranslate nohighlight">\(S_{gen} &lt; 0\)</span>, violating the second law. Therefore, a device that operates in a cycle and whose sole effect is to transfer heat from a colder body to a hotter body is impossible—this is exactly the Clausius statement expressed via entropy generation.</p></li>
+</ul>
+</section>
+<section id="example-kelvin-planck-statement-of-the-second-law">
+<h3>Example - Kelvin-Planck Statement of the Second Law<a class="headerlink" href="#example-kelvin-planck-statement-of-the-second-law" title="Link to this heading">#</a></h3>
+<p><strong>Problem</strong> Evaluate the claim that “It is not possible to construct a device operating in a cycle that results in no effect other than the production of work by transferring heat from a single body.”</p>
+<p><strong>Solution</strong></p>
+<ul class="simple">
+<li><p>Energy balance, <span class="math notranslate nohighlight">\(U^f-U^i = 0 = Q+W\)</span> or <span class="math notranslate nohighlight">\(W=-Q\)</span></p></li>
+<li><p>Entropy Balance, <span class="math notranslate nohighlight">\(\dfrac{Q}{T}+S_{gen}\)</span></p></li>
+</ul>
+<p>or
+$<span class="math notranslate nohighlight">\(S_{gen} = -\dfrac{Q}{T}\)</span>$</p>
+<p>substituting (1) into (2), we find the important result:</p>
+<div class="math notranslate nohighlight">
+\[S_{gen} = \dfrac{W}{T}\]</div>
+<ul class="simple">
+<li><p>if <span class="math notranslate nohighlight">\(W&lt;0\)</span> or the system does work on the surroundings, then <span class="math notranslate nohighlight">\(S_{gen}&lt;0\)</span> which violates the second law (despite the first law being roughly ok with it)</p></li>
+<li><p>if <span class="math notranslate nohighlight">\(W&gt;0\)</span> or the surroundings to work on the system, then <span class="math notranslate nohighlight">\(S_{gen}&gt;0\)</span> and everything is ok.</p></li>
+</ul>
+</section>
+</section>
+<section id="practical-example-turbine">
+<h2>Practical Example - Turbine<a class="headerlink" href="#practical-example-turbine" title="Link to this heading">#</a></h2>
+<p>A steam turbine in an electric power plant is designed to accept 4500 kg/hr of steam at <span class="math notranslate nohighlight">\(50\)</span> <span class="math notranslate nohighlight">\(bar\)</span> and <span class="math notranslate nohighlight">\(400\)</span> <span class="math notranslate nohighlight">\(^o C\)</span> and exhausts the steam at <span class="math notranslate nohighlight">\(10\)</span> <span class="math notranslate nohighlight">\(bar\)</span>.</p>
+<p>Find the outlet temperature and the work if the steam is:</p>
+<ol class="arabic simple">
+<li><p>A real gas</p></li>
+<li><p>An ideal gas</p></li>
+</ol>
 </section>
 </section>
 
@@ -597,7 +685,12 @@
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conservation-of-entropy">Conservation of Entropy</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-microscopic-entropy-balance">The Microscopic Entropy Balance</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-microscopic-entropy-balance">The Microscopic Entropy Balance</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-clausius-statement-of-the-second-law">Example - Clausius Statement of the Second Law</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-kelvin-planck-statement-of-the-second-law">Example - Kelvin-Planck Statement of the Second Law</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-example-turbine">Practical Example - Turbine</a></li>
 </ul>
   </nav></div>
 
