@@ -1,0 +1,198 @@
+Traceback (most recent call last):
+  File "C:\Users\richa\AppData\Roaming\Python\Python312\site-packages\jupyter_cache\executors\utils.py", line 58, in single_nb_execution
+    executenb(
+  File "C:\ProgramData\anaconda3\Lib\site-packages\nbclient\client.py", line 1319, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\ProgramData\anaconda3\Lib\site-packages\jupyter_core\utils\__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\ProgramData\anaconda3\Lib\asyncio\base_events.py", line 687, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "C:\ProgramData\anaconda3\Lib\site-packages\nbclient\client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "C:\ProgramData\anaconda3\Lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\ProgramData\anaconda3\Lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+import numpy as np
+import matplotlib.pyplot as plt
+
+R = 8.314  # J/mol/K
+
+def Carnot_IG(Th=800, Tc=298, P1=1, Cv=28, K=10):
+    """
+    Carnot cycle for an ideal gas.
+
+    Inputs:
+        Th : hot reservoir temperature (K)
+        Tc : cold reservoir temperature (K)
+        P1 : minimum pressure (bar)
+        Cv : constant-volume heat capacity (J/mol/K)
+        K  : compression ratio (P2/P1)
+
+    Outputs:
+        V_, P_, T_, S_, U_, A_ : state-point arrays
+        PVpath_, TSpath_       : pathway arrays for plotting
+    """
+
+    Cp = Cv + R
+    gamma = Cp / Cv
+
+    # -
+    # STATE POINTS
+    # -
+    P1 = P1 * 1e5  # bar → Pa
+    V1 = R * Tc / P1
+    T1 = Tc
+    S1 = 0
+    U1 = 0
+    A1 = U1 - T1 * S1
+
+    # State 2: isothermal compression at Tc
+    P2 = K * P1
+    V2 = R * Tc / P2
+    T2 = Tc
+    S2 = -R * np.log(K)
+    U2 = 0
+    A2 = U2 - T2 * S2
+
+    # State 3: isentropic compression to Th
+    # Correct isentropic relation:
+    # T2 * (V2/V3)^(gamma-1) = Th
+    V3 = V2 * (T2 / Th) ** (1 / (gamma - 1))
+    P3 = R * Th / V3
+    T3 = Th
+    S3 = S2
+    U3 = Cv * (Th - Tc)
+    A3 = U3 - T3 * S3
+
+    # State 4: isothermal expansion at Th
+    # Must return to V1 after isentropic expansion
+    V4 = R * Th / (P1 * (Th / Tc) ** (gamma / (gamma - 1)))
+    P4 = R * Th / V4
+    T4 = Th
+    S4 = 0
+    U4 = Cv * (Th - Tc)
+    A4 = U4 - T4 * S4
+
+    # -
+    # STATE ARRAYS (converted)
+    # -
+    V_ = np.array([V1, V2, V3, V4, V1]) * 1e6  # m³/mol → cm³/mol
+    P_ = np.array([P1, P2, P3, P4, P1]) / 1e5  # Pa → bar
+    T_ = np.array([T1, T2, T3, T4, T1]) - 273.15
+    S_ = np.array([S1, S2, S3, S4, S1])
+    U_ = np.array([U1, U2, U3, U4, U1])
+    A_ = np.array([A1, A2, A3, A4, A1])
+
+    # -
+    # PV PATHWAYS
+    # -
+    # Isothermal at Tc
+    V12 = np.logspace(np.log10(V1), np.log10(V2))
+    P12 = R * Tc / V12
+
+    # Isentropic to Th
+    V23 = np.logspace(np.log10(V2), np.log10(V3))
+    P23 = P2 * (V2 / V23) ** gamma
+
+    # Isothermal at Th
+    V34 = np.logspace(np.log10(V3), np.log10(V4))
+    P34 = R * Th / V34
+
+    # Isentropic back to Tc
+    V41 = np.logspace(np.log10(V4), np.log10(V1))
+    P41 = P4 * (V4 / V41) ** gamma
+
+    PVpath_ = [
+        [V12 * 1e6, P12 / 1e5],
+        [V23 * 1e6, P23 / 1e5],
+        [V34 * 1e6, P34 / 1e5],
+        [V41 * 1e6, P41 / 1e5],
+    ]
+
+    # -
+    # TS PATHWAYS (physically correct)
+    # -
+    # Isothermal: S changes, T constant
+    S12 = np.linspace(S1, S2)
+    T12 = np.full_like(S12, Tc)
+
+    # Isentropic: S constant, T changes
+    T23 = np.logspace(np.log10(T2), np.log10(T3))
+    S23 = np.full_like(T23, S2)
+
+    # Isothermal: S changes, T constant
+    S34 = np.linspace(S3, S4)
+    T34 = np.full_like(S34, Th)
+
+    # Isentropic: S constant, T changes
+    T41 = np.logspace(np.log10(T4), np.log10(T1))
+    S41 = np.full_like(T41, S4)
+
+    TSpath_ = [
+        [T12 - 273.15, S12],
+        [T23 - 273.15, S23],
+        [T34 - 273.15, S34],
+        [T41 - 273.15, S41],
+    ]
+
+    return V_, P_, T_, S_, U_, A_, PVpath_, TSpath_
+
+V_,P_,T_,S_,U_,A_,PVpath_,TSpath_=Carnot_IG(Th=900,Cv=20,K=10)
+
+fig, ax = plt.subplots(dpi=300, figsize=(5,2), ncols=2)
+fig.subplots_adjust(wspace=0.5)
+
+colors = ['b','k','r','k']
+
+# -
+# PV plot with labels
+# -
+ax[0].plot(V_, P_, marker='s', linestyle='')
+
+for i, path in enumerate(PVpath_):
+    ax[0].plot(path[0], path[1], c=colors[i])
+
+# Add labels near each state point
+for i in range(4):
+    ax[0].text(V_[i]*1.05, P_[i]*1.05, labels[i], fontsize=8)
+
+ax[0].set_xscale('log')
+ax[0].set_yscale('log')
+ax[0].set_xlabel(r'$V$ (cm$^3$/mol)')
+ax[0].set_ylabel(r'$P$ (bar)')
+
+
+# -
+# TS plot with labels
+# -
+ax[1].plot(S_, T_, marker='s', linestyle='')
+
+for i, path in enumerate(TSpath_):
+    ax[1].plot(path[1], path[0], c=colors[i])
+
+# Add labels near each state point
+for i in range(4):
+    ax[1].text(S_[i]*1.02, T_[i]*1.02, labels[i], fontsize=8)
+
+ax[1].set_xlabel(r'$S$ (J/mol/K)')
+ax[1].set_ylabel(r'$T$ (°C)')
+------------------
+
+
+[1;31m---------------------------------------------------------------------------[0m
+[1;31mNameError[0m                                 Traceback (most recent call last)
+Cell [1;32mIn[4], line 143[0m
+[0;32m    141[0m [38;5;66;03m# Add labels near each state point[39;00m
+[0;32m    142[0m [38;5;28;01mfor[39;00m i [38;5;129;01min[39;00m [38;5;28mrange[39m([38;5;241m4[39m):
+[1;32m--> 143[0m     ax[[38;5;241m0[39m][38;5;241m.[39mtext(V_[i][38;5;241m*[39m[38;5;241m1.05[39m, P_[i][38;5;241m*[39m[38;5;241m1.05[39m, labels[i], fontsize[38;5;241m=[39m[38;5;241m8[39m)
+[0;32m    145[0m ax[[38;5;241m0[39m][38;5;241m.[39mset_xscale([38;5;124m'[39m[38;5;124mlog[39m[38;5;124m'[39m)
+[0;32m    146[0m ax[[38;5;241m0[39m][38;5;241m.[39mset_yscale([38;5;124m'[39m[38;5;124mlog[39m[38;5;124m'[39m)
+
+[1;31mNameError[0m: name 'labels' is not defined
+
