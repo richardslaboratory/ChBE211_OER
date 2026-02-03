@@ -1639,10 +1639,12 @@ Q_H = RT_H \ln K,\qquad Q_C = RT_C \ln K
 
 <span class="n">V_</span><span class="p">,</span><span class="n">P_</span><span class="p">,</span><span class="n">T_</span><span class="p">,</span><span class="n">S_</span><span class="p">,</span><span class="n">U_</span><span class="p">,</span><span class="n">A_</span><span class="p">,</span><span class="n">PVpath_</span><span class="p">,</span><span class="n">TSpath_</span><span class="o">=</span><span class="n">Carnot_IG</span><span class="p">(</span><span class="n">Th</span><span class="o">=</span><span class="mi">900</span><span class="p">,</span><span class="n">Cv</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span><span class="n">K</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
 
+<span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;1&quot;</span><span class="p">,</span> <span class="s2">&quot;2&quot;</span><span class="p">,</span> <span class="s2">&quot;3&quot;</span><span class="p">,</span> <span class="s2">&quot;4&quot;</span><span class="p">,</span> <span class="s2">&quot;1&quot;</span><span class="p">]</span>
+
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">subplots_adjust</span><span class="p">(</span><span class="n">wspace</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
 
-<span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;k&#39;</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">,</span><span class="s1">&#39;k&#39;</span><span class="p">]</span>
+<span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;r&#39;</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">]</span>
 
 <span class="c1"># -</span>
 <span class="c1"># PV plot with labels</span>
@@ -1680,19 +1682,10 @@ Q_H = RT_H \ln K,\qquad Q_C = RT_C \ln K
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">143</span>
-<span class="g g-Whitespace">    </span><span class="mi">141</span> <span class="c1"># Add labels near each state point</span>
-<span class="g g-Whitespace">    </span><span class="mi">142</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">143</span>     <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">V_</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="mf">1.05</span><span class="p">,</span> <span class="n">P_</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="mf">1.05</span><span class="p">,</span> <span class="n">labels</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">145</span> <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">146</span> <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_yscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;labels&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;$T$ (°C)&#39;)
 </pre></div>
 </div>
-<img alt="../_images/dbf6e3175a0723deda839eac0e5882ee3b6d1754ac78600d7f14fecbf7b0adbc.png" src="../_images/dbf6e3175a0723deda839eac0e5882ee3b6d1754ac78600d7f14fecbf7b0adbc.png" />
+<img alt="../_images/11e4c36fce10d7200b786c4f3177f54a169b7b73831655be15d3cd95a7c96e10.png" src="../_images/11e4c36fce10d7200b786c4f3177f54a169b7b73831655be15d3cd95a7c96e10.png" />
 </div>
 </div>
 </section>
