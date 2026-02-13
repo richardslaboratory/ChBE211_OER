@@ -1,0 +1,106 @@
+Traceback (most recent call last):
+  File "C:\Users\richa\AppData\Roaming\Python\Python312\site-packages\jupyter_cache\executors\utils.py", line 58, in single_nb_execution
+    executenb(
+  File "C:\ProgramData\anaconda3\Lib\site-packages\nbclient\client.py", line 1319, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\ProgramData\anaconda3\Lib\site-packages\jupyter_core\utils\__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\ProgramData\anaconda3\Lib\asyncio\base_events.py", line 687, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "C:\ProgramData\anaconda3\Lib\site-packages\nbclient\client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "C:\ProgramData\anaconda3\Lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\ProgramData\anaconda3\Lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+print(data)
+# --- Convert to DataFrame ---
+df = pd.DataFrame(data, columns=["Pressure_MPa", "Density_kg_m3", "Volume_m3_mol"])
+df["Pressure_Pa"] = df["Pressure_MPa"].astype(float) * 1e6
+df["V"] = df["Volume_m3_mol"].astype(float)
+df["P"] = df["Pressure_Pa"]
+df.head()
+
+------------------
+
+----- stdout -----
+[['500.00', '0.010000', '2.4055e-06', '4.1572e+05', '48670.', '52827.', '219.81', '26.912', '35.226', '549.59', '19.212', '17.326', '0.035780', 'vapor'], ['500.00', '200.01', '0.048513', '20.613', '48566.', '52689.', '137.26', '27.441', '36.183', '547.01', '19.376', '17.272', '0.036287', 'vapor']]
+------------------
+
+[1;31m---------------------------------------------------------------------------[0m
+[1;31mAssertionError[0m                            Traceback (most recent call last)
+File [1;32mC:\ProgramData\anaconda3\Lib\site-packages\pandas\core\internals\construction.py:939[0m, in [0;36m_finalize_columns_and_data[1;34m(content, columns, dtype)[0m
+[0;32m    938[0m [38;5;28;01mtry[39;00m:
+[1;32m--> 939[0m     columns [38;5;241m=[39m _validate_or_indexify_columns(contents, columns)
+[0;32m    940[0m [38;5;28;01mexcept[39;00m [38;5;167;01mAssertionError[39;00m [38;5;28;01mas[39;00m err:
+[0;32m    941[0m     [38;5;66;03m# GH#26429 do not raise user-facing AssertionError[39;00m
+
+File [1;32mC:\ProgramData\anaconda3\Lib\site-packages\pandas\core\internals\construction.py:986[0m, in [0;36m_validate_or_indexify_columns[1;34m(content, columns)[0m
+[0;32m    984[0m [38;5;28;01mif[39;00m [38;5;129;01mnot[39;00m is_mi_list [38;5;129;01mand[39;00m [38;5;28mlen[39m(columns) [38;5;241m!=[39m [38;5;28mlen[39m(content):  [38;5;66;03m# pragma: no cover[39;00m
+[0;32m    985[0m     [38;5;66;03m# caller's responsibility to check for this...[39;00m
+[1;32m--> 986[0m     [38;5;28;01mraise[39;00m [38;5;167;01mAssertionError[39;00m(
+[0;32m    987[0m         [38;5;124mf[39m[38;5;124m"[39m[38;5;132;01m{[39;00m[38;5;28mlen[39m(columns)[38;5;132;01m}[39;00m[38;5;124m columns passed, passed data had [39m[38;5;124m"[39m
+[0;32m    988[0m         [38;5;124mf[39m[38;5;124m"[39m[38;5;132;01m{[39;00m[38;5;28mlen[39m(content)[38;5;132;01m}[39;00m[38;5;124m columns[39m[38;5;124m"[39m
+[0;32m    989[0m     )
+[0;32m    990[0m [38;5;28;01mif[39;00m is_mi_list:
+[0;32m    991[0m     [38;5;66;03m# check if nested list column, length of each sub-list should be equal[39;00m
+
+[1;31mAssertionError[0m: 3 columns passed, passed data had 14 columns
+
+The above exception was the direct cause of the following exception:
+
+[1;31mValueError[0m                                Traceback (most recent call last)
+Cell [1;32mIn[5], line 3[0m
+[0;32m      1[0m [38;5;28mprint[39m(data)
+[0;32m      2[0m [38;5;66;03m# --- Convert to DataFrame ---[39;00m
+[1;32m----> 3[0m df [38;5;241m=[39m pd[38;5;241m.[39mDataFrame(data, columns[38;5;241m=[39m[[38;5;124m"[39m[38;5;124mPressure_MPa[39m[38;5;124m"[39m, [38;5;124m"[39m[38;5;124mDensity_kg_m3[39m[38;5;124m"[39m, [38;5;124m"[39m[38;5;124mVolume_m3_mol[39m[38;5;124m"[39m])
+[0;32m      4[0m df[[38;5;124m"[39m[38;5;124mPressure_Pa[39m[38;5;124m"[39m] [38;5;241m=[39m df[[38;5;124m"[39m[38;5;124mPressure_MPa[39m[38;5;124m"[39m][38;5;241m.[39mastype([38;5;28mfloat[39m) [38;5;241m*[39m [38;5;241m1e6[39m
+[0;32m      5[0m df[[38;5;124m"[39m[38;5;124mV[39m[38;5;124m"[39m] [38;5;241m=[39m df[[38;5;124m"[39m[38;5;124mVolume_m3_mol[39m[38;5;124m"[39m][38;5;241m.[39mastype([38;5;28mfloat[39m)
+
+File [1;32mC:\ProgramData\anaconda3\Lib\site-packages\pandas\core\frame.py:851[0m, in [0;36mDataFrame.__init__[1;34m(self, data, index, columns, dtype, copy)[0m
+[0;32m    849[0m     [38;5;28;01mif[39;00m columns [38;5;129;01mis[39;00m [38;5;129;01mnot[39;00m [38;5;28;01mNone[39;00m:
+[0;32m    850[0m         columns [38;5;241m=[39m ensure_index(columns)
+[1;32m--> 851[0m     arrays, columns, index [38;5;241m=[39m nested_data_to_arrays(
+[0;32m    852[0m         [38;5;66;03m# error: Argument 3 to "nested_data_to_arrays" has incompatible[39;00m
+[0;32m    853[0m         [38;5;66;03m# type "Optional[Collection[Any]]"; expected "Optional[Index]"[39;00m
+[0;32m    854[0m         data,
+[0;32m    855[0m         columns,
+[0;32m    856[0m         index,  [38;5;66;03m# type: ignore[arg-type][39;00m
+[0;32m    857[0m         dtype,
+[0;32m    858[0m     )
+[0;32m    859[0m     mgr [38;5;241m=[39m arrays_to_mgr(
+[0;32m    860[0m         arrays,
+[0;32m    861[0m         columns,
+[1;32m   (...)[0m
+[0;32m    864[0m         typ[38;5;241m=[39mmanager,
+[0;32m    865[0m     )
+[0;32m    866[0m [38;5;28;01melse[39;00m:
+
+File [1;32mC:\ProgramData\anaconda3\Lib\site-packages\pandas\core\internals\construction.py:520[0m, in [0;36mnested_data_to_arrays[1;34m(data, columns, index, dtype)[0m
+[0;32m    517[0m [38;5;28;01mif[39;00m is_named_tuple(data[[38;5;241m0[39m]) [38;5;129;01mand[39;00m columns [38;5;129;01mis[39;00m [38;5;28;01mNone[39;00m:
+[0;32m    518[0m     columns [38;5;241m=[39m ensure_index(data[[38;5;241m0[39m][38;5;241m.[39m_fields)
+[1;32m--> 520[0m arrays, columns [38;5;241m=[39m to_arrays(data, columns, dtype[38;5;241m=[39mdtype)
+[0;32m    521[0m columns [38;5;241m=[39m ensure_index(columns)
+[0;32m    523[0m [38;5;28;01mif[39;00m index [38;5;129;01mis[39;00m [38;5;28;01mNone[39;00m:
+
+File [1;32mC:\ProgramData\anaconda3\Lib\site-packages\pandas\core\internals\construction.py:845[0m, in [0;36mto_arrays[1;34m(data, columns, dtype)[0m
+[0;32m    842[0m     data [38;5;241m=[39m [[38;5;28mtuple[39m(x) [38;5;28;01mfor[39;00m x [38;5;129;01min[39;00m data]
+[0;32m    843[0m     arr [38;5;241m=[39m _list_to_arrays(data)
+[1;32m--> 845[0m content, columns [38;5;241m=[39m _finalize_columns_and_data(arr, columns, dtype)
+[0;32m    846[0m [38;5;28;01mreturn[39;00m content, columns
+
+File [1;32mC:\ProgramData\anaconda3\Lib\site-packages\pandas\core\internals\construction.py:942[0m, in [0;36m_finalize_columns_and_data[1;34m(content, columns, dtype)[0m
+[0;32m    939[0m     columns [38;5;241m=[39m _validate_or_indexify_columns(contents, columns)
+[0;32m    940[0m [38;5;28;01mexcept[39;00m [38;5;167;01mAssertionError[39;00m [38;5;28;01mas[39;00m err:
+[0;32m    941[0m     [38;5;66;03m# GH#26429 do not raise user-facing AssertionError[39;00m
+[1;32m--> 942[0m     [38;5;28;01mraise[39;00m [38;5;167;01mValueError[39;00m(err) [38;5;28;01mfrom[39;00m[38;5;250m [39m[38;5;21;01merr[39;00m
+[0;32m    944[0m [38;5;28;01mif[39;00m [38;5;28mlen[39m(contents) [38;5;129;01mand[39;00m contents[[38;5;241m0[39m][38;5;241m.[39mdtype [38;5;241m==[39m np[38;5;241m.[39mobject_:
+[0;32m    945[0m     contents [38;5;241m=[39m convert_object_array(contents, dtype[38;5;241m=[39mdtype)
+
+[1;31mValueError[0m: 3 columns passed, passed data had 14 columns
+

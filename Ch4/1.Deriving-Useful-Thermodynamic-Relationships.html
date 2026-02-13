@@ -164,7 +164,7 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../intro.html">
-                    Foreword
+                    # 2020 NCNR User Survey
                 </a>
             </li>
         </ul>
@@ -426,6 +426,24 @@
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adiabatic-compression-of-nitrogen-in-a-compressor">Adiabatic Compression of Nitrogen in a Compressor</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-of-useful-thermodynamic-properties">Summary of Useful Thermodynamic Properties</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#thermodynamic-property-definitions"><strong>Thermodynamic Property Definitions</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brief-explanations-of-each-property"><strong>Brief Explanations of Each Property</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#constantpressure-heat-capacity-c-p"><strong>Constant‑Pressure Heat Capacity <span class="math notranslate nohighlight">\(C_p\)</span></strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#constantvolume-heat-capacity-c-v"><strong>Constant‑Volume Heat Capacity <span class="math notranslate nohighlight">\(C_v\)</span></strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#isothermal-compressibility-kappa-t"><strong>Isothermal Compressibility <span class="math notranslate nohighlight">\(\kappa_T\)</span></strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#coefficient-of-thermal-expansion-alpha"><strong>Coefficient of Thermal Expansion <span class="math notranslate nohighlight">\(\alpha\)</span></strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#joulethomson-coefficient-mu-jt"><strong>Joule–Thomson Coefficient <span class="math notranslate nohighlight">\(\mu_{JT}\)</span></strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#maxwell-relations">Maxwell Relations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brief-explanations-of-the-maxwell-relations">Brief Explanations of the Maxwell Relations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-maxwell-relations-matter">Why Maxwell relations matter</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#internal-energy-relation">Internal Energy Relation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#enthalpy-relation">Enthalpy Relation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#helmholtz-free-energy-relation">Helmholtz Free Energy Relation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gibbs-free-energy-relation">Gibbs Free Energy Relation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#miscellaneous-relationships">Miscellaneous Relationships</a></li>
 </ul>
             </nav>
         </div>
@@ -446,7 +464,7 @@
 <li><p>Derivation of Maxwell’s Equations</p></li>
 <li><p>A summary of a few of the most useful expressions</p></li>
 </ol>
-<section id="mathematical-preliminaries">
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><section id="mathematical-preliminaries">
 <h2>Mathematical Preliminaries<a class="headerlink" href="#mathematical-preliminaries" title="Link to this heading">#</a></h2>
 <section id="multivariate-calculus">
 <h3>Multivariate Calculus<a class="headerlink" href="#multivariate-calculus" title="Link to this heading">#</a></h3>
@@ -457,8 +475,8 @@
 </section>
 <section id="closed-system-expressions">
 <h3>Closed System Expressions:<a class="headerlink" href="#closed-system-expressions" title="Link to this heading">#</a></h3>
-<p>For closed system problems, we general compute the change in internal energy <span class="math notranslate nohighlight">\(\underline{U}\)</span> in terms of other variables.</p>
-<p>Now lets see that in this combination of the first and second laws, there are differential expressions for <span class="math notranslate nohighlight">\(\underline{V}\)</span> and <span class="math notranslate nohighlight">\(\underline{S}\)</span> on the l.h.s. and <span class="math notranslate nohighlight">\(\underline{U}\)</span> on the r.h.s. If we use our the calculus description above to write <span class="math notranslate nohighlight">\(\underline{U}(\underline{S},\underline{V})\)</span>, we can also write:</p>
+<p>For closed system problems, we generally compute the change in internal energy <span class="math notranslate nohighlight">\(\underline{U}\)</span> in terms of other variables.</p>
+<p>By combining the first and second laws, there are differential expressions for <span class="math notranslate nohighlight">\(\underline{V}\)</span> and <span class="math notranslate nohighlight">\(\underline{S}\)</span> on the l.h.s. and <span class="math notranslate nohighlight">\(\underline{U}\)</span> on the r.h.s. If we use our the calculus description above to write <span class="math notranslate nohighlight">\(\underline{U}(\underline{S},\underline{V})\)</span>, we can also write:</p>
 <p><span class="math notranslate nohighlight">\(\quad d\underline{U}=\bigg(\dfrac{\partial\underline{U}}{\partial \underline{V}}\bigg)_{\underline{S}}d\underline{V}+\bigg(\dfrac{\partial\underline{U}}{\partial \underline{S}}\bigg)_{\underline{V}}d\underline{S}\)</span></p>
 <p>Hopefully you can see where this is going, we can combine these two expressions to develop new thermodynamic relationships between <span class="math notranslate nohighlight">\(\underline{U}\)</span>, <span class="math notranslate nohighlight">\(\underline{V}\)</span>, and <span class="math notranslate nohighlight">\(\underline{S}\)</span>.</p>
 <p><span class="math notranslate nohighlight">\(\quad \bigg(\dfrac{\partial\underline{U}}{\partial \underline{V}}\bigg)_{\underline{S}}=-P\)</span></p>
@@ -547,13 +565,13 @@
 <h4>From the differential balance on the Gibb’s Free Energy:<a class="headerlink" href="#from-the-differential-balance-on-the-gibbs-free-energy" title="Link to this heading">#</a></h4>
 <p><span class="math notranslate nohighlight">\(\quad d\underline{G}=\underline{V}dP - \underline{S}dT\)</span></p>
 <p>The communtative property states that:</p>
-<p><span class="math notranslate nohighlight">\(\dfrac{\partial}{\partial T}\bigg|_P \bigg(\dfrac{\partial \underline{G}}{\partial P}\bigg)_T = 
-\dfrac{\partial}{\partial P}\bigg|_T \bigg(\dfrac{\partial \underline{G}}{\partial T}\bigg)_P \)</span></p>
+<div class="math notranslate nohighlight">
+\[\dfrac{\partial}{\partial T}\bigg|_P \bigg(\dfrac{\partial \underline{G}}{\partial P}\bigg)_T = 
+\dfrac{\partial}{\partial P}\bigg|_T \bigg(\dfrac{\partial \underline{G}}{\partial T}\bigg)_P \]</div>
 <p>or</p>
-<p>$\quad \bigg(\dfrac{\partial\underline{V}}{\partial \underline{T}}\bigg)_{P}=</p>
-<ul class="simple">
-<li><p>\bigg(\dfrac{\partial \underline{S}}{\partial P}\bigg)_{T}$</p></li>
-</ul>
+<div class="math notranslate nohighlight">
+\[\quad \bigg(\dfrac{\partial\underline{V}}{\partial \underline{T}}\bigg)_{P}=
+- \bigg(\dfrac{\partial \underline{S}}{\partial P}\bigg)_{T}\]</div>
 <p>The outcomes of the triple product rule applied to thermodynamic definitions are two of the equations called the <strong>Maxwell Equations</strong></p>
 </section>
 </section>
@@ -638,6 +656,157 @@
 <p>Now consider a compressor that operates adiabatically, reversibly, and at steady state. How is the computation different for this case?</p>
 <p>This will be the central subject of the next lecture.</p>
 </section>
+</section>
+<section id="summary-of-useful-thermodynamic-properties">
+<h2>Summary of Useful Thermodynamic Properties<a class="headerlink" href="#summary-of-useful-thermodynamic-properties" title="Link to this heading">#</a></h2>
+</section>
+<section id="thermodynamic-property-definitions">
+<h2><strong>Thermodynamic Property Definitions</strong><a class="headerlink" href="#thermodynamic-property-definitions" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Property</p></th>
+<th class="head"><p>Symbol</p></th>
+<th class="head"><p>Definition (constant variables shown as subscripts)</p></th>
+<th class="head"><p>Mathematical Form</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Constant‑pressure heat capacity</p></td>
+<td><p><span class="math notranslate nohighlight">\(C_p\)</span></p></td>
+<td><p>Heat required to raise temperature at constant pressure</p></td>
+<td><p><span class="math notranslate nohighlight">\(C_p = \left(\frac{\partial H}{\partial T}\right)_P\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Constant‑volume heat capacity</p></td>
+<td><p><span class="math notranslate nohighlight">\(C_v\)</span></p></td>
+<td><p>Heat required to raise temperature at constant volume</p></td>
+<td><p><span class="math notranslate nohighlight">\(C_v = \left(\frac{\partial U}{\partial T}\right)_V\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>Isothermal compressibility</p></td>
+<td><p><span class="math notranslate nohighlight">\(\kappa_T\)</span></p></td>
+<td><p>Fractional change in volume with pressure at constant temperature</p></td>
+<td><p><span class="math notranslate nohighlight">\(\kappa_T = -\frac{1}{V}\left(\frac{\partial V}{\partial P}\right)_T\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Coefficient of thermal expansion</p></td>
+<td><p><span class="math notranslate nohighlight">\(\alpha\)</span></p></td>
+<td><p>Fractional change in volume with temperature at constant pressure</p></td>
+<td><p><span class="math notranslate nohighlight">\(\alpha = \frac{1}{V}\left(\frac{\partial V}{\partial T}\right)_P\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>Joule–Thomson coefficient</p></td>
+<td><p><span class="math notranslate nohighlight">\(\mu_{JT}\)</span></p></td>
+<td><p>Temperature change during throttling at constant enthalpy</p></td>
+<td><p><span class="math notranslate nohighlight">\(\mu_{JT} = \left(\frac{\partial T}{\partial P}\right)_H\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="brief-explanations-of-each-property">
+<h2><strong>Brief Explanations of Each Property</strong><a class="headerlink" href="#brief-explanations-of-each-property" title="Link to this heading">#</a></h2>
+<section id="constantpressure-heat-capacity-c-p">
+<h3><strong>Constant‑Pressure Heat Capacity <span class="math notranslate nohighlight">\(C_p\)</span></strong><a class="headerlink" href="#constantpressure-heat-capacity-c-p" title="Link to this heading">#</a></h3>
+<p>This measures how much heat a substance must absorb to increase its temperature by one degree <strong>while pressure is held constant</strong>. Because the system can expand and do boundary work, <span class="math notranslate nohighlight">\(C_p\)</span> is generally larger than <span class="math notranslate nohighlight">\(C_v\)</span>.</p>
+</section>
+<section id="constantvolume-heat-capacity-c-v">
+<h3><strong>Constant‑Volume Heat Capacity <span class="math notranslate nohighlight">\(C_v\)</span></strong><a class="headerlink" href="#constantvolume-heat-capacity-c-v" title="Link to this heading">#</a></h3>
+<p>This is the heat required to raise the temperature by one degree <strong>with no volume change</strong>. Since no boundary work is done, all added heat increases internal energy.</p>
+</section>
+<section id="isothermal-compressibility-kappa-t">
+<h3><strong>Isothermal Compressibility <span class="math notranslate nohighlight">\(\kappa_T\)</span></strong><a class="headerlink" href="#isothermal-compressibility-kappa-t" title="Link to this heading">#</a></h3>
+<p>This quantifies how much a material’s volume decreases when pressure increases <strong>at constant temperature</strong>. Gases have large compressibilities; liquids and solids have very small ones.</p>
+</section>
+<section id="coefficient-of-thermal-expansion-alpha">
+<h3><strong>Coefficient of Thermal Expansion <span class="math notranslate nohighlight">\(\alpha\)</span></strong><a class="headerlink" href="#coefficient-of-thermal-expansion-alpha" title="Link to this heading">#</a></h3>
+<p>This measures how much a material expands when heated <strong>at constant pressure</strong>. For most substances, <span class="math notranslate nohighlight">\(\alpha &gt; 0\)</span>, meaning they expand when warmed.</p>
+</section>
+<section id="joulethomson-coefficient-mu-jt">
+<h3><strong>Joule–Thomson Coefficient <span class="math notranslate nohighlight">\(\mu_{JT}\)</span></strong><a class="headerlink" href="#joulethomson-coefficient-mu-jt" title="Link to this heading">#</a></h3>
+<p>This describes the temperature change of a fluid undergoing a <strong>throttling (isenthalpic) process</strong>. A positive value means the fluid cools upon expansion — the basis of many refrigeration cycles.</p>
+</section>
+<section id="maxwell-relations">
+<h3>Maxwell Relations<a class="headerlink" href="#maxwell-relations" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Thermodynamic Potential</p></th>
+<th class="head"><p>Differential Form</p></th>
+<th class="head"><p>Natural Variables</p></th>
+<th class="head"><p>Maxwell Relation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Internal energy <span class="math notranslate nohighlight">\(U\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\mathrm{d}U = T\,\mathrm{d}V - P\,\mathrm{d}V\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(S, V\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\left(\frac{\partial T}{\partial V}\right)_S = -\left(\frac{\partial P}{\partial S}\right)_V\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Enthalpy <span class="math notranslate nohighlight">\(H = U + PV\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\mathrm{d}H = T\,\mathrm{d}S + V\,\mathrm{d}P\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(S, P\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\left(\frac{\partial T}{\partial P}\right)_S = \left(\frac{\partial V}{\partial S}\right)_P\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>Helmholtz free energy <span class="math notranslate nohighlight">\(A = U - TS\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\mathrm{d}A = -S\,\mathrm{d}T - P\,\mathrm{d}V\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(T, V\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\left(\frac{\partial S}{\partial V}\right)_T = \left(\frac{\partial P}{\partial T}\right)_V\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Gibbs free energy <span class="math notranslate nohighlight">\(G = H - TS\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\mathrm{d}G = -S\,\mathrm{d}T + V\,\mathrm{d}P\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(T, P\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\left(\frac{\partial S}{\partial P}\right)_T = -\left(\frac{\partial V}{\partial T}\right)_P\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="brief-explanations-of-the-maxwell-relations">
+<h3>Brief Explanations of the Maxwell Relations<a class="headerlink" href="#brief-explanations-of-the-maxwell-relations" title="Link to this heading">#</a></h3>
+</section>
+<section id="why-maxwell-relations-matter">
+<h3>Why Maxwell relations matter<a class="headerlink" href="#why-maxwell-relations-matter" title="Link to this heading">#</a></h3>
+<p>Maxwell relations are the “hidden symmetry” of thermodynamics. They arise because all four thermodynamic potentials are exact differentials. This symmetry lets you convert hard‑to‑measure derivatives (like <span class="math notranslate nohighlight">\((\partial S/\partial P)_T\)</span>) into experimentally accessible ones (like <span class="math notranslate nohighlight">\((\partial \underline{V}/\partial T)_P\)</span>).</p>
+</section>
+<section id="internal-energy-relation">
+<h3>Internal Energy Relation<a class="headerlink" href="#internal-energy-relation" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[
+\left(\frac{\partial T}{\partial \underline{V}}\right)_\underline{S} = -\left(\frac{\partial P}{\partial \underline{S}}\right)_\underline{V}
+\]</div>
+<p>Connects how temperature changes with volume at constant entropy to how pressure changes with entropy at constant volume.</p>
+</section>
+<section id="enthalpy-relation">
+<h3>Enthalpy Relation<a class="headerlink" href="#enthalpy-relation" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[
+\left(\frac{\partial T}{\partial P}\right)_\underline{S} = \left(\frac{\partial \underline{V}}{\partial \underline{S}}\right)_P
+\]</div>
+<p>Useful in analyzing isentropic compression/expansion and turbomachinery.</p>
+</section>
+<section id="helmholtz-free-energy-relation">
+<h3>Helmholtz Free Energy Relation<a class="headerlink" href="#helmholtz-free-energy-relation" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[
+\left(\frac{\partial \underline{S}}{\partial \underline{V}}\right)_T = \left(\frac{\partial P}{\partial T}\right)_\underline{V}
+\]</div>
+<p>This is the backbone of deriving equations of state from statistical mechanics.</p>
+</section>
+<section id="gibbs-free-energy-relation">
+<h3>Gibbs Free Energy Relation<a class="headerlink" href="#gibbs-free-energy-relation" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[
+\left(\frac{\partial \underline{S}}{\partial P}\right)_T = -\left(\frac{\partial \underline{V}}{\partial T}\right)_P
+\]</div>
+<p>Extremely useful for phase equilibrium, compressibility, and thermal expansion.</p>
+</section>
+</section>
+<section id="miscellaneous-relationships">
+<h2>Miscellaneous Relationships<a class="headerlink" href="#miscellaneous-relationships" title="Link to this heading">#</a></h2>
+<p>Relating the Gibb’s free energies to the enthalpy
+$<span class="math notranslate nohighlight">\(
+\frac{\partial }{\partial T}\bigg|_P \bigg(\dfrac{\underline{G}}{T}\bigg) = -\dfrac{\underline{H}}{T^2}
+\)</span>$</p>
+<p>Relating the Helmholtz free energy to the internal energy:
+$<span class="math notranslate nohighlight">\(
+\frac{\partial }{\partial T}\bigg|_\underline{V} \bigg(\dfrac{\underline{A}}{T}\bigg) = -\dfrac{\underline{U}}{T^2}
+\)</span>$</p>
 </section>
 </section>
 
@@ -742,6 +911,24 @@
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adiabatic-compression-of-nitrogen-in-a-compressor">Adiabatic Compression of Nitrogen in a Compressor</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-of-useful-thermodynamic-properties">Summary of Useful Thermodynamic Properties</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#thermodynamic-property-definitions"><strong>Thermodynamic Property Definitions</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brief-explanations-of-each-property"><strong>Brief Explanations of Each Property</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#constantpressure-heat-capacity-c-p"><strong>Constant‑Pressure Heat Capacity <span class="math notranslate nohighlight">\(C_p\)</span></strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#constantvolume-heat-capacity-c-v"><strong>Constant‑Volume Heat Capacity <span class="math notranslate nohighlight">\(C_v\)</span></strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#isothermal-compressibility-kappa-t"><strong>Isothermal Compressibility <span class="math notranslate nohighlight">\(\kappa_T\)</span></strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#coefficient-of-thermal-expansion-alpha"><strong>Coefficient of Thermal Expansion <span class="math notranslate nohighlight">\(\alpha\)</span></strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#joulethomson-coefficient-mu-jt"><strong>Joule–Thomson Coefficient <span class="math notranslate nohighlight">\(\mu_{JT}\)</span></strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#maxwell-relations">Maxwell Relations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brief-explanations-of-the-maxwell-relations">Brief Explanations of the Maxwell Relations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-maxwell-relations-matter">Why Maxwell relations matter</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#internal-energy-relation">Internal Energy Relation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#enthalpy-relation">Enthalpy Relation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#helmholtz-free-energy-relation">Helmholtz Free Energy Relation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gibbs-free-energy-relation">Gibbs Free Energy Relation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#miscellaneous-relationships">Miscellaneous Relationships</a></li>
 </ul>
   </nav></div>
 
