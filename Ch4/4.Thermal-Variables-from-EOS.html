@@ -164,7 +164,7 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../intro.html">
-                    Foreword
+                    # 2020 NCNR User Survey
                 </a>
             </li>
         </ul>
@@ -196,6 +196,7 @@
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="1.Deriving-Useful-Thermodynamic-Relationships.html">Deriving Useful Thermodynamic Properties</a></li>
 <li class="toctree-l1"><a class="reference internal" href="2.Virial-Equations-of-State.html">Volumetric Equations of State</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="3.Law-of-Corresponding-States.html">Law of Corresponding States and Critical Properties</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Computing Thermal Variables from an Equation of State</a></li>
 <li class="toctree-l1"><a class="reference internal" href="5.Vapor-Liquid-Equilibrium.html">Vapor Liquid Equilibrium</a></li>
@@ -485,19 +486,21 @@
 <p><span class="math notranslate nohighlight">\(\quad \Delta\underline{U}_{1\rightarrow2}^{IG}=\int_{T_1}^{T_2}C_V^{IG}dT\)</span></p>
 <p>This makes the <strong>departure functions</strong></p>
 <div class="math notranslate nohighlight">
-\[\quad \Delta\underline{S}_{1\rightarrow2}^{R}
-=\Delta\underline{S}_{1\rightarrow2}
--\Delta\underline{S}_{1\rightarrow2}^{IG}
+\[\quad \Delta\underline{S}^{R} (T,\underline{V})
 =
-\int_{\underline{V}_1}^{\infty}\bigg[\bigg(\dfrac{\partial P}{\partial T}\bigg)_{\underline{V}}\bigg]_{T_1}d\underline{V}+
-\int_{\infty}^{\underline{V}_2}\bigg[\bigg(\dfrac{\partial P}{\partial T}\bigg)_{\underline{V}}\bigg]_{T_2}d\underline{V}
+\int_{\infty}^{\underline{V}}\bigg[\bigg(\dfrac{\partial P}{\partial T}\bigg)_{\underline{V}} - \dfrac{R}{\underline{V}}\bigg]_{T}d\underline{V}
 \]</div>
 <div class="math notranslate nohighlight">
-\[\quad \Delta\underline{U}_{1\rightarrow2}^{R}
-=\Delta\underline{U}_{1\rightarrow2}
--\Delta\underline{U}_{1\rightarrow2}^{IG}
-=\int_{\underline{V}_1}^{\infty}\bigg[T\bigg(\dfrac{\partial P}{\partial T}\bigg)_{\underline{V}}-P\bigg]_{T_1}d\underline{V}+
-\int_{\infty}^{\underline{V}_2}\bigg[T\bigg(\dfrac{\partial P}{\partial T}\bigg)_{\underline{V}}-P\bigg]_{T_2}d\underline{V}\]</div>
+\[\quad \Delta\underline{S}^{R} (T,P)
+=
+-\int_{0}^{P}\bigg[\bigg(\dfrac{\partial \underline{V}}{\partial T}\bigg)_{P} - \dfrac{R}{P}\bigg]_{T}dP
+\]</div>
+<div class="math notranslate nohighlight">
+\[\quad \Delta\underline{U}^R (T,\underline{V})
+=\int_{\infty}^{\underline{V}_1}\bigg[T\bigg(\dfrac{\partial P}{\partial T}\bigg)_{\underline{V}}-P\bigg]_{T_1}d\underline{V}\]</div>
+<div class="math notranslate nohighlight">
+\[\quad \Delta\underline{H}^R (T,P)
+=\int_{P}^{0}\bigg[\underline{V} - T\bigg(\dfrac{\partial \underline{V}}{\partial T}\bigg)_{P}\bigg]_{T}dP\]</div>
 </section>
 <section id="departure-functions-for-open-system-paths">
 <h3>Departure Functions for Open System Paths:<a class="headerlink" href="#departure-functions-for-open-system-paths" title="Link to this heading">#</a></h3>
@@ -511,15 +514,10 @@
 <p>The derivative with respect to <span class="math notranslate nohighlight">\(d\underline{V}\)</span> is not so convenient for the volumetric equations of state that we routinely have available. Therefore, it is often preferred to rearrange the expression above for the departure function of the enthalpy to a more <em>useful form</em>. We proceed by recognizing that:</p>
 <p><span class="math notranslate nohighlight">\(\quad dP=\dfrac{1}{\underline{V}}d(P\underline{V})-\dfrac{P}{\underline{V}}d\underline{V}\)</span></p>
 <p>using the above, it can be shown that</p>
-<p><span class="math notranslate nohighlight">\(\quad \Delta\underline{S}_{1\rightarrow2}^{R}
-=R\ln{\dfrac{Z_2}{Z_1}}+ 
-+\int_{\underline{V}_1}^{\infty}\bigg[\bigg(\dfrac{\partial P}{\partial T}\bigg)_{\underline{V}}-\dfrac{R}{\underline{V}}\bigg]_{T_1}d\underline{V}
-+
-\int_{\infty}^{\underline{V}_2}\bigg[\bigg(\dfrac{\partial P}{\partial T}\bigg)_{\underline{V}}-\dfrac{R}{\underline{V}}\bigg]_{T_2}d\underline{V}\)</span></p>
-<p><span class="math notranslate nohighlight">\(\quad \Delta\underline{H}_{1\rightarrow2}^{R}
-=RT_2(Z_2-1)-RT_1(Z_1-1)+
-\int_{\underline{V}_1}^{\infty}\bigg[T\bigg(\dfrac{\partial P}{\partial T}\bigg)_{\underline{V}}-P\bigg]_{T_1}d\underline{V}+
-\int_{\infty}^{\underline{V}_2}\bigg[T\bigg(\dfrac{\partial P}{\partial T}\bigg)_{\underline{V}}-P\bigg]_{T_2}d\underline{V}\)</span></p>
+<div class="math notranslate nohighlight">
+\[\quad \Delta\underline{H}^R (T,P)
+=RT (Z-1) + \int_{\infty}^{\underline{V}}\bigg[T\bigg(\dfrac{\partial P}{\partial T}\bigg)_{\underline{V}}-P\bigg]_{T}d\underline{V}\]</div>
+<p>where <span class="math notranslate nohighlight">\(Z = \dfrac{P\underline{V}}{RT}\)</span></p>
 </section>
 <section id="illustration-problem">
 <h3>Illustration Problem:<a class="headerlink" href="#illustration-problem" title="Link to this heading">#</a></h3>
@@ -565,7 +563,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/5e2b10a9a88793b0964b9abe09289a990452e8bbae7073a6cb6ad2115c1e9c02.png" src="../_images/5e2b10a9a88793b0964b9abe09289a990452e8bbae7073a6cb6ad2115c1e9c02.png" />
+<img alt="../_images/360dc00a09c672b77b88eb8f25960135fe1b43fc93d1eecbecfbd0f8bd2804a5.png" src="../_images/360dc00a09c672b77b88eb8f25960135fe1b43fc93d1eecbecfbd0f8bd2804a5.png" />
 </div>
 </div>
 </section>
