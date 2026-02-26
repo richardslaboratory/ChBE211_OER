@@ -196,6 +196,7 @@
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="1.Deriving-Useful-Thermodynamic-Relationships.html">Deriving Useful Thermodynamic Properties</a></li>
 <li class="toctree-l1"><a class="reference internal" href="2.Virial-Equations-of-State.html">Volumetric Equations of State</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="3.Law-of-Corresponding-States.html">Law of Corresponding States and Critical Properties</a></li>
 <li class="toctree-l1"><a class="reference internal" href="4.Thermal-Variables-from-EOS.html">Computing Thermal Variables from an Equation of State</a></li>
 <li class="toctree-l1"><a class="reference internal" href="5.Vapor-Liquid-Equilibrium.html">Vapor Liquid Equilibrium</a></li>
@@ -613,10 +614,13 @@
 \[\bigg(\dfrac{\partial \underline{G}}{\partial P}\bigg)_T\]</div>
 <p>will exhibit one discontinuity at the onset of the vapor to fluid transition such that:</p>
 <div class="math notranslate nohighlight">
-\[ \begin{align}\begin{aligned}
+\[
 \bigg(\dfrac{\partial \underline{G}}{\partial P}\bigg)_T^v \ne 
 \bigg(\dfrac{\partial \underline{G}}{\partial P}\bigg)_T^l
-$$\\\We can see if this is the case for the conditions above by taking the first derivative of the $\underline{G}(P, T)$ function at constant temperature. bigg(\dfrac{\partial \underline{G}}{\partial P}\bigg)_T$$$$\bigg(\dfrac{\partial \underline{G}}{\partial P}\bigg)_T$$\end{aligned}\end{align} \]</div>
+\]</div>
+<p>We can see if this is the case for the conditions above by taking the first derivative of the <span class="math notranslate nohighlight">\(\underline{G}(P, T)\)</span> function at constant temperature.</p>
+<div class="math notranslate nohighlight">
+\[\bigg(\dfrac{\partial \underline{G}}{\partial P}\bigg)_T\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">directory</span> <span class="o">=</span> <span class="s1">&#39;data&#39;</span>

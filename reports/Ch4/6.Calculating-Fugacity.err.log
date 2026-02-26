@@ -39,6 +39,6 @@ Here is a preview of the cell contents:
 -------------------
 ['def psat(Tr,prmin=-4,prmax=0,npts=201):', '    ', '    P_=[]', '    phiv_=[]', '    phil_=[]']
 ...
-["plt.plot(Vc,Pc,'ko')", "plt.yscale('log')", "plt.xscale('log')", "plt.ylabel('P (bar)')", "plt.xlabel(r'$V$ $(cm^3/mol)$')"]
+["plt.yscale('log')", "plt.xscale('log')", "plt.ylabel('P (bar)')", "plt.xlabel(r'$V$ $(cm^3/mol)$')", 'plt.show()']
 -------------------
 

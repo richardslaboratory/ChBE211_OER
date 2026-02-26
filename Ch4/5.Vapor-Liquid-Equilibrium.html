@@ -196,6 +196,7 @@
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="1.Deriving-Useful-Thermodynamic-Relationships.html">Deriving Useful Thermodynamic Properties</a></li>
 <li class="toctree-l1"><a class="reference internal" href="2.Virial-Equations-of-State.html">Volumetric Equations of State</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="3.Law-of-Corresponding-States.html">Law of Corresponding States and Critical Properties</a></li>
 <li class="toctree-l1"><a class="reference internal" href="4.Thermal-Variables-from-EOS.html">Computing Thermal Variables from an Equation of State</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Vapor Liquid Equilibrium</a></li>
@@ -499,92 +500,111 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
-<span class="kn">from</span><span class="w"> </span><span class="nn">ipywidgets</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">ipywidgets</span><span class="w"> </span><span class="kn">import</span> <span class="n">interact</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">phasepy</span><span class="w"> </span><span class="kn">import</span> <span class="n">component</span><span class="p">,</span> <span class="n">preos</span>
 
-<span class="kn">from</span><span class="w"> </span><span class="nn">phasepy</span><span class="w"> </span><span class="kn">import</span> <span class="n">component</span><span class="p">,</span> <span class="n">mixture</span><span class="p">,</span> <span class="n">preos</span>
-<span class="n">Tc</span><span class="o">=</span><span class="mf">647.13</span>
-<span class="n">Pc</span><span class="o">=</span><span class="mf">220.55</span>
-<span class="n">w</span><span class="o">=</span><span class="mf">0.344861</span>
-<span class="n">Tr</span><span class="o">=</span><span class="mf">0.80</span>
+<span class="c1"># -----------------------------</span>
+<span class="c1"># Thermodynamic setup</span>
+<span class="c1"># -----------------------------</span>
+<span class="n">Tc</span> <span class="o">=</span> <span class="mf">647.13</span>      <span class="c1"># K</span>
+<span class="n">Pc</span> <span class="o">=</span> <span class="mf">220.55</span>      <span class="c1"># bar</span>
+<span class="n">w</span>  <span class="o">=</span> <span class="mf">0.344861</span>
+<span class="n">R</span>  <span class="o">=</span> <span class="mf">8.314</span>
 
 <span class="n">water</span> <span class="o">=</span> <span class="n">component</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;water&#39;</span><span class="p">,</span> <span class="n">Tc</span><span class="o">=</span><span class="n">Tc</span><span class="p">,</span> <span class="n">Pc</span><span class="o">=</span><span class="n">Pc</span><span class="p">,</span> <span class="n">w</span><span class="o">=</span><span class="n">w</span><span class="p">)</span>
-<span class="n">eos</span> <span class="o">=</span> <span class="n">preos</span><span class="p">(</span><span class="n">water</span><span class="p">,</span><span class="s1">&#39;mhv_unifac&#39;</span><span class="p">)</span>
-<span class="n">R</span><span class="o">=</span><span class="mf">8.314</span> 
-<span class="c1">##create the plot</span>
-<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">yscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;P (bar)&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$V$ $(cm^3/mol)$&#39;</span><span class="p">)</span>
+<span class="n">eos</span>   <span class="o">=</span> <span class="n">preos</span><span class="p">(</span><span class="n">water</span><span class="p">,</span> <span class="s1">&#39;mhv_unifac&#39;</span><span class="p">)</span>
 
-<span class="n">v</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">eos</span><span class="o">.</span><span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="mf">1.1</span><span class="p">),</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="mi">100</span><span class="o">*</span><span class="n">eos</span><span class="o">.</span><span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span><span class="mi">201</span><span class="p">)</span>
-<span class="k">if</span><span class="p">(</span><span class="n">Tr</span><span class="o">&lt;</span><span class="mi">1</span><span class="p">):</span>
-    <span class="n">psat</span><span class="p">,</span><span class="n">vl</span><span class="p">,</span><span class="n">vv</span><span class="o">=</span><span class="n">eos</span><span class="o">.</span><span class="n">psat</span><span class="p">(</span><span class="n">Tr</span><span class="o">*</span><span class="n">Tc</span><span class="p">)</span>
-    
-    
-    <span class="n">mask</span><span class="o">=</span><span class="p">(</span><span class="n">v</span><span class="o">&lt;=</span><span class="n">vl</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">v</span><span class="o">&gt;=</span><span class="n">vv</span><span class="p">)</span>
-    <span class="n">line1</span><span class="p">,</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">v</span><span class="p">,</span><span class="n">eos</span><span class="p">(</span><span class="n">Tr</span><span class="o">*</span><span class="n">Tc</span><span class="p">,</span><span class="n">v</span><span class="p">),</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
-    <span class="n">P</span><span class="o">=</span><span class="n">eos</span><span class="p">(</span><span class="n">Tr</span><span class="o">*</span><span class="n">Tc</span><span class="p">,</span><span class="n">v</span><span class="p">)</span>
-    
-    <span class="n">dPdV</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">gradient</span><span class="p">(</span><span class="n">P</span><span class="p">,</span><span class="n">v</span><span class="p">)</span>
-    
-    <span class="n">P_</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">P</span><span class="p">[</span><span class="n">v</span><span class="o">&lt;=</span><span class="n">vl</span><span class="p">],</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">psat</span><span class="p">),</span><span class="n">np</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">P</span><span class="p">[</span><span class="n">v</span><span class="o">&gt;=</span><span class="n">vv</span><span class="p">],</span><span class="mi">0</span><span class="p">,</span><span class="n">psat</span><span class="p">)))</span>
-    <span class="n">V_</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="n">v</span><span class="o">&lt;=</span><span class="n">vl</span><span class="p">],</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">vl</span><span class="p">),</span><span class="n">np</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="n">v</span><span class="o">&gt;=</span><span class="n">vv</span><span class="p">],</span><span class="mi">0</span><span class="p">,</span><span class="n">vl</span><span class="p">)))</span>
-                      
-    <span class="n">line2</span><span class="p">,</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">V_</span><span class="p">,</span><span class="n">P_</span><span class="p">,</span><span class="s1">&#39;g&#39;</span><span class="p">)</span>
-    <span class="n">line3</span><span class="p">,</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="n">dPdV</span><span class="o">&lt;=</span><span class="mi">0</span><span class="p">],</span><span class="n">P</span><span class="p">[</span><span class="n">dPdV</span><span class="o">&lt;=</span><span class="mi">0</span><span class="p">],</span><span class="s1">&#39;*b&#39;</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="n">line1</span><span class="p">,</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">v</span><span class="p">,</span><span class="n">eos</span><span class="p">(</span><span class="n">Tr</span><span class="o">*</span><span class="n">Tc</span><span class="p">,</span><span class="n">v</span><span class="p">),</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="c1"># -----------------------------</span>
+<span class="c1"># Initial plotting grid</span>
+<span class="c1"># -----------------------------</span>
+<span class="c1"># Use a wide volume range relative to b</span>
+<span class="n">vmin</span> <span class="o">=</span> <span class="n">eos</span><span class="o">.</span><span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="mf">1.05</span>
+<span class="n">vmax</span> <span class="o">=</span> <span class="n">eos</span><span class="o">.</span><span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="mi">200</span>
+<span class="n">v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">vmin</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">vmax</span><span class="p">),</span> <span class="mi">400</span><span class="p">)</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">v</span><span class="p">),</span><span class="nb">max</span><span class="p">(</span><span class="n">v</span><span class="p">))</span>
+<span class="c1"># -----------------------------</span>
+<span class="c1"># Create figure and empty artists</span>
+<span class="c1"># -----------------------------</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_yscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$V$ (cm$^3$/mol)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;P (bar)&#39;</span><span class="p">)</span>
 
+<span class="c1"># Base EOS curve (will be updated)</span>
+<span class="n">line_eos</span><span class="p">,</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">([],</span> <span class="p">[],</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;EOS&#39;</span><span class="p">)</span>
 
+<span class="c1"># Maxwell construction line</span>
+<span class="n">line_real</span><span class="p">,</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">([],</span> <span class="p">[],</span> <span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Real (Maxwell)&#39;</span><span class="p">)</span>
 
-<span class="c1">##update the plot</span>
-<span class="k">def</span><span class="w"> </span><span class="nf">update</span><span class="p">(</span><span class="n">Tr</span> <span class="o">=</span> <span class="mf">0.8</span><span class="p">):</span>
-    <span class="n">psat</span><span class="p">,</span><span class="n">vl</span><span class="p">,</span><span class="n">vv</span><span class="o">=</span><span class="n">eos</span><span class="o">.</span><span class="n">psat</span><span class="p">(</span><span class="n">Tr</span><span class="o">*</span><span class="n">Tc</span><span class="p">)</span>
+<span class="c1"># Spinodal points (dP/dV ≤ 0)</span>
+<span class="n">line_spinodal</span><span class="p">,</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">([],</span> <span class="p">[],</span> <span class="s1">&#39;ob&#39;</span><span class="p">,</span> <span class="n">ms</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Spinodal&#39;</span><span class="p">)</span>
 
-    <span class="n">mask</span><span class="o">=</span><span class="p">(</span><span class="n">v</span><span class="o">&lt;</span><span class="n">vl</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">v</span><span class="o">&gt;</span><span class="n">vv</span><span class="p">)</span>
-    <span class="n">line1</span><span class="o">.</span><span class="n">set_data</span><span class="p">(</span><span class="n">v</span><span class="p">,</span><span class="n">eos</span><span class="p">(</span><span class="n">Tr</span><span class="o">*</span><span class="n">Tc</span><span class="p">,</span><span class="n">v</span><span class="p">))</span>
-    <span class="n">line1</span><span class="o">.</span><span class="n">set_label</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$P_</span><span class="si">{EOS}</span><span class="s1">$&#39;</span><span class="p">)</span>
-    <span class="n">P</span><span class="o">=</span><span class="n">eos</span><span class="p">(</span><span class="n">Tr</span><span class="o">*</span><span class="n">Tc</span><span class="p">,</span><span class="n">v</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
 
-    <span class="n">P_</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">P</span><span class="p">[</span><span class="n">v</span><span class="o">&lt;=</span><span class="n">vl</span><span class="p">],</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">psat</span><span class="p">),</span><span class="n">np</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">P</span><span class="p">[</span><span class="n">v</span><span class="o">&gt;=</span><span class="n">vv</span><span class="p">],</span><span class="mi">0</span><span class="p">,</span><span class="n">psat</span><span class="p">)))</span>
-    <span class="n">V_</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="n">v</span><span class="o">&lt;=</span><span class="n">vl</span><span class="p">],</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">vl</span><span class="p">),</span><span class="n">np</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="n">v</span><span class="o">&gt;=</span><span class="n">vv</span><span class="p">],</span><span class="mi">0</span><span class="p">,</span><span class="n">vl</span><span class="p">)))</span>
-    
-    <span class="n">dPdV</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">gradient</span><span class="p">(</span><span class="n">P</span><span class="p">,</span><span class="n">v</span><span class="p">)</span>
-    <span class="n">line3</span><span class="o">.</span><span class="n">set_data</span><span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="n">dPdV</span><span class="o">&lt;=</span><span class="mi">0</span><span class="p">],</span><span class="n">P</span><span class="p">[</span><span class="n">dPdV</span><span class="o">&lt;=</span><span class="mi">0</span><span class="p">])</span>
-    <span class="n">line2</span><span class="o">.</span><span class="n">set_data</span><span class="p">(</span><span class="n">V_</span><span class="p">,</span><span class="n">P_</span><span class="p">)</span>
-    <span class="n">line2</span><span class="o">.</span><span class="n">set_label</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$P_</span><span class="si">{real}</span><span class="s1">$&#39;</span><span class="p">)</span>
-    
-    <span class="c1">#plt.annotate()</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="c1"># -----------------------------</span>
+<span class="c1"># Update function</span>
+<span class="c1"># -----------------------------</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">update</span><span class="p">(</span><span class="n">Tr</span><span class="o">=</span><span class="mf">0.80</span><span class="p">):</span>
+    <span class="n">T</span> <span class="o">=</span> <span class="n">Tr</span> <span class="o">*</span> <span class="n">Tc</span>
+
+    <span class="c1"># Compute EOS pressure curve</span>
+    <span class="n">P</span> <span class="o">=</span> <span class="n">eos</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
+
+    <span class="c1"># Update main EOS curve</span>
+    <span class="n">line_eos</span><span class="o">.</span><span class="n">set_data</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">P</span><span class="p">)</span>
+
+    <span class="c1"># -----------------------------------</span>
+    <span class="c1"># Subcritical: compute Maxwell line</span>
+    <span class="c1"># -----------------------------------</span>
+    <span class="k">if</span> <span class="n">Tr</span> <span class="o">&lt;</span> <span class="mf">1.0</span><span class="p">:</span>
+        <span class="n">psat</span><span class="p">,</span> <span class="n">vl</span><span class="p">,</span> <span class="n">vv</span> <span class="o">=</span> <span class="n">eos</span><span class="o">.</span><span class="n">psat</span><span class="p">(</span><span class="n">T</span><span class="p">)</span>
+
+        <span class="c1"># Build Maxwell construction curve</span>
+        <span class="n">left_v</span>  <span class="o">=</span> <span class="n">v</span><span class="p">[</span><span class="n">v</span> <span class="o">&lt;=</span> <span class="n">vl</span><span class="p">]</span>
+        <span class="n">right_v</span> <span class="o">=</span> <span class="n">v</span><span class="p">[</span><span class="n">v</span> <span class="o">&gt;=</span> <span class="n">vv</span><span class="p">]</span>
+        <span class="n">left_P</span>  <span class="o">=</span> <span class="n">P</span><span class="p">[</span><span class="n">v</span> <span class="o">&lt;=</span> <span class="n">vl</span><span class="p">]</span>
+        <span class="n">right_P</span> <span class="o">=</span> <span class="n">P</span><span class="p">[</span><span class="n">v</span> <span class="o">&gt;=</span> <span class="n">vv</span><span class="p">]</span>
+
+        <span class="n">V_real</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span>
+            <span class="n">np</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">left_v</span><span class="p">,</span>  <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">vl</span><span class="p">),</span>
+            <span class="n">np</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">right_v</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span>  <span class="n">vv</span><span class="p">)</span>
+        <span class="p">])</span>
+        <span class="n">P_real</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span>
+            <span class="n">np</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">left_P</span><span class="p">,</span>  <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">psat</span><span class="p">),</span>
+            <span class="n">np</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">right_P</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span>  <span class="n">psat</span><span class="p">)</span>
+        <span class="p">])</span>
+
+        <span class="n">line_real</span><span class="o">.</span><span class="n">set_data</span><span class="p">(</span><span class="n">V_real</span><span class="p">,</span> <span class="n">P_real</span><span class="p">)</span>
+
+        <span class="c1"># Spinodal region: dP/dV ≤ 0</span>
+        <span class="n">dPdV</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">gradient</span><span class="p">(</span><span class="n">P</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
+        <span class="n">line_spinodal</span><span class="o">.</span><span class="n">set_data</span><span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="n">dPdV</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">],</span> <span class="n">P</span><span class="p">[</span><span class="n">dPdV</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">])</span>
+
+    <span class="k">else</span><span class="p">:</span>
+        <span class="c1"># Supercritical: no Maxwell line</span>
+        <span class="n">line_real</span><span class="o">.</span><span class="n">set_data</span><span class="p">([],</span> <span class="p">[])</span>
+        <span class="n">line_spinodal</span><span class="o">.</span><span class="n">set_data</span><span class="p">([],</span> <span class="p">[])</span>
+
+    <span class="c1"># Rescale axes</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">relim</span><span class="p">()</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">autoscale_view</span><span class="p">()</span>
+
     <span class="n">fig</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">draw_idle</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 
-<span class="n">interact</span><span class="p">(</span><span class="n">update</span><span class="p">,</span><span class="n">Tr</span><span class="o">=</span><span class="p">(</span><span class="mf">0.92</span><span class="p">,</span><span class="mf">0.99</span><span class="p">,</span><span class="mf">0.001</span><span class="p">));</span>
+<span class="c1"># -----------------------------</span>
+<span class="c1"># Interactive widget</span>
+<span class="c1"># -----------------------------</span>
+<span class="n">interact</span><span class="p">(</span><span class="n">update</span><span class="p">,</span> <span class="n">Tr</span><span class="o">=</span><span class="p">(</span><span class="mf">0.80</span><span class="p">,</span> <span class="mf">1.10</span><span class="p">,</span> <span class="mf">0.005</span><span class="p">));</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "f9f75075643146dc9e0f17290d410d47", "version_major": 2, "version_minor": 0}</script></div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">jupyter</span> <span class="n">labextension</span> <span class="nb">list</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-    <span class="n">jupyter</span> <span class="n">labextension</span> <span class="nb">list</span>
-            <span class="o">^</span>
-<span class="ne">SyntaxError</span>: invalid syntax
-</pre></div>
-</div>
-</div>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "9449122f16f847838645196e74239791", "version_major": 2, "version_minor": 0}</script></div>
 </div>
 </section>
 </section>
