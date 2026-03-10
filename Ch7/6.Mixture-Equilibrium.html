@@ -196,6 +196,7 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../Ch4/1.Deriving-Useful-Thermodynamic-Relationships.html">Deriving Useful Thermodynamic Properties</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Ch4/2.Virial-Equations-of-State.html">Volumetric Equations of State</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="../Ch4/3.Law-of-Corresponding-States.html">Law of Corresponding States and Critical Properties</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Ch4/4.Thermal-Variables-from-EOS.html">Computing Thermal Variables from an Equation of State</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Ch4/5.Vapor-Liquid-Equilibrium.html">Vapor Liquid Equilibrium</a></li>
@@ -212,6 +213,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../Ch5/5.Accuracy-EOS.html">Calculating the Accuracy of Equations of State</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Equilibrium of Mixtures</a></li>
 <li class="toctree-l1"><a class="reference internal" href="7.Activity-Coefficient-Models.html">Activity Coefficients</a></li>
+
+
+
+
 <li class="toctree-l1"><a class="reference internal" href="8.Applying-Definitions.html">Applying our Thermodynamic Definitions to Mixtures</a></li>
 <li class="toctree-l1"><a class="reference internal" href="9.Calculating-Mixture-Fugacity.html">Vapor-Liquid Equilibrium</a></li>
 </ul>
@@ -501,8 +506,8 @@
 \[\ln\bigg(\dfrac{\bar{f}_i}{y_iP}\bigg)=\dfrac{1}{RT}\int_\infty^\underline{V}\bigg(\dfrac{RT}{\underline{V}}-N\bigg(\dfrac{\partial P}{\partial N_i}\bigg)_{T,V,N_{i\ne j}}\bigg)d\underline{V} - lnZ\]</div>
 <p>where <span class="math notranslate nohighlight">\(P\)</span> is the pressure determined from the volumetric equation of state that includes the explicity composition and temperature dependence. In order to perform this calculation at a specified <span class="math notranslate nohighlight">\(T\)</span>, <span class="math notranslate nohighlight">\(P\)</span>, and mole fraction, we must follow a systematic procedure:</p>
 <ol class="arabic simple">
-<li><p>Obtain parameters <span class="math notranslate nohighlight">\(a_ii\)</span> and <span class="math notranslate nohighlight">\(b_i\)</span> for each pure component</p></li>
-<li><p>Compute the <span class="math notranslate nohighlight">\(a_{mix}\)</span> and <span class="math notranslate nohighlight">\(b_mix\)</span> as a function of the vapor phase composition using the desired mixing rule. Examples include:</p>
+<li><p>Obtain parameters <span class="math notranslate nohighlight">\(a_i\)</span> and <span class="math notranslate nohighlight">\(b_i\)</span> for each pure component</p></li>
+<li><p>Compute the <span class="math notranslate nohighlight">\(a_{mix}\)</span> and <span class="math notranslate nohighlight">\(b_{mix}\)</span> as a function of the vapor phase composition using the desired mixing rule. Examples include:</p>
 <ul class="simple">
 <li><p>Quadratic Mixing Rules</p></li>
 <li><p>Sandler - Kwong Mixing Rules</p></li>
@@ -548,7 +553,7 @@
 </section>
 <section id="discontinuous-modelling-henrys-law">
 <h3>Discontinuous Modelling - Henry’s Law<a class="headerlink" href="#discontinuous-modelling-henrys-law" title="Link to this heading">#</a></h3>
-<p>If the pure species does not exist as a liquid at the temperature pressure of interest, than more appropriate starting points are used. In some cases, if the mixture is dilute, it is appropriate to use *Henry’s law constant$, which can be tabulated for a variety of soluble species/solvent pairs.</p>
+<p>If the pure species does not exist as a liquid at the temperature pressure of interest, than more appropriate starting points are used. In some cases, if the mixture is dilute, it is appropriate to use <em>Henry’s law constant</em>, which can be tabulated for a variety of soluble species/solvent pairs.</p>
 <p><span class="math notranslate nohighlight">\(\quad\quad \bar{f}_i^L =x_i H_i (T,P)\)</span> as <span class="math notranslate nohighlight">\(x_i\rightarrow 0\)</span></p>
 </section>
 <section id="summary-of-activity-coefficient-models">
@@ -697,7 +702,7 @@ To achieve these types of separations, we must be able to calculate the equilibr
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x2bde9a877d0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x284a95666c0&gt;
 </pre></div>
 </div>
 <img alt="../_images/c0902f9c9ec0af9bcf5511977894b859f5d871cacdcf8ac3a47ad8e1d3b92cc4.png" src="../_images/c0902f9c9ec0af9bcf5511977894b859f5d871cacdcf8ac3a47ad8e1d3b92cc4.png" />
@@ -1027,6 +1032,7 @@ To achieve these types of separations, we must be able to calculate the equilibr
 <img alt="../_images/afcbe09a7f043cd57d73a03ca0bce238427ba9536beb73250cdc93d5e6b3f2c3.png" src="../_images/afcbe09a7f043cd57d73a03ca0bce238427ba9536beb73250cdc93d5e6b3f2c3.png" />
 </div>
 </div>
+<p>We can see the vast improvement of the prediction and its agreement with the experimental data using more sophisticated models.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">R</span> <span class="o">=</span> <span class="mf">8.314</span>
@@ -1126,8 +1132,6 @@ To achieve these types of separations, we must be able to calculate the equilibr
 <span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mf">1.2</span><span class="p">,</span><span class="mf">0.2</span><span class="p">))</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;P = 1bar&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">frameon</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
-
-<span class="n">We</span> <span class="n">can</span> <span class="n">see</span> <span class="n">the</span> <span class="n">vast</span> <span class="n">improvement</span> <span class="n">of</span> <span class="n">the</span> <span class="n">prediction</span> <span class="ow">and</span> <span class="n">its</span> <span class="n">agreement</span> <span class="k">with</span> <span class="n">the</span> <span class="n">experimental</span> <span class="n">data</span> <span class="n">using</span> <span class="n">more</span> <span class="n">sophisticated</span> <span class="n">models</span><span class="o">.</span> 
 </pre></div>
 </div>
 </div>

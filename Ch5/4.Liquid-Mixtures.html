@@ -196,6 +196,7 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../Ch4/1.Deriving-Useful-Thermodynamic-Relationships.html">Deriving Useful Thermodynamic Properties</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Ch4/2.Virial-Equations-of-State.html">Volumetric Equations of State</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="../Ch4/3.Law-of-Corresponding-States.html">Law of Corresponding States and Critical Properties</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Ch4/4.Thermal-Variables-from-EOS.html">Computing Thermal Variables from an Equation of State</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Ch4/5.Vapor-Liquid-Equilibrium.html">Vapor Liquid Equilibrium</a></li>
@@ -212,6 +213,10 @@
 <li class="toctree-l1"><a class="reference internal" href="5.Accuracy-EOS.html">Calculating the Accuracy of Equations of State</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Ch7/6.Mixture-Equilibrium.html">Equilibrium of Mixtures</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Ch7/7.Activity-Coefficient-Models.html">Activity Coefficients</a></li>
+
+
+
+
 <li class="toctree-l1"><a class="reference internal" href="../Ch7/8.Applying-Definitions.html">Applying our Thermodynamic Definitions to Mixtures</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Ch7/9.Calculating-Mixture-Fugacity.html">Vapor-Liquid Equilibrium</a></li>
 </ul>
@@ -401,6 +406,7 @@
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#finally-compute-the-excess-molar-volume">Finally, compute the excess molar volume</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-example">Additional Example:</a></li>
 </ul>
             </nav>
         </div>
@@ -444,14 +450,15 @@
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">rho</span><span class="p">,</span><span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\rho\; (kg/m^3)$&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$x_1$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">from_dict</span><span class="p">({</span><span class="s1">&#39;x1&#39;</span><span class="p">:</span> <span class="n">x1</span><span class="p">,</span> <span class="s1">&#39;x2&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="o">-</span><span class="n">x1</span><span class="p">,</span> <span class="s1">&#39;rho (kg/m^3)&#39;</span><span class="p">:</span> <span class="n">rho</span><span class="p">})</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span><span class="s1">&#39;density_water(1)_methanol(2).xlsx&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;$x_1$&#39;)
-</pre></div>
-</div>
-<img alt="../_images/e7623ac4374ae377825c97a6b47140ffdfa350924b9be638585ecf97a4b8a9d4.png" src="../_images/e7623ac4374ae377825c97a6b47140ffdfa350924b9be638585ecf97a4b8a9d4.png" />
+<img alt="../_images/665e63682d9968c4226cfe69bda1a190705a5e862e5800ec528294c2337f690f.png" src="../_images/665e63682d9968c4226cfe69bda1a190705a5e862e5800ec528294c2337f690f.png" />
 </div>
 </div>
 </section>
@@ -479,10 +486,10 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x2362e86cfd0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x295ac2bda90&gt;
 </pre></div>
 </div>
-<img alt="../_images/55f5195a782e992e4eaae4d7dbd8fc3159671bbf8a2658a12c113bdd45e8773b.png" src="../_images/55f5195a782e992e4eaae4d7dbd8fc3159671bbf8a2658a12c113bdd45e8773b.png" />
+<img alt="../_images/57e262142c281141afd2a52afbd7d6ae84d836923843c1b5bd0e2341f5fc0414.png" src="../_images/57e262142c281141afd2a52afbd7d6ae84d836923843c1b5bd0e2341f5fc0414.png" />
 </div>
 </div>
 </section>
@@ -500,10 +507,10 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x2362eaa2190&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x295af6e5a90&gt;
 </pre></div>
 </div>
-<img alt="../_images/c9ce3dd4d57a47aeeef2524642d93a530f9428f139785094811397e886c70531.png" src="../_images/c9ce3dd4d57a47aeeef2524642d93a530f9428f139785094811397e886c70531.png" />
+<img alt="../_images/3229637cb34c0fac74a1e5ae10f5a0838ccee2865a7e6c4a815ebbe93d21faf3.png" src="../_images/3229637cb34c0fac74a1e5ae10f5a0838ccee2865a7e6c4a815ebbe93d21faf3.png" />
 </div>
 </div>
 </section>
@@ -555,10 +562,10 @@ which is valid for any mixture property. It is expressed as:</p>
 [ 0.77451871  0.69242059 -0.19867978 -4.01706834]
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x2362fd178d0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x295af729d30&gt;
 </pre></div>
 </div>
-<img alt="../_images/26d486c571d4da3f626d1141f0cd62891ef4e70a86a9d1233f1f40057541f0d3.png" src="../_images/26d486c571d4da3f626d1141f0cd62891ef4e70a86a9d1233f1f40057541f0d3.png" />
+<img alt="../_images/fb5842734347f7c7d8518fced743715014e134873d441cb23a61af16f19d1385.png" src="../_images/fb5842734347f7c7d8518fced743715014e134873d441cb23a61af16f19d1385.png" />
 </div>
 </div>
 <p>Fitting the data, we find that the coefficients</p>
@@ -583,7 +590,47 @@ which is valid for any mixture property. It is expressed as:</p>
 <p>and</p>
 <p><span class="math notranslate nohighlight">\(\quad \bar{V}_2-\underline{V}_2=x_2^2\sum_n a_n\big[(x_1-x_2)^n+2nx_2(x_1-x_2)^{n-1}\big]\)</span></p>
 <p>The above equation can be directly evaluated and then the <strong>Gibbs Duhem Equation</strong> used to directly evaluate the molar excess property for species (2).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+
+<span class="n">x1</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mf">0.1162</span><span class="p">,</span><span class="mf">0.2221</span><span class="p">,</span><span class="mf">0.2841</span><span class="p">,</span><span class="mf">0.3729</span><span class="p">,</span><span class="mf">0.4186</span><span class="p">,</span><span class="mf">0.5266</span><span class="p">,</span><span class="mf">0.6119</span><span class="p">,</span><span class="mf">0.7220</span><span class="p">,</span><span class="mf">0.8509</span><span class="p">,</span><span class="mf">0.9489</span><span class="p">,</span><span class="mf">1.0</span><span class="p">])</span>
+<span class="n">rho</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">([</span><span class="mf">786.846</span><span class="p">,</span><span class="mf">806.655</span><span class="p">,</span><span class="mf">825.959</span><span class="p">,</span><span class="mf">837.504</span><span class="p">,</span><span class="mf">855.031</span><span class="p">,</span><span class="mf">864.245</span><span class="p">,</span><span class="mf">887.222</span><span class="p">,</span><span class="mf">905.376</span><span class="p">,</span><span class="mf">929.537</span><span class="p">,</span><span class="mf">957.522</span><span class="p">,</span><span class="mf">981.906</span><span class="p">,</span><span class="mf">997.047</span><span class="p">])</span> <span class="c1">#kg/m^3</span>
+
+<span class="n">dmix</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x1</span><span class="p">))</span>
+<span class="n">x2</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">x1</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">p</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">p_</span><span class="p">):</span>
+    <span class="n">dmix</span> <span class="o">+=</span> <span class="n">x1</span><span class="o">*</span><span class="n">x2</span><span class="o">*</span><span class="n">p</span><span class="o">*</span><span class="p">(</span><span class="n">x1</span><span class="o">-</span><span class="n">x2</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mi">3</span><span class="o">-</span><span class="n">i</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">10</span><span class="o">**</span><span class="mi">6</span><span class="p">)</span>
+
+<span class="n">Vmix</span> <span class="o">=</span> <span class="n">dmix</span> <span class="o">+</span> <span class="n">x1</span><span class="o">*</span><span class="n">V_</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">x1</span><span class="p">)</span><span class="o">*</span><span class="n">V_</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">rhomix</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">Vmix</span> <span class="o">*</span><span class="n">MW</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">rho</span><span class="p">,</span><span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">rhomix</span><span class="p">,</span><span class="s1">&#39;-k&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\rho\; (kg/m^3)$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$x_1$&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;$x_1$&#39;)
+</pre></div>
+</div>
+<img alt="../_images/f8b465765e8c1e97cfaf9ea16ba4ae9a94271c6fd5853bf18ec04c283c8fa9cf.png" src="../_images/f8b465765e8c1e97cfaf9ea16ba4ae9a94271c6fd5853bf18ec04c283c8fa9cf.png" />
+</div>
+</div>
 </section>
+</section>
+<section id="additional-example">
+<h2>Additional Example:<a class="headerlink" href="#additional-example" title="Link to this heading">#</a></h2>
+<p>Illustrate Problem 9.3-2</p>
+<p>Given</p>
+<div class="math notranslate nohighlight">
+\[\underline{G}_{mix}(T,P, \underline{x}) = \sum_i^2 x_i \underline{G}_i (T,P) + RT\sum_i^2 x_i ln x_i + ax_1x_2\]</div>
+<p>Determine whether the mixture is ideal usingg the following relationships</p>
+<div class="math notranslate nohighlight">
+\[\underline{V}_{mix} = \bigg(\dfrac{\partial \underline{G}_i}{\partial P}\bigg)\quad \underline{H} = -T^2 \dfrac{\partial}{\partial T}\bigg|_P \bigg(\dfrac{\underline{G}}{T}\bigg)\]</div>
 </section>
 </section>
 
@@ -663,6 +710,7 @@ which is valid for any mixture property. It is expressed as:</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#finally-compute-the-excess-molar-volume">Finally, compute the excess molar volume</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-example">Additional Example:</a></li>
 </ul>
   </nav></div>
 

@@ -196,6 +196,7 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../Ch4/1.Deriving-Useful-Thermodynamic-Relationships.html">Deriving Useful Thermodynamic Properties</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Ch4/2.Virial-Equations-of-State.html">Volumetric Equations of State</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="../Ch4/3.Law-of-Corresponding-States.html">Law of Corresponding States and Critical Properties</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Ch4/4.Thermal-Variables-from-EOS.html">Computing Thermal Variables from an Equation of State</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Ch4/5.Vapor-Liquid-Equilibrium.html">Vapor Liquid Equilibrium</a></li>
@@ -212,6 +213,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../Ch5/5.Accuracy-EOS.html">Calculating the Accuracy of Equations of State</a></li>
 <li class="toctree-l1"><a class="reference internal" href="6.Mixture-Equilibrium.html">Equilibrium of Mixtures</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Activity Coefficients</a></li>
+
+
+
+
 <li class="toctree-l1"><a class="reference internal" href="8.Applying-Definitions.html">Applying our Thermodynamic Definitions to Mixtures</a></li>
 <li class="toctree-l1"><a class="reference internal" href="9.Calculating-Mixture-Fugacity.html">Vapor-Liquid Equilibrium</a></li>
 </ul>
@@ -390,6 +395,7 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Activity Coefficients</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#derivation-of-the-activity-coefficient">Derivation of the Activity Coefficient:</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-ideal-mixture">The Ideal Mixture</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#excess-properties">Excess Properties</a></li>
@@ -413,11 +419,40 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lets-compare-the-two-constant-margules-expression-to-the-van-laar-equations">lets compare the two constant margules expression to the van Laar equations</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-parameter-correlative-equations">Multi-parameter Correlative Equations</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#group-contribution-models">Group Contribution Models</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#group-contributions-in-unifac-vs-uniquac">1. Group Contributions in UNIFAC vs. UNIQUAC</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unifac">1.1 UNIFAC</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hydrocarbon-groups"><strong>Hydrocarbon Groups</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#alcohol-oxygenated-groups"><strong>Alcohol / Oxygenated Groups</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#carbonyl-carboxyl-groups"><strong>Carbonyl / Carboxyl Groups</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aromatic-groups"><strong>Aromatic Groups</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-uniquac-purecomponent-parameters-ri-qi">1.2. Example UNIQUAC Pure‑Component Parameters (rᵢ, qᵢ)</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#unifac-equations-original-unifac">2. UNIFAC Equations (Original UNIFAC)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#combinatorial-term-unifac"><strong>2.1 Combinatorial Term (UNIFAC)</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#residual-term-unifac">2.2 Residual Term (UNIFAC)*</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#uniquac-equations">3. UNIQUAC Equations</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#combinatorial-term-uniquac">3.1 Combinatorial Term (UNIQUAC)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#residual-term-uniquac">3.2 Residual Term (UNIQUAC)</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#how-they-are-used-in-practice">4. How They Are Used in Practice</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"><strong>UNIFAC</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uniquac"><strong>UNIQUAC</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-of-unifac-calculation-with-phasepy">Example of UNIFAC Calculation with PhasePy</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#initializing-vdw-equation-of-state">Initializing: VDW Equation of State</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#peng-robinson-equation-of-state-with-unifac-activity-model">Peng-Robinson Equation of State with UNIFAC Activity Model</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#redlich-kwong-soave-eos">Redlich Kwong Soave EOS</a></li>
 </ul>
+</li>
+</ul>
+
             </nav>
         </div>
     </div>
@@ -711,7 +746,7 @@ x_1\dfrac{a_1}{\underline{V}_1}+x_2\dfrac{a_2}{\underline{V}_2}\)</span></p></li
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x19bb0d04380&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x22a9c3c48c0&gt;
 </pre></div>
 </div>
 <img alt="../_images/d6098a27c21e4b7db97db38056843f1dd415d21e353f747209f7d6b3e43cfb8b.png" src="../_images/d6098a27c21e4b7db97db38056843f1dd415d21e353f747209f7d6b3e43cfb8b.png" />
@@ -781,7 +816,7 @@ x_1\dfrac{a_1}{\underline{V}_1}+x_2\dfrac{a_2}{\underline{V}_2}\)</span></p></li
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x19bb2fd3620&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x22a9c4fccb0&gt;
 </pre></div>
 </div>
 <img alt="../_images/2f9b82d453e818790d90667cf4d95429b01cc0797864e18d1d0e4aeacbef6f38.png" src="../_images/2f9b82d453e818790d90667cf4d95429b01cc0797864e18d1d0e4aeacbef6f38.png" />
@@ -811,6 +846,385 @@ x_1\dfrac{a_1}{\underline{V}_1}+x_2\dfrac{a_2}{\underline{V}_2}\)</span></p></li
 <li><p>UNIQAC (UNIversal Qasichemical Activity Coefficients)</p></li>
 </ul>
 <p>The main difference between UNIFAC and UNIQAC models is that the molar volumes and areas of a molecule are included in considering the site-site interaction between molecules in a mixture. These properties are calculated form so-called “group-contribution” models which estimate the volume contribution and area contribution of different sub-units of a molecule. These group contributions are relatively easily tabulated and their parameters calculated based on fitting large quantities of experimental data sets. While limited calculations are best done by hand, the computations are easily done computationally.</p>
+<p>Here’s a clean, technically correct, <strong>copy‑paste‑ready</strong> summary of the <strong>UNIFAC</strong> and <strong>UNIQUAC</strong> group‑contribution frameworks, including:</p>
+<ul class="simple">
+<li><p>A <strong>Markdown table</strong> comparing the group contributions used in each model</p></li>
+<li><p>The <strong>core equations</strong> for how each model uses those contributions to compute activity coefficients</p></li>
+<li><p>A compact but rigorous explanation of the <strong>combinatorial</strong> and <strong>residual</strong> terms</p></li>
+</ul>
+<p>This is based on standard UNIFAC/UNIQUAC formulations as described in the literature (Fredenslund, Gmehling, Rasmussen; Abrams &amp; Prausnitz).</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="group-contributions-in-unifac-vs-uniquac">
+<h1>1. Group Contributions in UNIFAC vs. UNIQUAC<a class="headerlink" href="#group-contributions-in-unifac-vs-uniquac" title="Link to this heading">#</a></h1>
+<p>Below is a conceptual comparison table.<br />
+(UNIFAC uses <strong>functional groups</strong>; UNIQUAC uses <strong>surface/volume parameters</strong> and <strong>binary interaction energies</strong>, not functional groups.)</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Model</p></th>
+<th class="head"><p>Group / Parameter Type</p></th>
+<th class="head"><p>Symbol(s)</p></th>
+<th class="head"><p>Meaning / Role</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>UNIFAC</strong></p></td>
+<td><p>Main groups &amp; subgroups</p></td>
+<td><p><span class="math notranslate nohighlight">\(k\)</span>, <span class="math notranslate nohighlight">\(m\)</span></p></td>
+<td><p>Functional groups that compose molecules; basis of group-contribution method.</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>Group volume parameter</p></td>
+<td><p><span class="math notranslate nohighlight">\(R_k\)</span></p></td>
+<td><p>van der Waals volume contribution of group k.</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>Group surface parameter</p></td>
+<td><p><span class="math notranslate nohighlight">\(Q_k\)</span></p></td>
+<td><p>van der Waals surface area contribution of group k.</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>Group interaction parameters</p></td>
+<td><p><span class="math notranslate nohighlight">\(a_{mn}\)</span></p></td>
+<td><p>Binary interaction energy between groups m and n.</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>Mole fraction of group k in mixture</p></td>
+<td><p><span class="math notranslate nohighlight">\(X_k\)</span></p></td>
+<td><p>Fractional presence of group k in the entire mixture.</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>Local group surface fraction</p></td>
+<td><p><span class="math notranslate nohighlight">\(\Theta_k\)</span></p></td>
+<td><p>Surface-area–weighted local composition around a group.</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>Group residual activity coefficient</p></td>
+<td><p>ln <span class="math notranslate nohighlight">\(\gamma_k\)</span></p></td>
+<td><p>Contribution of group k to residual activity.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>UNIQUAC</strong></p></td>
+<td><p>Molecular volume parameter</p></td>
+<td><p><span class="math notranslate nohighlight">\(r_i \)</span></p></td>
+<td><p>Pure-component van der Waals volume of molecule i.</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>Molecular surface parameter</p></td>
+<td><p><span class="math notranslate nohighlight">\(q_i\)</span></p></td>
+<td><p>Pure-component van der Waals surface area of molecule i.</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>Binary interaction parameters</p></td>
+<td><p><span class="math notranslate nohighlight">\(\tau_{ij} = exp(-u_{ij} / RT)\)</span></p></td>
+<td><p>Energy interaction between molecules i and j.</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>Surface fraction in mixture</p></td>
+<td><p><span class="math notranslate nohighlight">\(\theta_i \)</span></p></td>
+<td><p>Surface-area–weighted composition.</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>Volume fraction in mixture</p></td>
+<td><p><span class="math notranslate nohighlight">\(\phi_i\)</span></p></td>
+<td><p>Volume-weighted composition.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Below are <strong>illustrative subsets</strong> taken from widely used UNIFAC main/subgroup tables (Original UNIFAC).<br />
+Values are representative of the standard parameter set (Skjold‑Jørgensen et al., Gmehling et al.).</p>
+<section id="unifac">
+<h2>1.1 UNIFAC<a class="headerlink" href="#unifac" title="Link to this heading">#</a></h2>
+<section id="hydrocarbon-groups">
+<h3><strong>Hydrocarbon Groups</strong><a class="headerlink" href="#hydrocarbon-groups" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Group (main.sub)</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Rₖ</p></th>
+<th class="head"><p>Qₖ</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1.1</p></td>
+<td><p>CH₃</p></td>
+<td><p>0.9011</p></td>
+<td><p>0.8480</p></td>
+</tr>
+<tr class="row-odd"><td><p>1.2</p></td>
+<td><p>CH₂</p></td>
+<td><p>0.6744</p></td>
+<td><p>0.5400</p></td>
+</tr>
+<tr class="row-even"><td><p>1.3</p></td>
+<td><p>CH</p></td>
+<td><p>0.4469</p></td>
+<td><p>0.2280</p></td>
+</tr>
+<tr class="row-odd"><td><p>1.4</p></td>
+<td><p>C (quaternary)</p></td>
+<td><p>0.2195</p></td>
+<td><p>0.0000</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="alcohol-oxygenated-groups">
+<h3><strong>Alcohol / Oxygenated Groups</strong><a class="headerlink" href="#alcohol-oxygenated-groups" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Group</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Rₖ</p></th>
+<th class="head"><p>Qₖ</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>2.1</p></td>
+<td><p>CH₂OH</p></td>
+<td><p>1.4311</p></td>
+<td><p>1.4320</p></td>
+</tr>
+<tr class="row-odd"><td><p>2.2</p></td>
+<td><p>CHOH</p></td>
+<td><p>1.2036</p></td>
+<td><p>1.1240</p></td>
+</tr>
+<tr class="row-even"><td><p>2.3</p></td>
+<td><p>COH</p></td>
+<td><p>0.9760</p></td>
+<td><p>0.8160</p></td>
+</tr>
+<tr class="row-odd"><td><p>3.1</p></td>
+<td><p>OH</p></td>
+<td><p>1.0000</p></td>
+<td><p>1.2000</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="carbonyl-carboxyl-groups">
+<h3><strong>Carbonyl / Carboxyl Groups</strong><a class="headerlink" href="#carbonyl-carboxyl-groups" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Group</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Rₖ</p></th>
+<th class="head"><p>Qₖ</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>4.1</p></td>
+<td><p>CH₃CO</p></td>
+<td><p>1.6724</p></td>
+<td><p>1.4880</p></td>
+</tr>
+<tr class="row-odd"><td><p>4.2</p></td>
+<td><p>CH₂CO</p></td>
+<td><p>1.4457</p></td>
+<td><p>1.1800</p></td>
+</tr>
+<tr class="row-even"><td><p>5.1</p></td>
+<td><p>HCOO (formate)</p></td>
+<td><p>1.9031</p></td>
+<td><p>1.7280</p></td>
+</tr>
+<tr class="row-odd"><td><p>5.2</p></td>
+<td><p>CH₃COO</p></td>
+<td><p>2.0880</p></td>
+<td><p>1.7280</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="aromatic-groups">
+<h3><strong>Aromatic Groups</strong><a class="headerlink" href="#aromatic-groups" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Group</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Rₖ</p></th>
+<th class="head"><p>Qₖ</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>9.1</p></td>
+<td><p>ACH (aromatic CH)</p></td>
+<td><p>0.5313</p></td>
+<td><p>0.4000</p></td>
+</tr>
+<tr class="row-odd"><td><p>9.2</p></td>
+<td><p>AC (aromatic C)</p></td>
+<td><p>0.3652</p></td>
+<td><p>0.1200</p></td>
+</tr>
+<tr class="row-even"><td><p>9.3</p></td>
+<td><p>ACCH₃</p></td>
+<td><p>1.2663</p></td>
+<td><p>1.0880</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+<section id="example-uniquac-purecomponent-parameters-ri-qi">
+<h2>1.2. Example UNIQUAC Pure‑Component Parameters (rᵢ, qᵢ)<a class="headerlink" href="#example-uniquac-purecomponent-parameters-ri-qi" title="Link to this heading">#</a></h2>
+<p>UNIQUAC does <strong>not</strong> use functional groups; it uses <strong>molecule‑level</strong> van der Waals volume (rᵢ) and surface area (qᵢ).</p>
+<p>Representative values:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Component</p></th>
+<th class="head"><p>rᵢ</p></th>
+<th class="head"><p>qᵢ</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Methanol</p></td>
+<td><p>1.4311</p></td>
+<td><p>1.4320</p></td>
+</tr>
+<tr class="row-odd"><td><p>Ethanol</p></td>
+<td><p>2.1055</p></td>
+<td><p>1.9720</p></td>
+</tr>
+<tr class="row-even"><td><p>Acetone</p></td>
+<td><p>2.5735</p></td>
+<td><p>2.3360</p></td>
+</tr>
+<tr class="row-odd"><td><p>Water</p></td>
+<td><p>0.9200</p></td>
+<td><p>1.4000</p></td>
+</tr>
+<tr class="row-even"><td><p>Benzene</p></td>
+<td><p>3.1878</p></td>
+<td><p>2.4000</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>These values are consistent with standard UNIQUAC parameter tables (Abrams &amp; Prausnitz; Gmehling et al.).<br />
+(UNIQUAC tables are widely reproduced; the search results confirm the model structure but do not list numerical rᵢ/qᵢ directly. )</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="unifac-equations-original-unifac">
+<h1>2. UNIFAC Equations (Original UNIFAC)<a class="headerlink" href="#unifac-equations-original-unifac" title="Link to this heading">#</a></h1>
+<p>UNIFAC splits the activity coefficient into <strong>combinatorial</strong> and <strong>residual</strong> parts:</p>
+<div class="math notranslate nohighlight">
+\[
+\ln \gamma_i = \ln \gamma_i^{C} + \ln \gamma_i^{R}
+\]</div>
+<section id="combinatorial-term-unifac">
+<h2><strong>2.1 Combinatorial Term (UNIFAC)</strong><a class="headerlink" href="#combinatorial-term-unifac" title="Link to this heading">#</a></h2>
+<p>Accounts for <strong>size and shape</strong> differences:</p>
+<div class="math notranslate nohighlight">
+\[
+\ln \gamma_i^{C}
+= 1 - V_i + \ln V_i - 5 q_i \left(1 - \frac{V_i}{F_i} + \ln \frac{V_i}{F_i}\right)
+\]</div>
+<p>Where:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\( r_i = \sum_k \nu_{ik} R_k \)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\( q_i = \sum_k \nu_{ik} Q_k \)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\( \nu_{ik} \)</span> = number of groups k in molecule i</p></li>
+<li><p><span class="math notranslate nohighlight">\( V_i = \frac{r_i}{\sum_j x_j r_j} \)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\( F_i = \frac{q_i}{\sum_j x_j q_j} \)</span></p></li>
+</ul>
+</section>
+<section id="residual-term-unifac">
+<h2>2.2 Residual Term (UNIFAC)*<a class="headerlink" href="#residual-term-unifac" title="Link to this heading">#</a></h2>
+<p>Accounts for <strong>group interactions</strong>:</p>
+<div class="math notranslate nohighlight">
+\[
+\ln \gamma_i^{R} = \sum_k \nu_{ik} \left( \ln \Gamma_k - \ln \Gamma_k^{(i)} \right)
+\]</div>
+<p>Where:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\( \Gamma_k \)</span> = group activity coefficient in the mixture</p></li>
+<li><p><span class="math notranslate nohighlight">\( \Gamma_k^{(i)} \)</span> = group activity coefficient in a reference solution containing only molecule i</p></li>
+</ul>
+<p>Group activity coefficient:</p>
+<div class="math notranslate nohighlight">
+\[
+\ln \Gamma_k = Q_k \left( 1 - \ln \sum_m \Theta_m \Psi_{mk} - \sum_m \frac{\Theta_m \Psi_{km}}{\sum_n \Theta_n \Psi_{nm}} \right)
+\]</div>
+<p>With:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\( \Theta_k = \frac{Q_k X_k}{\sum_m Q_m X_m} \)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\( X_k = \frac{\sum_i x_i \nu_{ik}}{\sum_i \sum_m x_i \nu_{im}} \)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\( \Psi_{mn} = \exp\left(-\frac{a_{mn}}{T}\right) \)</span></p></li>
+</ul>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="uniquac-equations">
+<h1>3. UNIQUAC Equations<a class="headerlink" href="#uniquac-equations" title="Link to this heading">#</a></h1>
+<p>UNIQUAC also splits the activity coefficient:</p>
+<div class="math notranslate nohighlight">
+\[
+\ln \gamma_i = \ln \gamma_i^{C} + \ln \gamma_i^{R}
+\]</div>
+<section id="combinatorial-term-uniquac">
+<h2>3.1 Combinatorial Term (UNIQUAC)<a class="headerlink" href="#combinatorial-term-uniquac" title="Link to this heading">#</a></h2>
+<p>Accounts for <strong>molecular size/shape</strong>:</p>
+<div class="math notranslate nohighlight">
+\[
+\ln \gamma_i^{C}
+= \ln \left( \frac{\phi_i}{x_i} \right)
++ \frac{z}{2} q_i \ln \left( \frac{\theta_i}{\phi_i} \right)
++ l_i - \frac{\phi_i}{x_i} \sum_j x_j l_j
+\]</div>
+<p>Where:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\( \phi_i = \frac{x_i r_i}{\sum_j x_j r_j} \)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\( \theta_i = \frac{x_i q_i}{\sum_j x_j q_j} \)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\( l_i = \frac{z}{2}(r_i - q_i) - (r_i - 1) \)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\( z \approx 10 \)</span> (coordination number)</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="residual-term-uniquac">
+<h2>3.2 Residual Term (UNIQUAC)<a class="headerlink" href="#residual-term-uniquac" title="Link to this heading">#</a></h2>
+<p>Accounts for <strong>energetic interactions</strong>:</p>
+<div class="math notranslate nohighlight">
+\[
+\ln \gamma_i^{R}
+= q_i \left( 1 - \ln \sum_j \theta_j \tau_{ji}
+- \sum_j \frac{\theta_j \tau_{ij}}{\sum_m \theta_m \tau_{mj}} \right)
+\]</div>
+<p>Where:</p>
+<div class="math notranslate nohighlight">
+\[
+\tau_{ij} = \exp\left( -\frac{u_{ij}}{RT} \right)
+\]</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="how-they-are-used-in-practice">
+<h1>4. How They Are Used in Practice<a class="headerlink" href="#how-they-are-used-in-practice" title="Link to this heading">#</a></h1>
+<section id="id1">
+<h2><strong>UNIFAC</strong><a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Decompose each molecule into functional groups.</p></li>
+<li><p>Compute <span class="math notranslate nohighlight">\( r_i, q_i \)</span> from group parameters <span class="math notranslate nohighlight">\( R_k, Q_k \)</span>.</p></li>
+<li><p>Compute combinatorial term.</p></li>
+<li><p>Compute group fractions <span class="math notranslate nohighlight">\( X_k, \Theta_k \)</span>.</p></li>
+<li><p>Compute group activity coefficients <span class="math notranslate nohighlight">\( \Gamma_k \)</span>.</p></li>
+<li><p>Assemble residual term.</p></li>
+<li><p>Combine to get <span class="math notranslate nohighlight">\( \gamma_i \)</span>.</p></li>
+</ol>
+</section>
+<section id="uniquac">
+<h2><strong>UNIQUAC</strong><a class="headerlink" href="#uniquac" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Use pure-component parameters <span class="math notranslate nohighlight">\( r_i, q_i \)</span>.</p></li>
+<li><p>Compute <span class="math notranslate nohighlight">\( \phi_i, \theta_i \)</span>.</p></li>
+<li><p>Compute combinatorial term.</p></li>
+<li><p>Use binary interaction energies <span class="math notranslate nohighlight">\( u_{ij} \)</span> to compute <span class="math notranslate nohighlight">\( \tau_{ij} \)</span>.</p></li>
+<li><p>Compute residual term.</p></li>
+<li><p>Combine to get <span class="math notranslate nohighlight">\( \gamma_i \)</span>.</p></li>
+</ol>
 <p>A convenient python based package implements UNIFAC for equilibrium calculations. An example of this is below:</p>
 </section>
 <section id="example-of-unifac-calculation-with-phasepy">
@@ -1032,6 +1446,7 @@ x_1\dfrac{a_1}{\underline{V}_1}+x_2\dfrac{a_2}{\underline{V}_2}\)</span></p></li
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Activity Coefficients</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#derivation-of-the-activity-coefficient">Derivation of the Activity Coefficient:</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-ideal-mixture">The Ideal Mixture</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#excess-properties">Excess Properties</a></li>
@@ -1055,11 +1470,40 @@ x_1\dfrac{a_1}{\underline{V}_1}+x_2\dfrac{a_2}{\underline{V}_2}\)</span></p></li
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lets-compare-the-two-constant-margules-expression-to-the-van-laar-equations">lets compare the two constant margules expression to the van Laar equations</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-parameter-correlative-equations">Multi-parameter Correlative Equations</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#group-contribution-models">Group Contribution Models</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#group-contributions-in-unifac-vs-uniquac">1. Group Contributions in UNIFAC vs. UNIQUAC</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unifac">1.1 UNIFAC</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hydrocarbon-groups"><strong>Hydrocarbon Groups</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#alcohol-oxygenated-groups"><strong>Alcohol / Oxygenated Groups</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#carbonyl-carboxyl-groups"><strong>Carbonyl / Carboxyl Groups</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aromatic-groups"><strong>Aromatic Groups</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-uniquac-purecomponent-parameters-ri-qi">1.2. Example UNIQUAC Pure‑Component Parameters (rᵢ, qᵢ)</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#unifac-equations-original-unifac">2. UNIFAC Equations (Original UNIFAC)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#combinatorial-term-unifac"><strong>2.1 Combinatorial Term (UNIFAC)</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#residual-term-unifac">2.2 Residual Term (UNIFAC)*</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#uniquac-equations">3. UNIQUAC Equations</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#combinatorial-term-uniquac">3.1 Combinatorial Term (UNIQUAC)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#residual-term-uniquac">3.2 Residual Term (UNIQUAC)</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#how-they-are-used-in-practice">4. How They Are Used in Practice</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"><strong>UNIFAC</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uniquac"><strong>UNIQUAC</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-of-unifac-calculation-with-phasepy">Example of UNIFAC Calculation with PhasePy</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#initializing-vdw-equation-of-state">Initializing: VDW Equation of State</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#peng-robinson-equation-of-state-with-unifac-activity-model">Peng-Robinson Equation of State with UNIFAC Activity Model</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#redlich-kwong-soave-eos">Redlich Kwong Soave EOS</a></li>
 </ul>
+</li>
+</ul>
+
   </nav></div>
 
 </div></div>

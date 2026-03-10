@@ -196,6 +196,7 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../Ch4/1.Deriving-Useful-Thermodynamic-Relationships.html">Deriving Useful Thermodynamic Properties</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Ch4/2.Virial-Equations-of-State.html">Volumetric Equations of State</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="../Ch4/3.Law-of-Corresponding-States.html">Law of Corresponding States and Critical Properties</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Ch4/4.Thermal-Variables-from-EOS.html">Computing Thermal Variables from an Equation of State</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Ch4/5.Vapor-Liquid-Equilibrium.html">Vapor Liquid Equilibrium</a></li>
@@ -212,6 +213,10 @@
 <li class="toctree-l1"><a class="reference internal" href="5.Accuracy-EOS.html">Calculating the Accuracy of Equations of State</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Ch7/6.Mixture-Equilibrium.html">Equilibrium of Mixtures</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Ch7/7.Activity-Coefficient-Models.html">Activity Coefficients</a></li>
+
+
+
+
 <li class="toctree-l1"><a class="reference internal" href="../Ch7/8.Applying-Definitions.html">Applying our Thermodynamic Definitions to Mixtures</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Ch7/9.Calculating-Mixture-Fugacity.html">Vapor-Liquid Equilibrium</a></li>
 </ul>
@@ -397,7 +402,27 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gibbs-phase-rule">Gibb’s Phase Rule:</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ideal-mixing-vs-non-ideal-mixing">Ideal Mixing vs. Non-Ideal Mixing</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#notation-for-mixture-composition">Notation for Mixture Composition</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example">Example</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mass-energy-and-entropy-balance-expressions-for-mixtures">Mass, Energy, and Entropy Balance Expressions for Mixtures:</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mass-balance">Mass Balance</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#energy-balance">Energy Balance</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#entropy-balance">Entropy Balance</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-analytical">Example - Analytical</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-numerical-example">Example - Numerical Example</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-setup">1. Problem setup</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#total-enthalpy-change-upon-mixing">2. Total enthalpy change upon mixing</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-1-mol-water-1-mol-ethanol">Example: 1 mol water + 1 mol ethanol</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#partial-molar-enthalpies-of-mixing-from-tabular-data">3. Partial molar enthalpies of mixing from tabular data</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#choose-composition-x-2-0-4">Choose composition: <span class="math notranslate nohighlight">\(x_2 = 0.4\)</span></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#consistency-check">Consistency check</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#workflow-for-computation">4. Workflow for Computation</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -532,8 +557,51 @@
 </ol>
 <p>Each definition has its own purpose for scientific communication and taking care to understand units is critical to understanding how data is presented and for calculations in this course.</p>
 </section>
-<section id="example">
-<h2>Example<a class="headerlink" href="#example" title="Link to this heading">#</a></h2>
+<section id="mass-energy-and-entropy-balance-expressions-for-mixtures">
+<h2>Mass, Energy, and Entropy Balance Expressions for Mixtures:<a class="headerlink" href="#mass-energy-and-entropy-balance-expressions-for-mixtures" title="Link to this heading">#</a></h2>
+<section id="mass-balance">
+<h3>Mass Balance<a class="headerlink" href="#mass-balance" title="Link to this heading">#</a></h3>
+<p>recall that conservation of mass requires:</p>
+<div class="math notranslate nohighlight">
+\[\dfrac{dN}{dt} = \sum_i \dot{N}_i \]</div>
+<p>where <span class="math notranslate nohighlight">\(i\)</span> is associated with the <span class="math notranslate nohighlight">\(i\)</span>th flowing input/output stream.</p>
+<p>In addition to satisfying this equation, we can now write the <strong>species balance expression</strong>:</p>
+<div class="math notranslate nohighlight">
+\[\dfrac{dN_k}{dt} = \sum_{i=1}^N (\dot{N}_k)_i + \sum_{j=1}^{M} v_{kj}\dot{X}_j\]</div>
+<p>The first term is associated w/ the flow of species entering/exiting the system carried by the <em>i</em>th stream across the system boundary</p>
+<p>The second term is associated w/ the generation/consumption of the <span class="math notranslate nohighlight">\(k\)</span>th species by the <span class="math notranslate nohighlight">\(j\)</span> chemical reaction with stoichiometric coefficient <span class="math notranslate nohighlight">\(v_{kj}\)</span> and rate of reaction <span class="math notranslate nohighlight">\(X\)</span>. The acknowledgement of the fact that</p>
+<p><span class="math notranslate nohighlight">\(N = \sum_k N_k\)</span></p>
+<p>at all times connects the species balance to the conservation of mass</p>
+</section>
+<section id="energy-balance">
+<h3>Energy Balance<a class="headerlink" href="#energy-balance" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\dfrac{dU}{dt} = \sum_i (\dot{N} \underline{H})_i +\dot{Q} + \dot{W}\]</div>
+<p>This equation remains unchanged, but we need to acknowledge that</p>
+<div class="math notranslate nohighlight">
+\[\underline{H}(T,P, \underline{x}) = \sum_k x_k \bar{H}_k(T,P, \underline{x})\]</div>
+<p>and that</p>
+<div class="math notranslate nohighlight">
+\[U(T,P, \underline{x}) = \sum_k N_k \bar{U}_k(T,P, \underline{x})\]</div>
+</section>
+<section id="entropy-balance">
+<h3>Entropy Balance<a class="headerlink" href="#entropy-balance" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\dfrac{dS}{dt} = \sum_i (\dot{N} \underline{S})_i +\dfrac{\dot{Q}}{T} + \dot{S}_{gen}\]</div>
+<p>This equation remains unchanged, but we need to acknowledge that</p>
+<div class="math notranslate nohighlight">
+\[\underline{S}(T,P, \underline{x}) = \sum_k x_k \bar{S}_k(T,P, \underline{x})\]</div>
+<p>and that</p>
+<div class="math notranslate nohighlight">
+\[S(T,P, \underline{x}) = \sum_k N_k \bar{S}_k(T,P, \underline{x})\]</div>
+<p>The entropy generation term must account for chemical reactions to be most general:</p>
+<div class="math notranslate nohighlight">
+\[\dot{\sigma}_s = \dfrac{\lambda}{T^2}(\nabla T)^2 + \dfrac{\mu}{T}\phi^2 - \dfrac{1}{T}\sum_j\sum_k v_{kj} \bar{G}_k \dot{X}_j\]</div>
+<p>where <span class="math notranslate nohighlight">\(\phi = \nabla \dot{\gamma}\)</span></p>
+</section>
+</section>
+<section id="example-analytical">
+<h2>Example - Analytical<a class="headerlink" href="#example-analytical" title="Link to this heading">#</a></h2>
 <p>Lets do an example to deal with this notation. You are told that the internal energy of a binary mixture is given as:</p>
 <p><span class="math notranslate nohighlight">\(\quad \underline{U}(T,P,x_1,x_2)=x_1\underline{U}_1(T,P)+x_2\underline{U}_2(T,P)+a_0x_1x_2\)</span></p>
 <p>Compute <span class="math notranslate nohighlight">\(\Delta_{mix} \underline{U}\)</span>, <span class="math notranslate nohighlight">\(\bar{U}_1\)</span> and <span class="math notranslate nohighlight">\(\bar{U}_2\)</span>:</p>
@@ -550,6 +618,393 @@
 <p><span class="math notranslate nohighlight">\(\quad \bar{U}_1(T,P,x_1)-\underline{U}_1(T,P)=a_0x_2^2\)</span></p>
 <p>It follows then that:</p>
 <p><span class="math notranslate nohighlight">\(\quad \bar{U}_2(T,P,x_2)-\underline{U}_2(T,P)=a_0x_1^2\)</span></p>
+</section>
+<section id="example-numerical-example">
+<h2>Example - Numerical Example<a class="headerlink" href="#example-numerical-example" title="Link to this heading">#</a></h2>
+<section id="problem-setup">
+<h3>1. Problem setup<a class="headerlink" href="#problem-setup" title="Link to this heading">#</a></h3>
+<p>We consider liquid mixtures of water (1) and ethanol (2) at fixed temperature and pressure. We’re given <strong>molar enthalpy of mixing</strong> (or excess molar enthalpy) data, <span class="math notranslate nohighlight">\(\Delta H_{\text{mix}}\)</span> per mole of mixture, as a function of ethanol mole fraction <span class="math notranslate nohighlight">\(x_2\)</span>.</p>
+<p>Assume the following tabulated data at <span class="math notranslate nohighlight">\(T = \text{const}\)</span>, <span class="math notranslate nohighlight">\(P = \text{const}\)</span>:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p><span class="math notranslate nohighlight">\(x_2\)</span> (ethanol)</p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(\Delta H_{\text{mix}}\)</span> (J/mol of mixture)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0.0</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>0.2</p></td>
+<td><p><span class="math notranslate nohighlight">\(-600\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>0.4</p></td>
+<td><p><span class="math notranslate nohighlight">\(-900\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>0.6</p></td>
+<td><p><span class="math notranslate nohighlight">\(-800\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>0.8</p></td>
+<td><p><span class="math notranslate nohighlight">\(-400\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>1.0</p></td>
+<td><p>0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>We want to:</p>
+<ol class="arabic simple">
+<li><p>Compute the <strong>molar enthalpy change upon mixing</strong> for a specific composition.</p></li>
+<li><p>Estimate the <strong>partial molar enthalpies of mixing</strong> <span class="math notranslate nohighlight">\(\overline{H}_1^{\text{mix}}\)</span> and <span class="math notranslate nohighlight">\(\overline{H}_2^{\text{mix}}\)</span> at a chosen composition using the tabular data.</p></li>
+</ol>
+</section>
+<hr class="docutils" />
+<section id="total-enthalpy-change-upon-mixing">
+<h3>2. Total enthalpy change upon mixing<a class="headerlink" href="#total-enthalpy-change-upon-mixing" title="Link to this heading">#</a></h3>
+<p>For a binary mixture with total moles <span class="math notranslate nohighlight">\(N = N_1 + N_2\)</span>, the total enthalpy change upon mixing is</p>
+<div class="math notranslate nohighlight">
+\[
+\Delta H_{\text{mix, total}} = N \,\Delta H_{\text{mix}}(x_2)
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\Delta H_{\text{mix}}(x_2)\)</span> is the molar enthalpy of mixing (per mole of mixture).</p>
+<section id="example-1-mol-water-1-mol-ethanol">
+<h4>Example: 1 mol water + 1 mol ethanol<a class="headerlink" href="#example-1-mol-water-1-mol-ethanol" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>Moles:</strong>
+$<span class="math notranslate nohighlight">\(
+N_1 = 1.0,\quad N_2 = 1.0,\quad N = 2.0
+\)</span>$</p></li>
+<li><p><strong>Mole fraction of ethanol:</strong>
+$<span class="math notranslate nohighlight">\(
+x_2 = \frac{N_2}{N} = \frac{1.0}{2.0} = 0.5
+\)</span>$</p></li>
+</ul>
+<p>Our table doesn’t have <span class="math notranslate nohighlight">\(x_2 = 0.5\)</span>, so we linearly interpolate between 0.4 and 0.6:</p>
+<ul class="simple">
+<li><p>At <span class="math notranslate nohighlight">\(x_2 = 0.4\)</span>: <span class="math notranslate nohighlight">\(\Delta H_{\text{mix}} = -900\)</span> J/mol</p></li>
+<li><p>At <span class="math notranslate nohighlight">\(x_2 = 0.6\)</span>: <span class="math notranslate nohighlight">\(\Delta H_{\text{mix}} = -800\)</span> J/mol</p></li>
+</ul>
+<p>Slope between 0.4 and 0.6:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\Delta H_{\text{mix}}(0.6) - \Delta H_{\text{mix}}(0.4)}{0.6 - 0.4}
+= \frac{-800 - (-900)}{0.2}
+= \frac{100}{0.2}
+= 500\ \text{J/mol per mole fraction}
+\]</div>
+<p>Difference from 0.4 to 0.5 is <span class="math notranslate nohighlight">\(0.1\)</span>, so</p>
+<div class="math notranslate nohighlight">
+\[
+\Delta H_{\text{mix}}(0.5)
+= -900 + 500 \times 0.1
+= -900 + 50
+= -850\ \text{J/mol}
+\]</div>
+<p>Then total enthalpy change:</p>
+<div class="math notranslate nohighlight">
+\[
+\Delta H_{\text{mix, total}} = n \,\Delta H_{\text{mix}}(0.5)
+= 2.0 \times (-850)\ \text{J/mol}
+= -1700\ \text{J}
+\]</div>
+<p>So mixing 1 mol water and 1 mol ethanol at these conditions releases about <strong>1.7 kJ of heat</strong>.</p>
+</section>
+</section>
+<section id="partial-molar-enthalpies-of-mixing-from-tabular-data">
+<h3>3. Partial molar enthalpies of mixing from tabular data<a class="headerlink" href="#partial-molar-enthalpies-of-mixing-from-tabular-data" title="Link to this heading">#</a></h3>
+<p>For a binary mixture, the molar enthalpy of mixing is related to the partial molar enthalpies of mixing by</p>
+<div class="math notranslate nohighlight">
+\[
+\Delta H_{\text{mix}} = x_1 \,\overline{H}_1^{\text{mix}} + x_2 \,\overline{H}_2^{\text{mix}}
+\]</div>
+<p>and the <strong>Gibbs–Duhem relation</strong> gives</p>
+<div class="math notranslate nohighlight">
+\[
+x_1 \,d\overline{H}_1^{\text{mix}} + x_2 \,d\overline{H}_2^{\text{mix}} = 0
+\]</div>
+<p>A convenient working formula (in terms of composition derivatives) is</p>
+<div class="math notranslate nohighlight">
+\[
+\overline{H}_1^{\text{mix}} = \Delta H_{\text{mix}} - x_2 \left(\frac{d\Delta H_{\text{mix}}}{dx_2}\right)
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\overline{H}_2^{\text{mix}} = \Delta H_{\text{mix}} + x_1 \left(\frac{d\Delta H_{\text{mix}}}{dx_2}\right)
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(x_1 = 1 - x_2\)</span>.</p>
+<p>We’ll estimate the derivative using finite differences from the table.</p>
+<section id="choose-composition-x-2-0-4">
+<h4>Choose composition: <span class="math notranslate nohighlight">\(x_2 = 0.4\)</span><a class="headerlink" href="#choose-composition-x-2-0-4" title="Link to this heading">#</a></h4>
+<p>From the table:</p>
+<ul class="simple">
+<li><p>At <span class="math notranslate nohighlight">\(x_2 = 0.2\)</span>: <span class="math notranslate nohighlight">\(\Delta H_{\text{mix}} = -600\)</span> J/mol</p></li>
+<li><p>At <span class="math notranslate nohighlight">\(x_2 = 0.4\)</span>: <span class="math notranslate nohighlight">\(\Delta H_{\text{mix}} = -900\)</span> J/mol</p></li>
+<li><p>At <span class="math notranslate nohighlight">\(x_2 = 0.6\)</span>: <span class="math notranslate nohighlight">\(\Delta H_{\text{mix}} = -800\)</span> J/mol</p></li>
+</ul>
+<p>Use a <strong>central difference</strong> at <span class="math notranslate nohighlight">\(x_2 = 0.4\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\left(\frac{d\Delta H_{\text{mix}}}{dx_2}\right)_{x_2=0.4}
+\approx \frac{\Delta H_{\text{mix}}(0.6) - \Delta H_{\text{mix}}(0.2)}{0.6 - 0.2}
+= \frac{-800 - (-600)}{0.4}
+= \frac{-200}{0.4}
+= -500\ \text{J/mol per mole fraction}
+\]</div>
+<p>Now:</p>
+<ul class="simple">
+<li><p><strong>Mole fractions:</strong>
+$<span class="math notranslate nohighlight">\(
+x_2 = 0.4,\quad x_1 = 1 - 0.4 = 0.6
+\)</span>$</p></li>
+<li><p><strong>Molar enthalpy of mixing at 0.4:</strong>
+$<span class="math notranslate nohighlight">\(
+\Delta H_{\text{mix}}(0.4) = -900\ \text{J/mol}
+\)</span>$</p></li>
+</ul>
+<p>Compute partial molar enthalpies of mixing:</p>
+<ol class="arabic simple">
+<li><p><strong>Water (component 1):</strong>
+$<span class="math notranslate nohighlight">\(
+\overline{H}_1^{\text{mix}}
+= \Delta H_{\text{mix}} - x_2 \left(\frac{d\Delta H_{\text{mix}}}{dx_2}\right)
+= -900 - 0.4 \times (-500)
+= -900 + 200
+= -700\ \text{J/mol}
+\)</span>$</p></li>
+<li><p><strong>Ethanol (component 2):</strong>
+$<span class="math notranslate nohighlight">\(
+\overline{H}_2^{\text{mix}}
+= \Delta H_{\text{mix}} + x_1 \left(\frac{d\Delta H_{\text{mix}}}{dx_2}\right)
+= -900 + 0.6 \times (-500)
+= -900 - 300
+= -1200\ \text{J/mol}
+\)</span>$</p></li>
+</ol>
+</section>
+<section id="consistency-check">
+<h4>Consistency check<a class="headerlink" href="#consistency-check" title="Link to this heading">#</a></h4>
+<p>Check that the mole‑fraction‑weighted average recovers <span class="math notranslate nohighlight">\(\Delta H_{\text{mix}}\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+x_1 \,\overline{H}_1^{\text{mix}} + x_2 \,\overline{H}_2^{\text{mix}}
+= 0.6(-700) + 0.4(-1200)
+= -420 - 480
+= -900\ \text{J/mol}
+\]</div>
+<p>which matches the tabulated <span class="math notranslate nohighlight">\(\Delta H_{\text{mix}}(0.4)\)</span>.</p>
+</section>
+</section>
+<section id="workflow-for-computation">
+<h3>4. Workflow for Computation<a class="headerlink" href="#workflow-for-computation" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Start from tabulated <span class="math notranslate nohighlight">\(\Delta H_{\text{mix}}(x_2)\)</span></strong> data for water–ethanol.</p></li>
+<li><p><strong>Pick a composition</strong> and, if needed, interpolate to get <span class="math notranslate nohighlight">\(\Delta H_{\text{mix}}\)</span> at that <span class="math notranslate nohighlight">\(x_2\)</span>.</p></li>
+<li><p><strong>Compute total enthalpy change</strong> for a given number of moles:
+$<span class="math notranslate nohighlight">\(
+\Delta H_{\text{mix, total}} = n \,\Delta H_{\text{mix}}(x_2)
+\)</span>$</p></li>
+<li><p><strong>Estimate the derivative</strong> <span class="math notranslate nohighlight">\(\frac{d\Delta H_{\text{mix}}}{dx_2}\)</span> at that composition using finite differences from the table.</p></li>
+<li><p><strong>Use the partial molar formulas</strong>:
+$<span class="math notranslate nohighlight">\(
+\overline{H}_1^{\text{mix}} = \Delta H_{\text{mix}} - x_2 \left(\frac{d\Delta H_{\text{mix}}}{dx_2}\right)
+\)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\(
+\overline{H}_2^{\text{mix}} = \Delta H_{\text{mix}} + x_1 \left(\frac{d\Delta H_{\text{mix}}}{dx_2}\right)
+\)</span>$</p></li>
+<li><p><strong>Check consistency</strong> via
+$<span class="math notranslate nohighlight">\(
+\Delta H_{\text{mix}} = x_1 \,\overline{H}_1^{\text{mix}} + x_2 \,\overline{H}_2^{\text{mix}}
+\)</span>$</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy.interpolate</span><span class="w"> </span><span class="kn">import</span> <span class="n">interp1d</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+<span class="c1"># ------------------------------------------------------------</span>
+<span class="c1"># 1. Tabulated data: ethanol mole fraction vs molar enthalpy of mixing (J/mol)</span>
+<span class="c1"># ------------------------------------------------------------</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s2">&quot;x2&quot;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">]),</span>
+    <span class="s2">&quot;Hmix&quot;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">600</span><span class="p">,</span> <span class="o">-</span><span class="mi">900</span><span class="p">,</span> <span class="o">-</span><span class="mi">800</span><span class="p">,</span> <span class="o">-</span><span class="mi">400</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>  <span class="c1"># J/mol of mixture</span>
+<span class="p">})</span>
+
+<span class="c1"># Interpolator for Hmix(x2)</span>
+<span class="n">Hmix_interp</span> <span class="o">=</span> <span class="n">interp1d</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;x2&quot;</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;Hmix&quot;</span><span class="p">],</span> <span class="n">kind</span><span class="o">=</span><span class="s2">&quot;linear&quot;</span><span class="p">,</span> <span class="n">fill_value</span><span class="o">=</span><span class="s2">&quot;extrapolate&quot;</span><span class="p">)</span>
+
+<span class="c1"># ------------------------------------------------------------</span>
+<span class="c1"># 2. Finite-difference derivative dH/dx2</span>
+<span class="c1"># ------------------------------------------------------------</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">dHdx</span><span class="p">(</span><span class="n">x2</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;x2&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+    <span class="n">H</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;Hmix&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+
+    <span class="c1"># If x2 is exactly in the table, use central difference</span>
+    <span class="k">if</span> <span class="n">x2</span> <span class="ow">in</span> <span class="n">x</span><span class="p">:</span>
+        <span class="n">idx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">x</span> <span class="o">==</span> <span class="n">x2</span><span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">if</span> <span class="mi">0</span> <span class="o">&lt;</span> <span class="n">idx</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">(</span><span class="n">H</span><span class="p">[</span><span class="n">idx</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">H</span><span class="p">[</span><span class="n">idx</span> <span class="o">-</span> <span class="mi">1</span><span class="p">])</span> <span class="o">/</span> <span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">idx</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">x</span><span class="p">[</span><span class="n">idx</span> <span class="o">-</span> <span class="mi">1</span><span class="p">])</span>
+    
+    <span class="c1"># Otherwise use small-step numerical derivative</span>
+    <span class="n">h</span> <span class="o">=</span> <span class="mf">1e-4</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">Hmix_interp</span><span class="p">(</span><span class="n">x2</span> <span class="o">+</span> <span class="n">h</span><span class="p">)</span> <span class="o">-</span> <span class="n">Hmix_interp</span><span class="p">(</span><span class="n">x2</span> <span class="o">-</span> <span class="n">h</span><span class="p">))</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">h</span><span class="p">)</span>
+
+<span class="c1"># ------------------------------------------------------------</span>
+<span class="c1"># 3. Partial molar enthalpies</span>
+<span class="c1"># ------------------------------------------------------------</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">partial_molar_enthalpies</span><span class="p">(</span><span class="n">x2</span><span class="p">):</span>
+    <span class="n">x1</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">x2</span>
+    <span class="n">Hm</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">Hmix_interp</span><span class="p">(</span><span class="n">x2</span><span class="p">))</span>
+    <span class="n">dH</span> <span class="o">=</span> <span class="n">dHdx</span><span class="p">(</span><span class="n">x2</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+    <span class="n">Hbar1</span> <span class="o">=</span> <span class="n">Hm</span> <span class="o">-</span> <span class="n">x2</span> <span class="o">*</span> <span class="n">dH</span>
+    <span class="n">Hbar2</span> <span class="o">=</span> <span class="n">Hm</span> <span class="o">+</span> <span class="n">x1</span> <span class="o">*</span> <span class="n">dH</span>
+    <span class="k">return</span> <span class="n">Hbar1</span><span class="p">,</span> <span class="n">Hbar2</span>
+
+<span class="c1"># ------------------------------------------------------------</span>
+<span class="c1"># 4. Sweep compositions and compute partial molar properties</span>
+<span class="c1"># ------------------------------------------------------------</span>
+<span class="n">x2_grid</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+<span class="n">Hbar1_grid</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">Hbar2_grid</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">Hmix_grid</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">x2</span> <span class="ow">in</span> <span class="n">x2_grid</span><span class="p">:</span>
+    <span class="n">Hbar1</span><span class="p">,</span> <span class="n">Hbar2</span> <span class="o">=</span> <span class="n">partial_molar_enthalpies</span><span class="p">(</span><span class="n">x2</span><span class="p">)</span>
+    <span class="n">Hbar1_grid</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Hbar1</span><span class="p">)</span>
+    <span class="n">Hbar2_grid</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Hbar2</span><span class="p">)</span>
+    <span class="n">Hmix_grid</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">Hmix_interp</span><span class="p">(</span><span class="n">x2</span><span class="p">)))</span>
+
+<span class="n">Hbar1_grid</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">Hbar1_grid</span><span class="p">)</span>
+<span class="n">Hbar2_grid</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">Hbar2_grid</span><span class="p">)</span>
+<span class="n">Hmix_grid</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">Hmix_grid</span><span class="p">)</span>
+
+<span class="c1"># ------------------------------------------------------------</span>
+<span class="c1"># 5. Plot partial molar enthalpies and molar enthalpy of mixing</span>
+<span class="c1"># ------------------------------------------------------------</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x2_grid</span><span class="p">,</span> <span class="n">Hbar1_grid</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;$\overline</span><span class="si">{H}</span><span class="s1">_1^</span><span class="si">{mix}</span><span class="s1">$ (water)&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x2_grid</span><span class="p">,</span> <span class="n">Hbar2_grid</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;$\overline</span><span class="si">{H}</span><span class="s1">_2^</span><span class="si">{mix}</span><span class="s1">$ (ethanol)&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x2_grid</span><span class="p">,</span> <span class="n">Hmix_grid</span><span class="p">,</span> <span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;$H_</span><span class="si">{mix}</span><span class="s1">$&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Ethanol mole fraction $x_2$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Enthalpy (J/mol)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Partial Molar Enthalpies and Molar Enthalpy of Mixing</span><span class="se">\n</span><span class="s1">Water–Ethanol System&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/837fe8c9b52343e9608b125ea480f8a8b28415a71e8dd6b42358f4bc3f8dd371.png" src="../_images/837fe8c9b52343e9608b125ea480f8a8b28415a71e8dd6b42358f4bc3f8dd371.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+<span class="c1"># ------------------------------------------------------------</span>
+<span class="c1"># 1. Tabular data (water–ethanol mixing enthalpy)</span>
+<span class="c1"># ------------------------------------------------------------</span>
+<span class="n">x2_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">])</span>
+<span class="n">Hmix_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">600</span><span class="p">,</span> <span class="o">-</span><span class="mi">900</span><span class="p">,</span> <span class="o">-</span><span class="mi">800</span><span class="p">,</span> <span class="o">-</span><span class="mi">400</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>  <span class="c1"># J/mol</span>
+
+<span class="c1"># ------------------------------------------------------------</span>
+<span class="c1"># 2. Build the regression matrix for RK fit</span>
+<span class="c1"># ------------------------------------------------------------</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">rk_basis</span><span class="p">(</span><span class="n">x2</span><span class="p">):</span>
+    <span class="n">x1</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">x2</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">column_stack</span><span class="p">([</span>
+        <span class="n">x1</span> <span class="o">*</span> <span class="n">x2</span><span class="p">,</span>
+        <span class="n">x1</span> <span class="o">*</span> <span class="n">x2</span> <span class="o">*</span> <span class="p">(</span><span class="n">x1</span> <span class="o">-</span> <span class="n">x2</span><span class="p">),</span>
+        <span class="n">x1</span> <span class="o">*</span> <span class="n">x2</span> <span class="o">*</span> <span class="p">(</span><span class="n">x1</span> <span class="o">-</span> <span class="n">x2</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
+    <span class="p">])</span>
+
+<span class="n">X</span> <span class="o">=</span> <span class="n">rk_basis</span><span class="p">(</span><span class="n">x2_data</span><span class="p">)</span>
+
+<span class="c1"># Solve least squares: minimize ||X A - Hmix||</span>
+<span class="n">A_fit</span><span class="p">,</span> <span class="o">*</span><span class="n">_</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">lstsq</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Hmix_data</span><span class="p">,</span> <span class="n">rcond</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Fitted RK coefficients (A0, A1, A2):&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A_fit</span><span class="p">)</span>
+
+<span class="c1"># ------------------------------------------------------------</span>
+<span class="c1"># 3. RK model and derivative</span>
+<span class="c1"># ------------------------------------------------------------</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">H_excess</span><span class="p">(</span><span class="n">x2</span><span class="p">):</span>
+    <span class="n">x1</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">x2</span>
+    <span class="n">A0</span><span class="p">,</span> <span class="n">A1</span><span class="p">,</span> <span class="n">A2</span> <span class="o">=</span> <span class="n">A_fit</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">A0</span> <span class="o">*</span> <span class="n">x1</span> <span class="o">*</span> <span class="n">x2</span> <span class="o">+</span>
+            <span class="n">A1</span> <span class="o">*</span> <span class="n">x1</span> <span class="o">*</span> <span class="n">x2</span> <span class="o">*</span> <span class="p">(</span><span class="n">x1</span> <span class="o">-</span> <span class="n">x2</span><span class="p">)</span> <span class="o">+</span>
+            <span class="n">A2</span> <span class="o">*</span> <span class="n">x1</span> <span class="o">*</span> <span class="n">x2</span> <span class="o">*</span> <span class="p">(</span><span class="n">x1</span> <span class="o">-</span> <span class="n">x2</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">dHdx</span><span class="p">(</span><span class="n">x2</span><span class="p">):</span>
+    <span class="n">x1</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">x2</span>
+    <span class="n">A0</span><span class="p">,</span> <span class="n">A1</span><span class="p">,</span> <span class="n">A2</span> <span class="o">=</span> <span class="n">A_fit</span>
+
+    <span class="c1"># derivative of x1*x2 = (1-x2)*x2</span>
+    <span class="n">d_pref</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="mi">2</span><span class="o">*</span><span class="n">x2</span><span class="p">)</span>
+
+    <span class="c1"># polynomial and its derivative</span>
+    <span class="n">poly</span> <span class="o">=</span> <span class="n">A0</span> <span class="o">+</span> <span class="n">A1</span><span class="o">*</span><span class="p">(</span><span class="n">x1</span> <span class="o">-</span> <span class="n">x2</span><span class="p">)</span> <span class="o">+</span> <span class="n">A2</span><span class="o">*</span><span class="p">(</span><span class="n">x1</span> <span class="o">-</span> <span class="n">x2</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
+    <span class="n">d_poly</span> <span class="o">=</span> <span class="n">A1</span><span class="o">*</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="n">A2</span><span class="o">*</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">x1</span> <span class="o">-</span> <span class="n">x2</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">d_pref</span> <span class="o">*</span> <span class="n">poly</span> <span class="o">+</span> <span class="n">x1</span> <span class="o">*</span> <span class="n">x2</span> <span class="o">*</span> <span class="n">d_poly</span>
+
+<span class="c1"># ------------------------------------------------------------</span>
+<span class="c1"># 4. Partial molar enthalpies</span>
+<span class="c1"># ------------------------------------------------------------</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">partial_molar_enthalpies</span><span class="p">(</span><span class="n">x2</span><span class="p">):</span>
+    <span class="n">x1</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">x2</span>
+    <span class="n">Hm</span> <span class="o">=</span> <span class="n">H_excess</span><span class="p">(</span><span class="n">x2</span><span class="p">)</span>
+    <span class="n">dH</span> <span class="o">=</span> <span class="n">dHdx</span><span class="p">(</span><span class="n">x2</span><span class="p">)</span>
+    <span class="n">Hbar1</span> <span class="o">=</span> <span class="n">Hm</span> <span class="o">-</span> <span class="n">x2</span> <span class="o">*</span> <span class="n">dH</span>
+    <span class="n">Hbar2</span> <span class="o">=</span> <span class="n">Hm</span> <span class="o">+</span> <span class="n">x1</span> <span class="o">*</span> <span class="n">dH</span>
+    <span class="k">return</span> <span class="n">Hbar1</span><span class="p">,</span> <span class="n">Hbar2</span>
+
+<span class="c1"># ------------------------------------------------------------</span>
+<span class="c1"># 5. Sweep compositions and compute curves</span>
+<span class="c1"># ------------------------------------------------------------</span>
+<span class="n">x2_grid</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">300</span><span class="p">)</span>
+<span class="n">H_grid</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">H_excess</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">x2_grid</span><span class="p">])</span>
+<span class="n">Hbar1_grid</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">partial_molar_enthalpies</span><span class="p">(</span><span class="n">x</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">x2_grid</span><span class="p">])</span>
+<span class="n">Hbar2_grid</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">partial_molar_enthalpies</span><span class="p">(</span><span class="n">x</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">x2_grid</span><span class="p">])</span>
+
+<span class="c1"># ------------------------------------------------------------</span>
+<span class="c1"># 6. Plot: RK fit + tabular data + partial molars</span>
+<span class="c1"># ------------------------------------------------------------</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span><span class="mi">7</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x2_grid</span><span class="p">,</span> <span class="n">H_grid</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;RK fit&quot;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x2_data</span><span class="p">,</span> <span class="n">Hmix_data</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">70</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Tabular data&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x2_grid</span><span class="p">,</span> <span class="n">Hbar1_grid</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;$\overline</span><span class="si">{H}</span><span class="s2">_1^E$ (water)&quot;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x2_grid</span><span class="p">,</span> <span class="n">Hbar2_grid</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;$\overline</span><span class="si">{H}</span><span class="s2">_2^E$ (ethanol)&quot;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Ethanol mole fraction $x_2$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Enthalpy (J/mol)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Redlich–Kister Fit to Water–Ethanol Mixing Enthalpy</span><span class="se">\n</span><span class="s2">with Partial Molar Enthalpies&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Fitted RK coefficients (A0, A1, A2):
+[-3593.75       -1041.66666667  1302.08333333]
+</pre></div>
+</div>
+<img alt="../_images/2c3d2b86c4e899da351b26b5cafc14b4bf2e06aad6432c9df36ecdc1e98f5e59.png" src="../_images/2c3d2b86c4e899da351b26b5cafc14b4bf2e06aad6432c9df36ecdc1e98f5e59.png" />
+</div>
+</div>
+</section>
 </section>
 </section>
 
@@ -625,7 +1080,27 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gibbs-phase-rule">Gibb’s Phase Rule:</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ideal-mixing-vs-non-ideal-mixing">Ideal Mixing vs. Non-Ideal Mixing</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#notation-for-mixture-composition">Notation for Mixture Composition</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example">Example</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mass-energy-and-entropy-balance-expressions-for-mixtures">Mass, Energy, and Entropy Balance Expressions for Mixtures:</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mass-balance">Mass Balance</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#energy-balance">Energy Balance</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#entropy-balance">Entropy Balance</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-analytical">Example - Analytical</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-numerical-example">Example - Numerical Example</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-setup">1. Problem setup</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#total-enthalpy-change-upon-mixing">2. Total enthalpy change upon mixing</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-1-mol-water-1-mol-ethanol">Example: 1 mol water + 1 mol ethanol</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#partial-molar-enthalpies-of-mixing-from-tabular-data">3. Partial molar enthalpies of mixing from tabular data</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#choose-composition-x-2-0-4">Choose composition: <span class="math notranslate nohighlight">\(x_2 = 0.4\)</span></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#consistency-check">Consistency check</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#workflow-for-computation">4. Workflow for Computation</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
